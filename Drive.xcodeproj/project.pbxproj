@@ -88,6 +88,7 @@
 		47FDCB8B1972B59B003723C1 /* GameKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FDCB8A1972B59B003723C1 /* GameKitHelper.m */; };
 		47FDCB8E1972BF35003723C1 /* DriveNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FDCB8D1972BF35003723C1 /* DriveNavigationController.m */; };
 		47FDCB911972CB4A003723C1 /* AchievementsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FDCB901972CB4A003723C1 /* AchievementsHelper.m */; };
+		91D9C5B71C1A45AD0068882A /* car_graphics in Resources */ = {isa = PBXBuildFile; fileRef = 91D9C5B61C1A45AD0068882A /* car_graphics */; };
 		E17F229D1C189C7100A81989 /* btn-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E17F229C1C189C7100A81989 /* btn-back@2x.png */; };
 		E17F229F1C189CEC00A81989 /* btn-back.png in Resources */ = {isa = PBXBuildFile; fileRef = E17F229E1C189CEC00A81989 /* btn-back.png */; };
 /* End PBXBuildFile section */
@@ -202,6 +203,7 @@
 		47FDCB8D1972BF35003723C1 /* DriveNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriveNavigationController.m; sourceTree = "<group>"; };
 		47FDCB8F1972CB4A003723C1 /* AchievementsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AchievementsHelper.h; path = GameKit/AchievementsHelper.h; sourceTree = "<group>"; };
 		47FDCB901972CB4A003723C1 /* AchievementsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AchievementsHelper.m; path = GameKit/AchievementsHelper.m; sourceTree = "<group>"; };
+		91D9C5B61C1A45AD0068882A /* car_graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = car_graphics; path = ../../../../Desktop/car_graphics; sourceTree = "<group>"; };
 		E17F229C1C189C7100A81989 /* btn-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-back@2x.png"; sourceTree = "<group>"; };
 		E17F229E1C189CEC00A81989 /* btn-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-back.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -325,6 +327,7 @@
 		475E5E4B195A5A610063FD68 /* Art */ = {
 			isa = PBXGroup;
 			children = (
+				91D9C5B61C1A45AD0068882A /* car_graphics */,
 				475E5E4C195A5A610063FD68 /* AchievementIcons */,
 				475E5E51195A5A610063FD68 /* Backgrounds */,
 				475E5E5E195A5A610063FD68 /* Images */,
@@ -543,6 +546,7 @@
 				475E5E85195A5A610063FD68 /* achievement-amateur.png in Resources */,
 				47117B471959CA1400B20209 /* InfoPlist.strings in Resources */,
 				475E5E8C195A5A610063FD68 /* bg-select-car@2x.png in Resources */,
+				91D9C5B71C1A45AD0068882A /* car_graphics in Resources */,
 				475E5E88195A5A610063FD68 /* achievement-professional.png in Resources */,
 				475E5EA2195A5A610063FD68 /* btn-gamecenter@2x.png in Resources */,
 				475E5E86195A5A610063FD68 /* achievement-destruction.png in Resources */,
