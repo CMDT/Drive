@@ -26,48 +26,8 @@
 		47117B6D1959CA1400B20209 /* DriveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47117B6C1959CA1400B20209 /* DriveTests.m */; };
 		475D2DA319625B000015C6B8 /* SelectCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 475D2DA219625B000015C6B8 /* SelectCarViewController.m */; };
 		475D2DA619625B310015C6B8 /* SelectLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 475D2DA519625B310015C6B8 /* SelectLevelViewController.m */; };
-		475E5E85195A5A610063FD68 /* achievement-amateur.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E4D195A5A610063FD68 /* achievement-amateur.png */; };
-		475E5E86195A5A610063FD68 /* achievement-destruction.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E4E195A5A610063FD68 /* achievement-destruction.png */; };
-		475E5E87195A5A610063FD68 /* achievement-intermediate.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E4F195A5A610063FD68 /* achievement-intermediate.png */; };
-		475E5E88195A5A610063FD68 /* achievement-professional.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E50195A5A610063FD68 /* achievement-professional.png */; };
-		475E5E89195A5A610063FD68 /* bg-main-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E52195A5A610063FD68 /* bg-main-menu.png */; };
-		475E5E8A195A5A610063FD68 /* bg-main-menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E53195A5A610063FD68 /* bg-main-menu@2x.png */; };
-		475E5E8B195A5A610063FD68 /* bg-select-car.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E54195A5A610063FD68 /* bg-select-car.png */; };
-		475E5E8C195A5A610063FD68 /* bg-select-car@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E55195A5A610063FD68 /* bg-select-car@2x.png */; };
-		475E5E8D195A5A610063FD68 /* bg-select-difficulty.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E56195A5A610063FD68 /* bg-select-difficulty.png */; };
-		475E5E8E195A5A610063FD68 /* bg-select-difficulty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E57195A5A610063FD68 /* bg-select-difficulty@2x.png */; };
-		475E5E8F195A5A610063FD68 /* track_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E58195A5A610063FD68 /* track_1.png */; };
-		475E5E90195A5A610063FD68 /* track_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E59195A5A610063FD68 /* track_1@2x.png */; };
-		475E5E91195A5A610063FD68 /* track_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E5A195A5A610063FD68 /* track_2.png */; };
-		475E5E92195A5A610063FD68 /* track_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E5B195A5A610063FD68 /* track_2@2x.png */; };
-		475E5E93195A5A610063FD68 /* track_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E5C195A5A610063FD68 /* track_3.png */; };
-		475E5E94195A5A610063FD68 /* track_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E5D195A5A610063FD68 /* track_3@2x.png */; };
-		475E5E95195A5A610063FD68 /* base.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E5F195A5A610063FD68 /* base.png */; };
-		475E5E96195A5A610063FD68 /* base@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E60195A5A610063FD68 /* base@2x.png */; };
-		475E5E97195A5A610063FD68 /* btn-back-old.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E61195A5A610063FD68 /* btn-back-old.png */; };
-		475E5E98195A5A610063FD68 /* btn-back-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E62195A5A610063FD68 /* btn-back-old@2x.png */; };
-		475E5E99195A5A610063FD68 /* btn-car1.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E63195A5A610063FD68 /* btn-car1.png */; };
-		475E5E9A195A5A610063FD68 /* btn-car1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E64195A5A610063FD68 /* btn-car1@2x.png */; };
-		475E5E9B195A5A610063FD68 /* btn-car2.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E65195A5A610063FD68 /* btn-car2.png */; };
-		475E5E9C195A5A610063FD68 /* btn-car2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E66195A5A610063FD68 /* btn-car2@2x.png */; };
-		475E5E9D195A5A610063FD68 /* btn-car3.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E67195A5A610063FD68 /* btn-car3.png */; };
-		475E5E9E195A5A610063FD68 /* btn-car3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E68195A5A610063FD68 /* btn-car3@2x.png */; };
-		475E5E9F195A5A610063FD68 /* btn-easy.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E69195A5A610063FD68 /* btn-easy.png */; };
-		475E5EA0195A5A610063FD68 /* btn-easy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E6A195A5A610063FD68 /* btn-easy@2x.png */; };
 		475E5EA1195A5A610063FD68 /* btn-gamecenter.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E6B195A5A610063FD68 /* btn-gamecenter.png */; };
 		475E5EA2195A5A610063FD68 /* btn-gamecenter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E6C195A5A610063FD68 /* btn-gamecenter@2x.png */; };
-		475E5EA3195A5A610063FD68 /* btn-hard.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E6D195A5A610063FD68 /* btn-hard.png */; };
-		475E5EA4195A5A610063FD68 /* btn-hard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E6E195A5A610063FD68 /* btn-hard@2x.png */; };
-		475E5EA5195A5A610063FD68 /* btn-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E6F195A5A610063FD68 /* btn-medium.png */; };
-		475E5EA6195A5A610063FD68 /* btn-medium@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E70195A5A610063FD68 /* btn-medium@2x.png */; };
-		475E5EA7195A5A610063FD68 /* btn-pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E71195A5A610063FD68 /* btn-pause.png */; };
-		475E5EA8195A5A610063FD68 /* btn-pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E72195A5A610063FD68 /* btn-pause@2x.png */; };
-		475E5EA9195A5A610063FD68 /* btn-play.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E73195A5A610063FD68 /* btn-play.png */; };
-		475E5EAA195A5A610063FD68 /* btn-play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E74195A5A610063FD68 /* btn-play@2x.png */; };
-		475E5EAB195A5A610063FD68 /* knob.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E75195A5A610063FD68 /* knob.png */; };
-		475E5EAC195A5A610063FD68 /* knob@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E76195A5A610063FD68 /* knob@2x.png */; };
-		475E5EAD195A5A610063FD68 /* steering-wheel-horn.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E77195A5A610063FD68 /* steering-wheel-horn.png */; };
-		475E5EAE195A5A610063FD68 /* steering-wheel-horn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E78195A5A610063FD68 /* steering-wheel-horn@2x.png */; };
 		475E5EAF195A5A610063FD68 /* steering-wheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E79195A5A610063FD68 /* steering-wheel.png */; };
 		475E5EB0195A5A610063FD68 /* steering-wheel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E7A195A5A610063FD68 /* steering-wheel@2x.png */; };
 		475E5EB1195A5A610063FD68 /* LevelDetails.plist in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E7C195A5A610063FD68 /* LevelDetails.plist */; };
@@ -88,9 +48,49 @@
 		47FDCB8B1972B59B003723C1 /* GameKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FDCB8A1972B59B003723C1 /* GameKitHelper.m */; };
 		47FDCB8E1972BF35003723C1 /* DriveNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FDCB8D1972BF35003723C1 /* DriveNavigationController.m */; };
 		47FDCB911972CB4A003723C1 /* AchievementsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FDCB901972CB4A003723C1 /* AchievementsHelper.m */; };
-		91D9C5B71C1A45AD0068882A /* car_graphics in Resources */ = {isa = PBXBuildFile; fileRef = 91D9C5B61C1A45AD0068882A /* car_graphics */; };
-		E17F229D1C189C7100A81989 /* btn-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E17F229C1C189C7100A81989 /* btn-back@2x.png */; };
-		E17F229F1C189CEC00A81989 /* btn-back.png in Resources */ = {isa = PBXBuildFile; fileRef = E17F229E1C189CEC00A81989 /* btn-back.png */; };
+		91C7E3A41C1CB27900A38B32 /* achievment-amateur.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3A01C1CB27900A38B32 /* achievment-amateur.png */; };
+		91C7E3A51C1CB27900A38B32 /* achievment-destruction.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3A11C1CB27900A38B32 /* achievment-destruction.png */; };
+		91C7E3A61C1CB27900A38B32 /* achievment-intermediate.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3A21C1CB27900A38B32 /* achievment-intermediate.png */; };
+		91C7E3A71C1CB27900A38B32 /* achievment-professional.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3A31C1CB27900A38B32 /* achievment-professional.png */; };
+		91C7E3B01C1CB35400A38B32 /* bg-main-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3A91C1CB35400A38B32 /* bg-main-menu.png */; };
+		91C7E3B11C1CB35400A38B32 /* bg-main-menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3AA1C1CB35400A38B32 /* bg-main-menu@2x.png */; };
+		91C7E3B21C1CB35400A38B32 /* bg-select-car.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3AB1C1CB35400A38B32 /* bg-select-car.png */; };
+		91C7E3B31C1CB35400A38B32 /* bg-select-car@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3AC1C1CB35400A38B32 /* bg-select-car@2x.png */; };
+		91C7E3B41C1CB35400A38B32 /* bg-select-difficulty.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3AD1C1CB35400A38B32 /* bg-select-difficulty.png */; };
+		91C7E3B51C1CB35400A38B32 /* bg-select-difficulty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3AE1C1CB35400A38B32 /* bg-select-difficulty@2x.png */; };
+		91C7E3BD1C1CB39C00A38B32 /* track_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3B61C1CB39C00A38B32 /* track_1.png */; };
+		91C7E3BE1C1CB39C00A38B32 /* track_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3B71C1CB39C00A38B32 /* track_1@2x.png */; };
+		91C7E3BF1C1CB39C00A38B32 /* track_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3B81C1CB39C00A38B32 /* track_2.png */; };
+		91C7E3C01C1CB39C00A38B32 /* track_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3B91C1CB39C00A38B32 /* track_2@2x.png */; };
+		91C7E3C11C1CB39C00A38B32 /* track_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3BA1C1CB39C00A38B32 /* track_3.png */; };
+		91C7E3C21C1CB39C00A38B32 /* track_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3BB1C1CB39C00A38B32 /* track_3@2x.png */; };
+		91C7E3F81C1CB49300A38B32 /* base.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3C61C1CB49300A38B32 /* base.png */; };
+		91C7E3F91C1CB49300A38B32 /* base@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3C71C1CB49300A38B32 /* base@2x.png */; };
+		91C7E3FC1C1CB49300A38B32 /* btn-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3CA1C1CB49300A38B32 /* btn-back.png */; };
+		91C7E3FD1C1CB49300A38B32 /* btn-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3CB1C1CB49300A38B32 /* btn-back@2x.png */; };
+		91C7E3FE1C1CB49300A38B32 /* btn-car1.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3CC1C1CB49300A38B32 /* btn-car1.png */; };
+		91C7E3FF1C1CB49300A38B32 /* btn-car1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3CD1C1CB49300A38B32 /* btn-car1@2x.png */; };
+		91C7E4001C1CB49300A38B32 /* btn-car2.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3CE1C1CB49300A38B32 /* btn-car2.png */; };
+		91C7E4011C1CB49300A38B32 /* btn-car2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3CF1C1CB49300A38B32 /* btn-car2@2x.png */; };
+		91C7E4021C1CB49300A38B32 /* btn-car3.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3D01C1CB49300A38B32 /* btn-car3.png */; };
+		91C7E4031C1CB49300A38B32 /* btn-car3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3D11C1CB49300A38B32 /* btn-car3@2x.png */; };
+		91C7E4051C1CB49300A38B32 /* btn-easy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3D31C1CB49300A38B32 /* btn-easy@2x.png */; };
+		91C7E4071C1CB49300A38B32 /* btn-fast@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3D51C1CB49300A38B32 /* btn-fast@2x.png */; };
+		91C7E40A1C1CB49300A38B32 /* btn-hard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3D81C1CB49300A38B32 /* btn-hard@2x.png */; };
+		91C7E40D1C1CB49300A38B32 /* btn-medium@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3DB1C1CB49300A38B32 /* btn-medium@2x.png */; };
+		91C7E40F1C1CB49300A38B32 /* btn-pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3DD1C1CB49300A38B32 /* btn-pause.png */; };
+		91C7E4101C1CB49300A38B32 /* btn-pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3DE1C1CB49300A38B32 /* btn-pause@2x.png */; };
+		91C7E4111C1CB49300A38B32 /* btn-play-new.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3DF1C1CB49300A38B32 /* btn-play-new.png */; };
+		91C7E4121C1CB49300A38B32 /* btn-play@-new2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3E01C1CB49300A38B32 /* btn-play@-new2x.png */; };
+		91C7E4131C1CB49300A38B32 /* btn-select-car@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3E11C1CB49300A38B32 /* btn-select-car@2x.png */; };
+		91C7E4141C1CB49300A38B32 /* btn-select-track@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3E21C1CB49300A38B32 /* btn-select-track@2x.png */; };
+		91C7E4151C1CB49300A38B32 /* btn-slow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3E31C1CB49300A38B32 /* btn-slow@2x.png */; };
+		91C7E4161C1CB49300A38B32 /* btn-start@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3E41C1CB49300A38B32 /* btn-start@2x.png */; };
+		91C7E4201C1CB49300A38B32 /* knob.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3EE1C1CB49300A38B32 /* knob.png */; };
+		91C7E4211C1CB49300A38B32 /* knob@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3EF1C1CB49300A38B32 /* knob@2x.png */; };
+		91C7E4221C1CB49300A38B32 /* mmulogoshape.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3F01C1CB49300A38B32 /* mmulogoshape.png */; };
+		91C7E4241C1CB49300A38B32 /* steering-wheel-horn.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3F21C1CB49300A38B32 /* steering-wheel-horn.png */; };
+		91C7E4251C1CB49300A38B32 /* steering-wheel-horn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3F31C1CB49300A38B32 /* steering-wheel-horn@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,48 +131,8 @@
 		475D2DA219625B000015C6B8 /* SelectCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCarViewController.m; sourceTree = "<group>"; };
 		475D2DA419625B310015C6B8 /* SelectLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLevelViewController.h; sourceTree = "<group>"; };
 		475D2DA519625B310015C6B8 /* SelectLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLevelViewController.m; sourceTree = "<group>"; };
-		475E5E4D195A5A610063FD68 /* achievement-amateur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-amateur.png"; sourceTree = "<group>"; };
-		475E5E4E195A5A610063FD68 /* achievement-destruction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-destruction.png"; sourceTree = "<group>"; };
-		475E5E4F195A5A610063FD68 /* achievement-intermediate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-intermediate.png"; sourceTree = "<group>"; };
-		475E5E50195A5A610063FD68 /* achievement-professional.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievement-professional.png"; sourceTree = "<group>"; };
-		475E5E52195A5A610063FD68 /* bg-main-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-main-menu.png"; sourceTree = "<group>"; };
-		475E5E53195A5A610063FD68 /* bg-main-menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-main-menu@2x.png"; sourceTree = "<group>"; };
-		475E5E54195A5A610063FD68 /* bg-select-car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-select-car.png"; sourceTree = "<group>"; };
-		475E5E55195A5A610063FD68 /* bg-select-car@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-select-car@2x.png"; sourceTree = "<group>"; };
-		475E5E56195A5A610063FD68 /* bg-select-difficulty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-select-difficulty.png"; sourceTree = "<group>"; };
-		475E5E57195A5A610063FD68 /* bg-select-difficulty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-select-difficulty@2x.png"; sourceTree = "<group>"; };
-		475E5E58195A5A610063FD68 /* track_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = track_1.png; sourceTree = "<group>"; };
-		475E5E59195A5A610063FD68 /* track_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "track_1@2x.png"; sourceTree = "<group>"; };
-		475E5E5A195A5A610063FD68 /* track_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = track_2.png; sourceTree = "<group>"; };
-		475E5E5B195A5A610063FD68 /* track_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "track_2@2x.png"; sourceTree = "<group>"; };
-		475E5E5C195A5A610063FD68 /* track_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = track_3.png; sourceTree = "<group>"; };
-		475E5E5D195A5A610063FD68 /* track_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "track_3@2x.png"; sourceTree = "<group>"; };
-		475E5E5F195A5A610063FD68 /* base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = base.png; sourceTree = "<group>"; };
-		475E5E60195A5A610063FD68 /* base@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "base@2x.png"; sourceTree = "<group>"; };
-		475E5E61195A5A610063FD68 /* btn-back-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-back-old.png"; sourceTree = "<group>"; };
-		475E5E62195A5A610063FD68 /* btn-back-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-back-old@2x.png"; sourceTree = "<group>"; };
-		475E5E63195A5A610063FD68 /* btn-car1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-car1.png"; sourceTree = "<group>"; };
-		475E5E64195A5A610063FD68 /* btn-car1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-car1@2x.png"; sourceTree = "<group>"; };
-		475E5E65195A5A610063FD68 /* btn-car2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-car2.png"; sourceTree = "<group>"; };
-		475E5E66195A5A610063FD68 /* btn-car2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-car2@2x.png"; sourceTree = "<group>"; };
-		475E5E67195A5A610063FD68 /* btn-car3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-car3.png"; sourceTree = "<group>"; };
-		475E5E68195A5A610063FD68 /* btn-car3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-car3@2x.png"; sourceTree = "<group>"; };
-		475E5E69195A5A610063FD68 /* btn-easy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-easy.png"; sourceTree = "<group>"; };
-		475E5E6A195A5A610063FD68 /* btn-easy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-easy@2x.png"; sourceTree = "<group>"; };
 		475E5E6B195A5A610063FD68 /* btn-gamecenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-gamecenter.png"; sourceTree = "<group>"; };
 		475E5E6C195A5A610063FD68 /* btn-gamecenter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-gamecenter@2x.png"; sourceTree = "<group>"; };
-		475E5E6D195A5A610063FD68 /* btn-hard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-hard.png"; sourceTree = "<group>"; };
-		475E5E6E195A5A610063FD68 /* btn-hard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-hard@2x.png"; sourceTree = "<group>"; };
-		475E5E6F195A5A610063FD68 /* btn-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-medium.png"; sourceTree = "<group>"; };
-		475E5E70195A5A610063FD68 /* btn-medium@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-medium@2x.png"; sourceTree = "<group>"; };
-		475E5E71195A5A610063FD68 /* btn-pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-pause.png"; sourceTree = "<group>"; };
-		475E5E72195A5A610063FD68 /* btn-pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-pause@2x.png"; sourceTree = "<group>"; };
-		475E5E73195A5A610063FD68 /* btn-play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-play.png"; sourceTree = "<group>"; };
-		475E5E74195A5A610063FD68 /* btn-play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-play@2x.png"; sourceTree = "<group>"; };
-		475E5E75195A5A610063FD68 /* knob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = knob.png; sourceTree = "<group>"; };
-		475E5E76195A5A610063FD68 /* knob@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "knob@2x.png"; sourceTree = "<group>"; };
-		475E5E77195A5A610063FD68 /* steering-wheel-horn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "steering-wheel-horn.png"; sourceTree = "<group>"; };
-		475E5E78195A5A610063FD68 /* steering-wheel-horn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "steering-wheel-horn@2x.png"; sourceTree = "<group>"; };
 		475E5E79195A5A610063FD68 /* steering-wheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "steering-wheel.png"; sourceTree = "<group>"; };
 		475E5E7A195A5A610063FD68 /* steering-wheel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "steering-wheel@2x.png"; sourceTree = "<group>"; };
 		475E5E7C195A5A610063FD68 /* LevelDetails.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LevelDetails.plist; sourceTree = "<group>"; };
@@ -203,9 +163,49 @@
 		47FDCB8D1972BF35003723C1 /* DriveNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriveNavigationController.m; sourceTree = "<group>"; };
 		47FDCB8F1972CB4A003723C1 /* AchievementsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AchievementsHelper.h; path = GameKit/AchievementsHelper.h; sourceTree = "<group>"; };
 		47FDCB901972CB4A003723C1 /* AchievementsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AchievementsHelper.m; path = GameKit/AchievementsHelper.m; sourceTree = "<group>"; };
-		91D9C5B61C1A45AD0068882A /* car_graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = car_graphics; path = ../../../../Desktop/car_graphics; sourceTree = "<group>"; };
-		E17F229C1C189C7100A81989 /* btn-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-back@2x.png"; sourceTree = "<group>"; };
-		E17F229E1C189CEC00A81989 /* btn-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-back.png"; sourceTree = "<group>"; };
+		91C7E3A01C1CB27900A38B32 /* achievment-amateur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "achievment-amateur.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/achievment-amateur.png"; sourceTree = "<group>"; };
+		91C7E3A11C1CB27900A38B32 /* achievment-destruction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "achievment-destruction.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/achievment-destruction.png"; sourceTree = "<group>"; };
+		91C7E3A21C1CB27900A38B32 /* achievment-intermediate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "achievment-intermediate.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/achievment-intermediate.png"; sourceTree = "<group>"; };
+		91C7E3A31C1CB27900A38B32 /* achievment-professional.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "achievment-professional.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/achievment-professional.png"; sourceTree = "<group>"; };
+		91C7E3A91C1CB35400A38B32 /* bg-main-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-main-menu.png"; path = "../../../../../hubiC/JON-RemoteMac/Drive2015/Drive/Art/Backgrounds/bg-main-menu.png"; sourceTree = "<group>"; };
+		91C7E3AA1C1CB35400A38B32 /* bg-main-menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-main-menu@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/Drive2015/Drive/Art/Backgrounds/bg-main-menu@2x.png"; sourceTree = "<group>"; };
+		91C7E3AB1C1CB35400A38B32 /* bg-select-car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-select-car.png"; path = "../../../../../hubiC/JON-RemoteMac/Drive2015/Drive/Art/Backgrounds/bg-select-car.png"; sourceTree = "<group>"; };
+		91C7E3AC1C1CB35400A38B32 /* bg-select-car@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-select-car@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/Drive2015/Drive/Art/Backgrounds/bg-select-car@2x.png"; sourceTree = "<group>"; };
+		91C7E3AD1C1CB35400A38B32 /* bg-select-difficulty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-select-difficulty.png"; path = "../../../../../hubiC/JON-RemoteMac/Drive2015/Drive/Art/Backgrounds/bg-select-difficulty.png"; sourceTree = "<group>"; };
+		91C7E3AE1C1CB35400A38B32 /* bg-select-difficulty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-select-difficulty@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/Drive2015/Drive/Art/Backgrounds/bg-select-difficulty@2x.png"; sourceTree = "<group>"; };
+		91C7E3B61C1CB39C00A38B32 /* track_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = track_1.png; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/track_1.png"; sourceTree = "<group>"; };
+		91C7E3B71C1CB39C00A38B32 /* track_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "track_1@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/track_1@2x.png"; sourceTree = "<group>"; };
+		91C7E3B81C1CB39C00A38B32 /* track_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = track_2.png; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/track_2.png"; sourceTree = "<group>"; };
+		91C7E3B91C1CB39C00A38B32 /* track_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "track_2@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/track_2@2x.png"; sourceTree = "<group>"; };
+		91C7E3BA1C1CB39C00A38B32 /* track_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = track_3.png; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/track_3.png"; sourceTree = "<group>"; };
+		91C7E3BB1C1CB39C00A38B32 /* track_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "track_3@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/track_3@2x.png"; sourceTree = "<group>"; };
+		91C7E3C61C1CB49300A38B32 /* base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = base.png; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/base.png"; sourceTree = "<group>"; };
+		91C7E3C71C1CB49300A38B32 /* base@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "base@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/base@2x.png"; sourceTree = "<group>"; };
+		91C7E3CA1C1CB49300A38B32 /* btn-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-back.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-back.png"; sourceTree = "<group>"; };
+		91C7E3CB1C1CB49300A38B32 /* btn-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-back@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-back@2x.png"; sourceTree = "<group>"; };
+		91C7E3CC1C1CB49300A38B32 /* btn-car1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-car1.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-car1.png"; sourceTree = "<group>"; };
+		91C7E3CD1C1CB49300A38B32 /* btn-car1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-car1@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-car1@2x.png"; sourceTree = "<group>"; };
+		91C7E3CE1C1CB49300A38B32 /* btn-car2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-car2.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-car2.png"; sourceTree = "<group>"; };
+		91C7E3CF1C1CB49300A38B32 /* btn-car2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-car2@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-car2@2x.png"; sourceTree = "<group>"; };
+		91C7E3D01C1CB49300A38B32 /* btn-car3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-car3.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-car3.png"; sourceTree = "<group>"; };
+		91C7E3D11C1CB49300A38B32 /* btn-car3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-car3@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-car3@2x.png"; sourceTree = "<group>"; };
+		91C7E3D31C1CB49300A38B32 /* btn-easy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-easy@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-easy@2x.png"; sourceTree = "<group>"; };
+		91C7E3D51C1CB49300A38B32 /* btn-fast@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-fast@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-fast@2x.png"; sourceTree = "<group>"; };
+		91C7E3D81C1CB49300A38B32 /* btn-hard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-hard@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-hard@2x.png"; sourceTree = "<group>"; };
+		91C7E3DB1C1CB49300A38B32 /* btn-medium@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-medium@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-medium@2x.png"; sourceTree = "<group>"; };
+		91C7E3DD1C1CB49300A38B32 /* btn-pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-pause.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-pause.png"; sourceTree = "<group>"; };
+		91C7E3DE1C1CB49300A38B32 /* btn-pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-pause@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-pause@2x.png"; sourceTree = "<group>"; };
+		91C7E3DF1C1CB49300A38B32 /* btn-play-new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-play-new.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-play-new.png"; sourceTree = "<group>"; };
+		91C7E3E01C1CB49300A38B32 /* btn-play@-new2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-play@-new2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-play@-new2x.png"; sourceTree = "<group>"; };
+		91C7E3E11C1CB49300A38B32 /* btn-select-car@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-select-car@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-select-car@2x.png"; sourceTree = "<group>"; };
+		91C7E3E21C1CB49300A38B32 /* btn-select-track@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-select-track@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-select-track@2x.png"; sourceTree = "<group>"; };
+		91C7E3E31C1CB49300A38B32 /* btn-slow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-slow@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-slow@2x.png"; sourceTree = "<group>"; };
+		91C7E3E41C1CB49300A38B32 /* btn-start@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-start@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-start@2x.png"; sourceTree = "<group>"; };
+		91C7E3EE1C1CB49300A38B32 /* knob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = knob.png; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/knob.png"; sourceTree = "<group>"; };
+		91C7E3EF1C1CB49300A38B32 /* knob@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "knob@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/knob@2x.png"; sourceTree = "<group>"; };
+		91C7E3F01C1CB49300A38B32 /* mmulogoshape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mmulogoshape.png; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/mmulogoshape.png"; sourceTree = "<group>"; };
+		91C7E3F21C1CB49300A38B32 /* steering-wheel-horn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "steering-wheel-horn.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/steering-wheel-horn.png"; sourceTree = "<group>"; };
+		91C7E3F31C1CB49300A38B32 /* steering-wheel-horn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "steering-wheel-horn@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/steering-wheel-horn@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,7 +327,6 @@
 		475E5E4B195A5A610063FD68 /* Art */ = {
 			isa = PBXGroup;
 			children = (
-				91D9C5B61C1A45AD0068882A /* car_graphics */,
 				475E5E4C195A5A610063FD68 /* AchievementIcons */,
 				475E5E51195A5A610063FD68 /* Backgrounds */,
 				475E5E5E195A5A610063FD68 /* Images */,
@@ -340,10 +339,10 @@
 		475E5E4C195A5A610063FD68 /* AchievementIcons */ = {
 			isa = PBXGroup;
 			children = (
-				475E5E4D195A5A610063FD68 /* achievement-amateur.png */,
-				475E5E4E195A5A610063FD68 /* achievement-destruction.png */,
-				475E5E4F195A5A610063FD68 /* achievement-intermediate.png */,
-				475E5E50195A5A610063FD68 /* achievement-professional.png */,
+				91C7E3A01C1CB27900A38B32 /* achievment-amateur.png */,
+				91C7E3A11C1CB27900A38B32 /* achievment-destruction.png */,
+				91C7E3A21C1CB27900A38B32 /* achievment-intermediate.png */,
+				91C7E3A31C1CB27900A38B32 /* achievment-professional.png */,
 			);
 			path = AchievementIcons;
 			sourceTree = "<group>";
@@ -351,18 +350,18 @@
 		475E5E51195A5A610063FD68 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
-				475E5E52195A5A610063FD68 /* bg-main-menu.png */,
-				475E5E53195A5A610063FD68 /* bg-main-menu@2x.png */,
-				475E5E54195A5A610063FD68 /* bg-select-car.png */,
-				475E5E55195A5A610063FD68 /* bg-select-car@2x.png */,
-				475E5E56195A5A610063FD68 /* bg-select-difficulty.png */,
-				475E5E57195A5A610063FD68 /* bg-select-difficulty@2x.png */,
-				475E5E58195A5A610063FD68 /* track_1.png */,
-				475E5E59195A5A610063FD68 /* track_1@2x.png */,
-				475E5E5A195A5A610063FD68 /* track_2.png */,
-				475E5E5B195A5A610063FD68 /* track_2@2x.png */,
-				475E5E5C195A5A610063FD68 /* track_3.png */,
-				475E5E5D195A5A610063FD68 /* track_3@2x.png */,
+				91C7E3B61C1CB39C00A38B32 /* track_1.png */,
+				91C7E3B71C1CB39C00A38B32 /* track_1@2x.png */,
+				91C7E3B81C1CB39C00A38B32 /* track_2.png */,
+				91C7E3B91C1CB39C00A38B32 /* track_2@2x.png */,
+				91C7E3BA1C1CB39C00A38B32 /* track_3.png */,
+				91C7E3BB1C1CB39C00A38B32 /* track_3@2x.png */,
+				91C7E3A91C1CB35400A38B32 /* bg-main-menu.png */,
+				91C7E3AA1C1CB35400A38B32 /* bg-main-menu@2x.png */,
+				91C7E3AB1C1CB35400A38B32 /* bg-select-car.png */,
+				91C7E3AC1C1CB35400A38B32 /* bg-select-car@2x.png */,
+				91C7E3AD1C1CB35400A38B32 /* bg-select-difficulty.png */,
+				91C7E3AE1C1CB35400A38B32 /* bg-select-difficulty@2x.png */,
 			);
 			path = Backgrounds;
 			sourceTree = "<group>";
@@ -370,34 +369,35 @@
 		475E5E5E195A5A610063FD68 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				E17F229E1C189CEC00A81989 /* btn-back.png */,
-				E17F229C1C189C7100A81989 /* btn-back@2x.png */,
-				475E5E5F195A5A610063FD68 /* base.png */,
-				475E5E60195A5A610063FD68 /* base@2x.png */,
-				475E5E61195A5A610063FD68 /* btn-back-old.png */,
-				475E5E62195A5A610063FD68 /* btn-back-old@2x.png */,
-				475E5E63195A5A610063FD68 /* btn-car1.png */,
-				475E5E64195A5A610063FD68 /* btn-car1@2x.png */,
-				475E5E65195A5A610063FD68 /* btn-car2.png */,
-				475E5E66195A5A610063FD68 /* btn-car2@2x.png */,
-				475E5E67195A5A610063FD68 /* btn-car3.png */,
-				475E5E68195A5A610063FD68 /* btn-car3@2x.png */,
-				475E5E69195A5A610063FD68 /* btn-easy.png */,
-				475E5E6A195A5A610063FD68 /* btn-easy@2x.png */,
+				91C7E3C61C1CB49300A38B32 /* base.png */,
+				91C7E3C71C1CB49300A38B32 /* base@2x.png */,
+				91C7E3CA1C1CB49300A38B32 /* btn-back.png */,
+				91C7E3CB1C1CB49300A38B32 /* btn-back@2x.png */,
+				91C7E3CC1C1CB49300A38B32 /* btn-car1.png */,
+				91C7E3CD1C1CB49300A38B32 /* btn-car1@2x.png */,
+				91C7E3CE1C1CB49300A38B32 /* btn-car2.png */,
+				91C7E3CF1C1CB49300A38B32 /* btn-car2@2x.png */,
+				91C7E3D01C1CB49300A38B32 /* btn-car3.png */,
+				91C7E3D11C1CB49300A38B32 /* btn-car3@2x.png */,
+				91C7E3D31C1CB49300A38B32 /* btn-easy@2x.png */,
+				91C7E3D51C1CB49300A38B32 /* btn-fast@2x.png */,
+				91C7E3D81C1CB49300A38B32 /* btn-hard@2x.png */,
+				91C7E3DB1C1CB49300A38B32 /* btn-medium@2x.png */,
+				91C7E3DD1C1CB49300A38B32 /* btn-pause.png */,
+				91C7E3DE1C1CB49300A38B32 /* btn-pause@2x.png */,
+				91C7E3DF1C1CB49300A38B32 /* btn-play-new.png */,
+				91C7E3E01C1CB49300A38B32 /* btn-play@-new2x.png */,
+				91C7E3E11C1CB49300A38B32 /* btn-select-car@2x.png */,
+				91C7E3E21C1CB49300A38B32 /* btn-select-track@2x.png */,
+				91C7E3E31C1CB49300A38B32 /* btn-slow@2x.png */,
+				91C7E3E41C1CB49300A38B32 /* btn-start@2x.png */,
+				91C7E3EE1C1CB49300A38B32 /* knob.png */,
+				91C7E3EF1C1CB49300A38B32 /* knob@2x.png */,
+				91C7E3F01C1CB49300A38B32 /* mmulogoshape.png */,
+				91C7E3F21C1CB49300A38B32 /* steering-wheel-horn.png */,
+				91C7E3F31C1CB49300A38B32 /* steering-wheel-horn@2x.png */,
 				475E5E6B195A5A610063FD68 /* btn-gamecenter.png */,
 				475E5E6C195A5A610063FD68 /* btn-gamecenter@2x.png */,
-				475E5E6D195A5A610063FD68 /* btn-hard.png */,
-				475E5E6E195A5A610063FD68 /* btn-hard@2x.png */,
-				475E5E6F195A5A610063FD68 /* btn-medium.png */,
-				475E5E70195A5A610063FD68 /* btn-medium@2x.png */,
-				475E5E71195A5A610063FD68 /* btn-pause.png */,
-				475E5E72195A5A610063FD68 /* btn-pause@2x.png */,
-				475E5E73195A5A610063FD68 /* btn-play.png */,
-				475E5E74195A5A610063FD68 /* btn-play@2x.png */,
-				475E5E75195A5A610063FD68 /* knob.png */,
-				475E5E76195A5A610063FD68 /* knob@2x.png */,
-				475E5E77195A5A610063FD68 /* steering-wheel-horn.png */,
-				475E5E78195A5A610063FD68 /* steering-wheel-horn@2x.png */,
 				475E5E79195A5A610063FD68 /* steering-wheel.png */,
 				475E5E7A195A5A610063FD68 /* steering-wheel@2x.png */,
 			);
@@ -538,65 +538,65 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				475E5EAE195A5A610063FD68 /* steering-wheel-horn@2x.png in Resources */,
-				475E5E90195A5A610063FD68 /* track_1@2x.png in Resources */,
-				475E5E9F195A5A610063FD68 /* btn-easy.png in Resources */,
-				475E5EAD195A5A610063FD68 /* steering-wheel-horn.png in Resources */,
-				475E5EA7195A5A610063FD68 /* btn-pause.png in Resources */,
-				475E5E85195A5A610063FD68 /* achievement-amateur.png in Resources */,
+				91C7E4071C1CB49300A38B32 /* btn-fast@2x.png in Resources */,
+				91C7E4111C1CB49300A38B32 /* btn-play-new.png in Resources */,
+				91C7E3FE1C1CB49300A38B32 /* btn-car1.png in Resources */,
 				47117B471959CA1400B20209 /* InfoPlist.strings in Resources */,
-				475E5E8C195A5A610063FD68 /* bg-select-car@2x.png in Resources */,
-				91D9C5B71C1A45AD0068882A /* car_graphics in Resources */,
-				475E5E88195A5A610063FD68 /* achievement-professional.png in Resources */,
+				91C7E3A41C1CB27900A38B32 /* achievment-amateur.png in Resources */,
+				91C7E3FD1C1CB49300A38B32 /* btn-back@2x.png in Resources */,
 				475E5EA2195A5A610063FD68 /* btn-gamecenter@2x.png in Resources */,
-				475E5E86195A5A610063FD68 /* achievement-destruction.png in Resources */,
-				475E5E9A195A5A610063FD68 /* btn-car1@2x.png in Resources */,
 				475E5EB6195A5A610063FD68 /* lap.wav in Resources */,
-				E17F229D1C189C7100A81989 /* btn-back@2x.png in Resources */,
-				475E5E94195A5A610063FD68 /* track_3@2x.png in Resources */,
-				475E5E97195A5A610063FD68 /* btn-back-old.png in Resources */,
-				475E5EA8195A5A610063FD68 /* btn-pause@2x.png in Resources */,
+				91C7E4151C1CB49300A38B32 /* btn-slow@2x.png in Resources */,
+				91C7E3B51C1CB35400A38B32 /* bg-select-difficulty@2x.png in Resources */,
+				91C7E3C21C1CB39C00A38B32 /* track_3@2x.png in Resources */,
+				91C7E4241C1CB49300A38B32 /* steering-wheel-horn.png in Resources */,
 				47117B5A1959CA1400B20209 /* Images.xcassets in Resources */,
-				475E5E99195A5A610063FD68 /* btn-car1.png in Resources */,
-				475E5EA3195A5A610063FD68 /* btn-hard.png in Resources */,
-				475E5EAB195A5A610063FD68 /* knob.png in Resources */,
-				475E5E8A195A5A610063FD68 /* bg-main-menu@2x.png in Resources */,
-				475E5EAC195A5A610063FD68 /* knob@2x.png in Resources */,
+				91C7E4251C1CB49300A38B32 /* steering-wheel-horn@2x.png in Resources */,
+				91C7E4141C1CB49300A38B32 /* btn-select-track@2x.png in Resources */,
 				47117B581959CA1400B20209 /* Spaceship.png in Resources */,
 				475E5EAF195A5A610063FD68 /* steering-wheel.png in Resources */,
+				91C7E40F1C1CB49300A38B32 /* btn-pause.png in Resources */,
+				91C7E3B21C1CB35400A38B32 /* bg-select-car.png in Resources */,
 				475E5EB7195A5A610063FD68 /* nitro.wav in Resources */,
-				475E5E92195A5A610063FD68 /* track_2@2x.png in Resources */,
-				475E5EA0195A5A610063FD68 /* btn-easy@2x.png in Resources */,
-				475E5E89195A5A610063FD68 /* bg-main-menu.png in Resources */,
-				475E5E8B195A5A610063FD68 /* bg-select-car.png in Resources */,
-				475E5EA4195A5A610063FD68 /* btn-hard@2x.png in Resources */,
-				475E5EA5195A5A610063FD68 /* btn-medium.png in Resources */,
-				475E5E93195A5A610063FD68 /* track_3.png in Resources */,
-				475E5E9C195A5A610063FD68 /* btn-car2@2x.png in Resources */,
-				475E5E87195A5A610063FD68 /* achievement-intermediate.png in Resources */,
-				E17F229F1C189CEC00A81989 /* btn-back.png in Resources */,
-				475E5E8F195A5A610063FD68 /* track_1.png in Resources */,
+				91C7E3FF1C1CB49300A38B32 /* btn-car1@2x.png in Resources */,
+				91C7E4211C1CB49300A38B32 /* knob@2x.png in Resources */,
+				91C7E4131C1CB49300A38B32 /* btn-select-car@2x.png in Resources */,
+				91C7E40A1C1CB49300A38B32 /* btn-hard@2x.png in Resources */,
+				91C7E4221C1CB49300A38B32 /* mmulogoshape.png in Resources */,
+				91C7E4021C1CB49300A38B32 /* btn-car3.png in Resources */,
+				91C7E3C11C1CB39C00A38B32 /* track_3.png in Resources */,
+				91C7E3B11C1CB35400A38B32 /* bg-main-menu@2x.png in Resources */,
+				91C7E4201C1CB49300A38B32 /* knob.png in Resources */,
+				91C7E3A71C1CB27900A38B32 /* achievment-professional.png in Resources */,
+				91C7E3B41C1CB35400A38B32 /* bg-select-difficulty.png in Resources */,
+				91C7E3A61C1CB27900A38B32 /* achievment-intermediate.png in Resources */,
+				91C7E3C01C1CB39C00A38B32 /* track_2@2x.png in Resources */,
+				91C7E3B01C1CB35400A38B32 /* bg-main-menu.png in Resources */,
 				47117B501959CA1400B20209 /* Main.storyboard in Resources */,
-				475E5E91195A5A610063FD68 /* track_2.png in Resources */,
-				475E5E8E195A5A610063FD68 /* bg-select-difficulty@2x.png in Resources */,
-				475E5E8D195A5A610063FD68 /* bg-select-difficulty.png in Resources */,
+				91C7E3FC1C1CB49300A38B32 /* btn-back.png in Resources */,
+				91C7E3BF1C1CB39C00A38B32 /* track_2.png in Resources */,
+				91C7E3F81C1CB49300A38B32 /* base.png in Resources */,
+				91C7E4001C1CB49300A38B32 /* btn-car2.png in Resources */,
 				475E5EB0195A5A610063FD68 /* steering-wheel@2x.png in Resources */,
 				475E5EB4195A5A610063FD68 /* circuitracer.mp3 in Resources */,
-				475E5E95195A5A610063FD68 /* base.png in Resources */,
+				91C7E4161C1CB49300A38B32 /* btn-start@2x.png in Resources */,
+				91C7E3A51C1CB27900A38B32 /* achievment-destruction.png in Resources */,
 				475E5EB8195A5A610063FD68 /* sprites.atlas in Resources */,
-				475E5E98195A5A610063FD68 /* btn-back-old@2x.png in Resources */,
 				475E5EB2195A5A610063FD68 /* box.wav in Resources */,
 				475E5EB5195A5A610063FD68 /* horn.wav in Resources */,
 				475E5EB1195A5A610063FD68 /* LevelDetails.plist in Resources */,
-				475E5EA9195A5A610063FD68 /* btn-play.png in Resources */,
-				475E5E9B195A5A610063FD68 /* btn-car2.png in Resources */,
+				91C7E3F91C1CB49300A38B32 /* base@2x.png in Resources */,
+				91C7E40D1C1CB49300A38B32 /* btn-medium@2x.png in Resources */,
+				91C7E4011C1CB49300A38B32 /* btn-car2@2x.png in Resources */,
+				91C7E3B31C1CB35400A38B32 /* bg-select-car@2x.png in Resources */,
 				475E5EA1195A5A610063FD68 /* btn-gamecenter.png in Resources */,
-				475E5E96195A5A610063FD68 /* base@2x.png in Resources */,
-				475E5E9E195A5A610063FD68 /* btn-car3@2x.png in Resources */,
-				475E5EA6195A5A610063FD68 /* btn-medium@2x.png in Resources */,
+				91C7E3BD1C1CB39C00A38B32 /* track_1.png in Resources */,
+				91C7E4121C1CB49300A38B32 /* btn-play@-new2x.png in Resources */,
+				91C7E4031C1CB49300A38B32 /* btn-car3@2x.png in Resources */,
+				91C7E4101C1CB49300A38B32 /* btn-pause@2x.png in Resources */,
 				475E5EB3195A5A610063FD68 /* button_press.wav in Resources */,
-				475E5E9D195A5A610063FD68 /* btn-car3.png in Resources */,
-				475E5EAA195A5A610063FD68 /* btn-play@2x.png in Resources */,
+				91C7E4051C1CB49300A38B32 /* btn-easy@2x.png in Resources */,
+				91C7E3BE1C1CB39C00A38B32 /* track_1@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
