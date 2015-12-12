@@ -109,8 +109,8 @@
 
 - (void)p_gameOverWithWin:(BOOL)didWin {
     UIAlertView *alert =
-    [[UIAlertView alloc] initWithTitle:didWin ? @"You Completed the Drive Laps Required!" : @"You Gave Up Before The End of the Drive"
-                               message:@"The Drive is Over"
+    [[UIAlertView alloc] initWithTitle:didWin ? @"You Completed the Drive Laps Required!" : @"You Gave Up Before The End of the Race"
+                               message:@"... This Drive is Over, returning to the Main Menu"
                               delegate:nil
                      cancelButtonTitle:nil
                      otherButtonTitles:nil];
@@ -127,10 +127,10 @@
 - (void)p_showInGameMenu {
     UIAlertView *alert =
     [[UIAlertView alloc] initWithTitle:@"MMU Drive Menu"
-                               message:@"What would you like to do?"
+                               message:@"You are Paused.... What would you like to do?"
                               delegate:self
-                     cancelButtonTitle:@"Resume Level"
-                     otherButtonTitles:@"Start Again and give up this Drive", nil];
+                     cancelButtonTitle:@"Resume Race"
+                     otherButtonTitles:@"Start A New Race", nil];
     [alert show];
 
     self.scene.paused = YES;
