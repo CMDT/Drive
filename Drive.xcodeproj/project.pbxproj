@@ -66,8 +66,6 @@
 		91C7E3C21C1CB39C00A38B32 /* track_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3BB1C1CB39C00A38B32 /* track_3@2x.png */; };
 		91C7E3F81C1CB49300A38B32 /* base.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3C61C1CB49300A38B32 /* base.png */; };
 		91C7E3F91C1CB49300A38B32 /* base@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3C71C1CB49300A38B32 /* base@2x.png */; };
-		91C7E3FC1C1CB49300A38B32 /* btn-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3CA1C1CB49300A38B32 /* btn-back.png */; };
-		91C7E3FD1C1CB49300A38B32 /* btn-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3CB1C1CB49300A38B32 /* btn-back@2x.png */; };
 		91C7E3FE1C1CB49300A38B32 /* btn-car1.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3CC1C1CB49300A38B32 /* btn-car1.png */; };
 		91C7E3FF1C1CB49300A38B32 /* btn-car1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3CD1C1CB49300A38B32 /* btn-car1@2x.png */; };
 		91C7E4001C1CB49300A38B32 /* btn-car2.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3CE1C1CB49300A38B32 /* btn-car2.png */; };
@@ -99,6 +97,12 @@
 		91C7E4371C1CBE7200A38B32 /* btn-select-track.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E42F1C1CBE7200A38B32 /* btn-select-track.png */; };
 		91C7E4381C1CBE7200A38B32 /* btn-slow.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E4301C1CBE7200A38B32 /* btn-slow.png */; };
 		91C7E4391C1CBE7200A38B32 /* btn-play.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E4311C1CBE7200A38B32 /* btn-play.png */; };
+		91C7E43C1C1CD92400A38B32 /* btn-info.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E43A1C1CD92400A38B32 /* btn-info.png */; };
+		91C7E43D1C1CD92400A38B32 /* btn-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E43B1C1CD92400A38B32 /* btn-info@2x.png */; };
+		91C7E4421C1CDC0D00A38B32 /* btn-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E43E1C1CDC0D00A38B32 /* btn-back.png */; };
+		91C7E4431C1CDC0D00A38B32 /* btn-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E43F1C1CDC0D00A38B32 /* btn-back@2x.png */; };
+		91C7E4441C1CDC0D00A38B32 /* btn-back2.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E4401C1CDC0D00A38B32 /* btn-back2.png */; };
+		91C7E4451C1CDC0D00A38B32 /* btn-back2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E4411C1CDC0D00A38B32 /* btn-back2@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,8 +193,6 @@
 		91C7E3BB1C1CB39C00A38B32 /* track_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "track_3@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/track_3@2x.png"; sourceTree = "<group>"; };
 		91C7E3C61C1CB49300A38B32 /* base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = base.png; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/base.png"; sourceTree = "<group>"; };
 		91C7E3C71C1CB49300A38B32 /* base@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "base@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/base@2x.png"; sourceTree = "<group>"; };
-		91C7E3CA1C1CB49300A38B32 /* btn-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-back.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-back.png"; sourceTree = "<group>"; };
-		91C7E3CB1C1CB49300A38B32 /* btn-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-back@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-back@2x.png"; sourceTree = "<group>"; };
 		91C7E3CC1C1CB49300A38B32 /* btn-car1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-car1.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-car1.png"; sourceTree = "<group>"; };
 		91C7E3CD1C1CB49300A38B32 /* btn-car1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-car1@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-car1@2x.png"; sourceTree = "<group>"; };
 		91C7E3CE1C1CB49300A38B32 /* btn-car2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-car2.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-car2.png"; sourceTree = "<group>"; };
@@ -222,6 +224,12 @@
 		91C7E42F1C1CBE7200A38B32 /* btn-select-track.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-select-track.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-select-track.png"; sourceTree = "<group>"; };
 		91C7E4301C1CBE7200A38B32 /* btn-slow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-slow.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-slow.png"; sourceTree = "<group>"; };
 		91C7E4311C1CBE7200A38B32 /* btn-play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-play.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/btn-play.png"; sourceTree = "<group>"; };
+		91C7E43A1C1CD92400A38B32 /* btn-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-info.png"; path = "../../../../../Pictures/btn-info.png"; sourceTree = "<group>"; };
+		91C7E43B1C1CD92400A38B32 /* btn-info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-info@2x.png"; path = "../../../../../Pictures/btn-info@2x.png"; sourceTree = "<group>"; };
+		91C7E43E1C1CDC0D00A38B32 /* btn-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-back.png"; path = "../../../../../Pictures/btn-back.png"; sourceTree = "<group>"; };
+		91C7E43F1C1CDC0D00A38B32 /* btn-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-back@2x.png"; path = "../../../../../Pictures/btn-back@2x.png"; sourceTree = "<group>"; };
+		91C7E4401C1CDC0D00A38B32 /* btn-back2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-back2.png"; path = "../../../../../Pictures/btn-back2.png"; sourceTree = "<group>"; };
+		91C7E4411C1CDC0D00A38B32 /* btn-back2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-back2@2x.png"; path = "../../../../../Pictures/btn-back2@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,10 +393,14 @@
 		475E5E5E195A5A610063FD68 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				91C7E43E1C1CDC0D00A38B32 /* btn-back.png */,
+				91C7E43F1C1CDC0D00A38B32 /* btn-back@2x.png */,
+				91C7E4401C1CDC0D00A38B32 /* btn-back2.png */,
+				91C7E4411C1CDC0D00A38B32 /* btn-back2@2x.png */,
+				91C7E43A1C1CD92400A38B32 /* btn-info.png */,
+				91C7E43B1C1CD92400A38B32 /* btn-info@2x.png */,
 				91C7E3C61C1CB49300A38B32 /* base.png */,
 				91C7E3C71C1CB49300A38B32 /* base@2x.png */,
-				91C7E3CA1C1CB49300A38B32 /* btn-back.png */,
-				91C7E3CB1C1CB49300A38B32 /* btn-back@2x.png */,
 				91C7E3CC1C1CB49300A38B32 /* btn-car1.png */,
 				91C7E3CD1C1CB49300A38B32 /* btn-car1@2x.png */,
 				91C7E3CE1C1CB49300A38B32 /* btn-car2.png */,
@@ -567,10 +579,10 @@
 				91C7E3FE1C1CB49300A38B32 /* btn-car1.png in Resources */,
 				47117B471959CA1400B20209 /* InfoPlist.strings in Resources */,
 				91C7E3A41C1CB27900A38B32 /* achievment-amateur.png in Resources */,
-				91C7E3FD1C1CB49300A38B32 /* btn-back@2x.png in Resources */,
 				475E5EA2195A5A610063FD68 /* btn-gamecenter@2x.png in Resources */,
 				475E5EB6195A5A610063FD68 /* lap.wav in Resources */,
 				91C7E4151C1CB49300A38B32 /* btn-slow@2x.png in Resources */,
+				91C7E4441C1CDC0D00A38B32 /* btn-back2.png in Resources */,
 				91C7E3B51C1CB35400A38B32 /* bg-select-difficulty@2x.png in Resources */,
 				91C7E3C21C1CB39C00A38B32 /* track_3@2x.png in Resources */,
 				91C7E4241C1CB49300A38B32 /* steering-wheel-horn.png in Resources */,
@@ -578,6 +590,7 @@
 				91C7E4251C1CB49300A38B32 /* steering-wheel-horn@2x.png in Resources */,
 				91C7E4141C1CB49300A38B32 /* btn-select-track@2x.png in Resources */,
 				47117B581959CA1400B20209 /* Spaceship.png in Resources */,
+				91C7E43C1C1CD92400A38B32 /* btn-info.png in Resources */,
 				91C7E4331C1CBE7200A38B32 /* btn-fast.png in Resources */,
 				475E5EAF195A5A610063FD68 /* steering-wheel.png in Resources */,
 				91C7E40F1C1CB49300A38B32 /* btn-pause.png in Resources */,
@@ -597,11 +610,12 @@
 				91C7E3A71C1CB27900A38B32 /* achievment-professional.png in Resources */,
 				91C7E3B41C1CB35400A38B32 /* bg-select-difficulty.png in Resources */,
 				91C7E3A61C1CB27900A38B32 /* achievment-intermediate.png in Resources */,
+				91C7E43D1C1CD92400A38B32 /* btn-info@2x.png in Resources */,
 				91C7E3C01C1CB39C00A38B32 /* track_2@2x.png in Resources */,
 				91C7E3B01C1CB35400A38B32 /* bg-main-menu.png in Resources */,
 				91C7E4321C1CBE7200A38B32 /* btn-easy.png in Resources */,
+				91C7E4421C1CDC0D00A38B32 /* btn-back.png in Resources */,
 				47117B501959CA1400B20209 /* Main.storyboard in Resources */,
-				91C7E3FC1C1CB49300A38B32 /* btn-back.png in Resources */,
 				91C7E3BF1C1CB39C00A38B32 /* track_2.png in Resources */,
 				91C7E3F81C1CB49300A38B32 /* base.png in Resources */,
 				91C7E4351C1CBE7200A38B32 /* btn-medium.png in Resources */,
@@ -609,6 +623,7 @@
 				91C7E4391C1CBE7200A38B32 /* btn-play.png in Resources */,
 				475E5EB0195A5A610063FD68 /* steering-wheel@2x.png in Resources */,
 				475E5EB4195A5A610063FD68 /* circuitracer.mp3 in Resources */,
+				91C7E4431C1CDC0D00A38B32 /* btn-back@2x.png in Resources */,
 				91C7E4161C1CB49300A38B32 /* btn-play@2x.png in Resources */,
 				91C7E4371C1CBE7200A38B32 /* btn-select-track.png in Resources */,
 				91C7E3A51C1CB27900A38B32 /* achievment-destruction.png in Resources */,
@@ -626,6 +641,7 @@
 				91C7E4031C1CB49300A38B32 /* btn-car3@2x.png in Resources */,
 				91C7E4101C1CB49300A38B32 /* btn-pause@2x.png in Resources */,
 				475E5EB3195A5A610063FD68 /* button_press.wav in Resources */,
+				91C7E4451C1CDC0D00A38B32 /* btn-back2@2x.png in Resources */,
 				91C7E4051C1CB49300A38B32 /* btn-easy@2x.png in Resources */,
 				91C7E3BE1C1CB39C00A38B32 /* track_1@2x.png in Resources */,
 				91C7E4341C1CBE7200A38B32 /* btn-hard.png in Resources */,

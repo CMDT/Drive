@@ -87,13 +87,13 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     // turn the position to an angle
     CGFloat progressAngle = CGPointToAngle(vector) * M_PI; //was + not * error, no counts
     
-    NSLog(@"Vector = %d : %d, progress = %f : %f",(int)_car.position.x,(int)_car.position.y, progressAngle, nextProgressAngle);
+    //NSLog(@"Vector = %d : %d, progress = %f : %f",(int)_car.position.x,(int)_car.position.y, progressAngle, nextProgressAngle);
 
     if (progressAngle > nextProgressAngle) {
-        NSLog(@"prog>nextProg");}else{NSLog(@"prog NOT > nextProg");
+        //NSLog(@"prog>nextProg");}else{NSLog(@"prog NOT > nextProg");
     }
     if (progressAngle - nextProgressAngle < M_PI_4) { // pi/4 rads == 90 deg
-        NSLog(@"prog-nextProg<pi/4");}else{NSLog(@"prog-nextProg NOT < pi/4");
+        //NSLog(@"prog-nextProg<pi/4");}else{NSLog(@"prog-nextProg NOT < pi/4");
     }
     
     if (progressAngle > nextProgressAngle && (progressAngle - nextProgressAngle) < M_PI_4) { // M_PI_4 = pi/4
@@ -143,7 +143,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     [self addChild:track];
 
     //[self p_addCarAtPosition:CGPointMake(CGRectGetMidX(track.frame), 50.0f)];//used to be 50, ==middle of track at centre bottom
-[self p_addCarAtPosition:CGPointMake(400.0f, 250.0f)];
+[self p_addCarAtPosition:CGPointMake(400.0f, 180.0f)];
     // Turn off the world's gravity
     self.physicsWorld.gravity = CGVectorMake(0.0f, 0.0f);// 0,0 = g off .... 1,1 = pulls to right top corner
     self.physicsBody = ({
@@ -191,9 +191,15 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         sprite.physicsBody.allowsRotation = NO;
         sprite;
     });
+    
+    //put a car on the track
     [self addChild:_car];
+    //turn the car 90 degs ccw
+    //M_PI/4.0 is 45 degrees, you can make duration different from 0 if you want to show the rotation, if it is 0 it will rotate instantly
+    SKAction *rotation = [SKAction rotateByAngle: M_PI/2.0 duration:0];
+    //and just run the action
+    [_car runAction: rotation];
 }
-
 
 - (void)p_addBoxAt:(CGPoint)point {
     SKSpriteNode *box = [SKSpriteNode spriteNodeWithImageNamed:@"box"];
@@ -204,8 +210,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     // Simulate friction and prevent the boxes from continuously sliding around
     //box.physicsBody.linearDamping = 1000000.0f;//1
     //box.physicsBody.angularDamping = 1000000.0f;//1
-    //box.physicsBody.mass=1000;
-    //box.physicsBody.friction = 1000;
+    //box.physicsBody.mass=1000; //added but not needed
+    //box.physicsBody.friction = 1000; //added but not needed
     box.physicsBody.dynamic=NO;
 
     [self addChild:box];
@@ -229,7 +235,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     // Displays the laps to go as set from LevelDetails.plist
     _laps = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
     _laps.text = [NSString stringWithFormat:@"Laps: %li", (long)_numOfLaps];
-    _laps.fontSize = 28.0f;
+    _laps.fontSize = 20.0f;
     _laps.fontColor = [UIColor whiteColor];
     _laps.position = CGPointMake(track.position.x, track.position.y + 20.0f);
     [self addChild:_laps];
@@ -237,7 +243,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     // Shows the time left to finish the laps remaining
     _time = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
     _time.text = [NSString stringWithFormat:@"Time: %li", (long)_timeInSeconds];
-    _time.fontSize = 28.0f;
+    _time.fontSize = 20.0f;
     _time.fontColor = [UIColor whiteColor];
     _time.position = CGPointMake(track.position.x, track.position.y - 10.0f);
     [self addChild:_time];
