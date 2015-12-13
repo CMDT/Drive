@@ -6,6 +6,7 @@
 
 #import <Availability.h>
 
+//warn users of lower grade phones it wont work
 #ifndef __IPHONE_5_0
 #warning "This project uses features only available in iOS SDK 5.0 and later."
 #endif
@@ -14,15 +15,22 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
-
+//holds the car number
 typedef NS_ENUM(int, CRCarType) {
-    CRYellowCar = 1,
+    CRRedCar = 1,
     CRBlueCar,
-    CRRedCar
+    CRGreenCar
 };
-
+//holds the track number
 typedef NS_ENUM(int, CRLevelType) {
     CRLevelEasy = 1,
     CRLevelMedium,
     CRLevelHard
+};
+//holds the tune number
+typedef NS_ENUM(int, CRTuneType) {
+    CRTune0 = 0,
+    CRTune1,
+    CRTune2,
+    CRTune4
 };

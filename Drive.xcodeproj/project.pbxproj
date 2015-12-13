@@ -97,6 +97,10 @@
 		91C7E4431C1CDC0D00A38B32 /* btn-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E43F1C1CDC0D00A38B32 /* btn-back@2x.png */; };
 		91C7E4441C1CDC0D00A38B32 /* btn-back2.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E4401C1CDC0D00A38B32 /* btn-back2.png */; };
 		91C7E4451C1CDC0D00A38B32 /* btn-back2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E4411C1CDC0D00A38B32 /* btn-back2@2x.png */; };
+		91D2C0311C1D8BDF00F239BB /* Funky_Good_Time.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91D2C02D1C1D8BDF00F239BB /* Funky_Good_Time.mp3 */; };
+		91D2C0321C1D8BDF00F239BB /* Johnson-jass-Blues.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91D2C02E1C1D8BDF00F239BB /* Johnson-jass-Blues.mp3 */; };
+		91D2C0331C1D8BDF00F239BB /* silence30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91D2C02F1C1D8BDF00F239BB /* silence30.mp3 */; };
+		91D2C0341C1D8BDF00F239BB /* track16.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91D2C0301C1D8BDF00F239BB /* track16.mp3 */; };
 		91D3C4D91C1CF03B00F94643 /* bg-main-menu-base@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D3C4D31C1CF03B00F94643 /* bg-main-menu-base@2x.png */; };
 		91D3C4DA1C1CF03B00F94643 /* bg-main-menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D3C4D41C1CF03B00F94643 /* bg-main-menu@2x.png */; };
 		91D3C4DB1C1CF03B00F94643 /* bg-select-car.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D3C4D51C1CF03B00F94643 /* bg-select-car.png */; };
@@ -224,6 +228,10 @@
 		91C7E43F1C1CDC0D00A38B32 /* btn-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-back@2x.png"; path = "../../../../../Pictures/btn-back@2x.png"; sourceTree = "<group>"; };
 		91C7E4401C1CDC0D00A38B32 /* btn-back2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-back2.png"; path = "../../../../../Pictures/btn-back2.png"; sourceTree = "<group>"; };
 		91C7E4411C1CDC0D00A38B32 /* btn-back2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-back2@2x.png"; path = "../../../../../Pictures/btn-back2@2x.png"; sourceTree = "<group>"; };
+		91D2C02D1C1D8BDF00F239BB /* Funky_Good_Time.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Funky_Good_Time.mp3; path = "../../../../../hubiC/JON-RemoteMac/audio clips/Funky_Good_Time.mp3"; sourceTree = "<group>"; };
+		91D2C02E1C1D8BDF00F239BB /* Johnson-jass-Blues.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Johnson-jass-Blues.mp3"; path = "../../../../../hubiC/JON-RemoteMac/audio clips/Johnson-jass-Blues.mp3"; sourceTree = "<group>"; };
+		91D2C02F1C1D8BDF00F239BB /* silence30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = silence30.mp3; path = "../../../../../hubiC/JON-RemoteMac/audio clips/silence30.mp3"; sourceTree = "<group>"; };
+		91D2C0301C1D8BDF00F239BB /* track16.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = track16.mp3; path = "../../../../../hubiC/JON-RemoteMac/audio clips/track16.mp3"; sourceTree = "<group>"; };
 		91D3C4D31C1CF03B00F94643 /* bg-main-menu-base@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-main-menu-base@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/bg-main-menu-base@2x.png"; sourceTree = "<group>"; };
 		91D3C4D41C1CF03B00F94643 /* bg-main-menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-main-menu@2x.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/bg-main-menu@2x.png"; sourceTree = "<group>"; };
 		91D3C4D51C1CF03B00F94643 /* bg-select-car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-select-car.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/bg-select-car.png"; sourceTree = "<group>"; };
@@ -291,10 +299,6 @@
 		47117B421959CA1400B20209 /* Drive */ = {
 			isa = PBXGroup;
 			children = (
-				475E5E7B195A5A610063FD68 /* Levels */,
-				47FDCB881972B570003723C1 /* GameKit */,
-				47696E3C195D27EA00A41AC6 /* SKTUtils */,
-				475E5E4B195A5A610063FD68 /* Art */,
 				47117B4B1959CA1400B20209 /* AppDelegate.h */,
 				47117B4C1959CA1400B20209 /* AppDelegate.m */,
 				47117B4E1959CA1400B20209 /* Main.storyboard */,
@@ -313,7 +317,11 @@
 				47696E4C195D283500A41AC6 /* AnalogControl.h */,
 				47696E4D195D283500A41AC6 /* AnalogControl.m */,
 				47117B571959CA1400B20209 /* Spaceship.png */,
+				475E5E4B195A5A610063FD68 /* Art */,
 				47117B591959CA1400B20209 /* Images.xcassets */,
+				475E5E7B195A5A610063FD68 /* Levels */,
+				47FDCB881972B570003723C1 /* GameKit */,
+				47696E3C195D27EA00A41AC6 /* SKTUtils */,
 				47117B431959CA1400B20209 /* Supporting Files */,
 			);
 			path = Drive;
@@ -452,6 +460,10 @@
 		475E5E7D195A5A610063FD68 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				91D2C02D1C1D8BDF00F239BB /* Funky_Good_Time.mp3 */,
+				91D2C02E1C1D8BDF00F239BB /* Johnson-jass-Blues.mp3 */,
+				91D2C02F1C1D8BDF00F239BB /* silence30.mp3 */,
+				91D2C0301C1D8BDF00F239BB /* track16.mp3 */,
 				475E5E7E195A5A610063FD68 /* box.wav */,
 				475E5E7F195A5A610063FD68 /* button_press.wav */,
 				475E5E80195A5A610063FD68 /* circuitracer.mp3 */,
@@ -535,10 +547,10 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0710;
-				ORGANIZATIONNAME = "Ryoichi Hara";
+				ORGANIZATIONNAME = "MMU ESS JAH";
 				TargetAttributes = {
 					47117B361959CA1400B20209 = {
-						DevelopmentTeam = 4SPW49WK35;
+						DevelopmentTeam = G8Q878PY9S;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 0;
@@ -590,6 +602,7 @@
 				91C7E4141C1CB49300A38B32 /* btn-select-track@2x.png in Resources */,
 				47117B581959CA1400B20209 /* Spaceship.png in Resources */,
 				91C7E43C1C1CD92400A38B32 /* btn-info.png in Resources */,
+				91D2C0321C1D8BDF00F239BB /* Johnson-jass-Blues.mp3 in Resources */,
 				91D3C4D91C1CF03B00F94643 /* bg-main-menu-base@2x.png in Resources */,
 				91C7E4331C1CBE7200A38B32 /* btn-fast.png in Resources */,
 				475E5EAF195A5A610063FD68 /* steering-wheel.png in Resources */,
@@ -606,6 +619,7 @@
 				91C7E4021C1CB49300A38B32 /* btn-car3.png in Resources */,
 				91C7E3C11C1CB39C00A38B32 /* track_3.png in Resources */,
 				91C7E4201C1CB49300A38B32 /* knob.png in Resources */,
+				91D2C0331C1D8BDF00F239BB /* silence30.mp3 in Resources */,
 				91C7E3A71C1CB27900A38B32 /* achievment-professional.png in Resources */,
 				91C7E3A61C1CB27900A38B32 /* achievment-intermediate.png in Resources */,
 				91C7E43D1C1CD92400A38B32 /* btn-info@2x.png in Resources */,
@@ -618,6 +632,7 @@
 				47117B501959CA1400B20209 /* Main.storyboard in Resources */,
 				91C7E3BF1C1CB39C00A38B32 /* track_2.png in Resources */,
 				91C7E3F81C1CB49300A38B32 /* base.png in Resources */,
+				91D2C0311C1D8BDF00F239BB /* Funky_Good_Time.mp3 in Resources */,
 				91C7E4351C1CBE7200A38B32 /* btn-medium.png in Resources */,
 				91C7E4001C1CB49300A38B32 /* btn-car2.png in Resources */,
 				91C7E4391C1CBE7200A38B32 /* btn-play.png in Resources */,
@@ -639,6 +654,7 @@
 				91C7E3BD1C1CB39C00A38B32 /* track_1.png in Resources */,
 				91C7E4121C1CB49300A38B32 /* btn-play@-new2x.png in Resources */,
 				91C7E4031C1CB49300A38B32 /* btn-car3@2x.png in Resources */,
+				91D2C0341C1D8BDF00F239BB /* track16.mp3 in Resources */,
 				91C7E4101C1CB49300A38B32 /* btn-pause@2x.png in Resources */,
 				475E5EB3195A5A610063FD68 /* button_press.wav in Resources */,
 				91C7E4451C1CDC0D00A38B32 /* btn-back2@2x.png in Resources */,
@@ -744,7 +760,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jonathan Howell (H4R4L75H43)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -810,7 +826,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Drive/Drive-Prefix.pch";
 				INFOPLIST_FILE = "Drive/Drive-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.mmu.ess.www.jah.Drive;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.mmu.ess.www.jah.Drive1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
@@ -828,7 +844,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Drive/Drive-Prefix.pch";
 				INFOPLIST_FILE = "Drive/Drive-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.mmu.ess.www.jah.Drive;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.mmu.ess.www.jah.Drive1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;

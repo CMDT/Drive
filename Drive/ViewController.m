@@ -67,6 +67,7 @@
         };
     }
 
+    //only show fps when in debug mode
 #ifdef DEBUG
     self.skView.showsFPS = YES;
     self.skView.showsNodeCount = YES;
@@ -99,13 +100,13 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-#pragma mark - Actions
+#pragma mark - Pause Action
 
 - (IBAction)pauseButtonDidTouchUpInside:(id)sender {
     [self p_showInGameMenu];
 }
 
-#pragma mark - Private
+#pragma mark - Game Over
 
 - (void)p_gameOverWithWin:(BOOL)didWin {
     UIAlertView *alert =
@@ -126,7 +127,7 @@
 
 - (void)p_showInGameMenu {
     UIAlertView *alert =
-    [[UIAlertView alloc] initWithTitle:@"MMU Drive Menu"
+    [[UIAlertView alloc] initWithTitle:@"MMU ESS Drive Menu"
                                message:@"You are Paused.... \n\nWhat would you like to do?"
                               delegate:self
                      cancelButtonTitle:@"Resume Race"

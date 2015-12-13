@@ -75,7 +75,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     }
 
     if (currentTime - self.previousTimeInterval > 1) {
-        self.timeInSeconds -= (currentTime - self.previousTimeInterval);
+        self.timeInSeconds += (currentTime - self.previousTimeInterval);//was -= to count down, now count up
         self.previousTimeInterval = currentTime;
         //self.time.text = [NSString stringWithFormat:@"Time: %.lf", self.timeInSeconds];
         self.time.text = [NSString stringWithFormat:@"Time: %.lf", self.timeInSeconds];
@@ -118,11 +118,6 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             [self runAction:self.lapSoundAction];
         }
     }
-    
-    //if (progressAngle == 6.0) {
-        //self.numOfLaps -= 1;
-       // NSLog(@"Lap=%li",(long)self.numOfLaps);
-    //}
 
     if (self.timeInSeconds < 0 || self.numOfLaps == 0) {
         self.paused = YES;
@@ -178,7 +173,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     NSArray *level = [NSArray arrayWithContentsOfFile:filePath];
 
     NSNumber *timeInSeconds = level[_levelType - 1][@"time"];
-    _timeInSeconds = [timeInSeconds doubleValue];
+    _timeInSeconds = 0;//[timeInSeconds doubleValue];
 
     NSNumber *laps = level[_levelType - 1][@"laps"];
     _numOfLaps = [laps integerValue];
@@ -187,6 +182,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 - (void)p_addCarAtPosition:(CGPoint)startPosition {
     _car = ({
         NSString *imageName = [NSString stringWithFormat:@"car_%i", _carType];
+        NSLog(@"Car=%i, Track=%i",_carType,_levelType);
         SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:imageName];
         sprite.position = startPosition;
         sprite.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:sprite.frame.size];

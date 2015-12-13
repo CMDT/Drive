@@ -71,15 +71,6 @@
                                     <segue destination="iVf-iI-C6T" kind="push" id="EQS-Ot-RJf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="788-Ff-bns" userLabel="Button easy">
-                                <rect key="frame" x="247" y="119" width="301" height="55"/>
-                                <state key="normal" image="btn-easy.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="levelButtonDidTouchUpInside:" destination="6zJ-QL-n6c" eventType="touchUpInside" id="jCt-h9-OxF"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5o-qu-hE1" userLabel="Button medium">
                                 <rect key="frame" x="247" y="182" width="301" height="55"/>
                                 <state key="normal" image="btn-medium.png">
@@ -105,6 +96,15 @@
                                 </state>
                                 <connections>
                                     <action selector="backButtonDidTouchUpInside:" destination="6zJ-QL-n6c" eventType="touchUpInside" id="IIG-S8-HnJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="788-Ff-bns" userLabel="Button easy">
+                                <rect key="frame" x="247" y="119" width="301" height="55"/>
+                                <state key="normal" image="btn-easy.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="levelButtonDidTouchUpInside:" destination="6zJ-QL-n6c" eventType="touchUpInside" id="jCt-h9-OxF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -167,7 +167,7 @@ The faster the car, the better the top speed, but be careful, they are harder to
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="About The Cars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5H-1e-eCJ">
                                 <rect key="frame" x="20" y="20" width="528" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -330,7 +330,7 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                 <rect key="frame" x="20" y="201" width="185" height="31"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drive Music" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIi-Ef-7UX">
@@ -340,7 +340,7 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <constraint firstAttribute="width" constant="185" id="AAU-xm-Ev8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -485,7 +485,7 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="About The Drive Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erA-vN-Miv">
                                 <rect key="frame" x="20" y="20" width="528" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wcj-pn-qCC">

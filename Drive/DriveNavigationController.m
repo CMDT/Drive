@@ -36,7 +36,7 @@
 - (void)p_showAuthenticationViewController {
     GameKitHelper *gameKitHelper = [GameKitHelper sharedGameKitHelper];
 
-    [self.topViewController presentViewController:gameKitHelper.authenticationViewController animated:YES completion:nil];
+    //[self.topViewController presentViewController:gameKitHelper.authenticationViewController animated:YES completion:nil];
 }
 
 @end
