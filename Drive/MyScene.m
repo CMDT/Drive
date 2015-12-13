@@ -6,6 +6,7 @@
 //  Copyright (c) 2015. Jonathan Howell, MMU. All rights reserved.
 //
 //  first commit 9/12/15
+//  big update 12/12/15
 
 #import "MyScene.h"
 #import "AnalogControl.h"
