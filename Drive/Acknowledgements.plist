@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>FooterText</key>
+			<string>This App, DRIVE, was designed to replace an earlier PC Program Written by Grant Rockley (Tech).  This App is designed and programmed by Jonathan A. Howell (Tech).</string>
+			<key>Title</key>
+			<string>Acknowledgements</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>To contact the Developer of this App, Mr Jonathan Howell, please use the information below:-
+
+Postal Address :
+MMU Cheshire
+Crewe Green Road
+Crewe
+CW1 5DU
+
+Telephone :
+0161 247 5184
+
+Email :
+J.A.Howell@mmu.ac.uk</string>
+			<key>Title</key>
+			<string>Contact Information</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>This App, DRIVE, is only to be used for Educational purposes, i.e. for a programme of study or for individual self improvement.  The App is not designed to meet requirements of clinical use or research without further written documentation clearly expressing the parameters of such use and legal obligations. It is the responsibility of the user to ensure that the output rsults meet the requirements of any work that will rely upon it.
+
+No warranty is implied expressly or otherwise, and no claim for damages will be accepted as non are possible in the Educational use.  Inappropriate use is the sole responsibility of the user.  This App is not 'sold' nor does it generate any income expressly.</string>
+			<key>Title</key>
+			<string>Disclaimer</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>This App, DRIVE, is available for one year from the date of code building and compiling, and is only available to current Staff and Students of Manchester Metropolitan University.  The data calculated in the App is not warranted in any way as accurate, and must not be used as the basis for a clinical judgment.  The App is for Educational Purposes only.
+
+This App is subject to licence restrictions on distribution governed by Apple Inc, who restrict the distribution of this App to Staff and Students of Manchester Metropolitan University.  No other use is licenced.</string>
+			<key>Title</key>
+			<string>Licence</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+	</array>
+	<key>StringsTable</key>
+	<string>Acknowledgements</string>
+</dict>
+</plist>
