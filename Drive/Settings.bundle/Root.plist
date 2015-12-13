@@ -1,151 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-        <key>Title</key>
-        <string>DRIVE Settings</string>
-        <key>PreferenceSpecifiers</key>
-        <array>
-            <dict>
-                <key>Type</key>
-                <string>PSGroupSpecifier</string>
-                <key>Title</key>
-                <string>Tester Name &amp; Email Address</string>
-            </dict>
-            <dict>
-                <key>DefaultValue</key>
-                <string>Me</string>
-                <key>KeyboardType</key>
-                <string>Alphabet</string>
-                <key>AutocorrectionType</key>
-                <string>No</string>
-                <key>Key</key>
-                <string>testerName</string>
-                <key>Type</key>
-                <string>PSTextFieldSpecifier</string>
-                <key>Title</key>
-                <string>Tester Name</string>
-                <key>IsSecure</key>
-                <false/>
-                <key>AutocapitalizationType</key>
-                <string>Words</string>
-            </dict>
-            <dict>
-                <key>DefaultValue</key>
-                <string>@mmu.ac.uk</string>
-                <key>KeyboardType</key>
-                <string>EmailAddress</string>
-                <key>AutocorrectionType</key>
-                <string>No</string>
-                <key>Key</key>
-                <string>emailAddress</string>
-                <key>Type</key>
-                <string>PSTextFieldSpecifier</string>
-                <key>Title</key>
-                <string>Email for Results</string>
-                <key>IsSecure</key>
-                <false/>
-                <key>AutocapitalizationType</key>
-                <string>None</string>
-            </dict>
-            <dict>
-                <key>Type</key>
-                <string>PSGroupSpecifier</string>
-                <key>Title</key>
-                <string>Driving Music</string>
-            </dict>
-            <dict>
-                <key>Type</key>
-                <string>PSMultiValueSpecifier</string>
-                <key>Titles</key>
-                <array>
-                    <string>No Music</string>
-                    <string>Low Intensity</string>
-                    <string>Blues Jazz</string>
-                    <string>Rock Beat</string>
-                </array>
-                <key>Values</key>
-                <array>
-                    <integer>1</integer>
-                    <integer>2</integer>
-                    <integer>3</integer>
-                    <integer>4</integer>
-                </array>
-                <key>Title</key>
-                <string>Driving Music Name</string>
-                <key>Key</key>
-                <string>driveMusic</string>
-                <key>DefaultValue</key>
-                <integer>1</integer>
-            </dict>
-            <dict>
-                <key>Type</key>
-                <string>PSGroupSpecifier</string>
-                <key>Title</key>
-                <string>DRIVE Version Information</string>
-            </dict>
-            <dict>
-                <key>Type</key>
-                <string>PSTitleValueSpecifier</string>
-                <key>Title</key>
-                <string>Version Number:</string>
-                <key>Key</key>
-                <string>version0</string>
-                <key>DefaultValue</key>
-                <string>1.0.0.13.12.15</string>
-            </dict>
-            <dict>
-                <key>Type</key>
-                <string>PSGroupSpecifier</string>
-                <key>Title</key>
-                <string>Copyright:</string>
-            </dict>
-            <dict>
-                <key>Type</key>
-                <string>PSTitleValueSpecifier</string>
-                <key>Title</key>
-                <string>Copyright</string>
-                <key>Key</key>
-                <string>version1</string>
-                <key>DefaultValue</key>
-                <string>MMU (c) 2015</string>
-            </dict>
-            <dict>
-                <key>Type</key>
-                <string>PSTitleValueSpecifier</string>
-                <key>Title</key>
-                <string>Author:</string>
-                <key>Key</key>
-                <string>version2</string>
-                <key>DefaultValue</key>
-                <string>j.a.howell@mmu.ac.uk</string>
-            </dict>
-            <dict>
-                <key>Type</key>
-                <string>PSTitleValueSpecifier</string>
-                <key>Title</key>
-                <string>Web:</string>
-                <key>Key</key>
-                <string>version3</string>
-                <key>DefaultValue</key>
-                <string>http://www.ess.mmu.ac.uk</string>
-            </dict>
-            <dict>
-                <key>Type</key>
-                <string>PSGroupSpecifier</string>
-                <key>Title</key>
-                <string>License Information</string>
-            </dict>
-            <dict>
-                <key>Type</key>
-                <string>PSChildPaneSpecifier</string>
-                <key>Title</key>
-                <string>Acknowledgements and Licence</string>
-                <key>File</key>
-                <string>Acknowledgements</string>
-            </dict>
-        </array>
-        <key>StringsTable</key>
-        <string>Root</string>
-    </dict>
+<dict>
+	<key>Title</key>
+	<string>DRIVE Settings</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Tester Name &amp; Email Address</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<string>Me</string>
+			<key>KeyboardType</key>
+			<string>Alphabet</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+			<key>Key</key>
+			<string>subjectName</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Subject Name</string>
+			<key>IsSecure</key>
+			<false/>
+			<key>AutocapitalizationType</key>
+			<string>Words</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<string>@mmu.ac.uk</string>
+			<key>KeyboardType</key>
+			<string>EmailAddress</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+			<key>Key</key>
+			<string>emailAddress</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Email for Results</string>
+			<key>IsSecure</key>
+			<false/>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>DRIVE Version Information</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Version Number:</string>
+			<key>Key</key>
+			<string>version0</string>
+			<key>DefaultValue</key>
+			<string>1.1.3.13.12.15</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Copyright:</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Copyright</string>
+			<key>Key</key>
+			<string>version1</string>
+			<key>DefaultValue</key>
+			<string>MMU (c) 2015</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Author:</string>
+			<key>Key</key>
+			<string>version2</string>
+			<key>DefaultValue</key>
+			<string>j.a.howell@mmu.ac.uk</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Web:</string>
+			<key>Key</key>
+			<string>version3</string>
+			<key>DefaultValue</key>
+			<string>http://www.ess.mmu.ac.uk</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>License Information</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Acknowledgements and Licence</string>
+			<key>File</key>
+			<string>Acknowledgements</string>
+		</dict>
+	</array>
+	<key>StringsTable</key>
+	<string>Root</string>
+</dict>
 </plist>
