@@ -48,6 +48,7 @@
 		47FDCB8B1972B59B003723C1 /* GameKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FDCB8A1972B59B003723C1 /* GameKitHelper.m */; };
 		47FDCB8E1972BF35003723C1 /* DriveNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FDCB8D1972BF35003723C1 /* DriveNavigationController.m */; };
 		47FDCB911972CB4A003723C1 /* AchievementsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FDCB901972CB4A003723C1 /* AchievementsHelper.m */; };
+		917B79131C1DB50E00A6D3DA /* TrackStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 917B79121C1DB50E00A6D3DA /* TrackStatsViewController.m */; };
 		91C7E3A41C1CB27900A38B32 /* achievment-amateur.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3A01C1CB27900A38B32 /* achievment-amateur.png */; };
 		91C7E3A51C1CB27900A38B32 /* achievment-destruction.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3A11C1CB27900A38B32 /* achievment-destruction.png */; };
 		91C7E3A61C1CB27900A38B32 /* achievment-intermediate.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E3A21C1CB27900A38B32 /* achievment-intermediate.png */; };
@@ -179,6 +180,8 @@
 		47FDCB8D1972BF35003723C1 /* DriveNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriveNavigationController.m; sourceTree = "<group>"; };
 		47FDCB8F1972CB4A003723C1 /* AchievementsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AchievementsHelper.h; path = GameKit/AchievementsHelper.h; sourceTree = "<group>"; };
 		47FDCB901972CB4A003723C1 /* AchievementsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AchievementsHelper.m; path = GameKit/AchievementsHelper.m; sourceTree = "<group>"; };
+		917B79111C1DB50E00A6D3DA /* TrackStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackStatsViewController.h; sourceTree = "<group>"; };
+		917B79121C1DB50E00A6D3DA /* TrackStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackStatsViewController.m; sourceTree = "<group>"; };
 		91C7E3A01C1CB27900A38B32 /* achievment-amateur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "achievment-amateur.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/achievment-amateur.png"; sourceTree = "<group>"; };
 		91C7E3A11C1CB27900A38B32 /* achievment-destruction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "achievment-destruction.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/achievment-destruction.png"; sourceTree = "<group>"; };
 		91C7E3A21C1CB27900A38B32 /* achievment-intermediate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "achievment-intermediate.png"; path = "../../../../../hubiC/JON-RemoteMac/car_graphics/achievment-intermediate.png"; sourceTree = "<group>"; };
@@ -299,9 +302,9 @@
 		47117B421959CA1400B20209 /* Drive */ = {
 			isa = PBXGroup;
 			children = (
+				47117B4E1959CA1400B20209 /* Main.storyboard */,
 				47117B4B1959CA1400B20209 /* AppDelegate.h */,
 				47117B4C1959CA1400B20209 /* AppDelegate.m */,
-				47117B4E1959CA1400B20209 /* Main.storyboard */,
 				47117B511959CA1400B20209 /* ViewController.h */,
 				47117B521959CA1400B20209 /* ViewController.m */,
 				475D2DA119625B000015C6B8 /* SelectCarViewController.h */,
@@ -314,6 +317,8 @@
 				47B293CB197D3E10006BE2D1 /* HomeScreenViewController.m */,
 				47117B541959CA1400B20209 /* MyScene.h */,
 				47117B551959CA1400B20209 /* MyScene.m */,
+				917B79111C1DB50E00A6D3DA /* TrackStatsViewController.h */,
+				917B79121C1DB50E00A6D3DA /* TrackStatsViewController.m */,
 				47696E4C195D283500A41AC6 /* AnalogControl.h */,
 				47696E4D195D283500A41AC6 /* AnalogControl.m */,
 				47117B571959CA1400B20209 /* Spaceship.png */,
@@ -689,6 +694,7 @@
 				47696E47195D27EA00A41AC6 /* SKAction+SKTExtras.m in Sources */,
 				47FDCB911972CB4A003723C1 /* AchievementsHelper.m in Sources */,
 				47117B4D1959CA1400B20209 /* AppDelegate.m in Sources */,
+				917B79131C1DB50E00A6D3DA /* TrackStatsViewController.m in Sources */,
 				47696E4E195D283500A41AC6 /* AnalogControl.m in Sources */,
 				47696E49195D27EA00A41AC6 /* SKNode+SKTExtras.m in Sources */,
 				47FDCB8E1972BF35003723C1 /* DriveNavigationController.m in Sources */,

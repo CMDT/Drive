@@ -6,7 +6,8 @@
 //  Copyright (c) 2015. Jonathan Howell, MMU. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ViewController.h" 
+#import "TrackStatsViewController.h"
 #import "MyScene.h"
 #import "AnalogControl.h"
 
@@ -122,7 +123,13 @@
 
 - (void)p_goBack:(UIAlertView *)alert {
     [alert dismissWithClickedButtonIndex:0 animated:YES];
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    //re-route this to the results stats VC TrackStatsVC
+    //[self.navigationController popToRootViewControllerAnimated:YES];
+    TrackStatsViewController *TrackStatsVC = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([TrackStatsViewController class])];
+    
+    [self.navigationController pushViewController:TrackStatsVC animated:YES];
+    
 }
 
 - (void)p_showInGameMenu {

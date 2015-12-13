@@ -282,6 +282,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     [self p_addCrateAt:CGPointMake(track.position.x - 130.0f, track.position.y+80)];
 }
 
+//only to position some hazards at a good spot, rem out later
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [[event allTouches] anyObject];
@@ -345,14 +346,15 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 
 - (void)p_reportAchievementsForGameState:(BOOL)hasWon {
     NSMutableArray *achievements = [@[] mutableCopy];
-
+    
+// also ADD crashes with walls
     [achievements addObject:[AchievementsHelper collisionAchievement:self.numOfCollisionsWithBoxes]];
 
     if (hasWon) {
         [achievements addObject:[AchievementsHelper achievementForLevel:self.levelType]];
     }
-
-    [[GameKitHelper sharedGameKitHelper] reportAchievements:achievements];
+//not on game centre yet
+    //[[GameKitHelper sharedGameKitHelper] reportAchievements:achievements];
 }
 
 #pragma mark - Key-Value Observer
