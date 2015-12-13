@@ -17,10 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//prob for game centre, don't bother yet
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(p_showAuthenticationViewController) name:PresentAuthenticationViewController object:nil];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(p_showAuthenticationViewController) name:PresentAuthenticationViewController object:nil];
-
-    [[GameKitHelper sharedGameKitHelper] authenticateLocalPlayer];
+    //[[GameKitHelper sharedGameKitHelper] authenticateLocalPlayer];
 }
 
 - (void)didReceiveMemoryWarning {

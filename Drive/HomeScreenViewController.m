@@ -45,7 +45,7 @@
 - (IBAction)gameCenterButtonDidTouchUpInside:(id)sender {
     
     //do nothing, not enabling yet - jah
-    //[[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
+    [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
     //[[GameKitHelper sharedGameKitHelper] showGKGameCenterViewController:self];
 }
 

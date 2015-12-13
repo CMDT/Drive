@@ -16,6 +16,9 @@
 typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     CRBodyCar = 1 << 0,  // 0000001 = 1
     CRBodyBox = 1 << 1,  // 0000010 = 2
+    CRBodyCrate = 1 << 1,
+    CRBodyTyre = 1 << 1,
+    CRBodyBale = 1 << 1,
 };
 
 @interface MyScene () <SKPhysicsContactDelegate>
@@ -159,12 +162,13 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 
     _trackCenter = track.position;
 
-    _boxSoundAction = [SKAction playSoundFileNamed:@"box.wav" waitForCompletion:NO];
-    _hornSoundAction = [SKAction playSoundFileNamed:@"horn.wav" waitForCompletion:NO];
-    _lapSoundAction = [SKAction playSoundFileNamed:@"lap.wav" waitForCompletion:NO];
-    _nitroSoundAction = [SKAction playSoundFileNamed:@"nitro.wav" waitForCompletion:NO];
-    _wallSoundAction = [SKAction playSoundFileNamed:@"box.wav" waitForCompletion:NO];//change to new sound some time = wall.wav
+    _boxSoundAction   = [SKAction playSoundFileNamed: @"box.wav"   waitForCompletion:NO];
+    _hornSoundAction  = [SKAction playSoundFileNamed: @"horn.wav"  waitForCompletion:NO];
+    _lapSoundAction   = [SKAction playSoundFileNamed: @"lap.wav"   waitForCompletion:NO];
+    _nitroSoundAction = [SKAction playSoundFileNamed: @"nitro.wav" waitForCompletion:NO];
+    _wallSoundAction  = [SKAction playSoundFileNamed: @"box.wav"   waitForCompletion:NO];//change to new sound some time = wall.wav
 
+    //turn on the contact dlegate to test contacts between bodies
     self.physicsWorld.contactDelegate = self;
 }
 
@@ -208,13 +212,61 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     box.physicsBody.categoryBitMask = CRBodyBox;
 
     // Simulate friction and prevent the boxes from continuously sliding around
-    //box.physicsBody.linearDamping = 1000000.0f;//1
-    //box.physicsBody.angularDamping = 1000000.0f;//1
+    box.physicsBody.linearDamping = 1.0f;//1
+    box.physicsBody.angularDamping = 1.0f;//1
     //box.physicsBody.mass=1000; //added but not needed
     //box.physicsBody.friction = 1000; //added but not needed
-    box.physicsBody.dynamic=NO;
+    box.physicsBody.dynamic=YES;
 
     [self addChild:box];
+}
+
+- (void)p_addCrateAt:(CGPoint)point {
+    SKSpriteNode *crate = [SKSpriteNode spriteNodeWithImageNamed:@"crate"];
+    crate.position = point;
+    crate.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:crate.size];
+    crate.physicsBody.categoryBitMask = CRBodyCrate;
+    
+    // Simulate friction and prevent the boxes from continuously sliding around
+    crate.physicsBody.linearDamping = 1.0f;//1
+    crate.physicsBody.angularDamping = 1.0f;//1
+    //crate.physicsBody.mass=1000; //added but not needed
+    //crate.physicsBody.friction = 1000; //added but not needed
+    crate.physicsBody.dynamic=YES;
+    
+    [self addChild:crate];
+}
+
+- (void)p_addBaleAt:(CGPoint)point {
+    SKSpriteNode *bale = [SKSpriteNode spriteNodeWithImageNamed:@"bale"];
+    bale.position = point;
+    bale.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bale.size];
+    bale.physicsBody.categoryBitMask = CRBodyBale;
+    
+    // Simulate friction and prevent the boxes from continuously sliding around
+    bale.physicsBody.linearDamping = 1.0f;//1
+    bale.physicsBody.angularDamping = 1.0f;//1
+    //bale.physicsBody.mass=1000; //added but not needed
+    //bale.physicsBody.friction = 1000; //added but not needed
+    bale.physicsBody.dynamic=YES;
+    
+    [self addChild:bale];
+}
+
+- (void)p_addTyreAt:(CGPoint)point {
+    SKSpriteNode *tyre = [SKSpriteNode spriteNodeWithImageNamed:@"tyre"];
+    tyre.position = point;
+    tyre.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:tyre.size];
+    tyre.physicsBody.categoryBitMask = CRBodyBox;
+    
+    // Simulate friction and prevent the boxes from continuously sliding around
+    tyre.physicsBody.linearDamping = 1.0f;//1
+    tyre.physicsBody.angularDamping = 1.0f;//1
+    //tyre.physicsBody.mass=1000; //added but not needed
+    //tyre.physicsBody.friction = 1000; //added but not needed
+    tyre.physicsBody.dynamic=YES;
+    
+    [self addChild:tyre];
 }
 
 - (void)p_addObjectsForTrack:(SKSpriteNode *)track {
@@ -227,8 +279,17 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     innerBoundary.physicsBody.dynamic = NO;
     
 // put two boxes on the track
-    [self p_addBoxAt:CGPointMake(track.position.x + 100.0f, track.position.y)];//130
-    [self p_addBoxAt:CGPointMake(track.position.x - 250.0f, track.position.y)];//200
+    [self p_addBoxAt:CGPointMake(track.position.x + 130.0f, track.position.y)];
+    [self p_addBaleAt:CGPointMake(track.position.x + 100.0f, track.position.y+120)];
+    [self p_addTyreAt:CGPointMake(track.position.x - 200.0f, track.position.y+50)];
+    [self p_addCrateAt:CGPointMake(track.position.x - 130.0f, track.position.y+80)];
+}
+
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint location = [touch locationInView:touch.view];
+    NSLog(@"X:Y Touch = %f:%f",location.x,location.y);
 }
 
 - (void)p_addGameUIForTrack:(SKSpriteNode *)track {
@@ -308,13 +369,15 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 #pragma mark - SKPhysicsContactDelegate
 
 - (void)didBeginContact:(SKPhysicsContact *)contact {
-    if (contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyBox) {
+    //test for all the hazard objetcs collisions
+    if ((contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyBox)||(contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyCrate)||(contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyTyre)||(contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyBale)) {
         self.numOfCollisionsWithBoxes += 1;
         // set for colls
          self.colls.text = [NSString stringWithFormat:@"Hazard Crashes: %li", (long)self.numOfCollisionsWithBoxes];
         
         [self runAction:self.boxSoundAction];
-    }else{
+       
+   }else{
     //if (contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyTrack) {
         self.numOfCollisionsWithWalls += 1;
         // set for walls
