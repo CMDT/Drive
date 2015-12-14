@@ -821,7 +821,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "";
+			shellScript = "python /Users/jonhowell/Documents/Drive2015a/Drive/Settings.bundle/Licence.py";
 		};
 /* End PBXShellScriptBuildPhase section */
 

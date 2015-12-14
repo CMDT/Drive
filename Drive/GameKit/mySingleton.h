@@ -1,135 +1,75 @@
 //
 //  mySingleton.h
-//  VO2
+//  DRIVE
 //
 //  Created by Jon Howell on 15/07/2014.
-//  Copyright (c) 2014 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
+//  Copyright (c) 2015 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
 //
-//  additional vars for energy 4/12/15, 7/12/15
+//
 
 #import <Foundation/Foundation.h>
 
 @interface mySingleton : NSObject {
-    // add all the objects that you want to be globally abailable here:
-
-    //float   test;
-    //BOOL    boxShow;
-    //UIColor *lineColour;
-    //CGRect  picturePos;
-    //UIImage        * imageForDisplay;
 
     int counter;
 
     NSMutableArray * cardReactionTimeResult;
     NSString       * resultsStrings;
     
-    BOOL     addedToResults;
-    BOOL     dataCompleted;
-    BOOL     isDegC;
-    BOOL     ismmHg;
-    
     NSString * email;
-    NSString * subWt;
-    NSString * subHt;
-    NSString * labTemp;
-    NSString * labPressure_mmHg;
-    NSString * labHumidity;
-    NSString * labLocation;
-    NSString * sampTime;
-    NSString * veatps;
-    NSString * vestpd;
-    NSString * vebtps;
-    NSString * feco2;
-    NSString * feo2;
-    NSString * n2;
-    NSString * corrFactor;
-    NSString * vo2;
-    NSString * vco2;
-    NSString * vo2kg;
-    NSString * labO2;  // percent O2 in air, obviously low if hypoxic, 20.93 approx normal stp
-    NSString * labCO2; // percent CO2 in air, 0.04 approx normal stp
-    NSString * rer;
-
-    NSString * testerName;
     NSString * testDate;
     NSString * testTime;
     NSString * resultStrings;
     NSString * subjectName;
-    NSString * oldSubjectName;
     NSString * versionNumber;
-    NSString * CHOratio;
-    NSString * FATratio;
-    
-    //energies
-    NSString * energyExpend;
-    NSString * choug;
-    NSString * choukj;
-    NSString * fatug;
-    NSString * fatukj;
-    NSString * pfat;
-    NSString * pcho;
-    //for cals of energies
-    Float64 cho412;
-    Float64 cho291;
-    Float64 fata;
-    Float64 fatb;
+    NSString * laps;
+    NSString * carNo;
+    NSString * trackNo;
+    NSString * fastestLap;
+    NSString * slowestLap;
+    NSString * averageLap;
+    NSString * totalTime;
+    NSString * hazCrashes;
+    NSString * wallCrashes;
+    NSString * hornsPlayed;
+    NSString * fastestHorn;
+    NSString * slowestHorn;
+    NSString * averageHorn;
+    NSString * totalHorn;
+    NSString * distractionOn;
+    NSString * masterScore;
+    Float64  wallCrashMult;
+    Float64  hazCrashMult;
+    Float64  hornsMulti;
 }
 
 @property (nonatomic) int  counter;
-//@property (nonatomic) BOOL boxShow;
-//@property (nonatomic,retain) UIColor *lineColour;
-//@property (nonatomic) CGRect picturePos;
-//@property (nonatomic) UIImage *imageForDisplay;
 @property (nonatomic, retain) NSMutableArray * cardReactionTimeResult;
-//@property (nonatomic, retain) NSString *resultStrings;
-
 @property (nonatomic, retain) NSString * email;
-@property (nonatomic, retain) NSString * subWt;
-@property (nonatomic, retain) NSString * subHt;
-@property (nonatomic, retain) NSString * labTemp;
-@property (nonatomic, retain) NSString * labPressure_mmHg;
-@property (nonatomic, retain) NSString * labHumidity;
-@property (nonatomic, retain) NSString * labLocation;
-@property (nonatomic, retain) NSString * sampTime;
-@property (nonatomic, retain) NSString * veatps;
-@property (nonatomic, retain) NSString * vestpd;
-@property (nonatomic, retain) NSString * vebtps;
-@property (nonatomic, retain) NSString * feco2;
-@property (nonatomic, retain) NSString * feo2;
-@property (nonatomic, retain) NSString * n2;
-@property (nonatomic, retain) NSString * corrFactor;
-@property (nonatomic, retain) NSString * vo2;
-@property (nonatomic, retain) NSString * vco2;
-@property (nonatomic, retain) NSString * vo2kg;
-@property (nonatomic, retain) NSString * labO2;
-@property (nonatomic, retain) NSString * labCO2;
-@property (nonatomic, retain) NSString * rer;
 @property (nonatomic, retain) NSString * resultStrings;
 @property (nonatomic, retain) NSString * subjectName;
-@property (nonatomic, retain) NSString * oldSubjectName;
-@property (nonatomic, retain) NSString * testerName;
 @property (nonatomic, retain) NSString * testDate;
 @property (nonatomic, retain) NSString * testTime;
 @property (nonatomic, retain) NSString * versionNumber;
-//energies
-@property (nonatomic) Float64 cho412;
-@property (nonatomic) Float64 cho291;
-@property (nonatomic) Float64 fata;
-@property (nonatomic) Float64 fatb;
-
-@property (nonatomic, retain) NSString * energyExpend;
-@property (nonatomic, retain) NSString * chug;
-@property (nonatomic, retain) NSString * chukj;
-@property (nonatomic, retain) NSString * fatg;
-@property (nonatomic, retain) NSString * fatkj;
-@property (nonatomic, retain) NSString * pfat;
-@property (nonatomic, retain) NSString * pcho;
-
-//Flags BOOL
-@property (nonatomic) BOOL addedToResults;
-@property (nonatomic) BOOL dataCompleted;
-@property (nonatomic) BOOL isDegC;
-@property (nonatomic) BOOL ismmHg;
+@property (nonatomic, retain) NSString * laps;
+@property (nonatomic, retain) NSString * carNo;
+@property (nonatomic, retain) NSString * trackNo;
+@property (nonatomic, retain) NSString * fastestLap;
+@property (nonatomic, retain) NSString * slowestLap;
+@property (nonatomic, retain) NSString * averageLap;
+@property (nonatomic, retain) NSString * totalTime;
+@property (nonatomic, retain) NSString * hazCrashes;
+@property (nonatomic, retain) NSString * wallCrashes;
+@property (nonatomic, retain) NSString * hornsPlayed;
+@property (nonatomic, retain) NSString * fastestHorn;
+@property (nonatomic, retain) NSString * slowestHorn;
+@property (nonatomic, retain) NSString * averageHorn;
+@property (nonatomic, retain) NSString * totalHorn;
+@property (nonatomic, retain) NSString * distractionOn;
+@property (nonatomic, retain) NSString * masterScore;
+@property (nonatomic) Float64 wallCrashMult;
+@property (nonatomic) Float64 hazCrashMult;
+@property (nonatomic) Float64 hornsMulti;
 
 //set up singleton shared
 

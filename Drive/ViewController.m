@@ -7,9 +7,17 @@
 //
 
 #import "ViewController.h" 
+#import "mySingleton.h"
 #import "TrackStatsViewController.h"
 #import "MyScene.h"
 #import "AnalogControl.h"
+
+#define kEmail      @"emailAddress"
+#define kSubject    @"subjectName"
+#define kVersion0   @"version0"
+#define kVersion1   @"version1"
+#define kVersion2   @"version2"
+#define kVersion3   @"version3"
 
 @interface ViewController () <UIAlertViewDelegate>
 
@@ -23,6 +31,100 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    
+    //for plist version group
+    NSString * version0; //version number
+    NSString * version1; //copyright info
+    NSString * version2; //author info
+    NSString * version3; //web site info
+    NSString * subjectName; //web site info
+    NSString * email; //web site info
+    
+    // for web page link
+    //NSURL *url = [NSURL URLWithString:@"http://www.ess.mmu.ac.uk/"];
+    //NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    //[webview loadRequest:request];
+    //read the user defaults from the iPhone/iPad bundle
+    // if any are set to nil (no value on first run), put a temporary one in
+    
+    NSString        * pathStr               = [[NSBundle mainBundle] bundlePath];
+    NSString        * settingsBundlePath    = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
+    NSString        * defaultPrefsFile      = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
+    NSDictionary    * defaultPrefs          = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
+    NSUserDefaults  * defaults              = [NSUserDefaults standardUserDefaults];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    //*************************************************************
+    //version, set anyway *****************************************
+    //*************************************************************
+    
+    version0 =  @"DRIVE Version 2.3.4 - 7.12.15";     // version   *** keep short
+    version1 =  @"MMU (C) 2015";                // copyright *** limited line space
+    version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
+    version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen
+    //*************************************************************
+    [defaults setObject:version0 forKey:kVersion0];   //***
+    [defaults setObject:version1 forKey:kVersion1];   //***
+    [defaults setObject:version2 forKey:kVersion2];   //***
+    [defaults setObject:version3 forKey:kVersion3];   //***
+    //*************************************************************
+    //version set end *********************************************
+    //*************************************************************
+    
+    //for plist
+    //set up the plist params
+    
+    
+    //bool test2;
+    //test2 = [defaults boolForKey:kEnergyButton];
+    
+    [defaults synchronize];
+    //if any settings not already set, as in new installation, put the defaults in.
+    
+    [self registerDefaultsFromSettingsBundle];
+    
+    //tester name
+    subjectName     = [defaults objectForKey:kSubject];
+    if([subjectName isEqualToString: @ "" ]){
+        subjectName =  @"Me";
+        [defaults setObject:[NSString stringWithFormat:@"%@", singleton.subjectName] forKey:kSubject];
+    }
+    //email name
+    email     = [defaults objectForKey:kEmail];
+    if([email isEqualToString: @ "" ]){
+        email =  @"@mmu.ac.uk";
+        [defaults setObject:[NSString stringWithFormat:@"%@", singleton.email] forKey:kEmail];
+    }
+    singleton.subjectName = subjectName;
+    singleton.email      = email;
+    
+    [defaults synchronize];//make sure all are updated
+    
+    //versionNumberLab.text   = version0;
+    singleton.versionNumber = version0;
+}
+
+- (void)registerDefaultsFromSettingsBundle {
+    NSString *settingsBundle = [[NSBundle mainBundle] pathForResource:@"Settings" ofType:@"bundle"];
+    if(!settingsBundle) {
+        NSLog(@"Could not find Settings.bundle");
+        return;
+    }
+    
+    NSDictionary *settings = [NSDictionary dictionaryWithContentsOfFile:[settingsBundle stringByAppendingPathComponent:@"Root.plist"]];
+    NSArray *preferences = [settings objectForKey:@"PreferenceSpecifiers"];
+    
+    NSMutableDictionary *defaultsToRegister = [[NSMutableDictionary alloc] initWithCapacity:[preferences count]];
+    for(NSDictionary *prefSpecification in preferences) {
+        NSString *key = [prefSpecification objectForKey:@"Key"];
+        if(key) {
+            [defaultsToRegister setObject:[prefSpecification objectForKey:@"DefaultValue"] forKey:key];
+        }
+    }
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultsToRegister];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
