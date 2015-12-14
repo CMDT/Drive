@@ -38,9 +38,9 @@
     NSString * totalHorn;
     NSString * distractionOn;
     NSString * masterScore;
-    Float64  wallCrashMult;
-    Float64  hazCrashMult;
-    Float64  hornsMulti;
+    Float64    wallCrashMult;
+    Float64    hazCrashMult;
+    Float64    hornsMulti;
 }
 
 @property (nonatomic) int  counter;

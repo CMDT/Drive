@@ -7,9 +7,69 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface TrackStatsViewController : UIViewController
+@interface TrackStatsViewController : UIViewController <MFMailComposeViewControllerDelegate>
+{
+    IBOutlet UILabel     * statusMessageLab;
+    
+    // for file manager
+    NSFileManager * fileMgr;
+    NSString      * homeDir;
+    NSString      * filename;
+    NSString      * filepath;
+    
+    // for calculations and functions
+    NSDate        * startDate;
+    NSDate        * testDate;
+}
+//file ops stuff
+@property(nonatomic,retain) NSFileManager * fileMgr;
+@property(nonatomic,retain) NSString      * homeDir;
+@property(nonatomic,retain) NSString      * filename;
+@property(nonatomic,retain) NSString      * filepath;
+
+//dates
+@property (nonatomic, copy) NSDate        * testDate;
+@property (nonatomic, copy) NSDate        * testTime;
+
+//var label outlets
+
+@property (nonatomic, strong) IBOutlet UILabel * email;
+@property (nonatomic, strong) IBOutlet UILabel * testDates;
+@property (nonatomic, strong) IBOutlet UILabel * testTimes;
+@property (nonatomic, strong) IBOutlet UILabel * resultStrings;
+@property (nonatomic, strong) IBOutlet UILabel * subjectName;
+@property (nonatomic, strong) IBOutlet UILabel * versionNumber;
+@property (nonatomic, strong) IBOutlet UILabel * laps;
+@property (nonatomic, strong) IBOutlet UILabel * carNo;
+@property (nonatomic, strong) IBOutlet UILabel * trackNo;
+@property (nonatomic, strong) IBOutlet UILabel * fastestLap;
+@property (nonatomic, strong) IBOutlet UILabel * slowestLap;
+@property (nonatomic, strong) IBOutlet UILabel * averageLap;
+@property (nonatomic, strong) IBOutlet UILabel * totalTime;
+@property (nonatomic, strong) IBOutlet UILabel * hazCrashes;
+@property (nonatomic, strong) IBOutlet UILabel * wallCrashes;
+@property (nonatomic, strong) IBOutlet UILabel * hornsPlayed;
+@property (nonatomic, strong) IBOutlet UILabel * fastestHorn;
+@property (nonatomic, strong) IBOutlet UILabel * slowestHorn;
+@property (nonatomic, strong) IBOutlet UILabel * averageHorn;
+@property (nonatomic, strong) IBOutlet UILabel * totalHorn;
+@property (nonatomic, strong) IBOutlet UILabel * distractionOn;
+@property (nonatomic, strong) IBOutlet UILabel * masterScore;
+@property (nonatomic, strong) IBOutlet UILabel * wallCrashMult;
+@property (nonatomic, strong) IBOutlet UILabel * hazCrashMult;
+@property (nonatomic, strong) IBOutlet UILabel * hornsMulti;
+@property (nonatomic, strong) IBOutlet UIButton * emailbtn;
+
 
 - (IBAction)finishAction:(id)sender;
+- (IBAction)emailAction:(id)sender;
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *) error;
+- (NSString *) GetDocumentDirectory;
+- (NSString *) setFilename;
+- (void) WriteToStringFile:(NSMutableString *)textToWrite;
+- (void) calculateStats;
 
 @end

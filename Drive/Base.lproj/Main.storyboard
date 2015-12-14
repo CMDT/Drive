@@ -671,11 +671,19 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gC4-o4-6Nq">
-                                <rect key="frame" x="229" y="245" width="110" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gC4-o4-6Nq">
+                                <rect key="frame" x="20" y="245" width="110" height="55"/>
                                 <state key="normal" image="btn-finish.png"/>
                                 <connections>
                                     <action selector="finishAction:" destination="khi-MC-6dL" eventType="touchUpInside" id="hNC-M3-EKJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEa-c7-yiT">
+                                <rect key="frame" x="438" y="245" width="110" height="55"/>
+                                <state key="normal" image="btn-email.png"/>
+                                <connections>
+                                    <action selector="emailAction:" destination="khi-MC-6dL" eventType="touchUpInside" id="OsC-sQ-tSs"/>
+                                    <action selector="finishAction:" destination="khi-MC-6dL" eventType="touchUpInside" id="9No-MS-F7f"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -705,6 +713,7 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
         <image name="btn-car2.png" width="121" height="170"/>
         <image name="btn-car3.png" width="121" height="170"/>
         <image name="btn-easy.png" width="301" height="55"/>
+        <image name="btn-email.png" width="110" height="55"/>
         <image name="btn-finish.png" width="110" height="55"/>
         <image name="btn-gamecenter.png" width="301" height="55"/>
         <image name="btn-hard.png" width="301" height="55"/>

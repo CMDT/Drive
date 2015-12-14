@@ -10,6 +10,8 @@
 #import "GameKitHelper.h"
 #import "SelectCarViewController.h"
 #import "SKTAudio.h"
+#import "mySingleton.h"
+//mySingleton *singleton = [mySingleton sharedSingleton];
 
 @interface HomeScreenViewController ()
 

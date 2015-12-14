@@ -13,6 +13,8 @@
 #import "SKTUtils.h"
 #import "AchievementsHelper.h"
 #import "GameKitHelper.h"
+#import "mySingleton.h"
+//mySingleton *singleton = [mySingleton sharedSingleton];
 
 typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     CRBodyCar = 1 << 0,  // 0000001 = 1

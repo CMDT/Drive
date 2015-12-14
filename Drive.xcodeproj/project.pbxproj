@@ -140,6 +140,7 @@
 		E171F3101C1F0FC700E3DB0D /* seg-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F30F1C1F0FC700E3DB0D /* seg-50@2x.png */; };
 		E171F3121C1F124600E3DB0D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E171F3111C1F124600E3DB0D /* Settings.bundle */; };
 		E171F3151C1F137700E3DB0D /* mySingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = E171F3141C1F137700E3DB0D /* mySingleton.m */; };
+		E171F3171C1F1F5700E3DB0D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E171F3161C1F1F5700E3DB0D /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -306,6 +307,7 @@
 		E171F3111C1F124600E3DB0D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E171F3131C1F137700E3DB0D /* mySingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mySingleton.h; path = GameKit/mySingleton.h; sourceTree = "<group>"; };
 		E171F3141C1F137700E3DB0D /* mySingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mySingleton.m; path = GameKit/mySingleton.m; sourceTree = "<group>"; };
+		E171F3161C1F1F5700E3DB0D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +315,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E171F3171C1F1F5700E3DB0D /* MessageUI.framework in Frameworks */,
 				47117B3D1959CA1400B20209 /* CoreGraphics.framework in Frameworks */,
 				47117B3F1959CA1400B20209 /* UIKit.framework in Frameworks */,
 				47117B411959CA1400B20209 /* SpriteKit.framework in Frameworks */,
@@ -355,6 +358,7 @@
 		47117B391959CA1400B20209 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E171F3161C1F1F5700E3DB0D /* MessageUI.framework */,
 				47117B3A1959CA1400B20209 /* Foundation.framework */,
 				47117B3C1959CA1400B20209 /* CoreGraphics.framework */,
 				47117B3E1959CA1400B20209 /* UIKit.framework */,
