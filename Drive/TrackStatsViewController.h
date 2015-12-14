@@ -10,6 +10,6 @@
 
 @interface TrackStatsViewController : UIViewController
 
+- (IBAction)finishAction:(id)sender;
 
-- (void)action;
 @end

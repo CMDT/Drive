@@ -28,20 +28,9 @@
     //Save to email and send
 }
 
-- (void)action {
-  
+ - (IBAction)finishAction:(id)sender {
     //re-route this to the results stats VC TrackStatsVC
     [self.navigationController popToRootViewControllerAnimated:YES];
-    
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

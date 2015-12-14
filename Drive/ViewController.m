@@ -13,9 +13,9 @@
 
 @interface ViewController () <UIAlertViewDelegate>
 
-@property (nonatomic, strong) SKView *skView;
-@property (nonatomic, strong) AnalogControl *analogControl;
-@property (nonatomic, strong) MyScene *scene;
+@property (nonatomic, strong) SKView        * skView;
+@property (nonatomic, strong) AnalogControl * analogControl;
+@property (nonatomic, strong) MyScene       * scene;
 
 @end
 
@@ -43,7 +43,7 @@
 
         [self.view addSubview:self.skView];
 
-        const CGFloat padSide = 128.0f;
+        const CGFloat padSide    = 128.0f;
         const CGFloat padPadding = 10.0f;
 
         self.analogControl = ({
@@ -112,16 +112,21 @@
 - (void)p_gameOverWithWin:(BOOL)didWin {
     UIAlertView *alert =
     [[UIAlertView alloc] initWithTitle:didWin ? @"You Completed the Laps Required!" : @"You Did Not Finish the Race"
-                               message:@"... This Drive is Over, \n\n... Returning to the Main Menu"
+                               message:@"... This Race is now Over., \n\n... Moving On ..."
                               delegate:nil
                      cancelButtonTitle:nil
                      otherButtonTitles:nil];
     [alert show];
-
-    [self performSelector:@selector(p_goBack:) withObject:alert afterDelay:3.0];
+    if (didWin) {
+        //you finished the race, give the stats
+        [self performSelector:@selector(p_goBackStats:) withObject:alert afterDelay:2.0];
+    }else{
+        //you did not finish or cancelled, just start again... consider part stats, ie no email
+        [self performSelector:@selector(p_goBack:) withObject:alert afterDelay:2.0];
+    }
 }
 
-- (void)p_goBack:(UIAlertView *)alert {
+- (void)p_goBackStats:(UIAlertView *)alert {
     [alert dismissWithClickedButtonIndex:0 animated:YES];
     
     //re-route this to the results stats VC TrackStatsVC
@@ -129,13 +134,18 @@
     TrackStatsViewController *TrackStatsVC = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([TrackStatsViewController class])];
     
     [self.navigationController pushViewController:TrackStatsVC animated:YES];
+}
+- (void)p_goBack:(UIAlertView *)alert {
+    [alert dismissWithClickedButtonIndex:0 animated:YES];
     
+    //re-route this to the results stats VC TrackStatsVC
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)p_showInGameMenu {
     UIAlertView *alert =
     [[UIAlertView alloc] initWithTitle:@"MMU ESS Drive Menu"
-                               message:@"You are Paused.... \n\nWhat would you like to do?"
+                               message:@"You have Paused the Race.... \n\nWhat would you like to do?"
                               delegate:self
                      cancelButtonTitle:@"Resume Race"
                      otherButtonTitles:@"Start A New Race", nil];
