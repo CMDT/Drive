@@ -57,6 +57,7 @@
     
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+    
     //*************************************************************
     //version, set anyway *****************************************
     //*************************************************************
@@ -85,6 +86,11 @@
     //if any settings not already set, as in new installation, put the defaults in.
     
     [self registerDefaultsFromSettingsBundle];
+    //set date and time
+
+        [self setDateNow:self];
+        [self setTimeNow:self];
+
     
     //tester name
     subjectName     = [defaults objectForKey:kSubject];
@@ -105,6 +111,24 @@
     
     //versionNumberLab.text   = version0;
     singleton.versionNumber = version0;
+}
+
+-(void)setDateNow:(id)sender{
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateString = [dateFormat stringFromDate:today];
+    singleton.testDate=dateString;
+}
+
+-(void)setTimeNow:(id)sender{
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    NSDate *currentTime = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"HH:mm:ss"];
+    NSString *timeString = [dateFormatter stringFromDate: currentTime];
+    singleton.testTime=timeString;
 }
 
 - (void)registerDefaultsFromSettingsBundle {
