@@ -204,15 +204,20 @@
 - (BOOL)shouldAutorotate {
     return YES;
 }
-
-- (NSUInteger)supportedInterfaceOrientations {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return UIInterfaceOrientationMaskAllButUpsideDown;
-    }
-    else {
-        return UIInterfaceOrientationMaskAll;
-    }
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            return UIInterfaceOrientationMaskAllButUpsideDown;
+        } else {
+            return UIInterfaceOrientationMaskAll;
+        }
 }
+//- (NSUInteger)supportedInterfaceOrientations {
+//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+//        return UIInterfaceOrientationMaskAllButUpsideDown;
+//    } else {
+//        return UIInterfaceOrientationMaskAll;
+//    }
+//}
 
 - (BOOL)prefersStatusBarHidden {
     return YES;
@@ -238,7 +243,7 @@
 - (void)p_gameOverWithWin:(BOOL)didWin {
     UIAlertView *alert =
     [[UIAlertView alloc] initWithTitle:didWin ? @"You Completed the Laps Required!" : @"You Did Not Finish the Race"
-                               message:@"... This Race is now Over., \n\n... Moving On ..."
+                               message:@"... This Race is Now Over ..."
                               delegate:nil
                      cancelButtonTitle:nil
                      otherButtonTitles:nil];

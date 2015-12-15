@@ -21,41 +21,37 @@
 }
 
 @synthesize
-fileMgr,
-homeDir,
-filename,
-filepath,
-testDate,
-testTime,
-email,
-testDates,
-testTimes,
-resultStrings,
-subjectName,
-versionNumber,
-laps,
-carNo,
-trackNo,
-fastestLap,
-slowestLap,
-averageLap,
-totalTime,
-hazCrashes,
-wallCrashes,
-hornsPlayed,
-fastestHorn,
-slowestHorn,
-averageHorn,
-totalHorn,
-distractionOn,
-masterScore,
-wallCrashMult,
-hazCrashMult,
-hornsMulti,
-emailbtn;
+    fileMgr,
+    homeDir,
+    filename,
+    filepath,
+    testDate,
+    testTime,
+    email,
+    testDates,
+    testTimes,
+    subjectName,
+    versionNumber,
+    musicTrack,
+    laps,
+    carNo,
+    trackNo,
+    fastestLap,
+    slowestLap,
+    averageLap,
+    totalTime,
+    hazCrashes,
+    wallCrashes,
+    hornsPlayed,
+    fastestHorn,
+    slowestHorn,
+    averageHorn,
+    totalHorn,
+    distractionOn,
+    masterScore,
+    emailbtn;
+
 - (void)viewDidLoad {
-    mySingleton *singleton = [mySingleton sharedSingleton];
-    
     [super viewDidLoad];
     statusMessageLab.hidden = YES;
     
@@ -102,27 +98,36 @@ emailbtn;
     
     NSString * myNumbStr = [[NSString alloc] init];
     
+    // build the stats
+    laps.text=singleton.laps;
+    testDates.text=singleton.testDate;
+    testTimes.text=singleton.testTime;
+    subjectName.text=singleton.subjectName;
+    versionNumber.text=singleton.versionNumber;
+    carNo.text=singleton.carNo;
+    trackNo.text=singleton.trackNo;
+    musicTrack.text=singleton.musicTrack;
+    fastestLap.text=singleton.fastestLap;
+    slowestLap.text=singleton.slowestLap;
+    averageLap.text=singleton.averageLap;
+    totalTime.text=singleton.totalTime;
+    hazCrashes.text=singleton.hazCrashes;
+    wallCrashes.text=singleton.wallCrashes;
+    hornsPlayed.text=singleton.hornsPlayed;
+    fastestHorn.text=singleton.fastestHorn;
+    slowestHorn.text=singleton.slowestHorn;
+    averageHorn.text=singleton.averageHorn;
+    totalHorn.text=singleton.totalHorn;
+    distractionOn.text=singleton.distractionOn;
+    masterScore.text=singleton.masterScore;
+    
     //set counter to cards for singleton global var
     singleton.counter = 1;
     
     // clear any old rsults from  results array
     [singleton.cardReactionTimeResult removeAllObjects];
-    
-    //set inits zeros her for vars
-    
-    //read the singleton values and put into the labels
-    subjectName.text     =   singleton.subjectName;
-    
-    testDate        =   singleton.testDate;
-    testTime        =   singleton.testTime;
 
-    //energies for email
-    //energyExpend = ([singleton.vo2 floatValue]*15.88)+([singleton.vco2 floatValue] * 4.87);
-    //singleton.energyExpend=[NSString stringWithFormat:dpds, energyExpend];
-
-    //Format for file and email outputs
-    //put titles and basic params up first
-    [singleton.cardReactionTimeResult addObject:@"MMU Cheshire, Exercise and Sport Science, VO2 Application Results"];
+    [singleton.cardReactionTimeResult addObject:@"MMU Cheshire, Exercise and Sport Science, DRIVE App Results"];
     singleton.counter = singleton.counter+1;
     //mmu copyright message 2014 JAH
     [singleton.cardReactionTimeResult addObject:@"(c) 2015 MMU written by Jonathan A. Howell for ESS DRIVE App"];
@@ -205,7 +210,6 @@ emailbtn;
     
     //statusMessageLab.text=@"Waiting\nfor\nNext\nInstruction.";
 }
-
 
 -(NSString *) setFilename{
     mySingleton *singleton = [mySingleton sharedSingleton];
@@ -352,7 +356,7 @@ emailbtn;
     mySingleton *singleton = [mySingleton sharedSingleton];
     
     NSString *emailTitle = [NSString stringWithFormat:@"DRIVE App Data for: %@",singleton.subjectName];
-    NSString *messageBody = [NSString stringWithFormat:@"The test data for the subject:%@ taken at the date: %@ and time: %@, is attached as a text/csv file.  \n\nThe file is comma separated variable, .csv extension.  \n\nThe data can be read by MS-Excel, then analysed by your own functions. \n\nSent by VO2 App.",singleton.subjectName,singleton.testDate,singleton.testTime];
+    NSString *messageBody = [NSString stringWithFormat:@"The test data for the subject:%@ taken at the date: %@ and time: %@, is attached as a text/csv file.  \n\nThe file is comma separated variable, .csv extension.  \n\nThe data can be read by MS-Excel, then analysed by your own functions. \n\nSent by DRIVE App.",singleton.subjectName,singleton.testDate,singleton.testTime];
     //old for testing// NSArray  *toRecipents = [NSArray arrayWithObject:@"j.a.howell@mmu.ac.uk"];
     
     NSArray  *toRecipents = [NSArray arrayWithObject:[NSString stringWithFormat:@"%@", singleton.email,Nil]];

@@ -60,7 +60,6 @@
 
 @property (nonatomic, strong) IBOutlet UIButton * emailbtn;
 
-
 - (IBAction)finishAction:(id)sender;
 - (IBAction)emailAction:(id)sender;
 

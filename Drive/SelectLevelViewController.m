@@ -18,7 +18,7 @@
 
 @implementation SelectLevelViewController
 
-#pragma mark - Lifecycle
+#pragma mark - Did Load
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,7 +32,7 @@
     return YES;
 }
 
-#pragma mark - Actions
+#pragma mark - Select a Track
 
 - (IBAction)backButtonDidTouchUpInside:(id)sender {
     [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];

@@ -174,7 +174,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"LevelDetails" ofType:@"plist"];
     NSArray *level = [NSArray arrayWithContentsOfFile:filePath];
 
-    NSNumber *timeInSeconds = level[_levelType - 1][@"time"];
+    //NSNumber *timeInSeconds = level[_levelType - 1][@"time"];
     _timeInSeconds = 0;//[timeInSeconds doubleValue];
 
     NSNumber *laps = level[_levelType - 1][@"laps"];
@@ -183,8 +183,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 
 - (void)p_addCarAtPosition:(CGPoint)startPosition {
     _car = ({
-        NSString *imageName = [NSString stringWithFormat:@"car_%i", _carType];
-        NSLog(@"Car=%i, Track=%i",_carType,_levelType);
+        NSString *imageName = [NSString stringWithFormat:@"car_%li", _carType];
+        //NSLog(@"Car=%li, Track=%li",_carType,_levelType);
+        
         SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:imageName];
         sprite.position = startPosition;
         sprite.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:sprite.frame.size];
@@ -202,6 +203,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     SKAction *rotation = [SKAction rotateByAngle: M_PI/2.0 duration:0];
     //and just run the action
     [_car runAction: rotation];
+    
+    //start the clock in mS
 }
 
 - (void)p_addBoxAt:(CGPoint)point {
@@ -287,9 +290,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 //only to position some hazards at a good spot, rem out later
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    UITouch *touch = [[event allTouches] anyObject];
-    CGPoint location = [touch locationInView:touch.view];
-    NSLog(@"X:Y Touch = %f:%f",location.x,location.y);
+    //UITouch *touch = [[event allTouches] anyObject];
+    //CGPoint location = [touch locationInView:touch.view];
+    //NSLog(@"X:Y Touch = %f:%f",location.x,location.y);
 }
 
 - (void)p_addGameUIForTrack:(SKSpriteNode *)track {
@@ -347,6 +350,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 }
 
 - (void)p_reportAchievementsForGameState:(BOOL)hasWon {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    
     NSMutableArray *achievements = [@[] mutableCopy];
     
 // also ADD crashes with walls
@@ -354,7 +359,17 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 
     if (hasWon) {
         [achievements addObject:[AchievementsHelper achievementForLevel:self.levelType]];
+        
+        //stop the clock in mS
     }
+    
+    //NSLog(@"walls=%lu, haz=%lu",(unsigned long)self.numOfCollisionsWithWalls,(unsigned long)self.numOfCollisionsWithBoxes);
+    
+    //update data as now finished
+    singleton.wallCrashes = [NSString stringWithFormat:@"%lu",(unsigned long)self.numOfCollisionsWithWalls];
+    singleton.hazCrashes = [NSString stringWithFormat:@"%lu",(unsigned long)self.numOfCollisionsWithBoxes];
+    
+    
 //not on game centre yet
     //[[GameKitHelper sharedGameKitHelper] reportAchievements:achievements];
 }
@@ -367,7 +382,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     }
 }
 
-#pragma mark - SKPhysicsContactDelegate
+#pragma mark - Contact Delegate
 
 - (void)didBeginContact:(SKPhysicsContact *)contact {
     //test for all the hazard objetcs collisions

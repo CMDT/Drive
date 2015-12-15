@@ -33,7 +33,7 @@
     return YES;
 }
 
-#pragma mark - Actions
+#pragma mark - Start the Game
 
 - (IBAction)playButtonDidTouchUpInside:(id)sender {
     [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
@@ -51,6 +51,7 @@
     //[[GameKitHelper sharedGameKitHelper] showGKGameCenterViewController:self];
 }
 
+#pragma mark - Set the laps, music and distractions
 - (IBAction)lap2set:(id)sender {
     mySingleton *singleton = [mySingleton sharedSingleton];
     singleton.laps=@"2";

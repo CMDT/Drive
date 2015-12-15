@@ -18,7 +18,7 @@
 
 @implementation SelectCarViewController
 
-#pragma mark - Lifecycle
+#pragma mark - Did Load
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,7 +39,7 @@
     return YES;
 }
 
-#pragma mark - Actions
+#pragma mark - Select a Car
 
 - (IBAction)carButtonDidTouchUpInside:(UIButton *)sender {
     mySingleton *singleton = [mySingleton sharedSingleton];

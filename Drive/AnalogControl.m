@@ -20,7 +20,7 @@
 
 @implementation AnalogControl
 
-#pragma mark - Lifecycle
+#pragma mark - Game Run
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -46,7 +46,7 @@
     return self;
 }
 
-#pragma mark - Actions
+#pragma mark - Controls via touches
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     CGPoint touchLocation = [[touches anyObject] locationInView:self];
@@ -66,7 +66,7 @@
     [self p_updateKnobWithPosition:self.baseCenter];
 }
 
-#pragma mark - Private
+#pragma mark - Knob Position Update
 
 - (void)p_updateKnobWithPosition:(CGPoint)position {
     CGPoint positionToCenter = CGPointSubtract(position, self.baseCenter);

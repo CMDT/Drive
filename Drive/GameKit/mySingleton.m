@@ -67,8 +67,8 @@ static mySingleton * sharedSingleton = nil;
     if(self = [super init]) {
 
         email               = @"";
-        testDate            = @"";
-        testTime            = @"";
+        testDate            = @"15/12/2015";
+        testTime            = @"12:00";
         resultStrings       = @"";
         subjectName         = @"Sub";
         resultStrings       = @"";

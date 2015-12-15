@@ -739,6 +739,7 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                 <connections>
                                     <action selector="emailAction:" destination="khi-MC-6dL" eventType="touchUpInside" id="OsC-sQ-tSs"/>
                                     <action selector="finishAction:" destination="khi-MC-6dL" eventType="touchUpInside" id="9No-MS-F7f"/>
+                                    <action selector="showEmail:" destination="khi-MC-6dL" eventType="touchUpInside" id="b32-uv-av1"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTr-5S-E2n">
