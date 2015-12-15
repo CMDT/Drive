@@ -42,11 +42,15 @@
 #pragma mark - Actions
 
 - (IBAction)carButtonDidTouchUpInside:(UIButton *)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    
     [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
 
     SelectLevelViewController *levelVC = [self.storyboard
         instantiateViewControllerWithIdentifier:NSStringFromClass([SelectLevelViewController class])];
     levelVC.carType = sender.tag;
+    
+    singleton.carNo=[NSString stringWithFormat:@"%ld", levelVC.carType];
 
     [self.navigationController pushViewController:levelVC animated:YES];
 }

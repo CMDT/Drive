@@ -16,19 +16,19 @@
     #import <Foundation/Foundation.h>
 #endif
 //holds the car number
-typedef NS_ENUM(int, CRCarType) {
+typedef NS_ENUM(long, CRCarType) {//was int
     CRRedCar = 1,
     CRBlueCar,
     CRGreenCar
 };
 //holds the track number
-typedef NS_ENUM(int, CRLevelType) {
+typedef NS_ENUM(long, CRLevelType) {//was int
     CRLevelEasy = 1,
     CRLevelMedium,
     CRLevelHard
 };
 //holds the tune number
-typedef NS_ENUM(int, CRTuneType) {
+typedef NS_ENUM(long, CRTuneType) {//was int
     CRTune0 = 0,
     CRTune1,
     CRTune2,

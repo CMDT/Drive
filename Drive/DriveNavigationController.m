@@ -34,7 +34,7 @@
 #pragma mark - Notification Observer
 
 - (void)p_showAuthenticationViewController {
-    GameKitHelper *gameKitHelper = [GameKitHelper sharedGameKitHelper];
+    //GameKitHelper *gameKitHelper = [GameKitHelper sharedGameKitHelper];
 
     //[self.topViewController presentViewController:gameKitHelper.authenticationViewController animated:YES completion:nil];
 }

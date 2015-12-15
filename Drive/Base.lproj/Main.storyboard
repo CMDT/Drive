@@ -319,6 +319,9 @@ The faster the car, the better the top speed, but be careful, they are harder to
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hZk-iN-c46">
                                 <rect key="frame" x="479" y="113" width="51" height="31"/>
+                                <connections>
+                                    <action selector="distractionON:" destination="j6p-oN-Kld" eventType="valueChanged" id="GJd-IL-oUv"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distraction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ay1-xn-2z5">
                                 <rect key="frame" x="358" y="113" width="96" height="31"/>
@@ -328,20 +331,24 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drive Music" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIi-Ef-7UX">
-                                <rect key="frame" x="20" y="209" width="185" height="28"/>
+                                <rect key="frame" x="20" y="209" width="101" height="28"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="185" id="AAU-xm-Ev8"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="2MS-po-TBa"/>
+                                    <constraint firstAttribute="width" constant="101" id="AAU-xm-Ev8"/>
+                                    <constraint firstAttribute="height" constant="28" id="u61-ce-9Dr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Race Laps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OnZ-Gl-8eK">
-                                <rect key="frame" x="20" y="164" width="185" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Race Laps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OnZ-Gl-8eK">
+                                <rect key="frame" x="20" y="164" width="101" height="28"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="185" id="6K1-SX-f26"/>
+                                    <constraint firstAttribute="width" constant="101" id="6K1-SX-f26"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="V79-7b-VMG"/>
+                                    <constraint firstAttribute="height" constant="28" id="kfD-gx-Y0X"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -355,6 +362,9 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <constraint firstAttribute="width" constant="63" id="O1D-NG-rV9"/>
                                 </constraints>
                                 <state key="normal" image="seg-none.png"/>
+                                <connections>
+                                    <action selector="musicNoneSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="E19-f9-2Rb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFm-y0-OmS">
                                 <rect key="frame" x="226" y="164" width="39" height="28"/>
@@ -363,22 +373,9 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <constraint firstAttribute="height" constant="28" id="Jiw-6D-gO6"/>
                                 </constraints>
                                 <state key="normal" image="seg-2.png"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQ6-td-h7F">
-                                <rect key="frame" x="273" y="164" width="39" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="39" id="M9m-OI-h4v"/>
-                                    <constraint firstAttribute="height" constant="28" id="bMw-RG-mED"/>
-                                </constraints>
-                                <state key="normal" image="seg-5.png"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1x3-cU-xGu">
-                                <rect key="frame" x="320" y="164" width="39" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="39" id="dzo-aS-dN9"/>
-                                    <constraint firstAttribute="height" constant="28" id="hE7-ti-BIS"/>
-                                </constraints>
-                                <state key="normal" image="seg-10.png"/>
+                                <connections>
+                                    <action selector="lap2set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="sf9-gd-PN7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcq-8n-DPP">
                                 <rect key="frame" x="367" y="164" width="39" height="28"/>
@@ -387,6 +384,9 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <constraint firstAttribute="height" constant="28" id="whg-SI-w9c"/>
                                 </constraints>
                                 <state key="normal" image="seg-20.png"/>
+                                <connections>
+                                    <action selector="lap20set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="aTO-QM-9p6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7Z-rR-pc9">
                                 <rect key="frame" x="461" y="164" width="39" height="28"/>
@@ -395,6 +395,9 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <constraint firstAttribute="width" constant="39" id="qNG-0j-X7c"/>
                                 </constraints>
                                 <state key="normal" image="seg-100.png"/>
+                                <connections>
+                                    <action selector="lap100set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="MJu-oc-KFV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xX-pG-cEf">
                                 <rect key="frame" x="310" y="209" width="63" height="28"/>
@@ -403,6 +406,9 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <constraint firstAttribute="height" constant="28" id="qAT-EW-yho"/>
                                 </constraints>
                                 <state key="normal" image="seg-light.png"/>
+                                <connections>
+                                    <action selector="musicLightSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="VGX-Lm-BPv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFj-Va-Cul">
                                 <rect key="frame" x="391" y="209" width="63" height="28"/>
@@ -411,6 +417,9 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <constraint firstAttribute="height" constant="28" id="rLR-uU-RmR"/>
                                 </constraints>
                                 <state key="normal" image="seg-blues.png"/>
+                                <connections>
+                                    <action selector="musicBluesSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="2FH-Sw-ulb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ath-kp-ddz">
                                 <rect key="frame" x="470" y="209" width="63" height="28"/>
@@ -419,6 +428,9 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <constraint firstAttribute="height" constant="28" id="zze-VD-jo0"/>
                                 </constraints>
                                 <state key="normal" image="seg-beat.png"/>
+                                <connections>
+                                    <action selector="musicBeatSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="dyg-j4-ydF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEE-2H-2vP">
                                 <rect key="frame" x="414" y="164" width="39" height="28"/>
@@ -427,6 +439,31 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <constraint firstAttribute="width" constant="39" id="igY-Rq-LDV"/>
                                 </constraints>
                                 <state key="normal" image="seg-50.png"/>
+                                <connections>
+                                    <action selector="lap50set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="FwN-vT-idq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQ6-td-h7F">
+                                <rect key="frame" x="273" y="164" width="39" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="39" id="M9m-OI-h4v"/>
+                                    <constraint firstAttribute="height" constant="28" id="bMw-RG-mED"/>
+                                </constraints>
+                                <state key="normal" image="seg-5.png"/>
+                                <connections>
+                                    <action selector="lap5set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="1h7-8g-ZMB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1x3-cU-xGu">
+                                <rect key="frame" x="320" y="164" width="39" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="39" id="dzo-aS-dN9"/>
+                                    <constraint firstAttribute="height" constant="28" id="hE7-ti-BIS"/>
+                                </constraints>
+                                <state key="normal" image="seg-10.png"/>
+                                <connections>
+                                    <action selector="lap10set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="c8P-mg-Q28"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -437,9 +474,9 @@ The faster the car, the better the top speed, but be careful, they are harder to
                             <constraint firstAttribute="bottom" secondItem="BEX-Ep-wnn" secondAttribute="bottom" constant="20" symbolic="YES" id="4IQ-aK-Xe5"/>
                             <constraint firstItem="ath-kp-ddz" firstAttribute="bottom" secondItem="ZOy-EG-wE7" secondAttribute="bottom" id="4YZ-zl-3rl"/>
                             <constraint firstItem="1x3-cU-xGu" firstAttribute="width" secondItem="hFm-y0-OmS" secondAttribute="width" id="6Gh-sp-agh"/>
-                            <constraint firstItem="ZOy-EG-wE7" firstAttribute="leading" secondItem="KIi-Ef-7UX" secondAttribute="trailing" constant="21" id="6vX-e2-n9g"/>
+                            <constraint firstItem="ZOy-EG-wE7" firstAttribute="leading" secondItem="KIi-Ef-7UX" secondAttribute="trailing" constant="105" id="6vX-e2-n9g"/>
                             <constraint firstItem="0xX-pG-cEf" firstAttribute="height" secondItem="ZOy-EG-wE7" secondAttribute="height" id="7kv-Zw-NJH"/>
-                            <constraint firstItem="ZOy-EG-wE7" firstAttribute="leading" secondItem="KIi-Ef-7UX" secondAttribute="trailing" constant="21" id="9eh-eH-nC2"/>
+                            <constraint firstItem="ZOy-EG-wE7" firstAttribute="leading" secondItem="KIi-Ef-7UX" secondAttribute="trailing" constant="105" id="9eh-eH-nC2"/>
                             <constraint firstItem="ZOy-EG-wE7" firstAttribute="top" secondItem="KIi-Ef-7UX" secondAttribute="top" id="AEo-gK-uUO"/>
                             <constraint firstItem="Ay1-xn-2z5" firstAttribute="centerX" secondItem="0xX-pG-cEf" secondAttribute="centerX" constant="64.5" id="B1V-4c-kzL"/>
                             <constraint firstItem="ath-kp-ddz" firstAttribute="trailing" secondItem="eRa-O0-jhW" secondAttribute="trailing" constant="6" id="B9g-IO-dxp"/>
@@ -474,7 +511,7 @@ The faster the car, the better the top speed, but be careful, they are harder to
                             <constraint firstAttribute="trailing" secondItem="hZk-iN-c46" secondAttribute="trailing" constant="40" id="YY8-o8-V4p"/>
                             <constraint firstItem="1x3-cU-xGu" firstAttribute="height" secondItem="hFm-y0-OmS" secondAttribute="height" id="Zl9-50-a6H"/>
                             <constraint firstItem="ath-kp-ddz" firstAttribute="leading" secondItem="XFj-Va-Cul" secondAttribute="trailing" constant="16" id="aKJ-Is-ZMr"/>
-                            <constraint firstItem="hFm-y0-OmS" firstAttribute="leading" secondItem="OnZ-Gl-8eK" secondAttribute="trailing" constant="21" id="bXq-LC-8Po"/>
+                            <constraint firstItem="hFm-y0-OmS" firstAttribute="leading" secondItem="OnZ-Gl-8eK" secondAttribute="trailing" constant="105" id="bXq-LC-8Po"/>
                             <constraint firstItem="0xX-pG-cEf" firstAttribute="leading" secondItem="ZOy-EG-wE7" secondAttribute="trailing" constant="21" id="diW-Wp-ASO"/>
                             <constraint firstItem="j7Z-rR-pc9" firstAttribute="height" secondItem="hFm-y0-OmS" secondAttribute="height" id="dxB-aI-sOM"/>
                             <constraint firstItem="pEE-2H-2vP" firstAttribute="height" secondItem="hFm-y0-OmS" secondAttribute="height" id="ego-pT-7ec"/>
@@ -491,7 +528,7 @@ The faster the car, the better the top speed, but be careful, they are harder to
                             <constraint firstItem="ath-kp-ddz" firstAttribute="height" secondItem="ZOy-EG-wE7" secondAttribute="height" id="rO1-2I-xpo"/>
                             <constraint firstItem="OnZ-Gl-8eK" firstAttribute="leading" secondItem="KIi-Ef-7UX" secondAttribute="leading" id="rdT-TZ-coL"/>
                             <constraint firstItem="hZk-iN-c46" firstAttribute="leading" secondItem="Ay1-xn-2z5" secondAttribute="trailing" constant="25" id="sEF-Pf-atc"/>
-                            <constraint firstItem="ZOy-EG-wE7" firstAttribute="leading" secondItem="KIi-Ef-7UX" secondAttribute="trailing" constant="21" id="tCt-NU-tJh"/>
+                            <constraint firstItem="ZOy-EG-wE7" firstAttribute="leading" secondItem="KIi-Ef-7UX" secondAttribute="trailing" constant="105" id="tCt-NU-tJh"/>
                             <constraint firstItem="cNs-Ez-1CI" firstAttribute="top" secondItem="KAH-kQ-OXK" secondAttribute="topMargin" constant="1" id="tRw-3P-FyN"/>
                             <constraint firstItem="KIi-Ef-7UX" firstAttribute="leading" secondItem="KAH-kQ-OXK" secondAttribute="leadingMargin" id="vk0-hz-rq0"/>
                             <constraint firstItem="vMP-CH-hGe" firstAttribute="top" secondItem="gHv-6c-hGz" secondAttribute="bottom" constant="1" id="wmI-pC-10E"/>
@@ -671,14 +708,14 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gC4-o4-6Nq">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gC4-o4-6Nq">
                                 <rect key="frame" x="20" y="245" width="110" height="55"/>
                                 <state key="normal" image="btn-finish.png"/>
                                 <connections>
                                     <action selector="finishAction:" destination="khi-MC-6dL" eventType="touchUpInside" id="hNC-M3-EKJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEa-c7-yiT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEa-c7-yiT">
                                 <rect key="frame" x="438" y="245" width="110" height="55"/>
                                 <state key="normal" image="btn-email.png"/>
                                 <connections>
@@ -689,11 +726,13 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gC4-o4-6Nq" firstAttribute="centerX" secondItem="tmX-Tn-ucq" secondAttribute="centerX" id="Ask-Po-bvy"/>
-                            <constraint firstItem="tmX-Tn-ucq" firstAttribute="leading" secondItem="VMQ-9P-ztz" secondAttribute="leadingMargin" id="RNo-Hy-RTQ"/>
-                            <constraint firstAttribute="bottom" secondItem="gC4-o4-6Nq" secondAttribute="bottom" constant="20" symbolic="YES" id="fEt-aR-9Ze"/>
-                            <constraint firstItem="tmX-Tn-ucq" firstAttribute="top" secondItem="VMQ-9P-ztz" secondAttribute="top" constant="20" symbolic="YES" id="jPf-KO-9a2"/>
-                            <constraint firstItem="tmX-Tn-ucq" firstAttribute="trailing" secondItem="VMQ-9P-ztz" secondAttribute="trailingMargin" id="pQs-mB-POT"/>
+                            <constraint firstItem="gC4-o4-6Nq" firstAttribute="top" secondItem="EEa-c7-yiT" secondAttribute="top" id="3pv-ch-m3a"/>
+                            <constraint firstItem="gC4-o4-6Nq" firstAttribute="leading" secondItem="tmX-Tn-ucq" secondAttribute="leading" id="CkZ-Ls-SXq"/>
+                            <constraint firstItem="tmX-Tn-ucq" firstAttribute="leading" secondItem="VMQ-9P-ztz" secondAttribute="leadingMargin" id="Taf-OM-vTy"/>
+                            <constraint firstItem="tmX-Tn-ucq" firstAttribute="top" secondItem="VMQ-9P-ztz" secondAttribute="top" constant="20" symbolic="YES" id="dpl-Kd-UFX"/>
+                            <constraint firstItem="tmX-Tn-ucq" firstAttribute="trailing" secondItem="EEa-c7-yiT" secondAttribute="trailing" id="iXj-0h-Lcp"/>
+                            <constraint firstAttribute="bottom" secondItem="gC4-o4-6Nq" secondAttribute="bottom" constant="20" symbolic="YES" id="jr4-zL-KDP"/>
+                            <constraint firstItem="tmX-Tn-ucq" firstAttribute="trailing" secondItem="VMQ-9P-ztz" secondAttribute="trailingMargin" id="qwX-gB-9T0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="R1t-ch-TY4"/>

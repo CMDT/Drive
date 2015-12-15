@@ -40,12 +40,16 @@
 }
 
 - (IBAction)levelButtonDidTouchUpInside:(UIButton *)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    
     [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
 
     ViewController *gameVC = [self.storyboard
         instantiateViewControllerWithIdentifier:NSStringFromClass([ViewController class])];
     gameVC.carType = self.carType;
     gameVC.levelType = sender.tag;
+    
+    singleton.trackNo=[NSString stringWithFormat:@"%ld", gameVC.levelType];
 
     [self.navigationController pushViewController:gameVC animated:YES];
 }
