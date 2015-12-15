@@ -9,8 +9,10 @@
 @import SpriteKit;
 
 @interface MyScene : SKScene
-
+{
+}
 @property (nonatomic, copy) void (^gameOverBlock)(BOOL didWin);
+@property (nonatomic, copy) NSDate * startDate;
 
 - (instancetype)initWithSize:(CGSize)size carType:(CRCarType)carType level:(CRLevelType)levelType;
 

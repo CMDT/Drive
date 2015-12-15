@@ -25,7 +25,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 };
 
 @interface MyScene () <SKPhysicsContactDelegate>
-
+{
+    Float32 reactionTime[100];
+    Float32 noOfSeconds;
+    int xcounter;
+}
 @property (nonatomic, assign) CRCarType carType;
 @property (nonatomic, assign) CRLevelType levelType;
 @property (nonatomic, assign) NSTimeInterval timeInSeconds;
@@ -49,6 +53,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 
 @implementation MyScene
 
+@synthesize startDate;
+
 #pragma mark - Lifecycle
 
 //in storyboard, note button for game centre is turned to 1px x 1px. set to 301 x 55 in settings measure properties.
@@ -62,7 +68,6 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         _numOfCollisionsWithBoxes = 0; //start off with clean sheet
         [self p_initializeGame];
     }
-
     return self;
 }
 
@@ -70,12 +75,15 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     if (self.previousTimeInterval == 0) {
         self.previousTimeInterval = currentTime;
     }
-
+//****************************************************************
     if (self.isPaused) {
+        
+        // find a way to halt the timer, then restart it for laps
+        
         self.previousTimeInterval = currentTime;
         return;
     }
-
+//****************************************************************
     if (currentTime - self.previousTimeInterval > 1) {
         self.timeInSeconds += (currentTime - self.previousTimeInterval);//was -= to count down, now count up
         self.previousTimeInterval = currentTime;
@@ -115,6 +123,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         if (fabs(nextProgressAngle - M_PI) < FLT_EPSILON) { //the difference between 1.0 and the smallest float bigger than 1.0.
             self.numOfLaps -= 1;
             
+            //read the timer
+            noOfSeconds = (double)[self.startDate timeIntervalSinceNow]* -1000;
+            reactionTime[xcounter] = noOfSeconds;
+            xcounter += 1;
+            
             self.laps.text = [NSString stringWithFormat:@"Laps: %li", (long)self.numOfLaps];
             
             [self runAction:self.lapSoundAction];
@@ -130,13 +143,13 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     }
 }
 
-#pragma mark - Private
+#pragma mark - Start the Game
 
 - (void)p_initializeGame {
     [self p_loadLevel];
 
     SKSpriteNode *track = ({
-        NSString *imageName = [NSString stringWithFormat:@"track_%i", _levelType];
+        NSString *imageName = [NSString stringWithFormat:@"track_%li", _levelType];
         SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:imageName];
         sprite.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
         sprite;
@@ -156,7 +169,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     [self p_addObjectsForTrack:track];
     [self p_addGameUIForTrack:track];
 
-    _maxSpeed = 125 * (1 + _carType);
+    _maxSpeed = 150 * (1 + _carType);//was125
 
     _trackCenter = track.position;
 
@@ -168,6 +181,10 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 
     //turn on the contact dlegate to test contacts between bodies
     self.physicsWorld.contactDelegate = self;
+    xcounter=1;//start the array for timings of laps
+    noOfSeconds = (double)[self.startDate timeIntervalSinceNow]* -1000;
+    reactionTime[xcounter-1] = noOfSeconds;
+    xcounter += 1;
 }
 
 - (void)p_loadLevel {
@@ -349,6 +366,20 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     }
 }
 
+-(int)random22
+//for random numbers
+{
+    int num1 = 1;
+    num1 = arc4random_uniform(22); //1-21
+    if (num1<1) {
+        num1=1;
+    }
+    if (num1>21) {
+        num1=21;
+    }
+    return num1;
+}
+
 - (void)p_reportAchievementsForGameState:(BOOL)hasWon {
     mySingleton *singleton = [mySingleton sharedSingleton];
     
@@ -368,7 +399,10 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     //update data as now finished
     singleton.wallCrashes = [NSString stringWithFormat:@"%lu",(unsigned long)self.numOfCollisionsWithWalls];
     singleton.hazCrashes = [NSString stringWithFormat:@"%lu",(unsigned long)self.numOfCollisionsWithBoxes];
-    
+    singleton.totalTime = [NSString stringWithFormat:@"%0.4f", reactionTime[0]-reactionTime[xcounter] ];// time now - time start.
+    for (int x=0; x<xcounter; x+=1) {
+        NSLog(@"lap times %d: %f",x, reactionTime[x]);
+    }
     
 //not on game centre yet
     //[[GameKitHelper sharedGameKitHelper] reportAchievements:achievements];
