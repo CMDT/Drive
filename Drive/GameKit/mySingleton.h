@@ -25,6 +25,7 @@
     NSString * laps;
     NSString * carNo;
     NSString * trackNo;
+    NSString * musicTrack;
     NSString * fastestLap;
     NSString * slowestLap;
     NSString * averageLap;
@@ -54,6 +55,7 @@
 @property (nonatomic, retain) NSString * laps;
 @property (nonatomic, retain) NSString * carNo;
 @property (nonatomic, retain) NSString * trackNo;
+@property (nonatomic, retain) NSString * musicTrack;
 @property (nonatomic, retain) NSString * fastestLap;
 @property (nonatomic, retain) NSString * slowestLap;
 @property (nonatomic, retain) NSString * averageLap;

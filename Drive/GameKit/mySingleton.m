@@ -25,6 +25,7 @@ static mySingleton * sharedSingleton = nil;
             laps,
             carNo,
             trackNo,
+            musicTrack,
             fastestLap,
             slowestLap,
             averageLap,
@@ -77,6 +78,7 @@ static mySingleton * sharedSingleton = nil;
         laps                = @"0";
         carNo               = @"0";
         trackNo             = @"0";
+        musicTrack          = @"None";
         fastestLap          = @"999999";
         slowestLap          = @"999999";
         averageLap          = @"999999";

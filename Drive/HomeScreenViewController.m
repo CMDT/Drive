@@ -52,35 +52,57 @@
 }
 
 - (IBAction)lap2set:(id)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.laps=@"2";
 }
 
 - (IBAction)lap5set:(id)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.laps=@"5";
 }
 
 - (IBAction)lap10set:(id)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.laps=@"10";
 }
 
 - (IBAction)lap20set:(id)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.laps=@"20";
 }
 
 - (IBAction)lap50set:(id)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.laps=@"50";
 }
 
 - (IBAction)lap100set:(id)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.laps=@"100";
 }
 
 - (IBAction)musicNoneSet:(id)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.musicTrack=@"None";
 }
 
 - (IBAction)musicLightSet:(id)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.musicTrack=@"Light";
 }
 
 - (IBAction)musicBluesSet:(id)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.musicTrack=@"Blues";
 }
 
 - (IBAction)musicBeatSet:(id)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.musicTrack=@"Beat";
 }
 
 - (IBAction)distractionON:(id)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.distractionOn=@"NO";
 }
 @end

@@ -67,6 +67,7 @@ emailbtn;
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
     NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    [defaults synchronize];
 }
 
 - (void)viewDidAppear:(BOOL)animated{

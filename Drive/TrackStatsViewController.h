@@ -38,12 +38,12 @@
 @property (nonatomic, strong) IBOutlet UILabel * email;
 @property (nonatomic, strong) IBOutlet UILabel * testDates;
 @property (nonatomic, strong) IBOutlet UILabel * testTimes;
-@property (nonatomic, strong) IBOutlet UILabel * resultStrings;
 @property (nonatomic, strong) IBOutlet UILabel * subjectName;
 @property (nonatomic, strong) IBOutlet UILabel * versionNumber;
 @property (nonatomic, strong) IBOutlet UILabel * laps;
 @property (nonatomic, strong) IBOutlet UILabel * carNo;
 @property (nonatomic, strong) IBOutlet UILabel * trackNo;
+@property (nonatomic, strong) IBOutlet UILabel * musicTrack;
 @property (nonatomic, strong) IBOutlet UILabel * fastestLap;
 @property (nonatomic, strong) IBOutlet UILabel * slowestLap;
 @property (nonatomic, strong) IBOutlet UILabel * averageLap;
@@ -57,9 +57,7 @@
 @property (nonatomic, strong) IBOutlet UILabel * totalHorn;
 @property (nonatomic, strong) IBOutlet UILabel * distractionOn;
 @property (nonatomic, strong) IBOutlet UILabel * masterScore;
-@property (nonatomic, strong) IBOutlet UILabel * wallCrashMult;
-@property (nonatomic, strong) IBOutlet UILabel * hazCrashMult;
-@property (nonatomic, strong) IBOutlet UILabel * hornsMulti;
+
 @property (nonatomic, strong) IBOutlet UIButton * emailbtn;
 
 
