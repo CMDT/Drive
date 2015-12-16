@@ -71,6 +71,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     return self;
 }
 
+
+//game proper, thjis is the run loop on this update
 - (void)update:(NSTimeInterval)currentTime {
     if (self.previousTimeInterval == 0) {
         self.previousTimeInterval = currentTime;
@@ -124,12 +126,12 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             self.numOfLaps -= 1;
             
             //read the timer
-            noOfSeconds = (double)[self.startDate timeIntervalSinceNow]* -1000;
-            reactionTime[xcounter] = noOfSeconds;
+            
+            reactionTime[xcounter] = (Float32)[self.startDate timeIntervalSinceNow]* -1000.0f;
             xcounter += 1;
             
             self.laps.text = [NSString stringWithFormat:@"Laps: %li", (long)self.numOfLaps];
-            
+            NSLog(@"Lap time = %f",reactionTime[xcounter-1]);
             [self runAction:self.lapSoundAction];
         }
     }
@@ -182,9 +184,10 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     //turn on the contact dlegate to test contacts between bodies
     self.physicsWorld.contactDelegate = self;
     xcounter=1;//start the array for timings of laps
-    noOfSeconds = (double)[self.startDate timeIntervalSinceNow]* -1000;
-    reactionTime[xcounter-1] = noOfSeconds;
-    xcounter += 1;
+    
+    self.startDate=[NSDate date];
+    reactionTime[0] = [self.startDate timeIntervalSinceNow]* -1000.0f;
+    xcounter = 1;
 }
 
 - (void)p_loadLevel {
@@ -222,6 +225,14 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     [_car runAction: rotation];
     
     //start the clock in mS
+    for (int x=0; x<101; x+=1) {
+        NSLog(@"lap times %d: %f",x, reactionTime[x]=0.0f);
+    }
+    
+    
+    reactionTime[0]=(Float32)[self.startDate timeIntervalSinceNow]* -1000.0f;
+    xcounter=1;
+    
 }
 
 - (void)p_addBoxAt:(CGPoint)point {
@@ -392,7 +403,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         [achievements addObject:[AchievementsHelper achievementForLevel:self.levelType]];
         
         //stop the clock in mS
-    }
+        reactionTime[xcounter]=(Float32)[self.startDate timeIntervalSinceNow]* -1000.0f;
+        xcounter+=1;
     
     //NSLog(@"walls=%lu, haz=%lu",(unsigned long)self.numOfCollisionsWithWalls,(unsigned long)self.numOfCollisionsWithBoxes);
     
@@ -400,6 +412,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     singleton.wallCrashes = [NSString stringWithFormat:@"%lu",(unsigned long)self.numOfCollisionsWithWalls];
     singleton.hazCrashes = [NSString stringWithFormat:@"%lu",(unsigned long)self.numOfCollisionsWithBoxes];
     singleton.totalTime = [NSString stringWithFormat:@"%0.4f", reactionTime[0]-reactionTime[xcounter] ];// time now - time start.
+}
     for (int x=0; x<xcounter; x+=1) {
         NSLog(@"lap times %d: %f",x, reactionTime[x]);
     }
