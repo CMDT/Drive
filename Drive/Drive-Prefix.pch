@@ -27,10 +27,3 @@ typedef NS_ENUM(long, CRLevelType) {//was int
     CRLevelMedium,
     CRLevelHard
 };
-//holds the tune number
-typedef NS_ENUM(long, CRTuneType) {//was int
-    CRTune0 = 0,
-    CRTune1,
-    CRTune2,
-    CRTune4
-};

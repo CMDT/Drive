@@ -38,6 +38,7 @@
     
     singleton.musicTrack=@"None";
     singleton.laps=@"10";
+    [[SKTAudio sharedInstance] playBackgroundMusic:@"silence30.mp3"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,6 +47,28 @@
 
 - (BOOL)prefersStatusBarHidden {
     return YES;
+}
+
+-(void)checkMusicAndPlay{
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    //check what sound if any and play
+    NSString *music;
+    music=singleton.musicTrack;
+    
+    if ([music isEqual:@"Beat"]){
+        [[SKTAudio sharedInstance] playBackgroundMusic:@"track16.mp3"]; //change to Drive.mp3
+    }else{
+        if ([music isEqual:@"Light"]) {
+            [[SKTAudio sharedInstance] playBackgroundMusic:@"Funky_Good_Time.mp3"];
+        }else{
+            if([music isEqual:@"Blues"]){
+                [[SKTAudio sharedInstance] playBackgroundMusic:@"Johnson-jass-Blues.mp3"];
+            }else{
+                //None
+                [[SKTAudio sharedInstance] playBackgroundMusic:@"silence30.mp3"];
+            }
+        }
+    }
 }
 
 #pragma mark - Start the Game
@@ -154,6 +177,7 @@
     [self blankMusicTicks];
     self.nonebtn.alpha=1;
     self.tickNone.hidden=NO;
+    [self checkMusicAndPlay];
 }
 
 - (IBAction)musicLightSet:(id)sender {
@@ -162,6 +186,7 @@
     [self blankMusicTicks];
     self.lightbtn.alpha=1;
     self.tickLight.hidden=NO;
+    [self checkMusicAndPlay];
 }
 
 - (IBAction)musicBluesSet:(id)sender {
@@ -170,6 +195,7 @@
     [self blankMusicTicks];
     self.bluesbtn.alpha=1;
     self.tickBlues.hidden=NO;
+    [self checkMusicAndPlay];
 }
 
 - (IBAction)musicBeatSet:(id)sender {
@@ -178,6 +204,7 @@
     [self blankMusicTicks];
     self.beatbtn.alpha=1;
     self.tickBeat.hidden=NO;
+    [self checkMusicAndPlay];
 }
 
 - (IBAction)distractionOSW:(id)sender {

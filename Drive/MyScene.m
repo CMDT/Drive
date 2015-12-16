@@ -207,16 +207,21 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     xcounter = 1;
 }
 
-
+//now using singleton for laps
 - (void)p_loadLevel {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"LevelDetails" ofType:@"plist"];
-    NSArray *level = [NSArray arrayWithContentsOfFile:filePath];
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    
+    //NSString *filePath = [[NSBundle mainBundle] pathForResource:@"LevelDetails" ofType:@"plist"];
+    //NSArray *level = [NSArray arrayWithContentsOfFile:filePath];
 
     //NSNumber *timeInSeconds = level[_levelType - 1][@"time"];
     _timeInSeconds = 0;//[timeInSeconds doubleValue];
 
-    NSNumber *laps = level[_levelType - 1][@"laps"];
-    _numOfLaps = [laps integerValue];
+    //now using singleton
+    //NSNumber *laps = level[_levelType - 1][@"laps"];
+    //_numOfLaps = [laps integerValue];
+    _numOfLaps = [singleton.laps  integerValue];
+    
 }
 
 - (void)p_addCarAtPosition:(CGPoint)startPosition {
@@ -437,16 +442,16 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         
         // NSLog(@"laps %d: ",xcounter-1);
 
-            for (int x=1; x<xcounter; x+=1) {
+            for (int x=1; x<xcounter+1; x+=1) {
                 reactionTime[x]=(reactionTime[x]-reactionTime[x-1]);
                 //NSLog(@"lap time %d: %f", x, reactionTime[x]);
             }
-            for (int x=1; x<xcounter; x+=1) {
+            for (int x=1; x<xcounter+1; x+=1) {
                 reactionTime[x]=(reactionTime[x]/1000);
                 //NSLog(@"lap time %d: %f", x, reactionTime[x]);
             }
 
-        for (int x=1; x<xcounter; x+=1) {
+        for (int x=1; x<xcounter+1; x+=1) {
             
             temp = reactionTime[x];
             
@@ -466,7 +471,6 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         }
         //make the time in seconds
 
-        
         totalCrashes = (unsigned long)self.numOfCollisionsWithWalls + (unsigned long)self.numOfCollisionsWithBoxes;
         
         singleton.totalCrashes=[NSString stringWithFormat:@"%li",totalCrashes];
@@ -487,7 +491,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         
         singleton.slowestLapNo =[NSString stringWithFormat:@"%i",slowLap];
         singleton.fastestLapNo =[NSString stringWithFormat:@"%i",fastLap];
-    } //winFlag test
+    }
     
 //not on game centre yet
     //[[GameKitHelper sharedGameKitHelper] reportAchievements:achievements];

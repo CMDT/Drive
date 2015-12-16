@@ -4,21 +4,39 @@
 <array>
 	<dict>
 		<key>time</key>
-		<integer>1000</integer>
+		<integer>10000</integer>
 		<key>laps</key>
 		<integer>2</integer>
 	</dict>
 	<dict>
 		<key>time</key>
-		<integer>2000</integer>
+		<integer>10000</integer>
 		<key>laps</key>
-		<integer>10</integer>
+		<integer>5</integer>
 	</dict>
 	<dict>
 		<key>time</key>
-		<integer>5000</integer>
+		<integer>10000</integer>
 		<key>laps</key>
-		<integer>50</integer>
+		<integer>10</integer>
 	</dict>
+    <dict>
+        <key>time</key>
+        <integer>10000</integer>
+        <key>laps</key>
+        <integer>20</integer>
+    </dict>
+    <dict>
+        <key>time</key>
+        <integer>10000</integer>
+        <key>laps</key>
+        <integer>50</integer>
+    </dict>
+    <dict>
+        <key>time</key>
+        <integer>10000</integer>
+        <key>laps</key>
+        <integer>100</integer>
+    </dict>
 </array>
 </plist>

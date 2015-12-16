@@ -26,9 +26,6 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-//check what sound if any and play
-    [[SKTAudio sharedInstance] playBackgroundMusic:@"circuitracer.mp3"]; //change to Drive.mp3
 }
 
 - (void)didReceiveMemoryWarning {

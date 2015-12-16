@@ -163,7 +163,7 @@
     if (!self.skView) {
         self.skView = [[SKView alloc] initWithFrame:self.view.bounds];
         MyScene *scene = [[MyScene alloc]
-            initWithSize:self.skView.bounds.size carType:self.carType level:self.levelType];
+        initWithSize:self.skView.bounds.size carType:self.carType level:self.levelType];
         scene.scaleMode = SKSceneScaleModeAspectFill;
         [self.skView presentScene:scene];
 

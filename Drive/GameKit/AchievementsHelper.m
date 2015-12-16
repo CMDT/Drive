@@ -14,7 +14,7 @@ static NSString * const kIntermediateAchievementId    = @"uk.ac.mmu.ess.www.jah.
 static NSString * const kProfessionalAchievementId    = @"uk.ac.mmu.ess.www.jah.professionaldriver";
 
 //static const NSInteger kMaxCollisions = 20;//orig
-static const NSInteger kMaxCollisions = 200;//jah
+static const NSInteger kMaxCollisions = 2000;//jah
 
 @implementation AchievementsHelper
 
