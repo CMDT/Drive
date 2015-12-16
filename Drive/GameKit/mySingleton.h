@@ -28,10 +28,13 @@
     NSString * musicTrack;
     NSString * fastestLap;
     NSString * slowestLap;
+    NSString * fastestLapNo;
+    NSString * slowestLapNo;
     NSString * averageLap;
     NSString * totalTime;
     NSString * hazCrashes;
     NSString * wallCrashes;
+    NSString * totalCrashes;
     NSString * hornsPlayed;
     NSString * fastestHorn;
     NSString * slowestHorn;
@@ -58,10 +61,13 @@
 @property (nonatomic, retain) NSString * musicTrack;
 @property (nonatomic, retain) NSString * fastestLap;
 @property (nonatomic, retain) NSString * slowestLap;
+@property (nonatomic, retain) NSString * fastestLapNo;
+@property (nonatomic, retain) NSString * slowestLapNo;
 @property (nonatomic, retain) NSString * averageLap;
 @property (nonatomic, retain) NSString * totalTime;
 @property (nonatomic, retain) NSString * hazCrashes;
 @property (nonatomic, retain) NSString * wallCrashes;
+@property (nonatomic, retain) NSString * totalCrashes;
 @property (nonatomic, retain) NSString * hornsPlayed;
 @property (nonatomic, retain) NSString * fastestHorn;
 @property (nonatomic, retain) NSString * slowestHorn;

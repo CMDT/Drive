@@ -38,10 +38,13 @@
     trackNo,
     fastestLap,
     slowestLap,
+    fastestLapNo,
+    slowestLapNo,
     averageLap,
     totalTime,
     hazCrashes,
     wallCrashes,
+    totalCrashes,
     hornsPlayed,
     fastestHorn,
     slowestHorn,
@@ -109,10 +112,13 @@
     musicTrack.text=singleton.musicTrack;
     fastestLap.text=singleton.fastestLap;
     slowestLap.text=singleton.slowestLap;
+    fastestLapNo.text=singleton.fastestLapNo;
+    slowestLapNo.text=singleton.slowestLapNo;
     averageLap.text=singleton.averageLap;
     totalTime.text=singleton.totalTime;
     hazCrashes.text=singleton.hazCrashes;
     wallCrashes.text=singleton.wallCrashes;
+    totalCrashes.text=singleton.totalCrashes;
     hornsPlayed.text=singleton.hornsPlayed;
     fastestHorn.text=singleton.fastestHorn;
     slowestHorn.text=singleton.slowestHorn;

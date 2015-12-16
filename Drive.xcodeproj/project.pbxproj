@@ -49,6 +49,8 @@
 		47FDCB8E1972BF35003723C1 /* DriveNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FDCB8D1972BF35003723C1 /* DriveNavigationController.m */; };
 		47FDCB911972CB4A003723C1 /* AchievementsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FDCB901972CB4A003723C1 /* AchievementsHelper.m */; };
 		917B79131C1DB50E00A6D3DA /* TrackStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 917B79121C1DB50E00A6D3DA /* TrackStatsViewController.m */; };
+		917E5A5D1C21DF0A009DF226 /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 917E5A5B1C21DF0A009DF226 /* tick.png */; };
+		917E5A5E1C21DF0A009DF226 /* tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 917E5A5C1C21DF0A009DF226 /* tick@2x.png */; };
 		91C7E4421C1CDC0D00A38B32 /* btn-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E43E1C1CDC0D00A38B32 /* btn-back.png */; };
 		91C7E4431C1CDC0D00A38B32 /* btn-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E43F1C1CDC0D00A38B32 /* btn-back@2x.png */; };
 		E171F2661C1EDB3600E3DB0D /* achievment-amateur.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F2621C1EDB3600E3DB0D /* achievment-amateur.png */; };
@@ -215,6 +217,8 @@
 		47FDCB901972CB4A003723C1 /* AchievementsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AchievementsHelper.m; path = GameKit/AchievementsHelper.m; sourceTree = "<group>"; };
 		917B79111C1DB50E00A6D3DA /* TrackStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackStatsViewController.h; sourceTree = "<group>"; };
 		917B79121C1DB50E00A6D3DA /* TrackStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackStatsViewController.m; sourceTree = "<group>"; };
+		917E5A5B1C21DF0A009DF226 /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
+		917E5A5C1C21DF0A009DF226 /* tick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick@2x.png"; sourceTree = "<group>"; };
 		91C7E43E1C1CDC0D00A38B32 /* btn-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-back.png"; path = "../../../../../Pictures/btn-back.png"; sourceTree = "<group>"; };
 		91C7E43F1C1CDC0D00A38B32 /* btn-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-back@2x.png"; path = "../../../../../Pictures/btn-back@2x.png"; sourceTree = "<group>"; };
 		E171F2621C1EDB3600E3DB0D /* achievment-amateur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievment-amateur.png"; sourceTree = "<group>"; };
@@ -478,6 +482,8 @@
 		475E5E5E195A5A610063FD68 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				917E5A5B1C21DF0A009DF226 /* tick.png */,
+				917E5A5C1C21DF0A009DF226 /* tick@2x.png */,
 				E171F30F1C1F0FC700E3DB0D /* seg-50@2x.png */,
 				E171F2FF1C1EF20100E3DB0D /* btn-back2.png */,
 				E171F3001C1EF20100E3DB0D /* btn-back2@2x.png */,
@@ -722,6 +728,7 @@
 				E171F2781C1EDB5700E3DB0D /* bg-select-car.png in Resources */,
 				E171F2D11C1EE0C300E3DB0D /* btn-car2.png in Resources */,
 				E171F27E1C1EDB5700E3DB0D /* track_2.png in Resources */,
+				917E5A5D1C21DF0A009DF226 /* tick.png in Resources */,
 				E171F2B41C1EDBB300E3DB0D /* knob1@2x.png in Resources */,
 				E171F30D1C1EF20100E3DB0D /* btn-info.png in Resources */,
 				E171F2F41C1EF19F00E3DB0D /* seg-50.png in Resources */,
@@ -796,6 +803,7 @@
 				E171F2F91C1EF19F00E3DB0D /* seg-blues.png in Resources */,
 				E171F2A11C1EDBB300E3DB0D /* btn-easy.png in Resources */,
 				E171F2A31C1EDBB300E3DB0D /* btn-fast.png in Resources */,
+				917E5A5E1C21DF0A009DF226 /* tick@2x.png in Resources */,
 				E171F2B51C1EDBB300E3DB0D /* mmulogoshape.png in Resources */,
 				E171F2B61C1EDBB300E3DB0D /* racing-flag.jpg in Resources */,
 				E171F2F31C1EF19F00E3DB0D /* seg-20@2x.png in Resources */,

@@ -45,11 +45,14 @@
 @property (nonatomic, strong) IBOutlet UILabel * trackNo;
 @property (nonatomic, strong) IBOutlet UILabel * musicTrack;
 @property (nonatomic, strong) IBOutlet UILabel * fastestLap;
+@property (nonatomic, strong) IBOutlet UILabel * slowestLapNo;
+@property (nonatomic, strong) IBOutlet UILabel * fastestLapNo;
 @property (nonatomic, strong) IBOutlet UILabel * slowestLap;
 @property (nonatomic, strong) IBOutlet UILabel * averageLap;
 @property (nonatomic, strong) IBOutlet UILabel * totalTime;
 @property (nonatomic, strong) IBOutlet UILabel * hazCrashes;
 @property (nonatomic, strong) IBOutlet UILabel * wallCrashes;
+@property (nonatomic, strong) IBOutlet UILabel * totalCrashes;
 @property (nonatomic, strong) IBOutlet UILabel * hornsPlayed;
 @property (nonatomic, strong) IBOutlet UILabel * fastestHorn;
 @property (nonatomic, strong) IBOutlet UILabel * slowestHorn;

@@ -28,8 +28,25 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 {
     Float32 reactionTime[100];
     Float32 noOfSeconds;
-    int xcounter;
+    int     xcounter;
+    
+    Float32 fastestLap;
+    Float32 slowestLap;
+    Float32 averageLap;
+    Float32 fastestHorn;
+    Float32 slowestHorn;
+    Float32 averageHorn;
+    Float32 raceTime;
+    Float32 hornTime;
+    Float32 masterScore;
+    Float32 temp;
+    long    totalCrashes;
+    
+    int     lap;
+    int     fastLap;
+    int     slowLap;
 }
+
 @property (nonatomic, assign) CRCarType carType;
 @property (nonatomic, assign) CRLevelType levelType;
 @property (nonatomic, assign) NSTimeInterval timeInSeconds;
@@ -131,7 +148,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             xcounter += 1;
             
             self.laps.text = [NSString stringWithFormat:@"Laps: %li", (long)self.numOfLaps];
-            NSLog(@"Lap time = %f",reactionTime[xcounter-1]);
+            //NSLog(@"Lap time = %f",reactionTime[xcounter-1]);
             [self runAction:self.lapSoundAction];
         }
     }
@@ -186,7 +203,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     xcounter=1;//start the array for timings of laps
     
     self.startDate=[NSDate date];
-    reactionTime[0] = [self.startDate timeIntervalSinceNow]* -1000.0f;
+    reactionTime[0] = [self.startDate timeIntervalSinceNow]* -1000;
     xcounter = 1;
 }
 
@@ -219,21 +236,26 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     
     //put a car on the track
     [self addChild:_car];
+    
     //turn the car 90 degs ccw
     //M_PI/4.0 is 45 degrees, you can make duration different from 0 if you want to show the rotation, if it is 0 it will rotate instantly
     SKAction *rotation = [SKAction rotateByAngle: M_PI/2.0 duration:0];
-    //and just run the action
+    
+    //and just run the action to turn it
     [_car runAction: rotation];
     
     //start the clock in mS
+    //zero
     for (int x=0; x<101; x+=1) {
-        NSLog(@"lap times %d: %f",x, reactionTime[x]=0.0f);
+        reactionTime[x]=0.0f;
     }
+    slowestLap=-999999.0f;
+    fastestLap=999999.0f;
+    averageLap=999999.0f;
     
-    
-    reactionTime[0]=(Float32)[self.startDate timeIntervalSinceNow]* -1000.0f;
-    xcounter=1;
-    
+    slowestHorn=-999999.0f;
+    fastestHorn=999999.0f;
+    averageHorn=999999.0f;
 }
 
 - (void)p_addBoxAt:(CGPoint)point {
@@ -404,19 +426,68 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         [achievements addObject:[AchievementsHelper achievementForLevel:self.levelType]];
         
         //stop the clock in mS
-        reactionTime[xcounter]=(Float32)[self.startDate timeIntervalSinceNow]* -1000.0f;
-        xcounter+=1;
-    
-    //NSLog(@"walls=%lu, haz=%lu",(unsigned long)self.numOfCollisionsWithWalls,(unsigned long)self.numOfCollisionsWithBoxes);
+        reactionTime[xcounter]=(Float32)[self.startDate timeIntervalSinceNow]* -1000;
+        
     
     //update data as now finished
+        
+        //crashes
     singleton.wallCrashes = [NSString stringWithFormat:@"%lu",(unsigned long)self.numOfCollisionsWithWalls];
     singleton.hazCrashes = [NSString stringWithFormat:@"%lu",(unsigned long)self.numOfCollisionsWithBoxes];
-    singleton.totalTime = [NSString stringWithFormat:@"%0.4f", reactionTime[0]-reactionTime[xcounter] ];// time now - time start.
-}
-    for (int x=0; x<xcounter; x+=1) {
-        NSLog(@"lap times %d: %f",x, reactionTime[x]);
-    }
+        
+        // NSLog(@"laps %d: ",xcounter-1);
+
+            for (int x=1; x<xcounter; x+=1) {
+                reactionTime[x]=(reactionTime[x]-reactionTime[x-1]);
+                //NSLog(@"lap time %d: %f", x, reactionTime[x]);
+            }
+            for (int x=1; x<xcounter; x+=1) {
+                reactionTime[x]=(reactionTime[x]/1000);
+                //NSLog(@"lap time %d: %f", x, reactionTime[x]);
+            }
+
+        for (int x=1; x<xcounter; x+=1) {
+            
+            temp = reactionTime[x];
+            
+            // NSLog(@"lap time %d: %f",x, temp);
+            
+            if ( slowestLap < temp) {
+                slowestLap = temp;
+                //NSLog(@"slow lap time %d: %f", x, temp);
+                slowLap = x;
+            }
+            if (fastestLap > temp) {
+                fastestLap = temp;
+                //NSLog(@"fast lap time %d: %f", x, temp);
+                fastLap = x;
+            }
+            raceTime = raceTime + temp;
+        }
+        //make the time in seconds
+
+        
+        totalCrashes = (unsigned long)self.numOfCollisionsWithWalls + (unsigned long)self.numOfCollisionsWithBoxes;
+        
+        singleton.totalCrashes=[NSString stringWithFormat:@"%li",totalCrashes];
+        
+        averageLap = raceTime / (xcounter-1);
+        
+        singleton.slowestLap = [NSString stringWithFormat:@"%0.2f",slowestLap];
+        
+        singleton.fastestLap = [NSString stringWithFormat:@"%0.2f",fastestLap];
+        
+        singleton.averageLap = [NSString stringWithFormat:@"%0.2f",averageLap];
+        
+        singleton.totalTime = [NSString stringWithFormat:@"%0.2f",raceTime];
+        
+        singleton.fastestHorn = [NSString stringWithFormat:@"%0.2f",fastestHorn];
+        singleton.slowestHorn = [NSString stringWithFormat:@"%0.2f",slowestHorn];
+        singleton.averageHorn = [NSString stringWithFormat:@"%0.2f",averageHorn];
+        
+        singleton.slowestLapNo =[NSString stringWithFormat:@"%i",slowLap];
+        singleton.fastestLapNo =[NSString stringWithFormat:@"%i",fastLap];
+    } //winFlag test
     
 //not on game centre yet
     //[[GameKitHelper sharedGameKitHelper] reportAchievements:achievements];
