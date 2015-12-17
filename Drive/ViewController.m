@@ -30,7 +30,8 @@
     Float32 slowestHorn;
     Float32 averageHorn;
     Float32 hornTime;
-    Float32 temp;
+    Float32 temp1;
+    Float32 temp2;
 }
 
 @property (nonatomic, strong) SKView          * skView;
@@ -109,6 +110,9 @@
         [self setTimeNow:self];
     
     horns = 0;
+    fastestHorn=999999;
+    slowestHorn=-999999;
+    averageHorn=-999999;
     
     //tester name
     subjectName     = [defaults objectForKey:kSubject];
@@ -293,24 +297,25 @@
     if(singleton.hornsShowing==YES){
         hornBtn.hidden=NO;
         hornBtn.alpha=1.0;
-        hornReactionTime[horns] =((Float32)[self.startDateHorn timeIntervalSinceNow]* -1000);
-        horns++;
+        temp1 =((Float32)[self.startDateHorn timeIntervalSinceNow]* -1000);
         singleton.hornsShowing=NO;
 }else{
         hornBtn.hidden=NO;
         hornBtn.alpha=0.5;
     //stop the timer and save the time reading
-    hornReactionTime[horns] =((Float32)[self.startDateHorn timeIntervalSinceNow]* -1000);
+    temp2 =((Float32)[self.startDateHorn timeIntervalSinceNow]* -1000);
+    hornReactionTime[horns]=temp2-temp1;
     horns++;
     singleton.hornsShowing=YES;
 }
-    NSLog(@"horn=%i : React = %f",horns-1, hornReactionTime[horns-1]-hornReactionTime[horns-2]);
+    NSLog(@"horn=%i : React = %f",horns-1, hornReactionTime[horns-1]);
 }
 
 
 #pragma mark - Game Over
 
 - (void)p_gameOverWithWin:(BOOL)didWin {
+    mySingleton *singleton = [mySingleton sharedSingleton];
     UIAlertView *alert =
     [[UIAlertView alloc] initWithTitle:didWin ? @"You Completed the Laps Required!" : @"You Did Not Finish the Race"
                                message:@"... This Race is Now Over ..."
@@ -320,6 +325,39 @@
     [alert show];
     if (didWin) {
         //you finished the race, give the stats
+
+        for (int x=3; x<horns; x+=1) {
+            hornReactionTime[x]=(hornReactionTime[x]/1000);
+            //NSLog(@"horn time %d: %f", x, hornReactionTime[x][x]);
+        }
+        
+        for (int x=3; x<horns; x+=1) {
+            
+            temp1 = hornReactionTime[x];
+            
+            // NSLog(@"lap time %d: %f",x, temp);
+            
+            if ( slowestHorn < temp1) {
+                slowestHorn = temp1;
+                //NSLog(@"slow lap time %d: %f", x, temp);
+            }
+            if (fastestHorn > temp1) {
+                fastestHorn = temp1;
+                //NSLog(@"fast lap time %d: %f", x, temp);
+            }
+            hornTime = hornTime + temp1;
+        }
+        averageHorn = hornTime / (horns-3);
+        singleton.hornsPlayed = [NSString stringWithFormat:@"%i",horns-3];
+        singleton.totalHorn   = [NSString stringWithFormat:@"%0.2f",hornTime];
+        singleton.fastestHorn = [NSString stringWithFormat:@"%0.2f",fastestHorn];
+        singleton.slowestHorn = [NSString stringWithFormat:@"%0.2f",slowestHorn];
+        singleton.averageHorn = [NSString stringWithFormat:@"%0.2f",averageHorn];
+        
+        for (int x=0; x<horns+1; x+=1) {
+            NSLog(@"Horn %i : Reaction %f",x,hornReactionTime[x]);
+        }
+        
         [self performSelector:@selector(p_goBackStats:) withObject:alert afterDelay:2.0];
     }else{
         //you did not finish or cancelled, just start again... consider part stats, ie no email

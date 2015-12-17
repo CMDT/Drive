@@ -157,7 +157,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             
             self.laps.text = [NSString stringWithFormat:@"Laps: %li", (long)self.numOfLaps];
             //NSLog(@"Lap time = %f",reactionTime[xcounter-1]);
-            [self runAction:self.hornSoundAction];
+            [self runAction:self.lapSoundAction];
         }
     }
     if (singleton.hornsShowing==YES) {
