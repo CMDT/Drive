@@ -14,6 +14,7 @@
 #import "AchievementsHelper.h"
 #import "GameKitHelper.h"
 #import "mySingleton.h"
+
 //mySingleton *singleton = [mySingleton sharedSingleton];
 
 typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
@@ -45,14 +46,17 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     int     lap;
     int     fastLap;
     int     slowLap;
-}
+    }
 
 @property (nonatomic, assign) CRCarType carType;
 @property (nonatomic, assign) CRLevelType levelType;
 @property (nonatomic, assign) NSTimeInterval timeInSeconds;
 @property (nonatomic, assign) NSInteger numOfLaps;
-@property (nonatomic, strong) SKSpriteNode *car;
-@property (nonatomic, strong) SKLabelNode *laps, *time, *colls, *walls;
+@property (nonatomic, strong) SKSpriteNode  * car;
+@property (nonatomic, strong) SKLabelNode   * laps,
+                                            * time,
+                                            * colls,
+                                            * walls;
 @property (nonatomic, assign) NSInteger maxSpeed;
 @property (nonatomic, assign) CGPoint trackCenter;
 @property (nonatomic, assign) NSTimeInterval previousTimeInterval;
@@ -60,11 +64,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 @property (nonatomic, assign) NSUInteger numOfCollisionsWithWalls;
 
 // Sound effects
-@property (nonatomic, strong) SKAction *boxSoundAction;
-@property (nonatomic, strong) SKAction *hornSoundAction;
-@property (nonatomic, strong) SKAction *lapSoundAction;
-@property (nonatomic, strong) SKAction *nitroSoundAction;
-@property (nonatomic, strong) SKAction *wallSoundAction;
+@property (nonatomic, strong) SKAction * boxSoundAction;
+@property (nonatomic, strong) SKAction * hornSoundAction;
+@property (nonatomic, strong) SKAction * lapSoundAction;
+@property (nonatomic, strong) SKAction * nitroSoundAction;
+@property (nonatomic, strong) SKAction * wallSoundAction;
 
 @end
 
@@ -72,7 +76,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 
 @synthesize startDate;
 
-#pragma mark - Lifecycle
+#pragma mark - Initialise Game
 
 //in storyboard, note button for game centre is turned to 1px x 1px. set to 301 x 55 in settings measure properties.
 
@@ -88,9 +92,10 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     return self;
 }
 
-
 //game proper, thjis is the run loop on this update
 - (void)update:(NSTimeInterval)currentTime {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    
     if (self.previousTimeInterval == 0) {
         self.previousTimeInterval = currentTime;
     }
@@ -100,6 +105,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         // find a way to halt the timer, then restart it for laps
         
         self.previousTimeInterval = currentTime;
+        xcounter -=1;//drop back one lap
+        self.numOfLaps += 1;
+        
         return;
     }
 //****************************************************************
@@ -149,12 +157,19 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             
             self.laps.text = [NSString stringWithFormat:@"Laps: %li", (long)self.numOfLaps];
             //NSLog(@"Lap time = %f",reactionTime[xcounter-1]);
-            [self runAction:self.lapSoundAction];
+            [self runAction:self.hornSoundAction];
         }
     }
-
+    if (singleton.hornsShowing==YES) {
+        [self runAction:self.hornSoundAction];
+        //sleep(1); //stops the action but not the clock
+        singleton.hornsShowing=NO;
+         }
+    
     if (self.timeInSeconds < 0 || self.numOfLaps == 0) {
         self.paused = YES;
+        
+        
         BOOL hasWon = self.numOfLaps == 0;
 
         [self p_reportAchievementsForGameState:hasWon];
@@ -261,6 +276,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     slowestHorn=-999999.0f;
     fastestHorn=999999.0f;
     averageHorn=999999.0f;
+
 }
 
 - (void)p_addBoxAt:(CGPoint)point {
@@ -344,12 +360,12 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 }
 
 //only to position some hazards at a good spot, rem out later
--(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
+//-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
     //UITouch *touch = [[event allTouches] anyObject];
     //CGPoint location = [touch locationInView:touch.view];
     //NSLog(@"X:Y Touch = %f:%f",location.x,location.y);
-}
+//}
 
 - (void)p_addGameUIForTrack:(SKSpriteNode *)track {
     // Displays the laps to go as set from LevelDetails.plist
@@ -403,20 +419,6 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             angle;
         });
     }
-}
-
--(int)random22
-//for random numbers
-{
-    int num1 = 1;
-    num1 = arc4random_uniform(22); //1-21
-    if (num1<1) {
-        num1=1;
-    }
-    if (num1>21) {
-        num1=21;
-    }
-    return num1;
 }
 
 - (void)p_reportAchievementsForGameState:(BOOL)hasWon {

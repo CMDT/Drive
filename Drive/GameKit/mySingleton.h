@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 
 @interface mySingleton : NSObject {
-
+    BOOL hornsShowing;
     int counter;
 
     NSMutableArray * cardReactionTimeResult;
@@ -46,7 +46,7 @@
     Float64    hazCrashMult;
     Float64    hornsMulti;
 }
-
+@property (nonatomic) BOOL hornsShowing;
 @property (nonatomic) int  counter;
 @property (nonatomic, retain) NSMutableArray * cardReactionTimeResult;
 @property (nonatomic, retain) NSString * email;

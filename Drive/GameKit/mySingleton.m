@@ -14,6 +14,7 @@ static mySingleton * sharedSingleton = nil;
 }
 @synthesize
 //strings
+            hornsShowing,
             testDate,
             testTime,
             subjectName,
@@ -34,6 +35,7 @@ static mySingleton * sharedSingleton = nil;
             totalTime,
             hazCrashes,
             wallCrashes,
+            totalCrashes,
             hornsPlayed,
             fastestHorn,
             slowestHorn,
@@ -67,7 +69,7 @@ static mySingleton * sharedSingleton = nil;
 
 - (id) init {
     if(self = [super init]) {
-
+        hornsShowing        = NO;
         email               = @"";
         testDate            = @"15/12/2015";
         testTime            = @"12:00";

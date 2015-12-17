@@ -13,5 +13,8 @@
 
 @property (nonatomic, assign) CRCarType carType;
 @property (nonatomic, assign) CRLevelType levelType;
+@property (nonatomic, copy) NSDate * startDateHorn;
+
+-(void)hornShow;
 
 @end

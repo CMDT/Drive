@@ -11,6 +11,8 @@
 #import "TrackStatsViewController.h"
 #import "MyScene.h"
 #import "AnalogControl.h"
+#import "SKTAudio.h"
+#import "SKTUtils.h"
 
 #define kEmail      @"emailAddress"
 #define kSubject    @"subjectName"
@@ -20,14 +22,29 @@
 #define kVersion3   @"version3"
 
 @interface ViewController () <UIAlertViewDelegate>
+{
+    BOOL hornShowing;
+    int horns;
+    Float32 hornReactionTime[100];
+    Float32 fastestHorn;
+    Float32 slowestHorn;
+    Float32 averageHorn;
+    Float32 hornTime;
+    Float32 temp;
+}
 
-@property (nonatomic, strong) SKView        * skView;
-@property (nonatomic, strong) AnalogControl * analogControl;
-@property (nonatomic, strong) MyScene       * scene;
+@property (nonatomic, strong) SKView          * skView;
+@property (nonatomic, strong) AnalogControl   * analogControl;
+@property (nonatomic, strong) MyScene         * scene;
+@property (weak, nonatomic) IBOutlet UIButton * hornBtn;
+
+@property (nonatomic, strong) SKAction *hornSoundAction;
 
 @end
 
 @implementation ViewController
+
+@synthesize hornBtn;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -90,7 +107,8 @@
 
         [self setDateNow:self];
         [self setTimeNow:self];
-
+    
+    horns = 0;
     
     //tester name
     subjectName     = [defaults objectForKey:kSubject];
@@ -111,6 +129,22 @@
     
     //versionNumberLab.text   = version0;
     singleton.versionNumber = version0;
+    
+    _hornSoundAction  = [SKAction playSoundFileNamed: @"horn.wav"  waitForCompletion:NO];
+}
+
+-(int)random22
+//for random numbers
+{
+    int num1 = 1;
+    num1 = arc4random_uniform(22); //1-21
+    if (num1<1) {
+        num1=1;
+    }
+    if (num1>21) {
+        num1=21;
+    }
+    return num1;
 }
 
 -(void)setDateNow:(id)sender{
@@ -199,6 +233,9 @@
     self.skView.showsFPS = YES;
     self.skView.showsNodeCount = YES;
 #endif
+    self.startDateHorn=[NSDate date];
+    hornReactionTime[horns]=(Float32)[self.startDateHorn timeIntervalSinceNow]* -1000;
+    horns++;
 }
 
 - (BOOL)shouldAutorotate {
@@ -237,6 +274,39 @@
 - (IBAction)pauseButtonDidTouchUpInside:(id)sender {
     [self p_showInGameMenu];
 }
+
+- (IBAction)hornButtonDidTouchUpInside:(id)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    if (singleton.hornsShowing==YES) { //stop the timer and hide the horn graphic
+        [self hornShow];
+        //singleton.hornsShowing=NO;
+        
+    }else{
+        [self hornShow];
+        //singleton.hornsShowing=YES;
+        
+    }
+}
+
+-(void)hornShow {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    if(singleton.hornsShowing==YES){
+        hornBtn.hidden=NO;
+        hornBtn.alpha=1.0;
+        hornReactionTime[horns] =((Float32)[self.startDateHorn timeIntervalSinceNow]* -1000);
+        horns++;
+        singleton.hornsShowing=NO;
+}else{
+        hornBtn.hidden=NO;
+        hornBtn.alpha=0.5;
+    //stop the timer and save the time reading
+    hornReactionTime[horns] =((Float32)[self.startDateHorn timeIntervalSinceNow]* -1000);
+    horns++;
+    singleton.hornsShowing=YES;
+}
+    NSLog(@"horn=%i : React = %f",horns-1, hornReactionTime[horns-1]-hornReactionTime[horns-2]);
+}
+
 
 #pragma mark - Game Over
 
