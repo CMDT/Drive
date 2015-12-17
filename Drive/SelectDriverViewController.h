@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SelectDriverViewController : UIViewController
+@interface SelectDriverViewController : UIViewController <UITextFieldDelegate> //for text input
 @property (weak, nonatomic) IBOutlet UITextField *driverName;
 @property (weak, nonatomic) IBOutlet UITextField *email;
 

@@ -53,6 +53,7 @@
                             <constraint firstItem="aVg-JY-jeM" firstAttribute="top" secondItem="Ajn-d1-kbx" secondAttribute="bottom" constant="173" id="sCz-cb-Kib"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="99K-NR-3Le"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="hornBtn" destination="Ajn-d1-kbx" id="NZA-CH-bZa"/>
@@ -84,6 +85,7 @@
                                 </state>
                                 <connections>
                                     <action selector="levelButtonDidTouchUpInside:" destination="6zJ-QL-n6c" eventType="touchUpInside" id="tch-Nd-jGm"/>
+                                    <segue destination="ile-Uw-dvN" kind="push" id="8QQ-gE-hn8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHR-24-jyO" userLabel="Button back">
@@ -102,6 +104,7 @@
                                 </state>
                                 <connections>
                                     <action selector="levelButtonDidTouchUpInside:" destination="6zJ-QL-n6c" eventType="touchUpInside" id="jCt-h9-OxF"/>
+                                    <segue destination="ile-Uw-dvN" kind="push" id="sgN-rE-1F9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ps7-eg-FmL">
@@ -123,6 +126,7 @@
                                 </state>
                                 <connections>
                                     <action selector="levelButtonDidTouchUpInside:" destination="6zJ-QL-n6c" eventType="touchUpInside" id="5Wx-fI-vQe"/>
+                                    <segue destination="ile-Uw-dvN" kind="push" id="C2j-M0-frE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -240,6 +244,7 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                 </state>
                                 <connections>
                                     <action selector="carButtonDidTouchUpInside:" destination="355-Sw-PNA" eventType="touchUpInside" id="fAd-ru-mFe"/>
+                                    <segue destination="6zJ-QL-n6c" kind="push" id="eqn-Dg-M4T"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIU-gY-BAc" userLabel="Button Car 1">
@@ -249,6 +254,7 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                 </state>
                                 <connections>
                                     <action selector="carButtonDidTouchUpInside:" destination="355-Sw-PNA" eventType="touchUpInside" id="cw2-vw-sty"/>
+                                    <segue destination="6zJ-QL-n6c" kind="push" id="edx-Rx-n7W"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zje-3U-f2d">
@@ -270,6 +276,7 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                 </state>
                                 <connections>
                                     <action selector="carButtonDidTouchUpInside:" destination="355-Sw-PNA" eventType="touchUpInside" id="BZ2-kL-2fE"/>
+                                    <segue destination="6zJ-QL-n6c" kind="push" id="Min-jJ-qBL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -338,6 +345,9 @@ The faster the car, the better the top speed, but be careful, they are harder to
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hZk-iN-c46">
                                 <rect key="frame" x="406" y="113" width="51" height="31"/>
+                                <connections>
+                                    <action selector="distractionOSW:" destination="j6p-oN-Kld" eventType="valueChanged" id="BYg-Te-lRY"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Distraction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ay1-xn-2z5">
                                 <rect key="frame" x="302" y="113" width="96" height="31"/>
@@ -517,7 +527,8 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="playButtonDidTouchUpInside:" destination="j6p-oN-Kld" eventType="touchUpInside" id="Niv-fs-RPI"/>
+                                    <action selector="carButtonDidTouchUpInside:" destination="j6p-oN-Kld" eventType="touchUpInside" id="eyv-18-fvY"/>
+                                    <segue destination="355-Sw-PNA" kind="push" id="1Ng-tR-vKr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -811,7 +822,7 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                 <rect key="frame" x="20" y="250" width="99" height="50"/>
                                 <state key="normal" image="finishx.png"/>
                                 <connections>
-                                    <action selector="finishAction:" destination="khi-MC-6dL" eventType="touchUpInside" id="hNC-M3-EKJ"/>
+                                    <action selector="finishAction:" destination="khi-MC-6dL" eventType="touchUpInside" id="Pdj-PV-6UF"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTr-5S-E2n">
@@ -1216,7 +1227,8 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startButtonDidTouchUpInside:" destination="ile-Uw-dvN" eventType="touchUpInside" id="coy-YP-hCG"/>
+                                    <action selector="startButtonDidTouchUpInside:" destination="ile-Uw-dvN" eventType="touchUpInside" id="NS5-U9-fdJ"/>
+                                    <segue destination="LVB-YS-i5n" kind="push" id="PfM-DR-Uqa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3c-3u-WOf" userLabel="Button back">
@@ -1241,7 +1253,7 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TIK-v2-hNe">
                                 <rect key="frame" x="154" y="207" width="301" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Driver Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rv-8p-bEN">
                                 <rect key="frame" x="20" y="169" width="119" height="30"/>
@@ -1256,10 +1268,13 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZoX-mV-eDf">
                                 <rect key="frame" x="154" y="169" width="301" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" image="YES"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstItem="sfJ-sM-oaY" firstAttribute="top" secondItem="H6f-cx-HhG" secondAttribute="top" id="9hk-x9-eaV"/>
                             <constraint firstItem="H6f-cx-HhG" firstAttribute="leading" secondItem="sfJ-sM-oaY" secondAttribute="trailing" constant="59" id="Jza-Y2-q6D"/>
@@ -1377,6 +1392,9 @@ The Email address is the recipient of the data results when a race is completed,
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="1Ng-tR-vKr"/>
         <segue reference="Oeb-9y-xxT"/>
+        <segue reference="eqn-Dg-M4T"/>
+        <segue reference="sgN-rE-1F9"/>
     </inferredMetricsTieBreakers>
 </document>

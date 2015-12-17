@@ -8,7 +8,7 @@
 
 #import "HomeScreenViewController.h"
 #import "GameKitHelper.h"
-#import "SelectCarViewController.h"
+//#import "SelectCarViewController.h"
 #import "SKTAudio.h"
 #import "mySingleton.h"
 //mySingleton *singleton = [mySingleton sharedSingleton];
@@ -39,18 +39,6 @@
     singleton.musicTrack=@"None";
     singleton.laps=@"10";
     [[SKTAudio sharedInstance] playBackgroundMusic:@"silence30.mp3"];
-    
-    //load the known names and email
-    NSString        * pathStr               = [[NSBundle mainBundle] bundlePath];
-    NSString        * settingsBundlePath    = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
-    NSString        * defaultPrefsFile      = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
-    NSDictionary    * defaultPrefs          = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
-    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
-    NSUserDefaults  * defaults              = [NSUserDefaults standardUserDefaults];
-    
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    [defaults synchronize];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,19 +73,19 @@
 
 #pragma mark - Start the Game
 
-- (IBAction)playButtonDidTouchUpInside:(id)sender {
+- (IBAction)carButtonDidTouchUpInside:(id)sender {
     [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
 
-    SelectCarViewController *selectCarVC = [self.storyboard
-        instantiateViewControllerWithIdentifier:@"SelectCarViewController"];
+    //SelectCarViewController *selectCarVC = [self.storyboard
+        //instantiateViewControllerWithIdentifier:@"SelectCarViewController"];
 
-    [self.navigationController pushViewController:selectCarVC animated:YES];
+    //[self.navigationController pushViewController:selectCarVC animated:YES];
 }
 
 - (IBAction)gameCenterButtonDidTouchUpInside:(id)sender {
-    
+    // a 1px x 1px button, hard to hit, but it is there....
     //do nothing, not enabling game ctr yet . weill need to turn back on in final vc m code- jah
-    [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
+    //[[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
     //[[GameKitHelper sharedGameKitHelper] showGKGameCenterViewController:self];
 }
 
@@ -227,7 +215,5 @@
         singleton.distractionOn=@"OFF";
     }
 }
-
-
 
 @end

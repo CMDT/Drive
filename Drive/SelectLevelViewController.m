@@ -8,9 +8,9 @@
 
 #import "SelectLevelViewController.h"
 #import "SKTAudio.h"
-#import "SelectDriverViewController.h"
+//#import "SelectDriverViewController.h"
 #import "mySingleton.h"
-#import "ViewController.h"
+//#import "ViewController.m"
 //mySingleton *singleton = [mySingleton sharedSingleton];
 
 @interface SelectLevelViewController ()
@@ -45,14 +45,14 @@
     
     [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
 
-    ViewController *gameVC = [self.storyboard
-        instantiateViewControllerWithIdentifier:NSStringFromClass([ViewController class])];
-    gameVC.carType = self.carType;
-    gameVC.levelType = sender.tag;
+    //SelectDriverViewController *gameVC = [self.storyboard
+        //instantiateViewControllerWithIdentifier:NSStringFromClass([SelectDriverViewController class])];
+    //gameVC.carType = self.carType;
+    //gameVC.levelType = sender.tag;
     
-    singleton.trackNo=[NSString stringWithFormat:@"%ld", gameVC.levelType];
+    singleton.trackNo=[NSString stringWithFormat:@"%ld", sender.tag];
 
-    [self.navigationController pushViewController:gameVC animated:YES];
+    //[self.navigationController pushViewController:gameVC animated:YES];
 }
 
 @end

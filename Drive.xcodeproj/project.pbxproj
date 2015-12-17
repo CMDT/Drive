@@ -995,24 +995,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1CBACD71C22BE9E001CC466 /* SelectDriverViewController.m in Sources */,
-				47117B561959CA1400B20209 /* MyScene.m in Sources */,
+				47FDCB8E1972BF35003723C1 /* DriveNavigationController.m in Sources */,
+				47B293CC197D3E10006BE2D1 /* HomeScreenViewController.m in Sources */,
+				475D2DA319625B000015C6B8 /* SelectCarViewController.m in Sources */,
 				475D2DA619625B310015C6B8 /* SelectLevelViewController.m in Sources */,
-				47696E4A195D27EA00A41AC6 /* SKTAudio.m in Sources */,
-				47FDCB8B1972B59B003723C1 /* GameKitHelper.m in Sources */,
+				E1CBACD71C22BE9E001CC466 /* SelectDriverViewController.m in Sources */,
+				917B79131C1DB50E00A6D3DA /* TrackStatsViewController.m in Sources */,
 				47117B531959CA1400B20209 /* ViewController.m in Sources */,
+				47117B561959CA1400B20209 /* MyScene.m in Sources */,
+				47696E4A195D27EA00A41AC6 /* SKTAudio.m in Sources */,
 				47696E48195D27EA00A41AC6 /* SKEmitterNode+SKTExtras.m in Sources */,
 				47696E4B195D27EA00A41AC6 /* SKTUtils.mm in Sources */,
 				47696E47195D27EA00A41AC6 /* SKAction+SKTExtras.m in Sources */,
+				47696E49195D27EA00A41AC6 /* SKNode+SKTExtras.m in Sources */,
+				47FDCB8B1972B59B003723C1 /* GameKitHelper.m in Sources */,
 				47FDCB911972CB4A003723C1 /* AchievementsHelper.m in Sources */,
 				47117B4D1959CA1400B20209 /* AppDelegate.m in Sources */,
-				917B79131C1DB50E00A6D3DA /* TrackStatsViewController.m in Sources */,
 				47696E4E195D283500A41AC6 /* AnalogControl.m in Sources */,
-				47696E49195D27EA00A41AC6 /* SKNode+SKTExtras.m in Sources */,
-				47FDCB8E1972BF35003723C1 /* DriveNavigationController.m in Sources */,
-				47B293CC197D3E10006BE2D1 /* HomeScreenViewController.m in Sources */,
 				47117B491959CA1400B20209 /* main.m in Sources */,
-				475D2DA319625B000015C6B8 /* SelectCarViewController.m in Sources */,
 				E171F3151C1F137700E3DB0D /* mySingleton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

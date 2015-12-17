@@ -9,8 +9,11 @@
 // back button is Start Again
 
 #import "TrackStatsViewController.h"
-#import "ViewController.h"
+//#import "ViewController.h"
 #import "mySingleton.h"
+
+#define kEmail      @"emailAddress"
+#define kSubject    @"subjectName"
 
 @interface TrackStatsViewController ()
 
@@ -70,7 +73,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    mySingleton *singleton = [mySingleton sharedSingleton];
+    //mySingleton *singleton = [mySingleton sharedSingleton];
     
     //set up the plist params
     NSString *pathStr               = [[NSBundle mainBundle] bundlePath];

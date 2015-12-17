@@ -189,7 +189,6 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
    
-
     [self.view sendSubviewToBack:self.skView];
 }
 
@@ -199,7 +198,8 @@
     if (!self.skView) {
         self.skView = [[SKView alloc] initWithFrame:self.view.bounds];
         MyScene *scene = [[MyScene alloc]
-        initWithSize:self.skView.bounds.size carType:self.carType level:self.levelType];
+        //initWithSize:self.skView.bounds.size carType:self.carType level:self.levelType];
+        initWithSize:self.skView.bounds.size carType:1 level:1];
         scene.scaleMode = SKSceneScaleModeAspectFill;
         [self.skView presentScene:scene];
 

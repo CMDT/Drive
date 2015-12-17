@@ -7,7 +7,7 @@
 //
 
 #import "SelectCarViewController.h"
-#import "SelectLevelViewController.h"
+//#import "SelectLevelViewController.h"
 #import "SKTAudio.h"
 #import "mySingleton.h"
 //mySingleton *singleton = [mySingleton sharedSingleton];
@@ -43,13 +43,14 @@
     
     [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
 
-    SelectLevelViewController *levelVC = [self.storyboard
-        instantiateViewControllerWithIdentifier:NSStringFromClass([SelectLevelViewController class])];
-    levelVC.carType = sender.tag;
+    //SelectLevelViewController *levelVC = [self.storyboard
+        //instantiateViewControllerWithIdentifier:NSStringFromClass([SelectLevelViewController class])];
+    //levelVC.carType = sender.tag;
     
-    singleton.carNo=[NSString stringWithFormat:@"%ld", levelVC.carType];
+    //singleton.carNo=[NSString stringWithFormat:@"%ld", levelVC.carType];
+    singleton.carNo=[NSString stringWithFormat:@"%ld", sender.tag];
 
-    [self.navigationController pushViewController:levelVC animated:YES];
+    //[self.navigationController pushViewController:levelVC animated:YES];
 }
 
 - (IBAction)backButtonDidTouchUpInside:(id)sender {
