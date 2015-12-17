@@ -70,13 +70,13 @@ static mySingleton * sharedSingleton = nil;
 - (id) init {
     if(self = [super init]) {
         hornsShowing        = NO;
-        email               = @"";
-        testDate            = @"15/12/2015";
-        testTime            = @"12:00";
+        email               = @"me@mmu.ac.uk";
+        testDate            = @"17/12/2015";
+        testTime            = @"10:00";
         resultStrings       = @"";
         subjectName         = @"Sub";
         resultStrings       = @"";
-        versionNumber       = @"1.2.3 - 14.12.15";
+        versionNumber       = @"1.2.0 - 17.12.15";
         cardReactionTimeResult = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
         counter             = 0;
         laps                = @"0";
@@ -99,8 +99,8 @@ static mySingleton * sharedSingleton = nil;
         totalHorn           = @"999999";
         distractionOn       = @"OFF";
         masterScore         = @"0";
-        wallCrashMult       = 1.0;
-        hazCrashMult        = 1.0;
+        wallCrashMult       = 0.05;
+        hazCrashMult        = 0.1;
         hornsMulti          = 1.0;
     }
     return self;

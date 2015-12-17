@@ -10,7 +10,7 @@
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
-			<string>Tester Name &amp; Email Address</string>
+			<string>Driver Name &amp; Results Email Address</string>
 		</dict>
 		<dict>
 			<key>DefaultValue</key>

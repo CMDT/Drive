@@ -105,6 +105,7 @@
     laps.text=singleton.laps;
     testDates.text=singleton.testDate;
     testTimes.text=singleton.testTime;
+    email.text=singleton.email;
     subjectName.text=singleton.subjectName;
     versionNumber.text=singleton.versionNumber;
     carNo.text=singleton.carNo;
@@ -411,8 +412,6 @@
  - (IBAction)finishAction:(id)sender {
     //re-route this to the results stats VC TrackStatsVC
     [self.navigationController popToRootViewControllerAnimated:YES];
-}
-- (IBAction)emailAction:(id)sender {
 }
 
 @end

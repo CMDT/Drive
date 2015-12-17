@@ -33,7 +33,6 @@
 		475E5EB1195A5A610063FD68 /* LevelDetails.plist in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E7C195A5A610063FD68 /* LevelDetails.plist */; };
 		475E5EB2195A5A610063FD68 /* box.wav in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E7E195A5A610063FD68 /* box.wav */; };
 		475E5EB3195A5A610063FD68 /* button_press.wav in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E7F195A5A610063FD68 /* button_press.wav */; };
-		475E5EB4195A5A610063FD68 /* circuitracer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E80195A5A610063FD68 /* circuitracer.mp3 */; };
 		475E5EB5195A5A610063FD68 /* horn.wav in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E81195A5A610063FD68 /* horn.wav */; };
 		475E5EB6195A5A610063FD68 /* lap.wav in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E82195A5A610063FD68 /* lap.wav */; };
 		475E5EB7195A5A610063FD68 /* nitro.wav in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E83195A5A610063FD68 /* nitro.wav */; };
@@ -143,6 +142,45 @@
 		E171F3121C1F124600E3DB0D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E171F3111C1F124600E3DB0D /* Settings.bundle */; };
 		E171F3151C1F137700E3DB0D /* mySingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = E171F3141C1F137700E3DB0D /* mySingleton.m */; };
 		E171F3171C1F1F5700E3DB0D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E171F3161C1F1F5700E3DB0D /* MessageUI.framework */; };
+		E1CBACD71C22BE9E001CC466 /* SelectDriverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CBACD61C22BE9E001CC466 /* SelectDriverViewController.m */; };
+		E1CBACFC1C22D7DA001CC466 /* pause2Gr.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACD81C22D7DA001CC466 /* pause2Gr.png */; };
+		E1CBACFD1C22D7DA001CC466 /* startx.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACD91C22D7DA001CC466 /* startx.png */; };
+		E1CBACFE1C22D7DA001CC466 /* trackx.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACDA1C22D7DA001CC466 /* trackx.png */; };
+		E1CBACFF1C22D7DA001CC466 /* infoGr.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACDB1C22D7DA001CC466 /* infoGr.png */; };
+		E1CBAD001C22D7DA001CC466 /* infoOr.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACDC1C22D7DA001CC466 /* infoOr.png */; };
+		E1CBAD011C22D7DA001CC466 /* mediumx.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACDD1C22D7DA001CC466 /* mediumx.png */; };
+		E1CBAD021C22D7DA001CC466 /* nextxGr.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACDE1C22D7DA001CC466 /* nextxGr.png */; };
+		E1CBAD031C22D7DA001CC466 /* pause1Gr.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACDF1C22D7DA001CC466 /* pause1Gr.png */; };
+		E1CBAD041C22D7DA001CC466 /* emailGr.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACE01C22D7DA001CC466 /* emailGr.png */; };
+		E1CBAD051C22D7DA001CC466 /* emailOr.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACE11C22D7DA001CC466 /* emailOr.png */; };
+		E1CBAD061C22D7DA001CC466 /* emailxGr.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACE21C22D7DA001CC466 /* emailxGr.png */; };
+		E1CBAD071C22D7DA001CC466 /* finishx.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACE31C22D7DA001CC466 /* finishx.png */; };
+		E1CBAD081C22D7DA001CC466 /* hardx.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACE41C22D7DA001CC466 /* hardx.png */; };
+		E1CBAD091C22D7DA001CC466 /* backxGrsm.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACE51C22D7DA001CC466 /* backxGrsm.png */; };
+		E1CBAD0A1C22D7DA001CC466 /* backx.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACE61C22D7DA001CC466 /* backx.png */; };
+		E1CBAD0B1C22D7DA001CC466 /* carx.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACE71C22D7DA001CC466 /* carx.png */; };
+		E1CBAD0C1C22D7DA001CC466 /* driverx.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACE81C22D7DA001CC466 /* driverx.png */; };
+		E1CBAD0D1C22D7DA001CC466 /* easyx.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACE91C22D7DA001CC466 /* easyx.png */; };
+		E1CBAD0E1C22D7DA001CC466 /* pause2Gr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACEA1C22D7DA001CC466 /* pause2Gr@2x.png */; };
+		E1CBAD0F1C22D7DA001CC466 /* pause1Gr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACEB1C22D7DA001CC466 /* pause1Gr@2x.png */; };
+		E1CBAD101C22D7DA001CC466 /* emailxGr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACEC1C22D7DA001CC466 /* emailxGr@2x.png */; };
+		E1CBAD111C22D7DA001CC466 /* backxGr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACED1C22D7DA001CC466 /* backxGr@2x.png */; };
+		E1CBAD121C22D7DA001CC466 /* nextxGr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACEE1C22D7DA001CC466 /* nextxGr@2x.png */; };
+		E1CBAD131C22D7DA001CC466 /* driverx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACEF1C22D7DA001CC466 /* driverx@2x.png */; };
+		E1CBAD141C22D7DA001CC466 /* trackx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACF01C22D7DA001CC466 /* trackx@2x.png */; };
+		E1CBAD151C22D7DA001CC466 /* carx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACF11C22D7DA001CC466 /* carx@2x.png */; };
+		E1CBAD161C22D7DA001CC466 /* easyx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACF21C22D7DA001CC466 /* easyx@2x.png */; };
+		E1CBAD171C22D7DA001CC466 /* hardx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACF31C22D7DA001CC466 /* hardx@2x.png */; };
+		E1CBAD181C22D7DA001CC466 /* mediumx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACF41C22D7DA001CC466 /* mediumx@2x.png */; };
+		E1CBAD191C22D7DA001CC466 /* startx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACF51C22D7DA001CC466 /* startx@2x.png */; };
+		E1CBAD1A1C22D7DA001CC466 /* backx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACF61C22D7DA001CC466 /* backx@2x.png */; };
+		E1CBAD1B1C22D7DA001CC466 /* finishx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACF71C22D7DA001CC466 /* finishx@2x.png */; };
+		E1CBAD1C1C22D7DA001CC466 /* infoGr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACF81C22D7DA001CC466 /* infoGr@2x.png */; };
+		E1CBAD1D1C22D7DA001CC466 /* emailGr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACF91C22D7DA001CC466 /* emailGr@2x.png */; };
+		E1CBAD1E1C22D7DA001CC466 /* emailOr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACFA1C22D7DA001CC466 /* emailOr@2x.png */; };
+		E1CBAD1F1C22D7DA001CC466 /* infoOr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACFB1C22D7DA001CC466 /* infoOr@2x.png */; };
+		E1CBAD221C22D7F1001CC466 /* bg-main-menu-driver.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBAD201C22D7F1001CC466 /* bg-main-menu-driver.png */; };
+		E1CBAD231C22D7F1001CC466 /* bg-main-menu-driver@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBAD211C22D7F1001CC466 /* bg-main-menu-driver@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,7 +228,6 @@
 		475E5E7C195A5A610063FD68 /* LevelDetails.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LevelDetails.plist; sourceTree = "<group>"; };
 		475E5E7E195A5A610063FD68 /* box.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = box.wav; sourceTree = "<group>"; };
 		475E5E7F195A5A610063FD68 /* button_press.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_press.wav; sourceTree = "<group>"; };
-		475E5E80195A5A610063FD68 /* circuitracer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = circuitracer.mp3; sourceTree = "<group>"; };
 		475E5E81195A5A610063FD68 /* horn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = horn.wav; sourceTree = "<group>"; };
 		475E5E82195A5A610063FD68 /* lap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lap.wav; sourceTree = "<group>"; };
 		475E5E83195A5A610063FD68 /* nitro.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = nitro.wav; sourceTree = "<group>"; };
@@ -312,6 +349,46 @@
 		E171F3131C1F137700E3DB0D /* mySingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mySingleton.h; path = GameKit/mySingleton.h; sourceTree = "<group>"; };
 		E171F3141C1F137700E3DB0D /* mySingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mySingleton.m; path = GameKit/mySingleton.m; sourceTree = "<group>"; };
 		E171F3161C1F1F5700E3DB0D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E1CBACD51C22BE9E001CC466 /* SelectDriverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectDriverViewController.h; sourceTree = "<group>"; };
+		E1CBACD61C22BE9E001CC466 /* SelectDriverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectDriverViewController.m; sourceTree = "<group>"; };
+		E1CBACD81C22D7DA001CC466 /* pause2Gr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause2Gr.png; sourceTree = "<group>"; };
+		E1CBACD91C22D7DA001CC466 /* startx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startx.png; sourceTree = "<group>"; };
+		E1CBACDA1C22D7DA001CC466 /* trackx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trackx.png; sourceTree = "<group>"; };
+		E1CBACDB1C22D7DA001CC466 /* infoGr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = infoGr.png; sourceTree = "<group>"; };
+		E1CBACDC1C22D7DA001CC466 /* infoOr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = infoOr.png; sourceTree = "<group>"; };
+		E1CBACDD1C22D7DA001CC466 /* mediumx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mediumx.png; sourceTree = "<group>"; };
+		E1CBACDE1C22D7DA001CC466 /* nextxGr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nextxGr.png; sourceTree = "<group>"; };
+		E1CBACDF1C22D7DA001CC466 /* pause1Gr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause1Gr.png; sourceTree = "<group>"; };
+		E1CBACE01C22D7DA001CC466 /* emailGr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emailGr.png; sourceTree = "<group>"; };
+		E1CBACE11C22D7DA001CC466 /* emailOr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emailOr.png; sourceTree = "<group>"; };
+		E1CBACE21C22D7DA001CC466 /* emailxGr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emailxGr.png; sourceTree = "<group>"; };
+		E1CBACE31C22D7DA001CC466 /* finishx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finishx.png; sourceTree = "<group>"; };
+		E1CBACE41C22D7DA001CC466 /* hardx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hardx.png; sourceTree = "<group>"; };
+		E1CBACE51C22D7DA001CC466 /* backxGrsm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backxGrsm.png; sourceTree = "<group>"; };
+		E1CBACE61C22D7DA001CC466 /* backx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backx.png; sourceTree = "<group>"; };
+		E1CBACE71C22D7DA001CC466 /* carx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carx.png; sourceTree = "<group>"; };
+		E1CBACE81C22D7DA001CC466 /* driverx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = driverx.png; sourceTree = "<group>"; };
+		E1CBACE91C22D7DA001CC466 /* easyx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = easyx.png; sourceTree = "<group>"; };
+		E1CBACEA1C22D7DA001CC466 /* pause2Gr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause2Gr@2x.png"; sourceTree = "<group>"; };
+		E1CBACEB1C22D7DA001CC466 /* pause1Gr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause1Gr@2x.png"; sourceTree = "<group>"; };
+		E1CBACEC1C22D7DA001CC466 /* emailxGr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emailxGr@2x.png"; sourceTree = "<group>"; };
+		E1CBACED1C22D7DA001CC466 /* backxGr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backxGr@2x.png"; sourceTree = "<group>"; };
+		E1CBACEE1C22D7DA001CC466 /* nextxGr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nextxGr@2x.png"; sourceTree = "<group>"; };
+		E1CBACEF1C22D7DA001CC466 /* driverx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "driverx@2x.png"; sourceTree = "<group>"; };
+		E1CBACF01C22D7DA001CC466 /* trackx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trackx@2x.png"; sourceTree = "<group>"; };
+		E1CBACF11C22D7DA001CC466 /* carx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carx@2x.png"; sourceTree = "<group>"; };
+		E1CBACF21C22D7DA001CC466 /* easyx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "easyx@2x.png"; sourceTree = "<group>"; };
+		E1CBACF31C22D7DA001CC466 /* hardx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hardx@2x.png"; sourceTree = "<group>"; };
+		E1CBACF41C22D7DA001CC466 /* mediumx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mediumx@2x.png"; sourceTree = "<group>"; };
+		E1CBACF51C22D7DA001CC466 /* startx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "startx@2x.png"; sourceTree = "<group>"; };
+		E1CBACF61C22D7DA001CC466 /* backx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backx@2x.png"; sourceTree = "<group>"; };
+		E1CBACF71C22D7DA001CC466 /* finishx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "finishx@2x.png"; sourceTree = "<group>"; };
+		E1CBACF81C22D7DA001CC466 /* infoGr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "infoGr@2x.png"; sourceTree = "<group>"; };
+		E1CBACF91C22D7DA001CC466 /* emailGr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emailGr@2x.png"; sourceTree = "<group>"; };
+		E1CBACFA1C22D7DA001CC466 /* emailOr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emailOr@2x.png"; sourceTree = "<group>"; };
+		E1CBACFB1C22D7DA001CC466 /* infoOr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "infoOr@2x.png"; sourceTree = "<group>"; };
+		E1CBAD201C22D7F1001CC466 /* bg-main-menu-driver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-main-menu-driver.png"; sourceTree = "<group>"; };
+		E1CBAD211C22D7F1001CC466 /* bg-main-menu-driver@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-main-menu-driver@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,6 +459,8 @@
 				47117B4C1959CA1400B20209 /* AppDelegate.m */,
 				47117B511959CA1400B20209 /* ViewController.h */,
 				47117B521959CA1400B20209 /* ViewController.m */,
+				E1CBACD51C22BE9E001CC466 /* SelectDriverViewController.h */,
+				E1CBACD61C22BE9E001CC466 /* SelectDriverViewController.m */,
 				475D2DA119625B000015C6B8 /* SelectCarViewController.h */,
 				475D2DA219625B000015C6B8 /* SelectCarViewController.m */,
 				475D2DA419625B310015C6B8 /* SelectLevelViewController.h */,
@@ -463,6 +542,8 @@
 		475E5E51195A5A610063FD68 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				E1CBAD201C22D7F1001CC466 /* bg-main-menu-driver.png */,
+				E1CBAD211C22D7F1001CC466 /* bg-main-menu-driver@2x.png */,
 				E171F26A1C1EDB5700E3DB0D /* bg-main-menu-base@2x.png */,
 				E171F26B1C1EDB5700E3DB0D /* bg-main-menu@2x.png */,
 				E171F26C1C1EDB5700E3DB0D /* bg-select-car.png */,
@@ -482,54 +563,36 @@
 		475E5E5E195A5A610063FD68 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				917E5A5B1C21DF0A009DF226 /* tick.png */,
-				917E5A5C1C21DF0A009DF226 /* tick@2x.png */,
-				E171F30F1C1F0FC700E3DB0D /* seg-50@2x.png */,
+				E1CBACF61C22D7DA001CC466 /* backx@2x.png */,
+				E1CBACED1C22D7DA001CC466 /* backxGr@2x.png */,
+				E1CBACE51C22D7DA001CC466 /* backxGrsm.png */,
+				E1CBACE61C22D7DA001CC466 /* backx.png */,
+				E171F2821C1EDBB300E3DB0D /* base.png */,
+				E171F2831C1EDBB300E3DB0D /* base@2x.png */,
+				91C7E43E1C1CDC0D00A38B32 /* btn-back.png */,
+				91C7E43F1C1CDC0D00A38B32 /* btn-back@2x.png */,
 				E171F2FF1C1EF20100E3DB0D /* btn-back2.png */,
 				E171F3001C1EF20100E3DB0D /* btn-back2@2x.png */,
-				E171F3011C1EF20100E3DB0D /* btn-email.png */,
-				E171F3021C1EF20100E3DB0D /* btn-email@2x.png */,
-				E171F3031C1EF20100E3DB0D /* btn-finish.png */,
-				E171F3041C1EF20100E3DB0D /* btn-finish@2x.png */,
-				E171F3051C1EF20100E3DB0D /* btn-info.png */,
-				E171F3061C1EF20100E3DB0D /* btn-info@2x.png */,
-				E171F2D51C1EF19F00E3DB0D /* seg-1.png */,
-				E171F2D61C1EF19F00E3DB0D /* seg-1@2x.png */,
-				E171F2D71C1EF19F00E3DB0D /* seg-2.png */,
-				E171F2D81C1EF19F00E3DB0D /* seg-2@2x.png */,
-				E171F2D91C1EF19F00E3DB0D /* seg-5.png */,
-				E171F2DA1C1EF19F00E3DB0D /* seg-5@2x.png */,
-				E171F2DB1C1EF19F00E3DB0D /* seg-10.png */,
-				E171F2DC1C1EF19F00E3DB0D /* seg-10@2x.png */,
-				E171F2DD1C1EF19F00E3DB0D /* seg-20.png */,
-				E171F2DE1C1EF19F00E3DB0D /* seg-20@2x.png */,
-				E171F2DF1C1EF19F00E3DB0D /* seg-50.png */,
-				E171F2E01C1EF19F00E3DB0D /* seg-100.png */,
-				E171F2E11C1EF19F00E3DB0D /* seg-100@2x.png */,
-				E171F2E21C1EF19F00E3DB0D /* seg-beat.png */,
-				E171F2E31C1EF19F00E3DB0D /* seg-beat@2x.png */,
-				E171F2E41C1EF19F00E3DB0D /* seg-blues.png */,
-				E171F2E51C1EF19F00E3DB0D /* seg-blues@2x.png */,
-				E171F2E61C1EF19F00E3DB0D /* seg-light.png */,
-				E171F2E71C1EF19F00E3DB0D /* seg-light@2x.png */,
-				E171F2E81C1EF19F00E3DB0D /* seg-none.png */,
-				E171F2E91C1EF19F00E3DB0D /* seg-none@2x.png */,
 				E171F2C91C1EE0C300E3DB0D /* btn-car1.png */,
 				E171F2CA1C1EE0C300E3DB0D /* btn-car1@2x.png */,
 				E171F2CB1C1EE0C300E3DB0D /* btn-car2.png */,
 				E171F2CC1C1EE0C300E3DB0D /* btn-car2@2x.png */,
 				E171F2CD1C1EE0C300E3DB0D /* btn-car3.png */,
 				E171F2CE1C1EE0C300E3DB0D /* btn-car3@2x.png */,
-				E171F2C41C1EDDF600E3DB0D /* knob.png */,
-				E171F2C51C1EDDF600E3DB0D /* knob@2x.png */,
-				E171F2821C1EDBB300E3DB0D /* base.png */,
-				E171F2831C1EDBB300E3DB0D /* base@2x.png */,
 				E171F2841C1EDBB300E3DB0D /* btn-easy.png */,
 				E171F2851C1EDBB300E3DB0D /* btn-easy@2x.png */,
+				E171F3011C1EF20100E3DB0D /* btn-email.png */,
+				E171F3021C1EF20100E3DB0D /* btn-email@2x.png */,
 				E171F2861C1EDBB300E3DB0D /* btn-fast.png */,
 				E171F2871C1EDBB300E3DB0D /* btn-fast@2x.png */,
+				E171F3031C1EF20100E3DB0D /* btn-finish.png */,
+				E171F3041C1EF20100E3DB0D /* btn-finish@2x.png */,
+				475E5E6B195A5A610063FD68 /* btn-gamecenter.png */,
+				475E5E6C195A5A610063FD68 /* btn-gamecenter@2x.png */,
 				E171F2881C1EDBB300E3DB0D /* btn-hard.png */,
 				E171F2891C1EDBB300E3DB0D /* btn-hard@2x.png */,
+				E171F3051C1EF20100E3DB0D /* btn-info.png */,
+				E171F3061C1EF20100E3DB0D /* btn-info@2x.png */,
 				E171F28A1C1EDBB300E3DB0D /* btn-medium.png */,
 				E171F28B1C1EDBB300E3DB0D /* btn-medium@2x.png */,
 				E171F28C1C1EDBB300E3DB0D /* btn-pause.png */,
@@ -542,21 +605,75 @@
 				E171F2931C1EDBB300E3DB0D /* btn-select-track@2x.png */,
 				E171F2941C1EDBB300E3DB0D /* btn-slow.png */,
 				E171F2951C1EDBB300E3DB0D /* btn-slow@2x.png */,
+				E1CBACF11C22D7DA001CC466 /* carx@2x.png */,
+				E1CBACE71C22D7DA001CC466 /* carx.png */,
+				E1CBACEF1C22D7DA001CC466 /* driverx@2x.png */,
+				E1CBACE81C22D7DA001CC466 /* driverx.png */,
+				E1CBACF21C22D7DA001CC466 /* easyx@2x.png */,
+				E1CBACE91C22D7DA001CC466 /* easyx.png */,
+				E1CBACF91C22D7DA001CC466 /* emailGr@2x.png */,
+				E1CBACE01C22D7DA001CC466 /* emailGr.png */,
+				E1CBACFA1C22D7DA001CC466 /* emailOr@2x.png */,
+				E1CBACE11C22D7DA001CC466 /* emailOr.png */,
+				E1CBACEC1C22D7DA001CC466 /* emailxGr@2x.png */,
+				E1CBACE21C22D7DA001CC466 /* emailxGr.png */,
+				E1CBACF71C22D7DA001CC466 /* finishx@2x.png */,
+				E1CBACE31C22D7DA001CC466 /* finishx.png */,
+				E1CBACF31C22D7DA001CC466 /* hardx@2x.png */,
+				E1CBACE41C22D7DA001CC466 /* hardx.png */,
+				E1CBACF81C22D7DA001CC466 /* infoGr@2x.png */,
+				E1CBACDB1C22D7DA001CC466 /* infoGr.png */,
+				E1CBACFB1C22D7DA001CC466 /* infoOr@2x.png */,
+				E1CBACDC1C22D7DA001CC466 /* infoOr.png */,
+				E171F2C41C1EDDF600E3DB0D /* knob.png */,
+				E171F2C51C1EDDF600E3DB0D /* knob@2x.png */,
 				E171F2961C1EDBB300E3DB0D /* knob1.png */,
 				E171F2971C1EDBB300E3DB0D /* knob1@2x.png */,
+				E1CBACF41C22D7DA001CC466 /* mediumx@2x.png */,
+				E1CBACDD1C22D7DA001CC466 /* mediumx.png */,
 				E171F2981C1EDBB300E3DB0D /* mmulogoshape.png */,
+				E1CBACEE1C22D7DA001CC466 /* nextxGr@2x.png */,
+				E1CBACDE1C22D7DA001CC466 /* nextxGr.png */,
+				E1CBACEB1C22D7DA001CC466 /* pause1Gr@2x.png */,
+				E1CBACDF1C22D7DA001CC466 /* pause1Gr.png */,
+				E1CBACEA1C22D7DA001CC466 /* pause2Gr@2x.png */,
+				E1CBACD81C22D7DA001CC466 /* pause2Gr.png */,
 				E171F2991C1EDBB300E3DB0D /* racing-flag.jpg */,
+				E171F2D51C1EF19F00E3DB0D /* seg-1.png */,
+				E171F2D61C1EF19F00E3DB0D /* seg-1@2x.png */,
+				E171F2D71C1EF19F00E3DB0D /* seg-2.png */,
+				E171F2D81C1EF19F00E3DB0D /* seg-2@2x.png */,
+				E171F2D91C1EF19F00E3DB0D /* seg-5.png */,
+				E171F2DA1C1EF19F00E3DB0D /* seg-5@2x.png */,
+				E171F2DB1C1EF19F00E3DB0D /* seg-10.png */,
+				E171F2DC1C1EF19F00E3DB0D /* seg-10@2x.png */,
+				E171F2DD1C1EF19F00E3DB0D /* seg-20.png */,
+				E171F2DE1C1EF19F00E3DB0D /* seg-20@2x.png */,
+				E171F2DF1C1EF19F00E3DB0D /* seg-50.png */,
+				E171F30F1C1F0FC700E3DB0D /* seg-50@2x.png */,
+				E171F2E01C1EF19F00E3DB0D /* seg-100.png */,
+				E171F2E11C1EF19F00E3DB0D /* seg-100@2x.png */,
+				E171F2E21C1EF19F00E3DB0D /* seg-beat.png */,
+				E171F2E31C1EF19F00E3DB0D /* seg-beat@2x.png */,
+				E171F2E41C1EF19F00E3DB0D /* seg-blues.png */,
+				E171F2E51C1EF19F00E3DB0D /* seg-blues@2x.png */,
+				E171F2E61C1EF19F00E3DB0D /* seg-light.png */,
+				E171F2E71C1EF19F00E3DB0D /* seg-light@2x.png */,
+				E171F2E81C1EF19F00E3DB0D /* seg-none.png */,
+				E171F2E91C1EF19F00E3DB0D /* seg-none@2x.png */,
 				E171F29A1C1EDBB300E3DB0D /* speedo-fast.png */,
 				E171F29B1C1EDBB300E3DB0D /* speedo-med.png */,
 				E171F29C1C1EDBB300E3DB0D /* speedo-slow.png */,
+				E1CBACF51C22D7DA001CC466 /* startx@2x.png */,
+				E1CBACD91C22D7DA001CC466 /* startx.png */,
 				E171F29D1C1EDBB300E3DB0D /* steering-wheel-horn.png */,
 				E171F29E1C1EDBB300E3DB0D /* steering-wheel-horn@2x.png */,
-				91C7E43E1C1CDC0D00A38B32 /* btn-back.png */,
-				91C7E43F1C1CDC0D00A38B32 /* btn-back@2x.png */,
-				475E5E6B195A5A610063FD68 /* btn-gamecenter.png */,
-				475E5E6C195A5A610063FD68 /* btn-gamecenter@2x.png */,
 				475E5E79195A5A610063FD68 /* steering-wheel.png */,
 				475E5E7A195A5A610063FD68 /* steering-wheel@2x.png */,
+				917E5A5B1C21DF0A009DF226 /* tick.png */,
+				917E5A5C1C21DF0A009DF226 /* tick@2x.png */,
+				E1CBACF01C22D7DA001CC466 /* trackx@2x.png */,
+				E1CBACDA1C22D7DA001CC466 /* trackx.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -579,7 +696,6 @@
 				E171F2BF1C1EDC1C00E3DB0D /* track16.mp3 */,
 				475E5E7E195A5A610063FD68 /* box.wav */,
 				475E5E7F195A5A610063FD68 /* button_press.wav */,
-				475E5E80195A5A610063FD68 /* circuitracer.mp3 */,
 				475E5E81195A5A610063FD68 /* horn.wav */,
 				475E5E82195A5A610063FD68 /* lap.wav */,
 				475E5E83195A5A610063FD68 /* nitro.wav */,
@@ -703,9 +819,11 @@
 				E171F2EB1C1EF19F00E3DB0D /* seg-1@2x.png in Resources */,
 				E171F2671C1EDB3600E3DB0D /* achievment-destruction.png in Resources */,
 				E171F2801C1EDB5700E3DB0D /* track_3.png in Resources */,
+				E1CBAD0E1C22D7DA001CC466 /* pause2Gr@2x.png in Resources */,
 				E171F27A1C1EDB5700E3DB0D /* bg-select-difficulty.png in Resources */,
 				E171F27F1C1EDB5700E3DB0D /* track_2@2x.png in Resources */,
 				E171F2C61C1EDDF600E3DB0D /* knob.png in Resources */,
+				E1CBAD1F1C22D7DA001CC466 /* infoOr@2x.png in Resources */,
 				E171F3101C1F0FC700E3DB0D /* seg-50@2x.png in Resources */,
 				E171F2B31C1EDBB300E3DB0D /* knob1.png in Resources */,
 				E171F2FC1C1EF19F00E3DB0D /* seg-light@2x.png in Resources */,
@@ -713,11 +831,17 @@
 				E171F3121C1F124600E3DB0D /* Settings.bundle in Resources */,
 				475E5EA2195A5A610063FD68 /* btn-gamecenter@2x.png in Resources */,
 				475E5EB6195A5A610063FD68 /* lap.wav in Resources */,
+				E1CBACFD1C22D7DA001CC466 /* startx.png in Resources */,
 				E171F2D01C1EE0C300E3DB0D /* btn-car1@2x.png in Resources */,
+				E1CBAD231C22D7F1001CC466 /* bg-main-menu-driver@2x.png in Resources */,
+				E1CBAD1B1C22D7DA001CC466 /* finishx@2x.png in Resources */,
 				E171F30C1C1EF20100E3DB0D /* btn-finish@2x.png in Resources */,
 				E171F30B1C1EF20100E3DB0D /* btn-finish.png in Resources */,
 				47117B5A1959CA1400B20209 /* Images.xcassets in Resources */,
 				E171F2771C1EDB5700E3DB0D /* bg-main-menu@2x.png in Resources */,
+				E1CBAD1A1C22D7DA001CC466 /* backx@2x.png in Resources */,
+				E1CBAD141C22D7DA001CC466 /* trackx@2x.png in Resources */,
+				E1CBAD161C22D7DA001CC466 /* easyx@2x.png in Resources */,
 				E171F2EE1C1EF19F00E3DB0D /* seg-5.png in Resources */,
 				47117B581959CA1400B20209 /* Spaceship.png in Resources */,
 				E171F2D41C1EE0C300E3DB0D /* btn-car3@2x.png in Resources */,
@@ -728,6 +852,7 @@
 				E171F2781C1EDB5700E3DB0D /* bg-select-car.png in Resources */,
 				E171F2D11C1EE0C300E3DB0D /* btn-car2.png in Resources */,
 				E171F27E1C1EDB5700E3DB0D /* track_2.png in Resources */,
+				E1CBAD171C22D7DA001CC466 /* hardx@2x.png in Resources */,
 				917E5A5D1C21DF0A009DF226 /* tick.png in Resources */,
 				E171F2B41C1EDBB300E3DB0D /* knob1@2x.png in Resources */,
 				E171F30D1C1EF20100E3DB0D /* btn-info.png in Resources */,
@@ -735,27 +860,36 @@
 				E171F27D1C1EDB5700E3DB0D /* track_1@2x.png in Resources */,
 				E171F2FB1C1EF19F00E3DB0D /* seg-light.png in Resources */,
 				E171F2B81C1EDBB300E3DB0D /* speedo-med.png in Resources */,
+				E1CBAD021C22D7DA001CC466 /* nextxGr.png in Resources */,
 				E171F2A61C1EDBB300E3DB0D /* btn-hard@2x.png in Resources */,
 				E171F2D21C1EE0C300E3DB0D /* btn-car2@2x.png in Resources */,
 				E171F2C31C1EDC1C00E3DB0D /* track16.mp3 in Resources */,
+				E1CBAD151C22D7DA001CC466 /* carx@2x.png in Resources */,
 				E171F2F71C1EF19F00E3DB0D /* seg-beat.png in Resources */,
 				E171F2EA1C1EF19F00E3DB0D /* seg-1.png in Resources */,
+				E1CBAD131C22D7DA001CC466 /* driverx@2x.png in Resources */,
 				475E5EAF195A5A610063FD68 /* steering-wheel.png in Resources */,
 				475E5EB7195A5A610063FD68 /* nitro.wav in Resources */,
 				E171F2F61C1EF19F00E3DB0D /* seg-100@2x.png in Resources */,
 				E171F2AB1C1EDBB300E3DB0D /* btn-play.png in Resources */,
 				E171F2B71C1EDBB300E3DB0D /* speedo-fast.png in Resources */,
+				E1CBAD0C1C22D7DA001CC466 /* driverx.png in Resources */,
 				E171F2B91C1EDBB300E3DB0D /* speedo-slow.png in Resources */,
 				E171F3071C1EF20100E3DB0D /* btn-back2.png in Resources */,
 				E171F2AF1C1EDBB300E3DB0D /* btn-select-track.png in Resources */,
 				E171F2681C1EDB3600E3DB0D /* achievment-intermediate.png in Resources */,
+				E1CBAD191C22D7DA001CC466 /* startx@2x.png in Resources */,
 				E171F2AE1C1EDBB300E3DB0D /* btn-select-car@2x.png in Resources */,
 				E171F2691C1EDB3600E3DB0D /* achievment-professional.png in Resources */,
+				E1CBACFF1C22D7DA001CC466 /* infoGr.png in Resources */,
 				E171F2761C1EDB5700E3DB0D /* bg-main-menu-base@2x.png in Resources */,
 				E171F30A1C1EF20100E3DB0D /* btn-email@2x.png in Resources */,
 				E171F2F81C1EF19F00E3DB0D /* seg-beat@2x.png in Resources */,
 				91C7E4421C1CDC0D00A38B32 /* btn-back.png in Resources */,
+				E1CBACFE1C22D7DA001CC466 /* trackx.png in Resources */,
+				E1CBAD081C22D7DA001CC466 /* hardx.png in Resources */,
 				E171F3091C1EF20100E3DB0D /* btn-email.png in Resources */,
+				E1CBAD041C22D7DA001CC466 /* emailGr.png in Resources */,
 				47117B501959CA1400B20209 /* Main.storyboard in Resources */,
 				E171F2C71C1EDDF600E3DB0D /* knob@2x.png in Resources */,
 				E171F2C21C1EDC1C00E3DB0D /* silence30.mp3 in Resources */,
@@ -763,23 +897,35 @@
 				E171F2ED1C1EF19F00E3DB0D /* seg-2@2x.png in Resources */,
 				E171F2BA1C1EDBB300E3DB0D /* steering-wheel-horn.png in Resources */,
 				475E5EB0195A5A610063FD68 /* steering-wheel@2x.png in Resources */,
-				475E5EB4195A5A610063FD68 /* circuitracer.mp3 in Resources */,
 				E171F2AA1C1EDBB300E3DB0D /* btn-pause@2x.png in Resources */,
 				E171F2AD1C1EDBB300E3DB0D /* btn-select-car.png in Resources */,
 				E171F2C01C1EDC1C00E3DB0D /* Funky_Good_Time.mp3 in Resources */,
+				E1CBACFC1C22D7DA001CC466 /* pause2Gr.png in Resources */,
 				91C7E4431C1CDC0D00A38B32 /* btn-back@2x.png in Resources */,
+				E1CBAD031C22D7DA001CC466 /* pause1Gr.png in Resources */,
+				E1CBAD121C22D7DA001CC466 /* nextxGr@2x.png in Resources */,
+				E1CBAD181C22D7DA001CC466 /* mediumx@2x.png in Resources */,
+				E1CBAD1D1C22D7DA001CC466 /* emailGr@2x.png in Resources */,
+				E1CBAD1C1C22D7DA001CC466 /* infoGr@2x.png in Resources */,
+				E1CBAD061C22D7DA001CC466 /* emailxGr.png in Resources */,
 				E171F2A01C1EDBB300E3DB0D /* base@2x.png in Resources */,
 				E171F2BB1C1EDBB300E3DB0D /* steering-wheel-horn@2x.png in Resources */,
 				475E5EB8195A5A610063FD68 /* sprites.atlas in Resources */,
 				E171F2F21C1EF19F00E3DB0D /* seg-20.png in Resources */,
 				475E5EB2195A5A610063FD68 /* box.wav in Resources */,
+				E1CBAD221C22D7F1001CC466 /* bg-main-menu-driver.png in Resources */,
 				E171F2B01C1EDBB300E3DB0D /* btn-select-track@2x.png in Resources */,
+				E1CBAD111C22D7DA001CC466 /* backxGr@2x.png in Resources */,
+				E1CBAD1E1C22D7DA001CC466 /* emailOr@2x.png in Resources */,
+				E1CBAD001C22D7DA001CC466 /* infoOr.png in Resources */,
 				E171F2A91C1EDBB300E3DB0D /* btn-pause.png in Resources */,
 				E171F2F01C1EF19F00E3DB0D /* seg-10.png in Resources */,
 				E171F2FA1C1EF19F00E3DB0D /* seg-blues@2x.png in Resources */,
 				475E5EB5195A5A610063FD68 /* horn.wav in Resources */,
+				E1CBAD091C22D7DA001CC466 /* backxGrsm.png in Resources */,
 				E171F2D31C1EE0C300E3DB0D /* btn-car3.png in Resources */,
 				E171F2B21C1EDBB300E3DB0D /* btn-slow@2x.png in Resources */,
+				E1CBAD0B1C22D7DA001CC466 /* carx.png in Resources */,
 				475E5EB1195A5A610063FD68 /* LevelDetails.plist in Resources */,
 				E171F3081C1EF20100E3DB0D /* btn-back2@2x.png in Resources */,
 				E171F2FE1C1EF19F00E3DB0D /* seg-none@2x.png in Resources */,
@@ -787,6 +933,7 @@
 				E171F30E1C1EF20100E3DB0D /* btn-info@2x.png in Resources */,
 				E171F2A41C1EDBB300E3DB0D /* btn-fast@2x.png in Resources */,
 				E171F2AC1C1EDBB300E3DB0D /* btn-play@2x.png in Resources */,
+				E1CBAD101C22D7DA001CC466 /* emailxGr@2x.png in Resources */,
 				475E5EA1195A5A610063FD68 /* btn-gamecenter.png in Resources */,
 				E171F2A81C1EDBB300E3DB0D /* btn-medium@2x.png in Resources */,
 				E171F2C11C1EDC1C00E3DB0D /* Johnson-jass-Blues.mp3 in Resources */,
@@ -794,15 +941,21 @@
 				E171F2CF1C1EE0C300E3DB0D /* btn-car1.png in Resources */,
 				E171F2661C1EDB3600E3DB0D /* achievment-amateur.png in Resources */,
 				E171F2A21C1EDBB300E3DB0D /* btn-easy@2x.png in Resources */,
+				E1CBAD011C22D7DA001CC466 /* mediumx.png in Resources */,
 				E171F2F51C1EF19F00E3DB0D /* seg-100.png in Resources */,
 				475E5EB3195A5A610063FD68 /* button_press.wav in Resources */,
+				E1CBAD051C22D7DA001CC466 /* emailOr.png in Resources */,
 				E171F2791C1EDB5700E3DB0D /* bg-select-car@2x.png in Resources */,
 				E171F2B11C1EDBB300E3DB0D /* btn-slow.png in Resources */,
 				E171F27C1C1EDB5700E3DB0D /* track_1.png in Resources */,
 				E171F2EF1C1EF19F00E3DB0D /* seg-5@2x.png in Resources */,
+				E1CBAD0F1C22D7DA001CC466 /* pause1Gr@2x.png in Resources */,
 				E171F2F91C1EF19F00E3DB0D /* seg-blues.png in Resources */,
 				E171F2A11C1EDBB300E3DB0D /* btn-easy.png in Resources */,
+				E1CBAD071C22D7DA001CC466 /* finishx.png in Resources */,
+				E1CBAD0D1C22D7DA001CC466 /* easyx.png in Resources */,
 				E171F2A31C1EDBB300E3DB0D /* btn-fast.png in Resources */,
+				E1CBAD0A1C22D7DA001CC466 /* backx.png in Resources */,
 				917E5A5E1C21DF0A009DF226 /* tick@2x.png in Resources */,
 				E171F2B51C1EDBB300E3DB0D /* mmulogoshape.png in Resources */,
 				E171F2B61C1EDBB300E3DB0D /* racing-flag.jpg in Resources */,
@@ -833,7 +986,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# python /Users/jonhowell/Documents/Drive2015a/Drive/Settings.bundle/Licence.py #work\npython /Users/jonathanhowell/Documents/Drive2015b/Drive/Settings.bundle/Licence.py #home";
+			shellScript = " python /Users/jonhowell/Documents/Drive2015a/Drive/Settings.bundle/Licence.py #work\n# python /Users/jonathanhowell/Documents/Drive2015b/Drive/Settings.bundle/Licence.py #home";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -842,6 +995,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CBACD71C22BE9E001CC466 /* SelectDriverViewController.m in Sources */,
 				47117B561959CA1400B20209 /* MyScene.m in Sources */,
 				475D2DA619625B310015C6B8 /* SelectLevelViewController.m in Sources */,
 				47696E4A195D27EA00A41AC6 /* SKTAudio.m in Sources */,
@@ -912,7 +1066,7 @@
 		47117B6E1959CA1400B20209 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -952,7 +1106,7 @@
 		47117B6F1959CA1400B20209 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;

@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="width" constant="62" id="D3C-98-Vhl"/>
                                     <constraint firstAttribute="height" constant="36" id="y2e-WH-L96"/>
                                 </constraints>
-                                <state key="normal" image="btn-pause.png">
+                                <state key="normal" image="pause2Gr.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -60,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-283" y="847"/>
+            <point key="canvasLocation" x="-1260" y="-8"/>
         </scene>
         <!--Select Level View Controller-->
         <scene sceneID="uEB-EM-OuO">
@@ -77,44 +77,35 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-select-difficulty.png" translatesAutoresizingMaskIntoConstraints="NO" id="uo5-CJ-6uu">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                             </imageView>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5o-qu-hE1" userLabel="Button medium">
-                                <rect key="frame" x="247" y="182" width="301" height="55"/>
-                                <state key="normal" image="btn-medium.png">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5o-qu-hE1" userLabel="Button medium">
+                                <rect key="frame" x="339" y="182" width="120" height="55"/>
+                                <state key="normal" image="mediumx.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="levelButtonDidTouchUpInside:" destination="6zJ-QL-n6c" eventType="touchUpInside" id="tch-Nd-jGm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0g-UL-Fv9" userLabel="Button hard">
-                                <rect key="frame" x="247" y="245" width="301" height="55"/>
-                                <state key="normal" image="btn-hard.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="levelButtonDidTouchUpInside:" destination="6zJ-QL-n6c" eventType="touchUpInside" id="5Wx-fI-vQe"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHR-24-jyO" userLabel="Button back">
-                                <rect key="frame" x="20" y="245" width="110" height="55"/>
-                                <state key="normal" image="btn-back2.png">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHR-24-jyO" userLabel="Button back">
+                                <rect key="frame" x="20" y="245" width="118" height="55"/>
+                                <state key="normal" image="backxGrsm.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="backButtonDidTouchUpInside:" destination="6zJ-QL-n6c" eventType="touchUpInside" id="IIG-S8-HnJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="788-Ff-bns" userLabel="Button easy">
-                                <rect key="frame" x="247" y="119" width="301" height="55"/>
-                                <state key="normal" image="btn-easy.png">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="788-Ff-bns" userLabel="Button easy">
+                                <rect key="frame" x="339" y="119" width="120" height="55"/>
+                                <state key="normal" image="easyx.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="levelButtonDidTouchUpInside:" destination="6zJ-QL-n6c" eventType="touchUpInside" id="jCt-h9-OxF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ps7-eg-FmL">
-                                <rect key="frame" x="153" y="182" width="68" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ps7-eg-FmL">
+                                <rect key="frame" x="216" y="245" width="68" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="Is5-uE-kBs"/>
                                 </constraints>
@@ -123,6 +114,15 @@
                                 </state>
                                 <connections>
                                     <segue destination="iVf-iI-C6T" kind="push" id="EQS-Ot-RJf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0g-UL-Fv9" userLabel="Button hard">
+                                <rect key="frame" x="339" y="245" width="120" height="55"/>
+                                <state key="normal" image="hardx.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="levelButtonDidTouchUpInside:" destination="6zJ-QL-n6c" eventType="touchUpInside" id="5Wx-fI-vQe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -147,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9u5-T6-QqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-766" y="425"/>
+            <point key="canvasLocation" x="-70" y="369"/>
         </scene>
         <!--InfoSelectCarVC-->
         <scene sceneID="qSq-AT-HLd">
@@ -172,22 +172,22 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obG-2G-3Ja">
-                                <rect key="frame" x="220" y="245" width="129" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="129" id="ZNJ-BH-8K2"/>
-                                </constraints>
-                                <state key="normal" image="btn-back2.png"/>
-                                <connections>
-                                    <segue destination="355-Sw-PNA" kind="push" id="UeP-lD-UCg"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="About The Cars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5H-1e-eCJ">
                                 <rect key="frame" x="20" y="20" width="528" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obG-2G-3Ja">
+                                <rect key="frame" x="20" y="245" width="129" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="129" id="ZNJ-BH-8K2"/>
+                                </constraints>
+                                <state key="normal" image="backxGr.png"/>
+                                <connections>
+                                    <segue destination="355-Sw-PNA" kind="push" id="UeP-lD-UCg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -207,7 +207,7 @@ The faster the car, the better the top speed, but be careful, they are harder to
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEO-sW-f4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-697" y="-425"/>
+            <point key="canvasLocation" x="-666" y="-387"/>
         </scene>
         <!--Select Car View Controller-->
         <scene sceneID="aev-YJ-bJw">
@@ -224,8 +224,17 @@ The faster the car, the better the top speed, but be careful, they are harder to
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-select-car.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yhd-nh-Ms1" userLabel="Background">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                             </imageView>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8I-yp-jGR" userLabel="Button Car 2">
-                                <rect key="frame" x="247" y="130" width="121" height="170"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ki3-o3-BfY" userLabel="Button back">
+                                <rect key="frame" x="20" y="245" width="113" height="55"/>
+                                <state key="normal" image="backxGr.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonDidTouchUpInside:" destination="355-Sw-PNA" eventType="touchUpInside" id="ABX-Yl-9Kv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8I-yp-jGR" userLabel="Button Car 2">
+                                <rect key="frame" x="285" y="113" width="99" height="128"/>
                                 <state key="normal" image="btn-car2.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -233,17 +242,8 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <action selector="carButtonDidTouchUpInside:" destination="355-Sw-PNA" eventType="touchUpInside" id="fAd-ru-mFe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Av-RA-VLJ" userLabel="Button Car 3">
-                                <rect key="frame" x="371" y="130" width="121" height="170"/>
-                                <state key="normal" image="btn-car3.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="carButtonDidTouchUpInside:" destination="355-Sw-PNA" eventType="touchUpInside" id="BZ2-kL-2fE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIU-gY-BAc" userLabel="Button Car 1">
-                                <rect key="frame" x="124" y="130" width="121" height="170"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIU-gY-BAc" userLabel="Button Car 1">
+                                <rect key="frame" x="408" y="162" width="99" height="125"/>
                                 <state key="normal" image="btn-car1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -251,8 +251,8 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <action selector="carButtonDidTouchUpInside:" destination="355-Sw-PNA" eventType="touchUpInside" id="cw2-vw-sty"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zje-3U-f2d">
-                                <rect key="frame" x="20" y="187" width="55" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zje-3U-f2d">
+                                <rect key="frame" x="214" y="245" width="66" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="55" id="AdB-K1-Wo9"/>
                                 </constraints>
@@ -261,6 +261,15 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                 </state>
                                 <connections>
                                     <segue destination="72Q-Fc-b8U" kind="push" id="EpY-2h-NmK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Av-RA-VLJ" userLabel="Button Car 3">
+                                <rect key="frame" x="384" y="31" width="99" height="128"/>
+                                <state key="normal" image="btn-car3.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="carButtonDidTouchUpInside:" destination="355-Sw-PNA" eventType="touchUpInside" id="BZ2-kL-2fE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -285,7 +294,7 @@ The faster the car, the better the top speed, but be careful, they are harder to
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7aK-5G-b5x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-685" y="-23"/>
+            <point key="canvasLocation" x="-666" y="-8"/>
         </scene>
         <!--Home Screen View Controller-->
         <scene sceneID="sWP-ev-f94">
@@ -302,8 +311,8 @@ The faster the car, the better the top speed, but be careful, they are harder to
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" image="bg-main-menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="vMP-CH-hGe">
                                 <rect key="frame" x="0.0" y="1" width="568" height="320"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEX-Ep-wnn">
-                                <rect key="frame" x="20" y="245" width="75" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEX-Ep-wnn">
+                                <rect key="frame" x="213" y="245" width="75" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="Gyx-p5-wRe"/>
                                 </constraints>
@@ -312,15 +321,6 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                 </state>
                                 <connections>
                                     <segue destination="jCb-yp-7T2" kind="push" id="D0M-8g-TGD"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRa-O0-jhW" userLabel="Button start game play">
-                                <rect key="frame" x="154" y="245" width="301" height="55"/>
-                                <state key="normal" image="btn-play.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="playButtonDidTouchUpInside:" destination="j6p-oN-Kld" eventType="touchUpInside" id="Niv-fs-RPI"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNs-Ez-1CI" userLabel="Button play centre">
@@ -336,11 +336,11 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <action selector="gameCenterButtonDidTouchUpInside:" destination="j6p-oN-Kld" eventType="touchUpInside" id="55c-dO-iFz"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hZk-iN-c46">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hZk-iN-c46">
                                 <rect key="frame" x="406" y="113" width="51" height="31"/>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distraction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ay1-xn-2z5">
-                                <rect key="frame" x="288" y="113" width="96" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Distraction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ay1-xn-2z5">
+                                <rect key="frame" x="302" y="113" width="96" height="31"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="0us-h3-gYV"/>
@@ -349,7 +349,7 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drive Music" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIi-Ef-7UX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Drive Music" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIi-Ef-7UX">
                                 <rect key="frame" x="20" y="209" width="101" height="28"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -359,7 +359,7 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Race Laps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OnZ-Gl-8eK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Race Laps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OnZ-Gl-8eK">
                                 <rect key="frame" x="20" y="164" width="101" height="28"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -369,14 +369,14 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOy-EG-wE7">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOy-EG-wE7">
                                 <rect key="frame" x="129" y="209" width="63" height="28"/>
                                 <state key="normal" image="seg-none.png"/>
                                 <connections>
                                     <action selector="musicNoneSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="E19-f9-2Rb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFm-y0-OmS">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFm-y0-OmS">
                                 <rect key="frame" x="143" y="164" width="39" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="39" id="OgN-7E-4cl"/>
@@ -386,7 +386,7 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <action selector="lap2set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="sf9-gd-PN7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcq-8n-DPP">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcq-8n-DPP">
                                 <rect key="frame" x="284" y="164" width="39" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="39" id="NMy-Zp-CRU"/>
@@ -396,7 +396,7 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <action selector="lap20set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="aTO-QM-9p6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7Z-rR-pc9">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7Z-rR-pc9">
                                 <rect key="frame" x="378" y="164" width="39" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="39" id="jJJ-Lw-ut2"/>
@@ -406,21 +406,21 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <action selector="lap100set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="MJu-oc-KFV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xX-pG-cEf">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xX-pG-cEf">
                                 <rect key="frame" x="205" y="209" width="63" height="28"/>
                                 <state key="normal" image="seg-light.png"/>
                                 <connections>
                                     <action selector="musicLightSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="VGX-Lm-BPv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFj-Va-Cul">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFj-Va-Cul">
                                 <rect key="frame" x="281" y="209" width="63" height="28"/>
                                 <state key="normal" image="seg-blues.png"/>
                                 <connections>
                                     <action selector="musicBluesSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="2FH-Sw-ulb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ath-kp-ddz">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ath-kp-ddz">
                                 <rect key="frame" x="356" y="209" width="63" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="63" id="CpF-kC-3dZ"/>
@@ -430,7 +430,7 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <action selector="musicBeatSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="dyg-j4-ydF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEE-2H-2vP">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEE-2H-2vP">
                                 <rect key="frame" x="331" y="164" width="39" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="39" id="f6d-S7-bKE"/>
@@ -440,7 +440,7 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <action selector="lap50set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="FwN-vT-idq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQ6-td-h7F">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQ6-td-h7F">
                                 <rect key="frame" x="190" y="164" width="39" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="39" id="87G-ai-yni"/>
@@ -450,7 +450,7 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <action selector="lap5set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="1h7-8g-ZMB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1x3-cU-xGu">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1x3-cU-xGu">
                                 <rect key="frame" x="237" y="164" width="39" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="39" id="eNA-QE-drC"/>
@@ -460,57 +460,66 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <action selector="lap10set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="c8P-mg-Q28"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="wlH-ep-x9E">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="wlH-ep-x9E">
                                 <rect key="frame" x="185" y="200" width="20" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="8Ja-Xf-TxF"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="fKx-ZO-S2b">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="fKx-ZO-S2b">
                                 <rect key="frame" x="260" y="201" width="20" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="F3o-eW-CaX"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="VBy-FT-GzO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="VBy-FT-GzO">
                                 <rect key="frame" x="336" y="201" width="20" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="bqA-A4-T4T"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="TQA-jZ-TjH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="TQA-jZ-TjH">
                                 <rect key="frame" x="413" y="201" width="20" height="36"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="QBf-qO-nS9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="QBf-qO-nS9">
                                 <rect key="frame" x="413" y="156" width="20" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="GBj-6p-Y4o"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="VuE-NE-ILy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="VuE-NE-ILy">
                                 <rect key="frame" x="364" y="156" width="20" height="36"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Rc-Aj-rGB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Rc-Aj-rGB">
                                 <rect key="frame" x="316" y="156" width="20" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="yFd-Gv-fqo"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="lNU-P8-4hb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="lNU-P8-4hb">
                                 <rect key="frame" x="274" y="156" width="20" height="36"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="ivu-TU-rgb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="ivu-TU-rgb">
                                 <rect key="frame" x="224" y="156" width="20" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="xTK-l4-Br2"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ4-0G-9QP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ4-0G-9QP">
                                 <rect key="frame" x="176" y="156" width="20" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="BXH-Ot-gSe"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRa-O0-jhW" userLabel="Button start game play">
+                                <rect key="frame" x="351" y="245" width="104" height="55"/>
+                                <state key="normal" image="carx.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playButtonDidTouchUpInside:" destination="j6p-oN-Kld" eventType="touchUpInside" id="Niv-fs-RPI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -629,7 +638,7 @@ The faster the car, the better the top speed, but be careful, they are harder to
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MpD-jF-vJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1381" y="425"/>
+            <point key="canvasLocation" x="-666" y="369"/>
         </scene>
         <!--Drive Navigation Controller-->
         <scene sceneID="9HD-8m-W60">
@@ -650,7 +659,7 @@ The faster the car, the better the top speed, but be careful, they are harder to
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2f2-Yp-2iy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1306" y="-8"/>
+            <point key="canvasLocation" x="-1260" y="369"/>
         </scene>
         <!--InfoSelectTrackVC-->
         <scene sceneID="upm-a7-wco">
@@ -683,12 +692,12 @@ The hardest track has various obsticles to avoid. Hitting hazards slows you down
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAp-4E-LkV">
-                                <rect key="frame" x="225" y="245" width="118" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAp-4E-LkV">
+                                <rect key="frame" x="20" y="245" width="118" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="118" id="k0h-Hb-2xB"/>
                                 </constraints>
-                                <state key="normal" image="btn-back2.png"/>
+                                <state key="normal" image="backxGr.png"/>
                                 <connections>
                                     <segue destination="6zJ-QL-n6c" kind="push" id="Ypq-Rw-I7Y"/>
                                 </connections>
@@ -712,7 +721,7 @@ The hardest track has various obsticles to avoid. Hitting hazards slows you down
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OsP-Lk-wz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-907" y="847"/>
+            <point key="canvasLocation" x="-70" y="747"/>
         </scene>
         <!--InfoStartVC-->
         <scene sceneID="kOj-rW-sDX">
@@ -745,13 +754,13 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wcj-pn-qCC">
-                                <rect key="frame" x="225" y="245" width="118" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wcj-pn-qCC">
+                                <rect key="frame" x="20" y="245" width="118" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="118" id="2LT-F1-jdd"/>
                                     <constraint firstAttribute="height" constant="55" id="cbZ-FL-IKd"/>
                                 </constraints>
-                                <state key="normal" image="btn-back2.png"/>
+                                <state key="normal" image="backxGr.png"/>
                                 <connections>
                                     <segue destination="j6p-oN-Kld" kind="push" id="Snq-Uf-qxR"/>
                                 </connections>
@@ -774,7 +783,7 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SCq-2U-6iM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1515" y="847"/>
+            <point key="canvasLocation" x="-666" y="747"/>
         </scene>
         <!--TrackStatsVC-->
         <scene sceneID="tmO-me-Svl">
@@ -788,19 +797,19 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Track Statistics" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmX-Tn-ucq">
-                                <rect key="frame" x="16" y="20" width="280" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Track Statistics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmX-Tn-ucq">
+                                <rect key="frame" x="20" y="20" width="196" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version No:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTP-EL-5xR">
-                                <rect key="frame" x="296" y="20" width="252" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version No:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTP-EL-5xR">
+                                <rect key="frame" x="224" y="20" width="236" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gC4-o4-6Nq">
-                                <rect key="frame" x="20" y="245" width="110" height="55"/>
-                                <state key="normal" image="btn-finish.png"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gC4-o4-6Nq">
+                                <rect key="frame" x="20" y="250" width="99" height="50"/>
+                                <state key="normal" image="finishx.png"/>
                                 <connections>
                                     <action selector="finishAction:" destination="khi-MC-6dL" eventType="touchUpInside" id="hNC-M3-EKJ"/>
                                 </connections>
@@ -811,27 +820,27 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsM-cv-Vlv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsM-cv-Vlv">
                                 <rect key="frame" x="73" y="49" width="196" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Laps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jF-0z-3eK">
-                                <rect key="frame" x="277" y="78" width="37" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Laps" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jF-0z-3eK">
+                                <rect key="frame" x="266" y="78" width="37" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MgM-H2-gCE">
-                                <rect key="frame" x="312" y="78" width="35" height="21"/>
+                                <rect key="frame" x="308" y="78" width="35" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0r-tJ-hil">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Car" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0r-tJ-hil">
                                 <rect key="frame" x="277" y="49" width="27" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -844,33 +853,33 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ml4-nd-UYA">
-                                <rect key="frame" x="312" y="49" width="35" height="21"/>
+                                <rect key="frame" x="308" y="49" width="35" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EMail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q49-9e-kWw">
-                                <rect key="frame" x="142" y="279" width="41" height="21"/>
+                                <rect key="frame" x="127" y="279" width="43" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Me@mmu.ac.uk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8O-wz-oLA">
-                                <rect key="frame" x="191" y="279" width="222" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8O-wz-oLA">
+                                <rect key="frame" x="178" y="279" width="220" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Track" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAw-cW-XQG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Track" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAw-cW-XQG">
                                 <rect key="frame" x="361" y="49" width="43" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4li-0D-heF">
-                                <rect key="frame" x="421" y="49" width="62" height="21"/>
+                                <rect key="frame" x="412" y="49" width="30" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -890,27 +899,27 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lih-qY-C46">
-                                <rect key="frame" x="266" y="107" width="32" height="21"/>
+                                <rect key="frame" x="247" y="107" width="32" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Crashes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOt-k9-jrO">
-                                <rect key="frame" x="323" y="107" width="107" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Crashes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOt-k9-jrO">
+                                <rect key="frame" x="304" y="107" width="100" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UY2-f3-0Yb">
-                                <rect key="frame" x="421" y="107" width="62" height="21"/>
+                                <rect key="frame" x="412" y="107" width="30" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HORNS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpp-Jx-5uB">
-                                <rect key="frame" x="361" y="78" width="49" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HORNS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpp-Jx-5uB">
+                                <rect key="frame" x="349" y="78" width="55" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -922,33 +931,33 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oE1-KD-JWv">
-                                <rect key="frame" x="421" y="78" width="62" height="21"/>
+                                <rect key="frame" x="412" y="78" width="30" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KfN-v3-Sbl">
-                                <rect key="frame" x="140" y="250" width="41" height="21"/>
+                                <rect key="frame" x="127" y="250" width="41" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AX0-9F-iPD">
-                                <rect key="frame" x="189" y="250" width="107" height="21"/>
+                                <rect key="frame" x="176" y="250" width="82" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEg-vB-h8M">
-                                <rect key="frame" x="304" y="250" width="43" height="21"/>
+                                <rect key="frame" x="266" y="250" width="43" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Re9-R1-4bk">
-                                <rect key="frame" x="355" y="250" width="75" height="21"/>
+                                <rect key="frame" x="315" y="250" width="83" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -960,8 +969,8 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distraction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdu-R0-IaD">
-                                <rect key="frame" x="144" y="78" width="80" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distraction" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdu-R0-IaD">
+                                <rect key="frame" x="136" y="78" width="80" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -973,8 +982,8 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Haz. Crashes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iz3-Nb-VUk">
-                                <rect key="frame" x="173" y="107" width="102" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Haz. Crashes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iz3-Nb-VUk">
+                                <rect key="frame" x="144" y="107" width="95" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -986,15 +995,8 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOO-oR-fuE">
-                                <rect key="frame" x="399" y="214" width="84" height="21"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SCORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W94-pW-SR9">
-                                <rect key="frame" x="342" y="214" width="62" height="21"/>
+                                <rect key="frame" x="335" y="214" width="51" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1019,13 +1021,13 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LAPS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8A-JB-Wn9">
-                                <rect key="frame" x="20" y="147" width="46" height="21"/>
+                                <rect key="frame" x="20" y="136" width="46" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCS-2c-Fui">
-                                <rect key="frame" x="77" y="156" width="51" height="21"/>
+                                <rect key="frame" x="73" y="156" width="51" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1052,7 +1054,7 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Average" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ec-Ny-Nlg">
-                                <rect key="frame" x="336" y="140" width="68" height="21"/>
+                                <rect key="frame" x="336" y="136" width="68" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1078,7 +1080,7 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Race Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrE-mj-LtJ">
-                                <rect key="frame" x="20" y="214" width="82" height="21"/>
+                                <rect key="frame" x="20" y="214" width="70" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1130,14 +1132,19 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEa-c7-yiT">
-                                <rect key="frame" x="421" y="279" width="62" height="21"/>
-                                <state key="normal" image="btn-email.png"/>
+                                <rect key="frame" x="406" y="250" width="54" height="50"/>
+                                <state key="normal" image="emailGr.png"/>
                                 <connections>
-                                    <action selector="emailAction:" destination="khi-MC-6dL" eventType="touchUpInside" id="OsC-sQ-tSs"/>
-                                    <action selector="finishAction:" destination="khi-MC-6dL" eventType="touchUpInside" id="9No-MS-F7f"/>
-                                    <action selector="showEmail:" destination="khi-MC-6dL" eventType="touchUpInside" id="b32-uv-av1"/>
+                                    <action selector="showEmail:" destination="khi-MC-6dL" eventType="touchUpInside" id="355-Un-AQC"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOO-oR-fuE">
+                                <rect key="frame" x="394" y="214" width="66" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1174,26 +1181,182 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGX-JE-JZ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1995" y="218"/>
+            <point key="canvasLocation" x="-1260" y="-387"/>
+        </scene>
+        <!--Select Driver View Controller-->
+        <scene sceneID="AMu-jW-9cF">
+            <objects>
+                <viewController storyboardIdentifier="SelectDriverViewController" id="ile-Uw-dvN" customClass="SelectDriverViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H2y-fh-EIe"/>
+                        <viewControllerLayoutGuide type="bottom" id="WAe-Xc-CYC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xKa-yS-vLA">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" image="bg-main-menu-driver.png" translatesAutoresizingMaskIntoConstraints="NO" id="qpU-YN-oCe">
+                                <rect key="frame" x="0.0" y="1" width="568" height="320"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfJ-sM-oaY">
+                                <rect key="frame" x="213" y="245" width="75" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="R7Q-SW-PwR"/>
+                                </constraints>
+                                <state key="normal" image="btn-info.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="SI2-qR-bsc" kind="push" id="bpG-49-77h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6f-cx-HhG" userLabel="Button start game play">
+                                <rect key="frame" x="342" y="245" width="113" height="55"/>
+                                <state key="normal" image="startx.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButtonDidTouchUpInside:" destination="ile-Uw-dvN" eventType="touchUpInside" id="coy-YP-hCG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3c-3u-WOf" userLabel="Button back">
+                                <rect key="frame" x="20" y="245" width="119" height="55"/>
+                                <state key="normal" image="backxGr.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonDidTouchUpInside:" destination="ile-Uw-dvN" eventType="touchUpInside" id="Rcj-9M-wHB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Results Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sa-WK-0MM">
+                                <rect key="frame" x="20" y="207" width="119" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="32h-YJ-G1m"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TIK-v2-hNe">
+                                <rect key="frame" x="154" y="207" width="301" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Driver Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rv-8p-bEN">
+                                <rect key="frame" x="20" y="169" width="119" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="7b1-Uy-2rz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZoX-mV-eDf">
+                                <rect key="frame" x="154" y="169" width="301" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sfJ-sM-oaY" firstAttribute="top" secondItem="H6f-cx-HhG" secondAttribute="top" id="9hk-x9-eaV"/>
+                            <constraint firstItem="H6f-cx-HhG" firstAttribute="leading" secondItem="sfJ-sM-oaY" secondAttribute="trailing" constant="59" id="Jza-Y2-q6D"/>
+                            <constraint firstItem="qpU-YN-oCe" firstAttribute="top" secondItem="H2y-fh-EIe" secondAttribute="bottom" constant="1" id="NLg-p4-RIg"/>
+                            <constraint firstAttribute="bottom" secondItem="sfJ-sM-oaY" secondAttribute="bottom" constant="20" symbolic="YES" id="XUZ-Ba-Qo5"/>
+                            <constraint firstItem="qpU-YN-oCe" firstAttribute="leading" secondItem="xKa-yS-vLA" secondAttribute="leading" id="jrS-TG-tZd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HT1-dk-wba"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="driverName" destination="ZoX-mV-eDf" id="oHU-mK-3d4"/>
+                        <outlet property="email" destination="TIK-v2-hNe" id="AAo-Xb-4vn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Viw-Ez-7CO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-70" y="-8"/>
+        </scene>
+        <!--InfoSelectDriverVC-->
+        <scene sceneID="ee2-cj-JlR">
+            <objects>
+                <viewController storyboardIdentifier="InfoSelectDriverViewController" title="InfoSelectDriverVC" id="SI2-qR-bsc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="20R-08-boS"/>
+                        <viewControllerLayoutGuide type="bottom" id="HVA-F4-m3k"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oyT-dc-AFs">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0qq-N8-ACk">
+                                <rect key="frame" x="67" y="58" width="434" height="179"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Give the Driver a Name.  If you are presenting data for a study, you should code your subjects to ensure anomimaty.
+
+The Email address is the recipient of the data results when a race is completed, if needed.  Yiou can edit this address and add further recipients at the point of sending and review.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="About The Driver" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNA-Kg-l9g">
+                                <rect key="frame" x="20" y="20" width="528" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcG-Lp-Ni6">
+                                <rect key="frame" x="20" y="245" width="129" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="129" id="yiv-IA-49Q"/>
+                                </constraints>
+                                <state key="normal" image="backxGr.png"/>
+                                <connections>
+                                    <segue destination="ile-Uw-dvN" kind="push" id="kKz-ZN-Bct"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0qq-N8-ACk" firstAttribute="top" secondItem="ZNA-Kg-l9g" secondAttribute="bottom" constant="8" id="Twa-Yo-tbv"/>
+                            <constraint firstItem="VcG-Lp-Ni6" firstAttribute="top" secondItem="0qq-N8-ACk" secondAttribute="bottom" constant="8" id="UNi-rB-vWg"/>
+                            <constraint firstItem="0qq-N8-ACk" firstAttribute="leading" secondItem="oyT-dc-AFs" secondAttribute="leadingMargin" constant="47" id="bTo-BA-Zvd"/>
+                            <constraint firstAttribute="bottom" secondItem="VcG-Lp-Ni6" secondAttribute="bottom" constant="20" symbolic="YES" id="bgP-7T-ymH"/>
+                            <constraint firstItem="ZNA-Kg-l9g" firstAttribute="top" secondItem="oyT-dc-AFs" secondAttribute="top" constant="20" symbolic="YES" id="eup-aj-evM"/>
+                            <constraint firstItem="VcG-Lp-Ni6" firstAttribute="centerX" secondItem="0qq-N8-ACk" secondAttribute="centerX" id="k7Z-vD-BA8"/>
+                            <constraint firstItem="VcG-Lp-Ni6" firstAttribute="centerX" secondItem="oyT-dc-AFs" secondAttribute="centerX" id="t0W-rt-r1e"/>
+                            <constraint firstItem="0qq-N8-ACk" firstAttribute="centerY" secondItem="oyT-dc-AFs" secondAttribute="centerY" constant="-12.5" id="tPn-UD-FSm"/>
+                            <constraint firstItem="0qq-N8-ACk" firstAttribute="centerX" secondItem="ZNA-Kg-l9g" secondAttribute="centerX" id="uKB-GX-loB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tjb-JG-OfA"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lv3-bZ-ByP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-70" y="-387"/>
         </scene>
     </scenes>
     <resources>
+        <image name="backxGr.png" width="105" height="55"/>
+        <image name="backxGrsm.png" width="105" height="55"/>
+        <image name="bg-main-menu-driver.png" width="568" height="320"/>
         <image name="bg-main-menu.png" width="568" height="320"/>
         <image name="bg-select-car.png" width="568" height="320"/>
         <image name="bg-select-difficulty.png" width="568" height="320"/>
-        <image name="btn-back2.png" width="110" height="55"/>
         <image name="btn-car1.png" width="121" height="170"/>
         <image name="btn-car2.png" width="121" height="170"/>
         <image name="btn-car3.png" width="121" height="170"/>
-        <image name="btn-easy.png" width="301" height="55"/>
-        <image name="btn-email.png" width="110" height="55"/>
-        <image name="btn-finish.png" width="110" height="55"/>
         <image name="btn-gamecenter.png" width="301" height="55"/>
-        <image name="btn-hard.png" width="301" height="55"/>
         <image name="btn-info.png" width="55" height="55"/>
-        <image name="btn-medium.png" width="301" height="55"/>
-        <image name="btn-pause.png" width="62" height="36"/>
-        <image name="btn-play.png" width="301" height="55"/>
+        <image name="carx.png" width="105" height="55"/>
+        <image name="easyx.png" width="105" height="55"/>
+        <image name="emailGr.png" width="55" height="55"/>
+        <image name="finishx.png" width="105" height="55"/>
+        <image name="hardx.png" width="105" height="55"/>
+        <image name="mediumx.png" width="105" height="55"/>
+        <image name="pause2Gr.png" width="105" height="55"/>
         <image name="seg-10.png" width="55" height="55"/>
         <image name="seg-100.png" width="55" height="55"/>
         <image name="seg-2.png" width="55" height="55"/>
@@ -1204,6 +1367,7 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
         <image name="seg-blues.png" width="110" height="55"/>
         <image name="seg-light.png" width="110" height="55"/>
         <image name="seg-none.png" width="110" height="55"/>
+        <image name="startx.png" width="105" height="55"/>
         <image name="steering-wheel-horn.png" width="175" height="129"/>
         <image name="tick.png" width="30" height="60"/>
     </resources>
@@ -1213,6 +1377,6 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Snq-Uf-qxR"/>
+        <segue reference="Oeb-9y-xxT"/>
     </inferredMetricsTieBreakers>
 </document>

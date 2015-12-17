@@ -11,7 +11,6 @@
 #import "TrackStatsViewController.h"
 #import "MyScene.h"
 #import "AnalogControl.h"
-#import "SKTAudio.h"
 #import "SKTUtils.h"
 
 #define kEmail      @"emailAddress"
@@ -80,7 +79,7 @@
     //version, set anyway *****************************************
     //*************************************************************
     
-    version0 =  @"DRIVE Version 2.3.4 - 7.12.15";     // version   *** keep short
+    version0 =  @"DRIVE Version 2.4.1 - 17.12.15";     // version   *** keep short
     version1 =  @"MMU (C) 2015";                // copyright *** limited line space
     version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
     version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen
@@ -116,25 +115,23 @@
     
     //tester name
     subjectName     = [defaults objectForKey:kSubject];
-    if([subjectName isEqualToString: @ "" ]){
+    if([subjectName isEqualToString: @ "" ]|| email == nil){
         subjectName =  @"Me";
         [defaults setObject:[NSString stringWithFormat:@"%@", singleton.subjectName] forKey:kSubject];
     }
     //email name
     email     = [defaults objectForKey:kEmail];
-    if([email isEqualToString: @ "" ]){
-        email =  @"@mmu.ac.uk";
+    if([email isEqualToString: @ "" ]|| email == nil){
+        email =  @"Me@mmu.ac.uk";
         [defaults setObject:[NSString stringWithFormat:@"%@", singleton.email] forKey:kEmail];
     }
     singleton.subjectName = subjectName;
-    singleton.email      = email;
+    singleton.email       = email;
     
     [defaults synchronize];//make sure all are updated
     
     //versionNumberLab.text   = version0;
     singleton.versionNumber = version0;
-    
-    _hornSoundAction  = [SKAction playSoundFileNamed: @"horn.wav"  waitForCompletion:NO];
 }
 
 -(int)random22
@@ -191,6 +188,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+   
 
     [self.view sendSubviewToBack:self.skView];
 }

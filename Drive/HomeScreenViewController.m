@@ -39,6 +39,18 @@
     singleton.musicTrack=@"None";
     singleton.laps=@"10";
     [[SKTAudio sharedInstance] playBackgroundMusic:@"silence30.mp3"];
+    
+    //load the known names and email
+    NSString        * pathStr               = [[NSBundle mainBundle] bundlePath];
+    NSString        * settingsBundlePath    = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
+    NSString        * defaultPrefsFile      = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
+    NSDictionary    * defaultPrefs          = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
+    NSUserDefaults  * defaults              = [NSUserDefaults standardUserDefaults];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [defaults synchronize];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -84,7 +96,7 @@
 
 - (IBAction)gameCenterButtonDidTouchUpInside:(id)sender {
     
-    //do nothing, not enabling yet - jah
+    //do nothing, not enabling game ctr yet . weill need to turn back on in final vc m code- jah
     [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
     //[[GameKitHelper sharedGameKitHelper] showGKGameCenterViewController:self];
 }
