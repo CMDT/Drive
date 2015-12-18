@@ -295,6 +295,8 @@ mySingleton *singleton = [mySingleton sharedSingleton];
 - (void)p_addBoxAt:(CGPoint)point {
     SKSpriteNode *box = [SKSpriteNode spriteNodeWithImageNamed:@"box"];
     box.position = point;
+    box.xScale = 0.65;
+    box.yScale = 0.65;
     box.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:box.size];
     box.physicsBody.categoryBitMask = CRBodyBox;
 
@@ -310,6 +312,8 @@ mySingleton *singleton = [mySingleton sharedSingleton];
 
 - (void)p_addCrateAt:(CGPoint)point {
     SKSpriteNode *crate = [SKSpriteNode spriteNodeWithImageNamed:@"crate"];
+    crate.xScale = 0.6;
+    crate.yScale = 0.6;
     crate.position = point;
     crate.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:crate.size];
     crate.physicsBody.categoryBitMask = CRBodyCrate;
@@ -327,8 +331,8 @@ mySingleton *singleton = [mySingleton sharedSingleton];
     //to mask the top right corner from the cars, its an obsticle and stops the car from running under it
     SKSpriteNode *pause = [SKSpriteNode spriteNodeWithImageNamed:@"pause2Gr"];
 //set a smaller size as original was scaled down
-    pause.xScale = 0.5;
-    pause.yScale = 0.5;
+    pause.xScale = 0.6;
+    pause.yScale = 0.6;
     pause.position = point;
     pause.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:pause.size];
     pause.physicsBody.categoryBitMask = CRBodyPause;
@@ -346,6 +350,8 @@ mySingleton *singleton = [mySingleton sharedSingleton];
 - (void)p_addBaleAt:(CGPoint)point {
     SKSpriteNode *bale = [SKSpriteNode spriteNodeWithImageNamed:@"bale"];
     bale.position = point;
+    bale.xScale = 0.6;
+    bale.yScale = 0.6;
     bale.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bale.size];
     bale.physicsBody.categoryBitMask = CRBodyBale;
     
@@ -362,6 +368,8 @@ mySingleton *singleton = [mySingleton sharedSingleton];
 - (void)p_addTyreAt:(CGPoint)point {
     SKSpriteNode *tyre = [SKSpriteNode spriteNodeWithImageNamed:@"tyre"];
     tyre.position = point;
+    tyre.xScale = 0.6;
+    tyre.yScale = 0.6;
     tyre.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:tyre.size];
     tyre.physicsBody.categoryBitMask = CRBodyBox;
     
@@ -488,16 +496,16 @@ mySingleton *singleton = [mySingleton sharedSingleton];
         
         // NSLog(@"laps %d: ",xcounter-1);
 
-            for (int x=1; x<xcounter+1; x+=1) {
+            for (int x=2; x<xcounter+1; x+=1) {
                 reactionTime[x]=(reactionTime[x]-reactionTime[x-1]);
                 //NSLog(@"lap time %d: %f", x, reactionTime[x]);
             }
-            for (int x=1; x<xcounter+1; x+=1) {
+            for (int x=2; x<xcounter+1; x+=1) {
                 reactionTime[x]=(reactionTime[x]/1000);
                 //NSLog(@"lap time %d: %f", x, reactionTime[x]);
             }
 
-        for (int x=1; x<xcounter+1; x+=1) {
+        for (int x=2; x<xcounter+1; x+=1) {
             
             temp = reactionTime[x];
             
@@ -506,12 +514,12 @@ mySingleton *singleton = [mySingleton sharedSingleton];
             if ( slowestLap < temp) {
                 slowestLap = temp;
                 //NSLog(@"slow lap time %d: %f", x, temp);
-                slowLap = x;
+                slowLap = x-1;
             }
             if (fastestLap > temp) {
                 fastestLap = temp;
                 //NSLog(@"fast lap time %d: %f", x, temp);
-                fastLap = x;
+                fastLap = x-1;
             }
             raceTime = raceTime + temp;
         }

@@ -58,10 +58,15 @@
 racehms,
 hornhms,
 scorehms,
+h1,h2,h3,
+h4,h5,h6,
+h7,h8,
     emailbtn;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    
     statusMessageLab.hidden = YES;
     
     //set up the plist params
@@ -73,10 +78,12 @@ scorehms,
     NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [defaults synchronize];
+    singleton.email=[defaults objectForKey:kEmail];
+    singleton.subjectName= [defaults objectForKey:kSubject];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    //mySingleton *singleton = [mySingleton sharedSingleton];
+    mySingleton *singleton = [mySingleton sharedSingleton];
     
     //set up the plist params
     NSString *pathStr               = [[NSBundle mainBundle] bundlePath];
@@ -86,8 +93,10 @@ scorehms,
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
     NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
     [defaults synchronize];
+    [defaults synchronize];
+    singleton.email=[defaults objectForKey:kEmail];
+    singleton.subjectName= [defaults objectForKey:kSubject];
     
     [self calculateStats];
     
@@ -127,6 +136,28 @@ scorehms,
     wallCrashes.text=singleton.wallCrashes;
     totalCrashes.text=singleton.totalCrashes;
     hornsPlayed.text=singleton.hornsPlayed;
+    
+    if ([hornsPlayed.text integerValue] == 0) {
+        h1.hidden=YES;
+        h2.hidden=YES;
+        h3.hidden=YES;
+        h4.hidden=YES;
+        h5.hidden=YES;
+        h6.hidden=YES;
+        h7.hidden=YES;
+        h8.hidden=YES;
+    }else{
+        h1.hidden=NO;
+        h2.hidden=NO;
+        h3.hidden=NO;
+        h4.hidden=NO;
+        h5.hidden=NO;
+        h6.hidden=NO;
+        h7.hidden=NO;
+        h8.hidden=NO;
+    }
+    
+    
     fastestHorn.text=singleton.fastestHorn;
     slowestHorn.text=singleton.slowestHorn;
     averageHorn.text=singleton.averageHorn;
@@ -142,38 +173,43 @@ scorehms,
     singleton.masterScore=masterScore.text;
     
     //do some conversion for race
-    float hoursX,  minutesX, leftX;
-    float secondsX;
-    leftX=[singleton.totalTime floatValue];
-    secondsX = (leftX / 60);
-    minutesX = (leftX / 3600) / 60;
-    hoursX = (leftX / 86400) / 3600;
+    long hours,  minutes, seconds, left;
+    NSString * hsec;
     
-    NSString *tempX = [NSString stringWithFormat:@"%02.0f:%02.0f:%0.2f",hoursX,minutesX,secondsX];
-    racehms.text=tempX;
+    hsec= [totalTime.text substringWithRange:NSMakeRange(totalTime.text.length-2, 2)];
     
-    float hoursY,  minutesY, leftY;
-    float secondsY;
-    //do some conversion for horns
-    leftY=[singleton.totalHorn floatValue];
-    secondsY = (leftY / 60);
-    minutesY = (leftY / 3600) / 60;
-    hoursY = (leftY / 86400) / 3600;
+    left =(long)[totalTime.text intValue];
+
+    seconds = (left % 60);
+    minutes = (left % 3600) / 60;
+    hours = (left % 86400) / 3600;
     
-    NSString *tempY = [NSString stringWithFormat:@"%02.0f:%02.0f:%0.2f",hoursY,minutesY,secondsY];
-    hornhms.text=tempY;
+    NSString *temp3 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld.%@",hours,minutes,seconds,hsec];
     
-    float hoursZ,  minutesZ, leftZ;
-    float secondsZ;
-    //do some conversion for score
-    leftZ=[singleton.masterScore floatValue];
+    self.racehms.text = [NSString stringWithFormat:@"%@", temp3];
+
+    hsec= [totalHorn.text substringWithRange:NSMakeRange(totalHorn.text.length-2, 2)];
     
-    secondsZ = (leftZ / 60);
-    minutesZ = (leftZ / 3600) / 60;
-    hoursZ = (leftZ / 86400) / 3600;
+    left =(long)[totalHorn.text intValue];
     
-    NSString *tempZ = [NSString stringWithFormat:@"%02.0f:%02.0f:%0.2f",hoursZ,minutesZ,secondsZ];
-    scorehms.text=tempZ;
+    seconds = (left % 60);
+    minutes = (left % 3600) / 60;
+    hours = (left % 86400) / 3600;
+    
+    temp3 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld.%@",hours,minutes,seconds,hsec];
+    
+    self.hornhms.text = [NSString stringWithFormat:@"%@", temp3];
+
+    hsec= [masterScore.text substringWithRange:NSMakeRange(masterScore.text.length-2, 2)];
+    
+    left =(long)[masterScore.text intValue];
+    
+    seconds = (left % 60);
+    minutes = (left % 3600) / 60;
+    hours = (left % 86400) / 3600;
+    
+    temp3 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld.%@",hours,minutes,seconds,hsec];
+    self.scorehms.text = [NSString stringWithFormat:@"%@", temp3];
     
     //set counter to cards for singleton global var
     singleton.counter = 1;

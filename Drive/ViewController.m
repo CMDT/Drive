@@ -79,7 +79,7 @@
     //version, set anyway *****************************************
     //*************************************************************
     
-    version0 =  @"DRIVE Version 2.4.1 - 17.12.15";     // version   *** keep short
+    version0 =  @"DRIVE Version 2.4.3 - 18.12.15";     // version   *** keep short
     version1 =  @"MMU (C) 2015";                // copyright *** limited line space
     version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
     version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen
@@ -311,7 +311,7 @@ mySingleton *singleton = [mySingleton sharedSingleton];
     horns++;
     singleton.hornsShowing=YES;
 }
-    NSLog(@"horn=%i : React = %f",horns-1, hornReactionTime[horns-1]);
+    //NSLog(@"horn=%i : React = %f",horns-1, hornReactionTime[horns-1]);
 }
 
 
