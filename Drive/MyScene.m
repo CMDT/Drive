@@ -47,6 +47,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     int     lap;
     int     fastLap;
     int     slowLap;
+    
+    long xx,yy;
     }
 
 @property (nonatomic, assign) CRCarType carType;
@@ -233,6 +235,9 @@ mySingleton *singleton = [mySingleton sharedSingleton];
     self.startDate=[NSDate date];
     reactionTime[0] = [self.startDate timeIntervalSinceNow]* -1000;
     xcounter = 1;
+    
+    xx=track.position.x;
+    yy=track.position.y;
 }
 
 //now using singleton for laps
@@ -384,6 +389,8 @@ mySingleton *singleton = [mySingleton sharedSingleton];
 }
 
 - (void)p_addObjectsForTrack:(SKSpriteNode *)track {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    
     SKNode *innerBoundary = [SKNode node];
     innerBoundary.position = track.position;
     [self addChild:innerBoundary];
@@ -392,21 +399,172 @@ mySingleton *singleton = [mySingleton sharedSingleton];
         bodyWithRectangleOfSize:CGSizeMake(180.0f, 120.0f)];
     innerBoundary.physicsBody.dynamic = NO;
     
-// put two boxes on the track
-    [self p_addBoxAt:  CGPointMake(track.position.x + 130.0f, track.position.y + 0   )];
-    [self p_addBaleAt: CGPointMake(track.position.x + 100.0f, track.position.y + 110 )];
-    [self p_addTyreAt: CGPointMake(track.position.x - 200.0f, track.position.y + 50  )];
-    [self p_addCrateAt:CGPointMake(track.position.x - 130.0f, track.position.y + 80  )];
-    [self p_addPauseAt:CGPointMake(track.position.x + 230.0f, track.position.y + 145 )];
+// put two boxes, crates, tyres, bale, one pause (under pause top rt) on the track
+    //check which track, as track 1=none, 2=some, 3=lots
+    long trk;
+    trk = [singleton.trackNo integerValue];
+    switch (trk) {
+        case 1:
+            //track 1, no hazards, just walls and the pause buttun under the real pause button to avoid hiding the car
+            [self p_addPauseAt:CGPointMake(track.position.x + 230.0f, track.position.y + 145 )];
+            
+            [self p_addBoxAt:  CGPointMake(track.position.x + 0, track.position.y -100.0   )];
+
+            
+            
+            break;
+        case 2:
+            //track 2, some hazards and walls
+            /*
+             
+             track x, y = 240:160 for ipad
+             pos to add x:y
+             91:-76
+             171:-151
+             48:-151
+             29:-143
+             3:-134
+             -18:-131
+             -39:-135
+             -56:-142
+             -75:-154
+             -32:-154
+             1:-152
+             -220:-14
+             -231:-40
+             -223:-9
+             -222:12
+             -231:39
+             -83:151
+             -58:151
+             -19:146
+             18:142
+             46:150
+             220:142
+             237:57
+             231:39
+             232:6
+             234:-21
+             -103:-5
+                         */
+            [self p_addBoxAt:  CGPointMake(track.position.x + 130.0f, track.position.y + 0   )];
+            [self p_addBaleAt: CGPointMake(track.position.x + 100.0f, track.position.y + 110 )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 200.0f, track.position.y + 50  )];
+            [self p_addCrateAt:CGPointMake(track.position.x - 130.0f, track.position.y + 80  )];
+            [self p_addBaleAt: CGPointMake(track.position.x + 230.0f, track.position.y + 145 )];
+            [self p_addBoxAt:  CGPointMake(track.position.x + 90.0f, track.position.y + 70   )];
+            [self p_addBaleAt: CGPointMake(track.position.x + 50.0f, track.position.y + 110 )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 100.0f, track.position.y + 150  )];
+            [self p_addCrateAt:CGPointMake(track.position.x + 45.0f, track.position.y + 20  )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 170.0f, track.position.y + 75  )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 70.0f, track.position.y + 10  )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 90.0f, track.position.y + 125  )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 130.0f, track.position.y + 0 )];
+            
+            [self p_addPauseAt:CGPointMake(track.position.x + 230.0f, track.position.y + 145 )];
+            break;
+        case 3:
+            //track 3, lots hazards and walls
+            /*
+             -225:151
+             -42:148
+             -11:148
+             40:148
+             4:129
+             -28:131
+             -84:84
+             -224:-58
+             -230:18
+             -195:14
+             -190:-8
+             -207:-32
+             -102:-41
+             -94:-64
+             -54:-76
+             -76:-86
+             -102:-87
+             -115:-92
+             -134:-84
+             -122:-63
+             -222:-148
+             -56:-154
+             -31:-140
+             -1:-135
+             36:-137
+             55:-153
+             65:-73
+             85:-77
+             110:-91
+             111:-64
+             115:-31
+             136:-8
+             109:4
+             123:30
+             101:50
+             126:55
+             116:76
+             231:142
+             212:87
+             235:94
+             223:72
+             230:-8
+             234:-30
+             213:-30
+             222:-102
+             166:-141
+             135:-157
+             */
+            [self p_addBoxAt:  CGPointMake(track.position.x + 130.0f, track.position.y + 140 )];
+            [self p_addBaleAt: CGPointMake(track.position.x + 100.0f, track.position.y + 40 )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 200.0f, track.position.y + 80  )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 90.0f,  track.position.y + 60  )];
+            [self p_addBaleAt: CGPointMake(track.position.x + 230.0f, track.position.y + 110 )];
+            [self p_addBaleAt: CGPointMake(track.position.x + 130.0f, track.position.y + 0   )];
+            [self p_addBaleAt: CGPointMake(track.position.x + 100.0f, track.position.y + 130 )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 270.0f, track.position.y + 75  )];
+            [self p_addCrateAt:CGPointMake(track.position.x - 0.0f,   track.position.y + 33  )];
+            [self p_addBaleAt: CGPointMake(track.position.x + 290.0f, track.position.y + 160 )];
+            [self p_addBaleAt: CGPointMake(track.position.x + 200.0f, track.position.y + 0   )];
+            [self p_addBaleAt: CGPointMake(track.position.x + 100.0f, track.position.y + 20 )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 180.0f, track.position.y + 90  )];
+            [self p_addCrateAt:CGPointMake(track.position.x - 100.0f, track.position.y + 40  )];
+            [self p_addBaleAt: CGPointMake(track.position.x + 60.0f,  track.position.y + 200 )];
+            [self p_addBaleAt: CGPointMake(track.position.x + 10.0f,  track.position.y + 50   )];
+            [self p_addBaleAt: CGPointMake(track.position.x + 30.0f,  track.position.y + 85 )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 160.0f, track.position.y + 222  )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 70.0f,  track.position.y + 25  )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 250.0f, track.position.y + 160  )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 160.0f, track.position.y + 222  )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 0.0f,   track.position.y + 25  )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 35.0f,  track.position.y + 80  )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 110.0f, track.position.y + 60  )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 175.0f, track.position.y + 50  )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 270.0f, track.position.y + 40  )];
+            
+            [self p_addPauseAt:CGPointMake(track.position.x + 230.0f, track.position.y + 145 )];
+            break;
+        default:
+            //not used
+            break;
+    }
+
 }
 
 //only to position some hazards at a good spot, rem out later
-//-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-//{
-    //UITouch *touch = [[event allTouches] anyObject];
-    //CGPoint location = [touch locationInView:touch.view];
-    //NSLog(@"X:Y Touch = %f:%f",location.x,location.y);
-//}
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint location = [touch locationInView:touch.view];
+    NSLog(@"x:y - X:Y Touch = %ld:%ld - %.0f:%.0f",xx,yy,location.x-240,location.y-160);
+    
+    //horn positions
+    /*
+     -68:-39
+     74:-38
+     80:45
+     -75:43
+     */
+}
 
 - (void)p_addGameUIForTrack:(SKSpriteNode *)track {
     // Displays the laps to go as set from LevelDetails.plist
