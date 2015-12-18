@@ -15,7 +15,7 @@
 #define kSubject    @"subjectName"
 //mySingleton *singleton = [mySingleton sharedSingleton];
 
-@interface SelectDriverViewController ()
+@interface SelectDriverViewController () 
 {
     float keyboardAnimSpeed;
     float keyboardAnimDelay;
@@ -65,6 +65,9 @@
     driverName.text = [defaults objectForKey:kSubject];
     //email name
     email.text      = [defaults objectForKey:kEmail];
+    
+    email.delegate       = self;
+    driverName.delegate  = self;
     
 }
 - (void)didReceiveMemoryWarning {
@@ -118,21 +121,12 @@ if ( IDIOM == IPAD ) {
     yy=100;
 }
     
-    yy=100;///////overide/////////
-    
-    
-if(textField==self->driverName){
+if((textField==self->driverName)||(textField==self->email)){
     driverName.backgroundColor = [UIColor greenColor];
     textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
     int oft=textField.frame.origin.y-yy;
     [self keyBoardAppeared:oft];
-}
-if(textField==self->email){
-    email.backgroundColor = [UIColor greenColor];
-    textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-    int oft=textField.frame.origin.y-yy;
-    [self keyBoardAppeared:oft];
-}
+    }
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -160,6 +154,15 @@ if(textField==self->email){
                          }
                          completion:^(BOOL finished){
                          }];
+    //oft= the y of the text field?  make some code to find it
+    [UIView animateWithDuration:keyboardAnimSpeed
+                          delay:keyboardAnimDelay
+                        options: UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         self.view.frame = CGRectMake(frame.origin.x, -oft, frame.size.width, frame.size.height);
+                     }
+                     completion:^(BOOL finished){
+                     }];
 }
 
 -(void)textFieldDidEndEditing:(UITextField *) textField {
@@ -178,6 +181,7 @@ if(textField==self->email){
 {
     //move the screen back to original position
     CGRect frame = self.view.frame;
+
     //oft= the y of the text field?  make some code to find it
         [UIView animateWithDuration:keyboardAnimSpeed
                               delay:keyboardAnimDelay
@@ -187,9 +191,17 @@ if(textField==self->email){
                          }
                          completion:^(BOOL finished){
                          }];
+    [UIView animateWithDuration:keyboardAnimSpeed
+                          delay:keyboardAnimDelay
+                        options: UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         self.view.frame = CGRectMake(frame.origin.x, oft, frame.size.width, frame.size.height);
+                         }
+                     completion:^(BOOL finished){
+                     }];
 
 driverName.backgroundColor = [UIColor whiteColor];
-email.backgroundColor       = [UIColor whiteColor];
+email.backgroundColor      = [UIColor whiteColor];
 
 
 }@end

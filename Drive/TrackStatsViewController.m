@@ -55,6 +55,9 @@
     totalHorn,
     distractionOn,
     masterScore,
+racehms,
+hornhms,
+scorehms,
     emailbtn;
 
 - (void)viewDidLoad {
@@ -130,6 +133,47 @@
     totalHorn.text=singleton.totalHorn;
     distractionOn.text=singleton.distractionOn;
     masterScore.text=singleton.masterScore;
+    
+    masterScore.text = [NSString stringWithFormat:@"%0.2f",
+                        ([singleton.totalTime floatValue])
+                        +([singleton.wallCrashes floatValue] * singleton.wallCrashMult)
+                        +([singleton.hazCrashes floatValue]  * singleton.hazCrashMult)
+                        ];
+    singleton.masterScore=masterScore.text;
+    
+    //do some conversion for race
+    float hoursX,  minutesX, leftX;
+    float secondsX;
+    leftX=[singleton.totalTime floatValue];
+    secondsX = (leftX / 60);
+    minutesX = (leftX / 3600) / 60;
+    hoursX = (leftX / 86400) / 3600;
+    
+    NSString *tempX = [NSString stringWithFormat:@"%02.0f:%02.0f:%0.2f",hoursX,minutesX,secondsX];
+    racehms.text=tempX;
+    
+    float hoursY,  minutesY, leftY;
+    float secondsY;
+    //do some conversion for horns
+    leftY=[singleton.totalHorn floatValue];
+    secondsY = (leftY / 60);
+    minutesY = (leftY / 3600) / 60;
+    hoursY = (leftY / 86400) / 3600;
+    
+    NSString *tempY = [NSString stringWithFormat:@"%02.0f:%02.0f:%0.2f",hoursY,minutesY,secondsY];
+    hornhms.text=tempY;
+    
+    float hoursZ,  minutesZ, leftZ;
+    float secondsZ;
+    //do some conversion for score
+    leftZ=[singleton.masterScore floatValue];
+    
+    secondsZ = (leftZ / 60);
+    minutesZ = (leftZ / 3600) / 60;
+    hoursZ = (leftZ / 86400) / 3600;
+    
+    NSString *tempZ = [NSString stringWithFormat:@"%02.0f:%02.0f:%0.2f",hoursZ,minutesZ,secondsZ];
+    scorehms.text=tempZ;
     
     //set counter to cards for singleton global var
     singleton.counter = 1;

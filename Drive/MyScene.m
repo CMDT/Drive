@@ -23,6 +23,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     CRBodyCrate = 1 << 1,
     CRBodyTyre = 1 << 1,
     CRBodyBale = 1 << 1,
+    CRBodyPause = 1 << 1,
 };
 
 @interface MyScene () <SKPhysicsContactDelegate>
@@ -82,10 +83,10 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 
 - (instancetype)initWithSize:(CGSize)size carType:(CRCarType)carType level:(CRLevelType)levelType {
     self = [super initWithSize:size];
-
+mySingleton *singleton = [mySingleton sharedSingleton];
     if (self) {
-        _carType = carType;
-        _levelType = levelType;
+        _carType = [singleton.carNo integerValue];//carType;
+        _levelType = [singleton.trackNo integerValue];//levelType;
         _numOfCollisionsWithBoxes = 0; //start off with clean sheet
         [self p_initializeGame];
     }
@@ -115,7 +116,19 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         self.timeInSeconds += (currentTime - self.previousTimeInterval);//was -= to count down, now count up
         self.previousTimeInterval = currentTime;
         //self.time.text = [NSString stringWithFormat:@"Time: %.lf", self.timeInSeconds];
-        self.time.text = [NSString stringWithFormat:@"Time: %.lf", self.timeInSeconds];
+        
+        //do some conversion for race
+        long hours3,  minutes3, left3;
+        long seconds3;
+        left3=(long)_timeInSeconds;
+        seconds3 = (left3 % 60);
+        minutes3 = (left3 % 3600) / 60;
+        hours3 = (left3 % 86400) / 3600;
+        
+        NSString *temp3 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld",hours3,minutes3,seconds3];
+        
+        self.time.text = [NSString stringWithFormat:@"Time: %@", temp3];
+        
     }
 
     //where is the car on the track?, is it going the correct way round to reduce the laps
@@ -160,10 +173,10 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             [self runAction:self.lapSoundAction];
         }
     }
-    if (singleton.hornsShowing==YES) {
+    if (singleton.hornsShowing == YES) {
         [self runAction:self.hornSoundAction];
         //sleep(1); //stops the action but not the clock
-        singleton.hornsShowing=NO;
+        singleton.hornsShowing = NO;
          }
     
     if (self.timeInSeconds < 0 || self.numOfLaps == 0) {
@@ -310,6 +323,25 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     
     [self addChild:crate];
 }
+- (void)p_addPauseAt:(CGPoint)point {
+    //to mask the top right corner from the cars, its an obsticle and stops the car from running under it
+    SKSpriteNode *pause = [SKSpriteNode spriteNodeWithImageNamed:@"pause2Gr"];
+//set a smaller size as original was scaled down
+    pause.xScale = 0.5;
+    pause.yScale = 0.5;
+    pause.position = point;
+    pause.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:pause.size];
+    pause.physicsBody.categoryBitMask = CRBodyPause;
+    
+    // Simulate friction and prevent the boxes from continuously sliding around
+    pause.physicsBody.linearDamping = 1.0f;//1
+    pause.physicsBody.angularDamping = 1.0f;//1
+    //crate.physicsBody.mass=1000; //added but not needed
+    //crate.physicsBody.friction = 1000; //added but not needed
+    pause.physicsBody.dynamic=NO; //no=does not move or slide
+    
+    [self addChild:pause];
+}
 
 - (void)p_addBaleAt:(CGPoint)point {
     SKSpriteNode *bale = [SKSpriteNode spriteNodeWithImageNamed:@"bale"];
@@ -353,10 +385,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     innerBoundary.physicsBody.dynamic = NO;
     
 // put two boxes on the track
-    [self p_addBoxAt:CGPointMake(track.position.x + 130.0f, track.position.y)];
-    [self p_addBaleAt:CGPointMake(track.position.x + 100.0f, track.position.y+120)];
-    [self p_addTyreAt:CGPointMake(track.position.x - 200.0f, track.position.y+50)];
-    [self p_addCrateAt:CGPointMake(track.position.x - 130.0f, track.position.y+80)];
+    [self p_addBoxAt:  CGPointMake(track.position.x + 130.0f, track.position.y + 0   )];
+    [self p_addBaleAt: CGPointMake(track.position.x + 100.0f, track.position.y + 110 )];
+    [self p_addTyreAt: CGPointMake(track.position.x - 200.0f, track.position.y + 50  )];
+    [self p_addCrateAt:CGPointMake(track.position.x - 130.0f, track.position.y + 80  )];
+    [self p_addPauseAt:CGPointMake(track.position.x + 230.0f, track.position.y + 145 )];
 }
 
 //only to position some hazards at a good spot, rem out later
@@ -377,8 +410,19 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     [self addChild:_laps];
 
     // Shows the time left to finish the laps remaining
+    
+    //do some conversion for race
+    long hours,  minutes, left;
+    long seconds;
+    left=(long)_timeInSeconds;
+    seconds = (left % 60);
+    minutes = (left % 3600) / 60;
+    hours = (left % 86400) / 3600;
+    
+    NSString *temp2 = [NSString stringWithFormat:@"%li:%li:%li",hours,minutes,seconds];
+    
     _time = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    _time.text = [NSString stringWithFormat:@"Time: %li", (long)_timeInSeconds];
+    _time.text = [NSString stringWithFormat:@"Time: %@", temp2];
     _time.fontSize = 20.0f;
     _time.fontColor = [UIColor whiteColor];
     _time.position = CGPointMake(track.position.x, track.position.y - 10.0f);

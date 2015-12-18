@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface DriveNavigationController : UINavigationController
+@interface DriveNavigationController : UINavigationController  <UITextFieldDelegate>
 
 @end

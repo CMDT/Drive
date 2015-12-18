@@ -8,7 +8,7 @@
 
 @import UIKit;
 
-@interface HomeScreenViewController : UIViewController
+@interface HomeScreenViewController : UIViewController <UITextFieldDelegate>
 - (IBAction)lap2set:(id)sender;
 - (IBAction)lap5set:(id)sender;
 - (IBAction)lap10set:(id)sender;

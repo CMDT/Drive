@@ -20,7 +20,7 @@
 #define kVersion2   @"version2"
 #define kVersion3   @"version3"
 
-@interface ViewController () <UIAlertViewDelegate>
+@interface ViewController () <UIAlertViewDelegate, UITextFieldDelegate>
 {
     BOOL hornShowing;
     int horns;
@@ -194,12 +194,17 @@
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
-
+mySingleton *singleton = [mySingleton sharedSingleton];
+    
+    _carType = [singleton.carNo integerValue];//carType;
+    _levelType = [singleton.trackNo integerValue];//levelType;
+    
     if (!self.skView) {
         self.skView = [[SKView alloc] initWithFrame:self.view.bounds];
         MyScene *scene = [[MyScene alloc]
-        //initWithSize:self.skView.bounds.size carType:self.carType level:self.levelType];
-        initWithSize:self.skView.bounds.size carType:1 level:1];
+                          
+        initWithSize:self.skView.bounds.size carType:self.carType level:self.levelType];
+        
         scene.scaleMode = SKSceneScaleModeAspectFill;
         [self.skView presentScene:scene];
 

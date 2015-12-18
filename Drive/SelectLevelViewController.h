@@ -8,7 +8,7 @@
 
 @import UIKit;
 
-@interface SelectLevelViewController : UIViewController
+@interface SelectLevelViewController : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic, assign) CRCarType carType;
 

@@ -9,7 +9,7 @@
 @import UIKit;
 @import SpriteKit;
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController  <UITextFieldDelegate>
 
 @property (nonatomic, assign) CRCarType carType;
 @property (nonatomic, assign) CRLevelType levelType;

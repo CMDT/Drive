@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface SelectCarViewController : UIViewController
+@interface SelectCarViewController : UIViewController  <UITextFieldDelegate>
 
 @end

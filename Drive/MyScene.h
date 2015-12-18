@@ -8,7 +8,7 @@
 
 @import SpriteKit;
 
-@interface MyScene : SKScene
+@interface MyScene : SKScene  <UITextFieldDelegate>
 {
 }
 @property (nonatomic, copy) void (^gameOverBlock)(BOOL didWin);

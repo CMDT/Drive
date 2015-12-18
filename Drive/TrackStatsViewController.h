@@ -60,6 +60,9 @@
 @property (nonatomic, strong) IBOutlet UILabel * totalHorn;
 @property (nonatomic, strong) IBOutlet UILabel * distractionOn;
 @property (nonatomic, strong) IBOutlet UILabel * masterScore;
+@property (weak, nonatomic) IBOutlet UILabel *racehms;
+@property (weak, nonatomic) IBOutlet UILabel *hornhms;
+@property (weak, nonatomic) IBOutlet UILabel *scorehms;
 
 @property (nonatomic, strong) IBOutlet UIButton * emailbtn;
 
