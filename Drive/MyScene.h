@@ -13,6 +13,7 @@
 }
 @property (nonatomic, copy) void (^gameOverBlock)(BOOL didWin);
 @property (nonatomic, copy) NSDate * startDate;
+@property (nonatomic, copy) NSDate * startDateHorn;
 
 - (instancetype)initWithSize:(CGSize)size carType:(CRCarType)carType level:(CRLevelType)levelType;
 

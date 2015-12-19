@@ -22,21 +22,13 @@
 
 @interface ViewController () <UIAlertViewDelegate, UITextFieldDelegate>
 {
-    BOOL hornShowing;
-    int horns;
-    Float32 hornReactionTime[100];
-    Float32 fastestHorn;
-    Float32 slowestHorn;
-    Float32 averageHorn;
-    Float32 hornTime;
-    Float32 temp1;
-    Float32 temp2;
 }
 
 @property (nonatomic, strong) SKView          * skView;
 @property (nonatomic, strong) AnalogControl   * analogControl;
 @property (nonatomic, strong) MyScene         * scene;
 @property (weak, nonatomic) IBOutlet UIButton * hornBtn;
+@property (weak, nonatomic) IBOutlet UIButton * hornBtn2;
 
 @property (nonatomic, strong) SKAction *hornSoundAction;
 
@@ -44,7 +36,7 @@
 
 @implementation ViewController
 
-@synthesize hornBtn;
+@synthesize hornBtn, hornBtn2;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -108,10 +100,7 @@
         [self setDateNow:self];
         [self setTimeNow:self];
     
-    horns = 0;
-    fastestHorn=999999;
-    slowestHorn=-999999;
-    averageHorn=-999999;
+
     
     //tester name
     subjectName     = [defaults objectForKey:kSubject];
@@ -132,20 +121,6 @@
     
     //versionNumberLab.text   = version0;
     singleton.versionNumber = version0;
-}
-
--(int)random22
-//for random numbers
-{
-    int num1 = 1;
-    num1 = arc4random_uniform(22); //1-21
-    if (num1<1) {
-        num1=1;
-    }
-    if (num1>21) {
-        num1=21;
-    }
-    return num1;
 }
 
 -(void)setDateNow:(id)sender{
@@ -240,9 +215,7 @@ mySingleton *singleton = [mySingleton sharedSingleton];
     self.skView.showsFPS = YES;
     self.skView.showsNodeCount = YES;
 #endif
-    self.startDateHorn=[NSDate date];
-    hornReactionTime[horns]=(Float32)[self.startDateHorn timeIntervalSinceNow]* -1000;
-    horns++;
+
 }
 
 - (BOOL)shouldAutorotate {
@@ -255,13 +228,6 @@ mySingleton *singleton = [mySingleton sharedSingleton];
             return UIInterfaceOrientationMaskAll;
         }
 }
-//- (NSUInteger)supportedInterfaceOrientations {
-//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-//        return UIInterfaceOrientationMaskAllButUpsideDown;
-//    } else {
-//        return UIInterfaceOrientationMaskAll;
-//    }
-//}
 
 - (BOOL)prefersStatusBarHidden {
     return YES;
@@ -284,41 +250,13 @@ mySingleton *singleton = [mySingleton sharedSingleton];
 
 - (IBAction)hornButtonDidTouchUpInside:(id)sender {
     mySingleton *singleton = [mySingleton sharedSingleton];
-    if (singleton.hornsShowing==YES) { //stop the timer and hide the horn graphic
-        [self hornShow];
-        //singleton.hornsShowing=NO;
-        
-    }else{
-        [self hornShow];
-        //singleton.hornsShowing=YES;
-        
-    }
+    //stop the timer and hide the horn graphic
+        singleton.hornsShowing = NO;
 }
-
--(void)hornShow {
-    mySingleton *singleton = [mySingleton sharedSingleton];
-    if(singleton.hornsShowing==YES){
-        hornBtn.hidden=NO;
-        hornBtn.alpha=1.0;
-        temp1 =((Float32)[self.startDateHorn timeIntervalSinceNow]* -1000);
-        singleton.hornsShowing=NO;
-}else{
-        hornBtn.hidden=NO;
-        hornBtn.alpha=0.5;
-    //stop the timer and save the time reading
-    temp2 =((Float32)[self.startDateHorn timeIntervalSinceNow]* -1000);
-    hornReactionTime[horns]=temp2-temp1;
-    horns++;
-    singleton.hornsShowing=YES;
-}
-    //NSLog(@"horn=%i : React = %f",horns-1, hornReactionTime[horns-1]);
-}
-
 
 #pragma mark - Game Over
 
 - (void)p_gameOverWithWin:(BOOL)didWin {
-    mySingleton *singleton = [mySingleton sharedSingleton];
     UIAlertView *alert =
     [[UIAlertView alloc] initWithTitle:didWin ? @"You Completed the Laps Required!" : @"You Did Not Finish the Race"
                                message:@"... This Race is Now Over ..."
@@ -327,40 +265,6 @@ mySingleton *singleton = [mySingleton sharedSingleton];
                      otherButtonTitles:nil];
     [alert show];
     if (didWin) {
-        //you finished the race, give the stats
-
-        for (int x=3; x<horns; x+=1) {
-            hornReactionTime[x]=(hornReactionTime[x]/1000);
-            //NSLog(@"horn time %d: %f", x, hornReactionTime[x][x]);
-        }
-        
-        for (int x=3; x<horns; x+=1) {
-            
-            temp1 = hornReactionTime[x];
-            
-            // NSLog(@"lap time %d: %f",x, temp);
-            
-            if ( slowestHorn < temp1) {
-                slowestHorn = temp1;
-                //NSLog(@"slow lap time %d: %f", x, temp);
-            }
-            if (fastestHorn > temp1) {
-                fastestHorn = temp1;
-                //NSLog(@"fast lap time %d: %f", x, temp);
-            }
-            hornTime = hornTime + temp1;
-        }
-        averageHorn = hornTime / (horns-3);
-        singleton.hornsPlayed = [NSString stringWithFormat:@"%i",horns-3];
-        singleton.totalHorn   = [NSString stringWithFormat:@"%0.2f",hornTime];
-        singleton.fastestHorn = [NSString stringWithFormat:@"%0.2f",fastestHorn];
-        singleton.slowestHorn = [NSString stringWithFormat:@"%0.2f",slowestHorn];
-        singleton.averageHorn = [NSString stringWithFormat:@"%0.2f",averageHorn];
-        
-        for (int x=0; x<horns+1; x+=1) {
-            NSLog(@"Horn %i : Reaction %f",x,hornReactionTime[x]);
-        }
-        
         [self performSelector:@selector(p_goBackStats:) withObject:alert afterDelay:2.0];
     }else{
         //you did not finish or cancelled, just start again... consider part stats, ie no email

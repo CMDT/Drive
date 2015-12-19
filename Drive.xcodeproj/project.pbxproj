@@ -47,6 +47,8 @@
 		47FDCB8B1972B59B003723C1 /* GameKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FDCB8A1972B59B003723C1 /* GameKitHelper.m */; };
 		47FDCB8E1972BF35003723C1 /* DriveNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FDCB8D1972BF35003723C1 /* DriveNavigationController.m */; };
 		47FDCB911972CB4A003723C1 /* AchievementsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FDCB901972CB4A003723C1 /* AchievementsHelper.m */; };
+		911EF1C71C24C81F00EAF391 /* carhorn-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 911EF1C51C24C81F00EAF391 /* carhorn-btn.png */; };
+		911EF1C81C24C81F00EAF391 /* carhorn-btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 911EF1C61C24C81F00EAF391 /* carhorn-btn@2x.png */; };
 		917B79131C1DB50E00A6D3DA /* TrackStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 917B79121C1DB50E00A6D3DA /* TrackStatsViewController.m */; };
 		917E5A5D1C21DF0A009DF226 /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 917E5A5B1C21DF0A009DF226 /* tick.png */; };
 		917E5A5E1C21DF0A009DF226 /* tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 917E5A5C1C21DF0A009DF226 /* tick@2x.png */; };
@@ -252,6 +254,8 @@
 		47FDCB8D1972BF35003723C1 /* DriveNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriveNavigationController.m; sourceTree = "<group>"; };
 		47FDCB8F1972CB4A003723C1 /* AchievementsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AchievementsHelper.h; path = GameKit/AchievementsHelper.h; sourceTree = "<group>"; };
 		47FDCB901972CB4A003723C1 /* AchievementsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AchievementsHelper.m; path = GameKit/AchievementsHelper.m; sourceTree = "<group>"; };
+		911EF1C51C24C81F00EAF391 /* carhorn-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carhorn-btn.png"; sourceTree = "<group>"; };
+		911EF1C61C24C81F00EAF391 /* carhorn-btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carhorn-btn@2x.png"; sourceTree = "<group>"; };
 		917B79111C1DB50E00A6D3DA /* TrackStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackStatsViewController.h; sourceTree = "<group>"; };
 		917B79121C1DB50E00A6D3DA /* TrackStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackStatsViewController.m; sourceTree = "<group>"; };
 		917E5A5B1C21DF0A009DF226 /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
@@ -563,6 +567,8 @@
 		475E5E5E195A5A610063FD68 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				911EF1C51C24C81F00EAF391 /* carhorn-btn.png */,
+				911EF1C61C24C81F00EAF391 /* carhorn-btn@2x.png */,
 				E1CBACF61C22D7DA001CC466 /* backx@2x.png */,
 				E1CBACED1C22D7DA001CC466 /* backxGr@2x.png */,
 				E1CBACE51C22D7DA001CC466 /* backxGrsm.png */,
@@ -897,6 +903,7 @@
 				E171F2ED1C1EF19F00E3DB0D /* seg-2@2x.png in Resources */,
 				E171F2BA1C1EDBB300E3DB0D /* steering-wheel-horn.png in Resources */,
 				475E5EB0195A5A610063FD68 /* steering-wheel@2x.png in Resources */,
+				911EF1C81C24C81F00EAF391 /* carhorn-btn@2x.png in Resources */,
 				E171F2AA1C1EDBB300E3DB0D /* btn-pause@2x.png in Resources */,
 				E171F2AD1C1EDBB300E3DB0D /* btn-select-car.png in Resources */,
 				E171F2C01C1EDC1C00E3DB0D /* Funky_Good_Time.mp3 in Resources */,
@@ -954,6 +961,7 @@
 				E171F2A11C1EDBB300E3DB0D /* btn-easy.png in Resources */,
 				E1CBAD071C22D7DA001CC466 /* finishx.png in Resources */,
 				E1CBAD0D1C22D7DA001CC466 /* easyx.png in Resources */,
+				911EF1C71C24C81F00EAF391 /* carhorn-btn.png in Resources */,
 				E171F2A31C1EDBB300E3DB0D /* btn-fast.png in Resources */,
 				E1CBAD0A1C22D7DA001CC466 /* backx.png in Resources */,
 				917E5A5E1C21DF0A009DF226 /* tick@2x.png in Resources */,
@@ -986,7 +994,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "python /Users/jonhowell/Documents/Drive2015a/Drive/Settings.bundle/Licence.py #work\n# python /Users/jonathanhowell/Documents/Drive2015b/Drive/Settings.bundle/Licence.py #home";
+			shellScript = "# python /Users/jonhowell/Documents/Drive2015a/Drive/Settings.bundle/Licence.py #work\npython /Users/jonathanhowell/Documents/Drive2015b/Drive/Settings.bundle/Licence.py #home";
 		};
 /* End PBXShellScriptBuildPhase section */
 

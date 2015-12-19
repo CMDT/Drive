@@ -135,9 +135,13 @@ h7,h8,
     hazCrashes.text=singleton.hazCrashes;
     wallCrashes.text=singleton.wallCrashes;
     totalCrashes.text=singleton.totalCrashes;
-    hornsPlayed.text=singleton.hornsPlayed;
     
-    if ([hornsPlayed.text integerValue] == 0) {
+    
+    int horns;
+    horns=[singleton.hornsPlayed intValue]-4;
+    hornsPlayed.text=[NSString stringWithFormat:@"%i",horns];;
+    
+    if ([hornsPlayed.text integerValue] <= 0) {
         h1.hidden=YES;
         h2.hidden=YES;
         h3.hidden=YES;

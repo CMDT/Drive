@@ -47,6 +47,13 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     int     lap;
     int     fastLap;
     int     slowLap;
+    int     horns;
+    
+    BOOL hornShowing;
+    BOOL hornsPressed;//for horns pressed
+    Float32 hornReactionTime[100];
+    Float32 temp1;
+    Float32 temp2;
     
     long xx,yy;
     }
@@ -77,7 +84,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 
 @implementation MyScene
 
-@synthesize startDate;
+@synthesize startDate, startDateHorn;
 
 #pragma mark - Initialise Game
 
@@ -90,12 +97,24 @@ mySingleton *singleton = [mySingleton sharedSingleton];
         _carType = [singleton.carNo integerValue];//carType;
         _levelType = [singleton.trackNo integerValue];//levelType;
         _numOfCollisionsWithBoxes = 0; //start off with clean sheet
+        
+        horns = 0;
+        singleton.hornsPlayed=@"0";
+        
+        fastestHorn=999999;
+        slowestHorn=-999999;
+        averageHorn=-999999;
         [self p_initializeGame];
+        
+        self.startDateHorn=[NSDate date];
+        hornReactionTime[[singleton.hornsPlayed integerValue]]=(Float32)[self.startDateHorn timeIntervalSinceNow]* -1000;
+        singleton.hornsPlayed=[NSString stringWithFormat:@"%i",horns];
+        hornsPressed=NO;
     }
     return self;
 }
 
-//game proper, thjis is the run loop on this update
+//game proper, this is the run loop on this update
 - (void)update:(NSTimeInterval)currentTime {
     mySingleton *singleton = [mySingleton sharedSingleton];
     
@@ -175,15 +194,27 @@ mySingleton *singleton = [mySingleton sharedSingleton];
             [self runAction:self.lapSoundAction];
         }
     }
-    if (singleton.hornsShowing == YES) {
+    
+    int tt;
+    tt=self.timeInSeconds;
+    
+    if ((tt / 7) == ((int)(tt  % 7)) && (tt>1)) {
+        //beep the horn every 7 seconds
+        reactionTime[xcounter]=(Float32)[self.startDate timeIntervalSinceNow]* -1000;
         [self runAction:self.hornSoundAction];
-        //sleep(1); //stops the action but not the clock
-        singleton.hornsShowing = NO;
-         }
+        singleton.hornsShowing=YES;
+        horns=[singleton.hornsPlayed intValue]+1;
+        singleton.hornsPlayed=[NSString stringWithFormat:@"%i",horns];
+        hornsPressed=NO;
+    }
+    
+    if (singleton.hornsShowing==NO && hornsPressed==NO) {
+        reactionTime[[singleton.hornsPlayed intValue]]=(Float32)[self.startDate timeIntervalSinceNow]* -1000;
+        hornsPressed=YES;
+    }
     
     if (self.timeInSeconds < 0 || self.numOfLaps == 0) {
         self.paused = YES;
-        
         
         BOOL hasWon = self.numOfLaps == 0;
 
@@ -195,6 +226,8 @@ mySingleton *singleton = [mySingleton sharedSingleton];
 #pragma mark - Start the Game
 
 - (void)p_initializeGame {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    
     [self p_loadLevel];
 
     SKSpriteNode *track = ({
@@ -236,6 +269,8 @@ mySingleton *singleton = [mySingleton sharedSingleton];
     reactionTime[0] = [self.startDate timeIntervalSinceNow]* -1000;
     xcounter = 1;
     
+    singleton.hornsShowing=NO;
+    
     xx=track.position.x;
     yy=track.position.y;
 }
@@ -264,6 +299,8 @@ mySingleton *singleton = [mySingleton sharedSingleton];
         
         SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:imageName];
         sprite.position = startPosition;
+        sprite.xScale = 0.80;
+        sprite.yScale = 0.80;
         sprite.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:sprite.frame.size];
         sprite.physicsBody.categoryBitMask    = CRBodyCar;
         sprite.physicsBody.collisionBitMask   = CRBodyBox;
@@ -310,7 +347,7 @@ mySingleton *singleton = [mySingleton sharedSingleton];
     box.physicsBody.angularDamping = 1.0f;//1
     //box.physicsBody.mass=1000; //added but not needed
     //box.physicsBody.friction = 1000; //added but not needed
-    box.physicsBody.dynamic=YES;
+    box.physicsBody.dynamic=NO;
 
     [self addChild:box];
 }
@@ -328,7 +365,7 @@ mySingleton *singleton = [mySingleton sharedSingleton];
     crate.physicsBody.angularDamping = 1.0f;//1
     //crate.physicsBody.mass=1000; //added but not needed
     //crate.physicsBody.friction = 1000; //added but not needed
-    crate.physicsBody.dynamic=YES;
+    crate.physicsBody.dynamic=NO;
     
     [self addChild:crate];
 }
@@ -365,7 +402,7 @@ mySingleton *singleton = [mySingleton sharedSingleton];
     bale.physicsBody.angularDamping = 1.0f;//1
     //bale.physicsBody.mass=1000; //added but not needed
     //bale.physicsBody.friction = 1000; //added but not needed
-    bale.physicsBody.dynamic=YES;
+    bale.physicsBody.dynamic=NO;
     
     [self addChild:bale];
 }
@@ -383,7 +420,7 @@ mySingleton *singleton = [mySingleton sharedSingleton];
     tyre.physicsBody.angularDamping = 1.0f;//1
     //tyre.physicsBody.mass=1000; //added but not needed
     //tyre.physicsBody.friction = 1000; //added but not needed
-    tyre.physicsBody.dynamic=YES;
+    tyre.physicsBody.dynamic=NO;
     
     [self addChild:tyre];
 }
@@ -406,140 +443,98 @@ mySingleton *singleton = [mySingleton sharedSingleton];
     switch (trk) {
         case 1:
             //track 1, no hazards, just walls and the pause buttun under the real pause button to avoid hiding the car
-            [self p_addPauseAt:CGPointMake(track.position.x + 230.0f, track.position.y + 145 )];
+            [self p_addPauseAt:CGPointMake(track.position.x + 230, track.position.y + 145 )];
             
-            [self p_addBoxAt:  CGPointMake(track.position.x + 0, track.position.y -100.0   )];
+            [self p_addBoxAt:  CGPointMake(track.position.x -225, track.position.y + 150   )];
 
             
             
             break;
         case 2:
-            //track 2, some hazards and walls
-            /*
-             
-             track x, y = 240:160 for ipad
-             pos to add x:y
-             91:-76
-             171:-151
-             48:-151
-             29:-143
-             3:-134
-             -18:-131
-             -39:-135
-             -56:-142
-             -75:-154
-             -32:-154
-             1:-152
-             -220:-14
-             -231:-40
-             -223:-9
-             -222:12
-             -231:39
-             -83:151
-             -58:151
-             -19:146
-             18:142
-             46:150
-             220:142
-             237:57
-             231:39
-             232:6
-             234:-21
-             -103:-5
-                         */
-            [self p_addBoxAt:  CGPointMake(track.position.x + 130.0f, track.position.y + 0   )];
-            [self p_addBaleAt: CGPointMake(track.position.x + 100.0f, track.position.y + 110 )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 200.0f, track.position.y + 50  )];
-            [self p_addCrateAt:CGPointMake(track.position.x - 130.0f, track.position.y + 80  )];
-            [self p_addBaleAt: CGPointMake(track.position.x + 230.0f, track.position.y + 145 )];
-            [self p_addBoxAt:  CGPointMake(track.position.x + 90.0f, track.position.y + 70   )];
-            [self p_addBaleAt: CGPointMake(track.position.x + 50.0f, track.position.y + 110 )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 100.0f, track.position.y + 150  )];
-            [self p_addCrateAt:CGPointMake(track.position.x + 45.0f, track.position.y + 20  )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 170.0f, track.position.y + 75  )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 70.0f, track.position.y + 10  )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 90.0f, track.position.y + 125  )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 130.0f, track.position.y + 0 )];
+             //track 2, some hazards and walls
+            
+             //track x, y = 240:160 for ipad
+
+             [self p_addBoxAt:  CGPointMake(track.position.x + 227, track.position.y  - 147 )];
+             [self p_addBoxAt:  CGPointMake(track.position.x + 230, track.position.y  - 23 )];
+             [self p_addBaleAt: CGPointMake(track.position.x + 220, track.position.y  + 5 )];
+             [self p_addBaleAt: CGPointMake(track.position.x + 217, track.position.y  + 31 )];
+             [self p_addTyreAt: CGPointMake(track.position.x + 223, track.position.y  + 61 )];
+             [self p_addBaleAt: CGPointMake(track.position.x + 217, track.position.y  + 110 )];
+             [self p_addTyreAt: CGPointMake(track.position.x + 47, track.position.y   + 145 )];
+             [self p_addTyreAt: CGPointMake(track.position.x + 18, track.position.y   + 140 )];
+             [self p_addBoxAt: CGPointMake(track.position.x - 19, track.position.y   + 144 )];
+             [self p_addCrateAt:CGPointMake(track.position.x - 56, track.position.y   + 145 )];
+             [self p_addTyreAt: CGPointMake(track.position.x - 84, track.position.y   + 147 )];
+             [self p_addCrateAt:CGPointMake(track.position.x - 157, track.position.y  + 145 )];
+             [self p_addBaleAt: CGPointMake(track.position.x - 222, track.position.y  + 143 )];
+             [self p_addTyreAt: CGPointMake(track.position.x - 228, track.position.y  + 48 )];
+             [self p_addBaleAt: CGPointMake(track.position.x - 222, track.position.y  + 24 )];
+             [self p_addCrateAt:CGPointMake(track.position.x - 220, track.position.y  - 3 )];
+             [self p_addTyreAt: CGPointMake(track.position.x - 217, track.position.y  - 21 )];
+             [self p_addCrateAt:CGPointMake(track.position.x - 231, track.position.y  - 56 )];
+             [self p_addTyreAt: CGPointMake(track.position.x - 57, track.position.y   - 146 )];
+             //[self p_addBaleAt: CGPointMake(track.position.x - 66, track.position.y   - 140 )];
+             [self p_addBoxAt:CGPointMake(track.position.x - 29, track.position.y   - 140 )];
+             [self p_addTyreAt: CGPointMake(track.position.x + 0, track.position.y    - 143 )];
+             [self p_addBaleAt: CGPointMake(track.position.x + 35, track.position.y   - 143 )];
+             [self p_addCrateAt:CGPointMake(track.position.x + 67, track.position.y   - 146 )];
+             [self p_addTyreAt: CGPointMake(track.position.x + 234, track.position.y  - 56 )];
+             [self p_addTyreAt: CGPointMake(track.position.x - 102, track.position.y - 5 )];
+             [self p_addTyreAt: CGPointMake(track.position.x + 7, track.position.y    + 71 )];
             
             [self p_addPauseAt:CGPointMake(track.position.x + 230.0f, track.position.y + 145 )];
             break;
         case 3:
             //track 3, lots hazards and walls
-            /*
-             -225:151
-             -42:148
-             -11:148
-             40:148
-             4:129
-             -28:131
-             -84:84
-             -224:-58
-             -230:18
-             -195:14
-             -190:-8
-             -207:-32
-             -102:-41
-             -94:-64
-             -54:-76
-             -76:-86
-             -102:-87
-             -115:-92
-             -134:-84
-             -122:-63
-             -222:-148
-             -56:-154
-             -31:-140
-             -1:-135
-             36:-137
-             55:-153
-             65:-73
-             85:-77
-             110:-91
-             111:-64
-             115:-31
-             136:-8
-             109:4
-             123:30
-             101:50
-             126:55
-             116:76
-             231:142
-             212:87
-             235:94
-             223:72
-             230:-8
-             234:-30
-             213:-30
-             222:-102
-             166:-141
-             135:-157
-             */
-            [self p_addBoxAt:  CGPointMake(track.position.x + 130.0f, track.position.y + 140 )];
-            [self p_addBaleAt: CGPointMake(track.position.x + 100.0f, track.position.y + 40 )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 200.0f, track.position.y + 80  )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 90.0f,  track.position.y + 60  )];
-            [self p_addBaleAt: CGPointMake(track.position.x + 230.0f, track.position.y + 110 )];
-            [self p_addBaleAt: CGPointMake(track.position.x + 130.0f, track.position.y + 0   )];
-            [self p_addBaleAt: CGPointMake(track.position.x + 100.0f, track.position.y + 130 )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 270.0f, track.position.y + 75  )];
-            [self p_addCrateAt:CGPointMake(track.position.x - 0.0f,   track.position.y + 33  )];
-            [self p_addBaleAt: CGPointMake(track.position.x + 290.0f, track.position.y + 160 )];
-            [self p_addBaleAt: CGPointMake(track.position.x + 200.0f, track.position.y + 0   )];
-            [self p_addBaleAt: CGPointMake(track.position.x + 100.0f, track.position.y + 20 )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 180.0f, track.position.y + 90  )];
-            [self p_addCrateAt:CGPointMake(track.position.x - 100.0f, track.position.y + 40  )];
-            [self p_addBaleAt: CGPointMake(track.position.x + 60.0f,  track.position.y + 200 )];
-            [self p_addBaleAt: CGPointMake(track.position.x + 10.0f,  track.position.y + 50   )];
-            [self p_addBaleAt: CGPointMake(track.position.x + 30.0f,  track.position.y + 85 )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 160.0f, track.position.y + 222  )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 70.0f,  track.position.y + 25  )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 250.0f, track.position.y + 160  )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 160.0f, track.position.y + 222  )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 0.0f,   track.position.y + 25  )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 35.0f,  track.position.y + 80  )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 110.0f, track.position.y + 60  )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 175.0f, track.position.y + 50  )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 270.0f, track.position.y + 40  )];
+ 
+             [self p_addBoxAt:  CGPointMake(track.position.x - 225, track.position.y  + 151 )];
+             [self p_addTyreAt: CGPointMake(track.position.x - 42, track.position.y   + 148 )];
+             [self p_addBoxAt:  CGPointMake(track.position.x - 11, track.position.y   + 148 )];
+             [self p_addTyreAt: CGPointMake(track.position.x + 40, track.position.y   + 148 )];
+             [self p_addBoxAt:  CGPointMake(track.position.x + 4, track.position.y    + 129 )];
+             [self p_addTyreAt: CGPointMake(track.position.x - 28, track.position.y   + 131 )];
+             [self p_addTyreAt: CGPointMake(track.position.x - 84, track.position.y   + 84 )];
+             [self p_addBoxAt:  CGPointMake(track.position.x - 224, track.position.y  - 58 )];
+             [self p_addCrateAt:CGPointMake(track.position.x - 230, track.position.y  + 18 )];
+             [self p_addTyreAt: CGPointMake(track.position.x - 195, track.position.y  + 14 )];
+             [self p_addTyreAt: CGPointMake(track.position.x - 190, track.position.y  - 8 )];
+             [self p_addBaleAt: CGPointMake(track.position.x - 207, track.position.y  - 32 )];
+             [self p_addTyreAt: CGPointMake(track.position.x - 02, track.position.y   - 41 )];
+             [self p_addBaleAt: CGPointMake(track.position.x - 94, track.position.y   - 64 )];
+             [self p_addTyreAt: CGPointMake(track.position.x - 54, track.position.y   - 76 )];
+             [self p_addCrateAt:CGPointMake(track.position.x - 76, track.position.y   - 86 )];
+             [self p_addBoxAt:  CGPointMake(track.position.x - 102, track.position.y  - 87 )];
+             [self p_addTyreAt: CGPointMake(track.position.x - 115, track.position.y  - 92 )];
+             [self p_addCrateAt:CGPointMake(track.position.x - 134, track.position.y  - 84 )];
+             [self p_addTyreAt: CGPointMake(track.position.x - 122, track.position.y  - 63 )];
+             [self p_addTyreAt: CGPointMake(track.position.x - 222, track.position.y  - 148 )];
+             [self p_addTyreAt: CGPointMake(track.position.x - 56, track.position.y   - 154 )];
+             [self p_addTyreAt: CGPointMake(track.position.x - 31, track.position.y   - 140 )];
+             [self p_addCrateAt:CGPointMake(track.position.x - 1, track.position.y    - 135 )];
+             [self p_addTyreAt: CGPointMake(track.position.x + 36, track.position.y   - 137 )];
+             [self p_addBoxAt:  CGPointMake(track.position.x + 55, track.position.y   - 153 )];
+             [self p_addTyreAt: CGPointMake(track.position.x + 65, track.position.y   - 73 )];
+             [self p_addTyreAt: CGPointMake(track.position.x + 85, track.position.y   - 77 )];
+             [self p_addBaleAt: CGPointMake(track.position.x + 110, track.position.y  - 91 )];
+             [self p_addTyreAt: CGPointMake(track.position.x + 111, track.position.y  - 64 )];
+             [self p_addTyreAt: CGPointMake(track.position.x + 115, track.position.y  - 31 )];
+             [self p_addCrateAt:CGPointMake(track.position.x + 136, track.position.y  - 8 )];
+             [self p_addBoxAt:  CGPointMake(track.position.x + 109, track.position.y  + 4 )];
+             [self p_addTyreAt: CGPointMake(track.position.x + 123, track.position.y  + 30 )];
+             [self p_addBaleAt: CGPointMake(track.position.x + 101, track.position.y  + 50 )];
+             [self p_addBoxAt:  CGPointMake(track.position.x + 126, track.position.y  + 55 )];
+             [self p_addTyreAt: CGPointMake(track.position.x + 116, track.position.y  + 76 )];
+             [self p_addTyreAt: CGPointMake(track.position.x + 231, track.position.y  + 142 )];
+             [self p_addTyreAt: CGPointMake(track.position.x + 212, track.position.y  + 87 )];
+             [self p_addBaleAt: CGPointMake(track.position.x + 235, track.position.y  + 94 )];
+             [self p_addCrateAt:CGPointMake(track.position.x + 223, track.position.y  + 72 )];
+             [self p_addBoxAt:  CGPointMake(track.position.x + 230, track.position.y  - 8 )];
+             [self p_addTyreAt: CGPointMake(track.position.x + 234, track.position.y  - 30 )];
+             [self p_addTyreAt: CGPointMake(track.position.x + 213, track.position.y  - 30 )];
+             [self p_addBoxAt:  CGPointMake(track.position.x + 222, track.position.y  - 102 )];
+             [self p_addCrateAt:CGPointMake(track.position.x + 166, track.position.y  - 141 )];
+             [self p_addBaleAt: CGPointMake(track.position.x + 135, track.position.y  - 157 )];
             
             [self p_addPauseAt:CGPointMake(track.position.x + 230.0f, track.position.y + 145 )];
             break;
@@ -555,15 +550,7 @@ mySingleton *singleton = [mySingleton sharedSingleton];
 {
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint location = [touch locationInView:touch.view];
-    NSLog(@"x:y - X:Y Touch = %ld:%ld - %.0f:%.0f",xx,yy,location.x-240,location.y-160);
-    
-    //horn positions
-    /*
-     -68:-39
-     74:-38
-     80:45
-     -75:43
-     */
+    NSLog(@"X:Y = %.0f:%.0f",location.x-240,(location.y-160)*-1);
 }
 
 - (void)p_addGameUIForTrack:(SKSpriteNode *)track {
@@ -585,10 +572,10 @@ mySingleton *singleton = [mySingleton sharedSingleton];
     minutes = (left % 3600) / 60;
     hours = (left % 86400) / 3600;
     
-    NSString *temp2 = [NSString stringWithFormat:@"%li:%li:%li",hours,minutes,seconds];
+    NSString *temp4 = [NSString stringWithFormat:@"%li:%li:%li",hours,minutes,seconds];
     
     _time = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    _time.text = [NSString stringWithFormat:@"Time: %@", temp2];
+    _time.text = [NSString stringWithFormat:@"Time: %@", temp4];
     _time.fontSize = 20.0f;
     _time.fontColor = [UIColor whiteColor];
     _time.position = CGPointMake(track.position.x, track.position.y - 10.0f);
@@ -689,18 +676,47 @@ mySingleton *singleton = [mySingleton sharedSingleton];
         
         averageLap = raceTime / (xcounter-1);
         
-        singleton.slowestLap = [NSString stringWithFormat:@"%0.2f",slowestLap];
         
-        singleton.fastestLap = [NSString stringWithFormat:@"%0.2f",fastestLap];
+        //you finished the race, give the stats
+        horns = [singleton.hornsPlayed intValue];
         
-        singleton.averageLap = [NSString stringWithFormat:@"%0.2f",averageLap];
+        for (int x=3; x<horns; x+=1) {
+            hornReactionTime[x]=(hornReactionTime[x]/1000);
+            NSLog(@"horn time %d: %f", x, hornReactionTime[x]);
+        }
         
-        singleton.totalTime = [NSString stringWithFormat:@"%0.2f",raceTime];
+        for (int x=3; x<horns; x+=1) {
+            
+            temp1 = hornReactionTime[x];
+            
+            // NSLog(@"lap time %d: %f",x, temp);
+            
+            if ( slowestHorn < temp1) {
+                slowestHorn = temp1;
+                //NSLog(@"slow lap time %d: %f", x, temp);
+            }
+            if (fastestHorn > temp1) {
+                fastestHorn = temp1;
+                //NSLog(@"fast lap time %d: %f", x, temp);
+            }
+            hornTime = hornTime + temp1;
+        }
+        averageHorn = hornTime / (horns-3);
         
+        
+        singleton.hornsPlayed = [NSString stringWithFormat:@"%i",horns-3];
+        singleton.totalHorn   = [NSString stringWithFormat:@"%0.2f",hornTime];
         singleton.fastestHorn = [NSString stringWithFormat:@"%0.2f",fastestHorn];
         singleton.slowestHorn = [NSString stringWithFormat:@"%0.2f",slowestHorn];
         singleton.averageHorn = [NSString stringWithFormat:@"%0.2f",averageHorn];
         
+        for (int x=0; x<horns+1; x+=1) {
+            NSLog(@"final Horn %i : Reaction %f",x,hornReactionTime[x]);
+        }
+        singleton.slowestLap = [NSString stringWithFormat:@"%0.2f",slowestLap];
+        singleton.fastestLap = [NSString stringWithFormat:@"%0.2f",fastestLap];
+        singleton.averageLap = [NSString stringWithFormat:@"%0.2f",averageLap];
+        singleton.totalTime = [NSString stringWithFormat:@"%0.2f",raceTime];
         singleton.slowestLapNo =[NSString stringWithFormat:@"%i",slowLap];
         singleton.fastestLapNo =[NSString stringWithFormat:@"%i",fastLap];
     }
