@@ -8,7 +8,6 @@
 
 #import "SelectDriverViewController.h"
 #import "SKTAudio.h"
-//#import "ViewController.m" //???????
 #import "mySingleton.h" // gets it from viewcontroller
 
 #define kEmail      @"emailAddress"

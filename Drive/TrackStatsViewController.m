@@ -9,7 +9,6 @@
 // back button is Start Again
 
 #import "TrackStatsViewController.h"
-//#import "ViewController.h"
 #import "mySingleton.h"
 
 #define kEmail      @"emailAddress"
@@ -136,9 +135,12 @@ h7,h8,
     wallCrashes.text=singleton.wallCrashes;
     totalCrashes.text=singleton.totalCrashes;
     
-    
     int horns;
-    horns=[singleton.hornsPlayed intValue]-4;
+    horns=[singleton.hornsPlayed intValue]-1;
+    
+    if (horns<0) {
+        horns=0;
+    }
     hornsPlayed.text=[NSString stringWithFormat:@"%i",horns];;
     
     if ([hornsPlayed.text integerValue] <= 0) {

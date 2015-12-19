@@ -112,7 +112,7 @@
     //versionNumberLab.text   = version0;
     singleton.versionNumber = version0;
     
-    if ([singleton.distractionOn isEqual:@"NO"]) {
+    if ([singleton.distractionOn isEqual:@"OFF"]) {
         hornBtn.hidden=YES;
     }else{
         hornBtn.hidden=NO;

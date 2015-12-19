@@ -13,7 +13,6 @@
 
 #define SKT_INLINE      static __inline__
 
-// Chapters 1-3
 #define ARC4RANDOM_MAX      0xFFFFFFFFu
 
 #define DegreesToRadians(d) (M_PI * (d) / 180.0f)

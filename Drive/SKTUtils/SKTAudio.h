@@ -7,7 +7,6 @@
 //  Copyright (c) 2015. Jonathan Howell, MMU. All rights reserved.
 //
 
-// Chapters 1-3
 #import "SKTAudio.h"
 @import AVFoundation;
 
