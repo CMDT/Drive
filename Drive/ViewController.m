@@ -28,15 +28,12 @@
 @property (nonatomic, strong) AnalogControl   * analogControl;
 @property (nonatomic, strong) MyScene         * scene;
 @property (weak, nonatomic) IBOutlet UIButton * hornBtn;
-@property (weak, nonatomic) IBOutlet UIButton * hornBtn2;
-
-@property (nonatomic, strong) SKAction *hornSoundAction;
 
 @end
 
 @implementation ViewController
 
-@synthesize hornBtn, hornBtn2;
+@synthesize hornBtn;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -66,7 +63,6 @@
     
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    
     //*************************************************************
     //version, set anyway *****************************************
     //*************************************************************
@@ -87,10 +83,6 @@
     //for plist
     //set up the plist params
     
-    
-    //bool test2;
-    //test2 = [defaults boolForKey:kEnergyButton];
-    
     [defaults synchronize];
     //if any settings not already set, as in new installation, put the defaults in.
     
@@ -99,8 +91,6 @@
 
         [self setDateNow:self];
         [self setTimeNow:self];
-    
-
     
     //tester name
     subjectName     = [defaults objectForKey:kSubject];
@@ -121,6 +111,12 @@
     
     //versionNumberLab.text   = version0;
     singleton.versionNumber = version0;
+    
+    if ([singleton.distractionOn isEqual:@"NO"]) {
+        hornBtn.hidden=YES;
+    }else{
+        hornBtn.hidden=NO;
+    }
 }
 
 -(void)setDateNow:(id)sender{
@@ -206,7 +202,7 @@ mySingleton *singleton = [mySingleton sharedSingleton];
 
         __weak typeof(self) weakSelf = self;
         self.scene.gameOverBlock = ^(BOOL didWin) {
-            [weakSelf p_gameOverWithWin:didWin];
+            [weakSelf p_gameOverWithWin: didWin];
         };
     }
 
@@ -249,9 +245,9 @@ mySingleton *singleton = [mySingleton sharedSingleton];
 }
 
 - (IBAction)hornButtonDidTouchUpInside:(id)sender {
+    //the horn button was pressed
     mySingleton *singleton = [mySingleton sharedSingleton];
-    //stop the timer and hide the horn graphic
-        singleton.hornsShowing = NO;
+    singleton.hornsShowing = YES;
 }
 
 #pragma mark - Game Over
@@ -273,19 +269,19 @@ mySingleton *singleton = [mySingleton sharedSingleton];
 }
 
 - (void)p_goBackStats:(UIAlertView *)alert {
-    [alert dismissWithClickedButtonIndex:0 animated:YES];
+    [alert dismissWithClickedButtonIndex:0 animated: YES];
     
     //re-route this to the results stats VC TrackStatsVC
     //[self.navigationController popToRootViewControllerAnimated:YES];
     TrackStatsViewController *TrackStatsVC = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([TrackStatsViewController class])];
     
-    [self.navigationController pushViewController:TrackStatsVC animated:YES];
+    [self.navigationController pushViewController:TrackStatsVC animated: YES];
 }
 - (void)p_goBack:(UIAlertView *)alert {
-    [alert dismissWithClickedButtonIndex:0 animated:YES];
+    [alert dismissWithClickedButtonIndex:0 animated: YES];
     
     //re-route this to the results stats VC TrackStatsVC
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated: YES];
 }
 
 - (void)p_showInGameMenu {
@@ -306,7 +302,7 @@ mySingleton *singleton = [mySingleton sharedSingleton];
     self.scene.paused = NO;
 
     if (buttonIndex == alertView.firstOtherButtonIndex) {
-        [self p_gameOverWithWin:NO];
+        [self p_gameOverWithWin: NO];
     }
 }
 

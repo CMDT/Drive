@@ -48,6 +48,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     int     fastLap;
     int     slowLap;
     int     horns;
+    long    tt; // time for playning a horn every n seconds
     
     BOOL hornShowing;
     BOOL hornsPressed;//for horns pressed
@@ -101,14 +102,15 @@ mySingleton *singleton = [mySingleton sharedSingleton];
         horns = 0;
         singleton.hornsPlayed=@"0";
         
-        fastestHorn=999999;
-        slowestHorn=-999999;
-        averageHorn=-999999;
+        fastestHorn = +999999;
+        slowestHorn = -999999;
+        averageHorn = -999999;
         [self p_initializeGame];
         
+        //set the start timer for the horns, and put the result in the zero element of the array
         self.startDateHorn=[NSDate date];
-        hornReactionTime[[singleton.hornsPlayed integerValue]]=(Float32)[self.startDateHorn timeIntervalSinceNow]* -1000;
-        singleton.hornsPlayed=[NSString stringWithFormat:@"%i",horns];
+        hornReactionTime[0]=(Float32)[self.startDateHorn timeIntervalSinceNow]* -1000;
+        singleton.hornsPlayed=[NSString stringWithFormat:@"0"];
         hornsPressed=NO;
     }
     return self;
@@ -126,9 +128,10 @@ mySingleton *singleton = [mySingleton sharedSingleton];
         
         // find a way to halt the timer, then restart it for laps
         
+        //scrap that lap
         self.previousTimeInterval = currentTime;
         xcounter -=1;//drop back one lap
-        self.numOfLaps += 1;
+        self.numOfLaps -= 1;
         
         return;
     }
@@ -195,31 +198,36 @@ mySingleton *singleton = [mySingleton sharedSingleton];
         }
     }
     
-    int tt;
-    tt=self.timeInSeconds;
+    //only do this if the distraction flag is ON
     
-    if ((tt / 7) == ((int)(tt  % 7)) && (tt>1)) {
-        //beep the horn every 7 seconds
-        reactionTime[xcounter]=(Float32)[self.startDate timeIntervalSinceNow]* -1000;
-        [self runAction:self.hornSoundAction];
-        singleton.hornsShowing=YES;
-        horns=[singleton.hornsPlayed intValue]+1;
-        singleton.hornsPlayed=[NSString stringWithFormat:@"%i",horns];
-        hornsPressed=NO;
-    }
-    
-    if (singleton.hornsShowing==NO && hornsPressed==NO) {
-        reactionTime[[singleton.hornsPlayed intValue]]=(Float32)[self.startDate timeIntervalSinceNow]* -1000;
-        hornsPressed=YES;
-    }
-    
-    if (self.timeInSeconds < 0 || self.numOfLaps == 0) {
-        self.paused = YES;
-        
-        BOOL hasWon = self.numOfLaps == 0;
+    if ([singleton.distractionOn isEqual:@"YES"]) {
 
-        [self p_reportAchievementsForGameState:hasWon];
-        self.gameOverBlock(hasWon);
+        tt=self.timeInSeconds;
+        //NSLog(@"ttmod7=%i",((tt  % 7)== 6));
+        
+        if (((tt  % 7)== 6) && (tt>1)) {
+            //beep the horn every 7 seconds
+            reactionTime[horns]=(Float32)[self.startDate timeIntervalSinceNow]* -1000;
+            [self runAction:self.hornSoundAction];
+            singleton.hornsShowing=YES;
+            horns=[singleton.hornsPlayed intValue]+1;
+            singleton.hornsPlayed=[NSString stringWithFormat:@"%i",horns];
+            hornsPressed=NO;
+        }
+        
+        if (singleton.hornsShowing==NO && hornsPressed==NO) {
+            reactionTime[[singleton.hornsPlayed intValue]]=(Float32)[self.startDate timeIntervalSinceNow]* -1000;
+            hornsPressed=YES;
+        }
+        
+        if (self.timeInSeconds < 0 || self.numOfLaps == 0) {
+            self.paused = YES;
+            
+            BOOL hasWon = self.numOfLaps == 0;
+
+            [self p_reportAchievementsForGameState:hasWon];
+            self.gameOverBlock(hasWon);
+        }
     }
 }
 
@@ -265,10 +273,12 @@ mySingleton *singleton = [mySingleton sharedSingleton];
     self.physicsWorld.contactDelegate = self;
     xcounter=1;//start the array for timings of laps
     
+    //add the first drive clock time tio the array
     self.startDate=[NSDate date];
     reactionTime[0] = [self.startDate timeIntervalSinceNow]* -1000;
     xcounter = 1;
     
+    //set the ehorn off
     singleton.hornsShowing=NO;
     
     xx=track.position.x;
@@ -444,17 +454,11 @@ mySingleton *singleton = [mySingleton sharedSingleton];
         case 1:
             //track 1, no hazards, just walls and the pause buttun under the real pause button to avoid hiding the car
             [self p_addPauseAt:CGPointMake(track.position.x + 230, track.position.y + 145 )];
-            
             [self p_addBoxAt:  CGPointMake(track.position.x -225, track.position.y + 150   )];
-
-            
-            
             break;
         case 2:
              //track 2, some hazards and walls
-            
              //track x, y = 240:160 for ipad
-
              [self p_addBoxAt:  CGPointMake(track.position.x + 227, track.position.y  - 147 )];
              [self p_addBoxAt:  CGPointMake(track.position.x + 230, track.position.y  - 23 )];
              [self p_addBaleAt: CGPointMake(track.position.x + 220, track.position.y  + 5 )];
@@ -483,8 +487,8 @@ mySingleton *singleton = [mySingleton sharedSingleton];
              [self p_addTyreAt: CGPointMake(track.position.x - 102, track.position.y - 5 )];
              [self p_addTyreAt: CGPointMake(track.position.x + 7, track.position.y    + 71 )];
             
-            [self p_addPauseAt:CGPointMake(track.position.x + 230.0f, track.position.y + 145 )];
-            break;
+             [self p_addPauseAt:CGPointMake(track.position.x + 230.0f, track.position.y + 145 )];
+             break;
         case 3:
             //track 3, lots hazards and walls
  
@@ -536,22 +540,24 @@ mySingleton *singleton = [mySingleton sharedSingleton];
              [self p_addCrateAt:CGPointMake(track.position.x + 166, track.position.y  - 141 )];
              [self p_addBaleAt: CGPointMake(track.position.x + 135, track.position.y  - 157 )];
             
-            [self p_addPauseAt:CGPointMake(track.position.x + 230.0f, track.position.y + 145 )];
-            break;
+             [self p_addPauseAt:CGPointMake(track.position.x + 230.0f, track.position.y + 145 )];
+             break;
         default:
-            //not used
-            break;
+             //not used
+             break;
     }
-
 }
 
-//only to position some hazards at a good spot, rem out later
+//******************************************************************
+//***                                                            ***
+//only to position some hazards at a good spot, rem out later    ***
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
+{   //                                                           ***
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint location = [touch locationInView:touch.view];
     NSLog(@"X:Y = %.0f:%.0f",location.x-240,(location.y-160)*-1);
-}
+}   //                                                           ***
+//******************************************************************
 
 - (void)p_addGameUIForTrack:(SKSpriteNode *)track {
     // Displays the laps to go as set from LevelDetails.plist
@@ -676,13 +682,12 @@ mySingleton *singleton = [mySingleton sharedSingleton];
         
         averageLap = raceTime / (xcounter-1);
         
-        
         //you finished the race, give the stats
-        horns = [singleton.hornsPlayed intValue];
+        //horns = [singleton.hornsPlayed intValue];
         
         for (int x=3; x<horns; x+=1) {
             hornReactionTime[x]=(hornReactionTime[x]/1000);
-            NSLog(@"horn time %d: %f", x, hornReactionTime[x]);
+            //NSLog(@"horn time %d: %f", x, hornReactionTime[x]);
         }
         
         for (int x=3; x<horns; x+=1) {
@@ -710,9 +715,9 @@ mySingleton *singleton = [mySingleton sharedSingleton];
         singleton.slowestHorn = [NSString stringWithFormat:@"%0.2f",slowestHorn];
         singleton.averageHorn = [NSString stringWithFormat:@"%0.2f",averageHorn];
         
-        for (int x=0; x<horns+1; x+=1) {
-            NSLog(@"final Horn %i : Reaction %f",x,hornReactionTime[x]);
-        }
+        //for (int x=0; x<horns+1; x+=1) {
+            //NSLog(@"final Horn %i : Reaction %f",x,hornReactionTime[x]);
+        //}
         singleton.slowestLap = [NSString stringWithFormat:@"%0.2f",slowestLap];
         singleton.fastestLap = [NSString stringWithFormat:@"%0.2f",fastestLap];
         singleton.averageLap = [NSString stringWithFormat:@"%0.2f",averageLap];
