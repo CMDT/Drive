@@ -115,7 +115,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         hornReactionTime[0]=(Float32)[self.startDateHorn timeIntervalSinceNow]* -1000;
         horns=1;
         hornReactionTime[1]=(Float32)[self.startDateHorn timeIntervalSinceNow]* -1000;
-        horns=2;
+        //horns=2;
         singleton.hornsPlayed=[NSString stringWithFormat:@"0"];
         hornsPressed=NO;
         horn_tt=0;
@@ -220,7 +220,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             horn_tt++;
             //start the horn timer
             
-            hornReactionTime[horns]=(Float32)[self.startDateHorn timeIntervalSinceNow]* -1000;
+            //hornReactionTime[horns]=(Float32)[self.startDateHorn timeIntervalSinceNow]* -1000;
             
             //set the flag, the horn sound was played
             [self runAction:self.hornSoundAction];
@@ -240,7 +240,6 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             //reset the flag
             singleton.hornsShowing = NO;
             horn_tt = 0;
-            self.startDateHorn=[NSDate date];
         }
     }
     
@@ -723,11 +722,16 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         //    hornReactionTime[x]=(hornReactionTime[x]-hornReactionTime[x-1]);
         //    //NSLog(@"lap time %d: %f", x, hornReactionTime[x]);
         //}
-        
-        for (int x=3; x<horns; x+=1) {
-            hornReactionTime[x]=(hornReactionTime[x]*100); //   /1000);
+        for (int x=2; x<horns+1; x+=1) {
+            hornReactionTime[x]=(hornReactionTime[x]/1000);
             //NSLog(@"horn time %d: %f", x, hornReactionTime[x]);
+        }    
+        for (int x=2; x<horns+1; x+=1) {
+            hornReactionTime[x]= ((x-1)*7)-hornReactionTime[x];
+        //    //NSLog(@"lap time %d: %f", x, hornReactionTime[x]);
         }
+        
+
         
         for (int x=3; x<horns; x+=1) {
             
