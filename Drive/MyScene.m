@@ -673,18 +673,29 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         singleton.wallCrashes = [NSString stringWithFormat:@"%lu",(unsigned long)self.numOfCollisionsWithWalls];
         singleton.hazCrashes = [NSString stringWithFormat:@"%lu",(unsigned long)self.numOfCollisionsWithBoxes];
         
+        reactionTime[0]=0;
         // NSLog(@"laps %d: ",xcounter-1);
+        for (int x=1; x<xcounter; x+=1) {
+            NSLog(@"lap time %d: %f", x, reactionTime[x]);
+        }
         
-        for (int x=2; x<xcounter+1; x+=1) {
-            reactionTime[x]=(reactionTime[x]-reactionTime[x-1]);
+        for (int x=1; x<xcounter; x+=1) {
+            temp1 = reactionTime[x];
+            temp2 = reactionTime[x-1];
+            reactionTime[x-1]=(temp1-temp2);
             //NSLog(@"lap time %d: %f", x, reactionTime[x]);
         }
-        for (int x=2; x<xcounter+1; x+=1) {
+
+        for (int x=0; x<xcounter-1; x+=1) {
             reactionTime[x]=(reactionTime[x]/1000);
             //NSLog(@"lap time %d: %f", x, reactionTime[x]);
         }
+        for (int x=0; x<xcounter-1; x+=1) {
+            
+            NSLog(@"lap time %d: %f", x, reactionTime[x]);
+        }
         
-        for (int x=2; x<xcounter+1; x+=1) {
+        for (int x=0; x<xcounter-1; x+=1) {
             
             temp = reactionTime[x];
             
