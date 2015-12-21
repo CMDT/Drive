@@ -13,7 +13,6 @@
 #import "SKTUtils.h"
 #import "AchievementsHelper.h"
 #import "GameKitHelper.h"
-//#import "SKTAudio.h"
 #import "mySingleton.h"
 
 //mySingleton *singleton = [mySingleton sharedSingleton];
@@ -111,13 +110,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         
         //set the start timer for the horns, and put the result in the zero element of the array
         self.startDateHorn=[NSDate date];
-        
-        hornReactionTime[0]=(Float32)[self.startDateHorn timeIntervalSinceNow]* -1000;
-        horns=1;
-        hornReactionTime[1]=(Float32)[self.startDateHorn timeIntervalSinceNow]* -1000;
-        //horns=2;
         singleton.hornsPlayed=[NSString stringWithFormat:@"0"];
         hornsPressed=NO;
+        singleton.hornsShowing=NO;
         horn_tt=0;
     }
     return self;
@@ -219,24 +214,27 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             //beep the horn every 7 seconds
             horn_tt++;
             //start the horn timer
-            
-            //hornReactionTime[horns]=(Float32)[self.startDateHorn timeIntervalSinceNow]* -1000;
-            
             //set the flag, the horn sound was played
-            [self runAction:self.hornSoundAction];
-            
+            temp1 = (Float32)[self.startDateHorn timeIntervalSinceNow];
             if (horn_tt == 1) {
+                temp =(Float32)[self.startDateHorn timeIntervalSinceNow];
+                [self runAction:self.hornSoundAction];
                 //tell the timer that the horn is not pressed yet
                 singleton.hornsShowing = NO;
                 horns++;
                 singleton.hornsPlayed = [NSString stringWithFormat:@"%i", horns];
             }
         }
+        
+        if (temp-temp1 >= 6.0) {
+            hornReactionTime[horns]=6.0;
+            }
+        
         //look for the horn button being pressed
         if (singleton.hornsShowing == YES) {
             //stop the horn timer and record it
-            hornReactionTime[horns]=(Float32)[self.startDateHorn timeIntervalSinceNow]* -1000;
-            
+            hornReactionTime[horns]=temp-(Float32)[self.startDateHorn timeIntervalSinceNow];//* -1000;
+           // NSLog(@"Horn Timer=%i : %f, Temp1=%f, Temp=%f, horn_tt=%ld",horns,hornReactionTime[horns],temp1,temp,horn_tt);
             //reset the flag
             singleton.hornsShowing = NO;
             horn_tt = 0;
@@ -306,6 +304,12 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     
     xx=track.position.x;
     yy=track.position.y;
+    
+    //GO !
+    if (_numOfLaps<1) {
+    [self runAction:self.hornSoundAction];
+    [self runAction:self.lapSoundAction];
+}
 }
 
 //now using singleton for laps
@@ -676,7 +680,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         reactionTime[0]=0;
         // NSLog(@"laps %d: ",xcounter-1);
         for (int x=1; x<xcounter; x+=1) {
-            NSLog(@"lap time %d: %f", x, reactionTime[x]);
+            //NSLog(@"lap time %d: %f", x, reactionTime[x]);
         }
         
         for (int x=1; x<xcounter; x+=1) {
@@ -692,7 +696,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         }
         for (int x=0; x<xcounter-1; x+=1) {
             
-            NSLog(@"lap time %d: %f", x, reactionTime[x]);
+            //NSLog(@"lap time %d: %f", x, reactionTime[x]);
         }
         
         for (int x=0; x<xcounter-1; x+=1) {
@@ -704,12 +708,12 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             if ( slowestLap < temp) {
                 slowestLap = temp;
                 //NSLog(@"slow lap time %d: %f", x, temp);
-                slowLap = x-1;
+                slowLap = x;
             }
             if (fastestLap > temp) {
                 fastestLap = temp;
                 //NSLog(@"fast lap time %d: %f", x, temp);
-                fastLap = x-1;
+                fastLap = x;
             }
             raceTime = raceTime + temp;
         }
@@ -722,29 +726,27 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         averageLap = raceTime / (xcounter-1);
         
         //you finished the race, give the stats
-        //horns = [singleton.hornsPlayed intValue];
         
-        for (int x=0; x<horns+1; x+=1) {
-            NSLog(@"Start Horn %i : Reaction %f",x,hornReactionTime[x]);
-        }
+        horns=[singleton.hornsPlayed intValue];
+        //for (int x=1; x<horns+1; x+=1) {
+        //    NSLog(@"Start Horn %i : Reaction %f",x,hornReactionTime[x]);
+        //}
         
         //find the time by difference
         //for (int x=4; x<horns+1; x+=1) {
         //    hornReactionTime[x]=(hornReactionTime[x]-hornReactionTime[x-1]);
         //    //NSLog(@"lap time %d: %f", x, hornReactionTime[x]);
         //}
-        for (int x=2; x<horns+1; x+=1) {
-            hornReactionTime[x]=(hornReactionTime[x]/1000);
+        for (int x=1; x<horns+1; x+=1) {
+            hornReactionTime[x]=(hornReactionTime[x]);//  /1000;
             //NSLog(@"horn time %d: %f", x, hornReactionTime[x]);
         }    
-        for (int x=2; x<horns+1; x+=1) {
-            hornReactionTime[x]= ((x-1)*7)-hornReactionTime[x];
-        //    //NSLog(@"lap time %d: %f", x, hornReactionTime[x]);
-        }
+        //some clever code to work out the reaction time?
+        
         
 
         
-        for (int x=3; x<horns; x+=1) {
+        for (int x=1; x<horns; x+=1) {
             
             temp1 = hornReactionTime[x];
             
@@ -758,12 +760,13 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                 fastestHorn = temp1;
                 //NSLog(@"fast lap time %d: %f", x, temp);
             }
+            if (_numOfLaps==1) {
+                fastestHorn=slowestHorn;
+            }
             hornTime = hornTime + temp1;
         }
-        averageHorn = hornTime / (horns-3);
+        averageHorn = hornTime / (horns);
         
-        
-        singleton.hornsPlayed = [NSString stringWithFormat:@"%i",horns-3];
         singleton.totalHorn   = [NSString stringWithFormat:@"%0.2f",hornTime];
         singleton.fastestHorn = [NSString stringWithFormat:@"%0.2f",fastestHorn];
         singleton.slowestHorn = [NSString stringWithFormat:@"%0.2f",slowestHorn];

@@ -136,7 +136,7 @@ h7,h8,
     totalCrashes.text=singleton.totalCrashes;
     
     int horns;
-    horns=[singleton.hornsPlayed intValue]-1;
+    horns=[singleton.hornsPlayed intValue];
     
     if (horns<0) {
         horns=0;

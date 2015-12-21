@@ -32,10 +32,12 @@
 }
 
 #pragma mark - Select a Track
-
+- (IBAction)infoButtonDidTouchUpInside:(id)sender {
+    [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
+}
 - (IBAction)backButtonDidTouchUpInside:(id)sender {
     [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
-    [self.navigationController popViewControllerAnimated:YES];
+    //[self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)levelButtonDidTouchUpInside:(UIButton *)sender {

@@ -104,6 +104,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="infoButtonDidTouchUpInside:" destination="6zJ-QL-n6c" eventType="touchUpInside" id="yon-yw-OFk"/>
                                     <segue destination="iVf-iI-C6T" kind="push" id="EQS-Ot-RJf"/>
                                 </connections>
                             </button>
@@ -123,7 +124,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonDidTouchUpInside:" destination="6zJ-QL-n6c" eventType="touchUpInside" id="IIG-S8-HnJ"/>
+                                    <action selector="backButtonDidTouchUpInside:" destination="6zJ-QL-n6c" eventType="touchUpInside" id="OeL-JF-9Fd"/>
+                                    <segue destination="355-Sw-PNA" kind="push" id="b6P-hE-go0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -220,7 +222,8 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonDidTouchUpInside:" destination="355-Sw-PNA" eventType="touchUpInside" id="ABX-Yl-9Kv"/>
+                                    <action selector="backButtonDidTouchUpInside:" destination="355-Sw-PNA" eventType="touchUpInside" id="9fP-q2-9yh"/>
+                                    <segue destination="j6p-oN-Kld" kind="push" id="egQ-Cs-J5z"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8I-yp-jGR" userLabel="Button Car 2">
@@ -259,6 +262,7 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="infoButtonDidTouchUpInside:" destination="355-Sw-PNA" eventType="touchUpInside" id="G73-Jv-OFt"/>
                                     <segue destination="72Q-Fc-b8U" kind="push" id="EpY-2h-NmK"/>
                                 </connections>
                             </button>
@@ -705,6 +709,30 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peb-my-Z01">
+                                <rect key="frame" x="159" y="215" width="25" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veQ-JD-QMq">
+                                <rect key="frame" x="313" y="215" width="25" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8l4-g2-rw4">
+                                <rect key="frame" x="313" y="191" width="25" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBf-6C-AvN">
+                                <rect key="frame" x="159" y="191" width="25" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ml4-nd-UYA">
                                 <rect key="frame" x="308" y="44" width="35" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -862,13 +890,13 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSn-ib-rHd">
-                                <rect key="frame" x="407" y="152" width="25" height="21"/>
+                                <rect key="frame" x="403" y="152" width="25" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2JO-Rd-rdT">
-                                <rect key="frame" x="407" y="191" width="25" height="21"/>
+                                <rect key="frame" x="403" y="191" width="25" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1025,6 +1053,18 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZc-fN-gjd">
+                                <rect key="frame" x="313" y="152" width="25" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEj-WA-ru4">
+                                <rect key="frame" x="323" y="162" width="25" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1095,6 +1135,7 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="infoButtonDidTouchUpInside:" destination="ile-Uw-dvN" eventType="touchUpInside" id="Ymc-4g-Rer"/>
                                     <segue destination="SI2-qR-bsc" kind="push" id="bpG-49-77h"/>
                                 </connections>
                             </button>
@@ -1114,7 +1155,8 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonDidTouchUpInside:" destination="ile-Uw-dvN" eventType="touchUpInside" id="Rcj-9M-wHB"/>
+                                    <action selector="backButtonDidTouchUpInside:" destination="ile-Uw-dvN" eventType="touchUpInside" id="qIq-pI-KXD"/>
+                                    <segue destination="6zJ-QL-n6c" kind="push" id="Qad-gC-6d0"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Results Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sa-WK-0MM">
@@ -1256,9 +1298,9 @@ The Email address is the recipient of the data results when a race is completed,
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="eqn-Dg-M4T"/>
-        <segue reference="UeP-lD-UCg"/>
+        <segue reference="egQ-Cs-J5z"/>
+        <segue reference="b6P-hE-go0"/>
+        <segue reference="Qad-gC-6d0"/>
         <segue reference="sgN-rE-1F9"/>
-        <segue reference="Snq-Uf-qxR"/>
     </inferredMetricsTieBreakers>
 </document>

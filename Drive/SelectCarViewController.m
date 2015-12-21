@@ -51,9 +51,11 @@
 
     //[self.navigationController pushViewController:levelVC animated:YES];
 }
-
+- (IBAction)infoButtonDidTouchUpInside:(id)sender {
+    [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
+}
 - (IBAction)backButtonDidTouchUpInside:(id)sender {
     [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
-    [self.navigationController popViewControllerAnimated:YES];
+    //[self.navigationController popViewControllerAnimated:YES];
 }
 @end

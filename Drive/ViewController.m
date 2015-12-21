@@ -246,6 +246,8 @@ mySingleton *singleton = [mySingleton sharedSingleton];
 
 - (IBAction)hornButtonDidTouchUpInside:(id)sender {
     //the horn button was pressed
+    //stop the horn timer and record it
+    
     mySingleton *singleton = [mySingleton sharedSingleton];
     singleton.hornsShowing = YES;
 }
