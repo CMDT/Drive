@@ -14,6 +14,12 @@ static mySingleton * sharedSingleton = nil;
 }
 @synthesize
 //strings
+lapTimes,
+hornTimes,
+wallLaps,
+hazLaps,
+hornLaps,
+tempEntry,
             hornsShowing,
             testDate,
             testTime,
@@ -69,6 +75,12 @@ static mySingleton * sharedSingleton = nil;
 
 - (id) init {
     if(self = [super init]) {
+        lapTimes            = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
+        hornTimes           = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
+        wallLaps            = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
+        hazLaps             = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
+        hornLaps            = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
+        tempEntry           = @"";
         hornsShowing        = NO;
         email               = @"me@mmu.ac.uk";
         testDate            = @"17/12/2015";

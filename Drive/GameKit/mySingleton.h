@@ -15,6 +15,13 @@
 
     NSMutableArray * cardReactionTimeResult;
     NSString       * resultsStrings;
+    // arrays for detailed timings for each lap in data
+    NSMutableArray * lapTimes;
+    NSMutableArray * hornTimes;
+    NSMutableArray * wallLaps;
+    NSMutableArray * hazLaps;
+    NSMutableArray * hornLaps;
+    NSString       * tempEntry; // for above arrays
     
     NSString * email;
     NSString * testDate;
@@ -49,6 +56,15 @@
 @property (nonatomic) BOOL hornsShowing;
 @property (nonatomic) int  counter;
 @property (nonatomic, retain) NSMutableArray * cardReactionTimeResult;
+
+// arrays for detailed timings for each lap in data
+@property (nonatomic, retain)NSMutableArray * lapTimes;
+@property (nonatomic, retain)NSMutableArray * hornTimes;
+@property (nonatomic, retain)NSMutableArray * wallLaps;
+@property (nonatomic, retain)NSMutableArray * hazLaps;
+@property (nonatomic, retain)NSMutableArray * hornLaps;
+@property (nonatomic, retain)NSString       * tempEntry; // for above arrays
+
 @property (nonatomic, retain) NSString * email;
 @property (nonatomic, retain) NSString * resultStrings;
 @property (nonatomic, retain) NSString * subjectName;

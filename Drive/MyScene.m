@@ -31,6 +31,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     Float32 reactionTime[100];
     Float32 noOfSeconds;
     int     xcounter;
+    int lapTimez[101];
+    int hornTimes[101];
     
     Float32 fastestLap;
     Float32 slowestLap;
@@ -47,12 +49,14 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     int     lap;
     int     fastLap;
     int     slowLap;
+    int     tempHaz;
+    int     tempWall;
     int     horns;
     long    tt; // time for playning a horn every n seconds
     long    horn_tt;
     
-    BOOL hornShowing;
-    BOOL hornsPressed;//for horns pressed
+    BOOL    hornShowing;
+    BOOL    hornsPressed;//for horns pressed
     Float32 hornReactionTime[100];
     Float32 temp1;
     Float32 temp2;
@@ -114,6 +118,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         hornsPressed=NO;
         singleton.hornsShowing=NO;
         horn_tt=0;
+        tempHaz=0;
+        tempWall=0;
     }
     return self;
 }
@@ -196,6 +202,15 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             
             reactionTime[xcounter] = (Float32)[self.startDate timeIntervalSinceNow]* -1000.0f;
             xcounter += 1;
+            
+            //bounds limits
+            if (xcounter>100) {
+                xcounter=100;
+            }
+            if (xcounter<0) {
+                xcounter=0;
+            }
+            tempWall=0;tempHaz=0;
             
             self.laps.text = [NSString stringWithFormat:@"Laps: %li", (long)self.numOfLaps];
             //NSLog(@"Lap time = %f",reactionTime[xcounter-1]);
@@ -292,12 +307,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     
     //turn on the contact dlegate to test contacts between bodies
     self.physicsWorld.contactDelegate = self;
-    xcounter=1;//start the array for timings of laps
+    xcounter = 1;//start the array for timings of laps
     
     //add the first drive clock time tio the array
     self.startDate=[NSDate date];
     reactionTime[0] = [self.startDate timeIntervalSinceNow]* -1000;
-    xcounter = 1;
     
     //set the horn 'off'
     singleton.hornsShowing = NO;
@@ -305,11 +319,10 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     xx=track.position.x;
     yy=track.position.y;
     
+//***************
     //GO !
-    if (_numOfLaps<1) {
-    [self runAction:self.hornSoundAction];
-    [self runAction:self.lapSoundAction];
-}
+//***************
+
 }
 
 //now using singleton for laps
@@ -665,6 +678,12 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     [achievements addObject:[AchievementsHelper collisionAchievement:self.numOfCollisionsWithBoxes]];
     
     if (hasWon) {
+        if (xcounter>100) {
+            xcounter=100;
+        }
+        if (xcounter<0) {
+            xcounter=0;
+        }
         [achievements addObject:[AchievementsHelper achievementForLevel:self.levelType]];
         
         //stop the clock in mS
@@ -679,8 +698,15 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         
         reactionTime[0]=0;
         // NSLog(@"laps %d: ",xcounter-1);
-        for (int x=1; x<xcounter; x+=1) {
+        //for (int x=1; x<xcounter; x+=1) {
             //NSLog(@"lap time %d: %f", x, reactionTime[x]);
+        //}
+        
+        if (xcounter>100) {
+            xcounter=100;
+        }
+        if (xcounter<0) {
+            xcounter=0;
         }
         
         for (int x=1; x<xcounter; x+=1) {
@@ -694,26 +720,27 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             reactionTime[x]=(reactionTime[x]/1000);
             //NSLog(@"lap time %d: %f", x, reactionTime[x]);
         }
-        for (int x=0; x<xcounter-1; x+=1) {
-            
+        //for (int x=0; x<xcounter-1; x+=1) {
+          
             //NSLog(@"lap time %d: %f", x, reactionTime[x]);
-        }
+        //}
         
         for (int x=0; x<xcounter-1; x+=1) {
             
             temp = reactionTime[x];
+            singleton.lapTimes[x]=[NSString stringWithFormat:@"%0.2f",temp];
             
             // NSLog(@"lap time %d: %f",x, temp);
             
             if ( slowestLap < temp) {
                 slowestLap = temp;
                 //NSLog(@"slow lap time %d: %f", x, temp);
-                slowLap = x;
+                slowLap = x+1;
             }
             if (fastestLap > temp) {
                 fastestLap = temp;
                 //NSLog(@"fast lap time %d: %f", x, temp);
-                fastLap = x;
+                fastLap = x+1;
             }
             raceTime = raceTime + temp;
         }
@@ -733,7 +760,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         //}
         
         //find the time by difference
-        //for (int x=4; x<horns+1; x+=1) {
+        //for (int x=1; x<horns; x+=1) {
         //    hornReactionTime[x]=(hornReactionTime[x]-hornReactionTime[x-1]);
         //    //NSLog(@"lap time %d: %f", x, hornReactionTime[x]);
         //}
@@ -773,8 +800,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         singleton.averageHorn = [NSString stringWithFormat:@"%0.2f",averageHorn];
         
         //************
-        for (int x=0; x<horns+1; x+=1) {
-            NSLog(@"final Horn %i : Reaction %f",x,hornReactionTime[x]);
+        for (int x=1; x<horns; x+=1) {
+            singleton.hornTimes[x]=[NSString stringWithFormat:@"%0.2f",hornReactionTime[x]];
+            //NSLog(@"final Horn %i : Reaction %f",x,hornReactionTime[x]);
         }
         
         singleton.slowestLap   = [NSString stringWithFormat:@"%0.2f",slowestLap];
@@ -783,6 +811,20 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         singleton.totalTime    = [NSString stringWithFormat:@"%0.2f",raceTime];
         singleton.slowestLapNo =[NSString stringWithFormat:@"%i",slowLap];
         singleton.fastestLapNo =[NSString stringWithFormat:@"%i",fastLap];
+        
+        //bounds limits
+        if (xcounter>100) {
+            xcounter=100;
+        }
+        if (xcounter<0) {
+            xcounter=0;
+        }
+        
+        for (int x=0; x<xcounter-1; x+=1) {
+            singleton.lapTimes[x]=[NSString stringWithFormat:@"%x, %f, %@, %@", x, reactionTime[x],singleton.wallLaps[x],singleton.hazLaps[x]];
+            
+            //NSLog(@"lap time %d: %f", x, reactionTime[x]);
+        }
     }
     
     //not on game centre yet
@@ -800,9 +842,19 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 #pragma mark - Contact Delegate
 
 - (void)didBeginContact:(SKPhysicsContact *)contact {
+    if (xcounter>100) {
+        xcounter=100;
+    }
+    if (xcounter<0) {
+        xcounter=0;
+    }
+    //NSLog(@"tempLap=%i",xcounter);
+    mySingleton *singleton = [mySingleton sharedSingleton];
     //test for all the hazard objetcs collisions
     if ((contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyBox)||(contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyCrate)||(contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyTyre)||(contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyBale)) {
         self.numOfCollisionsWithBoxes += 1;
+        tempHaz++;
+        singleton.hazLaps[xcounter-1]=[NSString stringWithFormat:@"%i",tempHaz];
         // set for colls
         self.colls.text = [NSString stringWithFormat:@"Hazard Crashes: %li", (long)self.numOfCollisionsWithBoxes];
         
@@ -811,11 +863,14 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     }else{
         //if (contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyTrack) {
         self.numOfCollisionsWithWalls += 1;
+        tempWall++;
+        singleton.wallLaps[xcounter-1]=[NSString stringWithFormat:@"%i",tempWall];
         // set for walls
         self.walls.text = [NSString stringWithFormat:@"Wall Crashes: %li", (long)self.numOfCollisionsWithWalls];
         
         [self runAction:self.wallSoundAction];
     }
+     //NSLog(@"tempHaz=%i, tempWall=%i",tempHaz,tempWall);
 }
 
 @end
