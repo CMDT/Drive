@@ -191,9 +191,9 @@ h7,h8,
     minutes = (left % 3600) / 60;
     hours = (left % 86400) / 3600;
     
-    NSString *temp3 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld.%@",hours,minutes,seconds,hsec];
+    NSString *tem3 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld.%@",hours,minutes,seconds,hsec];
     
-    self.racehms.text = [NSString stringWithFormat:@"%@", temp3];
+    self.racehms.text = [NSString stringWithFormat:@"%@", tem3];
 
     hsec= [totalHorn.text substringWithRange:NSMakeRange(totalHorn.text.length-2, 2)];
     
@@ -203,9 +203,9 @@ h7,h8,
     minutes = (left % 3600) / 60;
     hours = (left % 86400) / 3600;
     
-    temp3 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld.%@",hours,minutes,seconds,hsec];
+    tem3 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld.%@",hours,minutes,seconds,hsec];
     
-    self.hornhms.text = [NSString stringWithFormat:@"%@", temp3];
+    self.hornhms.text = [NSString stringWithFormat:@"%@", tem3];
 
     hsec= [masterScore.text substringWithRange:NSMakeRange(masterScore.text.length-2, 2)];
     
@@ -215,8 +215,8 @@ h7,h8,
     minutes = (left % 3600) / 60;
     hours = (left % 86400) / 3600;
     
-    temp3 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld.%@",hours,minutes,seconds,hsec];
-    self.scorehms.text = [NSString stringWithFormat:@"%@", temp3];
+    tem3 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld.%@",hours,minutes,seconds,hsec];
+    self.scorehms.text = [NSString stringWithFormat:@"%@", tem3];
     
     //set counter to cards for singleton global var
     singleton.counter = 1;
@@ -321,7 +321,7 @@ h7,h8,
     [singleton.cardReactionTimeResult addObject:@" " ];
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject: @"Laps: Times"];
+    [singleton.cardReactionTimeResult addObject: @"Laps, Times, Wall Crashes, Hazard Crashes"];
     singleton.counter = singleton.counter+1;
     
     //***********************

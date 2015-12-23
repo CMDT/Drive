@@ -35,7 +35,7 @@
 		475E5EB3195A5A610063FD68 /* button_press.wav in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E7F195A5A610063FD68 /* button_press.wav */; };
 		475E5EB5195A5A610063FD68 /* horn.wav in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E81195A5A610063FD68 /* horn.wav */; };
 		475E5EB6195A5A610063FD68 /* lap.wav in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E82195A5A610063FD68 /* lap.wav */; };
-		475E5EB7195A5A610063FD68 /* nitro.wav in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E83195A5A610063FD68 /* nitro.wav */; };
+		475E5EB7195A5A610063FD68 /* puncture.wav in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E83195A5A610063FD68 /* puncture.wav */; };
 		475E5EB8195A5A610063FD68 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E84195A5A610063FD68 /* sprites.atlas */; };
 		47696E47195D27EA00A41AC6 /* SKAction+SKTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 47696E3E195D27EA00A41AC6 /* SKAction+SKTExtras.m */; };
 		47696E48195D27EA00A41AC6 /* SKEmitterNode+SKTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 47696E40195D27EA00A41AC6 /* SKEmitterNode+SKTExtras.m */; };
@@ -230,7 +230,7 @@
 		475E5E7F195A5A610063FD68 /* button_press.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_press.wav; sourceTree = "<group>"; };
 		475E5E81195A5A610063FD68 /* horn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = horn.wav; sourceTree = "<group>"; };
 		475E5E82195A5A610063FD68 /* lap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lap.wav; sourceTree = "<group>"; };
-		475E5E83195A5A610063FD68 /* nitro.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = nitro.wav; sourceTree = "<group>"; };
+		475E5E83195A5A610063FD68 /* puncture.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = puncture.wav; sourceTree = "<group>"; };
 		475E5E84195A5A610063FD68 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
 		47696E3D195D27EA00A41AC6 /* SKAction+SKTExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKAction+SKTExtras.h"; sourceTree = "<group>"; };
 		47696E3E195D27EA00A41AC6 /* SKAction+SKTExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKAction+SKTExtras.m"; sourceTree = "<group>"; };
@@ -698,7 +698,7 @@
 				475E5E7F195A5A610063FD68 /* button_press.wav */,
 				475E5E81195A5A610063FD68 /* horn.wav */,
 				475E5E82195A5A610063FD68 /* lap.wav */,
-				475E5E83195A5A610063FD68 /* nitro.wav */,
+				475E5E83195A5A610063FD68 /* puncture.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -869,7 +869,7 @@
 				E171F2EA1C1EF19F00E3DB0D /* seg-1.png in Resources */,
 				E1CBAD131C22D7DA001CC466 /* driverx@2x.png in Resources */,
 				475E5EAF195A5A610063FD68 /* steering-wheel.png in Resources */,
-				475E5EB7195A5A610063FD68 /* nitro.wav in Resources */,
+				475E5EB7195A5A610063FD68 /* puncture.wav in Resources */,
 				E171F2F61C1EF19F00E3DB0D /* seg-100@2x.png in Resources */,
 				E171F2AB1C1EDBB300E3DB0D /* btn-play.png in Resources */,
 				E171F2B71C1EDBB300E3DB0D /* speedo-fast.png in Resources */,

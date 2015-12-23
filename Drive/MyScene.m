@@ -60,6 +60,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     Float32 hornReactionTime[100];
     Float32 temp1;
     Float32 temp2;
+    Float32 temp3;
+    Float32 temp4;
+    Float32 temp5;
     
     long xx,yy;
 }
@@ -83,7 +86,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 @property (nonatomic, strong) SKAction * boxSoundAction;
 @property (nonatomic, strong) SKAction * hornSoundAction;
 @property (nonatomic, strong) SKAction * lapSoundAction;
-@property (nonatomic, strong) SKAction * nitroSoundAction;
+@property (nonatomic, strong) SKAction * punctureSoundAction;
 @property (nonatomic, strong) SKAction * wallSoundAction;
 
 @end
@@ -159,9 +162,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         minutes3 = (left3 % 3600) / 60;
         hours3 = (left3 % 86400) / 3600;
         
-        NSString *temp3 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld",hours3,minutes3,seconds3];
+        NSString *tem3 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld",hours3,minutes3,seconds3];
         
-        self.time.text = [NSString stringWithFormat:@"Time: %@", temp3];
+        self.time.text = [NSString stringWithFormat:@"Time: %@", tem3];
         
     }
     
@@ -230,30 +233,44 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             horn_tt++;
             //start the horn timer
             //set the flag, the horn sound was played
-            temp1 = (Float32)[self.startDateHorn timeIntervalSinceNow];
+
             if (horn_tt == 1) {
-                temp =(Float32)[self.startDateHorn timeIntervalSinceNow];
-                [self runAction:self.hornSoundAction];
                 //tell the timer that the horn is not pressed yet
                 singleton.hornsShowing = NO;
+                temp = (Float32)[self.startDateHorn timeIntervalSinceNow];
+                
+                [self runAction:self.hornSoundAction];
+                
                 horns++;
+                horn_tt++;
                 singleton.hornsPlayed = [NSString stringWithFormat:@"%i", horns];
-            }
+                }
         }
         
-        if (temp-temp1 >= 6.0) {
-            hornReactionTime[horns]=6.0;
-            }
+        // collect the current gap time
+        temp1 = (Float32)[self.startDateHorn timeIntervalSinceNow];
         
+        //get the current wait time so far
+        temp3 = temp - temp1;
+        
+        //trigger a press if too long wait for horn button
+        if (temp3 > 6.00) {
+            singleton.hornsShowing = YES;
+        }
         //look for the horn button being pressed
         if (singleton.hornsShowing == YES) {
+
             //stop the horn timer and record it
-            hornReactionTime[horns]=temp-(Float32)[self.startDateHorn timeIntervalSinceNow];//* -1000;
-           // NSLog(@"Horn Timer=%i : %f, Temp1=%f, Temp=%f, horn_tt=%ld",horns,hornReactionTime[horns],temp1,temp,horn_tt);
+            hornReactionTime[horns] = temp3;
+
             //reset the flag
             singleton.hornsShowing = NO;
             horn_tt = 0;
         }
+        
+        if (hornReactionTime[horns] > 6.00 ) {
+            hornReactionTime[horns] = 99.00; // set silly value to know that horn was not pressed in time for next horn sound
+            }
     }
     
     if (self.timeInSeconds < 0 || self.numOfLaps == 0) {
@@ -302,7 +319,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     _boxSoundAction   = [SKAction playSoundFileNamed: @"box.wav"   waitForCompletion:NO];
     _hornSoundAction  = [SKAction playSoundFileNamed: @"horn.wav"  waitForCompletion:NO];
     _lapSoundAction   = [SKAction playSoundFileNamed: @"lap.wav"   waitForCompletion:NO];
-    _nitroSoundAction = [SKAction playSoundFileNamed: @"nitro.wav" waitForCompletion:NO];
+    _punctureSoundAction = [SKAction playSoundFileNamed: @"puncture.wav" waitForCompletion:NO];
     _wallSoundAction  = [SKAction playSoundFileNamed: @"box.wav"   waitForCompletion:NO];//change to new sound some time = wall.wav
     
     //turn on the contact dlegate to test contacts between bodies
@@ -624,10 +641,10 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     minutes = (left % 3600) / 60;
     hours = (left % 86400) / 3600;
     
-    NSString *temp4 = [NSString stringWithFormat:@"%li:%li:%li",hours,minutes,seconds];
+    NSString *tem4 = [NSString stringWithFormat:@"%li:%li:%li",hours,minutes,seconds];
     
     _time = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    _time.text = [NSString stringWithFormat:@"Time: %@", temp4];
+    _time.text = [NSString stringWithFormat:@"Time: %@", tem4];
     _time.fontSize = 20.0f;
     _time.fontColor = [UIColor whiteColor];
     _time.position = CGPointMake(track.position.x, track.position.y - 10.0f);
@@ -676,7 +693,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     NSMutableArray *achievements = [@[] mutableCopy];
     
     // also ADD crashes with walls
-    [achievements addObject:[AchievementsHelper collisionAchievement:self.numOfCollisionsWithBoxes]];
+    [achievements addObject:[AchievementsHelper collisionAchievement:self.numOfCollisionsWithBoxes+self.numOfCollisionsWithWalls]];
     
     if (hasWon) {
         if (xcounter > 100) {
@@ -697,12 +714,6 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         singleton.wallCrashes = [NSString stringWithFormat:@"%lu",(unsigned long)self.numOfCollisionsWithWalls];
         singleton.hazCrashes = [NSString stringWithFormat:@"%lu",(unsigned long)self.numOfCollisionsWithBoxes];
         
-        reactionTime[0] = 0;
-        // NSLog(@"laps %d: ",xcounter-1);
-        //for (int x=1; x<xcounter; x+=1) {
-            //NSLog(@"lap time %d: %f", x, reactionTime[x]);
-        //}
-        
         if (xcounter > 100) {
             xcounter = 100;
         }
@@ -714,17 +725,13 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             temp1 = reactionTime[x];
             temp2 = reactionTime[x-1];
             reactionTime[x-1]=(temp1-temp2);
-            //NSLog(@"lap time %d: %f", x, reactionTime[x]);
+            NSLog(@"lap time %d: %f", x, reactionTime[x-1]);
         }
 
         for (int x=0; x<xcounter; x+=1) {
             reactionTime[x]=(reactionTime[x]/1000);
-            //NSLog(@"lap time %d: %f", x, reactionTime[x]);
+            NSLog(@"lap time %d: %f", x+1, reactionTime[x]);
         }
-        //for (int x=0; x<xcounter-1; x+=1) {
-          
-            //NSLog(@"lap time %d: %f", x, reactionTime[x]);
-        //}
         
         for (int x=0; x<xcounter; x+=1) {
             
@@ -735,12 +742,12 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             
             if ( slowestLap < temp) {
                 slowestLap = temp;
-                //NSLog(@"slow lap time %d: %f", x, temp);
+                NSLog(@"slow lap time %d: %f", x+1, temp);
                 slowLap = x+1;
             }
             if (fastestLap > temp) {
                 fastestLap = temp;
-                //NSLog(@"fast lap time %d: %f", x, temp);
+                NSLog(@"fast lap time %d: %f", x+1, temp);
                 fastLap = x+1;
             }
             raceTime = raceTime + temp;
@@ -766,27 +773,26 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         //    //NSLog(@"lap time %d: %f", x, hornReactionTime[x]);
         //}
         for (int x=1; x<horns+1; x+=1) {
-            hornReactionTime[x]=(hornReactionTime[x]);//  /1000;
-            //NSLog(@"horn time %d: %f", x, hornReactionTime[x]);
-        }    
-        //some clever code to work out the reaction time?
+            //hornReactionTime[x]=(hornReactionTime[x]);//  /1000;
+            if (hornReactionTime[x] > 6.00) {
+                hornReactionTime[x] = 6.00;
+            }
+            NSLog(@"horn time %d: %f", x, hornReactionTime[x]);
+        }
         
-        
-
-        
-        for (int x=1; x<horns; x+=1) {
+        for (int x=1; x<horns+1; x+=1) {
             
             temp1 = hornReactionTime[x];
             
-            // NSLog(@"lap time %d: %f",x, temp);
+             NSLog(@"horn time %d: %f",x, temp1);
             
             if ( slowestHorn < temp1) {
                 slowestHorn = temp1;
-                //NSLog(@"slow lap time %d: %f", x, temp);
+                NSLog(@"slow horn time %d: %f", x, temp1);
             }
             if (fastestHorn > temp1) {
                 fastestHorn = temp1;
-                //NSLog(@"fast lap time %d: %f", x, temp);
+                NSLog(@"fast horn time %d: %f", x, temp1);
             }
             if (_numOfLaps==1) {
                 fastestHorn=slowestHorn;
@@ -803,7 +809,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         //************
         for (int x=1; x<horns; x+=1) {
             singleton.hornTimes[x]=[NSString stringWithFormat:@"%0.2f",hornReactionTime[x]];
-            //NSLog(@"final Horn %i : Reaction %f",x,hornReactionTime[x]);
+            NSLog(@"final Horn %i : Reaction %f",x,hornReactionTime[x]);
         }
         
         singleton.slowestLap   = [NSString stringWithFormat:@"%0.2f",slowestLap];
@@ -822,9 +828,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         }
         
         for (int x=0; x<xcounter; x+=1) {
-            singleton.lapTimes[x]=[NSString stringWithFormat:@"%x, %f, %@, %@", x, reactionTime[x],singleton.wallLaps[x],singleton.hazLaps[x]];
+            singleton.lapTimes[x]=[NSString stringWithFormat:@"%x+1, %f, %@, %@", x, reactionTime[x],singleton.wallLaps[x],singleton.hazLaps[x]];
             
-            //NSLog(@"lap time %d: %f", x, reactionTime[x]);
+            NSLog(@"lap : %@", singleton.lapTimes[x]);
         }
     }
     
@@ -860,7 +866,6 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         self.colls.text = [NSString stringWithFormat:@"Hazard Crashes: %li", (long)self.numOfCollisionsWithBoxes];
         
         [self runAction:self.boxSoundAction];
-        
     }else{
         //if (contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyTrack) {
         self.numOfCollisionsWithWalls += 1;
@@ -871,7 +876,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         
         [self runAction:self.wallSoundAction];
     }
-     //NSLog(@"tempHaz=%i, tempWall=%i",tempHaz,tempWall);
+    //NSLog(@"tempHaz=%i, tempWall=%i",tempHaz,tempWall);
 }
 
 @end
