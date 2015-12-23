@@ -1035,6 +1035,12 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBX-84-h36">
+                                <rect key="frame" x="19" y="0.0" width="451" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1069,6 +1075,7 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                         <outlet property="slowestHorn" destination="SBg-1c-fhV" id="YRK-OC-OPo"/>
                         <outlet property="slowestLap" destination="X74-mK-2lW" id="Jho-mS-SbT"/>
                         <outlet property="slowestLapNo" destination="Se0-60-Q9X" id="YDD-kR-DZc"/>
+                        <outlet property="statusMessageLab" destination="eBX-84-h36" id="WMo-8B-aAx"/>
                         <outlet property="subjectName" destination="XsM-cv-Vlv" id="TQD-Zy-pfJ"/>
                         <outlet property="testDates" destination="AX0-9F-iPD" id="h9i-Qb-8Be"/>
                         <outlet property="testTimes" destination="Re9-R1-4bk" id="BJs-Xh-gO9"/>

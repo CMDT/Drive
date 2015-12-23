@@ -14,12 +14,12 @@ static mySingleton * sharedSingleton = nil;
 }
 @synthesize
 //strings
-lapTimes,
-hornTimes,
-wallLaps,
-hazLaps,
-hornLaps,
-tempEntry,
+            lapTimes,
+            hornTimes,
+            wallLaps,
+            hazLaps,
+            hornLaps,
+            tempEntry,
             hornsShowing,
             testDate,
             testTime,
@@ -80,6 +80,19 @@ tempEntry,
         wallLaps            = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
         hazLaps             = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
         hornLaps            = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
+        cardReactionTimeResult = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
+        for (NSInteger i = 0; i < 101; ++i)
+        {
+            [lapTimes addObject:@"0"];
+            [hornTimes addObject:@"0"];
+            [wallLaps addObject:@"0"];
+            [hazLaps addObject:@"0"];
+            [hornLaps addObject:@"0"];
+            [cardReactionTimeResult addObject:@"0"];
+        }
+        
+
+        
         tempEntry           = @"";
         hornsShowing        = NO;
         email               = @"me@mmu.ac.uk";
@@ -89,7 +102,7 @@ tempEntry,
         subjectName         = @"Sub";
         resultStrings       = @"";
         versionNumber       = @"1.2.0 - 17.12.15";
-        cardReactionTimeResult = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
+        
         counter             = 0;
         laps                = @"0";
         carNo               = @"0";

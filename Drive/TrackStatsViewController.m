@@ -10,6 +10,7 @@
 
 #import "TrackStatsViewController.h"
 #import "mySingleton.h"
+#import "SKTAudio.h"
 
 #define kEmail      @"emailAddress"
 #define kSubject    @"subjectName"
@@ -83,7 +84,7 @@ h7,h8,
 
 - (void)viewDidAppear:(BOOL)animated{
     mySingleton *singleton = [mySingleton sharedSingleton];
-    
+    statusMessageLab.hidden=YES;
     //set up the plist params
     NSString *pathStr               = [[NSBundle mainBundle] bundlePath];
     NSString *settingsBundlePath    = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
@@ -138,8 +139,8 @@ h7,h8,
     int horns;
     horns=[singleton.hornsPlayed intValue];
     
-    if (horns<0) {
-        horns=0;
+    if (horns < 0) {
+        horns = 0;
     }
     hornsPlayed.text=[NSString stringWithFormat:@"%i",horns];;
     
@@ -262,6 +263,84 @@ h7,h8,
     singleton.counter = singleton.counter+1;
     //}
     // +++++++++++++++++++++++++++
+    //blank line
+    [singleton.cardReactionTimeResult addObject:@" " ];
+    singleton.counter = singleton.counter+1;
+    
+    // put all the data for the results here:
+    // summary as per screen
+    // lapTimes,
+
+    
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Email: %@",singleton.email]];
+    singleton.counter = singleton.counter+1;
+    
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Car: %@, Track: %@",singleton.carNo, singleton.trackNo]];
+    singleton.counter = singleton.counter+1;
+    
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Drive Music: %@",singleton.musicTrack]];
+    singleton.counter = singleton.counter+1;
+    
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Distraction Set: %@",singleton.distractionOn]];
+    singleton.counter = singleton.counter+1;
+    
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Laps Raced: %@",singleton.laps]];
+    singleton.counter = singleton.counter+1;
+    
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Horns Played: %@",singleton.hornsPlayed]];
+    singleton.counter = singleton.counter+1;
+    
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Wall Crashes: %@, Hazard Crashes: %@, Total Crashes: %@",singleton.wallCrashes,singleton.hazCrashes, singleton.totalCrashes]];
+    singleton.counter = singleton.counter+1;
+    
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Fastest Lap: %@: %@, Slowest Lap: %@: %@, Average Lap: %@",singleton.fastestLapNo, singleton.fastestLap,singleton.slowestLapNo,singleton.slowestLap, singleton.averageLap]];
+    singleton.counter = singleton.counter+1;
+    
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Race Time: %@",singleton.totalTime]];
+    singleton.counter = singleton.counter+1;
+    
+    //blank line
+    [singleton.cardReactionTimeResult addObject:@" " ];
+    singleton.counter = singleton.counter+1;
+    
+    if (horns > 0) {
+        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Fastest Horn: %@, Slowest Horn: %@, Average Horn: %@",singleton.fastestHorn,singleton.slowestHorn, singleton.averageHorn]];
+        singleton.counter = singleton.counter+1;
+        
+        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Horn Time: %@",singleton.totalHorn]];
+        singleton.counter = singleton.counter+1;
+    }
+
+    //blank line
+    [singleton.cardReactionTimeResult addObject:@" " ];
+    singleton.counter = singleton.counter+1;
+    
+    [singleton.cardReactionTimeResult addObject: @"Laps: Times"];
+    singleton.counter = singleton.counter+1;
+    
+    //***********************
+    //look here for formatted result inc lap no. etc
+    
+    // all the laps, one per line
+    for (int x=0; x<[laps.text intValue]; x+=1) {
+        [singleton.cardReactionTimeResult addObject:singleton.lapTimes[x] ];
+        singleton.counter = singleton.counter+1;
+    }
+    //blank line
+    [singleton.cardReactionTimeResult addObject:@" " ];
+    singleton.counter = singleton.counter+1;
+    
+    // all the horns, one per line if present
+    if (horns > 0) {
+            [singleton.cardReactionTimeResult addObject:@"Horn No: Reaction Time"];
+        singleton.counter = singleton.counter+1;
+        // list the horns and the timings
+        for (int x=1; x<horns; x+=1) {
+            [singleton.cardReactionTimeResult addObject:singleton.hornTimes ];
+            singleton.counter = singleton.counter+1;
+        }
+    }
+    // ***************************
     
     //blank line
     [singleton.cardReactionTimeResult addObject:@" " ];
@@ -448,6 +527,7 @@ h7,h8,
 //- (IBAction)showEmail:(NSString*)file {
 
 - (IBAction)showEmail:(id)sender {
+             [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
     statusMessageLab.hidden = NO;
     mySingleton *singleton = [mySingleton sharedSingleton];
     
@@ -499,6 +579,12 @@ h7,h8,
 }
 
  - (IBAction)finishAction:(id)sender {
+         mySingleton *singleton = [mySingleton sharedSingleton];
+         [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
+     
+     for (int x=0; x<(singleton.counter+1); x+=1) {
+         NSLog(@"%@",singleton.cardReactionTimeResult[x]);
+     }
     //re-route this to the results stats VC TrackStatsVC
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
