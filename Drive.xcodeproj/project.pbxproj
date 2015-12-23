@@ -52,8 +52,6 @@
 		917B79131C1DB50E00A6D3DA /* TrackStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 917B79121C1DB50E00A6D3DA /* TrackStatsViewController.m */; };
 		917E5A5D1C21DF0A009DF226 /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 917E5A5B1C21DF0A009DF226 /* tick.png */; };
 		917E5A5E1C21DF0A009DF226 /* tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 917E5A5C1C21DF0A009DF226 /* tick@2x.png */; };
-		91C7E4421C1CDC0D00A38B32 /* btn-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E43E1C1CDC0D00A38B32 /* btn-back.png */; };
-		91C7E4431C1CDC0D00A38B32 /* btn-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E43F1C1CDC0D00A38B32 /* btn-back@2x.png */; };
 		E171F2661C1EDB3600E3DB0D /* achievment-amateur.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F2621C1EDB3600E3DB0D /* achievment-amateur.png */; };
 		E171F2671C1EDB3600E3DB0D /* achievment-destruction.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F2631C1EDB3600E3DB0D /* achievment-destruction.png */; };
 		E171F2681C1EDB3600E3DB0D /* achievment-intermediate.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F2641C1EDB3600E3DB0D /* achievment-intermediate.png */; };
@@ -260,8 +258,6 @@
 		917B79121C1DB50E00A6D3DA /* TrackStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackStatsViewController.m; sourceTree = "<group>"; };
 		917E5A5B1C21DF0A009DF226 /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
 		917E5A5C1C21DF0A009DF226 /* tick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick@2x.png"; sourceTree = "<group>"; };
-		91C7E43E1C1CDC0D00A38B32 /* btn-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-back.png"; path = "../../../../../Pictures/btn-back.png"; sourceTree = "<group>"; };
-		91C7E43F1C1CDC0D00A38B32 /* btn-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-back@2x.png"; path = "../../../../../Pictures/btn-back@2x.png"; sourceTree = "<group>"; };
 		E171F2621C1EDB3600E3DB0D /* achievment-amateur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievment-amateur.png"; sourceTree = "<group>"; };
 		E171F2631C1EDB3600E3DB0D /* achievment-destruction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievment-destruction.png"; sourceTree = "<group>"; };
 		E171F2641C1EDB3600E3DB0D /* achievment-intermediate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievment-intermediate.png"; sourceTree = "<group>"; };
@@ -575,8 +571,6 @@
 				E1CBACE61C22D7DA001CC466 /* backx.png */,
 				E171F2821C1EDBB300E3DB0D /* base.png */,
 				E171F2831C1EDBB300E3DB0D /* base@2x.png */,
-				91C7E43E1C1CDC0D00A38B32 /* btn-back.png */,
-				91C7E43F1C1CDC0D00A38B32 /* btn-back@2x.png */,
 				E171F2FF1C1EF20100E3DB0D /* btn-back2.png */,
 				E171F3001C1EF20100E3DB0D /* btn-back2@2x.png */,
 				E171F2C91C1EE0C300E3DB0D /* btn-car1.png */,
@@ -786,7 +780,7 @@
 				ORGANIZATIONNAME = "MMU ESS JAH";
 				TargetAttributes = {
 					47117B361959CA1400B20209 = {
-						DevelopmentTeam = G8Q878PY9S;
+						DevelopmentTeam = 4SPW49WK35;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 0;
@@ -891,7 +885,6 @@
 				E171F2761C1EDB5700E3DB0D /* bg-main-menu-base@2x.png in Resources */,
 				E171F30A1C1EF20100E3DB0D /* btn-email@2x.png in Resources */,
 				E171F2F81C1EF19F00E3DB0D /* seg-beat@2x.png in Resources */,
-				91C7E4421C1CDC0D00A38B32 /* btn-back.png in Resources */,
 				E1CBACFE1C22D7DA001CC466 /* trackx.png in Resources */,
 				E1CBAD081C22D7DA001CC466 /* hardx.png in Resources */,
 				E171F3091C1EF20100E3DB0D /* btn-email.png in Resources */,
@@ -908,7 +901,6 @@
 				E171F2AD1C1EDBB300E3DB0D /* btn-select-car.png in Resources */,
 				E171F2C01C1EDC1C00E3DB0D /* Funky_Good_Time.mp3 in Resources */,
 				E1CBACFC1C22D7DA001CC466 /* pause2Gr.png in Resources */,
-				91C7E4431C1CDC0D00A38B32 /* btn-back@2x.png in Resources */,
 				E1CBAD031C22D7DA001CC466 /* pause1Gr.png in Resources */,
 				E1CBAD121C22D7DA001CC466 /* nextxGr@2x.png in Resources */,
 				E1CBAD181C22D7DA001CC466 /* mediumx@2x.png in Resources */,
@@ -994,7 +986,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# python /Users/jonhowell/Documents/Drive2015a/Drive/Settings.bundle/Licence.py #work\npython /Users/jonathanhowell/Documents/Drive2015b/Drive/Settings.bundle/Licence.py #home";
+			shellScript = " python /Users/jonhowell/Drive2/Drive/Settings.bundle/Licence.py #work\n# python /Users/jonathanhowell/Documents/Drive2015b/Drive/Settings.bundle/Licence.py #home";
 		};
 /* End PBXShellScriptBuildPhase section */
 

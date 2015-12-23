@@ -282,7 +282,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     });
     [self addChild:track];
     
-    //[self p_addCarAtPosition:CGPointMake(CGRectGetMidX(track.frame), 50.0f)];//used to be 50, ==middle of track at centre bottom
+    //[self p_addCarAtPosition:CGPointMake(CGRectGetMidX(track.frame), 50.0f)];//used to be 50, == middle of track at centre bottom
     [self p_addCarAtPosition:CGPointMake(400.0f, 180.0f)];
     // Turn off the world's gravity
     self.physicsWorld.gravity = CGVectorMake(0.0f, 0.0f);// 0,0 = g off .... 1,1 = pulls to right top corner

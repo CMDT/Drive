@@ -114,7 +114,7 @@ h7,h8,
     
     // NSLog(@"Starting Stats");
     
-    NSString * myNumbStr = [[NSString alloc] init];
+    //NSString * myNumbStr = [[NSString alloc] init];
     
     // build the stats
     laps.text=singleton.laps;
@@ -242,8 +242,12 @@ h7,h8,
     
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject:@"TestNo., Subject, Test Date, Test Time"];
+    [singleton.cardReactionTimeResult addObject:@"Subject Name, Test Date, Test Time"];
     
+    singleton.counter = singleton.counter+1;
+    
+    //blank line
+    [singleton.cardReactionTimeResult addObject:@" " ];
     singleton.counter = singleton.counter+1;
     // +++++++++++++++++++++++++++
     //loop if rows of results
@@ -251,17 +255,20 @@ h7,h8,
     //for (int y=1; y<singleton.counter+1; y++) {
     //uncomment when formatted
  
-        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@" ,
-                     singleton.counter,
-                     subjectName.text,
-                     testDate,
-                     testTime
-                     ];
+        //myNumbStr = [NSString stringWithFormat:@"%@,%@,%@" ,
+                     //singleton.subjectName,
+                     //testDate,
+                     //testTime
+                     //];
     
     
-    [singleton.cardReactionTimeResult addObject: myNumbStr];
-    singleton.counter = singleton.counter+1;
+    //[singleton.cardReactionTimeResult addObject: myNumbStr];
+    //singleton.counter = singleton.counter+1;
     //}
+    
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Date: %@, Time: %@, Subject Name: %@",singleton.testDate, singleton.testTime, singleton.subjectName]];
+    singleton.counter = singleton.counter+1;
+    
     // +++++++++++++++++++++++++++
     //blank line
     [singleton.cardReactionTimeResult addObject:@" " ];
@@ -299,11 +306,10 @@ h7,h8,
     [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Race Time: %@",singleton.totalTime]];
     singleton.counter = singleton.counter+1;
     
-    //blank line
-    [singleton.cardReactionTimeResult addObject:@" " ];
-    singleton.counter = singleton.counter+1;
-    
     if (horns > 0) {
+        //blank line
+        [singleton.cardReactionTimeResult addObject:@" " ];
+        singleton.counter = singleton.counter+1;
         [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Fastest Horn: %@, Slowest Horn: %@, Average Horn: %@",singleton.fastestHorn,singleton.slowestHorn, singleton.averageHorn]];
         singleton.counter = singleton.counter+1;
         
@@ -326,13 +332,14 @@ h7,h8,
         [singleton.cardReactionTimeResult addObject:singleton.lapTimes[x] ];
         singleton.counter = singleton.counter+1;
     }
-    //blank line
-    [singleton.cardReactionTimeResult addObject:@" " ];
-    singleton.counter = singleton.counter+1;
+
     
     // all the horns, one per line if present
     if (horns > 0) {
-            [singleton.cardReactionTimeResult addObject:@"Horn No: Reaction Time"];
+                //blank line
+    [singleton.cardReactionTimeResult addObject:@" " ];
+    singleton.counter = singleton.counter+1;
+        [singleton.cardReactionTimeResult addObject:@"Horn No: Reaction Time"];
         singleton.counter = singleton.counter+1;
         // list the horns and the timings
         for (int x=1; x<horns; x+=1) {
@@ -562,20 +569,24 @@ h7,h8,
     [self presentViewController:mc animated:YES completion:NULL];
 }
 
--(void)setDateNow:(id)sender{
+-(void)setDateNow{
+    mySingleton *singleton = [mySingleton sharedSingleton];
     NSDate *today = [NSDate date];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"dd/MM/yyyy"];
     NSString *dateString = [dateFormat stringFromDate:today];
     testDates.text=dateString;
+    singleton.testDate=testDates.text;
 }
 
--(void)setTimeNow:(id)sender{
+-(void)setTimeNow{
+    mySingleton *singleton = [mySingleton sharedSingleton];
     NSDate *currentTime = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm:ss"];
     NSString *timeString = [dateFormatter stringFromDate: currentTime];
     testTimes.text=timeString;
+    singleton.testDate=testTimes.text;
 }
 
  - (IBAction)finishAction:(id)sender {

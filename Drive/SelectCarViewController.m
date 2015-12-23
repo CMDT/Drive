@@ -47,7 +47,7 @@
     //levelVC.carType = sender.tag;
     
     //singleton.carNo=[NSString stringWithFormat:@"%ld", levelVC.carType];
-    singleton.carNo=[NSString stringWithFormat:@"%ld", sender.tag];
+    singleton.carNo=[NSString stringWithFormat:@"%ld", (long)sender.tag];
 
     //[self.navigationController pushViewController:levelVC animated:YES];
 }

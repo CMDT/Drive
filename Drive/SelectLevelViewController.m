@@ -50,7 +50,7 @@
     //gameVC.carType = self.carType;
     //gameVC.levelType = sender.tag;
     
-    singleton.trackNo=[NSString stringWithFormat:@"%ld", sender.tag];
+    singleton.trackNo=[NSString stringWithFormat:@"%ld", (long)sender.tag];
 
     //[self.navigationController pushViewController:gameVC animated:YES];
 }

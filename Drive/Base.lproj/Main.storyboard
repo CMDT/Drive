@@ -992,7 +992,7 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                                 <rect key="frame" x="416" y="264" width="54" height="47"/>
                                 <state key="normal" image="emailGr.png"/>
                                 <connections>
-                                    <action selector="showEmail:" destination="khi-MC-6dL" eventType="touchUpInside" id="355-Un-AQC"/>
+                                    <action selector="showEmail:" destination="khi-MC-6dL" eventType="touchUpInside" id="muZ-v5-JHr"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOO-oR-fuE">
@@ -1052,7 +1052,7 @@ Select the distraction switch, and at random, you will hear a horn, and yoiu nee
                         <outlet property="carNo" destination="Ml4-nd-UYA" id="wyp-q4-kYd"/>
                         <outlet property="distractionOn" destination="lLi-HV-7iR" id="oZg-Lf-JWt"/>
                         <outlet property="email" destination="C8O-wz-oLA" id="fwz-Ku-6Fu"/>
-                        <outlet property="emailbtn" destination="EEa-c7-yiT" id="Gco-wh-hpX"/>
+                        <outlet property="emailbtn" destination="EEa-c7-yiT" id="FVX-0k-DPt"/>
                         <outlet property="fastestHorn" destination="Lpb-mx-MTw" id="FST-5r-B8T"/>
                         <outlet property="fastestLap" destination="Uv7-TM-xu5" id="l4v-Iy-TCE"/>
                         <outlet property="fastestLapNo" destination="zCS-2c-Fui" id="BXp-sg-nrB"/>
