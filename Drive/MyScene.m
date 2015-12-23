@@ -728,7 +728,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             NSLog(@"lap time %d: %f", x, reactionTime[x-1]);
         }
 
-        for (int x=0; x<xcounter; x+=1) {
+        for (int x=0; x<xcounter+1; x+=1) {
             reactionTime[x]=(reactionTime[x]/1000);
             NSLog(@"lap time %d: %f", x+1, reactionTime[x]);
         }
