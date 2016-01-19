@@ -52,8 +52,10 @@ static mySingleton * sharedSingleton = nil;
 //float64
             wallCrashMult,
             hazCrashMult,
-            hornsMulti
-;
+            hornsMulti,
+// float;
+            ambientVolume;
+
 
 #pragma mark -
 #pragma mark Singleton Methods
@@ -96,12 +98,12 @@ static mySingleton * sharedSingleton = nil;
         tempEntry           = @"";
         hornsShowing        = NO;
         email               = @"me@mmu.ac.uk";
-        testDate            = @"17/12/2015";
+        testDate            = @"19/1/2016";
         testTime            = @"10:00";
         resultStrings       = @"";
         subjectName         = @"Sub";
         resultStrings       = @"";
-        versionNumber       = @"1.2.0 - 17.12.15";
+        versionNumber       = @"1.2.1 - 19.01.16";
         
         counter             = 0;
         laps                = @"0";
@@ -127,6 +129,7 @@ static mySingleton * sharedSingleton = nil;
         wallCrashMult       = 0.05;
         hazCrashMult        = 0.1;
         hornsMulti          = 1.0;
+        ambientVolume       = 1.0;
     }
     return self;
 }

@@ -52,6 +52,7 @@
     Float64    wallCrashMult;
     Float64    hazCrashMult;
     Float64    hornsMulti;
+    float ambientVolume;
 }
 @property (nonatomic) BOOL hornsShowing;
 @property (nonatomic) int  counter;
@@ -94,6 +95,7 @@
 @property (nonatomic) Float64 wallCrashMult;
 @property (nonatomic) Float64 hazCrashMult;
 @property (nonatomic) Float64 hornsMulti;
+@property (nonatomic) float   ambientVolume;
 
 //set up singleton shared
 

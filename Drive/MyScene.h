@@ -7,6 +7,7 @@
 //
 
 @import SpriteKit;
+@import AVFoundation;
 
 @interface MyScene : SKScene  <UITextFieldDelegate>
 {

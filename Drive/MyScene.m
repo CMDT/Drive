@@ -217,7 +217,23 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             
             self.laps.text = [NSString stringWithFormat:@"Laps: %li", (long)self.numOfLaps];
             //NSLog(@"Lap time = %f",reactionTime[xcounter]);
-            [self runAction:self.lapSoundAction];
+            
+            //old way // [self runAction:self.lapSoundAction];
+            
+            // to change volume level
+            NSError *error;
+            NSURL *soundURL = [[NSBundle mainBundle] URLForResource:@"lap" withExtension:@"wav"];
+            AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
+            [player setVolume:0.1];
+            [player prepareToPlay];
+            
+            SKAction*   playAction = [SKAction runBlock:^{
+                [player play];
+            }];
+            SKAction *waitAction = [SKAction waitForDuration:player.duration+1];
+            SKAction *sequence = [SKAction sequence:@[playAction, waitAction]];
+            
+            [self runAction:sequence];
         }
     }
     
@@ -316,11 +332,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     
     _trackCenter = track.position;
     
-    _boxSoundAction   = [SKAction playSoundFileNamed: @"box.wav"   waitForCompletion:NO];
-    _hornSoundAction  = [SKAction playSoundFileNamed: @"horn.wav"  waitForCompletion:NO];
-    _lapSoundAction   = [SKAction playSoundFileNamed: @"lap.wav"   waitForCompletion:NO];
+    _boxSoundAction      = [SKAction playSoundFileNamed: @"box.wav"      waitForCompletion:NO];
+    _hornSoundAction     = [SKAction playSoundFileNamed: @"horn.wav"     waitForCompletion:NO];
+    _lapSoundAction      = [SKAction playSoundFileNamed: @"lap.wav"      waitForCompletion:NO];
     _punctureSoundAction = [SKAction playSoundFileNamed: @"puncture.wav" waitForCompletion:NO];
-    _wallSoundAction  = [SKAction playSoundFileNamed: @"box.wav"   waitForCompletion:NO];//change to new sound some time = wall.wav
+    _wallSoundAction     = [SKAction playSoundFileNamed: @"box.wav"      waitForCompletion:NO];//change to new sound some time = wall.wav
     
     //turn on the contact dlegate to test contacts between bodies
     self.physicsWorld.contactDelegate = self;
@@ -865,7 +881,22 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         // set for colls
         self.colls.text = [NSString stringWithFormat:@"Hazard Crashes: %li", (long)self.numOfCollisionsWithBoxes];
         
-        [self runAction:self.boxSoundAction];
+        // OLD WAY FOR SOUND, BUT FIXED LOUD VOLUME // [self runAction:self.boxSoundAction];
+        //
+        // to change volume level
+        NSError *error;
+        NSURL *soundURL = [[NSBundle mainBundle] URLForResource:@"box" withExtension:@"wav"];
+        AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
+        [player setVolume:0.1];
+        [player prepareToPlay];
+        
+        SKAction*   playAction = [SKAction runBlock:^{
+            [player play];
+        }];
+        SKAction *waitAction = [SKAction waitForDuration:player.duration+1];
+        SKAction *sequence = [SKAction sequence:@[playAction, waitAction]];
+        
+        [self runAction:sequence];
     }else{
         //if (contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyTrack) {
         self.numOfCollisionsWithWalls += 1;
@@ -874,7 +905,22 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         // set for walls
         self.walls.text = [NSString stringWithFormat:@"Wall Crashes: %li", (long)self.numOfCollisionsWithWalls];
         
-        [self runAction:self.wallSoundAction];
+        // OLD WAY FOR SOUND, BUT FIXED LOUD VOLUME // [self runAction:self.wallSoundAction];
+        //
+        // to change volume level
+        NSError *error;
+        NSURL *soundURL = [[NSBundle mainBundle] URLForResource:@"box" withExtension:@"wav"];
+        AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
+        [player setVolume:0.1];
+        [player prepareToPlay];
+        
+        SKAction*   playAction = [SKAction runBlock:^{
+            [player play];
+        }];
+        SKAction *waitAction = [SKAction waitForDuration:player.duration+1];
+        SKAction *sequence = [SKAction sequence:@[playAction, waitAction]];
+        
+        [self runAction:sequence];
     }
     //NSLog(@"tempHaz=%i, tempWall=%i",tempHaz,tempWall);
 }
