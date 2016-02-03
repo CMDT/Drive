@@ -887,7 +887,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         NSError *error;
         NSURL *soundURL = [[NSBundle mainBundle] URLForResource:@"box" withExtension:@"wav"];
         AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
-        [player setVolume:0.1];
+        [player setVolume:singleton.ambientVolume];
         [player prepareToPlay];
         
         SKAction*   playAction = [SKAction runBlock:^{
@@ -911,7 +911,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         NSError *error;
         NSURL *soundURL = [[NSBundle mainBundle] URLForResource:@"box" withExtension:@"wav"];
         AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
-        [player setVolume:0.1];
+        [player setVolume:singleton.ambientVolume];
         [player prepareToPlay];
         
         SKAction*   playAction = [SKAction runBlock:^{

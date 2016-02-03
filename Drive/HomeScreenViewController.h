@@ -3,7 +3,7 @@
 //  Drive
 //
 //  Created by Jonathan Howell 15/12/15.
-//  Copyright (c) 2015. Jonathan Howell, MMU. All rights reserved.
+//  Copyright (c) 2016. Jonathan Howell, MMU. All rights reserved.
 //
 
 @import UIKit;
@@ -21,6 +21,11 @@
 - (IBAction)musicBluesSet:(id)sender;
 - (IBAction)musicBeatSet:(id)sender;
 
+- (IBAction)fxNoneSet:(id)sender;
+- (IBAction)fxLowSet:(id)sender;
+- (IBAction)fxMidSet:(id)sender;
+- (IBAction)fxHiSet:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UISwitch *distractionSW;
 
 @property (weak, nonatomic) IBOutlet UIImageView *tick2;
@@ -33,6 +38,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *tickLight;
 @property (weak, nonatomic) IBOutlet UIImageView *tickBlues;
 @property (weak, nonatomic) IBOutlet UIImageView *tickBeat;
+@property (weak, nonatomic) IBOutlet UIImageView *tickoff;
+@property (weak, nonatomic) IBOutlet UIImageView *ticklow;
+@property (weak, nonatomic) IBOutlet UIImageView *tickmed;
+@property (weak, nonatomic) IBOutlet UIImageView *tickhigh;
+@property (weak, nonatomic) IBOutlet UIImageView *tickdistraction;
 
 @property (weak, nonatomic) IBOutlet UIButton *lap2btn;
 @property (weak, nonatomic) IBOutlet UIButton *lap5btn;
@@ -46,7 +56,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *bluesbtn;
 @property (weak, nonatomic) IBOutlet UIButton *beatbtn;
 
+@property (weak, nonatomic) IBOutlet UIButton *fxnonebtn;
+@property (weak, nonatomic) IBOutlet UIButton *fxlowbtn;
+@property (weak, nonatomic) IBOutlet UIButton *fxmedbtn;
+@property (weak, nonatomic) IBOutlet UIButton *fxhighbtn;
+
 - (void)blankLapTicks;
 - (void)blankMusicTicks;
+- (void)blankFXTicks;
 
 @end

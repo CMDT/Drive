@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hCv-SF-f3b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hCv-SF-f3b">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -289,7 +289,47 @@ The faster the car, the better the top speed, but be careful, they are harder to
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" image="bg-main-menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="vMP-CH-hGe">
-                                <rect key="frame" x="0.0" y="1" width="568" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEr-30-jwR">
+                                <rect key="frame" x="129" y="117" width="63" height="28"/>
+                                <state key="normal" image="off.png"/>
+                                <connections>
+                                    <action selector="fxNoneSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="p6w-6C-OsM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLA-lM-chr">
+                                <rect key="frame" x="205" y="117" width="63" height="28"/>
+                                <state key="normal" image="low.png"/>
+                                <connections>
+                                    <action selector="fxLowSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="NJd-cV-pXA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fO4-V8-03A">
+                                <rect key="frame" x="281" y="117" width="63" height="28"/>
+                                <state key="normal" image="med.png"/>
+                                <connections>
+                                    <action selector="fxMidSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="lr8-s9-KAc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ec8-BU-veX">
+                                <rect key="frame" x="356" y="117" width="63" height="28"/>
+                                <state key="normal" image="high.png"/>
+                                <connections>
+                                    <action selector="fxHiSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="mVp-nZ-vrg"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="NZa-s4-3NG">
+                                <rect key="frame" x="185" y="108" width="20" height="36"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q7H-X6-PKh">
+                                <rect key="frame" x="260" y="109" width="20" height="36"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="NwM-AW-88L">
+                                <rect key="frame" x="336" y="109" width="20" height="36"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="af7-nl-gOj">
+                                <rect key="frame" x="413" y="109" width="20" height="36"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEX-Ep-wnn">
                                 <rect key="frame" x="213" y="245" width="75" height="55"/>
@@ -310,13 +350,13 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hZk-iN-c46">
-                                <rect key="frame" x="406" y="113" width="51" height="31"/>
+                                <rect key="frame" x="406" y="69" width="51" height="31"/>
                                 <connections>
                                     <action selector="distractionOSW:" destination="j6p-oN-Kld" eventType="valueChanged" id="BYg-Te-lRY"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distraction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ay1-xn-2z5">
-                                <rect key="frame" x="302" y="113" width="96" height="31"/>
+                                <rect key="frame" x="302" y="69" width="96" height="31"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -446,6 +486,16 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <segue destination="355-Sw-PNA" kind="push" id="1Ng-tR-vKr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FX Volume" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hn-5G-UZZ">
+                                <rect key="frame" x="20" y="114" width="96" height="31"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="LbC-sQ-yRM">
+                                <rect key="frame" x="393" y="64" width="20" height="36"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -455,6 +505,10 @@ The faster the car, the better the top speed, but be careful, they are harder to
                         <outlet property="beatbtn" destination="ath-kp-ddz" id="3UQ-3J-o1a"/>
                         <outlet property="bluesbtn" destination="XFj-Va-Cul" id="vO5-61-UQm"/>
                         <outlet property="distractionSW" destination="hZk-iN-c46" id="fbD-Ox-H8A"/>
+                        <outlet property="fxhighbtn" destination="Ec8-BU-veX" id="EAQ-zp-stz"/>
+                        <outlet property="fxlowbtn" destination="VLA-lM-chr" id="2Ak-TJ-a4d"/>
+                        <outlet property="fxmedbtn" destination="fO4-V8-03A" id="bBc-ry-Gdx"/>
+                        <outlet property="fxnonebtn" destination="aEr-30-jwR" id="V8V-7t-bYM"/>
                         <outlet property="lap100btn" destination="j7Z-rR-pc9" id="d9c-qi-GIW"/>
                         <outlet property="lap10btn" destination="1x3-cU-xGu" id="G6K-by-ZhW"/>
                         <outlet property="lap20btn" destination="Qcq-8n-DPP" id="d2k-56-jFj"/>
@@ -473,6 +527,11 @@ The faster the car, the better the top speed, but be careful, they are harder to
                         <outlet property="tickBlues" destination="VBy-FT-GzO" id="NS9-zR-H9G"/>
                         <outlet property="tickLight" destination="fKx-ZO-S2b" id="K1E-dS-fUG"/>
                         <outlet property="tickNone" destination="wlH-ep-x9E" id="tbd-Qu-8Hz"/>
+                        <outlet property="tickdistraction" destination="LbC-sQ-yRM" id="56N-GS-5Vu"/>
+                        <outlet property="tickhigh" destination="af7-nl-gOj" id="cR1-wT-tJj"/>
+                        <outlet property="ticklow" destination="Q7H-X6-PKh" id="AqN-gW-oMw"/>
+                        <outlet property="tickmed" destination="NwM-AW-88L" id="WKi-sy-cpH"/>
+                        <outlet property="tickoff" destination="NZa-s4-3NG" id="7aC-Rd-9Q6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MpD-jF-vJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1254,7 +1313,11 @@ The Email address is the recipient of the data results when a race is completed,
         <image name="emailGr.png" width="55" height="55"/>
         <image name="finishx.png" width="105" height="55"/>
         <image name="hardx.png" width="105" height="55"/>
+        <image name="high.png" width="105" height="55"/>
+        <image name="low.png" width="105" height="55"/>
+        <image name="med.png" width="105" height="55"/>
         <image name="mediumx.png" width="105" height="55"/>
+        <image name="off.png" width="105" height="55"/>
         <image name="pause2Gr.png" width="105" height="55"/>
         <image name="seg-10.png" width="55" height="55"/>
         <image name="seg-100.png" width="55" height="55"/>
@@ -1276,8 +1339,8 @@ The Email address is the recipient of the data results when a race is completed,
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="egQ-Cs-J5z"/>
-        <segue reference="b6P-hE-go0"/>
-        <segue reference="Qad-gC-6d0"/>
+        <segue reference="1Ng-tR-vKr"/>
         <segue reference="sgN-rE-1F9"/>
+        <segue reference="Qad-gC-6d0"/>
     </inferredMetricsTieBreakers>
 </document>

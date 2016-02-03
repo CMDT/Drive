@@ -52,6 +52,14 @@
 		917B79131C1DB50E00A6D3DA /* TrackStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 917B79121C1DB50E00A6D3DA /* TrackStatsViewController.m */; };
 		917E5A5D1C21DF0A009DF226 /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 917E5A5B1C21DF0A009DF226 /* tick.png */; };
 		917E5A5E1C21DF0A009DF226 /* tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 917E5A5C1C21DF0A009DF226 /* tick@2x.png */; };
+		E11F94841C625B8900712F9B /* high.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F947C1C625B8900712F9B /* high.png */; };
+		E11F94851C625B8900712F9B /* high@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F947D1C625B8900712F9B /* high@2x.png */; };
+		E11F94861C625B8900712F9B /* low.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F947E1C625B8900712F9B /* low.png */; };
+		E11F94871C625B8900712F9B /* low@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F947F1C625B8900712F9B /* low@2x.png */; };
+		E11F94881C625B8900712F9B /* med.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F94801C625B8900712F9B /* med.png */; };
+		E11F94891C625B8900712F9B /* med@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F94811C625B8900712F9B /* med@2x.png */; };
+		E11F948A1C625B8900712F9B /* off.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F94821C625B8900712F9B /* off.png */; };
+		E11F948B1C625B8900712F9B /* off@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F94831C625B8900712F9B /* off@x2.png */; };
 		E171F2661C1EDB3600E3DB0D /* achievment-amateur.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F2621C1EDB3600E3DB0D /* achievment-amateur.png */; };
 		E171F2671C1EDB3600E3DB0D /* achievment-destruction.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F2631C1EDB3600E3DB0D /* achievment-destruction.png */; };
 		E171F2681C1EDB3600E3DB0D /* achievment-intermediate.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F2641C1EDB3600E3DB0D /* achievment-intermediate.png */; };
@@ -259,6 +267,14 @@
 		917B79121C1DB50E00A6D3DA /* TrackStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackStatsViewController.m; sourceTree = "<group>"; };
 		917E5A5B1C21DF0A009DF226 /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
 		917E5A5C1C21DF0A009DF226 /* tick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick@2x.png"; sourceTree = "<group>"; };
+		E11F947C1C625B8900712F9B /* high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = high.png; sourceTree = "<group>"; };
+		E11F947D1C625B8900712F9B /* high@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "high@2x.png"; sourceTree = "<group>"; };
+		E11F947E1C625B8900712F9B /* low.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = low.png; sourceTree = "<group>"; };
+		E11F947F1C625B8900712F9B /* low@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "low@2x.png"; sourceTree = "<group>"; };
+		E11F94801C625B8900712F9B /* med.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = med.png; sourceTree = "<group>"; };
+		E11F94811C625B8900712F9B /* med@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "med@2x.png"; sourceTree = "<group>"; };
+		E11F94821C625B8900712F9B /* off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = off.png; sourceTree = "<group>"; };
+		E11F94831C625B8900712F9B /* off@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "off@x2.png"; sourceTree = "<group>"; };
 		E171F2621C1EDB3600E3DB0D /* achievment-amateur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievment-amateur.png"; sourceTree = "<group>"; };
 		E171F2631C1EDB3600E3DB0D /* achievment-destruction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievment-destruction.png"; sourceTree = "<group>"; };
 		E171F2641C1EDB3600E3DB0D /* achievment-intermediate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievment-intermediate.png"; sourceTree = "<group>"; };
@@ -567,6 +583,14 @@
 		475E5E5E195A5A610063FD68 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E11F947C1C625B8900712F9B /* high.png */,
+				E11F947D1C625B8900712F9B /* high@2x.png */,
+				E11F947E1C625B8900712F9B /* low.png */,
+				E11F947F1C625B8900712F9B /* low@2x.png */,
+				E11F94801C625B8900712F9B /* med.png */,
+				E11F94811C625B8900712F9B /* med@2x.png */,
+				E11F94821C625B8900712F9B /* off.png */,
+				E11F94831C625B8900712F9B /* off@x2.png */,
 				911EF1C51C24C81F00EAF391 /* carhorn-btn.png */,
 				911EF1C61C24C81F00EAF391 /* carhorn-btn@2x.png */,
 				E1CBACF61C22D7DA001CC466 /* backx@2x.png */,
@@ -821,6 +845,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E171F2EB1C1EF19F00E3DB0D /* seg-1@2x.png in Resources */,
+				E11F94871C625B8900712F9B /* low@2x.png in Resources */,
 				E171F2671C1EDB3600E3DB0D /* achievment-destruction.png in Resources */,
 				E171F2801C1EDB5700E3DB0D /* track_3.png in Resources */,
 				E1CBAD0E1C22D7DA001CC466 /* pause2Gr@2x.png in Resources */,
@@ -837,10 +862,13 @@
 				475E5EB6195A5A610063FD68 /* lap.wav in Resources */,
 				E1CBACFD1C22D7DA001CC466 /* startx.png in Resources */,
 				E171F2D01C1EE0C300E3DB0D /* btn-car1@2x.png in Resources */,
+				E11F94881C625B8900712F9B /* med.png in Resources */,
 				E1CBAD231C22D7F1001CC466 /* bg-main-menu-driver@2x.png in Resources */,
+				E11F948B1C625B8900712F9B /* off@x2.png in Resources */,
 				E1CBAD1B1C22D7DA001CC466 /* finishx@2x.png in Resources */,
 				E171F30C1C1EF20100E3DB0D /* btn-finish@2x.png in Resources */,
 				E171F30B1C1EF20100E3DB0D /* btn-finish.png in Resources */,
+				E11F94851C625B8900712F9B /* high@2x.png in Resources */,
 				47117B5A1959CA1400B20209 /* Images.xcassets in Resources */,
 				E171F2771C1EDB5700E3DB0D /* bg-main-menu@2x.png in Resources */,
 				E1CBAD1A1C22D7DA001CC466 /* backx@2x.png in Resources */,
@@ -918,6 +946,7 @@
 				475E5EB2195A5A610063FD68 /* box.wav in Resources */,
 				E1CBAD221C22D7F1001CC466 /* bg-main-menu-driver.png in Resources */,
 				E171F2B01C1EDBB300E3DB0D /* btn-select-track@2x.png in Resources */,
+				E11F948A1C625B8900712F9B /* off.png in Resources */,
 				E1CBAD111C22D7DA001CC466 /* backxGr@2x.png in Resources */,
 				E1CBAD1E1C22D7DA001CC466 /* emailOr@2x.png in Resources */,
 				E1CBAD001C22D7DA001CC466 /* infoOr.png in Resources */,
@@ -944,6 +973,7 @@
 				E171F2CF1C1EE0C300E3DB0D /* btn-car1.png in Resources */,
 				E171F2661C1EDB3600E3DB0D /* achievment-amateur.png in Resources */,
 				E171F2A21C1EDBB300E3DB0D /* btn-easy@2x.png in Resources */,
+				E11F94891C625B8900712F9B /* med@2x.png in Resources */,
 				E1CBAD011C22D7DA001CC466 /* mediumx.png in Resources */,
 				E171F2F51C1EF19F00E3DB0D /* seg-100.png in Resources */,
 				475E5EB3195A5A610063FD68 /* button_press.wav in Resources */,
@@ -953,7 +983,9 @@
 				E171F27C1C1EDB5700E3DB0D /* track_1.png in Resources */,
 				E171F2EF1C1EF19F00E3DB0D /* seg-5@2x.png in Resources */,
 				E1CBAD0F1C22D7DA001CC466 /* pause1Gr@2x.png in Resources */,
+				E11F94841C625B8900712F9B /* high.png in Resources */,
 				E171F2F91C1EF19F00E3DB0D /* seg-blues.png in Resources */,
+				E11F94861C625B8900712F9B /* low.png in Resources */,
 				E171F2A11C1EDBB300E3DB0D /* btn-easy.png in Resources */,
 				E1CBAD071C22D7DA001CC466 /* finishx.png in Resources */,
 				E1CBAD0D1C22D7DA001CC466 /* easyx.png in Resources */,

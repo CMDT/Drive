@@ -27,17 +27,24 @@
     mySingleton *singleton = [mySingleton sharedSingleton];
     [super viewDidLoad];
     
+    self.tickdistraction.hidden=YES;
+    
     [self blankLapTicks];
     self.tick10.hidden=NO;
     self.lap10btn.alpha=1;
-    
     
     [self blankMusicTicks];
     self.tickNone.hidden=NO;
     self.nonebtn.alpha=1;
     
+    [self blankFXTicks];
+    self.tickmed.hidden=NO;
+    self.fxmedbtn.alpha=1;
+    
     singleton.musicTrack=@"None";
     singleton.laps=@"10";
+    singleton.ambientVolume=0.66;
+    
     [[SKTAudio sharedInstance] playBackgroundMusic:@"silence30.mp3"];
 }
 
@@ -104,7 +111,6 @@
     self.tick20.hidden=YES;
     self.tick50.hidden=YES;
     self.tick100.hidden=YES;
-
 }
 
 - (void)blankMusicTicks{
@@ -118,7 +124,19 @@
     self.tickLight.hidden=YES;
     self.tickBlues.hidden=YES;
     self.tickBeat.hidden=YES;
+}
 
+- (void)blankFXTicks{
+    //opacity 50%
+    self.fxnonebtn.alpha=0.5;
+    self.fxlowbtn.alpha=0.5;
+    self.fxmedbtn.alpha=0.5;
+    self.fxhighbtn.alpha=0.5;
+    // clear all the music ticks
+    self.tickoff.hidden=YES;
+    self.ticklow.hidden=YES;
+    self.tickmed.hidden=YES;
+    self.tickhigh.hidden=YES;
 }
 
 #pragma mark - Set the laps, music and distractions
@@ -128,7 +146,6 @@
     [self blankLapTicks];
     self.lap2btn.alpha=1;
     self.tick2.hidden=NO;
-    
 }
 
 - (IBAction)lap5set:(id)sender {
@@ -207,12 +224,46 @@
     [self checkMusicAndPlay];
 }
 
+- (IBAction)fxNoneSet:(id)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.ambientVolume=0.0;
+    [self blankFXTicks];
+    self.fxnonebtn.alpha=1;
+    self.tickoff.hidden=NO;
+    }
+
+- (IBAction)fxLowSet:(id)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.ambientVolume=0.33;
+    [self blankFXTicks];
+    self.fxlowbtn.alpha=1;
+    self.ticklow.hidden=NO;
+}
+
+- (IBAction)fxMidSet:(id)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.ambientVolume=0.66;
+    [self blankFXTicks];
+    self.fxmedbtn.alpha=1;
+    self.tickmed.hidden=NO;
+}
+
+- (IBAction)fxHiSet:(id)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.ambientVolume=1.0;
+    [self blankFXTicks];
+    self.fxhighbtn.alpha=1;
+    self.tickhigh.hidden=NO;
+}
+
 - (IBAction)distractionOSW:(id)sender {
     mySingleton *singleton = [mySingleton sharedSingleton];
     if (distractionSW.isOn) {
         singleton.distractionOn=@"ON";
+        self.tickdistraction.hidden=NO;
     }else{
         singleton.distractionOn=@"OFF";
+        self.tickdistraction.hidden=YES;
     }
 }
 
