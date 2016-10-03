@@ -4,6 +4,7 @@
 //
 //  Created by Jon Howell on 14/12/2015.
 //  Copyright (c) 2015 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
+//  Updating for ios 10.0.2 and new sound features implementation.
 //
 
 #import "mySingleton.h"
@@ -92,8 +93,6 @@ static mySingleton * sharedSingleton = nil;
             [hornLaps addObject:@"0"];
             [cardReactionTimeResult addObject:@"0"];
         }
-        
-
         
         tempEntry           = @"";
         hornsShowing        = NO;

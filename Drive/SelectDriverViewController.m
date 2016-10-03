@@ -5,6 +5,8 @@
 //  Created by Jon Howell on 17/12/2015.
 //  Copyright © 2015 MMU ESS JAH. All rights reserved.
 //
+//  Updating for ios 10.0.2 and new sound features implementation.
+//
 
 #import "SelectDriverViewController.h"
 #import "SKTAudio.h"
@@ -67,15 +69,17 @@
     
     email.delegate       = self;
     driverName.delegate  = self;
-    
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)infoButtonDidTouchUpInside:(id)sender {
     [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
 }
+
 - (IBAction)backButtonDidTouchUpInside:(id)sender {
     [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
     //[self.navigationController popViewControllerAnimated:YES];

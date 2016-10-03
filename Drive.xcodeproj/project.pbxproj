@@ -17,7 +17,6 @@
 		47117B501959CA1400B20209 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47117B4E1959CA1400B20209 /* Main.storyboard */; };
 		47117B531959CA1400B20209 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47117B521959CA1400B20209 /* ViewController.m */; };
 		47117B561959CA1400B20209 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 47117B551959CA1400B20209 /* MyScene.m */; };
-		47117B581959CA1400B20209 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 47117B571959CA1400B20209 /* Spaceship.png */; };
 		47117B5A1959CA1400B20209 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47117B591959CA1400B20209 /* Images.xcassets */; };
 		47117B611959CA1400B20209 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47117B601959CA1400B20209 /* XCTest.framework */; };
 		47117B621959CA1400B20209 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47117B3A1959CA1400B20209 /* Foundation.framework */; };
@@ -219,7 +218,6 @@
 		47117B521959CA1400B20209 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		47117B541959CA1400B20209 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
 		47117B551959CA1400B20209 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		47117B571959CA1400B20209 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		47117B591959CA1400B20209 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		47117B5F1959CA1400B20209 /* DriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47117B601959CA1400B20209 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -495,7 +493,6 @@
 				917B79121C1DB50E00A6D3DA /* TrackStatsViewController.m */,
 				47696E4C195D283500A41AC6 /* AnalogControl.h */,
 				47696E4D195D283500A41AC6 /* AnalogControl.m */,
-				47117B571959CA1400B20209 /* Spaceship.png */,
 				475E5E4B195A5A610063FD68 /* Art */,
 				47117B591959CA1400B20209 /* Images.xcassets */,
 				475E5E7B195A5A610063FD68 /* Levels */,
@@ -809,6 +806,7 @@
 				TargetAttributes = {
 					47117B361959CA1400B20209 = {
 						DevelopmentTeam = 4SPW49WK35;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 0;
@@ -875,7 +873,6 @@
 				E1CBAD141C22D7DA001CC466 /* trackx@2x.png in Resources */,
 				E1CBAD161C22D7DA001CC466 /* easyx@2x.png in Resources */,
 				E171F2EE1C1EF19F00E3DB0D /* seg-5.png in Resources */,
-				47117B581959CA1400B20209 /* Spaceship.png in Resources */,
 				E171F2D41C1EE0C300E3DB0D /* btn-car3@2x.png in Resources */,
 				E171F2A71C1EDBB300E3DB0D /* btn-medium.png in Resources */,
 				E171F2FD1C1EF19F00E3DB0D /* seg-none.png in Resources */,
@@ -1179,12 +1176,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Drive/Drive-Prefix.pch";
 				INFOPLIST_FILE = "Drive/Drive-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.mmu.ess.www.jah.Drive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1196,13 +1195,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: manchester metropolitan University";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Drive/Drive-Prefix.pch";
 				INFOPLIST_FILE = "Drive/Drive-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.mmu.ess.www.jah.Drive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};

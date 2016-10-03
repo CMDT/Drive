@@ -5,6 +5,8 @@
 //  Created by Jonathan Howell 15/12/15.
 //  Copyright (c) 2016. Jonathan Howell, MMU. All rights reserved.
 //
+//  Updating for ios 10.0.2 and new sound features implementation.
+//
 
 @import UIKit;
 

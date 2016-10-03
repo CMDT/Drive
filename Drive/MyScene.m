@@ -7,6 +7,8 @@
 //
 //  first commit 9/12/15
 //  big update 12/12/15
+//  Updating for ios 10.0.2 and new sound features implementation.
+//
 
 #import "MyScene.h"
 #import "AnalogControl.h"
@@ -618,7 +620,6 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             [self p_addBoxAt:  CGPointMake(track.position.x + 222, track.position.y  - 102 )];
             [self p_addCrateAt:CGPointMake(track.position.x + 166, track.position.y  - 141 )];
             [self p_addBaleAt: CGPointMake(track.position.x + 135, track.position.y  - 157 )];
-            
             [self p_addPauseAt:CGPointMake(track.position.x + 230.0f, track.position.y + 145 )];
             break;
         default:

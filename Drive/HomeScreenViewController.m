@@ -5,12 +5,16 @@
 //  Created by Jonathan Howell 9/12/15.
 //  Copyright (c) 2015. Jonathan Howell, MMU. All rights reserved.
 //
+//  Updating for ios 10.0.2 and new sound features implementation.
+//
 
 #import "HomeScreenViewController.h"
 #import "GameKitHelper.h"
+
 //#import "SelectCarViewController.h"
 #import "SKTAudio.h"
 #import "mySingleton.h"
+
 //mySingleton *singleton = [mySingleton sharedSingleton];
 
 @interface HomeScreenViewController ()
@@ -230,7 +234,7 @@
     [self blankFXTicks];
     self.fxnonebtn.alpha=1;
     self.tickoff.hidden=NO;
-    }
+}
 
 - (IBAction)fxLowSet:(id)sender {
     mySingleton *singleton = [mySingleton sharedSingleton];

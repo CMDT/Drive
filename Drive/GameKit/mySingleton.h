@@ -4,6 +4,7 @@
 //
 //  Created by Jon Howell on 15/07/2014.
 //  Copyright (c) 2015 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
+//  Updating for ios 10.0.2 and new sound features implementation.
 //
 //
 
@@ -102,4 +103,3 @@
 +(mySingleton *)sharedSingleton;
 
 @end
-

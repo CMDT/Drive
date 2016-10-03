@@ -3,6 +3,8 @@
 //
 //  The contents of this file are implicitly included at the beginning of every source file.
 //
+//  Updating for ios 10.0.2 and new sound features implementation.
+//
 
 #import <Availability.h>
 
@@ -15,13 +17,13 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
-//holds the car number
+//holds the car number and colour
 typedef NS_ENUM(long, CRCarType) {//was int
     CRRedCar = 1,
     CRBlueCar,
     CRGreenCar
 };
-//holds the track number
+//holds the track number and difficulty
 typedef NS_ENUM(long, CRLevelType) {//was int
     CRLevelEasy = 1,
     CRLevelMedium,

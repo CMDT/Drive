@@ -5,8 +5,9 @@
 //  Created by Jonathan Howell on 13/12/2015.
 //  Copyright © 2015 MMU ESS JAH. All rights reserved.
 //
-
-// back button is Start Again
+//  back button is Start Again
+//  Updating for ios 10.0.2 and new sound features implementation.
+//
 
 #import "TrackStatsViewController.h"
 #import "mySingleton.h"
@@ -164,7 +165,6 @@ h7,h8,
         h8.hidden=NO;
     }
     
-    
     fastestHorn.text=singleton.fastestHorn;
     slowestHorn.text=singleton.slowestHorn;
     averageHorn.text=singleton.averageHorn;
@@ -278,7 +278,6 @@ h7,h8,
     // summary as per screen
     // lapTimes,
 
-    
     [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Email: %@",singleton.email]];
     singleton.counter = singleton.counter+1;
     
