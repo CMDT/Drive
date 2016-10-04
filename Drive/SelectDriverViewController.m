@@ -48,7 +48,7 @@
     email.text      = [defaults objectForKey:kEmail];
 }
 
--(void)viewDidAppear:(BOOL)animated{
+- (void)viewDidAppear:(BOOL)animated{
     
     keyboardAnimDelay=0.5;
     keyboardAnimSpeed=0.3;
@@ -77,11 +77,11 @@
 }
 
 - (IBAction)infoButtonDidTouchUpInside:(id)sender {
-    [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
+    [self btnPressSound];
 }
 
 - (IBAction)backButtonDidTouchUpInside:(id)sender {
-    [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
+    [self btnPressSound];
     //[self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -105,7 +105,7 @@
     [defaults setObject:[NSString stringWithFormat:@"%@", singleton.email] forKey:kEmail];
     [defaults synchronize];
     
-    [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
+    [self btnPressSound];
     
     //ViewController *gameVC = [self.storyboard
         //instantiateViewControllerWithIdentifier:NSStringFromClass([ViewController class])];
@@ -113,11 +113,13 @@
     //[self.navigationController pushViewController:gameVC animated:YES];
 }
 
--(void)textFieldDidBeginEditing:(UITextField *)textField{
-//no effrect as this App is being ported to iPhone only, even though displaying on an iPad, compromise value
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+// no effect as this App is being ported to iPhone only, even though displaying on an iPad, compromise value
 #define IDIOM    UI_USER_INTERFACE_IDIOM()
 #define IPAD     UIUserInterfaceIdiomPad
+    
 int yy;
+    
 if ( IDIOM == IPAD ) {
     /* do something specifically for iPad. */
     yy=100;
@@ -134,7 +136,7 @@ if((textField==self->driverName)||(textField==self->email)){
     }
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     //used to clear keyboard if screen touched
     // NSLog(@"Touches began with this event");
     [self.view endEditing:YES];
@@ -142,7 +144,7 @@ if((textField==self->driverName)||(textField==self->email)){
     [super touchesBegan:touches withEvent:event];
 }
 
--(void) keyBoardAppeared :(int)oft
+- (void) keyBoardAppeared :(int)oft
 {
     //move screen up or down as needed to avoid text field entry
     CGRect frame = self.view.frame;
@@ -170,7 +172,7 @@ if((textField==self->driverName)||(textField==self->email)){
                      }];
 }
 
--(void)textFieldDidEndEditing:(UITextField *) textField {
+- (void)textFieldDidEndEditing:(UITextField *) textField {
     
     //move the screen back to the original place
     [self keyBoardDisappeared:0];
@@ -182,7 +184,7 @@ if((textField==self->driverName)||(textField==self->email)){
     email.textColor              = [UIColor blackColor];
 }
 
--(void) keyBoardDisappeared :(int)oft
+- (void) keyBoardDisappeared :(int)oft
 {
     //move the screen back to original position
     CGRect frame = self.view.frame;
@@ -207,6 +209,41 @@ if((textField==self->driverName)||(textField==self->email)){
 
 driverName.backgroundColor = [UIColor whiteColor];
 email.backgroundColor      = [UIColor whiteColor];
+}
 
+- (void)btnPressSound{
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    
+    int   fxVolumeSetLevel;
+    float fxTemp;
+    
+    //find the sound level to play and play it
+    fxTemp = singleton.ambientVolume * 100;
+    fxVolumeSetLevel = (int)fxTemp;
+    
+    //report for dev only
+    //NSLog(@"fxVolumeSetLevel= %f: %f :%d", singleton.ambientVolume, fxTemp, fxVolumeSetLevel);
+    
+    switch (fxVolumeSetLevel) {
+        case 0 ... 10:
+            [[SKTAudio sharedInstance] playSoundEffect:@"button_press00.wav"];
+            break;
+        case 11 ... 25:
+            [[SKTAudio sharedInstance] playSoundEffect:@"button_press25.wav"];
+            break;
+        case 26 ... 50:
+            [[SKTAudio sharedInstance] playSoundEffect:@"button_press50.wav"];
+            break;
+        case 51 ... 75:
+            [[SKTAudio sharedInstance] playSoundEffect:@"button_press75.wav"];
+            break;
+        case 76 ... 100:
+            [[SKTAudio sharedInstance] playSoundEffect:@"button_press100.wav"];
+            break;
+        default:
+            [[SKTAudio sharedInstance] playSoundEffect:@"button_press00.wav"];
+            break;
+    }
+}
 
-}@end
+@end

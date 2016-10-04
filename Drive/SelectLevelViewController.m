@@ -35,17 +35,17 @@
 
 #pragma mark - Select a Track
 - (IBAction)infoButtonDidTouchUpInside:(id)sender {
-    [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
+    [self btnPressSound];
 }
 - (IBAction)backButtonDidTouchUpInside:(id)sender {
-    [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
+    [self btnPressSound];
     //[self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)levelButtonDidTouchUpInside:(UIButton *)sender {
     mySingleton *singleton = [mySingleton sharedSingleton];
     
-    [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
+    [self btnPressSound];
 
     //SelectDriverViewController *gameVC = [self.storyboard
         //instantiateViewControllerWithIdentifier:NSStringFromClass([SelectDriverViewController class])];
@@ -57,4 +57,38 @@
     //[self.navigationController pushViewController:gameVC animated:YES];
 }
 
+- (void)btnPressSound{
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    
+    int   fxVolumeSetLevel;
+    float fxTemp;
+    
+    //find the sound level to play and play it
+    fxTemp = singleton.ambientVolume * 100;
+    fxVolumeSetLevel = (int)fxTemp;
+    
+    //report for dev only
+    //NSLog(@"fxVolumeSetLevel= %f: %f :%d", singleton.ambientVolume, fxTemp, fxVolumeSetLevel);
+    
+    switch (fxVolumeSetLevel) {
+        case 0 ... 10:
+            [[SKTAudio sharedInstance] playSoundEffect:@"button_press00.wav"];
+            break;
+        case 11 ... 25:
+            [[SKTAudio sharedInstance] playSoundEffect:@"button_press25.wav"];
+            break;
+        case 26 ... 50:
+            [[SKTAudio sharedInstance] playSoundEffect:@"button_press50.wav"];
+            break;
+        case 51 ... 75:
+            [[SKTAudio sharedInstance] playSoundEffect:@"button_press75.wav"];
+            break;
+        case 76 ... 100:
+            [[SKTAudio sharedInstance] playSoundEffect:@"button_press100.wav"];
+            break;
+        default:
+            [[SKTAudio sharedInstance] playSoundEffect:@"button_press00.wav"];
+            break;
+    }
+}
 @end

@@ -121,7 +121,7 @@
     }
 }
 
--(void)setDateNow:(id)sender{
+- (void)setDateNow:(id)sender{
     mySingleton *singleton = [mySingleton sharedSingleton];
     NSDate *today = [NSDate date];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
@@ -130,7 +130,7 @@
     singleton.testDate=dateString;
 }
 
--(void)setTimeNow:(id)sender{
+- (void)setTimeNow:(id)sender{
     mySingleton *singleton = [mySingleton sharedSingleton];
     NSDate *currentTime = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -219,6 +219,7 @@ mySingleton *singleton = [mySingleton sharedSingleton];
 - (BOOL)shouldAutorotate {
     return YES;
 }
+
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations{
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
             return UIInterfaceOrientationMaskAllButUpsideDown;

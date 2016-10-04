@@ -11,7 +11,22 @@
 #import <UIKit/UIKit.h>
 
 @interface SelectDriverViewController : UIViewController <UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *driverName;
 @property (weak, nonatomic) IBOutlet UITextField *email;
+
+// definitions for functions follow
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)didReceiveMemoryWarning;
+- (IBAction)infoButtonDidTouchUpInside:(id)sender;
+- (IBAction)backButtonDidTouchUpInside:(id)sender;
+- (IBAction)startButtonDidTouchUpInside:(UIButton *)sender;
+- (void)textFieldDidBeginEditing:(UITextField *)textField;
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void) keyBoardAppeared :(int)oft;
+- (void)textFieldDidEndEditing:(UITextField *) textField;
+- (void) keyBoardDisappeared :(int)oft;
+- (void)btnPressSound;
 
 @end

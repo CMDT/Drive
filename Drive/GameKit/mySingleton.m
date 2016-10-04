@@ -13,6 +13,7 @@ static mySingleton * sharedSingleton = nil;
 
 @implementation mySingleton {
 }
+
 @synthesize
 //strings
             lapTimes,
@@ -50,15 +51,13 @@ static mySingleton * sharedSingleton = nil;
             totalHorn,
             distractionOn,
             masterScore,
-//float64
+// float64
             wallCrashMult,
             hazCrashMult,
             hornsMulti,
 // float;
             ambientVolume;
 
-
-#pragma mark -
 #pragma mark Singleton Methods
 
 + (mySingleton *) sharedSingleton {
@@ -84,6 +83,7 @@ static mySingleton * sharedSingleton = nil;
         hazLaps             = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
         hornLaps            = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
         cardReactionTimeResult = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
+        
         for (NSInteger i = 0; i < 101; ++i)
         {
             [lapTimes addObject:@"0"];
@@ -128,7 +128,7 @@ static mySingleton * sharedSingleton = nil;
         wallCrashMult       = 0.05;
         hazCrashMult        = 0.1;
         hornsMulti          = 1.0;
-        ambientVolume       = 1.0;
+        ambientVolume       = 0.50;
     }
     return self;
 }

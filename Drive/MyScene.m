@@ -27,11 +27,11 @@
 // ... mySingleton *singleton = [mySingleton sharedSingleton];
 
 typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
-    CRBodyCar = 1 << 0,  // 0000001 = 1
-    CRBodyBox = 1 << 1,  // 0000010 = 2
+    CRBodyCar   = 1 << 0,  // 0000001 = 1
+    CRBodyBox   = 1 << 1,  // 0000010 = 2
     CRBodyCrate = 1 << 1,
-    CRBodyTyre = 1 << 1,
-    CRBodyBale = 1 << 1,
+    CRBodyTyre  = 1 << 1,
+    CRBodyBale  = 1 << 1,
     CRBodyPause = 1 << 1,
 };
 
@@ -733,7 +733,6 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         //stop the clock in mS
         reactionTime[xcounter]=(Float32)[self.startDate timeIntervalSinceNow]* -1000;
         
-        
         //update data as now finished
         
         //crashes
@@ -819,8 +818,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                 fastestHorn = temp1;
                 NSLog(@"fast horn time %d: %f", x, temp1);
             }
-            if (_numOfLaps==1) {
-                fastestHorn=slowestHorn;
+            if (_numOfLaps == 1) {
+                fastestHorn = slowestHorn;
             }
             hornTime = hornTime + temp1;
         }
@@ -917,17 +916,17 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         // OLD WAY FOR SOUND, BUT FIXED LOUD VOLUME // [self runAction:self.wallSoundAction];
         //
         // to change volume level
-        NSError *error;
-        NSURL *soundURL = [[NSBundle mainBundle] URLForResource:@"box" withExtension:@"wav"];
-        AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
+        NSError * error;
+        NSURL * soundURL = [[NSBundle mainBundle] URLForResource:@"box" withExtension:@"wav"];
+        AVAudioPlayer * player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
         [player setVolume:singleton.ambientVolume];
         [player prepareToPlay];
         
-        SKAction*   playAction = [SKAction runBlock:^{
+        SKAction * playAction = [SKAction runBlock:^{
             [player play];
         }];
-        SKAction *waitAction = [SKAction waitForDuration:player.duration+1];
-        SKAction *sequence = [SKAction sequence:@[playAction, waitAction]];
+        SKAction * waitAction = [SKAction waitForDuration:player.duration+1];
+        SKAction * sequence   = [SKAction sequence:@[playAction, waitAction]];
         
         [self runAction:sequence];
     }

@@ -62,7 +62,7 @@
     return YES;
 }
 
--(void)checkMusicAndPlay{
+- (void)checkMusicAndPlay{
     mySingleton *singleton = [mySingleton sharedSingleton];
     //check what sound if any and play it in background
     NSString *music;
@@ -87,8 +87,12 @@
 #pragma mark - Start the Race Game
 
 - (IBAction)carButtonDidTouchUpInside:(id)sender {
-    [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
-
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    // only click if set
+    if (singleton.ambientVolume>0.0){
+        [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
+    }
+    
     //SelectCarViewController *selectCarVC = [self.storyboard
     //instantiateViewControllerWithIdentifier:@"SelectCarViewController"];
     //[self.navigationController pushViewController:selectCarVC animated:YES];
@@ -96,6 +100,7 @@
 
 - (IBAction)gameCenterButtonDidTouchUpInside:(id)sender {
     // this for the Apple Game Centre stats and sharing drive data only:
+    
     // a 1px x 1px button, hard to hit, but it is there....
     //do nothing, not enabling game ctr yet. will need to turn back on in final vc m code- jah
     //[[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
@@ -137,11 +142,13 @@
     self.fxnonebtn.alpha=0.5;
     self.fxlowbtn.alpha=0.5;
     self.fxmedbtn.alpha=0.5;
+    self.fxnorbtn.alpha=0.5;
     self.fxhighbtn.alpha=0.5;
     // clear all the music ticks
     self.tickoff.hidden=YES;
     self.ticklow.hidden=YES;
     self.tickmed.hidden=YES;
+    self.ticknor.hidden=YES;
     self.tickhigh.hidden=YES;
 }
 
@@ -231,6 +238,7 @@
     [self checkMusicAndPlay];
 }
 
+// range could be 0.0 to 100, each volume is different file, 00, 25, 50, 75 and 100
 - (IBAction)fxNoneSet:(id)sender {
     mySingleton *singleton = [mySingleton sharedSingleton];
     singleton.ambientVolume=0.0;
@@ -241,7 +249,7 @@
 
 - (IBAction)fxLowSet:(id)sender {
     mySingleton *singleton = [mySingleton sharedSingleton];
-    singleton.ambientVolume=0.33;
+    singleton.ambientVolume=0.25;
     [self blankFXTicks];
     self.fxlowbtn.alpha=1;
     self.ticklow.hidden=NO;
@@ -249,10 +257,17 @@
 
 - (IBAction)fxMidSet:(id)sender {
     mySingleton *singleton = [mySingleton sharedSingleton];
-    singleton.ambientVolume=0.66;
+    singleton.ambientVolume=0.50;
     [self blankFXTicks];
     self.fxmedbtn.alpha=1;
     self.tickmed.hidden=NO;
+}
+- (IBAction)fxNorSet:(id)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.ambientVolume=0.75;
+    [self blankFXTicks];
+    self.fxnorbtn.alpha=1;
+    self.ticknor.hidden=NO;
 }
 
 - (IBAction)fxHiSet:(id)sender {
@@ -274,4 +289,39 @@
     }
 }
 
+- (void)btnPressSound{
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    
+    int   fxVolumeSetLevel;
+    float fxTemp;
+    
+    //find the sound level to play and play it
+    fxTemp = singleton.ambientVolume * 100;
+    fxVolumeSetLevel = (int)fxTemp;
+    
+    //report for dev only
+    //NSLog(@"fxVolumeSetLevel= %f: %f :%d", singleton.ambientVolume, fxTemp, fxVolumeSetLevel);
+    
+    switch (fxVolumeSetLevel) {
+        case 0 ... 10:
+            [[SKTAudio sharedInstance] playSoundEffect:@"button_press00.wav"];
+            break;
+        case 11 ... 25:
+            [[SKTAudio sharedInstance] playSoundEffect:@"button_press25.wav"];
+            break;
+        case 26 ... 50:
+            [[SKTAudio sharedInstance] playSoundEffect:@"button_press50.wav"];
+            break;
+        case 51 ... 75:
+            [[SKTAudio sharedInstance] playSoundEffect:@"button_press75.wav"];
+            break;
+        case 76 ... 100:
+            [[SKTAudio sharedInstance] playSoundEffect:@"button_press100.wav"];
+            break;
+        // anything out of range
+        default:
+            [[SKTAudio sharedInstance] playSoundEffect:@"button_press00.wav"];
+            break;
+    }
+}
 @end

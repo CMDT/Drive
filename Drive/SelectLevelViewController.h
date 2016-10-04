@@ -12,6 +12,15 @@
 
 @interface SelectLevelViewController : UIViewController <UITextFieldDelegate>
 
+// definitions follow
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (BOOL)prefersStatusBarHidden;
+- (IBAction)infoButtonDidTouchUpInside:(id)sender;
+- (IBAction)backButtonDidTouchUpInside:(id)sender;
+- (IBAction)levelButtonDidTouchUpInside:(UIButton *)sender;
+- (void)btnPressSound;
+
 @property (nonatomic, assign) CRCarType carType;
 
 @end
