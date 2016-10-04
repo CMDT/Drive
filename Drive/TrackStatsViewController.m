@@ -56,12 +56,13 @@
     totalHorn,
     distractionOn,
     masterScore,
-racehms,
-hornhms,
-scorehms,
-h1,h2,h3,
-h4,h5,h6,
-h7,h8,
+    racehms,
+    hornhms,
+    scorehms,
+    h1,h2,h3,
+    h4,h5,h6,
+    h7,h8,
+// last one... ;
     emailbtn;
 
 - (void)viewDidLoad {
@@ -71,15 +72,15 @@ h7,h8,
     statusMessageLab.hidden = YES;
     
     //set up the plist params
-    NSString *pathStr               = [[NSBundle mainBundle] bundlePath];
-    NSString *settingsBundlePath    = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
-    NSString *defaultPrefsFile      = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
-    NSDictionary *defaultPrefs      = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+    NSString * pathStr               = [[NSBundle mainBundle] bundlePath];
+    NSString * settingsBundlePath    = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
+    NSString * defaultPrefsFile      = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
+    NSDictionary * defaultPrefs      = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
-    NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults * defaults        = [NSUserDefaults standardUserDefaults];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [defaults synchronize];
-    singleton.email=[defaults objectForKey:kEmail];
+    singleton.email      = [defaults objectForKey:kEmail];
     singleton.subjectName= [defaults objectForKey:kSubject];
 }
 
@@ -87,17 +88,17 @@ h7,h8,
     mySingleton *singleton = [mySingleton sharedSingleton];
     statusMessageLab.hidden=YES;
     //set up the plist params
-    NSString *pathStr               = [[NSBundle mainBundle] bundlePath];
-    NSString *settingsBundlePath    = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
-    NSString *defaultPrefsFile      = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
-    NSDictionary *defaultPrefs      = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+    NSString * pathStr               = [[NSBundle mainBundle] bundlePath];
+    NSString * settingsBundlePath    = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
+    NSString * defaultPrefsFile      = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
+    NSDictionary * defaultPrefs      = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
-    NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults * defaults        = [NSUserDefaults standardUserDefaults];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [defaults synchronize];
     [defaults synchronize];
-    singleton.email=[defaults objectForKey:kEmail];
-    singleton.subjectName= [defaults objectForKey:kSubject];
+    singleton.email       = [defaults objectForKey:kEmail];
+    singleton.subjectName = [defaults objectForKey:kSubject];
     
     [self calculateStats];
     
@@ -117,28 +118,28 @@ h7,h8,
     
     //NSString * myNumbStr = [[NSString alloc] init];
     
-    // build the stats
-    laps.text=singleton.laps;
-    testDates.text=singleton.testDate;
-    testTimes.text=singleton.testTime;
-    email.text=singleton.email;
-    subjectName.text=singleton.subjectName;
-    versionNumber.text=singleton.versionNumber;
-    carNo.text=singleton.carNo;
-    trackNo.text=singleton.trackNo;
-    musicTrack.text=singleton.musicTrack;
-    fastestLap.text=singleton.fastestLap;
-    slowestLap.text=singleton.slowestLap;
-    fastestLapNo.text=singleton.fastestLapNo;
-    slowestLapNo.text=singleton.slowestLapNo;
-    averageLap.text=singleton.averageLap;
-    totalTime.text=singleton.totalTime;
-    hazCrashes.text=singleton.hazCrashes;
-    wallCrashes.text=singleton.wallCrashes;
-    totalCrashes.text=singleton.totalCrashes;
+    // build the stats from data held in the singleton
+    laps.text          = singleton.laps;
+    testDates.text     = singleton.testDate;
+    testTimes.text     = singleton.testTime;
+    email.text         = singleton.email;
+    subjectName.text   = singleton.subjectName;
+    versionNumber.text = singleton.versionNumber;
+    carNo.text         = singleton.carNo;
+    trackNo.text       = singleton.trackNo;
+    musicTrack.text    = singleton.musicTrack;
+    fastestLap.text    = singleton.fastestLap;
+    slowestLap.text    = singleton.slowestLap;
+    fastestLapNo.text  = singleton.fastestLapNo;
+    slowestLapNo.text  = singleton.slowestLapNo;
+    averageLap.text    = singleton.averageLap;
+    totalTime.text     = singleton.totalTime;
+    hazCrashes.text    = singleton.hazCrashes;
+    wallCrashes.text   = singleton.wallCrashes;
+    totalCrashes.text  = singleton.totalCrashes;
     
     int horns;
-    horns=[singleton.hornsPlayed intValue];
+    horns = [singleton.hornsPlayed intValue];
     
     if (horns < 0) {
         horns = 0;
@@ -165,12 +166,12 @@ h7,h8,
         h8.hidden=NO;
     }
     
-    fastestHorn.text=singleton.fastestHorn;
-    slowestHorn.text=singleton.slowestHorn;
-    averageHorn.text=singleton.averageHorn;
-    totalHorn.text=singleton.totalHorn;
-    distractionOn.text=singleton.distractionOn;
-    masterScore.text=singleton.masterScore;
+    fastestHorn.text   = singleton.fastestHorn;
+    slowestHorn.text   = singleton.slowestHorn;
+    averageHorn.text   = singleton.averageHorn;
+    totalHorn.text     = singleton.totalHorn;
+    distractionOn.text = singleton.distractionOn;
+    masterScore.text   = singleton.masterScore;
     
     masterScore.text = [NSString stringWithFormat:@"%0.2f",
                         ([singleton.totalTime floatValue])
@@ -183,13 +184,14 @@ h7,h8,
     long hours,  minutes, seconds, left;
     NSString * hsec;
     
-    hsec= [totalTime.text substringWithRange:NSMakeRange(totalTime.text.length-2, 2)];
+    hsec = [totalTime.text substringWithRange:NSMakeRange(totalTime.text.length-2, 2)];
     
-    left =(long)[totalTime.text intValue];
+    left = (long)[totalTime.text intValue];
 
+    // whole number result % modulus
     seconds = (left % 60);
     minutes = (left % 3600) / 60;
-    hours = (left % 86400) / 3600;
+    hours   = (left % 86400) / 3600;
     
     NSString *tem3 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld.%@",hours,minutes,seconds,hsec];
     
@@ -201,19 +203,19 @@ h7,h8,
     
     seconds = (left % 60);
     minutes = (left % 3600) / 60;
-    hours = (left % 86400) / 3600;
+    hours   = (left % 86400) / 3600;
     
     tem3 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld.%@",hours,minutes,seconds,hsec];
     
     self.hornhms.text = [NSString stringWithFormat:@"%@", tem3];
 
-    hsec= [masterScore.text substringWithRange:NSMakeRange(masterScore.text.length-2, 2)];
+    hsec = [masterScore.text substringWithRange:NSMakeRange(masterScore.text.length-2, 2)];
     
-    left =(long)[masterScore.text intValue];
+    left = (long)[masterScore.text intValue];
     
     seconds = (left % 60);
     minutes = (left % 3600) / 60;
-    hours = (left % 86400) / 3600;
+    hours   = (left % 86400) / 3600;
     
     tem3 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld.%@",hours,minutes,seconds,hsec];
     self.scorehms.text = [NSString stringWithFormat:@"%@", tem3];
@@ -227,7 +229,7 @@ h7,h8,
     [singleton.cardReactionTimeResult addObject:@"MMU Cheshire, Exercise and Sport Science, DRIVE App Results"];
     singleton.counter = singleton.counter+1;
     //mmu copyright message 2014 JAH
-    [singleton.cardReactionTimeResult addObject:@"(c) 2015 MMU written by Jonathan A. Howell for ESS DRIVE App"];
+    [singleton.cardReactionTimeResult addObject:@"(c) 2016 MMU written by Jonathan A. Howell for ESS DRIVE App"];
     singleton.counter = singleton.counter+1;
     //mmu version no
     [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"%@",singleton.versionNumber]];
@@ -260,7 +262,6 @@ h7,h8,
                      //testDate,
                      //testTime
                      //];
-    
     
     //[singleton.cardReactionTimeResult addObject: myNumbStr];
     //singleton.counter = singleton.counter+1;
@@ -359,7 +360,7 @@ h7,h8,
     [singleton.cardReactionTimeResult addObject:@" " ];
     singleton.counter = singleton.counter+1;
     //mmu copyright message
-    [singleton.cardReactionTimeResult addObject:@"MMU (c) 2015 DRIVE App Jonathan A. Howell SAS Technical Services. " ];
+    [singleton.cardReactionTimeResult addObject:@"MMU (c) 2016 DRIVE App Jonathan A. Howell, SAS Technical Services. " ];
     singleton.counter = singleton.counter+1;
     //version number
     [singleton.cardReactionTimeResult addObject: singleton.versionNumber ];
@@ -495,10 +496,11 @@ h7,h8,
     
     MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
     [mailComposer setMailComposeDelegate:self];
+    
     if ([MFMailComposeViewController canSendMail]){
         [mailComposer setToRecipients:[NSArray arrayWithObjects:singleton.email ,Nil]];
         [mailComposer setSubject:@"Results from DRIVE App"];
-        //[mailComposer setMessageBody:@"Dear VO2 App User: " isHTML:YES];
+        //[mailComposer setMessageBody:@"Dear Drive App User: " isHTML:YES];
         
         [mailComposer setMessageBody: singleton.resultStrings isHTML:NO];
         [mailComposer setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
@@ -591,10 +593,14 @@ h7,h8,
  - (IBAction)finishAction:(id)sender {
          mySingleton *singleton = [mySingleton sharedSingleton];
          [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
-     
+     // not sure if this should be rem'd out now.... CHECK ****************************
+     // looks like dev stuff to see data
+     //********************************************************************************
      for (int x=0; x<(singleton.counter+1); x+=1) {
          NSLog(@"%@",singleton.cardReactionTimeResult[x]);
      }
+     //********************************************************************************
+     
     //re-route this to the results stats VC TrackStatsVC
     [self.navigationController popToRootViewControllerAnimated:YES];
 }

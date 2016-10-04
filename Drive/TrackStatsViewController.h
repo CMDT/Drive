@@ -85,7 +85,7 @@
 - (NSString *) setFilename;
 - (void) WriteToStringFile:(NSMutableString *)textToWrite;
 - (void) calculateStats;
--(void)setDateNow;
--(void)setTimeNow;
+- (void)setDateNow;
+- (void)setTimeNow;
 
 @end

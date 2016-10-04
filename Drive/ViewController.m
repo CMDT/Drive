@@ -292,7 +292,7 @@ mySingleton *singleton = [mySingleton sharedSingleton];
                                message:@"You have Paused the Race.... \n\nWhat would you like to do?"
                               delegate:self
                      cancelButtonTitle:@"Resume Race"
-                     otherButtonTitles:@"Start A New Race", nil];
+                     otherButtonTitles:@"Start A New Race or Quit", nil];
     [alert show];
 
     self.scene.paused = YES;

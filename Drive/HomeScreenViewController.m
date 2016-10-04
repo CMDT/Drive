@@ -9,9 +9,11 @@
 //
 
 #import "HomeScreenViewController.h"
+// not implemented game kit yet, maydo later, load anyway
 #import "GameKitHelper.h"
 
-//#import "SelectCarViewController.h"
+//#import "SelectCarViewController.h" // for dev testing, not needed?
+
 #import "SKTAudio.h"
 #import "mySingleton.h"
 
@@ -25,7 +27,7 @@
 
 @synthesize distractionSW;
 
-#pragma mark - Run App
+#pragma mark - Run App once loaded in memory
 
 - (void)viewDidLoad {
     mySingleton *singleton = [mySingleton sharedSingleton];
@@ -62,7 +64,7 @@
 
 -(void)checkMusicAndPlay{
     mySingleton *singleton = [mySingleton sharedSingleton];
-    //check what sound if any and play
+    //check what sound if any and play it in background
     NSString *music;
     music=singleton.musicTrack;
     
@@ -82,20 +84,20 @@
     }
 }
 
-#pragma mark - Start the Game
+#pragma mark - Start the Race Game
 
 - (IBAction)carButtonDidTouchUpInside:(id)sender {
     [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
 
     //SelectCarViewController *selectCarVC = [self.storyboard
-        //instantiateViewControllerWithIdentifier:@"SelectCarViewController"];
-
+    //instantiateViewControllerWithIdentifier:@"SelectCarViewController"];
     //[self.navigationController pushViewController:selectCarVC animated:YES];
 }
 
 - (IBAction)gameCenterButtonDidTouchUpInside:(id)sender {
+    // this for the Apple Game Centre stats and sharing drive data only:
     // a 1px x 1px button, hard to hit, but it is there....
-    //do nothing, not enabling game ctr yet . weill need to turn back on in final vc m code- jah
+    //do nothing, not enabling game ctr yet. will need to turn back on in final vc m code- jah
     //[[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
     //[[GameKitHelper sharedGameKitHelper] showGKGameCenterViewController:self];
 }
@@ -144,6 +146,7 @@
 }
 
 #pragma mark - Set the laps, music and distractions
+
 - (IBAction)lap2set:(id)sender {
     mySingleton *singleton = [mySingleton sharedSingleton];
     singleton.laps=@"2";

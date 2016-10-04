@@ -10,14 +10,21 @@
 //  Updating for ios 10.0.2 and new sound features implementation.
 //
 
+// defs
 #import "MyScene.h"
+// control the virtual joystick for car driving
 #import "AnalogControl.h"
+// graphics and sprites for obsticals and graphics displays
 #import "SKTUtils.h"
+// end of game achievement certificates if set in game kit use.  Not used at present in main game
 #import "AchievementsHelper.h"
+// Apple Game Centre, not used yet
 #import "GameKitHelper.h"
+// global vars here
 #import "mySingleton.h"
 
-//mySingleton *singleton = [mySingleton sharedSingleton];
+// how to call the singleton, line below in functions top, then reference var name
+// ... mySingleton *singleton = [mySingleton sharedSingleton];
 
 typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     CRBodyCar = 1 << 0,  // 0000001 = 1
@@ -30,6 +37,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 
 @interface MyScene () <SKPhysicsContactDelegate>
 {
+    // set out all vars and constants for game
     Float32 reactionTime[100];
     Float32 noOfSeconds;
     int     xcounter;
@@ -107,8 +115,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     if (self) {
         _carType = [singleton.carNo integerValue];//carType;
         _levelType = [singleton.trackNo integerValue];//levelType;
-        _numOfCollisionsWithBoxes = 0; //start off with clean sheet
-        
+        _numOfCollisionsWithBoxes = 0; // start off with clean sheet
+        // add no of horns to catch presses vs no made per race and compare later.  Forget timing for now
+        // _numOfHornsPressed = 0;     // count times horn button was pressed, zero
         horns = 0;
         singleton.hornsPlayed = @"0";
         
@@ -375,7 +384,6 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     //NSNumber *laps = level[_levelType - 1][@"laps"];
     //_numOfLaps = [laps integerValue];
     _numOfLaps = [singleton.laps  integerValue];
-    
 }
 
 - (void)p_addCarAtPosition:(CGPoint)startPosition {
@@ -410,13 +418,13 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     for (int x=0; x<101; x+=1) {
         reactionTime[x]=0.0f;
     }
-    slowestLap=-999999.0f;
-    fastestLap=999999.0f;
-    averageLap=999999.0f;
+    slowestLap  = -999999.0f;
+    fastestLap  =  999999.0f;
+    averageLap  =  999999.0f;
     
-    slowestHorn=-999999.0f;
-    fastestHorn=999999.0f;
-    averageHorn=999999.0f;
+    slowestHorn = -999999.0f;
+    fastestHorn =  999999.0f;
+    averageHorn =  999999.0f;
 }
 
 - (void)p_addBoxAt:(CGPoint)point {
@@ -465,7 +473,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     pause.physicsBody.categoryBitMask = CRBodyPause;
     
     // Simulate friction and prevent the boxes from continuously sliding around
-    pause.physicsBody.linearDamping = 1.0f;//1
+    pause.physicsBody.linearDamping  = 1.0f;//1
     pause.physicsBody.angularDamping = 1.0f;//1
     //crate.physicsBody.mass=1000; //added but not needed
     //crate.physicsBody.friction = 1000; //added but not needed
@@ -527,7 +535,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     trk = [singleton.trackNo integerValue];
     switch (trk) {
         case 1:
-            //track 1, no hazards, just walls and the pause buttun under the real pause button to avoid hiding the car
+            //track 1, no hazards, just walls and the pause button under the real pause button to avoid hiding the car
             [self p_addPauseAt:CGPointMake(track.position.x + 230, track.position.y + 145 )];
             [self p_addBoxAt:  CGPointMake(track.position.x -225, track.position.y + 150   )];
             break;
@@ -567,7 +575,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         case 3:
             //track 3, lots hazards and walls
             
-            //needs reformatting
+            //needs reformatting with better layout at some point
             // *******
             // *******
             // *******
@@ -628,21 +636,21 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     }
 }
 
-//******************************************************************
-//***                                                            ***
-//only to position some hazards at a good spot, rem out later    ***
+//********************************************************************
+//***                                                              ***
+//* only to position some hazards at a good spot, rem out later    ***
 //-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 //{   //                                                           ***
     //UITouch *touch = [[event allTouches] anyObject];
     //CGPoint location = [touch locationInView:touch.view];
     //NSLog(@"X:Y = %.0f:%.0f",location.x-240,(location.y-160)*-1);
 //}   //                                                           ***
-//******************************************************************
+//********************************************************************
 
 - (void)p_addGameUIForTrack:(SKSpriteNode *)track {
     // Displays the laps to go as set from LevelDetails.plist
     _laps = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    _laps.text = [NSString stringWithFormat:@"Laps: %li", (long)_numOfLaps];
+    _laps.text = [NSString stringWithFormat:@"Laps to go: %li", (long)_numOfLaps];
     _laps.fontSize = 20.0f;
     _laps.fontColor = [UIColor whiteColor];
     _laps.position = CGPointMake(track.position.x, track.position.y + 20.0f);
@@ -700,7 +708,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             
             CGFloat angle = CGPointToAngle(point);
             angle;
-        });
+        }
+        );
     }
 }
 
@@ -773,13 +782,13 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         
         totalCrashes = (unsigned long)self.numOfCollisionsWithWalls + (unsigned long)self.numOfCollisionsWithBoxes;
         
-        singleton.totalCrashes=[NSString stringWithFormat:@"%li",totalCrashes];
+        singleton.totalCrashes = [NSString stringWithFormat:@"%li",totalCrashes];
         
         averageLap = raceTime / (xcounter-1);
         
         //you finished the race, give the stats
         
-        horns=[singleton.hornsPlayed intValue];
+        horns = [singleton.hornsPlayed intValue];
         //for (int x=1; x<horns+1; x+=1) {
         //    NSLog(@"Start Horn %i : Reaction %f",x,hornReactionTime[x]);
         //}
@@ -794,14 +803,13 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             if (hornReactionTime[x] > 6.00) {
                 hornReactionTime[x] = 6.00;
             }
-            NSLog(@"horn time %d: %f", x, hornReactionTime[x]);
+                NSLog(@"horn time %d: %f", x, hornReactionTime[x]);
         }
         
         for (int x=1; x<horns+1; x+=1) {
             
             temp1 = hornReactionTime[x];
-            
-             NSLog(@"horn time %d: %f",x, temp1);
+                NSLog(@"horn time %d: %f",x, temp1);
             
             if ( slowestHorn < temp1) {
                 slowestHorn = temp1;
@@ -825,16 +833,16 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         
         //************
         for (int x=1; x<horns; x+=1) {
-            singleton.hornTimes[x]=[NSString stringWithFormat:@"%0.2f",hornReactionTime[x]];
-            NSLog(@"final Horn %i : Reaction %f",x,hornReactionTime[x]);
+            singleton.hornTimes[x] = [NSString stringWithFormat:@"%0.2f", hornReactionTime[x]];
+            NSLog(@"final Horn %i : Reaction %f", x, hornReactionTime[x]);
         }
         
         singleton.slowestLap   = [NSString stringWithFormat:@"%0.2f",slowestLap];
         singleton.fastestLap   = [NSString stringWithFormat:@"%0.2f",fastestLap];
         singleton.averageLap   = [NSString stringWithFormat:@"%0.2f",averageLap];
         singleton.totalTime    = [NSString stringWithFormat:@"%0.2f",raceTime];
-        singleton.slowestLapNo =[NSString stringWithFormat:@"%i",slowLap];
-        singleton.fastestLapNo =[NSString stringWithFormat:@"%i",fastLap];
+        singleton.slowestLapNo = [NSString stringWithFormat:@"%i",slowLap];
+        singleton.fastestLapNo = [NSString stringWithFormat:@"%i",fastLap];
         
         //bounds limits
         if (xcounter>100) {
