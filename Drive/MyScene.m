@@ -41,8 +41,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     Float32 reactionTime[100];
     Float32 noOfSeconds;
     int     xcounter;
-    int lapTimez[101];
-    int hornTimes[101];
+    int     lapTimez[101];
+    int     hornTimes[101];
     
     Float32 fastestLap;
     Float32 slowestLap;
@@ -74,23 +74,25 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     Float32 temp4;
     Float32 temp5;
     
-    long xx,yy;
+    long    xx,yy;
 }
 
 @property (nonatomic, assign) CRCarType       carType;
 @property (nonatomic, assign) CRLevelType     levelType;
 @property (nonatomic, assign) NSTimeInterval  timeInSeconds;
-@property (nonatomic, assign) NSInteger numOfLaps;
+@property (nonatomic, assign) NSInteger       numOfLaps;
 @property (nonatomic, strong) SKSpriteNode  * car;
+
 @property (nonatomic, strong) SKLabelNode   * laps,
                                             * time,
                                             * colls,
                                             * walls;
-@property (nonatomic, assign) NSInteger  maxSpeed;
-@property (nonatomic, assign) CGPoint    trackCenter;
-@property (nonatomic, assign) NSTimeInterval previousTimeInterval;
-@property (nonatomic, assign) NSUInteger numOfCollisionsWithBoxes;
-@property (nonatomic, assign) NSUInteger numOfCollisionsWithWalls;
+
+@property (nonatomic, assign) NSInteger       maxSpeed;
+@property (nonatomic, assign) CGPoint         trackCenter;
+@property (nonatomic, assign) NSTimeInterval  previousTimeInterval;
+@property (nonatomic, assign) NSUInteger      numOfCollisionsWithBoxes;
+@property (nonatomic, assign) NSUInteger      numOfCollisionsWithWalls;
 
 // Sound effects
 @property (nonatomic, strong) SKAction * boxSoundAction;
@@ -113,7 +115,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     self = [super initWithSize:size];
     mySingleton *singleton = [mySingleton sharedSingleton];
     if (self) {
-        _carType = [singleton.carNo integerValue];//carType;
+        _carType   = [singleton.carNo   integerValue];//carType;
         _levelType = [singleton.trackNo integerValue];//levelType;
         _numOfCollisionsWithBoxes = 0; // start off with clean sheet
         // add no of horns to catch presses vs no made per race and compare later.  Forget timing for now
@@ -127,8 +129,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         [self p_initializeGame];
         
         //set the start timer for the horns, and put the result in the zero element of the array
-        self.startDateHorn=[NSDate date];
-        singleton.hornsPlayed=[NSString stringWithFormat:@"0"];
+        self.startDateHorn     = [NSDate date];
+        singleton.hornsPlayed  = [NSString stringWithFormat:@"0"];
         hornsPressed = NO;
         singleton.hornsShowing = NO;
         horn_tt = 0;
@@ -171,7 +173,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         left3=(long)_timeInSeconds;
         seconds3 = (left3 % 60);
         minutes3 = (left3 % 3600) / 60;
-        hours3 = (left3 % 86400) / 3600;
+        hours3   = (left3 % 86400) / 3600;
         
         NSString *tem3 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld",hours3,minutes3,seconds3];
         
@@ -318,9 +320,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     
     [self p_loadLevel];
     
-    SKSpriteNode *track = ({
-        NSString *imageName = [NSString stringWithFormat:@"track_%li", _levelType];
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:imageName];
+    SKSpriteNode     *track     = ({
+        NSString     *imageName = [NSString stringWithFormat:@"track_%li", _levelType];
+        SKSpriteNode *sprite    = [SKSpriteNode spriteNodeWithImageNamed:imageName];
         sprite.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
         sprite;
     });
@@ -339,7 +341,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     [self p_addObjectsForTrack:track];
     [self p_addGameUIForTrack: track];
     
-    _maxSpeed = 150 * (1 + _carType);//was125
+    _maxSpeed = 150 * (1 + _carType); //was 125, but a bit too slow
     
     _trackCenter = track.position;
     
@@ -347,22 +349,22 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     _hornSoundAction     = [SKAction playSoundFileNamed: @"horn.wav"     waitForCompletion:NO];
     _lapSoundAction      = [SKAction playSoundFileNamed: @"lap.wav"      waitForCompletion:NO];
     _punctureSoundAction = [SKAction playSoundFileNamed: @"puncture.wav" waitForCompletion:NO];
-    _wallSoundAction     = [SKAction playSoundFileNamed: @"box.wav"      waitForCompletion:NO];//change to new sound some time = wall.wav
+    _wallSoundAction     = [SKAction playSoundFileNamed: @"box.wav"      waitForCompletion:NO]; //change to new sound some time = wall.wav
     
-    //turn on the contact dlegate to test contacts between bodies
+    //turn on the contact dlegate to test contacts between bodies, ie boxes and walls with car
     self.physicsWorld.contactDelegate = self;
     
     xcounter = 1;//start the array for timings of laps
     
-    //add the first drive clock time tio the array
+    //add the first drive clock time to the array
     self.startDate=[NSDate date];
     reactionTime[0] = [self.startDate timeIntervalSinceNow]* -1000;
     
-    //set the horn 'off'
+    //set the horn display 'off' at start
     singleton.hornsShowing = NO;
     
-    xx=track.position.x;
-    yy=track.position.y;
+    xx = track.position.x;
+    yy = track.position.y;
     
 //***************
     //GO !
@@ -371,6 +373,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 }
 
 //now using singleton for laps
+
 - (void)p_loadLevel {
     mySingleton *singleton = [mySingleton sharedSingleton];
     
@@ -378,7 +381,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     //NSArray *level = [NSArray arrayWithContentsOfFile:filePath];
     
     //NSNumber *timeInSeconds = level[_levelType - 1][@"time"];
-    _timeInSeconds = 0;//[timeInSeconds doubleValue];
+    _timeInSeconds = 0.0f; //[timeInSeconds doubleValue];
     
     //now using singleton
     //NSNumber *laps = level[_levelType - 1][@"laps"];
@@ -393,8 +396,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         
         SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:imageName];
         sprite.position = startPosition;
+        
+        // make changes to scale car size
         sprite.xScale = 0.80;
         sprite.yScale = 0.80;
+        
         sprite.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:sprite.frame.size];
         sprite.physicsBody.categoryBitMask    = CRBodyCar;
         sprite.physicsBody.collisionBitMask   = CRBodyBox;
@@ -416,7 +422,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     //start the clock in mS
     //zero
     for (int x=0; x<101; x+=1) {
-        reactionTime[x]=0.0f;
+        reactionTime[x] = 0.0f;
     }
     slowestLap  = -999999.0f;
     fastestLap  =  999999.0f;
@@ -430,8 +436,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 - (void)p_addBoxAt:(CGPoint)point {
     SKSpriteNode *box = [SKSpriteNode spriteNodeWithImageNamed:@"box"];
     box.position = point;
+    
+    // scale the box here
     box.xScale = 0.65;
     box.yScale = 0.65;
+    
     box.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:box.size];
     box.physicsBody.categoryBitMask = CRBodyBox;
     
@@ -447,8 +456,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 
 - (void)p_addCrateAt:(CGPoint)point {
     SKSpriteNode *crate = [SKSpriteNode spriteNodeWithImageNamed:@"crate"];
+    
+    // scale the crate here
     crate.xScale = 0.6;
     crate.yScale = 0.6;
+    
     crate.position = point;
     crate.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:crate.size];
     crate.physicsBody.categoryBitMask = CRBodyCrate;
@@ -465,9 +477,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 - (void)p_addPauseAt:(CGPoint)point {
     //to mask the top right corner from the cars, its an obsticle and stops the car from running under it
     SKSpriteNode *pause = [SKSpriteNode spriteNodeWithImageNamed:@"pause2Gr"];
-    //set a smaller size as original was scaled down
+    
+    // scale the pause here
     pause.xScale = 0.6;
     pause.yScale = 0.6;
+    
     pause.position = point;
     pause.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:pause.size];
     pause.physicsBody.categoryBitMask = CRBodyPause;
@@ -475,8 +489,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     // Simulate friction and prevent the boxes from continuously sliding around
     pause.physicsBody.linearDamping  = 1.0f;//1
     pause.physicsBody.angularDamping = 1.0f;//1
-    //crate.physicsBody.mass=1000; //added but not needed
-    //crate.physicsBody.friction = 1000; //added but not needed
+
     pause.physicsBody.dynamic=NO; //no=does not move or slide
     
     [self addChild:pause];
@@ -485,8 +498,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 - (void)p_addBaleAt:(CGPoint)point {
     SKSpriteNode *bale = [SKSpriteNode spriteNodeWithImageNamed:@"bale"];
     bale.position = point;
+    
+    // scale the bale here
     bale.xScale = 0.6;
     bale.yScale = 0.6;
+    
     bale.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bale.size];
     bale.physicsBody.categoryBitMask = CRBodyBale;
     
@@ -503,8 +519,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 - (void)p_addTyreAt:(CGPoint)point {
     SKSpriteNode *tyre = [SKSpriteNode spriteNodeWithImageNamed:@"tyre"];
     tyre.position = point;
+    
+    // scale the tyre here
     tyre.xScale = 0.6;
     tyre.yScale = 0.6;
+    
     tyre.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:tyre.size];
     tyre.physicsBody.categoryBitMask = CRBodyBox;
     
@@ -519,9 +538,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 }
 
 - (void)p_addObjectsForTrack:(SKSpriteNode *)track {
+    // sets the track up with objects such as boundaries and obsticles
+    
     mySingleton *singleton = [mySingleton sharedSingleton];
     
-    SKNode *innerBoundary = [SKNode node];
+    SKNode *innerBoundary  = [SKNode node];
     innerBoundary.position = track.position;
     [self addChild:innerBoundary];
     
@@ -530,23 +551,28 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     innerBoundary.physicsBody.dynamic = NO;
     
     // put two boxes, crates, tyres, bale, one pause (under pause top rt) on the track
-    //check which track, as track 1=none, 2=some, 3=lots
+    // check which track, as track 1=none, 2=some, 3=lots
     long trk;
     trk = [singleton.trackNo integerValue];
     switch (trk) {
         case 1:
             //track 1, no hazards, just walls and the pause button under the real pause button to avoid hiding the car
             [self p_addPauseAt:CGPointMake(track.position.x + 230, track.position.y + 145 )];
-            [self p_addBoxAt:  CGPointMake(track.position.x -225, track.position.y + 150   )];
+            
+            [self p_addBoxAt:  CGPointMake(track.position.x - 225, track.position.y + 150 )];
+            
             break;
         case 2:
             //track 2, some hazards and walls
             //track x, y = 240:160 for ipad
+            
+            [self p_addPauseAt:CGPointMake(track.position.x + 230.0f, track.position.y + 145 )];
+            
             [self p_addBoxAt:  CGPointMake(track.position.x + 227, track.position.y  - 147 )];
-            [self p_addBoxAt:  CGPointMake(track.position.x + 230, track.position.y  - 23 )];
-            [self p_addBaleAt: CGPointMake(track.position.x + 220, track.position.y  + 5 )];
-            [self p_addBaleAt: CGPointMake(track.position.x + 217, track.position.y  + 31 )];
-            [self p_addTyreAt: CGPointMake(track.position.x + 223, track.position.y  + 61 )];
+            [self p_addBoxAt:  CGPointMake(track.position.x + 230, track.position.y  - 23  )];
+            [self p_addBaleAt: CGPointMake(track.position.x + 220, track.position.y  + 5   )];
+            [self p_addBaleAt: CGPointMake(track.position.x + 217, track.position.y  + 31  )];
+            [self p_addTyreAt: CGPointMake(track.position.x + 223, track.position.y  + 61  )];
             [self p_addBaleAt: CGPointMake(track.position.x + 217, track.position.y  + 110 )];
             [self p_addTyreAt: CGPointMake(track.position.x + 47, track.position.y   + 145 )];
             [self p_addTyreAt: CGPointMake(track.position.x + 18, track.position.y   + 140 )];
@@ -555,22 +581,21 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             [self p_addTyreAt: CGPointMake(track.position.x - 84, track.position.y   + 147 )];
             [self p_addCrateAt:CGPointMake(track.position.x - 157, track.position.y  + 145 )];
             [self p_addBaleAt: CGPointMake(track.position.x - 222, track.position.y  + 143 )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 228, track.position.y  + 48 )];
-            [self p_addBaleAt: CGPointMake(track.position.x - 222, track.position.y  + 24 )];
-            [self p_addCrateAt:CGPointMake(track.position.x - 220, track.position.y  - 3 )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 217, track.position.y  - 21 )];
-            [self p_addCrateAt:CGPointMake(track.position.x - 231, track.position.y  - 56 )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 228, track.position.y  + 48  )];
+            [self p_addBaleAt: CGPointMake(track.position.x - 222, track.position.y  + 24  )];
+            [self p_addCrateAt:CGPointMake(track.position.x - 220, track.position.y  - 3   )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 217, track.position.y  - 21  )];
+            [self p_addCrateAt:CGPointMake(track.position.x - 231, track.position.y  - 56  )];
             [self p_addTyreAt: CGPointMake(track.position.x - 57, track.position.y   - 146 )];
-            //[self p_addBaleAt: CGPointMake(track.position.x - 66, track.position.y   - 140 )];
+          //[self p_addBaleAt: CGPointMake(track.position.x - 66, track.position.y   - 140 )];
             [self p_addBoxAt:  CGPointMake(track.position.x - 29, track.position.y   - 140 )];
             [self p_addTyreAt: CGPointMake(track.position.x + 0, track.position.y    - 143 )];
             [self p_addBaleAt: CGPointMake(track.position.x + 35, track.position.y   - 143 )];
             [self p_addCrateAt:CGPointMake(track.position.x + 67, track.position.y   - 146 )];
-            [self p_addTyreAt: CGPointMake(track.position.x + 234, track.position.y  - 56 )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 102, track.position.y  - 5 )];
-            [self p_addTyreAt: CGPointMake(track.position.x + 7, track.position.y    + 71 )];
+            [self p_addTyreAt: CGPointMake(track.position.x + 234, track.position.y  - 56  )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 102, track.position.y  - 5   )];
+            [self p_addTyreAt: CGPointMake(track.position.x + 7, track.position.y    + 71  )];
             
-            [self p_addPauseAt:CGPointMake(track.position.x + 230.0f, track.position.y + 145 )];
             break;
         case 3:
             //track 3, lots hazards and walls
@@ -580,65 +605,66 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             // *******
             // *******
             // *******
+            [self p_addPauseAt:CGPointMake(track.position.x + 230.0f, track.position.y + 145 )];
             
             [self p_addBoxAt:  CGPointMake(track.position.x - 225, track.position.y  + 151 )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 42, track.position.y   + 148 )];
-            [self p_addBoxAt:  CGPointMake(track.position.x - 11, track.position.y   + 148 )];
-            [self p_addTyreAt: CGPointMake(track.position.x + 40, track.position.y   + 148 )];
-            [self p_addBoxAt:  CGPointMake(track.position.x + 4, track.position.y    + 129 )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 28, track.position.y   + 131 )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 84, track.position.y   + 84 )];
-            [self p_addBoxAt:  CGPointMake(track.position.x - 224, track.position.y  - 58 )];
-            [self p_addCrateAt:CGPointMake(track.position.x - 230, track.position.y  + 18 )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 195, track.position.y  + 14 )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 190, track.position.y  - 8 )];
-            [self p_addBaleAt: CGPointMake(track.position.x - 207, track.position.y  - 32 )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 02, track.position.y   - 41 )];
-            [self p_addBaleAt: CGPointMake(track.position.x - 94, track.position.y   - 64 )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 54, track.position.y   - 76 )];
-            [self p_addCrateAt:CGPointMake(track.position.x - 76, track.position.y   - 86 )];
-            [self p_addBoxAt:  CGPointMake(track.position.x - 102, track.position.y  - 87 )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 115, track.position.y  - 92 )];
-            [self p_addCrateAt:CGPointMake(track.position.x - 134, track.position.y  - 84 )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 122, track.position.y  - 63 )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 42,  track.position.y  + 148 )];
+            [self p_addBoxAt:  CGPointMake(track.position.x - 11,  track.position.y  + 148 )];
+            [self p_addTyreAt: CGPointMake(track.position.x + 40,  track.position.y  + 148 )];
+            [self p_addBoxAt:  CGPointMake(track.position.x + 4,   track.position.y  + 129 )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 28,  track.position.y  + 131 )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 84,  track.position.y  + 84  )];
+            [self p_addBoxAt:  CGPointMake(track.position.x - 224, track.position.y  - 58  )];
+            [self p_addCrateAt:CGPointMake(track.position.x - 230, track.position.y  + 18  )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 195, track.position.y  + 14  )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 190, track.position.y  - 8   )];
+            [self p_addBaleAt: CGPointMake(track.position.x - 207, track.position.y  - 32  )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 02,  track.position.y  - 41  )];
+            [self p_addBaleAt: CGPointMake(track.position.x - 94,  track.position.y  - 64  )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 54,  track.position.y  - 76  )];
+            [self p_addCrateAt:CGPointMake(track.position.x - 76,  track.position.y  - 86  )];
+            [self p_addBoxAt:  CGPointMake(track.position.x - 102, track.position.y  - 87  )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 115, track.position.y  - 92  )];
+            [self p_addCrateAt:CGPointMake(track.position.x - 134, track.position.y  - 84  )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 122, track.position.y  - 63  )];
             [self p_addTyreAt: CGPointMake(track.position.x - 222, track.position.y  - 148 )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 56, track.position.y   - 154 )];
-            [self p_addTyreAt: CGPointMake(track.position.x - 31, track.position.y   - 140 )];
-            [self p_addCrateAt:CGPointMake(track.position.x - 1, track.position.y    - 135 )];
-            [self p_addTyreAt: CGPointMake(track.position.x + 36, track.position.y   - 137 )];
-            [self p_addBoxAt:  CGPointMake(track.position.x + 55, track.position.y   - 153 )];
-            [self p_addTyreAt: CGPointMake(track.position.x + 65, track.position.y   - 73 )];
-            [self p_addTyreAt: CGPointMake(track.position.x + 85, track.position.y   - 77 )];
-            [self p_addBaleAt: CGPointMake(track.position.x + 110, track.position.y  - 91 )];
-            [self p_addTyreAt: CGPointMake(track.position.x + 111, track.position.y  - 64 )];
-            [self p_addTyreAt: CGPointMake(track.position.x + 115, track.position.y  - 31 )];
-            [self p_addCrateAt:CGPointMake(track.position.x + 136, track.position.y  - 8 )];
-            [self p_addBoxAt:  CGPointMake(track.position.x + 109, track.position.y  + 4 )];
-            [self p_addTyreAt: CGPointMake(track.position.x + 123, track.position.y  + 30 )];
-            [self p_addBaleAt: CGPointMake(track.position.x + 101, track.position.y  + 50 )];
-            [self p_addBoxAt:  CGPointMake(track.position.x + 126, track.position.y  + 55 )];
-            [self p_addTyreAt: CGPointMake(track.position.x + 116, track.position.y  + 76 )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 56,  track.position.y  - 154 )];
+            [self p_addTyreAt: CGPointMake(track.position.x - 31,  track.position.y  - 140 )];
+            [self p_addCrateAt:CGPointMake(track.position.x - 1,   track.position.y  - 135 )];
+            [self p_addTyreAt: CGPointMake(track.position.x + 36,  track.position.y  - 137 )];
+            [self p_addBoxAt:  CGPointMake(track.position.x + 55,  track.position.y  - 153 )];
+            [self p_addTyreAt: CGPointMake(track.position.x + 65,  track.position.y  - 73  )];
+            [self p_addTyreAt: CGPointMake(track.position.x + 85,  track.position.y  - 77  )];
+            [self p_addBaleAt: CGPointMake(track.position.x + 110, track.position.y  - 91  )];
+            [self p_addTyreAt: CGPointMake(track.position.x + 111, track.position.y  - 64  )];
+            [self p_addTyreAt: CGPointMake(track.position.x + 115, track.position.y  - 31  )];
+            [self p_addCrateAt:CGPointMake(track.position.x + 136, track.position.y  - 8   )];
+            [self p_addBoxAt:  CGPointMake(track.position.x + 109, track.position.y  + 4   )];
+            [self p_addTyreAt: CGPointMake(track.position.x + 123, track.position.y  + 30  )];
+            [self p_addBaleAt: CGPointMake(track.position.x + 101, track.position.y  + 50  )];
+            [self p_addBoxAt:  CGPointMake(track.position.x + 126, track.position.y  + 55  )];
+            [self p_addTyreAt: CGPointMake(track.position.x + 116, track.position.y  + 76  )];
             [self p_addTyreAt: CGPointMake(track.position.x + 231, track.position.y  + 142 )];
-            [self p_addTyreAt: CGPointMake(track.position.x + 212, track.position.y  + 87 )];
-            [self p_addBaleAt: CGPointMake(track.position.x + 235, track.position.y  + 94 )];
-            [self p_addCrateAt:CGPointMake(track.position.x + 223, track.position.y  + 72 )];
-            [self p_addBoxAt:  CGPointMake(track.position.x + 230, track.position.y  - 8 )];
-            [self p_addTyreAt: CGPointMake(track.position.x + 234, track.position.y  - 30 )];
-            [self p_addTyreAt: CGPointMake(track.position.x + 213, track.position.y  - 30 )];
+            [self p_addTyreAt: CGPointMake(track.position.x + 212, track.position.y  + 87  )];
+            [self p_addBaleAt: CGPointMake(track.position.x + 235, track.position.y  + 94  )];
+            [self p_addCrateAt:CGPointMake(track.position.x + 223, track.position.y  + 72  )];
+            [self p_addBoxAt:  CGPointMake(track.position.x + 230, track.position.y  - 8   )];
+            [self p_addTyreAt: CGPointMake(track.position.x + 234, track.position.y  - 30  )];
+            [self p_addTyreAt: CGPointMake(track.position.x + 213, track.position.y  - 30  )];
             [self p_addBoxAt:  CGPointMake(track.position.x + 222, track.position.y  - 102 )];
             [self p_addCrateAt:CGPointMake(track.position.x + 166, track.position.y  - 141 )];
             [self p_addBaleAt: CGPointMake(track.position.x + 135, track.position.y  - 157 )];
-            [self p_addPauseAt:CGPointMake(track.position.x + 230.0f, track.position.y + 145 )];
+            
             break;
         default:
-            //not used
+            //not used, no other tracks
             break;
     }
 }
 
 //********************************************************************
 //***                                                              ***
-//* only to position some hazards at a good spot, rem out later    ***
+//*** only to position some hazards at a good spot, rem out later  ***
 //-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 //{   //                                                           ***
     //UITouch *touch = [[event allTouches] anyObject];
@@ -651,44 +677,46 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     // Displays the laps to go as set from LevelDetails.plist
     _laps = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
     _laps.text = [NSString stringWithFormat:@"Laps to go: %li", (long)_numOfLaps];
-    _laps.fontSize = 20.0f;
+    _laps.fontSize = 19.0f; //was 20.0f
     _laps.fontColor = [UIColor whiteColor];
-    _laps.position = CGPointMake(track.position.x, track.position.y + 20.0f);
+    _laps.position = CGPointMake(track.position.x, track.position.y + 19.0f); // was 20.0f
     [self addChild:_laps];
     
     // Shows the time left to finish the laps remaining
     
-    //do some conversion for race
-    long hours,  minutes, left;
-    long seconds;
-    left=(long)_timeInSeconds;
+    // do some conversion for race
+    long hours,  minutes, seconds, left;
+    
+    left    = (long)_timeInSeconds;
     seconds = (left % 60);
     minutes = (left % 3600) / 60;
-    hours = (left % 86400) / 3600;
+    hours   = (left % 86400) / 3600;
     
     NSString *tem4 = [NSString stringWithFormat:@"%li:%li:%li",hours,minutes,seconds];
     
-    _time = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    _time.text = [NSString stringWithFormat:@"Time: %@", tem4];
-    _time.fontSize = 20.0f;
+    _time           = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+    _time.text      = [NSString stringWithFormat:@"Time: %@", tem4];
+    _time.fontSize  = 20.0f;
     _time.fontColor = [UIColor whiteColor];
-    _time.position = CGPointMake(track.position.x, track.position.y - 10.0f);
+    _time.position  = CGPointMake(track.position.x, track.position.y - 10.0f);
     [self addChild:_time];
     
     // box collisions
     _colls = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    _colls.text = [NSString stringWithFormat:@"Hazard Crashes: %li", (long)_numOfCollisionsWithBoxes];
-    _colls.fontSize = 15.0f;
-    _colls.fontColor = [UIColor whiteColor];
-    _colls.position = CGPointMake(track.position.x, track.position.y - 30.0f);
+    _colls.text      = [NSString stringWithFormat:@"Hazard Crashes: %li", (long)_numOfCollisionsWithBoxes];
+    _colls.fontSize  = 15.0f;
+    // _colls.fontColor = [UIColor whiteColor];
+    _colls.fontColor = [UIColor yellowColor];
+    _colls.position  = CGPointMake(track.position.x, track.position.y - 30.0f);
     [self addChild:_colls];
     
     // box collisions
-    _walls = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    _walls.text = [NSString stringWithFormat:@"Wall Crashes: %li", (long)_numOfCollisionsWithBoxes];
-    _walls.fontSize = 15.0f;
-    _walls.fontColor = [UIColor whiteColor];
-    _walls.position = CGPointMake(track.position.x, track.position.y - 45.0f);
+    _walls           = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+    _walls.text      = [NSString stringWithFormat:@"Wall Crashes: %li", (long)_numOfCollisionsWithBoxes];
+    _walls.fontSize  = 15.0f;
+    // _walls.fontColor = [UIColor whiteColor];
+    _walls.fontColor = [UIColor yellowColor];
+    _walls.position  = CGPointMake(track.position.x, track.position.y - 45.0f);
     [self addChild:_walls];
 }
 
@@ -810,7 +838,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             temp1 = hornReactionTime[x];
                 NSLog(@"horn time %d: %f",x, temp1);
             
-            if ( slowestHorn < temp1) {
+            if (slowestHorn < temp1) {
                 slowestHorn = temp1;
                 NSLog(@"slow horn time %d: %f", x, temp1);
             }
@@ -844,15 +872,15 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         singleton.fastestLapNo = [NSString stringWithFormat:@"%i",fastLap];
         
         //bounds limits
-        if (xcounter>100) {
-            xcounter=100;
+        if (xcounter > 100) {
+            xcounter = 100;
         }
-        if (xcounter<0) {
-            xcounter=0;
+        if (xcounter < 0) {
+            xcounter = 0;
         }
         
         for (int x=0; x<xcounter; x+=1) {
-            singleton.lapTimes[x]=[NSString stringWithFormat:@"%x+1, %f, %@, %@", x, reactionTime[x],singleton.wallLaps[x],singleton.hazLaps[x]];
+            singleton.lapTimes[x] = [NSString stringWithFormat:@"%x+1, %f, %@, %@", x, reactionTime[x],singleton.wallLaps[x],singleton.hazLaps[x]];
             
             NSLog(@"lap : %@", singleton.lapTimes[x]);
         }
@@ -889,20 +917,20 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         // set for colls
         self.colls.text = [NSString stringWithFormat:@"Hazard Crashes: %li", (long)self.numOfCollisionsWithBoxes];
         
-        // OLD WAY FOR SOUND, BUT FIXED LOUD VOLUME // [self runAction:self.boxSoundAction];
+        // OLD WAY FOR SOUND, BUT 'preset' LOUD VOLUME // [self runAction:self.boxSoundAction];
         //
         // to change volume level
-        NSError *error;
-        NSURL *soundURL = [[NSBundle mainBundle] URLForResource:@"box" withExtension:@"wav"];
+        NSError * error;
+        NSURL   * soundURL = [[NSBundle mainBundle] URLForResource:@"box" withExtension:@"wav"];
         AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
         [player setVolume:singleton.ambientVolume];
         [player prepareToPlay];
         
-        SKAction*   playAction = [SKAction runBlock:^{
+        SKAction * playAction = [SKAction runBlock:^{
             [player play];
         }];
-        SKAction *waitAction = [SKAction waitForDuration:player.duration+1];
-        SKAction *sequence = [SKAction sequence:@[playAction, waitAction]];
+        SKAction * waitAction = [SKAction waitForDuration:player.duration+1];
+        SKAction * sequence = [SKAction sequence:@[playAction, waitAction]];
         
         [self runAction:sequence];
     }else{
@@ -917,7 +945,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         //
         // to change volume level
         NSError * error;
-        NSURL * soundURL = [[NSBundle mainBundle] URLForResource:@"box" withExtension:@"wav"];
+        NSURL   * soundURL = [[NSBundle mainBundle] URLForResource:@"box" withExtension:@"wav"];
         AVAudioPlayer * player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
         [player setVolume:singleton.ambientVolume];
         [player prepareToPlay];

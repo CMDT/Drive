@@ -26,10 +26,10 @@
 {
 }
 
-@property (nonatomic, strong) SKView          * skView;
-@property (nonatomic, strong) AnalogControl   * analogControl;
-@property (nonatomic, strong) MyScene         * scene;
-@property (weak, nonatomic) IBOutlet UIButton * hornBtn;
+@property (nonatomic, strong) SKView            * skView;
+@property (nonatomic, strong) AnalogControl     * analogControl;
+@property (nonatomic, strong) MyScene           * scene;
+@property (weak, nonatomic  ) IBOutlet UIButton * hornBtn;
 
 @end
 
@@ -69,7 +69,7 @@
     //version, set anyway *****************************************
     //*************************************************************
     
-    version0 =  @"DRIVE Version 2.4.4 - 1.10.16";     // version   *** keep short
+    version0 =  @"DRIVE Version 2.4.5 - 6.10.16";     // version   *** keep short
     version1 =  @"MMU (C) 2016";                // copyright *** limited line space
     version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
     version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen
@@ -122,6 +122,7 @@
 }
 
 - (void)setDateNow:(id)sender{
+    // for date format
     mySingleton *singleton = [mySingleton sharedSingleton];
     NSDate *today = [NSDate date];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
@@ -131,6 +132,7 @@
 }
 
 - (void)setTimeNow:(id)sender{
+    // for time format
     mySingleton *singleton = [mySingleton sharedSingleton];
     NSDate *currentTime = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -140,6 +142,7 @@
 }
 
 - (void)registerDefaultsFromSettingsBundle {
+    // read the iPad/iPhone settings from file
     NSString *settingsBundle = [[NSBundle mainBundle] pathForResource:@"Settings" ofType:@"bundle"];
     if(!settingsBundle) {
         NSLog(@"Could not find Settings.bundle");
@@ -167,7 +170,8 @@
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
-mySingleton *singleton = [mySingleton sharedSingleton];
+    
+    mySingleton *singleton = [mySingleton sharedSingleton];
     
     _carType = [singleton.carNo integerValue];//carType;
     _levelType = [singleton.trackNo integerValue];//levelType;
@@ -196,6 +200,7 @@ mySingleton *singleton = [mySingleton sharedSingleton];
             AnalogControl *analogControl = [[AnalogControl alloc] initWithFrame:frame];
             analogControl;
         });
+        
         [self.view addSubview:self.analogControl];
 
         [self.analogControl addObserver:scene forKeyPath:@"relativePosition"
@@ -289,7 +294,7 @@ mySingleton *singleton = [mySingleton sharedSingleton];
 
 - (void)p_showInGameMenu {
     UIAlertView *alert =
-    [[UIAlertView alloc] initWithTitle:@"MMU ESS Drive Menu"
+    [[UIAlertView alloc] initWithTitle:@"MMU ESS Drive App Menu"
                                message:@"You have Paused the Race.... \n\nWhat would you like to do?"
                               delegate:self
                      cancelButtonTitle:@"Resume Race"

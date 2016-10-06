@@ -262,6 +262,7 @@
     self.fxmedbtn.alpha=1;
     self.tickmed.hidden=NO;
 }
+
 - (IBAction)fxNorSet:(id)sender {
     mySingleton *singleton = [mySingleton sharedSingleton];
     singleton.ambientVolume=0.75;

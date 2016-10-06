@@ -11,7 +11,6 @@
 #import "SelectCarViewController.h"
 #import "SKTAudio.h"
 #import "mySingleton.h"
-//mySingleton *singleton = [mySingleton sharedSingleton];
 
 @interface SelectCarViewController ()
 
@@ -53,9 +52,11 @@
 
     //[self.navigationController pushViewController:levelVC animated:YES];
 }
+
 - (IBAction)infoButtonDidTouchUpInside:(id)sender {
     [self btnPressSound];
 }
+
 - (IBAction)backButtonDidTouchUpInside:(id)sender {
     [self btnPressSound];
     //[self.navigationController popViewControllerAnimated:YES];

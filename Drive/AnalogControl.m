@@ -31,14 +31,15 @@
         self.userInteractionEnabled = YES;
 
         UIImageView *baseImageView = [[UIImageView alloc] initWithFrame:self.bounds];
-        baseImageView.contentMode = UIViewContentModeScaleAspectFit;
-        baseImageView.image = [UIImage imageNamed:@"base"];
+        baseImageView.contentMode  = UIViewContentModeScaleAspectFit;
+        baseImageView.image        = [UIImage imageNamed:@"base"];
         [self addSubview:baseImageView];
 
         _baseCenter = CGPointMake(CGRectGetWidth(frame) / 2, CGRectGetHeight(frame) / 2);
 
         _knobImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"knob"]];
         _knobImageView.center = _baseCenter;
+        
         [self addSubview:_knobImageView];
 
         NSAssert(CGRectContainsRect(self.bounds, _knobImageView.bounds),

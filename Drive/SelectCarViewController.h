@@ -13,26 +13,14 @@
 @interface SelectCarViewController : UIViewController  <UITextFieldDelegate>
 
 // definitions follow
-- (void)viewDidLoad;
-- (void)viewDidAppear:(BOOL)animated;
-- (void)didReceiveMemoryWarning;
-- (BOOL)prefersStatusBarHidden;
-- (IBAction)carButtonDidTouchUpInside:(UIButton *)sender;
+- (void)    viewDidLoad;
+- (void)    viewDidAppear:(BOOL)animated;
+- (void)    didReceiveMemoryWarning;
+- (BOOL)    prefersStatusBarHidden;
+- (IBAction)carButtonDidTouchUpInside: (UIButton *)sender;
 - (IBAction)infoButtonDidTouchUpInside:(id)sender;
 - (IBAction)backButtonDidTouchUpInside:(id)sender;
 
 - (void)btnPressSound;
-
-
-
-
-
-
-
-
-
-
-
-
 
 @end

@@ -63,18 +63,18 @@
 @property (nonatomic, strong) IBOutlet UILabel * totalHorn;
 @property (nonatomic, strong) IBOutlet UILabel * distractionOn;
 @property (nonatomic, strong) IBOutlet UILabel * masterScore;
-@property (weak, nonatomic) IBOutlet UILabel *racehms;
-@property (weak, nonatomic) IBOutlet UILabel *hornhms;
-@property (weak, nonatomic) IBOutlet UILabel *scorehms;
+@property (weak, nonatomic)   IBOutlet UILabel * racehms;
+@property (weak, nonatomic)   IBOutlet UILabel * hornhms;
+@property (weak, nonatomic)   IBOutlet UILabel * scorehms;
 //for horns line of data
-@property (weak, nonatomic) IBOutlet UILabel *h1;
-@property (weak, nonatomic) IBOutlet UILabel *h2;
-@property (weak, nonatomic) IBOutlet UILabel *h3;
-@property (weak, nonatomic) IBOutlet UILabel *h4;
-@property (weak, nonatomic) IBOutlet UILabel *h5;
-@property (weak, nonatomic) IBOutlet UILabel *h6;
-@property (weak, nonatomic) IBOutlet UILabel *h7;
-@property (weak, nonatomic) IBOutlet UILabel *h8;
+@property (weak, nonatomic)   IBOutlet UILabel * h1;
+@property (weak, nonatomic)   IBOutlet UILabel * h2;
+@property (weak, nonatomic)   IBOutlet UILabel * h3;
+@property (weak, nonatomic)   IBOutlet UILabel * h4;
+@property (weak, nonatomic)   IBOutlet UILabel * h5;
+@property (weak, nonatomic)   IBOutlet UILabel * h6;
+@property (weak, nonatomic)   IBOutlet UILabel * h7;
+@property (weak, nonatomic)   IBOutlet UILabel * h8;
 
 @property (nonatomic, strong) IBOutlet UIButton * emailbtn;
 
