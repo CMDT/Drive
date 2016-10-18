@@ -255,7 +255,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     if ([singleton.distractionOn isEqual:@"ON"]) {
         
         tt = self.timeInSeconds;
-        //NSLog(@"ttmod7=%i",((tt % 7) == 6));
+        NSLog(@"ttmod7=%i",((tt % 7) == 6));
         
         if (((tt % 7) == 6)) {
             //beep the horn every 7 seconds
@@ -280,12 +280,13 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         temp1 = (Float32)[self.startDateHorn timeIntervalSinceNow];
         
         //get the current wait time so far
-        temp3 = temp - temp1;
+        //temp3 = temp - temp1;
+        temp3 = temp1;
         
         //trigger a press if too long wait for horn button
-        if (temp3 > 6.00) {
-            singleton.hornsShowing = YES;
-        }
+        //if (temp3 > 6.00) {
+        //    singleton.hornsShowing = YES;
+        //}
         //look for the horn button being pressed
         if (singleton.hornsShowing == YES) {
 
@@ -297,9 +298,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             horn_tt = 0;
         }
         
-        if (hornReactionTime[horns] > 6.00 ) {
-            hornReactionTime[horns] = 99.00; // set silly value to know that horn was not pressed in time for next horn sound
-            }
+        //if (hornReactionTime[horns] > 6.00 ) {
+            //hornReactionTime[horns] = 99.00; // set silly value to know that horn was not pressed in time for next horn sound
+            //}
     }
     
     if (self.timeInSeconds < 0 || self.numOfLaps == 0) {
@@ -821,10 +822,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         //}
         
         //find the time by difference
-        //for (int x=1; x<horns; x+=1) {
-        //    hornReactionTime[x]=(hornReactionTime[x]-hornReactionTime[x-1]);
-        //    //NSLog(@"lap time %d: %f", x, hornReactionTime[x]);
-        //}
+        //rem out this block later, just for debug
+        for (int x=1; x<horns; x+=1) {
+            hornReactionTime[x]=(hornReactionTime[x]-hornReactionTime[x-1]);
+            //NSLog(@"lap time %d: %f", x, hornReactionTime[x]);
+        }
         for (int x=1; x<horns+1; x+=1) {
             //hornReactionTime[x]=(hornReactionTime[x]);//  /1000;
             if (hornReactionTime[x] > 6.00) {
@@ -898,7 +900,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     }
 }
 
-#pragma mark - Contact Delegate
+#pragma mark - Contact Delegate for collisions between car and objects
 
 - (void)didBeginContact:(SKPhysicsContact *)contact {
     if (xcounter > 100) {
@@ -958,7 +960,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         
         [self runAction:sequence];
     }
-    //NSLog(@"tempHaz=%i, tempWall=%i",tempHaz,tempWall);
+    NSLog(@"tempHaz=%i, tempWall=%i",tempHaz,tempWall);
 }
 
 @end

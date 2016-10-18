@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
 //  Updating for ios 10.0.2 and new sound features implementation.
 //
-//
 
 #import <Foundation/Foundation.h>
 
@@ -19,6 +18,7 @@
     // arrays for detailed timings for each lap in data
     NSMutableArray * lapTimes;
     NSMutableArray * hornTimes;
+    NSMutableArray * hornTimes2;
     NSMutableArray * wallLaps;
     NSMutableArray * hazLaps;
     NSMutableArray * hornLaps;
@@ -53,7 +53,7 @@
     Float64    wallCrashMult;
     Float64    hazCrashMult;
     Float64    hornsMulti;
-    float ambientVolume;
+    float      ambientVolume;
 }
 @property (nonatomic) BOOL hornsShowing;
 @property (nonatomic) int  counter;
@@ -62,6 +62,7 @@
 // arrays for detailed timings for each lap in data
 @property (nonatomic, retain)NSMutableArray * lapTimes;
 @property (nonatomic, retain)NSMutableArray * hornTimes;
+@property (nonatomic, retain)NSMutableArray * hornTimes2;
 @property (nonatomic, retain)NSMutableArray * wallLaps;
 @property (nonatomic, retain)NSMutableArray * hazLaps;
 @property (nonatomic, retain)NSMutableArray * hornLaps;
@@ -93,10 +94,10 @@
 @property (nonatomic, retain) NSString * totalHorn;
 @property (nonatomic, retain) NSString * distractionOn;
 @property (nonatomic, retain) NSString * masterScore;
-@property (nonatomic) Float64 wallCrashMult;
-@property (nonatomic) Float64 hazCrashMult;
-@property (nonatomic) Float64 hornsMulti;
-@property (nonatomic) float   ambientVolume;
+@property (nonatomic)          Float64   wallCrashMult;
+@property (nonatomic)          Float64   hazCrashMult;
+@property (nonatomic)          Float64   hornsMulti;
+@property (nonatomic)          float     ambientVolume;
 
 //set up singleton shared
 

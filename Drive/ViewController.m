@@ -69,7 +69,7 @@
     //version, set anyway *****************************************
     //*************************************************************
     
-    version0 =  @"DRIVE Version 2.4.5 - 6.10.16";     // version   *** keep short
+    version0 =  @"DRIVE Version 2.4.6 - 18.10.16";     // version   *** keep short
     version1 =  @"MMU (C) 2016";                // copyright *** limited line space
     version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
     version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen
@@ -256,6 +256,7 @@
     //the horn button was pressed
     mySingleton *singleton = [mySingleton sharedSingleton];
     singleton.hornsShowing = YES;
+    
 }
 
 #pragma mark - Game Over
@@ -297,7 +298,7 @@
     [[UIAlertView alloc] initWithTitle:@"MMU ESS Drive App Menu"
                                message:@"You have Paused the Race.... \n\nWhat would you like to do?"
                               delegate:self
-                     cancelButtonTitle:@"Resume Race"
+                     cancelButtonTitle:@"Resume Race... timer is still running..."
                      otherButtonTitles:@"Start A New Race or Quit", nil];
     [alert show];
 
