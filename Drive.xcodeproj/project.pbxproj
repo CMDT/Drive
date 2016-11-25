@@ -149,6 +149,7 @@
 		E171F3121C1F124600E3DB0D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E171F3111C1F124600E3DB0D /* Settings.bundle */; };
 		E171F3151C1F137700E3DB0D /* mySingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = E171F3141C1F137700E3DB0D /* mySingleton.m */; };
 		E171F3171C1F1F5700E3DB0D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E171F3161C1F1F5700E3DB0D /* MessageUI.framework */; };
+		E1ACC8081DE740D000504C0C /* drive512.png in Resources */ = {isa = PBXBuildFile; fileRef = E1ACC8071DE740D000504C0C /* drive512.png */; };
 		E1CBACD71C22BE9E001CC466 /* SelectDriverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CBACD61C22BE9E001CC466 /* SelectDriverViewController.m */; };
 		E1CBACFC1C22D7DA001CC466 /* pause2Gr.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACD81C22D7DA001CC466 /* pause2Gr.png */; };
 		E1CBACFD1C22D7DA001CC466 /* startx.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACD91C22D7DA001CC466 /* startx.png */; };
@@ -371,6 +372,7 @@
 		E171F3131C1F137700E3DB0D /* mySingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mySingleton.h; path = GameKit/mySingleton.h; sourceTree = "<group>"; };
 		E171F3141C1F137700E3DB0D /* mySingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mySingleton.m; path = GameKit/mySingleton.m; sourceTree = "<group>"; };
 		E171F3161C1F1F5700E3DB0D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E1ACC8071DE740D000504C0C /* drive512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drive512.png; sourceTree = "<group>"; };
 		E1CBACD51C22BE9E001CC466 /* SelectDriverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectDriverViewController.h; sourceTree = "<group>"; };
 		E1CBACD61C22BE9E001CC466 /* SelectDriverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectDriverViewController.m; sourceTree = "<group>"; };
 		E1CBACD81C22D7DA001CC466 /* pause2Gr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause2Gr.png; sourceTree = "<group>"; };
@@ -594,22 +596,10 @@
 		475E5E5E195A5A610063FD68 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				E1F177241DA3EC3D0016DB81 /* norm.png */,
-				E1F177251DA3EC3D0016DB81 /* norm@2x.png */,
-				E11F947C1C625B8900712F9B /* high.png */,
-				E11F947D1C625B8900712F9B /* high@2x.png */,
-				E11F947E1C625B8900712F9B /* low.png */,
-				E11F947F1C625B8900712F9B /* low@2x.png */,
-				E11F94801C625B8900712F9B /* med.png */,
-				E11F94811C625B8900712F9B /* med@2x.png */,
-				E11F94821C625B8900712F9B /* off.png */,
-				E11F94831C625B8900712F9B /* off@x2.png */,
-				911EF1C51C24C81F00EAF391 /* carhorn-btn.png */,
-				911EF1C61C24C81F00EAF391 /* carhorn-btn@2x.png */,
+				E1CBACE61C22D7DA001CC466 /* backx.png */,
 				E1CBACF61C22D7DA001CC466 /* backx@2x.png */,
 				E1CBACED1C22D7DA001CC466 /* backxGr@2x.png */,
 				E1CBACE51C22D7DA001CC466 /* backxGrsm.png */,
-				E1CBACE61C22D7DA001CC466 /* backx.png */,
 				E171F2821C1EDBB300E3DB0D /* base.png */,
 				E171F2831C1EDBB300E3DB0D /* base@2x.png */,
 				E171F2FF1C1EF20100E3DB0D /* btn-back2.png */,
@@ -646,39 +636,52 @@
 				E171F2931C1EDBB300E3DB0D /* btn-select-track@2x.png */,
 				E171F2941C1EDBB300E3DB0D /* btn-slow.png */,
 				E171F2951C1EDBB300E3DB0D /* btn-slow@2x.png */,
-				E1CBACF11C22D7DA001CC466 /* carx@2x.png */,
+				911EF1C51C24C81F00EAF391 /* carhorn-btn.png */,
+				911EF1C61C24C81F00EAF391 /* carhorn-btn@2x.png */,
 				E1CBACE71C22D7DA001CC466 /* carx.png */,
-				E1CBACEF1C22D7DA001CC466 /* driverx@2x.png */,
+				E1CBACF11C22D7DA001CC466 /* carx@2x.png */,
+				E1ACC8071DE740D000504C0C /* drive512.png */,
 				E1CBACE81C22D7DA001CC466 /* driverx.png */,
-				E1CBACF21C22D7DA001CC466 /* easyx@2x.png */,
+				E1CBACEF1C22D7DA001CC466 /* driverx@2x.png */,
 				E1CBACE91C22D7DA001CC466 /* easyx.png */,
-				E1CBACF91C22D7DA001CC466 /* emailGr@2x.png */,
+				E1CBACF21C22D7DA001CC466 /* easyx@2x.png */,
 				E1CBACE01C22D7DA001CC466 /* emailGr.png */,
-				E1CBACFA1C22D7DA001CC466 /* emailOr@2x.png */,
+				E1CBACF91C22D7DA001CC466 /* emailGr@2x.png */,
 				E1CBACE11C22D7DA001CC466 /* emailOr.png */,
-				E1CBACEC1C22D7DA001CC466 /* emailxGr@2x.png */,
+				E1CBACFA1C22D7DA001CC466 /* emailOr@2x.png */,
 				E1CBACE21C22D7DA001CC466 /* emailxGr.png */,
-				E1CBACF71C22D7DA001CC466 /* finishx@2x.png */,
+				E1CBACEC1C22D7DA001CC466 /* emailxGr@2x.png */,
 				E1CBACE31C22D7DA001CC466 /* finishx.png */,
-				E1CBACF31C22D7DA001CC466 /* hardx@2x.png */,
+				E1CBACF71C22D7DA001CC466 /* finishx@2x.png */,
 				E1CBACE41C22D7DA001CC466 /* hardx.png */,
-				E1CBACF81C22D7DA001CC466 /* infoGr@2x.png */,
+				E1CBACF31C22D7DA001CC466 /* hardx@2x.png */,
+				E11F947C1C625B8900712F9B /* high.png */,
+				E11F947D1C625B8900712F9B /* high@2x.png */,
 				E1CBACDB1C22D7DA001CC466 /* infoGr.png */,
-				E1CBACFB1C22D7DA001CC466 /* infoOr@2x.png */,
+				E1CBACF81C22D7DA001CC466 /* infoGr@2x.png */,
 				E1CBACDC1C22D7DA001CC466 /* infoOr.png */,
+				E1CBACFB1C22D7DA001CC466 /* infoOr@2x.png */,
 				E171F2C41C1EDDF600E3DB0D /* knob.png */,
 				E171F2C51C1EDDF600E3DB0D /* knob@2x.png */,
 				E171F2961C1EDBB300E3DB0D /* knob1.png */,
 				E171F2971C1EDBB300E3DB0D /* knob1@2x.png */,
-				E1CBACF41C22D7DA001CC466 /* mediumx@2x.png */,
+				E11F947E1C625B8900712F9B /* low.png */,
+				E11F947F1C625B8900712F9B /* low@2x.png */,
+				E11F94801C625B8900712F9B /* med.png */,
+				E11F94811C625B8900712F9B /* med@2x.png */,
 				E1CBACDD1C22D7DA001CC466 /* mediumx.png */,
+				E1CBACF41C22D7DA001CC466 /* mediumx@2x.png */,
 				E171F2981C1EDBB300E3DB0D /* mmulogoshape.png */,
-				E1CBACEE1C22D7DA001CC466 /* nextxGr@2x.png */,
 				E1CBACDE1C22D7DA001CC466 /* nextxGr.png */,
-				E1CBACEB1C22D7DA001CC466 /* pause1Gr@2x.png */,
+				E1CBACEE1C22D7DA001CC466 /* nextxGr@2x.png */,
+				E1F177241DA3EC3D0016DB81 /* norm.png */,
+				E1F177251DA3EC3D0016DB81 /* norm@2x.png */,
+				E11F94821C625B8900712F9B /* off.png */,
+				E11F94831C625B8900712F9B /* off@x2.png */,
 				E1CBACDF1C22D7DA001CC466 /* pause1Gr.png */,
-				E1CBACEA1C22D7DA001CC466 /* pause2Gr@2x.png */,
+				E1CBACEB1C22D7DA001CC466 /* pause1Gr@2x.png */,
 				E1CBACD81C22D7DA001CC466 /* pause2Gr.png */,
+				E1CBACEA1C22D7DA001CC466 /* pause2Gr@2x.png */,
 				E171F2991C1EDBB300E3DB0D /* racing-flag.jpg */,
 				E171F2D51C1EF19F00E3DB0D /* seg-1.png */,
 				E171F2D61C1EF19F00E3DB0D /* seg-1@2x.png */,
@@ -705,16 +708,16 @@
 				E171F29A1C1EDBB300E3DB0D /* speedo-fast.png */,
 				E171F29B1C1EDBB300E3DB0D /* speedo-med.png */,
 				E171F29C1C1EDBB300E3DB0D /* speedo-slow.png */,
-				E1CBACF51C22D7DA001CC466 /* startx@2x.png */,
 				E1CBACD91C22D7DA001CC466 /* startx.png */,
+				E1CBACF51C22D7DA001CC466 /* startx@2x.png */,
 				E171F29D1C1EDBB300E3DB0D /* steering-wheel-horn.png */,
 				E171F29E1C1EDBB300E3DB0D /* steering-wheel-horn@2x.png */,
 				475E5E79195A5A610063FD68 /* steering-wheel.png */,
 				475E5E7A195A5A610063FD68 /* steering-wheel@2x.png */,
 				917E5A5B1C21DF0A009DF226 /* tick.png */,
 				917E5A5C1C21DF0A009DF226 /* tick@2x.png */,
-				E1CBACF01C22D7DA001CC466 /* trackx@2x.png */,
 				E1CBACDA1C22D7DA001CC466 /* trackx.png */,
+				E1CBACF01C22D7DA001CC466 /* trackx@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -822,7 +825,7 @@
 		47117B2F1959CA1400B20209 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "MMU ESS JAH";
 				TargetAttributes = {
 					47117B361959CA1400B20209 = {
@@ -835,6 +838,8 @@
 						};
 					};
 					47117B5E1959CA1400B20209 = {
+						DevelopmentTeam = 4SPW49WK35;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 47117B361959CA1400B20209;
 					};
 				};
@@ -1008,6 +1013,7 @@
 				E171F2EF1C1EF19F00E3DB0D /* seg-5@2x.png in Resources */,
 				E1CBAD0F1C22D7DA001CC466 /* pause1Gr@2x.png in Resources */,
 				E11F94841C625B8900712F9B /* high.png in Resources */,
+				E1ACC8081DE740D000504C0C /* drive512.png in Resources */,
 				E171F2F91C1EF19F00E3DB0D /* seg-blues.png in Resources */,
 				E1F177201DA3C4DA0016DB81 /* button_press25.wav in Resources */,
 				E11F94861C625B8900712F9B /* low.png in Resources */,
@@ -1163,7 +1169,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -1201,7 +1207,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1223,6 +1229,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1243,6 +1250,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1251,6 +1259,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Drive.app/Drive";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4SPW49WK35;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1274,6 +1284,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Drive.app/Drive";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4SPW49WK35;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

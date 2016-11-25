@@ -3,7 +3,7 @@
 //  DRIVE
 //
 //  Created by Jon Howell on 14/12/2015.
-//  Copyright (c) 2015 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
+//  Copyright (c) 2016 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
 //  Updating for ios 10.0.2 and new sound features implementation.
 //
 
@@ -78,35 +78,35 @@ static mySingleton * sharedSingleton = nil;
 
 - (id) init {
     if(self = [super init]) {
-        lapTimes            = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
-        hornTimes           = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
-        hornTimes2          = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
-        wallLaps            = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
-        hazLaps             = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
-        hornLaps            = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
+        lapTimes               = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
+        hornTimes              = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
+        hornTimes2             = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
+        wallLaps               = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
+        hazLaps                = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
+        hornLaps               = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
         cardReactionTimeResult = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
         
         //populate arrays with zeros at start of race, 100 laps max, do them all
         for (NSInteger i = 0; i < 101; ++i)
         {
-            [lapTimes addObject:@"0"];
-            [hornTimes addObject:@"0"];
+            [lapTimes   addObject:@"0"];
+            [hornTimes  addObject:@"0"];
             [hornTimes2 addObject:@"0"];
-            [wallLaps addObject:@"0"];
-            [hazLaps addObject:@"0"];
-            [hornLaps addObject:@"0"];
+            [wallLaps   addObject:@"0"];
+            [hazLaps    addObject:@"0"];
+            [hornLaps   addObject:@"0"];
             [cardReactionTimeResult addObject:@"0"];
         }
         
         tempEntry           = @"";
         hornsShowing        = NO;
         email               = @"me@mmu.ac.uk";
-        testDate            = @"18/10/2016";
+        testDate            = @"25/11/2016";
         testTime            = @"10:00";
         resultStrings       = @"";
         subjectName         = @"Sub";
         resultStrings       = @"";
-        versionNumber       = @"2.4.6 - 18.10.16";
+        versionNumber       = @"2.5.1 - 24.11.16";
         
         counter             = 0;
         laps                = @"0";

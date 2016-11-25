@@ -55,18 +55,18 @@
     Float64    hornsMulti;
     float      ambientVolume;
 }
-@property (nonatomic) BOOL hornsShowing;
-@property (nonatomic) int  counter;
+@property (nonatomic) BOOL    hornsShowing;
+@property (nonatomic) int     counter;
 @property (nonatomic, retain) NSMutableArray * cardReactionTimeResult;
 
 // arrays for detailed timings for each lap in data
-@property (nonatomic, retain)NSMutableArray * lapTimes;
-@property (nonatomic, retain)NSMutableArray * hornTimes;
-@property (nonatomic, retain)NSMutableArray * hornTimes2;
-@property (nonatomic, retain)NSMutableArray * wallLaps;
-@property (nonatomic, retain)NSMutableArray * hazLaps;
-@property (nonatomic, retain)NSMutableArray * hornLaps;
-@property (nonatomic, retain)NSString       * tempEntry; // for above arrays
+@property (nonatomic, retain) NSMutableArray * lapTimes;
+@property (nonatomic, retain) NSMutableArray * hornTimes;
+@property (nonatomic, retain) NSMutableArray * hornTimes2;
+@property (nonatomic, retain) NSMutableArray * wallLaps;
+@property (nonatomic, retain) NSMutableArray * hazLaps;
+@property (nonatomic, retain) NSMutableArray * hornLaps;
+@property (nonatomic, retain) NSString       * tempEntry; // for above arrays
 
 @property (nonatomic, retain) NSString * email;
 @property (nonatomic, retain) NSString * resultStrings;
