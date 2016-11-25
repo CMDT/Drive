@@ -168,13 +168,15 @@
     [self.view sendSubviewToBack:self.skView];
 }
 
+#pragma mark - Lay out the screens 
+
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
     mySingleton *singleton = [mySingleton sharedSingleton];
     
-    _carType = [singleton.carNo integerValue];//carType;
-    _levelType = [singleton.trackNo integerValue];//levelType;
+    _carType = [singleton.carNo integerValue];       //carType;
+    _levelType = [singleton.trackNo integerValue];   //levelType;
     
     if (!self.skView) {
         self.skView = [[SKView alloc] initWithFrame:self.view.bounds];
@@ -277,6 +279,8 @@
     }
 }
 
+#pragma mark - Stats Display Screen
+
 - (void)p_goBackStats:(UIAlertView *)alert {
     [alert dismissWithClickedButtonIndex:0 animated: YES];
     
@@ -292,6 +296,8 @@
     //re-route this to the results stats VC TrackStatsVC
     [self.navigationController popToRootViewControllerAnimated: YES];
 }
+
+#pragma mark - Game Menu
 
 - (void)p_showInGameMenu {
     UIAlertView *alert =

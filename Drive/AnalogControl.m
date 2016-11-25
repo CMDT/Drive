@@ -49,7 +49,7 @@
     return self;
 }
 
-#pragma mark - Controls via touches
+#pragma mark - Knob Controls via touches
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     CGPoint touchLocation = [[touches anyObject] locationInView:self];

@@ -366,8 +366,8 @@
     [singleton.cardReactionTimeResult addObject: singleton.versionNumber ];
     singleton.counter = singleton.counter+1;
     //blank line
-    [singleton.cardReactionTimeResult addObject:@"."];
-    [singleton.cardReactionTimeResult addObject:@".."];
+    [singleton.cardReactionTimeResult addObject:@"."  ];
+    [singleton.cardReactionTimeResult addObject:@".." ];
     [singleton.cardReactionTimeResult addObject:@"..."];
     singleton.counter = singleton.counter+1;
     
@@ -394,8 +394,8 @@
 }
 
 -(NSString *) setFilename{
-    mySingleton *singleton = [mySingleton sharedSingleton];
-    NSString *extn = @"csv";
+    mySingleton * singleton = [mySingleton sharedSingleton];
+    NSString    * extn = @"csv";
     filename = [NSString stringWithFormat:@"%@.%@", singleton.subjectName, extn];
     return filename;
 }
@@ -403,8 +403,8 @@
 //find the home directory for Document
 -(NSString *)GetDocumentDirectory{
     fileMgr = [NSFileManager defaultManager];
-    NSString *docsDir;
-    NSArray *dirPaths;
+    NSString * docsDir;
+    NSArray  * dirPaths;
     dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     docsDir = dirPaths[0];
     return docsDir;

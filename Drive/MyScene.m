@@ -115,11 +115,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     self = [super initWithSize:size];
     mySingleton *singleton = [mySingleton sharedSingleton];
     if (self) {
-        _carType   = [singleton.carNo   integerValue];//carType;
-        _levelType = [singleton.trackNo integerValue];//levelType;
-        _numOfCollisionsWithBoxes = 0; // start off with clean sheet
-        // add no of horns to catch presses vs no made per race and compare later.  Forget timing for now
-        // _numOfHornsPressed = 0;     // count times horn button was pressed, zero
+        _carType   = [singleton.carNo   integerValue]; // carType;
+        _levelType = [singleton.trackNo integerValue]; // levelType;
+        _numOfCollisionsWithBoxes = 0;                 // start off with clean sheet
+           // add no of horns to catch presses vs no made per race and compare later.  Forget timing for now
+           // _numOfHornsPressed  = 0;                  // count times horn button was pressed, zero
         horns = 0;
         singleton.hornsPlayed = @"0";
         
@@ -136,7 +136,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         horn_tt = 0;
         tempHaz = 0;
         tempWall= 0;
-        xcounter= 0;
+        xcounter= 1;
     }
     return self;
 }
@@ -146,13 +146,14 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     mySingleton *singleton = [mySingleton sharedSingleton];
     
     if (self.previousTimeInterval == 0) {
-        self.previousTimeInterval = currentTime;
+        self.previousTimeInterval =  currentTime;
     }
     //****************************************************************
     if (self.isPaused) {
         
         // find a way to halt the timer, then restart it for laps
         // *****
+        // ***** still an issue, tell users not to pause, it will scrap the game data!
         // *****
         // *****
         
@@ -359,7 +360,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     
     //add the first drive clock time to the array
     self.startDate=[NSDate date];
-    reactionTime[0] = [self.startDate timeIntervalSinceNow]* -1000;
+    reactionTime[0] = [self.startDate timeIntervalSinceNow]* -1000.000; // added .000, may not be needed for accuracy
     
     //set the horn display 'off' at start
     singleton.hornsShowing = NO;
@@ -775,36 +776,37 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             xcounter = 0;
         }
         
-        for (int x=1; x<xcounter+1; x+=1) {
+        for (int x=1; x<xcounter; x+=1) {
             temp1 = reactionTime[x];
             temp2 = reactionTime[x-1];
             reactionTime[x-1]=(temp1-temp2);
-            NSLog(@"lap time %d: %f", x, reactionTime[x-1]);
+            NSLog(@"a- lap time %d: %f", x, reactionTime[x-1]);
         }
 
-        for (int x=0; x<xcounter+1; x+=1) {
+        for (int x=0; x<xcounter-1; x+=1) {
             reactionTime[x]=(reactionTime[x]/1000);
-            NSLog(@"lap time %d: %f", x+1, reactionTime[x]);
+            NSLog(@"b- lap time %d: %f", x+1, reactionTime[x]);
         }
         
-        for (int x=0; x<xcounter; x+=1) {
+        for (int x=0; x<xcounter-1; x+=1) {
             
             temp = reactionTime[x];
             singleton.lapTimes[x]=[NSString stringWithFormat:@"%0.2f",temp];
             
-            // NSLog(@"lap time %d: %f",x, temp);
+            NSLog(@"c- lap time %d: %f",x+1, temp);
             
             if ( slowestLap < temp) {
                 slowestLap = temp;
-                NSLog(@"slow lap time %d: %f", x+1, temp);
+                NSLog(@"s- lap time %d: %f", x+1, slowestLap);
                 slowLap = x+1;
             }
             if (fastestLap > temp) {
                 fastestLap = temp;
-                NSLog(@"fast lap time %d: %f", x+1, temp);
+                NSLog(@"f- lap time %d: %f", x+1, fastestLap);
                 fastLap = x+1;
             }
             raceTime = raceTime + temp;
+            NSLog(@"g- race time %f",  raceTime);
         }
         //make the time in seconds
         
@@ -855,10 +857,10 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         }
         averageHorn = hornTime / (horns);
         
-        singleton.totalHorn   = [NSString stringWithFormat:@"%0.2f",hornTime];
-        singleton.fastestHorn = [NSString stringWithFormat:@"%0.2f",fastestHorn];
-        singleton.slowestHorn = [NSString stringWithFormat:@"%0.2f",slowestHorn];
-        singleton.averageHorn = [NSString stringWithFormat:@"%0.2f",averageHorn];
+        singleton.totalHorn   = [NSString stringWithFormat:@"%0.2f", hornTime];
+        singleton.fastestHorn = [NSString stringWithFormat:@"%0.2f", fastestHorn];
+        singleton.slowestHorn = [NSString stringWithFormat:@"%0.2f", slowestHorn];
+        singleton.averageHorn = [NSString stringWithFormat:@"%0.2f", averageHorn];
         
         //************
         for (int x=1; x<horns; x+=1) {
@@ -866,12 +868,12 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             NSLog(@"final Horn %i : Reaction %f", x, hornReactionTime[x]);
         }
         
-        singleton.slowestLap   = [NSString stringWithFormat:@"%0.2f",slowestLap];
-        singleton.fastestLap   = [NSString stringWithFormat:@"%0.2f",fastestLap];
-        singleton.averageLap   = [NSString stringWithFormat:@"%0.2f",averageLap];
-        singleton.totalTime    = [NSString stringWithFormat:@"%0.2f",raceTime];
-        singleton.slowestLapNo = [NSString stringWithFormat:@"%i",slowLap];
-        singleton.fastestLapNo = [NSString stringWithFormat:@"%i",fastLap];
+        singleton.slowestLap   = [NSString stringWithFormat:@"%0.2f", slowestLap];
+        singleton.fastestLap   = [NSString stringWithFormat:@"%0.2f", fastestLap];
+        singleton.averageLap   = [NSString stringWithFormat:@"%0.2f", averageLap];
+        singleton.totalTime    = [NSString stringWithFormat:@"%0.2f", raceTime];
+        singleton.slowestLapNo = [NSString stringWithFormat:@"%i",    slowLap];
+        singleton.fastestLapNo = [NSString stringWithFormat:@"%i",    fastLap];
         
         //bounds limits
         if (xcounter > 100) {
@@ -882,9 +884,14 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         }
         
         for (int x=0; x<xcounter; x+=1) {
-            singleton.lapTimes[x] = [NSString stringWithFormat:@"%x+1, %f, %@, %@", x, reactionTime[x],singleton.wallLaps[x],singleton.hazLaps[x]];
+            singleton.lapTimes[x] = [NSString stringWithFormat:@"%x+1, %f, %@, %@",
+                                     x,
+                                     reactionTime[x],
+                                     singleton.wallLaps[x],
+                                     singleton.hazLaps[x]
+                                     ];
             
-            NSLog(@"lap : %@", singleton.lapTimes[x]);
+            NSLog(@"lap %i: %@", x+1, singleton.lapTimes[x]);
         }
     }
     

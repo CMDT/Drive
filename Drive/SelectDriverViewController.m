@@ -144,6 +144,8 @@ if((textField==self->driverName)||(textField==self->email)){
     [super touchesBegan:touches withEvent:event];
 }
 
+#pragma mark - Show Keyboard and move frame
+
 - (void) keyBoardAppeared :(int)oft
 {
     //move screen up or down as needed to avoid text field entry
@@ -172,6 +174,8 @@ if((textField==self->driverName)||(textField==self->email)){
                      }];
 }
 
+#pragma mark - Done entry driver
+
 - (void)textFieldDidEndEditing:(UITextField *) textField {
     
     //move the screen back to the original place
@@ -183,6 +187,8 @@ if((textField==self->driverName)||(textField==self->email)){
     driverName.textColor         = [UIColor blackColor];
     email.textColor              = [UIColor blackColor];
 }
+
+#pragma mark - Hide Keyboard when done
 
 - (void) keyBoardDisappeared :(int)oft
 {
@@ -211,6 +217,8 @@ driverName.backgroundColor = [UIColor whiteColor];
 email.backgroundColor      = [UIColor whiteColor];
 }
 
+#pragma mark - Set Sound Effect Level
+
 - (void)btnPressSound{
     mySingleton *singleton = [mySingleton sharedSingleton];
     
@@ -222,25 +230,31 @@ email.backgroundColor      = [UIColor whiteColor];
     fxVolumeSetLevel = (int)fxTemp;
     
     //report for dev only
-    //NSLog(@"fxVolumeSetLevel= %f: %f :%d", singleton.ambientVolume, fxTemp, fxVolumeSetLevel);
+    NSLog(@"fxVolumeSetLevel= %f: %f :%d", singleton.ambientVolume, fxTemp, fxVolumeSetLevel);
     
     switch (fxVolumeSetLevel) {
         case 0 ... 10:
+            //no sound
             [[SKTAudio sharedInstance] playSoundEffect:@"button_press00.wav"];
             break;
         case 11 ... 25:
+            //25%
             [[SKTAudio sharedInstance] playSoundEffect:@"button_press25.wav"];
             break;
         case 26 ... 50:
+            //50%
             [[SKTAudio sharedInstance] playSoundEffect:@"button_press50.wav"];
             break;
         case 51 ... 75:
+            //75%
             [[SKTAudio sharedInstance] playSoundEffect:@"button_press75.wav"];
             break;
         case 76 ... 100:
+            //100%
             [[SKTAudio sharedInstance] playSoundEffect:@"button_press100.wav"];
             break;
         default:
+            //no sound
             [[SKTAudio sharedInstance] playSoundEffect:@"button_press00.wav"];
             break;
     }

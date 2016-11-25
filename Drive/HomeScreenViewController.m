@@ -305,6 +305,7 @@
     
     switch (fxVolumeSetLevel) {
         case 0 ... 10:
+            //no sound
             [[SKTAudio sharedInstance] playSoundEffect:@"button_press00.wav"];
             break;
         case 11 ... 25:
@@ -321,6 +322,7 @@
             break;
         // anything out of range
         default:
+            //no sound
             [[SKTAudio sharedInstance] playSoundEffect:@"button_press00.wav"];
             break;
     }
