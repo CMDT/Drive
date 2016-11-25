@@ -372,8 +372,8 @@
     singleton.counter = singleton.counter+1;
     
     //make a text file from the array of results
-    NSMutableString *element = [[NSMutableString alloc] init];
-    NSMutableString *printString = [NSMutableString stringWithString:@"\n"];
+    NSMutableString * element     = [[NSMutableString alloc] init];
+    NSMutableString * printString = [NSMutableString stringWithString:@"\n"];
     //
     //array of rows put into one string for text output
     //add back if multi output
