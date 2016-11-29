@@ -106,7 +106,7 @@ static mySingleton * sharedSingleton = nil;
         resultStrings       = @"";
         subjectName         = @"Sub";
         resultStrings       = @"";
-        versionNumber       = @"2.5.1 - 24.11.16";
+        versionNumber       = @"2.5.2 - 29.11.16";
         
         counter             = 0;
         laps                = @"0";
