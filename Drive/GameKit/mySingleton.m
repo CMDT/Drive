@@ -85,9 +85,10 @@ static mySingleton * sharedSingleton = nil;
         hazLaps                = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
         hornLaps               = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
         cardReactionTimeResult = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
+
         
         //populate arrays with zeros at start of race, 100 laps max, do them all
-        for (NSInteger i = 0; i < 101; ++i)
+        for (NSInteger i = 0; i < 102; ++i)
         {
             [lapTimes   addObject:@"0"];
             [hornTimes  addObject:@"0"];
@@ -101,12 +102,12 @@ static mySingleton * sharedSingleton = nil;
         tempEntry           = @"";
         hornsShowing        = NO;
         email               = @"me@mmu.ac.uk";
-        testDate            = @"25/11/2016";
+        testDate            = @"30/11/2016";
         testTime            = @"10:00";
         resultStrings       = @"";
         subjectName         = @"Sub";
         resultStrings       = @"";
-        versionNumber       = @"2.5.2 - 29.11.16";
+        versionNumber       = @"2.5.3 - 30.11.16";
         
         counter             = 0;
         laps                = @"0";

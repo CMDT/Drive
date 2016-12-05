@@ -69,7 +69,7 @@
     //version, set anyway *****************************************
     //*************************************************************
     
-    version0 =  @"DRIVE Version 2.5.2 - 29.11.16";     // version   *** keep short
+    version0 =  @"DRIVE Version 2.5.3 - 30.11.16";     // version   *** keep short
     version1 =  @"MMU (C) 2016";                // copyright *** limited line space
     version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
     version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen

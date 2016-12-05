@@ -126,6 +126,22 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         fastestHorn = +999999;
         slowestHorn = -999999;
         averageHorn = -999999;
+        
+        // set singletn arrays to zero to start, as will be NULL if not.
+        //walls and boxes
+        
+        //times
+        //horns
+        for (NSInteger i = 0; i < 102; ++i)
+            {
+            singleton.lapTimes[i]=@"0";
+            singleton.hornTimes[i]=@"0";
+            singleton.hornTimes2[i]=@"0";
+            singleton.wallLaps[i]=@"0";
+            singleton.hazLaps[i]=@"0";
+            singleton.hornLaps[i]=@"0";
+            singleton.cardReactionTimeResult[i]=@"0";
+            }
         [self p_initializeGame];
         
         //set the start timer for the horns, and put the result in the zero element of the array
@@ -228,8 +244,12 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 
             tempWall= 0;
             tempHaz = 0;
-            
-            self.laps.text = [NSString stringWithFormat:@"Laps: %li", (long)self.numOfLaps];
+            //test if last lap and message driver
+            if ((long)self.numOfLaps>1) {
+            self.laps.text = [NSString stringWithFormat:@"Laps to go: %li", (long)self.numOfLaps];
+            }else{
+             self.laps.text = @"Last Lap !";
+            }
             //NSLog(@"Lap time = %f",reactionTime[xcounter]);
             
             //old way // [self runAction:self.lapSoundAction];
@@ -371,6 +391,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 //***************
     //GO !
 //***************
+    
 
 }
 
@@ -509,7 +530,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     bale.physicsBody.categoryBitMask = CRBodyBale;
     
     // Simulate friction and prevent the boxes from continuously sliding around
-    bale.physicsBody.linearDamping = 1.0f;//1
+    bale.physicsBody.linearDamping  = 1.0f;//1
     bale.physicsBody.angularDamping = 1.0f;//1
     //bale.physicsBody.mass=1000; //added but not needed
     //bale.physicsBody.friction = 1000; //added but not needed
@@ -815,6 +836,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         singleton.totalCrashes = [NSString stringWithFormat:@"%li",totalCrashes];
         
         averageLap = raceTime / (xcounter-1);
+        NSLog(@"average lap-1 %f",  raceTime/(xcounter-1));
+
         
         //you finished the race, give the stats
         
@@ -883,7 +906,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             xcounter = 0;
         }
         
-        for (int x=0; x<xcounter; x+=1) {
+        for (int x=0; x<xcounter-1; x+=1) { //was xcounter
             singleton.lapTimes[x] = [NSString stringWithFormat:@"%x+1, %f, %@, %@",
                                      x,
                                      reactionTime[x],
@@ -922,7 +945,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     if ((contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyBox)||(contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyCrate)||(contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyTyre)||(contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyBale)) {
         self.numOfCollisionsWithBoxes += 1;
         tempHaz++;
-        singleton.hazLaps[xcounter]=[NSString stringWithFormat:@"%i",tempHaz];
+        singleton.hazLaps[xcounter-1]=[NSString stringWithFormat:@"%i",tempHaz];//was xcounter
         // set for colls
         self.colls.text = [NSString stringWithFormat:@"Hazard Crashes: %li", (long)self.numOfCollisionsWithBoxes];
         
@@ -946,7 +969,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         //if (contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyTrack) {
         self.numOfCollisionsWithWalls += 1;
         tempWall++;
-        singleton.wallLaps[xcounter]=[NSString stringWithFormat:@"%i",tempWall];
+        singleton.wallLaps[xcounter-1]=[NSString stringWithFormat:@"%i",tempWall];//was xcounter
         // set for walls
         self.walls.text = [NSString stringWithFormat:@"Wall Crashes: %li", (long)self.numOfCollisionsWithWalls];
         
