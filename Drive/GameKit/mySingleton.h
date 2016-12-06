@@ -19,6 +19,7 @@
     NSMutableArray * lapTimes;
     NSMutableArray * hornTimes;
     NSMutableArray * hornTimes2;
+    NSMutableArray * hornTimesAll;
     NSMutableArray * wallLaps;
     NSMutableArray * hazLaps;
     NSMutableArray * hornLaps;
@@ -54,6 +55,7 @@
     Float64    hazCrashMult;
     Float64    hornsMulti;
     float      ambientVolume;
+    int        hornTimerCounter;
 }
 @property (nonatomic) BOOL    hornsShowing;
 @property (nonatomic) int     counter;
@@ -63,6 +65,7 @@
 @property (nonatomic, retain) NSMutableArray * lapTimes;
 @property (nonatomic, retain) NSMutableArray * hornTimes;
 @property (nonatomic, retain) NSMutableArray * hornTimes2;
+@property (nonatomic, retain) NSMutableArray * hornTimesAll;
 @property (nonatomic, retain) NSMutableArray * wallLaps;
 @property (nonatomic, retain) NSMutableArray * hazLaps;
 @property (nonatomic, retain) NSMutableArray * hornLaps;
@@ -98,6 +101,7 @@
 @property (nonatomic)          Float64   hazCrashMult;
 @property (nonatomic)          Float64   hornsMulti;
 @property (nonatomic)          float     ambientVolume;
+@property (nonatomic)          int       hornTimerCounter;
 
 //set up singleton shared
 

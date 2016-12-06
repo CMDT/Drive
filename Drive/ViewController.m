@@ -14,6 +14,7 @@
 #import "MyScene.h"
 #import "AnalogControl.h"
 #import "SKTUtils.h"
+#include "sys/time.h"
 
 #define kEmail      @"emailAddress"
 #define kSubject    @"subjectName"
@@ -24,6 +25,7 @@
 
 @interface ViewController () <UIAlertViewDelegate, UITextFieldDelegate>
 {
+    Float32 temp5;
 }
 
 @property (nonatomic, strong) SKView            * skView;
@@ -35,7 +37,7 @@
 
 @implementation ViewController
 
-@synthesize hornBtn;
+@synthesize hornBtn, hornTimer;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -93,7 +95,7 @@
 
         [self setDateNow:self];
         [self setTimeNow:self];
-    
+
     //tester name
     subjectName     = [defaults objectForKey:kSubject];
     if([subjectName isEqualToString: @ "" ]|| email == nil){
@@ -164,7 +166,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-   
+    
     [self.view sendSubviewToBack:self.skView];
 }
 
@@ -256,9 +258,15 @@
 
 - (IBAction)hornButtonDidTouchUpInside:(id)sender {
     //the horn button was pressed
+    struct timeval time;
+    gettimeofday(&time, NULL);
+    long millis = (time.tv_sec * 1000) + (time.tv_usec / 1000);
+    
     mySingleton *singleton = [mySingleton sharedSingleton];
     singleton.hornsShowing = YES;
     
+    singleton.hornTimesAll[singleton.hornTimerCounter]=[NSString stringWithFormat:@"%ld", millis];
+    NSLog(@"horn horntouch = %i, %ld", singleton.hornTimerCounter, millis);
 }
 
 #pragma mark - Game Over

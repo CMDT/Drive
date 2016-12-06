@@ -22,6 +22,7 @@
 #import "GameKitHelper.h"
 // global vars here
 #import "mySingleton.h"
+#include <sys/time.h>
 
 // how to call the singleton, line below in functions top, then reference var name
 // ... mySingleton *singleton = [mySingleton sharedSingleton];
@@ -43,6 +44,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     int     xcounter;
     int     lapTimez[101];
     int     hornTimes[101];
+    Float32     hornTimesAll[101];
     
     Float32 fastestLap;
     Float32 slowestLap;
@@ -53,7 +55,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     Float32 raceTime;
     Float32 hornTime;
     Float32 masterScore;
-    Float32 temp;
+    double  temp;
+    Float32 tempt;
     long    totalCrashes;
     
     int     lap;
@@ -68,11 +71,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     BOOL    hornShowing;
     BOOL    hornsPressed;//for horns pressed
     Float32 hornReactionTime[100];
-    Float32 temp1;
-    Float32 temp2;
-    Float32 temp3;
-    Float32 temp4;
-    Float32 temp5;
+    double temp1;
+    double temp2;
+    double temp3;
+    double temp4;
+    double temp5;
     
     long    xx,yy;
 }
@@ -153,6 +156,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         tempHaz = 0;
         tempWall= 0;
         xcounter= 1;
+        horns=1;
+        singleton.hornTimerCounter=0;
     }
     return self;
 }
@@ -276,21 +281,28 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     if ([singleton.distractionOn isEqual:@"ON"]) {
         
         tt = self.timeInSeconds;
-        NSLog(@"ttmod7=%i",((tt % 7) == 6));
+        //NSLog(@"ttmod7=%i",((tt % 7) == 6));
         
         if (((tt % 7) == 6)) {
             //beep the horn every 7 seconds
             horn_tt++;
+            
             //start the horn timer
             //set the flag, the horn sound was played
 
             if (horn_tt == 1) {
                 //tell the timer that the horn is not pressed yet
                 singleton.hornsShowing = NO;
-                temp = (Float32)[self.startDateHorn timeIntervalSinceNow];
+
+                struct timeval time;
+                gettimeofday(&time, NULL);
+                long millis = (time.tv_sec * 1000) + (time.tv_usec / 1000);
                 
                 [self runAction:self.hornSoundAction];
                 
+                singleton.hornTimerCounter=horns;
+                singleton.hornTimesAll[horns]=[NSString stringWithFormat:@"%ld", millis];
+                NSLog(@"horn, start horn time=%i, %ld", horns, millis); //only triggered on horn play
                 horns++;
                 horn_tt++;
                 singleton.hornsPlayed = [NSString stringWithFormat:@"%i", horns];
@@ -298,11 +310,25 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         }
         
         // collect the current gap time
-        temp1 = (Float32)[self.startDateHorn timeIntervalSinceNow];
         
+        if(horns>1) {
+            temp2=[singleton.hornTimesAll[horns-2] doubleValue]; //end time at horn press
+        }else{
+            temp2=0;
+        }
+        if(horns>0) {
+            temp=[singleton.hornTimesAll[horns-1] doubleValue]; //end time at horn press
+        }else{
+            temp=0;
+        }
+        
+        NSLog(@"h start           = %i,  %f", horns, temp2 );
+        NSLog(@"  end             =     %f", temp);
+        
+        NSLog(@"  horn reaction   =     %f",  temp2-temp);
         //get the current wait time so far
         //temp3 = temp - temp1;
-        temp3 = temp1;
+        temp3 = temp2-temp;
         
         //trigger a press if too long wait for horn button
         //if (temp3 > 6.00) {
@@ -842,15 +868,15 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         //you finished the race, give the stats
         
         horns = [singleton.hornsPlayed intValue];
-        //for (int x=1; x<horns+1; x+=1) {
-        //    NSLog(@"Start Horn %i : Reaction %f",x,hornReactionTime[x]);
-        //}
+        for (int x=1; x<horns+1; x+=1) {
+            NSLog(@"Start Horn %i : Reaction %f",x,hornReactionTime[x]);
+        }
         
         //find the time by difference
         //rem out this block later, just for debug
         for (int x=1; x<horns; x+=1) {
             hornReactionTime[x]=(hornReactionTime[x]-hornReactionTime[x-1]);
-            //NSLog(@"lap time %d: %f", x, hornReactionTime[x]);
+            NSLog(@"lap time %d: %f", x, hornReactionTime[x]);
         }
         for (int x=1; x<horns+1; x+=1) {
             //hornReactionTime[x]=(hornReactionTime[x]);//  /1000;
@@ -915,6 +941,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                                      ];
             
             NSLog(@"lap %i: %@", x+1, singleton.lapTimes[x]);
+        }
+        for (int x=0; x<singleton.hornTimerCounter; x+=1) {
+          
+            
+            NSLog(@"counter %i: horn %@", x+1, singleton.hornTimesAll[x]);
         }
     }
     

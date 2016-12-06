@@ -19,6 +19,7 @@ static mySingleton * sharedSingleton = nil;
             lapTimes,
             hornTimes,
             hornTimes2,
+            hornTimesAll,
             wallLaps,
             hazLaps,
             hornLaps,
@@ -57,7 +58,9 @@ static mySingleton * sharedSingleton = nil;
             hazCrashMult,
             hornsMulti,
 // float;
-            ambientVolume;
+            ambientVolume,
+// int
+            hornTimerCounter;
 
 #pragma mark Singleton Methods
 
@@ -81,6 +84,7 @@ static mySingleton * sharedSingleton = nil;
         lapTimes               = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
         hornTimes              = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
         hornTimes2             = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
+        hornTimesAll           = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
         wallLaps               = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
         hazLaps                = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
         hornLaps               = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
@@ -98,6 +102,10 @@ static mySingleton * sharedSingleton = nil;
             [hornLaps   addObject:@"0"];
             [cardReactionTimeResult addObject:@"0"];
         }
+        for (NSInteger i = 0; i < 10000; ++i)
+            {
+            [hornTimesAll addObject:@"0"];
+            }
         
         tempEntry           = @"";
         hornsShowing        = NO;
@@ -134,6 +142,7 @@ static mySingleton * sharedSingleton = nil;
         hazCrashMult        = 0.1;
         hornsMulti          = 1.0;
         ambientVolume       = 0.50;
+        hornTimerCounter    = 0;
     }
     return self;
 }
