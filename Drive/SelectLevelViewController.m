@@ -22,6 +22,50 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //clear the graphics for track level selected to start with
+    /*_car1.hidden=YES;
+    _car2.hidden=YES;
+    _car3.hidden=YES;*/
+    _speedo1.hidden=YES;
+    _speedo2.hidden=YES;
+    _speedo3.hidden=YES;
+    
+}
+- (void)viewDidAppear:(BOOL)animated{
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    //check the car power/speed and bring the graphics back according to level selected
+    //NSLog(@"car  %@", singleton.carNo);
+    if([singleton.carNo isEqual:@"1"]){
+        /*_car1.hidden=NO;
+        _car2.hidden=YES;
+        _car3.hidden=YES;*/
+        _speedo1.hidden=NO;/*
+        _speedo2.hidden=YES;
+        _speedo3.hidden=YES;*/
+        _car1.alpha=1;
+        _car2.alpha=.15;
+        _car3.alpha=.15;
+        _speedo1.hidden=NO;
+        _speedo2.hidden=YES;
+        _speedo3.hidden=YES;
+        
+    }
+    if([singleton.carNo isEqual:@"2"]){
+        _car1.alpha=.15;
+        _car2.alpha=1;
+        _car3.alpha=.15;
+        _speedo1.hidden=YES;
+        _speedo2.hidden=NO;
+        _speedo3.hidden=YES;
+    }
+    if([singleton.carNo isEqual:@"3"]){
+        _car1.alpha=.15;
+        _car2.alpha=.15;
+        _car3.alpha=1;
+        _speedo1.hidden=YES;
+        _speedo2.hidden=YES;
+        _speedo3.hidden=NO;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

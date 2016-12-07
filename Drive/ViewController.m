@@ -257,16 +257,17 @@
 }
 
 - (IBAction)hornButtonDidTouchUpInside:(id)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
     //the horn button was pressed
+    
+    //get clock time now and save to singleton
     struct timeval time;
     gettimeofday(&time, NULL);
-    long millis = (time.tv_sec * 1000) + (time.tv_usec / 1000);
+    Float32 millis = (time.tv_sec * 1000) + (time.tv_usec / 1000);
     
-    mySingleton *singleton = [mySingleton sharedSingleton];
     singleton.hornsShowing = YES;
-    
-    singleton.hornTimesAll[singleton.hornTimerCounter]=[NSString stringWithFormat:@"%ld", millis];
-    NSLog(@"horn horntouch = %i, %ld", singleton.hornTimerCounter, millis);
+    singleton.hornsMulti   = millis;
+    NSLog(@"STOP Horn horntouch =  %.f",  millis);
 }
 
 #pragma mark - Game Over

@@ -15,6 +15,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *driverName;
 @property (weak, nonatomic) IBOutlet UITextField *email;
 
+@property (weak, nonatomic) IBOutlet UIImageView *tyre1;
+@property (weak, nonatomic) IBOutlet UIImageView *tyre2;
+@property (weak, nonatomic) IBOutlet UIImageView *bale;
+@property (weak, nonatomic) IBOutlet UIImageView *crate;
+
 // definitions for functions follow
 - (void)viewDidLoad;
 - (void)viewDidAppear:(BOOL)animated;

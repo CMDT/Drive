@@ -59,6 +59,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="car_3.png" id="bLa-aP-mof">
+                                <rect key="frame" x="196" y="168" width="80" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="car_1.png" id="n9x-uY-E6S">
+                                <rect key="frame" x="13" y="168" width="80" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="M5o-qu-hE1" userLabel="Button medium">
                                 <rect key="frame" x="339" y="182" width="120" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -68,17 +76,6 @@
                                 <connections>
                                     <action selector="levelButtonDidTouchUpInside:" destination="6zJ-QL-n6c" eventType="touchUpInside" id="tch-Nd-jGm"/>
                                     <segue destination="ile-Uw-dvN" kind="push" id="8QQ-gE-hn8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Ps7-eg-FmL">
-                                <rect key="frame" x="216" y="245" width="68" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="btn-info.png">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="infoButtonDidTouchUpInside:" destination="6zJ-QL-n6c" eventType="touchUpInside" id="yon-yw-OFk"/>
-                                    <segue destination="iVf-iI-C6T" kind="push" id="EQS-Ot-RJf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="M0g-UL-Fv9" userLabel="Button hard">
@@ -92,17 +89,6 @@
                                     <segue destination="ile-Uw-dvN" kind="push" id="C2j-M0-frE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="FHR-24-jyO" userLabel="Button back">
-                                <rect key="frame" x="20" y="245" width="118" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="backxGrsm.png">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="backButtonDidTouchUpInside:" destination="6zJ-QL-n6c" eventType="touchUpInside" id="OeL-JF-9Fd"/>
-                                    <segue destination="355-Sw-PNA" kind="push" id="b6P-hE-go0"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="788-Ff-bns" userLabel="Button easy">
                                 <rect key="frame" x="339" y="119" width="120" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -114,10 +100,56 @@
                                     <segue destination="ile-Uw-dvN" kind="push" id="sgN-rE-1F9"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-slow.png" id="bUE-wz-SLo">
+                                <rect key="frame" x="20" y="110" width="51" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-med.png" id="E7P-3x-jKV">
+                                <rect key="frame" x="117" y="110" width="51" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-fast.png" id="s1C-x2-bRA">
+                                <rect key="frame" x="211" y="110" width="51" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="FHR-24-jyO" userLabel="Button back">
+                                <rect key="frame" x="20" y="245" width="118" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="backxGrsm.png">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonDidTouchUpInside:" destination="6zJ-QL-n6c" eventType="touchUpInside" id="OeL-JF-9Fd"/>
+                                    <segue destination="355-Sw-PNA" kind="push" id="b6P-hE-go0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Ps7-eg-FmL">
+                                <rect key="frame" x="216" y="245" width="68" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btn-info.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="infoButtonDidTouchUpInside:" destination="6zJ-QL-n6c" eventType="touchUpInside" id="yon-yw-OFk"/>
+                                    <segue destination="iVf-iI-C6T" kind="push" id="EQS-Ot-RJf"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="car_2.png" id="zg4-b6-hCM">
+                                <rect key="frame" x="108" y="182" width="80" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="n5g-cw-uqj"/>
+                    <connections>
+                        <outlet property="car1" destination="n9x-uY-E6S" id="zrM-bm-bfC"/>
+                        <outlet property="car2" destination="zg4-b6-hCM" id="q2N-C4-a76"/>
+                        <outlet property="car3" destination="bLa-aP-mof" id="icj-h7-dxa"/>
+                        <outlet property="speedo1" destination="bUE-wz-SLo" id="r6L-j0-DYB"/>
+                        <outlet property="speedo2" destination="E7P-3x-jKV" id="CwU-II-uqA"/>
+                        <outlet property="speedo3" destination="s1C-x2-bRA" id="gkJ-B8-cLT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9u5-T6-QqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -179,6 +211,18 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-med.png" id="pPk-oy-Lcm">
+                                <rect key="frame" x="189" y="161" width="51" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-fast.png" id="XlC-wa-KdN">
+                                <rect key="frame" x="306" y="71" width="51" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-slow.png" id="inD-T6-jTp">
+                                <rect key="frame" x="335" y="212" width="51" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Ki3-o3-BfY" userLabel="Button back">
                                 <rect key="frame" x="20" y="245" width="113" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -190,8 +234,8 @@ The faster the car, the better the top speed, but be careful, they are harder to
                                     <segue destination="j6p-oN-Kld" kind="push" id="egQ-Cs-J5z"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="X8I-yp-jGR" userLabel="Button Car 2">
-                                <rect key="frame" x="250" y="122" width="99" height="128"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="X8I-yp-jGR" userLabel="Button Car 2">
+                                <rect key="frame" x="228" y="122" width="99" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="btn-car2.png">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -636,7 +680,7 @@ Initially, use the slow car on each of the tracks, and obtain some lap times and
 
 Build up skill and move to faster cars, if you dare!
 
-Select the distraction switch, and at random, you will hear a horn, and you need to touch the horn button as soon as you can, whist continuing to drive.</string>
+Select the distraction switch, and at random, you will hear a horn, and you need to touch the horn button as soon as you can, whist continuing to drive. Missing the horn is not good for your times.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1256,6 +1300,22 @@ Select the distraction switch, and at random, you will hear a horn, and you need
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tyre.png" id="lGW-lB-BLf">
+                                <rect key="frame" x="281" y="78" width="47" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tyre.png" id="jhG-Yz-dAD">
+                                <rect key="frame" x="248" y="114" width="47" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bale.png" id="buY-7r-cDf">
+                                <rect key="frame" x="423" y="35" width="47" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="crate.png" id="Bba-5l-Opt">
+                                <rect key="frame" x="408" y="99" width="47" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <accessibility key="accessibilityConfiguration">
@@ -1264,8 +1324,12 @@ Select the distraction switch, and at random, you will hear a horn, and you need
                     </view>
                     <navigationItem key="navigationItem" id="HT1-dk-wba"/>
                     <connections>
+                        <outlet property="bale" destination="buY-7r-cDf" id="xEA-p5-Y3U"/>
+                        <outlet property="crate" destination="Bba-5l-Opt" id="glD-Eb-7es"/>
                         <outlet property="driverName" destination="ZoX-mV-eDf" id="oHU-mK-3d4"/>
                         <outlet property="email" destination="TIK-v2-hNe" id="AAo-Xb-4vn"/>
+                        <outlet property="tyre1" destination="lGW-lB-BLf" id="f66-3l-6yE"/>
+                        <outlet property="tyre2" destination="jhG-Yz-dAD" id="GYX-8Z-6eZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Viw-Ez-7CO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1318,6 +1382,7 @@ The Email address is the recipient of the data results when a race is completed,
     <resources>
         <image name="backxGr.png" width="105" height="55"/>
         <image name="backxGrsm.png" width="105" height="55"/>
+        <image name="bale.png" width="44" height="44"/>
         <image name="bg-main-menu-driver.png" width="568" height="320"/>
         <image name="bg-main-menu.png" width="568" height="320"/>
         <image name="bg-select-car.png" width="568" height="320"/>
@@ -1327,8 +1392,12 @@ The Email address is the recipient of the data results when a race is completed,
         <image name="btn-car3.png" width="121" height="169"/>
         <image name="btn-gamecenter.png" width="301" height="55"/>
         <image name="btn-info.png" width="55" height="55"/>
+        <image name="car_1.png" width="50" height="30"/>
+        <image name="car_2.png" width="50" height="30"/>
+        <image name="car_3.png" width="50" height="30"/>
         <image name="carhorn-btn.png" width="87" height="87"/>
         <image name="carx.png" width="105" height="55"/>
+        <image name="crate.png" width="44" height="44"/>
         <image name="easyx.png" width="105" height="55"/>
         <image name="emailGr.png" width="55" height="55"/>
         <image name="finishx.png" width="105" height="55"/>
@@ -1350,8 +1419,12 @@ The Email address is the recipient of the data results when a race is completed,
         <image name="seg-blues.png" width="110" height="55"/>
         <image name="seg-light.png" width="110" height="55"/>
         <image name="seg-none.png" width="110" height="55"/>
+        <image name="speedo-fast.png" width="50" height="50"/>
+        <image name="speedo-med.png" width="50" height="50"/>
+        <image name="speedo-slow.png" width="50" height="50"/>
         <image name="startx.png" width="105" height="55"/>
         <image name="tick.png" width="30" height="60"/>
+        <image name="tyre.png" width="44" height="44"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <nil key="statusBar"/>
@@ -1359,9 +1432,9 @@ The Email address is the recipient of the data results when a race is completed,
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="1Ng-tR-vKr"/>
-        <segue reference="Snq-Uf-qxR"/>
-        <segue reference="Ypq-Rw-I7Y"/>
+        <segue reference="Oeb-9y-xxT"/>
+        <segue reference="Qad-gC-6d0"/>
         <segue reference="sgN-rE-1F9"/>
+        <segue reference="b6P-hE-go0"/>
     </inferredMetricsTieBreakers>
 </document>

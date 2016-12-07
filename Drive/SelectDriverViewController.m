@@ -20,6 +20,7 @@
 {
     float keyboardAnimSpeed;
     float keyboardAnimDelay;
+    NSString *track;
 }
 @end
 
@@ -49,6 +50,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
+    mySingleton *singleton = [mySingleton sharedSingleton];
     
     keyboardAnimDelay=0.5;
     keyboardAnimSpeed=0.3;
@@ -69,6 +71,28 @@
     
     email.delegate       = self;
     driverName.delegate  = self;
+    
+    //clear the graphics for track level selected to start with
+    _tyre1.hidden=YES;
+    _tyre2.hidden=YES;
+    _bale.hidden=YES;
+    _crate.hidden=YES;
+    
+    //check the level and bring the graphics back according to level selected
+    //NSLog(@"level  %@", singleton.trackNo);
+    if([singleton.trackNo isEqual:@"1"]){
+        //nothing
+    }
+    if([singleton.trackNo isEqual:@"2"]){
+        _tyre1.hidden=NO;
+        _bale.hidden=NO;
+    }
+    if([singleton.trackNo isEqual:@"3"]){
+        _tyre1.hidden=NO;
+        _bale.hidden=NO;
+        _tyre2.hidden=NO;
+        _crate.hidden=NO;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -230,7 +254,7 @@ email.backgroundColor      = [UIColor whiteColor];
     fxVolumeSetLevel = (int)fxTemp;
     
     //report for dev only
-    NSLog(@"fxVolumeSetLevel= %f: %f :%d", singleton.ambientVolume, fxTemp, fxVolumeSetLevel);
+    //NSLog(@"fxVolumeSetLevel= %f: %f :%d", singleton.ambientVolume, fxTemp, fxVolumeSetLevel);
     
     switch (fxVolumeSetLevel) {
         case 0 ... 10:

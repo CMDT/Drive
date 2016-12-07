@@ -23,4 +23,10 @@
 
 @property (nonatomic, assign) CRCarType carType;
 
+@property (weak, nonatomic) IBOutlet UIImageView *car1;
+@property (weak, nonatomic) IBOutlet UIImageView *car2;
+@property (weak, nonatomic) IBOutlet UIImageView *car3;
+@property (weak, nonatomic) IBOutlet UIImageView *speedo1;
+@property (weak, nonatomic) IBOutlet UIImageView *speedo2;
+@property (weak, nonatomic) IBOutlet UIImageView *speedo3;
 @end
