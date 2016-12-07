@@ -333,7 +333,6 @@
         singleton.counter = singleton.counter+1;
     }
 
-    
     // all the horns, one per line if present
     if (horns > 0) {
                 //blank line
@@ -342,7 +341,7 @@
         [singleton.cardReactionTimeResult addObject:@"Horn No: Reaction Time"];
         singleton.counter = singleton.counter+1;
         // list the horns and the timings
-        for (int x=1; x<horns; x+=1) {
+        for (int x=0; x<horns; x+=1) {
             [singleton.cardReactionTimeResult addObject:singleton.hornTimes ];
             singleton.counter = singleton.counter+1;
         }
@@ -446,7 +445,7 @@
     ok = [textToWrite writeToFile:filepath atomically:YES encoding:NSASCIIStringEncoding error:&err];
     if (!ok) {
         //(statusMessageLab.text=filepath, [err localizedFailureReason]);
-        //NSLog(@"Error writing file at %@\n%@", filepath, [err localizedFailureReason]);
+        NSLog(@"Error writing file at %@\n%@", filepath, [err localizedFailureReason]);
     }
 }
 
