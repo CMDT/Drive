@@ -102,7 +102,7 @@ static mySingleton * sharedSingleton = nil;
             [hornLaps   addObject:@"0"];
             [cardReactionTimeResult addObject:@"0"];
         }
-        for (NSInteger i = 0; i < 10000; ++i)
+        for (NSInteger i = 0; i < 102; ++i)
             {
             [hornTimesAll addObject:@"0"];
             }
@@ -110,12 +110,12 @@ static mySingleton * sharedSingleton = nil;
         tempEntry           = @"";
         hornsShowing        = NO;
         email               = @"me@mmu.ac.uk";
-        testDate            = @"30/11/2016";
+        testDate            = @"08/12/2016";
         testTime            = @"10:00";
         resultStrings       = @"";
         subjectName         = @"Sub";
         resultStrings       = @"";
-        versionNumber       = @"2.5.3 - 30.11.16";
+        versionNumber       = @"2.7.0 - 08.12.16";
         
         counter             = 0;
         laps                = @"0";

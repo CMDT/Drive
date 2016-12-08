@@ -39,12 +39,12 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 @interface MyScene () <SKPhysicsContactDelegate>
 {
     // set out all vars and constants for game
-    Float32 reactionTime[100];
+    Float32 reactionTime[101];
     Float32 noOfSeconds;
     int     xcounter;
     int     lapTimez[101];
     int     hornTimes[101];
-    Float32     hornTimesAll[101];
+    Float32 hornTimesAll[101];
     
     Float32 fastestLap;
     Float32 slowestLap;
@@ -56,7 +56,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     Float32 hornTime;
     Float32 masterScore;
     double  temp;
-    double  angAdd;
+    Float32 angAdd;
     Float32 tempt;
     long    totalCrashes;
     
@@ -72,7 +72,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     
     BOOL    hornShowing;
     BOOL    hornsPressed;//for horns pressed
-    Float32 hornReactionTime[100];
+    Float32 hornReactionTime[101];
     double temp1;
     double temp2;
     double temp3;
@@ -115,6 +115,10 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 
 @synthesize startDate, startDateHorn;
 
+- (void)viewDidLoad {
+    //
+}
+
 #pragma mark - Initialise Game
 
 //in storyboard, note button for game centre is turned to 1px x 1px. set to 301 x 55 in settings measure properties.
@@ -142,12 +146,12 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         //horns
         for (NSInteger i = 0; i < 102; ++i)
             {
-            singleton.lapTimes[i]=@"0";
-            singleton.hornTimes[i]=@"0";
+            singleton.lapTimes[i]  =@"0";
+            singleton.hornTimes[i] =@"0";
             singleton.hornTimes2[i]=@"0";
-            singleton.wallLaps[i]=@"0";
-            singleton.hazLaps[i]=@"0";
-            singleton.hornLaps[i]=@"0";
+            singleton.wallLaps[i]  =@"0";
+            singleton.hazLaps[i]   =@"0";
+            singleton.hornLaps[i]  =@"0";
             singleton.cardReactionTimeResult[i]=@"0";
             }
         [self p_initializeGame];
@@ -161,8 +165,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         tempHaz = 0;
         tempWall= 0;
         xcounter= 1;
-        horns=0;
-        singleton.hornTimerCounter=0;
+        horns   = 0;
+        singleton.hornTimerCounter= 0;
     }
     return self;
 }
@@ -208,7 +212,6 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         NSString *tem3 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld",hours3,minutes3,seconds3];
         
         self.time.text = [NSString stringWithFormat:@"Time: %@", tem3];
-        
     }
     
     //where is the car on the track?, is it going the correct way round to reduce the laps
@@ -257,10 +260,30 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             tempWall= 0;
             tempHaz = 0;
             
-            //make a small randon addition to angle for horn
+            //make a randon  angle for horn trigger position in range 0.758-5.000
             if ([singleton.distractionOn isEqual:@"ON"]) {
-                angAdd = 0 + arc4random() % (90);
-                NSLog(@"rand ang added = %.f",angAdd);
+                
+                    //angAdd = [self randomFloatBetween:0.785 and:5.000];
+                 int angAdd1 = [self randomFloatBetween:0 and:5];
+                switch ((int)angAdd1) {
+                    case 1:
+                        angAdd=M_PI;
+                        break;
+                    case 2:
+                        angAdd=3*M_PI/2;
+                        break;
+                    case 3:
+                        angAdd=M_PI/3;
+                        break;
+                    case 4:
+                        angAdd=3*M_PI/4;
+                        break;
+                    default:
+                        angAdd=M_PI/4;
+                        break;
+                }
+
+                //NSLog(@"rand ang added = %.3f",angAdd);
             }
             
             //test if last lap and message driver
@@ -303,7 +326,13 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         //if (progressAngle - nextProgressAngle < M_PI_4) { // pi/4 rads == 90 deg = n west
         
         // add an angle
-        if (progressAngle - nextProgressAngle < (M_PI/4)) { //
+        //test what the angle is?
+        //NSLog(@"progress m_pi/4 = %f", (M_PI/4)); // about 0.7853
+        //NSLog(@"progress angle  = %f", (progressAngle)); //fractions up to 8.0 then down again, but negative as direction chnages
+        //NSLog(@"n progress ang  = %f", (nextProgressAngle));
+        
+        //if (progressAngle - nextProgressAngle < (M_PI/4)) { //old way, at nw top left
+        if (progressAngle - nextProgressAngle < (angAdd)) { //new way, between 45' and 300'
             // do nothing, everywhere else n, s, e
                 //  NSLog(@"prog-nextProg<pi/4");
         } else {
@@ -318,6 +347,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             if (horn_tt == 1) {
                 //tell the timer that the horn is not pressed yet
                 singleton.hornsShowing = NO;
+                //show the button
                 
                 struct timeval time;
                 gettimeofday(&time, NULL);
@@ -351,7 +381,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 
             //stop the horn timer and record it
             hornReactionTime[horns-1] = temp3;
-            NSLog(@"Horn Reaction = , %.2f", temp3); //
+            //NSLog(@"Horn Reaction = , %.2f", temp3); //
             //reset the flag
             singleton.hornsShowing = NO;
             //horn_tt = 0; //not till next lap
@@ -431,7 +461,6 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     //GO !
 //***************
     
-
 }
 
 //now using singleton for laps
@@ -875,7 +904,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         singleton.totalCrashes = [NSString stringWithFormat:@"%li",totalCrashes];
         
         averageLap = raceTime / (xcounter-1);
-        NSLog(@"average lap-1 %.2f",  raceTime/(xcounter-1));
+        NSLog(@"average lap time %.2f",  raceTime/(xcounter-1));
 
         
         //you finished the race, give the stats
@@ -933,16 +962,23 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         }
         
         for (int x=0; x<xcounter-1; x+=1) { //was xcounter
-            singleton.lapTimes[x] = [NSString stringWithFormat:@"%x+1, %.2f, %@, %@",
-                                     x,
+            singleton.lapTimes[x] = [NSString stringWithFormat:@"%x, %.2f, %@, %@",
+                                     x+1,
                                      reactionTime[x],
                                      singleton.wallLaps[x],
                                      singleton.hazLaps[x]
                                      ];
             
-            NSLog(@"lap %i: %@", x+1, singleton.lapTimes[x]);
+            NSLog(@"react lap: %@", singleton.lapTimes[x]);
         }
-
+        for (int x=0; x<horns; x+=1) {
+            singleton.hornTimes[x] = [NSString stringWithFormat:@"%x, %.2f",
+                                     x+1,
+                                     hornReactionTime[x]
+                                     ];
+            
+            NSLog(@"horn  lap: %@", singleton.hornTimes[x]);
+        }
     }
     
     //not on game centre yet
@@ -1020,4 +1056,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     //NSLog(@"tempHaz=%i, tempWall=%i",tempHaz,tempWall);
 }
 
+-(Float32)randomFloatBetween:(Float32)smallNo and:(Float32)bigNo {
+    // function to give a random float between two numbers
+    Float32 diff = bigNo - smallNo;
+    return (((Float32) (arc4random() % ((unsigned)RAND_MAX +1)) / RAND_MAX) * diff) + smallNo;
+}
 @end

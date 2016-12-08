@@ -28,7 +28,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ajn-d1-kbx" userLabel="Button Horn">
-                                <rect key="frame" x="313" y="94" width="38" height="40"/>
+                                <rect key="frame" x="316" y="93" width="38" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="carhorn-btn.png"/>
                                 <connections>

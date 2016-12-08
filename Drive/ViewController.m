@@ -28,10 +28,10 @@
     Float32 temp5;
 }
 
-@property (nonatomic, strong) SKView            * skView;
-@property (nonatomic, strong) AnalogControl     * analogControl;
-@property (nonatomic, strong) MyScene           * scene;
-@property (weak, nonatomic  ) IBOutlet UIButton * hornBtn;
+@property (nonatomic, strong) SKView              * skView;
+@property (nonatomic, strong) AnalogControl       * analogControl;
+@property (nonatomic, strong) MyScene             * scene;
+@property (retain, nonatomic  ) IBOutlet UIButton * hornBtn;
 
 @end
 
@@ -39,10 +39,11 @@
 
 @synthesize hornBtn, hornTimer;
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     mySingleton *singleton = [mySingleton sharedSingleton];
-    
+
     //for plist version group
     NSString * version0; //version number
     NSString * version1; //copyright info
@@ -71,7 +72,7 @@
     //version, set anyway *****************************************
     //*************************************************************
     
-    version0 =  @"DRIVE Version 2.5.3 - 30.11.16";     // version   *** keep short
+    version0 =  @"DRIVE Version 2.7.0 - 08.12.16";     // version   *** keep short
     version1 =  @"MMU (C) 2016";                // copyright *** limited line space
     version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
     version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen
@@ -115,7 +116,7 @@
     
     //versionNumberLab.text   = version0;
     singleton.versionNumber = version0;
-    
+    hornBtn.hidden=YES;
     if ([singleton.distractionOn isEqual:@"OFF"]) {
         hornBtn.hidden=YES;
     }else{
@@ -222,7 +223,6 @@
     self.skView.showsFPS = YES;
     self.skView.showsNodeCount = YES;
 #endif
-
 }
 
 - (BOOL)shouldAutorotate {
@@ -259,7 +259,7 @@
 - (IBAction)hornButtonDidTouchUpInside:(id)sender {
     mySingleton *singleton = [mySingleton sharedSingleton];
     //the horn button was pressed
-    
+    hornBtn.hidden=NO;
     //get clock time now and save to singleton
     struct timeval time;
     gettimeofday(&time, NULL);
@@ -267,7 +267,7 @@
     
     singleton.hornsShowing = YES;
     singleton.hornsMulti   = millis;
-    NSLog(@"STOP Horn horntouch =  %.f",  millis);
+    //NSLog(@"STOP Horn horntouch =  %.f",  millis);
 }
 
 #pragma mark - Game Over

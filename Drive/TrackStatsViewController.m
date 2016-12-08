@@ -226,30 +226,30 @@
     // clear any old rsults from  results array
     [singleton.cardReactionTimeResult removeAllObjects];
 
-    [singleton.cardReactionTimeResult addObject:@"MMU Cheshire, Exercise and Sport Science, DRIVE App Results"];
+    [singleton.cardReactionTimeResult addObject:@"MMU Cheshire, Exercise and Sport Science, DRIVE App Results<br/>"];
     singleton.counter = singleton.counter+1;
     //mmu copyright message 2014 JAH
-    [singleton.cardReactionTimeResult addObject:@"(c) 2016 MMU written by Jonathan A. Howell for ESS DRIVE App"];
+    [singleton.cardReactionTimeResult addObject:@"(c) 2016 MMU written by Jonathan A. Howell for ESS DRIVE App<br/>"];
     singleton.counter = singleton.counter+1;
     //mmu version no
     [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"%@",singleton.versionNumber]];
     //[singleton.cardReactionTimeResult addObject:singleton.versionNumber];
     singleton.counter = singleton.counter+1;
     //blank line
-    [singleton.cardReactionTimeResult addObject:@" "];
+    [singleton.cardReactionTimeResult addObject:@"<br/><br/> "];
     singleton.counter = singleton.counter+1;
     
     //title line - results one row per data entry
-    [singleton.cardReactionTimeResult addObject:@"DRIVE Race Results Results"];
+    [singleton.cardReactionTimeResult addObject:@"DRIVE Race Results Results<br/>"];
     
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject:@"Subject Name, Test Date, Test Time"];
+    [singleton.cardReactionTimeResult addObject:@"Subject Name, Test Date, Test Time<br/>"];
     
     singleton.counter = singleton.counter+1;
     
     //blank line
-    [singleton.cardReactionTimeResult addObject:@" " ];
+    [singleton.cardReactionTimeResult addObject:@"<br/> " ];
     singleton.counter = singleton.counter+1;
     // +++++++++++++++++++++++++++
     //loop if rows of results
@@ -267,61 +267,61 @@
     //singleton.counter = singleton.counter+1;
     //}
     
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Date: %@, Time: %@, Subject Name: %@",singleton.testDate, singleton.testTime, singleton.subjectName]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Date: %@, Time: %@, Subject Name: %@<br/>",singleton.testDate, singleton.testTime, singleton.subjectName]];
     singleton.counter = singleton.counter+1;
     
     // +++++++++++++++++++++++++++
     //blank line
-    [singleton.cardReactionTimeResult addObject:@" " ];
+    [singleton.cardReactionTimeResult addObject:@"<br/><br/> " ];
     singleton.counter = singleton.counter+1;
     
     // put all the data for the results here:
     // summary as per screen
     // lapTimes,
 
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Email: %@",singleton.email]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Email: %@<br/>",singleton.email]];
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Car: %@, Track: %@",singleton.carNo, singleton.trackNo]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Car: %@, Track: %@<br/>",singleton.carNo, singleton.trackNo]];
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Drive Music: %@",singleton.musicTrack]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Drive Music: %@<br/>",singleton.musicTrack]];
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Distraction Set: %@",singleton.distractionOn]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Distraction Set: %@<br/>",singleton.distractionOn]];
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Laps Raced: %@",singleton.laps]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Laps Raced: %@<br/>",singleton.laps]];
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Horns Played: %@",singleton.hornsPlayed]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Horns Played: %@<br/>",singleton.hornsPlayed]];
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Wall Crashes: %@, Hazard Crashes: %@, Total Crashes: %@",singleton.wallCrashes,singleton.hazCrashes, singleton.totalCrashes]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Wall Crashes: %@, Hazard Crashes: %@, Total Crashes: %@<br/>",singleton.wallCrashes,singleton.hazCrashes, singleton.totalCrashes]];
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Fastest Lap: %@: %@, Slowest Lap: %@: %@, Average Lap: %@",singleton.fastestLapNo, singleton.fastestLap,singleton.slowestLapNo,singleton.slowestLap, singleton.averageLap]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Fastest Lap: %@: %@, Slowest Lap: %@: %@, Average Lap: %@<br/>",singleton.fastestLapNo, singleton.fastestLap,singleton.slowestLapNo,singleton.slowestLap, singleton.averageLap]];
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Race Time: %@",singleton.totalTime]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Total Race Time: %@<br/>",singleton.totalTime]];
     singleton.counter = singleton.counter+1;
     
     if (horns > 0) {
         //blank line
         [singleton.cardReactionTimeResult addObject:@" " ];
         singleton.counter = singleton.counter+1;
-        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Fastest Horn: %@, Slowest Horn: %@, Average Horn: %@",singleton.fastestHorn,singleton.slowestHorn, singleton.averageHorn]];
+        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Fastest Horn: %@, Slowest Horn: %@, Average Horn: %@<br/>",singleton.fastestHorn,singleton.slowestHorn, singleton.averageHorn]];
         singleton.counter = singleton.counter+1;
         
-        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Horn Time: %@",singleton.totalHorn]];
+        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Total Horn Time: %@<br/>",singleton.totalHorn]];
         singleton.counter = singleton.counter+1;
     }
 
     //blank line
-    [singleton.cardReactionTimeResult addObject:@" " ];
+    [singleton.cardReactionTimeResult addObject:@"<br/> " ];
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject: @"Laps, Times, Wall Crashes, Hazard Crashes"];
+    [singleton.cardReactionTimeResult addObject: @"LapNo, Times, Wall Crashes, Hazard Crashes<br/>"];
     singleton.counter = singleton.counter+1;
     
     //***********************
@@ -331,43 +331,33 @@
     for (int x=0; x<[laps.text intValue]; x+=1) {
         [singleton.cardReactionTimeResult addObject:singleton.lapTimes[x] ];
         singleton.counter = singleton.counter+1;
+        [singleton.cardReactionTimeResult addObject:@"<br/> " ];
+        singleton.counter = singleton.counter+1;
     }
 
     // all the horns, one per line if present
     if (horns > 0) {
                 //blank line
-    [singleton.cardReactionTimeResult addObject:@" " ];
+    [singleton.cardReactionTimeResult addObject:@"<br/> " ];
     singleton.counter = singleton.counter+1;
-        [singleton.cardReactionTimeResult addObject:@"Horn No: Reaction Time"];
+        [singleton.cardReactionTimeResult addObject:@"Horn No, Horn Reaction Time<br/>"];
         singleton.counter = singleton.counter+1;
         // list the horns and the timings
         for (int x=0; x<horns; x+=1) {
-            [singleton.cardReactionTimeResult addObject:singleton.hornTimes ];
+            [singleton.cardReactionTimeResult addObject:singleton.hornTimes[x] ];
+            singleton.counter = singleton.counter+1;
+            [singleton.cardReactionTimeResult addObject:@"<br/> " ];
             singleton.counter = singleton.counter+1;
         }
     }
     // ***************************
     
     //blank line
-    [singleton.cardReactionTimeResult addObject:@" " ];
+    [singleton.cardReactionTimeResult addObject:@"<br/> " ];
     singleton.counter = singleton.counter+1;
-    
+    [singleton.cardReactionTimeResult addObject:@"... " ];
     //end of data message
-    [singleton.cardReactionTimeResult addObject:@"End of results table. " ];
-    singleton.counter = singleton.counter+1;
-    //blank line
-    [singleton.cardReactionTimeResult addObject:@" " ];
-    singleton.counter = singleton.counter+1;
-    //mmu copyright message
-    [singleton.cardReactionTimeResult addObject:@"MMU (c) 2016 DRIVE App Jonathan A. Howell, SAS Technical Services. " ];
-    singleton.counter = singleton.counter+1;
-    //version number
-    [singleton.cardReactionTimeResult addObject: singleton.versionNumber ];
-    singleton.counter = singleton.counter+1;
-    //blank line
-    [singleton.cardReactionTimeResult addObject:@"."  ];
-    [singleton.cardReactionTimeResult addObject:@".." ];
-    [singleton.cardReactionTimeResult addObject:@"..."];
+    [singleton.cardReactionTimeResult addObject:@"End of results table. <br/>" ];
     singleton.counter = singleton.counter+1;
     
     //make a text file from the array of results
@@ -459,15 +449,62 @@
     return retStr;
 }
 
+-(void)viewDidDisappear:(BOOL)animated{
+    statusMessageLab.hidden = YES;
+}
+//*****************
+//START - test email client and components from Tachist
+//mail from button press
+-(IBAction)showEmail:(id)sender {
+    statusMessageLab.text=@"E-Mail\nResults\nLoading...";
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
+    [mailComposer setMailComposeDelegate:self];
+    if ([MFMailComposeViewController canSendMail]){
+        [mailComposer setToRecipients:[NSArray arrayWithObjects:singleton.email ,Nil]];
+        
+        //[mailComposer setSubject:@"iPad Restults from DRIVE App"];
+        [mailComposer setSubject:
+         [NSString stringWithFormat:@"%@ - DRIVE, %@, %@.", [NSString stringWithFormat:@"%@", singleton.subjectName], singleton.testDate, singleton.testTime]];
+        
+        //[mailComposer setMessageBody:@"Dear Drive User: " isHTML:YES];
+        
+        [mailComposer setMessageBody: singleton.resultStrings isHTML:YES];
+        [mailComposer setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+        [self presentViewController:mailComposer animated:YES completion:^{/*email*/}];
+    }else{
+        
+    } //end of if else to check if mail is able to be sent, send message if not
+    statusMessageLab.text=@"Select\nNext\nTask";
+} // end of mail function
+
+//set out mail controller warnings screen
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *) error {
+    statusMessageLab.text=@"Mail\nController";
+    if (error) {
+        UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"error" message:[NSString stringWithFormat:@"error %@",[error description]] delegate:nil cancelButtonTitle:@"dismiss" otherButtonTitles:nil,nil];
+        [alertview show];
+        //[alert release];
+        [self dismissViewControllerAnimated:YES completion:^{/*error*/}];
+        statusMessageLab.text=@"An mail\nError\nOccurred.";
+    }
+    else{
+        [self dismissViewControllerAnimated:YES completion:^{/*ok*/}];
+        statusMessageLab.text=@"E-Mail Sent\nOK.";
+    }
+    statusMessageLab.text=@"Select\nNext\nTask";
+}
+
 - (void)saveText
 {
-    //statusMessageLab.text=@"Saving\nData\nFile.";
+    //save text results to file for attachment
+    statusMessageLab.text=@"Saving\nData\nFile.";
     mySingleton *singleton = [mySingleton sharedSingleton];
-    NSFileManager   * filemgr;
-    NSData          * databuffer;
-    NSString        * dataFile;
-    NSString        * docsDir;
-    NSArray         * dirPaths;
+    NSFileManager *filemgr;
+    NSData *databuffer;
+    NSString *dataFile;
+    NSString *docsDir;
+    NSArray *dirPaths;
     
     filemgr = [NSFileManager defaultManager];
     
@@ -475,7 +512,7 @@
     
     docsDir = dirPaths[0];
     
-    NSString * fileNameS = [NSString stringWithFormat:@"%@.csv", subjectName.text];
+    NSString *fileNameS = [NSString stringWithFormat:@"%@.csv", singleton.subjectName];
     dataFile = [docsDir stringByAppendingPathComponent:fileNameS];
     
     databuffer = [singleton.resultStrings dataUsingEncoding: NSASCIIStringEncoding];
@@ -483,11 +520,9 @@
                      contents: databuffer attributes:nil];
 }
 
--(void)viewDidDisappear:(BOOL)animated{
-    statusMessageLab.hidden = YES;
-}
-
-//mail from button press
+//END - test email client and components from Tachist
+//*****************
+//mail from button press - not used client?????? use ShowEmail
 -(IBAction)sendEmail:(id)sender {
     statusMessageLab.hidden = NO;
     statusMessageLab.text=@"E-Mail\nResults\nLoading...";
@@ -513,7 +548,7 @@
 } // end of mail function
 
 //set out mail controller warnings screen
--(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *) error {
+-(void)mailComposeController2:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *) error {
     statusMessageLab.hidden = NO;
     statusMessageLab.text=@"Mail\nController";
     if (error) {
@@ -528,45 +563,6 @@
         statusMessageLab.text=@"E-Mail Sent\nOK.";
     }
     //statusMessageLab.text=@"Select\nNext\nTask";
-}
-
-//if file name is passed, use...
-//- (IBAction)showEmail:(NSString*)file {
-
-- (IBAction)showEmail:(id)sender {
-             [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
-    statusMessageLab.hidden = NO;
-    mySingleton *singleton = [mySingleton sharedSingleton];
-    
-    NSString *emailTitle = [NSString stringWithFormat:@"DRIVE App Data for: %@",singleton.subjectName];
-    NSString *messageBody = [NSString stringWithFormat:@"The test data for the subject:%@ taken at the date: %@ and time: %@, is attached as a text/csv file.  \n\nThe file is comma separated variable, .csv extension.  \n\nThe data can be read by MS-Excel, then analysed by your own functions. \n\nSent by DRIVE App.",singleton.subjectName,singleton.testDate,singleton.testTime];
-    //old for testing// NSArray  *toRecipents = [NSArray arrayWithObject:@"j.a.howell@mmu.ac.uk"];
-    
-    NSArray  *toRecipents = [NSArray arrayWithObject:[NSString stringWithFormat:@"%@", singleton.email,Nil]];
-    
-    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
-    mc.mailComposeDelegate = self;
-    [mc setSubject:emailTitle];
-    [mc setMessageBody:messageBody isHTML:NO];
-    [mc setToRecipients:toRecipents];
-    
-    filepath = [[NSString alloc] init];
-    
-    filepath = [self.GetDocumentDirectory stringByAppendingPathComponent:self.setFilename];
-    
-    // Get the resource path and read the file using NSData
-    
-    NSData *fileData = [NSData dataWithContentsOfFile:filepath];
-    
-    // Determine the MIME type
-    NSString *mimeType;
-    mimeType = @"text/csv";//only one type needed
-    
-    // Add attachment
-    [mc addAttachmentData:fileData mimeType:mimeType fileName:filename];
-    
-    // Present mail view controller on screen
-    [self presentViewController:mc animated:YES completion:NULL];
 }
 
 -(void)setDateNow{
@@ -590,15 +586,7 @@
 }
 
  - (IBAction)finishAction:(id)sender {
-         mySingleton *singleton = [mySingleton sharedSingleton];
          [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
-     // not sure if this should be rem'd out now.... CHECK ****************************
-     // looks like dev stuff to see data
-     //********************************************************************************
-     for (int x=0; x<(singleton.counter+1); x+=1) {
-         NSLog(@"%@",singleton.cardReactionTimeResult[x]);
-     }
-     //********************************************************************************
      
     //re-route this to the results stats VC TrackStatsVC
     [self.navigationController popToRootViewControllerAnimated:YES];
