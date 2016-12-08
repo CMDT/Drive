@@ -15,6 +15,13 @@
 
     NSMutableArray * cardReactionTimeResult;
     NSString       * resultsStrings;
+    NSString       * displayStrings;
+    NSString       * displayStringsTitle;
+    UIImage        * imageForDisplay;
+    
+    NSMutableArray * resultStringRows;//for Excel and data csv format
+    NSMutableArray * displayStringRows;//for screen display formatted to look nice
+    NSMutableArray * displayStringTitles;
     // arrays for detailed timings for each lap in data
     NSMutableArray * lapTimes;
     NSMutableArray * hornTimes;
@@ -60,6 +67,7 @@
 @property (nonatomic) BOOL    hornsShowing;
 @property (nonatomic) int     counter;
 @property (nonatomic, retain) NSMutableArray * cardReactionTimeResult;
+@property (nonatomic) UIImage *imageForDisplay;
 
 // arrays for detailed timings for each lap in data
 @property (nonatomic, retain) NSMutableArray * lapTimes;
@@ -70,7 +78,12 @@
 @property (nonatomic, retain) NSMutableArray * hazLaps;
 @property (nonatomic, retain) NSMutableArray * hornLaps;
 @property (nonatomic, retain) NSString       * tempEntry; // for above arrays
-
+@property (nonatomic,retain) NSString * oldSubjectName;
+@property (nonatomic,retain) NSString * displayStrings;
+@property (nonatomic,retain) NSString * displayStringsTitle;
+@property (nonatomic,retain) NSMutableArray * resultStringRows;    //for the Excel formatted text, csv
+@property (nonatomic,retain) NSMutableArray * displayStringRows;   //for the result string, one row per item
+@property (nonatomic,retain) NSMutableArray * displayStringTitles; //for the title label for the result, one per item/row  title:item of result
 @property (nonatomic, retain) NSString * email;
 @property (nonatomic, retain) NSString * resultStrings;
 @property (nonatomic, retain) NSString * subjectName;

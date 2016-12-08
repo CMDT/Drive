@@ -53,6 +53,16 @@ static mySingleton * sharedSingleton = nil;
             totalHorn,
             distractionOn,
             masterScore,
+oldSubjectName,
+imageForDisplay,
+resultStringRows,   //array
+displayStrings,     //result item
+displayStringRows,  //array
+
+displayStringsTitle,//result title
+displayStringTitles,//array
+
+
 // float64
             wallCrashMult,
             hazCrashMult,
@@ -89,6 +99,9 @@ static mySingleton * sharedSingleton = nil;
         hazLaps                = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
         hornLaps               = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
         cardReactionTimeResult = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
+        resultStringRows     = [[NSMutableArray alloc]initWithObjects:@"", nil];//clear the arrays of any data
+        displayStringRows    = [[NSMutableArray alloc]initWithObjects: @"",nil];
+        displayStringTitles  = [[NSMutableArray alloc]initWithObjects: @"",nil];
 
         
         //populate arrays with zeros at start of race, 100 laps max, do them all
@@ -110,12 +123,12 @@ static mySingleton * sharedSingleton = nil;
         tempEntry           = @"";
         hornsShowing        = NO;
         email               = @"me@mmu.ac.uk";
-        testDate            = @"30/11/2016";
+        testDate            = @"08/12/2016";
         testTime            = @"10:00";
         resultStrings       = @"";
         subjectName         = @"Sub";
         resultStrings       = @"";
-        versionNumber       = @"2.5.3 - 30.11.16";
+        versionNumber       = @"2.6.2 - 08.12.16";
         
         counter             = 0;
         laps                = @"0";

@@ -401,17 +401,19 @@
 
 //find the home directory for Document
 -(NSString *)GetDocumentDirectory{
-    fileMgr = [NSFileManager defaultManager];
     NSString * docsDir;
     NSArray  * dirPaths;
+    
+    fileMgr  = [NSFileManager defaultManager];
+    
     dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    docsDir = dirPaths[0];
+    docsDir  = dirPaths[0];
+    
     return docsDir;
 }
 
-/*Create a new file*/
 -(void)WriteToStringFile:(NSMutableString *)textToWrite{
-    mySingleton *singleton = [mySingleton sharedSingleton];
+    //mySingleton *singleton = [mySingleton sharedSingleton];
     //int trynumber = 0;
     filepath = [[NSString alloc] init];
     NSError *err;
@@ -428,7 +430,7 @@
     //BOOL fileExists = TRUE;
     
     
-    //singleton.subjectName = [singleton.oldSubjectName stringByAppendingString: [NSString stringWithFormat:@"_%@_%i",[self getCurrentDateTimeAsNSString], trynumber]];
+    //singleton.subjectName = [singleton.olsSubjectName stringByAppendingString: [NSString stringWithFormat:@"_%@_%i",[self getCurrentDateTimeAsNSString], trynumber]];
     //[self WriteToStringFile:textToWrite];
     //    }
     //else
@@ -436,7 +438,9 @@
     //not exists, write
     //BOOL fileExists = FALSE;
     
-    singleton.subjectName = [singleton.subjectName stringByAppendingString: [NSString stringWithFormat:@"_%@",[self getCurrentDateTimeAsNSString]]];
+    
+    //unrem if necessary
+    ///////******** singleton.oldSubjectName = [singleton.subjectName stringByAppendingString: [NSString stringWithFormat:@"_%@",[self getCurrentDateTimeAsNSString]]];
     
     //}
     //
@@ -475,7 +479,8 @@
     
     docsDir = dirPaths[0];
     
-    NSString * fileNameS = [NSString stringWithFormat:@"%@.csv", subjectName.text];
+    //NSString * fileNameS = [NSString stringWithFormat:@"%@.csv", subjectName.text];
+    NSString * fileNameS = @"drive.csv";
     dataFile = [docsDir stringByAppendingPathComponent:fileNameS];
     
     databuffer = [singleton.resultStrings dataUsingEncoding: NSASCIIStringEncoding];
@@ -487,49 +492,34 @@
     statusMessageLab.hidden = YES;
 }
 
-//mail from button press
--(IBAction)sendEmail:(id)sender {
-    statusMessageLab.hidden = NO;
-    statusMessageLab.text=@"E-Mail\nResults\nLoading...";
-    mySingleton *singleton = [mySingleton sharedSingleton];
-    
-    MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
-    [mailComposer setMailComposeDelegate:self];
-    
-    if ([MFMailComposeViewController canSendMail]){
-        [mailComposer setToRecipients:[NSArray arrayWithObjects:singleton.email ,Nil]];
-        [mailComposer setSubject:@"Results from DRIVE App"];
-        //[mailComposer setMessageBody:@"Dear Drive App User: " isHTML:YES];
-        
-        [mailComposer setMessageBody: singleton.resultStrings isHTML:NO];
-        [mailComposer setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-        
-        [self presentViewController:mailComposer animated:YES completion:^{/*email*/}];
-        
-    }else{
-        
-    } //end of if else to check if mail is able to be sent, send message if not
-    //statusMessageLab.text=@"Select\nNext\nTask";
-} // end of mail function
+
 
 //set out mail controller warnings screen
--(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *) error {
-    statusMessageLab.hidden = NO;
-    statusMessageLab.text=@"Mail\nController";
-    if (error) {
-        UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"error" message:[NSString stringWithFormat:@"error %@",[error description]] delegate:nil cancelButtonTitle:@"dismiss" otherButtonTitles:nil,nil];
-        [alertview show];
-        //[alert release];
-        [self dismissViewControllerAnimated:YES completion:^{/*error*/}];
-        statusMessageLab.text=@"An mail\nError\nOccurred.";
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            //NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            //NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            //NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            //NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            //NSLog(@"Mail problem, not sent, failed, saved or cancelled... some other fault");
+            break;
     }
-    else{
-        [self dismissViewControllerAnimated:YES completion:^{/*ok*/}];
-        statusMessageLab.text=@"E-Mail Sent\nOK.";
-    }
-    //statusMessageLab.text=@"Select\nNext\nTask";
+    // Close the Mail Interface
+    [self dismissViewControllerAnimated:YES completion:NULL];
+    
+    //NSLog(@"Email View now closed.");
 }
-
 //if file name is passed, use...
 //- (IBAction)showEmail:(NSString*)file {
 
@@ -538,11 +528,15 @@
     statusMessageLab.hidden = NO;
     mySingleton *singleton = [mySingleton sharedSingleton];
     
+    singleton.testDate=[self getCurrentDate];
+    singleton.testTime=[self getCurrentTime];
+    
     NSString *emailTitle = [NSString stringWithFormat:@"DRIVE App Data for: %@",singleton.subjectName];
     NSString *messageBody = [NSString stringWithFormat:@"The test data for the subject:%@ taken at the date: %@ and time: %@, is attached as a text/csv file.  \n\nThe file is comma separated variable, .csv extension.  \n\nThe data can be read by MS-Excel, then analysed by your own functions. \n\nSent by DRIVE App.",singleton.subjectName,singleton.testDate,singleton.testTime];
     //old for testing// NSArray  *toRecipents = [NSArray arrayWithObject:@"j.a.howell@mmu.ac.uk"];
     
-    NSArray  *toRecipents = [NSArray arrayWithObject:[NSString stringWithFormat:@"%@", singleton.email,Nil]];
+    //NSArray  *toRecipents = [NSArray arrayWithObject:[NSString stringWithFormat:@"%@", singleton.email,Nil]];
+    NSArray  *toRecipents = [NSArray arrayWithObject:singleton.email];
     
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
     mc.mailComposeDelegate = self;
@@ -564,9 +558,9 @@
     
     // Add attachment
     [mc addAttachmentData:fileData mimeType:mimeType fileName:filename];
-    
     // Present mail view controller on screen
     [self presentViewController:mc animated:YES completion:NULL];
+    //NSLog(@"Finished Email");
 }
 
 -(void)setDateNow{
@@ -586,7 +580,27 @@
     [dateFormatter setDateFormat:@"HH:mm:ss"];
     NSString *timeString = [dateFormatter stringFromDate: currentTime];
     testTimes.text=timeString;
-    singleton.testDate=testTimes.text;
+    singleton.testTime=testTimes.text;
+}
+
+-(NSString*)getCurrentDate
+{
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"dd/MM/yyyy"];
+    NSDate *now = [NSDate date];
+    NSString *retStr = [format stringFromDate:now];
+    
+    return retStr;
+}
+
+-(NSString*)getCurrentTime
+{
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"HH:mm:ss"];
+    NSDate *now = [NSDate date];
+    NSString *retStr = [format stringFromDate:now];
+    
+    return retStr;
 }
 
  - (IBAction)finishAction:(id)sender {

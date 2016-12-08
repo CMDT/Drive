@@ -51,6 +51,7 @@
 		917B79131C1DB50E00A6D3DA /* TrackStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 917B79121C1DB50E00A6D3DA /* TrackStatsViewController.m */; };
 		917E5A5D1C21DF0A009DF226 /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 917E5A5B1C21DF0A009DF226 /* tick.png */; };
 		917E5A5E1C21DF0A009DF226 /* tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 917E5A5C1C21DF0A009DF226 /* tick@2x.png */; };
+		91C87E6E1DF8DC480067745F /* resultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C87E6D1DF8DC480067745F /* resultsVC.m */; };
 		E11F94841C625B8900712F9B /* high.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F947C1C625B8900712F9B /* high.png */; };
 		E11F94851C625B8900712F9B /* high@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F947D1C625B8900712F9B /* high@2x.png */; };
 		E11F94861C625B8900712F9B /* low.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F947E1C625B8900712F9B /* low.png */; };
@@ -279,6 +280,8 @@
 		917B79121C1DB50E00A6D3DA /* TrackStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackStatsViewController.m; sourceTree = "<group>"; };
 		917E5A5B1C21DF0A009DF226 /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
 		917E5A5C1C21DF0A009DF226 /* tick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick@2x.png"; sourceTree = "<group>"; };
+		91C87E6C1DF8DC3D0067745F /* resultsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = resultsVC.h; sourceTree = "<group>"; };
+		91C87E6D1DF8DC480067745F /* resultsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resultsVC.m; sourceTree = "<group>"; };
 		E11F947C1C625B8900712F9B /* high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = high.png; sourceTree = "<group>"; };
 		E11F947D1C625B8900712F9B /* high@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "high@2x.png"; sourceTree = "<group>"; };
 		E11F947E1C625B8900712F9B /* low.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = low.png; sourceTree = "<group>"; };
@@ -516,6 +519,8 @@
 				47B293CA197D3E10006BE2D1 /* HomeScreenViewController.h */,
 				47B293CB197D3E10006BE2D1 /* HomeScreenViewController.m */,
 				47117B541959CA1400B20209 /* MyScene.h */,
+				91C87E6C1DF8DC3D0067745F /* resultsVC.h */,
+				91C87E6D1DF8DC480067745F /* resultsVC.m */,
 				47117B551959CA1400B20209 /* MyScene.m */,
 				917B79111C1DB50E00A6D3DA /* TrackStatsViewController.h */,
 				917B79121C1DB50E00A6D3DA /* TrackStatsViewController.m */,
@@ -1077,7 +1082,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = " python /Users/jonhowell/Drive2/Drive/Settings.bundle/Licence.py #work\n# python /Users/jonathanhowell/Documents/Drive2015b/Drive/Settings.bundle/Licence.py #home";
+			shellScript = "#python /Users/jonhowell/Drive2/Drive/Settings.bundle/Licence.py #work\npython /Users/jonathanhowell/Documents/Drive2015b/Drive/Settings.bundle/Licence.py #home";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1095,6 +1100,7 @@
 				47117B531959CA1400B20209 /* ViewController.m in Sources */,
 				47117B561959CA1400B20209 /* MyScene.m in Sources */,
 				47696E4A195D27EA00A41AC6 /* SKTAudio.m in Sources */,
+				91C87E6E1DF8DC480067745F /* resultsVC.m in Sources */,
 				47696E48195D27EA00A41AC6 /* SKEmitterNode+SKTExtras.m in Sources */,
 				47696E4B195D27EA00A41AC6 /* SKTUtils.mm in Sources */,
 				47696E47195D27EA00A41AC6 /* SKAction+SKTExtras.m in Sources */,
@@ -1244,7 +1250,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4SPW49WK35;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Drive/Drive-Prefix.pch";
 				INFOPLIST_FILE = "Drive/Drive-Info.plist";
@@ -1265,7 +1271,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4SPW49WK35;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Drive/Drive-Prefix.pch";
 				INFOPLIST_FILE = "Drive/Drive-Info.plist";
