@@ -72,7 +72,7 @@
     //version, set anyway *****************************************
     //*************************************************************
     
-    version0 =  @"DRIVE Version 2.7.0 - 08.12.16";     // version   *** keep short
+    version0 =  @"DRIVE Version 2.8.0 - 09.12.16";     // version   *** keep short
     version1 =  @"MMU (C) 2016";                // copyright *** limited line space
     version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
     version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen
@@ -220,7 +220,7 @@
 
     //only show fps when in debug mode
 #ifdef DEBUG
-    self.skView.showsFPS = YES;
+    self.skView.showsFPS       = YES;
     self.skView.showsNodeCount = YES;
 #endif
 }

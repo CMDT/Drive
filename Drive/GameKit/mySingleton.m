@@ -110,12 +110,12 @@ static mySingleton * sharedSingleton = nil;
         tempEntry           = @"";
         hornsShowing        = NO;
         email               = @"me@mmu.ac.uk";
-        testDate            = @"08/12/2016";
+        testDate            = @"09/12/2016";
         testTime            = @"10:00";
         resultStrings       = @"";
         subjectName         = @"Sub";
         resultStrings       = @"";
-        versionNumber       = @"2.7.0 - 08.12.16";
+        versionNumber       = @"2.8.0 - 09.12.16";
         
         counter             = 0;
         laps                = @"0";

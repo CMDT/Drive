@@ -56,7 +56,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     Float32 hornTime;
     Float32 masterScore;
     double  temp;
-    Float32 angAdd;
+    int angAdd;
+    Float32 sign;
     Float32 tempt;
     long    totalCrashes;
     
@@ -72,6 +73,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     
     BOOL    hornShowing;
     BOOL    hornsPressed;//for horns pressed
+    BOOL    hornTriggered; // when yes, the car is in the right position
     Float32 hornReactionTime[101];
     double temp1;
     double temp2;
@@ -89,11 +91,13 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 @property (nonatomic, assign) CRLevelType     levelType;
 @property (nonatomic, assign) NSTimeInterval  timeInSeconds;
 @property (nonatomic, assign) NSInteger       numOfLaps;
+@property (nonatomic, assign) NSInteger       hors;
 @property (nonatomic, strong) SKSpriteNode  * car;
 
 @property (nonatomic, strong) SKLabelNode   * laps,
                                             * time,
                                             * colls,
+                                            * hor,
                                             * walls;
 
 @property (nonatomic, assign) NSInteger       maxSpeed;
@@ -167,6 +171,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         xcounter= 1;
         horns   = 0;
         singleton.hornTimerCounter= 0;
+        angAdd = -3;
+        hornTriggered = NO;
     }
     return self;
 }
@@ -222,7 +228,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     CGPoint vector = CGPointSubtract(self.car.position, self.trackCenter);
     
     // turn the position to an angle
-    CGFloat progressAngle = CGPointToAngle(vector) * M_PI; //was + not * error, no counts
+    CGFloat progressAngle = CGPointToAngle(vector) * M_PI;
     
     //NSLog(@"Vector = %d : %d, progress = %f : %f",(int)_car.position.x,(int)_car.position.y, progressAngle, nextProgressAngle);
     
@@ -233,18 +239,29 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         // NSLog(@"prog-nextProg<pi/4"); } //else{NSLog(@"prog-nextProg NOT < pi/4");
     //}
     
+    //check to see when the horn needs triggering
+    if ([singleton.distractionOn isEqual:@"ON"]) {
+        if(angAdd>0){
+            if (progressAngle < angAdd+1 && progressAngle >= angAdd) {//(progressAngle < 2 && progressAngle > 1) range 0 to 10, -1 to -10
+                hornTriggered = YES;
+            } else {
+                hornTriggered = NO;
+            }
+        }else {
+            if (progressAngle <= angAdd && progressAngle > angAdd-1) {//(progressAngle < 2 && progressAngle > 1) range 0 to 10, -1 to -10
+                hornTriggered = YES;
+            } else {
+                hornTriggered = NO;
+            }
+        }
+    }
+    
     if (progressAngle > nextProgressAngle && (progressAngle - nextProgressAngle) < M_PI_4) { // M_PI_4 = pi/4
         nextProgressAngle += M_PI_2; // M_PI_2 = pi/2 rads == 45 deg
         
-        if (nextProgressAngle > 2 * M_PI) { //was 2, 2*pi rads == 360
-            
-            nextProgressAngle = 0;
-            horn_tt=0; //reset so it can beep again
-        }
-        
         if (fabs(nextProgressAngle - M_PI) < FLT_EPSILON) { //the difference between 1.0 and the smallest float bigger than 1.0.
             self.numOfLaps -= 1;
-            
+            self.hors=horns;
             //read the timer
                         //bounds limits
             if (xcounter > 100) {
@@ -260,54 +277,46 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             tempWall= 0;
             tempHaz = 0;
             
-            //make a randon  angle for horn trigger position in range 0.758-5.000
-            if ([singleton.distractionOn isEqual:@"ON"]) {
-                
-                    //angAdd = [self randomFloatBetween:0.785 and:5.000];
-                 int angAdd1 = [self randomFloatBetween:0 and:5];
-                switch ((int)angAdd1) {
-                    case 1:
-                        angAdd=M_PI;
-                        break;
-                    case 2:
-                        angAdd=3*M_PI/2;
-                        break;
-                    case 3:
-                        angAdd=M_PI/3;
-                        break;
-                    case 4:
-                        angAdd=3*M_PI/4;
-                        break;
-                    default:
-                        angAdd=M_PI/4;
-                        break;
-                }
-
-                //NSLog(@"rand ang added = %.3f",angAdd);
-            }
-            
             //test if last lap and message driver
             if ((long)self.numOfLaps>1) {
             self.laps.text = [NSString stringWithFormat:@"Laps to go: %li", (long)self.numOfLaps];
+                self.hor.text = [NSString stringWithFormat:@"H: %li", (long)self.hors];
             }else{
              self.laps.text = @"Last Lap !";
             }
             //NSLog(@"Lap time = %f",reactionTime[xcounter]);
             
             //old way // [self runAction:self.lapSoundAction];
+            if (nextProgressAngle > 2 * M_PI) { //was 2, 2*pi rads == 360
+                
+                nextProgressAngle = 0;
+                horn_tt = 0; //reset so it can beep again
+                //make a randon angle for horn trigger position as new lap started
+                if ([singleton.distractionOn isEqual:@"ON"]) {
+                    //angAdd = [self randomFloatBetween:0 and:10];
+                    //sign = [self randomFloatBetween:0 and:2];
+                    angAdd =2+(((float)rand() /RAND_MAX)*7);
+                    sign   =(((float)rand() /RAND_MAX)*2);
+                    
+                    if(sign > 1.0){
+                        angAdd = -1 * angAdd;
+                    }
+                    NSLog(@"sign ang = %.3f %d", sign, angAdd);
+                }
+            }
             
             // to change volume level
             NSError *error;
-            NSURL *soundURL = [[NSBundle mainBundle] URLForResource:@"lap" withExtension:@"wav"];
-            AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
+            NSURL *soundURL        = [[NSBundle mainBundle] URLForResource:@"lap" withExtension:@"wav"];
+            AVAudioPlayer *player  = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
             [player setVolume:0.1];
             [player prepareToPlay];
             
             SKAction*   playAction = [SKAction runBlock:^{
                 [player play];
             }];
-            SKAction *waitAction = [SKAction waitForDuration:player.duration+1];
-            SKAction *sequence = [SKAction sequence:@[playAction, waitAction]];
+            SKAction *waitAction   = [SKAction waitForDuration:player.duration+1];
+            SKAction *sequence     = [SKAction sequence:@[playAction, waitAction]];
             
             [self runAction:sequence];
         }
@@ -331,19 +340,19 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         //NSLog(@"progress angle  = %f", (progressAngle)); //fractions up to 8.0 then down again, but negative as direction chnages
         //NSLog(@"n progress ang  = %f", (nextProgressAngle));
         
-        //if (progressAngle - nextProgressAngle < (M_PI/4)) { //old way, at nw top left
-        if (progressAngle - nextProgressAngle < (angAdd)) { //new way, between 45' and 300'
-            // do nothing, everywhere else n, s, e
-                //  NSLog(@"prog-nextProg<pi/4");
-        } else {
-                //  NSLog(@"prog-nextProg NOT < pi/4");
+        //if (progressAngle - nextProgressAngle  < M_PI_4) { //old way, at nw top leftm_pi_2, m_pi
+        //if (((progressAngle ) < angAdd)) { //new way, between 45' and 300'15 degree gap
+        if (hornTriggered){
+            hornTriggered=NO;
+            
+            NSLog(@"tr sig %.3f aa %d pr %.3f",  sign, angAdd, progressAngle);
             
             //beep the horn every 7 seconds - old way, now on west position
             horn_tt++;
             
             //start the horn timer
             //set the flag, the horn sound was played
-
+            
             if (horn_tt == 1) {
                 //tell the timer that the horn is not pressed yet
                 singleton.hornsShowing = NO;
@@ -354,13 +363,18 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                 millis2 = (time.tv_sec * 1000) + (time.tv_usec / 1000);
                 hornReactionTime[horns]=millis2;
                 [self runAction:self.hornSoundAction];
+                //update display for horn was beeped
+                self.hor.text=[NSString stringWithFormat:@"%i", horns];
                 
                 //singleton.hornTimesAll[horns]=[NSString stringWithFormat:@"%f", millis2];
-                NSLog(@"horn, start horn time=%i, %.f", horns, millis2); //only triggered on horn play
+                //NSLog(@"horn, start horn time=%i, %.f", horns, millis2); //only triggered on horn play
                 horns++;
                 horn_tt++;
                 singleton.hornsPlayed = [NSString stringWithFormat:@"%i", horns];
-                }
+            }
+        } else {
+// do nothing, everywhere else n, s, e
+                  //NSLog(@"nothing a%.3f pr%.3f",angAdd, progressAngle - nextProgressAngle);
         }
         
         // collect the current gap time
@@ -477,7 +491,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     //now using singleton
     //NSNumber *laps = level[_levelType - 1][@"laps"];
     //_numOfLaps = [laps integerValue];
-    _numOfLaps = [singleton.laps  integerValue];
+    _numOfLaps = [singleton.laps integerValue];
+    _hors=[singleton.hornsPlayed integerValue];
 }
 
 - (void)p_addCarAtPosition:(CGPoint)startPosition {
@@ -809,6 +824,15 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     _walls.fontColor = [UIColor yellowColor];
     _walls.position  = CGPointMake(track.position.x, track.position.y - 45.0f);
     [self addChild:_walls];
+    
+    //horns that are beeped counter
+    _hor           = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+    _hor.text      = [NSString stringWithFormat:@"H: %li", (long)_hors];
+    _hor.fontSize  = 15.0f;
+    // _hor.fontColor = [UIColor whiteColor];
+    _hor.fontColor = [UIColor greenColor];
+    _hor.position  = CGPointMake(track.position.x - 65.0f, track.position.y+40.0f);
+    [self addChild:_hor];
 }
 
 - (void)p_analogControlUpdated:(AnalogControl *)analogControl {
