@@ -259,6 +259,12 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     if (progressAngle > nextProgressAngle && (progressAngle - nextProgressAngle) < M_PI_4) { // M_PI_4 = pi/4
         nextProgressAngle += M_PI_2; // M_PI_2 = pi/2 rads == 45 deg
         
+        if (nextProgressAngle > 2 * M_PI) { //was 2, 2*pi rads == 360
+            
+            nextProgressAngle = 0;
+            horn_tt=0; //reset so it can beep again
+        }
+        
         if (fabs(nextProgressAngle - M_PI) < FLT_EPSILON) { //the difference between 1.0 and the smallest float bigger than 1.0.
             self.numOfLaps -= 1;
             self.hors=horns;
@@ -277,16 +283,18 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             tempWall= 0;
             tempHaz = 0;
             
+            self.hor.text = [NSString stringWithFormat:@"H: %li", (long)self.hors];
+            
             //test if last lap and message driver
             if ((long)self.numOfLaps>1) {
-            self.laps.text = [NSString stringWithFormat:@"Laps to go: %li", (long)self.numOfLaps];
-                self.hor.text = [NSString stringWithFormat:@"H: %li", (long)self.hors];
+                self.laps.text = [NSString stringWithFormat:@"Laps to go: %li", (long)self.numOfLaps];
             }else{
-             self.laps.text = @"Last Lap !";
+                self.laps.text = @"Last Lap !";
             }
             //NSLog(@"Lap time = %f",reactionTime[xcounter]);
             
             //old way // [self runAction:self.lapSoundAction];
+            
             if (nextProgressAngle > 2 * M_PI) { //was 2, 2*pi rads == 360
                 
                 nextProgressAngle = 0;
@@ -345,7 +353,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         if (hornTriggered){
             hornTriggered=NO;
             
-            NSLog(@"tr sig %.3f aa %d pr %.3f",  sign, angAdd, progressAngle);
+            //NSLog(@"tr sig %.3f aa %d pr %.3f",  sign, angAdd, progressAngle);
             
             //beep the horn every 7 seconds - old way, now on west position
             horn_tt++;
@@ -364,7 +372,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                 hornReactionTime[horns]=millis2;
                 [self runAction:self.hornSoundAction];
                 //update display for horn was beeped
-                self.hor.text=[NSString stringWithFormat:@"%i", horns];
+                self.hor.text = [NSString stringWithFormat:@"H: %i", horns];
                 
                 //singleton.hornTimesAll[horns]=[NSString stringWithFormat:@"%f", millis2];
                 //NSLog(@"horn, start horn time=%i, %.f", horns, millis2); //only triggered on horn play
