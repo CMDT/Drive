@@ -39,7 +39,6 @@
 
 @synthesize hornBtn, hornTimer;
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     mySingleton *singleton = [mySingleton sharedSingleton];
@@ -72,7 +71,7 @@
     //version, set anyway *****************************************
     //*************************************************************
     
-    version0 =  @"DRIVE Version 2.8.0 - 09.12.16";     // version   *** keep short
+    version0 =  @"DRIVE Version 2.9.0 - 12.12.16";     // version   *** keep short
     version1 =  @"MMU (C) 2016";                // copyright *** limited line space
     version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
     version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen
@@ -117,11 +116,11 @@
     //versionNumberLab.text   = version0;
     singleton.versionNumber = version0;
     hornBtn.hidden=YES;
-    if ([singleton.distractionOn isEqual:@"OFF"]) {
-        hornBtn.hidden=YES;
-    }else{
-        hornBtn.hidden=NO;
-    }
+    //if ([singleton.distractionOn isEqual:@"OFF"]) {
+        //hornBtn.hidden=YES;
+    //}else{
+       // hornBtn.hidden=NO;
+    //}
 }
 
 - (void)setDateNow:(id)sender{
@@ -167,7 +166,6 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
     [self.view sendSubviewToBack:self.skView];
 }
 
@@ -216,6 +214,10 @@
         self.scene.gameOverBlock = ^(BOOL didWin) {
             [weakSelf p_gameOverWithWin: didWin];
         };
+        //for horn button showing
+        self.scene.hornBlock = ^(BOOL showHornNow) {
+            [weakSelf showHorn: showHornNow];
+        };
     }
 
     //only show fps when in debug mode
@@ -253,13 +255,14 @@
 #pragma mark - Pause Action
 
 - (IBAction)pauseButtonDidTouchUpInside:(id)sender {
+    hornBtn.hidden=YES;
     [self p_showInGameMenu];
 }
 
 - (IBAction)hornButtonDidTouchUpInside:(id)sender {
     mySingleton *singleton = [mySingleton sharedSingleton];
     //the horn button was pressed
-    hornBtn.hidden=NO;
+    hornBtn.hidden=YES;
     //get clock time now and save to singleton
     struct timeval time;
     gettimeofday(&time, NULL);
@@ -268,6 +271,15 @@
     singleton.hornsShowing = YES;
     singleton.hornsMulti   = millis;
     //NSLog(@"STOP Horn horntouch =  %.f",  millis);
+}
+
+- (void)showHorn:(BOOL)showHornNow {
+    //show the hor message was received from myScene viewController
+    if (showHornNow) {
+        hornBtn.hidden=NO;
+    }else{
+        hornBtn.hidden=YES;
+    }
 }
 
 #pragma mark - Game Over

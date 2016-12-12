@@ -19,6 +19,7 @@
 
 // if the race is over, do the end sequence
 @property (nonatomic, copy) void (^gameOverBlock)(BOOL didWin);
+@property (nonatomic, copy) void (^hornBlock)(BOOL showHornNow);
 
 // set date/time for race start point, reference back to this at the ned or when event like laps/horns occur
 @property (nonatomic, copy) NSDate * startDate;
