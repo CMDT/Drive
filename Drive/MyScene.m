@@ -136,8 +136,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         _carType   = [singleton.carNo   integerValue]; // carType;
         _levelType = [singleton.trackNo integerValue]; // levelType;
         _numOfCollisionsWithBoxes = 0;                 // start off with clean sheet
-           // add no of horns to catch presses vs no made per race and compare later.  Forget timing for now
-           // _numOfHornsPressed  = 0;                  // count times horn button was pressed, zero
+
         horns = 0;
         singleton.hornsPlayed = @"0";
         
@@ -148,10 +147,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         displayMinimum=YES;//show the horns display
         
         // set singletn arrays to zero to start, as will be NULL if not.
-        //walls and boxes
-        
-        //times
-        //horns
+
         for (NSInteger i = 0; i < 102; ++i)
             {
             singleton.lapTimes[i]  =@"0";
@@ -193,9 +189,6 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     }
     //****************************************************************
     if (self.isPaused) {
-        
-        
-        
         // find a way to halt the timer, then restart it for laps
         // *****
         // ***** still an issue, tell users not to pause, it will scrap the game data!
@@ -327,8 +320,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             if ([singleton.distractionOn isEqual:@"ON"] && horn_tt==0) {
                 //angAdd = [self randomFloatBetween:0 and:10];
                 //sign = [self randomFloatBetween:0 and:2];
-                angAdd =2+(((float)rand() /RAND_MAX)*8); //don't beep just past start line (start at 2), and avoid the very last part 9) so not to clash with lap sound
-                sign   =(((float)rand() /RAND_MAX)*2);//make negative some times
+                angAdd =3+(((float)rand() /RAND_MAX)*7); //don't beep just past start line (start at 2), and avoid the very last part 9) so not to clash with lap sound
+                sign   =(((float)rand() /RAND_MAX)*2);   //make negative some times
                 
                 if(sign > 1.0){
                     angAdd = -1 * angAdd; //reverse sign
@@ -361,13 +354,15 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                 gettimeofday(&time, NULL);
                 millis2 = (time.tv_sec * 1000) + (time.tv_usec / 1000);
                 hornReactionTime[horns]=millis2;
+                
                 //update horn counter on screen if flag on
-                if(displayMinimum){
+                if(!displayMinimum){
                     self.hor.text = [NSString stringWithFormat:@"H: %li", (long)self.hors+1];
                 }
+                //beep the horn
                 [self runAction:self.hornSoundAction];
+                
                 //update display for horn was beeped
-            
                 
                 //trigger and time
                 //NSLog(@"horn, start horn time=%i, %.f", horns, millis2); //only triggered on horn play
@@ -579,12 +574,14 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     [self addChild:crate];
 }
 - (void)p_addPauseAt:(CGPoint)point {
+    //cut for now.. need to link button to action.  in vc,
+    
     //to mask the top right corner from the cars, its an obsticle and stops the car from running under it
-    SKSpriteNode *pause = [SKSpriteNode spriteNodeWithImageNamed:@"pause2Gr"];
+   /* SKSpriteNode *pause = [SKSpriteNode spriteNodeWithImageNamed:@"pause2Gr"];
     
     // scale the pause here
-    pause.xScale = 0.6;
-    pause.yScale = 0.6;
+    pause.xScale = 0.45;
+    pause.yScale = 0.45;
     
     pause.position = point;
     pause.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:pause.size];
@@ -597,6 +594,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     pause.physicsBody.dynamic=NO; //no=does not move or slide
     
     [self addChild:pause];
+    */
 }
 
 - (void)p_addBaleAt:(CGPoint)point {
@@ -661,16 +659,16 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     switch (trk) {
         case 1:
             //track 1, no hazards, just walls and the pause button under the real pause button to avoid hiding the car
-            [self p_addPauseAt:CGPointMake(track.position.x + 230, track.position.y + 145 )];//may need to alther to align with view
+            [self p_addPauseAt:CGPointMake(track.position.x + 215, track.position.y + 145 )];//may need to alther to align with view
             
-            [self p_addBoxAt:  CGPointMake(track.position.x - 225, track.position.y + 150 )];//top left corner
+            [self p_addBoxAt:  CGPointMake(track.position.x - 225, track.position.y + 147 )];//top left corner
             
             break;
         case 2:
             //track 2, some hazards and walls
             //track x, y = 240:160 for ipad
             
-            [self p_addPauseAt:CGPointMake(track.position.x + 230.0f, track.position.y + 145 )];//may need to alther to align with view
+            [self p_addPauseAt:CGPointMake(track.position.x + 215.0f, track.position.y + 145 )];//may need to alther to align with view
             
             [self p_addBoxAt:  CGPointMake(track.position.x + 227, track.position.y  - 147 )];
             [self p_addBoxAt:  CGPointMake(track.position.x + 230, track.position.y  - 23  )];
@@ -709,9 +707,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             // *******
             // *******
             // *******
-            [self p_addPauseAt:CGPointMake(track.position.x + 230.0f, track.position.y + 145 )];//may need to alther to align with view
+            [self p_addPauseAt:CGPointMake(track.position.x + 215.0f, track.position.y + 145 )];//may need to alther to align with view
             
-            [self p_addBoxAt:  CGPointMake(track.position.x - 225, track.position.y  + 151 )];
+            [self p_addBoxAt:  CGPointMake(track.position.x - 225, track.position.y  + 147 )];
             [self p_addTyreAt: CGPointMake(track.position.x - 42,  track.position.y  + 148 )];
             [self p_addBoxAt:  CGPointMake(track.position.x - 11,  track.position.y  + 148 )];
             [self p_addTyreAt: CGPointMake(track.position.x + 40,  track.position.y  + 148 )];
@@ -825,7 +823,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     
    //horns counter for display
    //if display flag OFF, dont show horns counter
-    if(displayMinimum){
+    if(!displayMinimum){
         //horns that are beeped counter
         _hor           = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         _hor.text      = [NSString stringWithFormat:@"H: %li", (long)_hors];

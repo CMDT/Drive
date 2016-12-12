@@ -17,22 +17,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ajn-d1-kbx" userLabel="Button Horn">
+                                <rect key="frame" x="305" y="83" width="43" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="carhorn-btn.png"/>
+                                <connections>
+                                    <action selector="hornButtonDidTouchUpInside:" destination="LVB-YS-i5n" eventType="touchUpInside" id="C11-Ey-ac4"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="H7F-rE-u7h" userLabel="Button pause">
-                                <rect key="frame" x="418" y="0.0" width="62" height="36"/>
+                                <rect key="frame" x="429" y="0.0" width="51" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="pause2Gr.png">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="pauseButtonDidTouchUpInside:" destination="LVB-YS-i5n" eventType="touchUpInside" id="h7r-E4-Tdd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ajn-d1-kbx" userLabel="Button Horn">
-                                <rect key="frame" x="316" y="93" width="38" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="carhorn-btn.png"/>
-                                <connections>
-                                    <action selector="hornButtonDidTouchUpInside:" destination="LVB-YS-i5n" eventType="touchUpInside" id="C11-Ey-ac4"/>
+                                    <action selector="pauseButtonDidTouchUpInside:" destination="LVB-YS-i5n" eventType="touchUpInside" id="jTW-Ku-sQo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -41,6 +41,7 @@
                     <navigationItem key="navigationItem" id="99K-NR-3Le"/>
                     <connections>
                         <outlet property="hornBtn" destination="Ajn-d1-kbx" id="mpP-97-0fE"/>
+                        <outlet property="pauseBtn" destination="H7F-rE-u7h" id="ygX-qe-oX2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
@@ -186,10 +187,16 @@
 
 The faster the car, the better the top speed, but be careful, they are harder to drive, so you may crash more times and be slower than a less powerful car.
 
+With practice, you will become more proficient, train up to the faster cars.
+
 </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-fast.png" id="Hmz-CB-xXI">
+                                <rect key="frame" x="331" y="58" width="102" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -632,7 +639,7 @@ The faster the car, the better the top speed, but be careful, they are harder to
 
 The harder tracks contain more hazards.  
 
-The easy track has none, just steer round and avoid crashing into the sides of the raceway.
+The easy track has none, just steer round and avoid crashing into the sides of the raceway.You still need to avoid hitting the track edges.
 
 The hardest track has various obsticles to avoid. Hitting hazards slows you down.
 </string>
@@ -653,6 +660,14 @@ The hardest track has various obsticles to avoid. Hitting hazards slows you down
                                     <segue destination="6zJ-QL-n6c" kind="push" id="Ypq-Rw-I7Y"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="track_1.png" id="9EK-OW-9EW">
+                                <rect key="frame" x="343" y="56" width="102" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bale.png" id="Jnb-vq-Dbp">
+                                <rect key="frame" x="418" y="141" width="36" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -670,17 +685,25 @@ The hardest track has various obsticles to avoid. Hitting hazards slows you down
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" id="nsb-cP-CqZ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" textAlignment="natural" id="nsb-cP-CqZ">
                                 <rect key="frame" x="20" y="49" width="314" height="251"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <string key="text">The drive game is a test of motor control and ability to cope with driving during a distraction.
+                                <mutableString key="text">The drive game is a test of motor control and ability to cope with driving during a distraction.
 
 Initially, use the slow car on each of the tracks, and obtain some lap times and overall score.
 
 Build up skill and move to faster cars, if you dare!
 
-Select the distraction switch, and at random, you will hear a horn, and you need to touch the horn button as soon as you can, whist continuing to drive. Missing the horn is not good for your times.</string>
+Select the distraction switch, and at random, you will hear a horn, and you need to touch the horn button as soon as you can, whist continuing to drive. Missing the horn is not good for your times.
+
+Distraction: This sets a new task of pressing the horn button evrey time you hear the horn and see the button appear.  You are timed for your reaction to do this.
+
+FX:Volume:  This the volume of the sound effects played during the game.
+
+Race Lpas:  Select the number of laps to race.  Results are only given for completed full races.
+
+Drive Music:  Some background music whilst you drive.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -699,6 +722,10 @@ Select the distraction switch, and at random, you will hear a horn, and you need
                                     <segue destination="j6p-oN-Kld" kind="push" id="Snq-Uf-qxR"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="drive512.png" id="z3J-bk-UVz">
+                                <rect key="frame" x="342" y="49" width="105" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1359,13 +1386,19 @@ Select the distraction switch, and at random, you will hear a horn, and you need
                                     <segue destination="ile-Uw-dvN" kind="push" id="kKz-ZN-Bct"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="drive512.png" id="IQF-Wt-TSS">
+                                <rect key="frame" x="331" y="62" width="105" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" id="0qq-N8-ACk">
-                                <rect key="frame" x="20" y="62" width="303" height="238"/>
+                                <rect key="frame" x="20" y="62" width="303" height="253"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <string key="text">Give the Driver a Name.  If you are presenting data for a study, you should code your subjects to ensure anomimaty.
+                                <string key="text">Give the Driver a Name.  If you are presenting data for a study, you should code your subjects to ensure privacy.
 
-The Email address is the recipient of the data results when a race is completed, if needed.  Yiou can edit this address and add further recipients at the point of sending and review.</string>
+The Email address is the recipient of the data results when a race is completed, if needed.  Yiou can edit this address and add further recipients at the point of sending and review.
+
+The email data is TEXT and may be missdisplayed in some email clients due to auto removal of line breaks.  If this is the case, look for an option to restore line breaks removed.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1398,6 +1431,7 @@ The Email address is the recipient of the data results when a race is completed,
         <image name="carhorn-btn.png" width="87" height="87"/>
         <image name="carx.png" width="105" height="55"/>
         <image name="crate.png" width="44" height="44"/>
+        <image name="drive512.png" width="512" height="512"/>
         <image name="easyx.png" width="105" height="55"/>
         <image name="emailGr.png" width="55" height="55"/>
         <image name="finishx.png" width="105" height="55"/>
@@ -1424,6 +1458,7 @@ The Email address is the recipient of the data results when a race is completed,
         <image name="speedo-slow.png" width="50" height="50"/>
         <image name="startx.png" width="105" height="55"/>
         <image name="tick.png" width="30" height="60"/>
+        <image name="track_1.png" width="568" height="320"/>
         <image name="tyre.png" width="44" height="44"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -1432,9 +1467,9 @@ The Email address is the recipient of the data results when a race is completed,
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Oeb-9y-xxT"/>
-        <segue reference="Qad-gC-6d0"/>
-        <segue reference="sgN-rE-1F9"/>
-        <segue reference="b6P-hE-go0"/>
+        <segue reference="UeP-lD-UCg"/>
+        <segue reference="Snq-Uf-qxR"/>
+        <segue reference="kKz-ZN-Bct"/>
+        <segue reference="Ypq-Rw-I7Y"/>
     </inferredMetricsTieBreakers>
 </document>
