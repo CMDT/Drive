@@ -240,16 +240,16 @@
     singleton.counter = singleton.counter+1;
     
     //title line - results one row per data entry
-    [singleton.cardReactionTimeResult addObject:@"DRIVE Race Results Results<br/>"];
+    [singleton.cardReactionTimeResult addObject:@"DRIVE Race Results <br/>"];
     
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject:@"Subject Name, Test Date, Test Time<br/>"];
+    [singleton.cardReactionTimeResult addObject:@"Subject Name, Test Date, Test Time"];
     
     singleton.counter = singleton.counter+1;
     
     //blank line
-    [singleton.cardReactionTimeResult addObject:@"<br/> " ];
+    [singleton.cardReactionTimeResult addObject:@" <br/>" ];
     singleton.counter = singleton.counter+1;
     // +++++++++++++++++++++++++++
     //loop if rows of results
@@ -267,40 +267,40 @@
     //singleton.counter = singleton.counter+1;
     //}
     
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Date: %@, Time: %@, Subject Name: %@<br/>",singleton.testDate, singleton.testTime, singleton.subjectName]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"%@, %@, %@ <br/>", singleton.subjectName, singleton.testDate, singleton.testTime ]];
     singleton.counter = singleton.counter+1;
     
     // +++++++++++++++++++++++++++
     //blank line
-    [singleton.cardReactionTimeResult addObject:@"<br/><br/> " ];
+    [singleton.cardReactionTimeResult addObject:@" <br/>" ];
     singleton.counter = singleton.counter+1;
     
     // put all the data for the results here:
     // summary as per screen
     // lapTimes,
 
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Email: %@<br/>",singleton.email]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Email: %@ <br/>",singleton.email]];
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Car: %@, Track: %@<br/>",singleton.carNo, singleton.trackNo]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Car: %@, Track: %@ <br/>",singleton.carNo, singleton.trackNo]];
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Drive Music: %@<br/>",singleton.musicTrack]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Drive Music: %@ <br/>",singleton.musicTrack]];
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Distraction Set: %@<br/>",singleton.distractionOn]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Distraction Set: %@ <br/>",singleton.distractionOn]];
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Laps Raced: %@<br/>",singleton.laps]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Laps Raced: %@ <br/>",singleton.laps]];
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Horns Played: %@<br/>",singleton.hornsPlayed]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Horns Played: %@ <br/>",singleton.hornsPlayed]];
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Wall Crashes: %@, Hazard Crashes: %@, Total Crashes: %@<br/>",singleton.wallCrashes,singleton.hazCrashes, singleton.totalCrashes]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Wall Crashes: %@, Hazard Crashes: %@, Total Crashes: %@ <br/>",singleton.wallCrashes,singleton.hazCrashes, singleton.totalCrashes]];
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Fastest Lap: %@: %@, Slowest Lap: %@: %@, Average Lap: %@<br/>",singleton.fastestLapNo, singleton.fastestLap,singleton.slowestLapNo,singleton.slowestLap, singleton.averageLap]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Fastest Lap: %@: %@, Slowest Lap: %@: %@, Average Lap: %@ <br/>",singleton.fastestLapNo, singleton.fastestLap,singleton.slowestLapNo,singleton.slowestLap, singleton.averageLap]];
     singleton.counter = singleton.counter+1;
     
     [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Total Race Time: %@<br/>",singleton.totalTime]];
@@ -308,20 +308,20 @@
     
     if (horns > 0) {
         //blank line
-        [singleton.cardReactionTimeResult addObject:@" " ];
+        [singleton.cardReactionTimeResult addObject:@" <br/>" ];
         singleton.counter = singleton.counter+1;
-        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Fastest Horn: %@, Slowest Horn: %@, Average Horn: %@<br/>",singleton.fastestHorn,singleton.slowestHorn, singleton.averageHorn]];
+        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Fastest Horn: %@, Slowest Horn: %@, Average Horn: %@ <br/>",singleton.fastestHorn,singleton.slowestHorn, singleton.averageHorn]];
         singleton.counter = singleton.counter+1;
         
-        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Total Horn Time: %@<br/>",singleton.totalHorn]];
+        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Total Horn Time: %@ <br/>",singleton.totalHorn]];
         singleton.counter = singleton.counter+1;
     }
 
     //blank line
-    [singleton.cardReactionTimeResult addObject:@"<br/> " ];
+    [singleton.cardReactionTimeResult addObject:@" <br/>" ];
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject: @"LapNo, Times, Wall Crashes, Hazard Crashes<br/>"];
+    [singleton.cardReactionTimeResult addObject: @"LapNo, Times, Wall Crashes, Hazard Crashes <br/>"];
     singleton.counter = singleton.counter+1;
     
     //***********************
@@ -331,14 +331,14 @@
     for (int x=0; x<[laps.text intValue]; x+=1) {
         [singleton.cardReactionTimeResult addObject:singleton.lapTimes[x] ];
         singleton.counter = singleton.counter+1;
-        [singleton.cardReactionTimeResult addObject:@"<br/> " ];
+        [singleton.cardReactionTimeResult addObject:@" <br/>" ];
         singleton.counter = singleton.counter+1;
     }
 
     // all the horns, one per line if present
     if (horns > 0) {
                 //blank line
-    [singleton.cardReactionTimeResult addObject:@"<br/> " ];
+    [singleton.cardReactionTimeResult addObject:@" <br/>" ];
     singleton.counter = singleton.counter+1;
         
         [singleton.cardReactionTimeResult addObject:@"Horn No, Horn Reaction Time<br/>"];
@@ -347,18 +347,18 @@
         for (int x=0; x<horns; x+=1) {
             [singleton.cardReactionTimeResult addObject:singleton.hornTimes[x] ];
             singleton.counter = singleton.counter+1;
-            [singleton.cardReactionTimeResult addObject:@"<br/> " ];
+            [singleton.cardReactionTimeResult addObject:@" <br/>" ];
             singleton.counter = singleton.counter+1;
         }
     }
     // ***************************
     
     //blank line
-    [singleton.cardReactionTimeResult addObject:@"<br/> " ];
+    [singleton.cardReactionTimeResult addObject:@" <br/>" ];
     singleton.counter = singleton.counter+1;
     [singleton.cardReactionTimeResult addObject:@"... " ];
     //end of data message
-    [singleton.cardReactionTimeResult addObject:@"End of results table. <br/>" ];
+    [singleton.cardReactionTimeResult addObject:@"End of results table." ];
     singleton.counter = singleton.counter+1;
     
     //make a text file from the array of results

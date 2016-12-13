@@ -150,7 +150,7 @@
     // read the iPad/iPhone settings from file
     NSString *settingsBundle = [[NSBundle mainBundle] pathForResource:@"Settings" ofType:@"bundle"];
     if(!settingsBundle) {
-        NSLog(@"Could not find Settings.bundle");
+        //NSLog(@"Could not find Settings.bundle");
         return;
     }
     
@@ -292,14 +292,20 @@
 #pragma mark - Game Over
 
 - (void)p_gameOverWithWin:(BOOL)didWin {
+     mySingleton *singleton = [mySingleton sharedSingleton];
+    NSString *completedMessage = [NSString stringWithFormat:@"You Have Completed %@ Laps.\n\nThe Race Times Will Follow...",singleton.laps];
+    NSString *notFinishMessage = @"You Did Not Finish !\n\nYou Will Have to Start Again.";
+    NSString *bodyMessage      = @"... This Race is Now Over ...\n\n";
+    
     UIAlertView *alert =
-    [[UIAlertView alloc] initWithTitle:didWin ? @"You Completed the Laps Required!" : @"You Did Not Finish the Race"
-                               message:@"... This Race is Now Over ..."
+    [[UIAlertView alloc] initWithTitle:didWin ? completedMessage : notFinishMessage //selects the choice didwin BOOL
+                               message:bodyMessage
                               delegate:nil
                      cancelButtonTitle:nil
                      otherButtonTitles:nil];
-    [alert show];
+    [alert show]; // show the alert then...
     if (didWin) {
+        //stats and times, completed
         [self performSelector:@selector(p_goBackStats:) withObject:alert afterDelay:2.0];
     }else{
         //you did not finish or cancelled, just start again... consider part stats, ie no email
@@ -330,7 +336,7 @@
 - (void)p_showInGameMenu {
     UIAlertView *alert =
     [[UIAlertView alloc] initWithTitle:@"MMU ESS Drive App Menu"
-                               message:@"You have Paused the Race.... \n\nWhat would you like to do?"
+                               message:@"You have Stopped the Race.... \n\nWhat would you like to do?"
                               delegate:self
                      cancelButtonTitle:@"Resume, but... Results will be invalid"
                      otherButtonTitles:@"Start A New Race or Quit", nil];

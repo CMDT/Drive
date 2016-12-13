@@ -171,7 +171,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         xcounter= 1;
         horns   = 0;
         singleton.hornTimerCounter= 0;
-        angAdd = -3;
+        angAdd = -3.01;
         hornTriggered = NO;
     }
     return self;
@@ -272,16 +272,6 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             self.hors=horns;
             horn_tt=0; //??????? maybe unrem line above instead
             
-            //bounds limits
-            /*
-            if (xcounter > 100) {
-                xcounter = 100;
-            }
-            if (xcounter < 0) {
-                xcounter = 0;
-            }
-            */
-            
             //read the timer
             reactionTime[xcounter] = (Float32)[self.startDate timeIntervalSinceNow]* -1000.0f;
             xcounter += 1;
@@ -301,33 +291,35 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             //[self runAction:self.lapSoundAction];
             
             //make a lapping sound NEW way with volume level
-            // to change volume level
-            NSError *error;
-            NSURL   *soundURL        = [[NSBundle mainBundle] URLForResource:@"lap" withExtension:@"wav"];
-            AVAudioPlayer *player    = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
-            [player setVolume:0.1];
+            
+            NSError * error1;
+            NSURL   * soundURL1 = [[NSBundle mainBundle] URLForResource:@"lap" withExtension:@"wav"];
+            AVAudioPlayer * player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL1 error:&error1];
+            [player setVolume:singleton.ambientVolume];
             [player prepareToPlay];
             
-            SKAction*   playAction = [SKAction runBlock:^{
+            SKAction * playAction = [SKAction runBlock:^{
                 [player play];
-            }];
-            SKAction *waitAction   = [SKAction waitForDuration:player.duration+1];
-            SKAction *sequence     = [SKAction sequence:@[playAction, waitAction]];
+                }];
+            SKAction * waitAction = [SKAction waitForDuration:player.duration+1];
+            SKAction * sequence   = [SKAction sequence:@[playAction, waitAction]];
             
             [self runAction:sequence];
-            
+
             //make a randon angle for horn trigger position as new lap started
-            if ([singleton.distractionOn isEqual:@"ON"] && horn_tt==0) {
+            if ([singleton.distractionOn isEqual:@"ON"] && horn_tt==0 && angAdd!=3.01) {
                 //angAdd = [self randomFloatBetween:0 and:10];
                 //sign = [self randomFloatBetween:0 and:2];
-                angAdd =3+(((float)rand() /RAND_MAX)*7); //don't beep just past start line (start at 2), and avoid the very last part 9) so not to clash with lap sound
-                sign   =(((float)rand() /RAND_MAX)*2);   //make negative some times
+                angAdd = 3+(((float)rand() /RAND_MAX)*7); //don't beep just past start line (start at 2), and avoid the very last part 9) so not to clash with lap sound
+                sign   = (((float)rand() /RAND_MAX)*2);   //make negative/positive at random
                 
                 if(sign > 1.0){
                     angAdd = -1 * angAdd; //reverse sign
                 }
                 //NSLog(@"sign ang = %.3f %d", sign, angAdd);
-            }
+            } else {
+                angAdd=3.02;
+            }//aftyer first run, angAdd can be random, 1st one is fixed at -3.01
         }
     }
     
@@ -465,9 +457,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     yy = track.position.y;
     
 //***************
-    //GO !
+    //GO NOW !
 //***************
-    
 }
 
 //now using singleton for laps
@@ -659,6 +650,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     switch (trk) {
         case 1:
             //track 1, no hazards, just walls and the pause button under the real pause button to avoid hiding the car
+            
             [self p_addPauseAt:CGPointMake(track.position.x + 215, track.position.y + 145 )];//may need to alther to align with view
             
             [self p_addBoxAt:  CGPointMake(track.position.x - 225, track.position.y + 147 )];//top left corner
@@ -907,7 +899,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         for (int x=0; x<xcounter-1; x+=1) {
             
             temp = reactionTime[x];
-            singleton.lapTimes[x]=[NSString stringWithFormat:@"%0.2f",temp];
+            singleton.lapTimes[x]=[NSString stringWithFormat:@"%0.2f", temp];
             
             //NSLog(@"c- lap time %d: %f",x+1, temp);
             
@@ -944,7 +936,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             if (hornReactionTime[x] > reactionTime[x]) {
                 hornReactionTime[x] = raceTime;
             }
-                NSLog(@"horn time %d: %.2f S", x+1, hornReactionTime[x]);
+                //NSLog(@"horn time %d: %.3f S", x+1, hornReactionTime[x]);
         }
         
         //averages
@@ -968,12 +960,12 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             _hornTime = _hornTime + temp1;
         }
         averageHorn = _hornTime / (horns);
-        NSLog(@"ave horn time %.2f S", averageHorn);
+        //NSLog(@"ave horn time %.3f S", averageHorn);
         
-        singleton.totalHorn   = [NSString stringWithFormat:@"%.2f", _hornTime];
-        singleton.fastestHorn = [NSString stringWithFormat:@"%.2f", fastestHorn];
-        singleton.slowestHorn = [NSString stringWithFormat:@"%.2f", slowestHorn];
-        singleton.averageHorn = [NSString stringWithFormat:@"%.2f", averageHorn];
+        singleton.totalHorn   = [NSString stringWithFormat:@"%.3f", _hornTime];
+        singleton.fastestHorn = [NSString stringWithFormat:@"%.3f", fastestHorn];
+        singleton.slowestHorn = [NSString stringWithFormat:@"%.3f", slowestHorn];
+        singleton.averageHorn = [NSString stringWithFormat:@"%.3f", averageHorn];
         
         singleton.slowestLap   = [NSString stringWithFormat:@"%0.2f", slowestLap];
         singleton.fastestLap   = [NSString stringWithFormat:@"%0.2f", fastestLap];
@@ -991,7 +983,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         }
         
         for (int x=0; x<xcounter-1; x+=1) { //was xcounter
-            singleton.lapTimes[x] = [NSString stringWithFormat:@"%x, %.2f, %@, %@",
+            singleton.lapTimes[x] = [NSString stringWithFormat:@"%i, %.2f, %@, %@",
                                      x+1,
                                      reactionTime[x],
                                      singleton.wallLaps[x],
@@ -1001,12 +993,12 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             NSLog(@"react lap: %@", singleton.lapTimes[x]);
         }
         for (int x=0; x<horns; x+=1) {
-            singleton.hornTimes[x] = [NSString stringWithFormat:@"%x, %.2f",
+            singleton.hornTimes[x] = [NSString stringWithFormat:@"%i, %.3f",
                                      x+1,
                                      hornReactionTime[x]
                                      ];
             
-            NSLog(@"horn  lap: %@", singleton.hornTimes[x]);
+            //NSLog(@"horn  lap: %@", singleton.hornTimes[x]);
         }
     }
     
@@ -1046,7 +1038,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         // to change volume level
         NSError * error;
         NSURL   * soundURL = [[NSBundle mainBundle] URLForResource:@"box" withExtension:@"wav"];
-        AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
+        AVAudioPlayer * player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
         [player setVolume:singleton.ambientVolume];
         [player prepareToPlay];
         
@@ -1085,9 +1077,4 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     //NSLog(@"tempHaz=%i, tempWall=%i",tempHaz,tempWall);
 }
 
--(Float32)randomFloatBetween:(Float32)smallNo and:(Float32)bigNo {
-    // function to give a random float between two numbers
-    Float32 diff = bigNo - smallNo;
-    return (((Float32) (arc4random() % ((unsigned)RAND_MAX +1)) / RAND_MAX) * diff) + smallNo;
-}
 @end

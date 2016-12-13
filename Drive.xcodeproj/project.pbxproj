@@ -65,6 +65,7 @@
 		E147D35D1DF865CE00E02FA1 /* car_3.png in Resources */ = {isa = PBXBuildFile; fileRef = E147D3571DF865CE00E02FA1 /* car_3.png */; };
 		E147D35E1DF865CE00E02FA1 /* crate.png in Resources */ = {isa = PBXBuildFile; fileRef = E147D3581DF865CE00E02FA1 /* crate.png */; };
 		E147D35F1DF865CE00E02FA1 /* tyre.png in Resources */ = {isa = PBXBuildFile; fileRef = E147D3591DF865CE00E02FA1 /* tyre.png */; };
+		E14EC2621DFFFD2D0064C6B4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E14EC2611DFFFD2D0064C6B4 /* Default-568h@2x.png */; };
 		E171F2661C1EDB3600E3DB0D /* achievment-amateur.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F2621C1EDB3600E3DB0D /* achievment-amateur.png */; };
 		E171F2671C1EDB3600E3DB0D /* achievment-destruction.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F2631C1EDB3600E3DB0D /* achievment-destruction.png */; };
 		E171F2681C1EDB3600E3DB0D /* achievment-intermediate.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F2641C1EDB3600E3DB0D /* achievment-intermediate.png */; };
@@ -293,6 +294,7 @@
 		E147D3571DF865CE00E02FA1 /* car_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car_3.png; path = ../sprites.atlas/car_3.png; sourceTree = "<group>"; };
 		E147D3581DF865CE00E02FA1 /* crate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = crate.png; path = ../sprites.atlas/crate.png; sourceTree = "<group>"; };
 		E147D3591DF865CE00E02FA1 /* tyre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tyre.png; path = ../sprites.atlas/tyre.png; sourceTree = "<group>"; };
+		E14EC2611DFFFD2D0064C6B4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E171F2621C1EDB3600E3DB0D /* achievment-amateur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievment-amateur.png"; sourceTree = "<group>"; };
 		E171F2631C1EDB3600E3DB0D /* achievment-destruction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievment-destruction.png"; sourceTree = "<group>"; };
 		E171F2641C1EDB3600E3DB0D /* achievment-intermediate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievment-intermediate.png"; sourceTree = "<group>"; };
@@ -465,6 +467,7 @@
 		47117B2E1959CA1400B20209 = {
 			isa = PBXGroup;
 			children = (
+				E14EC2611DFFFD2D0064C6B4 /* Default-568h@2x.png */,
 				47117B421959CA1400B20209 /* Drive */,
 				47117B661959CA1400B20209 /* DriveTests */,
 				47117B391959CA1400B20209 /* Frameworks */,
@@ -927,6 +930,7 @@
 				E171F2EE1C1EF19F00E3DB0D /* seg-5.png in Resources */,
 				E171F2D41C1EE0C300E3DB0D /* btn-car3@2x.png in Resources */,
 				E171F2A71C1EDBB300E3DB0D /* btn-medium.png in Resources */,
+				E14EC2621DFFFD2D0064C6B4 /* Default-568h@2x.png in Resources */,
 				E171F2FD1C1EF19F00E3DB0D /* seg-none.png in Resources */,
 				E171F2EC1C1EF19F00E3DB0D /* seg-2.png in Resources */,
 				E171F27B1C1EDB5700E3DB0D /* bg-select-difficulty@2x.png in Resources */,
