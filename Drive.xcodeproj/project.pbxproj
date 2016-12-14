@@ -205,6 +205,7 @@
 		E1E783691E01B26D00CD9399 /* st2.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E7835F1E01B26D00CD9399 /* st2.png */; };
 		E1E7836A1E01B26D00CD9399 /* st3.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E783601E01B26D00CD9399 /* st3.png */; };
 		E1E7836B1E01B26D00CD9399 /* st4.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E783611E01B26D00CD9399 /* st4.png */; };
+		E1E7836F1E01BD1900CD9399 /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E7836E1E01BD1900CD9399 /* SplashScreenViewController.m */; };
 		E1F1771F1DA3C4DA0016DB81 /* button_press00.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1F1771A1DA3C4DA0016DB81 /* button_press00.wav */; };
 		E1F177201DA3C4DA0016DB81 /* button_press25.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1F1771B1DA3C4DA0016DB81 /* button_press25.wav */; };
 		E1F177211DA3C4DA0016DB81 /* button_press50.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1F1771C1DA3C4DA0016DB81 /* button_press50.wav */; };
@@ -445,6 +446,8 @@
 		E1E7835F1E01B26D00CD9399 /* st2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = st2.png; path = "../../../../Dropbox (MMU - ART Faculty)/XCODE/drive/st2.png"; sourceTree = "<group>"; };
 		E1E783601E01B26D00CD9399 /* st3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = st3.png; path = "../../../../Dropbox (MMU - ART Faculty)/XCODE/drive/st3.png"; sourceTree = "<group>"; };
 		E1E783611E01B26D00CD9399 /* st4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = st4.png; path = "../../../../Dropbox (MMU - ART Faculty)/XCODE/drive/st4.png"; sourceTree = "<group>"; };
+		E1E7836D1E01BD1900CD9399 /* SplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashScreenViewController.h; sourceTree = "<group>"; };
+		E1E7836E1E01BD1900CD9399 /* SplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashScreenViewController.m; sourceTree = "<group>"; };
 		E1F1771A1DA3C4DA0016DB81 /* button_press00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_press00.wav; sourceTree = "<group>"; };
 		E1F1771B1DA3C4DA0016DB81 /* button_press25.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_press25.wav; sourceTree = "<group>"; };
 		E1F1771C1DA3C4DA0016DB81 /* button_press50.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_press50.wav; sourceTree = "<group>"; };
@@ -536,6 +539,8 @@
 				47FDCB8D1972BF35003723C1 /* DriveNavigationController.m */,
 				47B293CA197D3E10006BE2D1 /* HomeScreenViewController.h */,
 				47B293CB197D3E10006BE2D1 /* HomeScreenViewController.m */,
+				E1E7836D1E01BD1900CD9399 /* SplashScreenViewController.h */,
+				E1E7836E1E01BD1900CD9399 /* SplashScreenViewController.m */,
 				47117B541959CA1400B20209 /* MyScene.h */,
 				47117B551959CA1400B20209 /* MyScene.m */,
 				917B79111C1DB50E00A6D3DA /* TrackStatsViewController.h */,
@@ -1143,6 +1148,7 @@
 				47FDCB911972CB4A003723C1 /* AchievementsHelper.m in Sources */,
 				47117B4D1959CA1400B20209 /* AppDelegate.m in Sources */,
 				47696E4E195D283500A41AC6 /* AnalogControl.m in Sources */,
+				E1E7836F1E01BD1900CD9399 /* SplashScreenViewController.m in Sources */,
 				47117B491959CA1400B20209 /* main.m in Sources */,
 				E171F3151C1F137700E3DB0D /* mySingleton.m in Sources */,
 			);

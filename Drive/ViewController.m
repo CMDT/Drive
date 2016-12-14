@@ -119,11 +119,12 @@
     hornBtn.hidden=NO;
     hornBtn.alpha=0.4;
     pauseBtn.alpha=0.5;
-    //if ([singleton.distractionOn isEqual:@"OFF"]) {
-        //hornBtn.hidden=YES;
-    //}else{
-       // hornBtn.hidden=NO;
-    //}
+    
+    if ([singleton.distractionOn isEqual:@"OFF"]) {
+        hornBtn.hidden=YES;
+    }else{
+        hornBtn.hidden=NO;
+    }
 }
 
 - (void)setDateNow:(id)sender{
@@ -279,6 +280,8 @@
 }
 
 - (void)showHorn:(BOOL)showHornNow {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    
     //show the hor message was received from myScene viewController
     if (showHornNow) {
         hornBtn.alpha=1.0;
