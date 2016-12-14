@@ -196,6 +196,15 @@
 		E1CBAD1F1C22D7DA001CC466 /* infoOr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACFB1C22D7DA001CC466 /* infoOr@2x.png */; };
 		E1CBAD221C22D7F1001CC466 /* bg-main-menu-driver.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBAD201C22D7F1001CC466 /* bg-main-menu-driver.png */; };
 		E1CBAD231C22D7F1001CC466 /* bg-main-menu-driver@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBAD211C22D7F1001CC466 /* bg-main-menu-driver@2x.png */; };
+		E1E783631E01B26D00CD9399 /* d0.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E783591E01B26D00CD9399 /* d0.png */; };
+		E1E783641E01B26D00CD9399 /* d1.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E7835A1E01B26D00CD9399 /* d1.png */; };
+		E1E783651E01B26D00CD9399 /* d2.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E7835B1E01B26D00CD9399 /* d2.png */; };
+		E1E783661E01B26D00CD9399 /* d3.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E7835C1E01B26D00CD9399 /* d3.png */; };
+		E1E783671E01B26D00CD9399 /* st0.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E7835D1E01B26D00CD9399 /* st0.png */; };
+		E1E783681E01B26D00CD9399 /* st1.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E7835E1E01B26D00CD9399 /* st1.png */; };
+		E1E783691E01B26D00CD9399 /* st2.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E7835F1E01B26D00CD9399 /* st2.png */; };
+		E1E7836A1E01B26D00CD9399 /* st3.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E783601E01B26D00CD9399 /* st3.png */; };
+		E1E7836B1E01B26D00CD9399 /* st4.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E783611E01B26D00CD9399 /* st4.png */; };
 		E1F1771F1DA3C4DA0016DB81 /* button_press00.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1F1771A1DA3C4DA0016DB81 /* button_press00.wav */; };
 		E1F177201DA3C4DA0016DB81 /* button_press25.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1F1771B1DA3C4DA0016DB81 /* button_press25.wav */; };
 		E1F177211DA3C4DA0016DB81 /* button_press50.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1F1771C1DA3C4DA0016DB81 /* button_press50.wav */; };
@@ -427,6 +436,15 @@
 		E1CBACFB1C22D7DA001CC466 /* infoOr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "infoOr@2x.png"; sourceTree = "<group>"; };
 		E1CBAD201C22D7F1001CC466 /* bg-main-menu-driver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-main-menu-driver.png"; sourceTree = "<group>"; };
 		E1CBAD211C22D7F1001CC466 /* bg-main-menu-driver@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-main-menu-driver@2x.png"; sourceTree = "<group>"; };
+		E1E783591E01B26D00CD9399 /* d0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = d0.png; path = "../../../../Dropbox (MMU - ART Faculty)/XCODE/drive/d0.png"; sourceTree = "<group>"; };
+		E1E7835A1E01B26D00CD9399 /* d1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = d1.png; path = "../../../../Dropbox (MMU - ART Faculty)/XCODE/drive/d1.png"; sourceTree = "<group>"; };
+		E1E7835B1E01B26D00CD9399 /* d2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = d2.png; path = "../../../../Dropbox (MMU - ART Faculty)/XCODE/drive/d2.png"; sourceTree = "<group>"; };
+		E1E7835C1E01B26D00CD9399 /* d3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = d3.png; path = "../../../../Dropbox (MMU - ART Faculty)/XCODE/drive/d3.png"; sourceTree = "<group>"; };
+		E1E7835D1E01B26D00CD9399 /* st0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = st0.png; path = "../../../../Dropbox (MMU - ART Faculty)/XCODE/drive/st0.png"; sourceTree = "<group>"; };
+		E1E7835E1E01B26D00CD9399 /* st1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = st1.png; path = "../../../../Dropbox (MMU - ART Faculty)/XCODE/drive/st1.png"; sourceTree = "<group>"; };
+		E1E7835F1E01B26D00CD9399 /* st2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = st2.png; path = "../../../../Dropbox (MMU - ART Faculty)/XCODE/drive/st2.png"; sourceTree = "<group>"; };
+		E1E783601E01B26D00CD9399 /* st3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = st3.png; path = "../../../../Dropbox (MMU - ART Faculty)/XCODE/drive/st3.png"; sourceTree = "<group>"; };
+		E1E783611E01B26D00CD9399 /* st4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = st4.png; path = "../../../../Dropbox (MMU - ART Faculty)/XCODE/drive/st4.png"; sourceTree = "<group>"; };
 		E1F1771A1DA3C4DA0016DB81 /* button_press00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_press00.wav; sourceTree = "<group>"; };
 		E1F1771B1DA3C4DA0016DB81 /* button_press25.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_press25.wav; sourceTree = "<group>"; };
 		E1F1771C1DA3C4DA0016DB81 /* button_press50.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_press50.wav; sourceTree = "<group>"; };
@@ -611,6 +629,15 @@
 		475E5E5E195A5A610063FD68 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E1E783591E01B26D00CD9399 /* d0.png */,
+				E1E7835A1E01B26D00CD9399 /* d1.png */,
+				E1E7835B1E01B26D00CD9399 /* d2.png */,
+				E1E7835C1E01B26D00CD9399 /* d3.png */,
+				E1E7835D1E01B26D00CD9399 /* st0.png */,
+				E1E7835E1E01B26D00CD9399 /* st1.png */,
+				E1E7835F1E01B26D00CD9399 /* st2.png */,
+				E1E783601E01B26D00CD9399 /* st3.png */,
+				E1E783611E01B26D00CD9399 /* st4.png */,
 				E147D3541DF865CE00E02FA1 /* bale.png */,
 				E147D3551DF865CE00E02FA1 /* car_1.png */,
 				E147D3561DF865CE00E02FA1 /* car_2.png */,
@@ -906,6 +933,7 @@
 				E1CBAD1F1C22D7DA001CC466 /* infoOr@2x.png in Resources */,
 				E171F3101C1F0FC700E3DB0D /* seg-50@2x.png in Resources */,
 				E171F2B31C1EDBB300E3DB0D /* knob1.png in Resources */,
+				E1E783661E01B26D00CD9399 /* d3.png in Resources */,
 				E171F2FC1C1EF19F00E3DB0D /* seg-light@2x.png in Resources */,
 				47117B471959CA1400B20209 /* InfoPlist.strings in Resources */,
 				E171F3121C1F124600E3DB0D /* Settings.bundle in Resources */,
@@ -941,6 +969,7 @@
 				917E5A5D1C21DF0A009DF226 /* tick.png in Resources */,
 				E171F2B41C1EDBB300E3DB0D /* knob1@2x.png in Resources */,
 				E171F30D1C1EF20100E3DB0D /* btn-info.png in Resources */,
+				E1E7836B1E01B26D00CD9399 /* st4.png in Resources */,
 				E171F2F41C1EF19F00E3DB0D /* seg-50.png in Resources */,
 				E171F27D1C1EDB5700E3DB0D /* track_1@2x.png in Resources */,
 				E171F2FB1C1EF19F00E3DB0D /* seg-light.png in Resources */,
@@ -967,6 +996,7 @@
 				E171F2AE1C1EDBB300E3DB0D /* btn-select-car@2x.png in Resources */,
 				E171F2691C1EDB3600E3DB0D /* achievment-professional.png in Resources */,
 				E1CBACFF1C22D7DA001CC466 /* infoGr.png in Resources */,
+				E1E783641E01B26D00CD9399 /* d1.png in Resources */,
 				E171F2761C1EDB5700E3DB0D /* bg-main-menu-base@2x.png in Resources */,
 				E171F30A1C1EF20100E3DB0D /* btn-email@2x.png in Resources */,
 				E171F2F81C1EF19F00E3DB0D /* seg-beat@2x.png in Resources */,
@@ -980,9 +1010,11 @@
 				E171F2C21C1EDC1C00E3DB0D /* silence30.mp3 in Resources */,
 				E171F29F1C1EDBB300E3DB0D /* base.png in Resources */,
 				E171F2ED1C1EF19F00E3DB0D /* seg-2@2x.png in Resources */,
+				E1E7836A1E01B26D00CD9399 /* st3.png in Resources */,
 				E171F2BA1C1EDBB300E3DB0D /* steering-wheel-horn.png in Resources */,
 				475E5EB0195A5A610063FD68 /* steering-wheel@2x.png in Resources */,
 				911EF1C81C24C81F00EAF391 /* carhorn-btn@2x.png in Resources */,
+				E1E783651E01B26D00CD9399 /* d2.png in Resources */,
 				E171F2AA1C1EDBB300E3DB0D /* btn-pause@2x.png in Resources */,
 				E171F2AD1C1EDBB300E3DB0D /* btn-select-car.png in Resources */,
 				E171F2C01C1EDC1C00E3DB0D /* Funky_Good_Time.mp3 in Resources */,
@@ -1014,6 +1046,8 @@
 				E171F2D31C1EE0C300E3DB0D /* btn-car3.png in Resources */,
 				E171F2B21C1EDBB300E3DB0D /* btn-slow@2x.png in Resources */,
 				E1CBAD0B1C22D7DA001CC466 /* carx.png in Resources */,
+				E1E783631E01B26D00CD9399 /* d0.png in Resources */,
+				E1E783671E01B26D00CD9399 /* st0.png in Resources */,
 				475E5EB1195A5A610063FD68 /* LevelDetails.plist in Resources */,
 				E171F3081C1EF20100E3DB0D /* btn-back2@2x.png in Resources */,
 				E171F2FE1C1EF19F00E3DB0D /* seg-none@2x.png in Resources */,
@@ -1032,6 +1066,7 @@
 				E11F94891C625B8900712F9B /* med@2x.png in Resources */,
 				E1CBAD011C22D7DA001CC466 /* mediumx.png in Resources */,
 				E171F2F51C1EF19F00E3DB0D /* seg-100.png in Resources */,
+				E1E783681E01B26D00CD9399 /* st1.png in Resources */,
 				475E5EB3195A5A610063FD68 /* button_press.wav in Resources */,
 				E1CBAD051C22D7DA001CC466 /* emailOr.png in Resources */,
 				E1F177261DA3EC3D0016DB81 /* norm.png in Resources */,
@@ -1048,6 +1083,7 @@
 				E171F2A11C1EDBB300E3DB0D /* btn-easy.png in Resources */,
 				E1CBAD071C22D7DA001CC466 /* finishx.png in Resources */,
 				E1CBAD0D1C22D7DA001CC466 /* easyx.png in Resources */,
+				E1E783691E01B26D00CD9399 /* st2.png in Resources */,
 				911EF1C71C24C81F00EAF391 /* carhorn-btn.png in Resources */,
 				E171F2A31C1EDBB300E3DB0D /* btn-fast.png in Resources */,
 				E1CBAD0A1C22D7DA001CC466 /* backx.png in Resources */,

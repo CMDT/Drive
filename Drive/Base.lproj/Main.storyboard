@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="hCv-SF-f3b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="hCv-SF-f3b">
     <device id="retina3_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--scene-->
         <scene sceneID="CtS-rA-C9T">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="LVB-YS-i5n" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" title="scene" id="LVB-YS-i5n" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bdc-N1-crn">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -159,7 +159,7 @@
         <!--InfoSelectCarVC-->
         <scene sceneID="qSq-AT-HLd">
             <objects>
-                <viewController storyboardIdentifier="InfoSelectCarViewController" title="InfoSelectCarVC" id="72Q-Fc-b8U" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoSelectCarViewController" title="InfoSelectCarVC" id="72Q-Fc-b8U" customClass="InfoSelectCarViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PFB-5t-DTd">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -294,16 +294,52 @@ With practice, you will become more proficient, train up to the faster cars.
             </objects>
             <point key="canvasLocation" x="-666" y="-8"/>
         </scene>
-        <!--Home Screen View Controller-->
+        <!--settings-->
         <scene sceneID="sWP-ev-f94">
             <objects>
-                <viewController storyboardIdentifier="HomeScreenViewController" id="j6p-oN-Kld" customClass="HomeScreenViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeScreenViewController" title="settings" id="j6p-oN-Kld" customClass="HomeScreenViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KAH-kQ-OXK">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" image="bg-main-menu.png" id="vMP-CH-hGe">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" layoutMarginsFollowReadableWidth="YES" image="bg-main-menu.png" id="vMP-CH-hGe">
+                                <rect key="frame" x="1" y="0.0" width="568" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LOd-8W-6iu">
+                                <rect key="frame" x="130" y="260" width="39" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="d0.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ul1-Hy-6Lt">
+                                <rect key="frame" x="271" y="260" width="39" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="d3.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="X1A-wH-YuC">
+                                <rect key="frame" x="177" y="260" width="39" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="d1.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8Z6-Fe-qH5">
+                                <rect key="frame" x="224" y="260" width="39" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="d2.png"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="Alo-At-EMz">
+                                <rect key="frame" x="303" y="252" width="20" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="Q5y-cl-FP0">
+                                <rect key="frame" x="261" y="252" width="20" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="RVQ-K8-vfg">
+                                <rect key="frame" x="211" y="252" width="20" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="2fO-rW-Fbb">
+                                <rect key="frame" x="163" y="252" width="20" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VLA-lM-chr">
@@ -354,16 +390,6 @@ With practice, you will become more proficient, train up to the faster cars.
                                 <rect key="frame" x="413" y="109" width="20" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="BEX-Ep-wnn">
-                                <rect key="frame" x="213" y="245" width="75" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="btn-info.png">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="jCb-yp-7T2" kind="push" id="D0M-8g-TGD"/>
-                                </connections>
-                            </button>
                             <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cNs-Ez-1CI" userLabel="Button play centre">
                                 <rect key="frame" x="1" y="1" width="1" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -374,11 +400,11 @@ With practice, you will become more proficient, train up to the faster cars.
                                     <action selector="gameCenterButtonDidTouchUpInside:" destination="j6p-oN-Kld" eventType="touchUpInside" id="55c-dO-iFz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distraction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ay1-xn-2z5">
-                                <rect key="frame" x="302" y="69" width="96" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Distractions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ay1-xn-2z5">
+                                <rect key="frame" x="20" y="257" width="101" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -537,8 +563,8 @@ With practice, you will become more proficient, train up to the faster cars.
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="LbC-sQ-yRM">
-                                <rect key="frame" x="393" y="64" width="20" height="36"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="LbC-sQ-yRM">
+                                <rect key="frame" x="60" y="275" width="20" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="NZa-s4-3NG">
@@ -554,12 +580,22 @@ With practice, you will become more proficient, train up to the faster cars.
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="hZk-iN-c46">
-                                <rect key="frame" x="411" y="69" width="51" height="31"/>
+                                <rect key="frame" x="302" y="70" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="distractionOSW:" destination="j6p-oN-Kld" eventType="valueChanged" id="BYg-Te-lRY"/>
                                 </connections>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="BEX-Ep-wnn">
+                                <rect key="frame" x="405" y="46" width="75" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btn-info.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="jCb-yp-7T2" kind="push" id="D0M-8g-TGD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -591,7 +627,6 @@ With practice, you will become more proficient, train up to the faster cars.
                         <outlet property="tickBlues" destination="VBy-FT-GzO" id="NS9-zR-H9G"/>
                         <outlet property="tickLight" destination="fKx-ZO-S2b" id="K1E-dS-fUG"/>
                         <outlet property="tickNone" destination="wlH-ep-x9E" id="tbd-Qu-8Hz"/>
-                        <outlet property="tickdistraction" destination="LbC-sQ-yRM" id="56N-GS-5Vu"/>
                         <outlet property="tickhigh" destination="af7-nl-gOj" id="cR1-wT-tJj"/>
                         <outlet property="ticklow" destination="Q7H-X6-PKh" id="AqN-gW-oMw"/>
                         <outlet property="tickmed" destination="NwM-AW-88L" id="WKi-sy-cpH"/>
@@ -601,12 +636,12 @@ With practice, you will become more proficient, train up to the faster cars.
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MpD-jF-vJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-666" y="369"/>
+            <point key="canvasLocation" x="-674" y="369"/>
         </scene>
-        <!--Drive Navigation Controller-->
+        <!--root-->
         <scene sceneID="9HD-8m-W60">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="hCv-SF-f3b" customClass="DriveNavigationController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="DriveNavigationController" title="root" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="hCv-SF-f3b" customClass="DriveNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="btn-9X-Pyr"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -616,7 +651,7 @@ With practice, you will become more proficient, train up to the faster cars.
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="j6p-oN-Kld" kind="relationship" relationship="rootViewController" id="Oeb-9y-xxT"/>
+                        <segue destination="dKd-nB-fG3" kind="relationship" relationship="rootViewController" id="Xnc-OW-jig"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2f2-Yp-2iy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -626,7 +661,7 @@ With practice, you will become more proficient, train up to the faster cars.
         <!--InfoSelectTrackVC-->
         <scene sceneID="upm-a7-wco">
             <objects>
-                <viewController storyboardIdentifier="InfoSelectViewController" title="InfoSelectTrackVC" id="iVf-iI-C6T" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoSelectTrackViewController" title="InfoSelectTrackVC" id="iVf-iI-C6T" customClass="InfoSelectTrackViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rso-Jr-lNk">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -639,9 +674,11 @@ With practice, you will become more proficient, train up to the faster cars.
 
 The harder tracks contain more hazards.  
 
-The easy track has none, just steer round and avoid crashing into the sides of the raceway.You still need to avoid hitting the track edges.
+The easy track has no hazards, just steer round.
 
-The hardest track has various obsticles to avoid. Hitting hazards slows you down.
+You still need to avoid hitting the track edges.
+
+The hardest track has multiple hazards to avoid. Hitting hazards slows you down and ruins your scvore.
 </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -680,7 +717,7 @@ The hardest track has various obsticles to avoid. Hitting hazards slows you down
         <!--InfoStartVC-->
         <scene sceneID="kOj-rW-sDX">
             <objects>
-                <viewController storyboardIdentifier="InfoStartViewController" title="InfoStartVC" id="jCb-yp-7T2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoStartViewController" title="InfoStartVC" id="jCb-yp-7T2" customClass="InfoStartViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Knd-6Z-Czb">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -689,7 +726,7 @@ The hardest track has various obsticles to avoid. Hitting hazards slows you down
                                 <rect key="frame" x="20" y="49" width="314" height="251"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <mutableString key="text">The drive game is a test of motor control and ability to cope with driving during a distraction.
+                                <string key="text">The drive game is a test of motor control and ability to cope with driving during a distraction.
 
 Initially, use the slow car on each of the tracks, and obtain some lap times and overall score.
 
@@ -703,7 +740,7 @@ FX:Volume:  This the volume of the sound effects played during the game.
 
 Race Lpas:  Select the number of laps to race.  Results are only given for completed full races.
 
-Drive Music:  Some background music whilst you drive.</mutableString>
+Drive Music:  Some background music whilst you drive.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1366,7 +1403,7 @@ Drive Music:  Some background music whilst you drive.</mutableString>
         <!--InfoSelectDriverVC-->
         <scene sceneID="ee2-cj-JlR">
             <objects>
-                <viewController storyboardIdentifier="InfoSelectDriverViewController" title="InfoSelectDriverVC" id="SI2-qR-bsc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoSelectDriverViewController" title="InfoSelectDriverVC" id="SI2-qR-bsc" customClass="InfoSelectDriverViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oyT-dc-AFs">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1398,7 +1435,7 @@ Drive Music:  Some background music whilst you drive.</mutableString>
 
 The Email address is the recipient of the data results when a race is completed, if needed.  Yiou can edit this address and add further recipients at the point of sending and review.
 
-The email data is TEXT and may be missdisplayed in some email clients due to auto removal of line breaks.  If this is the case, look for an option to restore line breaks removed.</string>
+The email data is TEXT formatted but may be incorrectly displayed in some email clients due to auto removal of line breaks.  If this is the case, look for an option to restore line breaks.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1410,6 +1447,59 @@ The email data is TEXT and may be missdisplayed in some email clients due to aut
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lv3-bZ-ByP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-70" y="-396"/>
+        </scene>
+        <!--splash-->
+        <scene sceneID="ifR-CR-4OP">
+            <objects>
+                <viewController storyboardIdentifier="SplashScreenViewController" title="splash" id="dKd-nB-fG3" customClass="SplashScreenViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pyh-j3-UFC">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" image="bg-main-menu.png" id="xYK-e6-yam">
+                                <rect key="frame" x="1" y="0.0" width="568" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Lqo-0N-YY0" userLabel="Button play centre">
+                                <rect key="frame" x="1" y="1" width="1" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btn-gamecenter.png">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nf9-ez-CEO">
+                                <rect key="frame" x="12" y="182" width="299" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content=" Press The Icon To Start ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.98878632484094675" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="24" name="Arial-BoldMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="j2J-rN-knt" userLabel="IconButton">
+                                <rect key="frame" x="312" y="92" width="132" height="136"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <state key="normal" title="Button" image="drive512.png"/>
+                                <connections>
+                                    <segue destination="j6p-oN-Kld" kind="push" id="Ts0-Gu-wo8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="09z-PA-iUZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LFg-GA-KHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1260" y="876"/>
         </scene>
     </scenes>
     <resources>
@@ -1431,6 +1521,10 @@ The email data is TEXT and may be missdisplayed in some email clients due to aut
         <image name="carhorn-btn.png" width="87" height="87"/>
         <image name="carx.png" width="105" height="55"/>
         <image name="crate.png" width="44" height="44"/>
+        <image name="d0.png" width="65" height="55"/>
+        <image name="d1.png" width="65" height="55"/>
+        <image name="d2.png" width="65" height="55"/>
+        <image name="d3.png" width="65" height="55"/>
         <image name="drive512.png" width="512" height="512"/>
         <image name="easyx.png" width="105" height="55"/>
         <image name="emailGr.png" width="55" height="55"/>
@@ -1467,9 +1561,9 @@ The email data is TEXT and may be missdisplayed in some email clients due to aut
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="UeP-lD-UCg"/>
-        <segue reference="Snq-Uf-qxR"/>
-        <segue reference="kKz-ZN-Bct"/>
         <segue reference="Ypq-Rw-I7Y"/>
+        <segue reference="Ts0-Gu-wo8"/>
+        <segue reference="1Ng-tR-vKr"/>
+        <segue reference="kKz-ZN-Bct"/>
     </inferredMetricsTieBreakers>
 </document>
