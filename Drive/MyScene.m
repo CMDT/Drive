@@ -56,7 +56,10 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     //Float32 hornTime;
     Float32 masterScore;
     double  temp;
-    int angAdd;
+    //int     angAdd;
+    int     angAdd1;
+    int     angAdd2;
+    int     angAdd3;
     Float32 sign;
     Float32 tempt;
     long    totalCrashes;
@@ -70,6 +73,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     long    tt; // time for playning a horn every n seconds
     long    tt6;
     long    horn_tt;
+    long    horn_tt2;
+    long    horn_tt3;
     long    pre; //pressed horns
     
     BOOL    displayMinimum;//if yes, then cut the horns counter on screen
@@ -151,13 +156,13 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 
         for (NSInteger i = 0; i < 102; ++i)
             {
-            singleton.lapTimes[i]  =@"0";
-            singleton.hornTimes[i] =@"0";
-            singleton.hornTimes2[i]=@"0";
-            singleton.wallLaps[i]  =@"0";
-            singleton.hazLaps[i]   =@"0";
-            singleton.hornLaps[i]  =@"0";
-            singleton.cardReactionTimeResult[i]=@"0";
+            singleton.lapTimes[i]  = @"0";
+            singleton.hornTimes[i] = @"0";
+            singleton.hornTimes2[i]= @"0";
+            singleton.wallLaps[i]  = @"0";
+            singleton.hazLaps[i]   = @"0";
+            singleton.hornLaps[i]  = @"0";
+            singleton.cardReactionTimeResult[i] = @"0";
             }
         [self p_initializeGame];
         
@@ -166,13 +171,17 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         singleton.hornsPlayed  = [NSString stringWithFormat:@"0"];
         hornsPressed = NO;
         singleton.hornsShowing = NO;
-        horn_tt = 0;
-        tempHaz = 0;
-        tempWall= 0;
-        xcounter= 1;
-        horns   = 0;
-        singleton.hornTimerCounter= 0;
-        angAdd = -3.01;
+        horn_tt  = 0; //lap  zero
+        horn_tt2 = 0;
+        horn_tt3 = 0;
+        tempHaz  = 0;
+        tempWall = 0;
+        xcounter = 1;
+        horns    = 0;
+        singleton.hornTimerCounter = 0;
+        angAdd1  = 3.01;
+        angAdd2  = 2.01;
+        angAdd3  = 1.01;
         hornTriggered = NO;
         
         //4 second delay whilst start lamps display
@@ -189,7 +198,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 - (void)update:(NSTimeInterval)currentTime {
     mySingleton *singleton = [mySingleton sharedSingleton];
     
-    //halt the timer until 4 seconds are up
+    //halt the timer until 4 seconds are up to allow start lamps display to finish
     if (self.previousTimeInterval == 0 && !started) {
         self.previousTimeInterval =  currentTime+4;
     }
@@ -254,23 +263,110 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     //}
     
     //check to see when the horn needs triggering
-    //add settings for 2 and 3 distractions later
-    if ([singleton.distractionOn isEqual:@"1"] && horn_tt==0) {
-        
-        if(angAdd>0){
-            if (progressAngle < angAdd+1 && progressAngle >= angAdd) {//(progressAngle < 2 && progressAngle > 1) range 0 to 10, -1 to -10
-                hornTriggered = YES;
-            } else {
-                hornTriggered = NO;
-            }
-        }else {
-            if (progressAngle <= angAdd && progressAngle > angAdd-1) {//(progressAngle < 2 && progressAngle > 1) range 0 to 10, -1 to -10
-                hornTriggered = YES;
-            } else {
-                hornTriggered = NO;
-            }
+    
+        long dist = [singleton.distractionOn integerValue];
+    
+        switch (dist) {
+            case 1:
+                if (horn_tt==0) {
+                    
+                //1 distraction per lap
+                if(angAdd1>0){
+                    if (progressAngle < angAdd1+1 && progressAngle >= angAdd1) {//(progressAngle < 2 && progressAngle > 1) range 0 to 10, -1 to -10
+                        hornTriggered = YES;
+                    } else {
+                        hornTriggered = NO;
+                    }
+                } else {
+                    if (progressAngle <= angAdd1 && progressAngle > angAdd1-1) {//(progressAngle < 2 && progressAngle > 1) range 0 to 10, -1 to -10
+                        hornTriggered = YES;
+                    } else {
+                        hornTriggered = NO;
+                    }
+                }
+                }
+                break;
+                
+            case 2:
+                if (horn_tt==0){
+
+                //2 distractions per lap
+                if(angAdd1>0){
+                    if (progressAngle < angAdd1+1 && progressAngle >= angAdd1) {
+                        hornTriggered = YES;
+                    } else {
+                        hornTriggered = NO;
+                    }
+                } else {
+                    if (progressAngle <= angAdd1 && progressAngle > angAdd1-1) {
+                        hornTriggered = YES;
+                    } else {
+                        hornTriggered = NO;
+                    }
+                }
+                if(angAdd2>0){
+                    if (progressAngle < angAdd2+1 && progressAngle >= angAdd2) {
+                        hornTriggered = YES;
+                    } else {
+                        hornTriggered = NO;
+                    }
+                } else {
+                    if (progressAngle <= angAdd2 && progressAngle > angAdd2-1) {
+                        hornTriggered = YES;
+                    } else {
+                        hornTriggered = NO;
+                    }
+                }
+                }
+                break;
+            case 3:
+                if (horn_tt3==0){
+                //3 distractions per lap
+                if(angAdd1>0){
+                    if (progressAngle < angAdd1+1 && progressAngle >= angAdd1) {//(progressAngle < 2 && progressAngle > 1) range 0 to 10, -1 to -10
+                        hornTriggered = YES;
+                    } else {
+                        hornTriggered = NO;
+                    }
+                } else {
+                    if (progressAngle <= angAdd1 && progressAngle > angAdd1-1) {//(progressAngle < 2 && progressAngle > 1) range 0 to 10, -1 to -10
+                        hornTriggered = YES;
+                    } else {
+                        hornTriggered = NO;
+                    }
+                }
+                if(angAdd2>0){
+                    if (progressAngle < angAdd2+1 && progressAngle >= angAdd2) {
+                        hornTriggered = YES;
+                    } else {
+                        hornTriggered = NO;
+                    }
+                } else {
+                    if (progressAngle <= angAdd2 && progressAngle > angAdd2-1) {
+                        hornTriggered = YES;
+                    } else {
+                        hornTriggered = NO;
+                    }
+                }
+                if(angAdd3>0){
+                    if (progressAngle < angAdd3+1 && progressAngle >= angAdd3) {
+                        hornTriggered = YES;
+                    } else {
+                        hornTriggered = NO;
+                    }
+                } else {
+                    if (progressAngle <= angAdd3 && progressAngle > angAdd3-1) {
+                        hornTriggered = YES;
+                    } else {
+                        hornTriggered = NO;
+                    }
+                }
+                }
+                break;
+                
+            default:
+                break;
         }
-    }
     
     if (progressAngle > nextProgressAngle && (progressAngle - nextProgressAngle) < M_PI_4) { // M_PI_4 = pi/4
         nextProgressAngle += M_PI_2; // M_PI_2 = pi/2 rads == 45 deg
@@ -281,16 +377,19 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         }
         
         if (fabs(nextProgressAngle - M_PI) < FLT_EPSILON) { //the difference between 1.0 and the smallest float bigger than 1.0.
+            //start of new lap here
             self.numOfLaps -= 1;
             self.hors=horns;
-            horn_tt=0; //??????? maybe unrem line above instead
+            horn_tt  = 0; //passed the finish line, reset all
+            horn_tt2 = 0;
+            horn_tt3 = 0;
             
             //read the timer
             reactionTime[xcounter] = (Float32)[self.startDate timeIntervalSinceNow]* -1000.0f;
             xcounter += 1;
 
-            tempWall= 0;
-            tempHaz = 0;
+            tempWall = 0;
+            tempHaz  = 0;
             
             //test if last lap and message driver
             if ((long)self.numOfLaps>1) {
@@ -320,25 +419,55 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             [self runAction:sequence];
 
             //make a randon angle for horn trigger position as new lap started
-            if ([singleton.distractionOn isEqual:@"1"] && horn_tt==0 && angAdd!=3.01) {
-                //angAdd = [self randomFloatBetween:0 and:10];
-                //sign = [self randomFloatBetween:0 and:2];
-                angAdd = 3+(((float)rand() /RAND_MAX)*7); //don't beep just past start line (start at 2), and avoid the very last part 9) so not to clash with lap sound
-                sign   = (((float)rand() /RAND_MAX)*2);   //make negative/positive at random
-                
-                if(sign > 1.0){
-                    angAdd = -1 * angAdd; //reverse sign
+            if (horn_tt==0) {
+                long dist1 = [singleton.distractionOn integerValue];
+                switch (dist1) {
+                    case 1:
+                        //1 distraction
+                        if (angAdd1!=3.01) {
+                            angAdd1 = 2+(((float)rand() /RAND_MAX)*8); //don't beep just past start line (start at 2), and avoid the very last part 9) so not to clash with lap sound
+                            sign   = (((float)rand() /RAND_MAX)*2);   //make negative/positive at random
+                            
+                            if(sign > 1.0){
+                                angAdd1 = -1 * angAdd1; //reverse sign
+                            }
+                            //NSLog(@"sign ang = %.3f %d", sign, angAdd);
+                        } else {
+                            angAdd1=3.02;
+                        }
+                        break;
+                    case 2:
+                        //2 distractions
+                        if (angAdd2!=2.01) {
+                            angAdd1 =  2+(((float)rand() /RAND_MAX)*8);
+                            angAdd2 = -1 *(2+(((float)rand() /RAND_MAX)*8)); //reverse sign for second horn
+                        } else {
+                            angAdd1 =  3.00;
+                            angAdd2 = -3.02;
+                        }
+                        break;
+                    case 3:
+                        //3 distractions
+                        if (angAdd3!=1.01) {
+                            angAdd1 = (3+(((float)rand() /RAND_MAX)*6));
+                            angAdd2 = (0+(((float)rand() /RAND_MAX)*2));
+                            angAdd3 = -1*(4+(((float)rand() /RAND_MAX)*8));
+                        } else {
+                            angAdd1 =  2.00;
+                            angAdd2 =  0.00;
+                            angAdd3 = -2.02;
+                        }
+                        break;
+                    default:
+                        break;
                 }
-                //NSLog(@"sign ang = %.3f %d", sign, angAdd);
-            } else {
-                angAdd=3.02;
-            }//aftyer first run, angAdd can be random, 1st one is fixed at -3.01
+            }
         }
     }
     
     //only do this if the distraction flag is ON
     
-    if ([singleton.distractionOn isEqual:@"1"]) {
+    if ([singleton.distractionOn isEqual:@"1"]||[singleton.distractionOn isEqual:@"2"]||[singleton.distractionOn isEqual:@"3"]) {
 
         if (hornTriggered){
             hornTriggered=NO;
@@ -395,12 +524,20 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             hornReactionTime[horns-1] = temp3;
             //NSLog(@"Horn Reaction = , %.2f", temp3); //
             
-            //reset the flag
+            //reset the flag, so another horn can play
             singleton.hornsShowing = NO;
+            if ([singleton.distractionOn isEqualToString: @"2"]) {
+                horn_tt2 = 0;
+            }
+            
+            if ([singleton.distractionOn isEqualToString: @"3"]) {
+                horn_tt3 = 0;
+            }
+
 
         }
         //fix horn time at diff between start times if no recorded end
-        if (millis2>1000) {
+        if (millis2 > 1000) {
             hornReactionTime[horns] = 1000;//prev2;
         }
     }

@@ -36,7 +36,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="9GS-nM-xcE">
-                                <rect key="frame" x="158" y="134" width="302" height="163"/>
+                                <rect key="frame" x="89" y="149" width="302" height="163"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
