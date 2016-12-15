@@ -25,15 +25,15 @@
 
 @implementation HomeScreenViewController
 
-@synthesize distractionSW;
-
 #pragma mark - Run App once loaded in memory
 
 - (void)viewDidLoad {
     mySingleton *singleton = [mySingleton sharedSingleton];
     [super viewDidLoad];
     
-    self.tickdistraction.hidden=YES;
+    [self blankDistractionTicks];
+    self.tickdistraction0.hidden=NO;
+    self.distraction0.alpha=1;
     
     [self blankLapTicks];
     self.tick10.hidden=NO;
@@ -135,6 +135,19 @@
     self.tickLight.hidden=YES;
     self.tickBlues.hidden=YES;
     self.tickBeat.hidden=YES;
+}
+
+- (void)blankDistractionTicks{
+    //opacity 50%
+    self.distraction0.alpha=0.5;
+    self.distraction1.alpha=0.5;
+    self.distraction2.alpha=0.5;
+    self.distraction3.alpha=0.5;
+    // clear all the distraction ticks
+    self.tickdistraction0.hidden=YES;
+    self.tickdistraction1.hidden=YES;
+    self.tickdistraction2.hidden=YES;
+    self.tickdistraction3.hidden=YES;
 }
 
 - (void)blankFXTicks{
@@ -279,16 +292,38 @@
     self.tickhigh.hidden=NO;
 }
 
-- (IBAction)distractionOSW:(id)sender {
+- (IBAction)distraction0:(id)sender {
     mySingleton *singleton = [mySingleton sharedSingleton];
-    if (distractionSW.isOn) {
-        singleton.distractionOn=@"ON";
-        self.tickdistraction.hidden=NO;
-    }else{
-        singleton.distractionOn=@"OFF";
-        self.tickdistraction.hidden=YES;
-    }
+    singleton.distractionOn=@"0";
+    [self blankDistractionTicks];
+    self.distraction0.alpha=1;
+    self.tickdistraction0.hidden=NO;
 }
+
+- (IBAction)distraction1:(id)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.distractionOn=@"1";
+    [self blankDistractionTicks];
+    self.distraction1.alpha=1;
+    self.tickdistraction1.hidden=NO;
+}
+
+- (IBAction)distraction2:(id)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.distractionOn=@"2";
+    [self blankDistractionTicks];
+    self.distraction2.alpha=1;
+    self.tickdistraction2.hidden=NO;
+}
+
+- (IBAction)distraction3:(id)sender {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.distractionOn=@"3";
+    [self blankDistractionTicks];
+    self.distraction3.alpha=1;
+    self.tickdistraction3.hidden=NO;
+}
+
 
 - (void)btnPressSound{
     mySingleton *singleton = [mySingleton sharedSingleton];

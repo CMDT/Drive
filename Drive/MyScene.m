@@ -242,7 +242,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     //}
     
     //check to see when the horn needs triggering
-    if ([singleton.distractionOn isEqual:@"ON"] && horn_tt==0) {
+    //add settings for 2 and 3 distractions later
+    if ([singleton.distractionOn isEqual:@"1"] && horn_tt==0) {
         
         if(angAdd>0){
             if (progressAngle < angAdd+1 && progressAngle >= angAdd) {//(progressAngle < 2 && progressAngle > 1) range 0 to 10, -1 to -10
@@ -307,7 +308,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             [self runAction:sequence];
 
             //make a randon angle for horn trigger position as new lap started
-            if ([singleton.distractionOn isEqual:@"ON"] && horn_tt==0 && angAdd!=3.01) {
+            if ([singleton.distractionOn isEqual:@"1"] && horn_tt==0 && angAdd!=3.01) {
                 //angAdd = [self randomFloatBetween:0 and:10];
                 //sign = [self randomFloatBetween:0 and:2];
                 angAdd = 3+(((float)rand() /RAND_MAX)*7); //don't beep just past start line (start at 2), and avoid the very last part 9) so not to clash with lap sound
@@ -325,7 +326,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     
     //only do this if the distraction flag is ON
     
-    if ([singleton.distractionOn isEqual:@"ON"]) {
+    if ([singleton.distractionOn isEqual:@"1"]) {
 
         if (hornTriggered){
             hornTriggered=NO;
@@ -419,9 +420,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     [self addChild:track];
     
     //[self p_addCarAtPosition:CGPointMake(CGRectGetMidX(track.frame), 50.0f)];//used to be 50, == middle of track at centre bottom
-    [self p_addCarAtPosition:CGPointMake(400.0f, 180.0f)];
+    [self p_addCarAtPosition:CGPointMake(430.0f, 180.0f)];
+    
     // Turn off the world's gravity
     self.physicsWorld.gravity = CGVectorMake(0.0f, 0.0f);// 0,0 = g off .... 1,1 = pulls to right top corner
+    
     self.physicsBody = ({
         CGRect frame = CGRectInset(track.frame, 40.0f, 0.0f);// 40.0f,0.0f= old
         SKPhysicsBody *body = [SKPhysicsBody bodyWithEdgeLoopFromRect:frame];

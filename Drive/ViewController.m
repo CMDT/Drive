@@ -72,7 +72,7 @@
     //version, set anyway *****************************************
     //*************************************************************
     
-    version0 =  @"DRIVE Version 3.0.0 - 14.12.16";     // version   *** keep short
+    version0 =  @"DRIVE Version 3.0.0 - 15.12.16";     // version   *** keep short
     version1 =  @"MMU (C) 2016";                // copyright *** limited line space
     version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
     version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen
@@ -120,7 +120,7 @@
     hornBtn.alpha=0.4;
     pauseBtn.alpha=0.5;
     
-    if ([singleton.distractionOn isEqual:@"OFF"]) {
+    if ([singleton.distractionOn isEqual:@"0"]) {
         hornBtn.hidden=YES;
     }else{
         hornBtn.hidden=NO;
@@ -280,15 +280,13 @@
 }
 
 - (void)showHorn:(BOOL)showHornNow {
-    mySingleton *singleton = [mySingleton sharedSingleton];
-    
-    //show the hor message was received from myScene viewController
+    //show the horn message was received from myScene viewController
     if (showHornNow) {
+        //no fade, active
         hornBtn.alpha=1.0;
-        //hornBtn.hidden=NO;
     }else{
+        //faded as not active
         hornBtn.alpha=0.4;
-        //hornBtn.hidden=YES;
     }
 }
 

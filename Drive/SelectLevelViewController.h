@@ -29,4 +29,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *speedo1;
 @property (weak, nonatomic) IBOutlet UIImageView *speedo2;
 @property (weak, nonatomic) IBOutlet UIImageView *speedo3;
+
 @end

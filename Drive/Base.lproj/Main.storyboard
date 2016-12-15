@@ -306,40 +306,60 @@ With practice, you will become more proficient, train up to the faster cars.
                                 <rect key="frame" x="1" y="0.0" width="568" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Distractions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ay1-xn-2z5">
+                                <rect key="frame" x="20" y="257" width="101" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LOd-8W-6iu">
-                                <rect key="frame" x="130" y="260" width="39" height="28"/>
+                                <rect key="frame" x="141" y="258" width="39" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="d0.png"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ul1-Hy-6Lt">
-                                <rect key="frame" x="271" y="260" width="39" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="d3.png"/>
+                                <connections>
+                                    <action selector="distraction0:" destination="j6p-oN-Kld" eventType="touchUpInside" id="tE2-4m-E7r"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="X1A-wH-YuC">
-                                <rect key="frame" x="177" y="260" width="39" height="28"/>
+                                <rect key="frame" x="190" y="258" width="39" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="d1.png"/>
+                                <connections>
+                                    <action selector="distraction1:" destination="j6p-oN-Kld" eventType="touchUpInside" id="zbw-1A-Mc8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8Z6-Fe-qH5">
-                                <rect key="frame" x="224" y="260" width="39" height="28"/>
+                                <rect key="frame" x="237" y="258" width="39" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="d2.png"/>
+                                <connections>
+                                    <action selector="distraction2:" destination="j6p-oN-Kld" eventType="touchUpInside" id="9w9-KC-uVv"/>
+                                </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="Alo-At-EMz">
-                                <rect key="frame" x="303" y="252" width="20" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ul1-Hy-6Lt">
+                                <rect key="frame" x="284" y="258" width="39" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="Q5y-cl-FP0">
-                                <rect key="frame" x="261" y="252" width="20" height="36"/>
+                                <state key="normal" image="d3.png"/>
+                                <connections>
+                                    <action selector="distraction3:" destination="j6p-oN-Kld" eventType="touchUpInside" id="xxl-1v-sSG"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="2fO-rW-Fbb">
+                                <rect key="frame" x="176" y="252" width="20" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="RVQ-K8-vfg">
-                                <rect key="frame" x="211" y="252" width="20" height="36"/>
+                                <rect key="frame" x="224" y="252" width="20" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="2fO-rW-Fbb">
-                                <rect key="frame" x="163" y="252" width="20" height="36"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="Q5y-cl-FP0">
+                                <rect key="frame" x="274" y="252" width="20" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="Alo-At-EMz">
+                                <rect key="frame" x="316" y="252" width="20" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VLA-lM-chr">
@@ -400,14 +420,6 @@ With practice, you will become more proficient, train up to the faster cars.
                                     <action selector="gameCenterButtonDidTouchUpInside:" destination="j6p-oN-Kld" eventType="touchUpInside" id="55c-dO-iFz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Distractions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ay1-xn-2z5">
-                                <rect key="frame" x="20" y="257" width="101" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drive Music" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KIi-Ef-7UX">
                                 <rect key="frame" x="20" y="209" width="101" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -432,8 +444,8 @@ With practice, you will become more proficient, train up to the faster cars.
                                     <action selector="musicNoneSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="E19-f9-2Rb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hFm-y0-OmS">
-                                <rect key="frame" x="143" y="164" width="39" height="28"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hFm-y0-OmS">
+                                <rect key="frame" x="141" y="164" width="39" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="seg-2.png"/>
                                 <connections>
@@ -563,10 +575,6 @@ With practice, you will become more proficient, train up to the faster cars.
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="LbC-sQ-yRM">
-                                <rect key="frame" x="60" y="275" width="20" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="NZa-s4-3NG">
                                 <rect key="frame" x="168" y="109" width="20" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -579,13 +587,6 @@ With practice, you will become more proficient, train up to the faster cars.
                                     <action selector="fxNoneSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="p6w-6C-OsM"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="hZk-iN-c46">
-                                <rect key="frame" x="302" y="70" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="distractionOSW:" destination="j6p-oN-Kld" eventType="valueChanged" id="BYg-Te-lRY"/>
-                                </connections>
-                            </switch>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="BEX-Ep-wnn">
                                 <rect key="frame" x="405" y="46" width="75" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -603,7 +604,10 @@ With practice, you will become more proficient, train up to the faster cars.
                     <connections>
                         <outlet property="beatbtn" destination="ath-kp-ddz" id="3UQ-3J-o1a"/>
                         <outlet property="bluesbtn" destination="XFj-Va-Cul" id="vO5-61-UQm"/>
-                        <outlet property="distractionSW" destination="hZk-iN-c46" id="fbD-Ox-H8A"/>
+                        <outlet property="distraction0" destination="LOd-8W-6iu" id="pdg-ZM-9MU"/>
+                        <outlet property="distraction1" destination="X1A-wH-YuC" id="5CZ-vM-9IC"/>
+                        <outlet property="distraction2" destination="8Z6-Fe-qH5" id="rmv-uT-RiQ"/>
+                        <outlet property="distraction3" destination="ul1-Hy-6Lt" id="LKd-TA-dqk"/>
                         <outlet property="fxhighbtn" destination="Ec8-BU-veX" id="EAQ-zp-stz"/>
                         <outlet property="fxlowbtn" destination="VLA-lM-chr" id="2Ak-TJ-a4d"/>
                         <outlet property="fxmedbtn" destination="fO4-V8-03A" id="bBc-ry-Gdx"/>
@@ -627,6 +631,10 @@ With practice, you will become more proficient, train up to the faster cars.
                         <outlet property="tickBlues" destination="VBy-FT-GzO" id="NS9-zR-H9G"/>
                         <outlet property="tickLight" destination="fKx-ZO-S2b" id="K1E-dS-fUG"/>
                         <outlet property="tickNone" destination="wlH-ep-x9E" id="tbd-Qu-8Hz"/>
+                        <outlet property="tickdistraction0" destination="2fO-rW-Fbb" id="Kgj-QL-H8R"/>
+                        <outlet property="tickdistraction1" destination="RVQ-K8-vfg" id="zxg-52-6Vn"/>
+                        <outlet property="tickdistraction2" destination="Q5y-cl-FP0" id="rVa-h3-zPU"/>
+                        <outlet property="tickdistraction3" destination="Alo-At-EMz" id="g8N-oD-Uc8"/>
                         <outlet property="tickhigh" destination="af7-nl-gOj" id="cR1-wT-tJj"/>
                         <outlet property="ticklow" destination="Q7H-X6-PKh" id="AqN-gW-oMw"/>
                         <outlet property="tickmed" destination="NwM-AW-88L" id="WKi-sy-cpH"/>
@@ -897,8 +905,8 @@ Drive Music:  Some background music whilst you drive.</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wall Crashes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0o9-GH-nUA">
-                                <rect key="frame" x="20" y="103" width="108" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Wall Crashes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0o9-GH-nUA">
+                                <rect key="frame" x="19" y="103" width="108" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1242,6 +1250,13 @@ Drive Music:  Some background music whilst you drive.</string>
                                     <action selector="showEmail:" destination="khi-MC-6dL" eventType="touchUpInside" id="muZ-v5-JHr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vbF-qQ-0PD">
+                                <rect key="frame" x="159" y="153" width="25" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1468,10 +1483,10 @@ The email data is TEXT formatted but may be incorrectly displayed in some email 
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nf9-ez-CEO">
-                                <rect key="frame" x="12" y="182" width="299" height="87"/>
+                                <rect key="frame" x="85" y="207" width="310" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
-                                    <fragment content=" Press The Icon To Start ">
+                                    <fragment content=" Press  To Start The Game">
                                         <attributes>
                                             <color key="NSColor" red="0.98878632484094675" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="24" name="Arial-BoldMT"/>
@@ -1492,6 +1507,10 @@ The email data is TEXT formatted but may be incorrectly displayed in some email 
                                     <segue destination="j6p-oN-Kld" kind="push" id="Ts0-Gu-wo8"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="box.png" id="r8q-oc-G6T">
+                                <rect key="frame" x="20" y="92" width="69" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1510,6 +1529,7 @@ The email data is TEXT formatted but may be incorrectly displayed in some email 
         <image name="bg-main-menu.png" width="568" height="320"/>
         <image name="bg-select-car.png" width="568" height="320"/>
         <image name="bg-select-difficulty.png" width="568" height="320"/>
+        <image name="box.png" width="44" height="44"/>
         <image name="btn-car1.png" width="121" height="169"/>
         <image name="btn-car2.png" width="121" height="169"/>
         <image name="btn-car3.png" width="121" height="169"/>

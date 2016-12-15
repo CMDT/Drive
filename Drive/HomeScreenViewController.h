@@ -23,7 +23,6 @@
 - (void)blankMusicTicks;
 - (void)blankFXTicks;
 
-- (IBAction)distractionOSW:(id)sender;
 - (IBAction)carButtonDidTouchUpInside:(id)sender;
 - (IBAction)gameCenterButtonDidTouchUpInside:(id)sender;
 
@@ -45,7 +44,15 @@
 - (IBAction)fxNorSet:(id)sender;
 - (IBAction)fxHiSet:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UISwitch    *distractionSW;
+- (IBAction)distraction0:(id)sender;
+- (IBAction)distraction1:(id)sender;
+- (IBAction)distraction2:(id)sender;
+- (IBAction)distraction3:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton    *distraction0;
+@property (weak, nonatomic) IBOutlet UIButton    *distraction1;
+@property (weak, nonatomic) IBOutlet UIButton    *distraction2;
+@property (weak, nonatomic) IBOutlet UIButton    *distraction3;
 
 @property (weak, nonatomic) IBOutlet UIImageView *tick2;
 @property (weak, nonatomic) IBOutlet UIImageView *tick5;
@@ -62,7 +69,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *tickmed;
 @property (weak, nonatomic) IBOutlet UIImageView *ticknor;
 @property (weak, nonatomic) IBOutlet UIImageView *tickhigh;
-@property (weak, nonatomic) IBOutlet UIImageView *tickdistraction;
+@property (weak, nonatomic) IBOutlet UIImageView *tickdistraction0;
+@property (weak, nonatomic) IBOutlet UIImageView *tickdistraction1;
+@property (weak, nonatomic) IBOutlet UIImageView *tickdistraction2;
+@property (weak, nonatomic) IBOutlet UIImageView *tickdistraction3;
 
 @property (weak, nonatomic) IBOutlet UIButton *lap2btn;
 @property (weak, nonatomic) IBOutlet UIButton *lap5btn;
