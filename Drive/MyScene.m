@@ -76,6 +76,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     BOOL    hornShowing;
     BOOL    hornsPressed;//for horns pressed
     BOOL    hornTriggered; // when yes, the car is in the right position
+    BOOL    started; // has the start lamp sequence finished?
     Float32 hornReactionTime[101];
     double temp1;
     double temp2;
@@ -173,9 +174,13 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         singleton.hornTimerCounter= 0;
         angAdd = -3.01;
         hornTriggered = NO;
+        
+        //4 second delay whilst start lamps display
+        started=NO;
     }
     return self;
 }
+
 // *******************************************************************
 // *** game proper, this is the run loop on this update            ***
 // *******************************************************************
@@ -184,9 +189,16 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 - (void)update:(NSTimeInterval)currentTime {
     mySingleton *singleton = [mySingleton sharedSingleton];
     
-    if (self.previousTimeInterval == 0) {
-        self.previousTimeInterval =  currentTime;
+    //halt the timer until 4 seconds are up
+    if (self.previousTimeInterval == 0 && !started) {
+        self.previousTimeInterval =  currentTime+4;
     }
+    //NSLog(@"started=%i,prev=%.2f, curr=%.2f, time=%.3f", started, self.previousTimeInterval, currentTime, self.previousTimeInterval-currentTime);
+    //only let the car moove when the lamps are out
+    if (self.previousTimeInterval-currentTime<0) {
+        started=YES;
+    }
+    
     //****************************************************************
     if (self.isPaused) {
         // find a way to halt the timer, then restart it for laps
@@ -462,6 +474,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 //***************
     //GO NOW !
 //***************
+    //try countdown timers here...
 }
 
 //now using singleton for laps
@@ -830,14 +843,17 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 }
 
 - (void)p_analogControlUpdated:(AnalogControl *)analogControl {
-    // Negate the y-axis to bridge a gap between SpriteKit and UIKit
-    self.car.physicsBody.velocity = CGVectorMake(
+    //if race is at start lamp phase, return
+    if (started==YES) {
+
+        // Negate the y-axis to bridge a gap between SpriteKit and UIKit
+        self.car.physicsBody.velocity = CGVectorMake(
                                                  analogControl.relativePosition.x * self.maxSpeed,
                                                  -analogControl.relativePosition.y * self.maxSpeed
                                                  );
     
-    if (!CGPointEqualToPoint(analogControl.relativePosition, CGPointZero)) {
-        self.car.zRotation = ({
+        if (!CGPointEqualToPoint(analogControl.relativePosition, CGPointZero)) {
+            self.car.zRotation = ({
             CGPoint point = CGPointMake(
                                         analogControl.relativePosition.x,
                                         -analogControl.relativePosition.y
@@ -845,13 +861,14 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             
             CGFloat angle = CGPointToAngle(point);
             angle;
+            }
+            );
         }
-        );
     }
 }
 
 -(void)p_reportHorn:(BOOL)showHornNow{
-    
+ // ?? is this required
 }
 
 - (void)p_reportAchievementsForGameState:(BOOL)hasWon {
@@ -899,6 +916,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             //NSLog(@"b- lap time %d: %f", x+1, reactionTime[x]);
         }
         
+        //correct 1st lap time for lamps 4 seconds start
+        reactionTime[0]=reactionTime[0]-4.0f;
+        
         for (int x=0; x<xcounter-1; x+=1) {
             
             temp = reactionTime[x];
@@ -935,6 +955,13 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         
         for (int x=0; x<horns; x+=1) {
             //hornReactionTime[x]=(hornReactionTime[x]);//  /1000;
+            
+            //correct the lag for horn time key presses
+            hornReactionTime[x]=hornReactionTime[x]-0.3f;
+            if (hornReactionTime[x]<0) {
+                hornReactionTime[x]=0.01;
+            }
+            
             //cant be longer than the lap time
             if (hornReactionTime[x] > reactionTime[x]) {
                 hornReactionTime[x] = raceTime;

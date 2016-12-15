@@ -13,8 +13,11 @@
 
 @interface ViewController : UIViewController  <UITextFieldDelegate>
 
-@property (nonatomic, assign) CRCarType carType;
+@property (nonatomic, assign) CRCarType   carType;
 @property (nonatomic, assign) CRLevelType levelType;
-@property (nonatomic, copy)   NSDate * hornTimer;
+@property (nonatomic, copy)   NSDate      * hornTimer;
+@property (nonatomic, copy)   NSDate      * startDate;
+
+@property (weak, nonatomic) IBOutlet UIImageView * startLampImageView;
 
 @end

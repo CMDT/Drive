@@ -26,6 +26,10 @@
 @interface ViewController () <UIAlertViewDelegate, UITextFieldDelegate>
 {
     Float32 temp5;
+    UIImageView *st0;
+    UIImageView *st1;
+    UIImageView *st2;
+    UIImageView *st3;
 }
 
 @property (nonatomic, strong) SKView              * skView;
@@ -38,7 +42,16 @@
 
 @implementation ViewController
 
-@synthesize hornBtn, pauseBtn, hornTimer;
+@synthesize hornBtn, pauseBtn, hornTimer, startLampImageView, startDate;
+
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    //load the start lamp images for display
+    st0 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"st4.png"]];
+    st1 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"st1.png"]];
+    st2 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"st2.png"]];
+    st3 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"st3.png"]];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -125,7 +138,48 @@
     }else{
         hornBtn.hidden=NO;
     }
+    startLampImageView.hidden=NO;
+    self.startDate = [NSDate date];
+    [NSTimer scheduledTimerWithTimeInterval:(0.0f) target:self selector:@selector(startLamp0) userInfo:nil repeats:NO];
 }
+
+-(void)startLamp0 {
+    [startLampImageView setImage: st0.image];
+    //start the timer
+    self.startDate = [NSDate date];
+    [NSTimer scheduledTimerWithTimeInterval:(1.0f) target:self selector:@selector(startLamp1) userInfo:nil repeats:NO];
+}
+
+-(void)startLamp1 {
+    [startLampImageView setImage: st1.image];
+    //start the timer
+    self.startDate = [NSDate date];
+    [NSTimer scheduledTimerWithTimeInterval:(1.0f) target:self selector:@selector(startLamp2) userInfo:nil repeats:NO];
+}
+
+-(void)startLamp2 {
+    [startLampImageView setImage: st2.image];
+    //start the timer
+    self.startDate = [NSDate date];
+    [NSTimer scheduledTimerWithTimeInterval:(1.0f) target:self selector:@selector(startLamp3) userInfo:nil repeats:NO];
+}
+-(void)startLamp3 {
+    [startLampImageView setImage: st3.image];
+    //start the timer
+    self.startDate = [NSDate date];
+    [NSTimer scheduledTimerWithTimeInterval:(1.0f) target:self selector:@selector(startLampGO) userInfo:nil repeats:NO];
+}
+
+-(void)startLampGO {
+    [startLampImageView setImage: st0.image];
+    //start the timer
+    self.startDate = [NSDate date];
+    [NSTimer scheduledTimerWithTimeInterval:(0.1f) target:self selector:@selector(startGame) userInfo:nil repeats:NO];
+}
+-(void)startGame {
+    startLampImageView.hidden=YES;
+}
+
 
 - (void)setDateNow:(id)sender{
     // for date format
