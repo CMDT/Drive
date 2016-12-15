@@ -159,7 +159,7 @@
         <!--InfoSelectCarVC-->
         <scene sceneID="qSq-AT-HLd">
             <objects>
-                <viewController storyboardIdentifier="InfoSelectCarViewController" title="InfoSelectCarVC" id="72Q-Fc-b8U" customClass="InfoSelectCarViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoSelectCarViewController" title="InfoSelectCarVC" id="72Q-Fc-b8U" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PFB-5t-DTd">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -193,8 +193,20 @@ With practice, you will become more proficient, train up to the faster cars.
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="car_1.png" id="wmn-eV-1HQ">
+                                <rect key="frame" x="20" y="266" width="51" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="car_2.png" id="Xxa-Iy-7J8">
+                                <rect key="frame" x="91" y="245" width="51" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-fast.png" id="Hmz-CB-xXI">
                                 <rect key="frame" x="331" y="58" width="102" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="car_3.png" id="S66-lN-9qC">
+                                <rect key="frame" x="157" y="255" width="51" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -664,12 +676,12 @@ With practice, you will become more proficient, train up to the faster cars.
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2f2-Yp-2iy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1260" y="369"/>
+            <point key="canvasLocation" x="-1797" y="369"/>
         </scene>
         <!--InfoSelectTrackVC-->
         <scene sceneID="upm-a7-wco">
             <objects>
-                <viewController storyboardIdentifier="InfoSelectTrackViewController" title="InfoSelectTrackVC" id="iVf-iI-C6T" customClass="InfoSelectTrackViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoSelectTrackViewController" title="InfoSelectTrackVC" id="iVf-iI-C6T" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rso-Jr-lNk">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -691,6 +703,10 @@ The hardest track has multiple hazards to avoid. Hitting hazards slows you down 
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tyre.png" id="zv4-XX-fp0">
+                                <rect key="frame" x="190" y="269" width="32" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="About The Tracks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b1H-y3-ucp">
                                 <rect key="frame" x="20" y="20" width="440" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -713,6 +729,10 @@ The hardest track has multiple hazards to avoid. Hitting hazards slows you down 
                                 <rect key="frame" x="418" y="141" width="36" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="crate.png" id="RKc-6g-Ghv">
+                                <rect key="frame" x="230" y="256" width="33" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -725,7 +745,7 @@ The hardest track has multiple hazards to avoid. Hitting hazards slows you down 
         <!--InfoStartVC-->
         <scene sceneID="kOj-rW-sDX">
             <objects>
-                <viewController storyboardIdentifier="InfoStartViewController" title="InfoStartVC" id="jCb-yp-7T2" customClass="InfoStartViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoStartViewController" title="InfoStartVC" id="jCb-yp-7T2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Knd-6Z-Czb">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -778,7 +798,7 @@ Drive Music:  Some background music whilst you drive.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SCq-2U-6iM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-666" y="747"/>
+            <point key="canvasLocation" x="-674" y="747"/>
         </scene>
         <!--TrackStatsVC-->
         <scene sceneID="tmO-me-Svl">
@@ -1418,7 +1438,7 @@ Drive Music:  Some background music whilst you drive.</string>
         <!--InfoSelectDriverVC-->
         <scene sceneID="ee2-cj-JlR">
             <objects>
-                <viewController storyboardIdentifier="InfoSelectDriverViewController" title="InfoSelectDriverVC" id="SI2-qR-bsc" customClass="InfoSelectDriverViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoSelectDriverViewController" title="InfoSelectDriverVC" id="SI2-qR-bsc" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oyT-dc-AFs">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1443,7 +1463,7 @@ Drive Music:  Some background music whilst you drive.</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" id="0qq-N8-ACk">
-                                <rect key="frame" x="20" y="62" width="303" height="253"/>
+                                <rect key="frame" x="20" y="62" width="303" height="249"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Give the Driver a Name.  If you are presenting data for a study, you should code your subjects to ensure privacy.
@@ -1475,6 +1495,15 @@ The email data is TEXT formatted but may be incorrectly displayed in some email 
                                 <rect key="frame" x="1" y="0.0" width="568" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WNW-yg-wNe" userLabel="IconButton">
+                                <rect key="frame" x="89" y="114" width="87" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <state key="normal" title="Button" image="mmulogo9.png"/>
+                                <connections>
+                                    <segue destination="j6p-oN-Kld" kind="push" id="PMR-Bk-alp"/>
+                                </connections>
+                            </button>
                             <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Lqo-0N-YY0" userLabel="Button play centre">
                                 <rect key="frame" x="1" y="1" width="1" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1483,7 +1512,7 @@ The email data is TEXT formatted but may be incorrectly displayed in some email 
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nf9-ez-CEO">
-                                <rect key="frame" x="85" y="207" width="310" height="87"/>
+                                <rect key="frame" x="134" y="225" width="310" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content=" Press  To Start The Game">
@@ -1507,10 +1536,16 @@ The email data is TEXT formatted but may be incorrectly displayed in some email 
                                     <segue destination="j6p-oN-Kld" kind="push" id="Ts0-Gu-wo8"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="box.png" id="r8q-oc-G6T">
-                                <rect key="frame" x="20" y="92" width="69" height="69"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Emj-2n-cdZ">
+                                <rect key="frame" x="20" y="245" width="75" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <state key="normal" image="btn-info.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="1xA-yU-Nkt" kind="push" id="hQB-YZ-ONS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1518,7 +1553,109 @@ The email data is TEXT formatted but may be incorrectly displayed in some email 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LFg-GA-KHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1260" y="876"/>
+            <point key="canvasLocation" x="-1260" y="369"/>
+        </scene>
+        <!--InfoSplashVC-->
+        <scene sceneID="BcA-bm-Qak">
+            <objects>
+                <viewController storyboardIdentifier="InfoSplashViewController" title="InfoSplashVC" id="1xA-yU-Nkt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xrl-ev-uZX">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" editable="NO" usesAttributedText="YES" id="nBm-oW-oCN">
+                                <rect key="frame" x="20" y="49" width="314" height="284"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Manchester Metropolitan University
+Department of Exercise and Sport Science
+Psychology
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">This game is part of a Psychological Motor Control Test to explore how distractions affect motor function during a task.
+
+(c) Copyright Manchester Metropolitan University (2016).</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+
+All comments and suggestions to:
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Mr Jonathan Howell (Technical Team Leader, Science Team, Cheshire. Email: j.a.howell@mmu.ac.uk ">
+                                        <attributes>
+                                            <font key="NSFont" size="13" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About The Drive Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q2K-Dp-1wg">
+                                <rect key="frame" x="20" y="20" width="440" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="kOq-jQ-lJT">
+                                <rect key="frame" x="342" y="245" width="118" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="backxGr.png"/>
+                                <connections>
+                                    <segue destination="dKd-nB-fG3" kind="push" id="EFj-b3-7hl"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drive512.png" id="oOF-8G-qs2">
+                                <rect key="frame" x="342" y="49" width="105" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="mmulogo9.png" id="ukB-52-d6h">
+                                <rect key="frame" x="350" y="154" width="89" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Dz8-d1-fvQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BC1-C6-clf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1260" y="747"/>
         </scene>
     </scenes>
     <resources>
@@ -1529,7 +1666,6 @@ The email data is TEXT formatted but may be incorrectly displayed in some email 
         <image name="bg-main-menu.png" width="568" height="320"/>
         <image name="bg-select-car.png" width="568" height="320"/>
         <image name="bg-select-difficulty.png" width="568" height="320"/>
-        <image name="box.png" width="44" height="44"/>
         <image name="btn-car1.png" width="121" height="169"/>
         <image name="btn-car2.png" width="121" height="169"/>
         <image name="btn-car3.png" width="121" height="169"/>
@@ -1554,6 +1690,7 @@ The email data is TEXT formatted but may be incorrectly displayed in some email 
         <image name="low.png" width="105" height="55"/>
         <image name="med.png" width="105" height="55"/>
         <image name="mediumx.png" width="105" height="55"/>
+        <image name="mmulogo9.png" width="149" height="160"/>
         <image name="norm.png" width="105" height="55"/>
         <image name="off.png" width="105" height="55"/>
         <image name="pause2Gr.png" width="105" height="55"/>
@@ -1581,9 +1718,10 @@ The email data is TEXT formatted but may be incorrectly displayed in some email 
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Ypq-Rw-I7Y"/>
-        <segue reference="Ts0-Gu-wo8"/>
-        <segue reference="1Ng-tR-vKr"/>
-        <segue reference="kKz-ZN-Bct"/>
+        <segue reference="Qad-gC-6d0"/>
+        <segue reference="sgN-rE-1F9"/>
+        <segue reference="Xnc-OW-jig"/>
+        <segue reference="UeP-lD-UCg"/>
+        <segue reference="egQ-Cs-J5z"/>
     </inferredMetricsTieBreakers>
 </document>

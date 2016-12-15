@@ -207,6 +207,7 @@
 		E1E7836B1E01B26D00CD9399 /* st4.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E783611E01B26D00CD9399 /* st4.png */; };
 		E1E7836F1E01BD1900CD9399 /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E7836E1E01BD1900CD9399 /* SplashScreenViewController.m */; };
 		E1E783711E02927800CD9399 /* box.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E783701E02927800CD9399 /* box.png */; };
+		E1E783731E02BAA700CD9399 /* mmulogo9.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E783721E02BAA700CD9399 /* mmulogo9.png */; };
 		E1F1771F1DA3C4DA0016DB81 /* button_press00.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1F1771A1DA3C4DA0016DB81 /* button_press00.wav */; };
 		E1F177201DA3C4DA0016DB81 /* button_press25.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1F1771B1DA3C4DA0016DB81 /* button_press25.wav */; };
 		E1F177211DA3C4DA0016DB81 /* button_press50.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1F1771C1DA3C4DA0016DB81 /* button_press50.wav */; };
@@ -450,6 +451,7 @@
 		E1E7836D1E01BD1900CD9399 /* SplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashScreenViewController.h; sourceTree = "<group>"; };
 		E1E7836E1E01BD1900CD9399 /* SplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashScreenViewController.m; sourceTree = "<group>"; };
 		E1E783701E02927800CD9399 /* box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = box.png; path = Drive/Art/sprites.atlas/box.png; sourceTree = "<group>"; };
+		E1E783721E02BAA700CD9399 /* mmulogo9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mmulogo9.png; sourceTree = "<group>"; };
 		E1F1771A1DA3C4DA0016DB81 /* button_press00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_press00.wav; sourceTree = "<group>"; };
 		E1F1771B1DA3C4DA0016DB81 /* button_press25.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_press25.wav; sourceTree = "<group>"; };
 		E1F1771C1DA3C4DA0016DB81 /* button_press50.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_press50.wav; sourceTree = "<group>"; };
@@ -637,6 +639,7 @@
 		475E5E5E195A5A610063FD68 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E1E783721E02BAA700CD9399 /* mmulogo9.png */,
 				E1CBACE61C22D7DA001CC466 /* backx.png */,
 				E1CBACF61C22D7DA001CC466 /* backx@2x.png */,
 				E1CBACED1C22D7DA001CC466 /* backxGr@2x.png */,
@@ -1032,6 +1035,7 @@
 				E1CBAD121C22D7DA001CC466 /* nextxGr@2x.png in Resources */,
 				E1CBAD181C22D7DA001CC466 /* mediumx@2x.png in Resources */,
 				E1CBAD1D1C22D7DA001CC466 /* emailGr@2x.png in Resources */,
+				E1E783731E02BAA700CD9399 /* mmulogo9.png in Resources */,
 				E1CBAD1C1C22D7DA001CC466 /* infoGr@2x.png in Resources */,
 				E1CBAD061C22D7DA001CC466 /* emailxGr.png in Resources */,
 				E171F2A01C1EDBB300E3DB0D /* base@2x.png in Resources */,
