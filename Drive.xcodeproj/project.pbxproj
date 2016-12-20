@@ -52,6 +52,7 @@
 		917E5A5D1C21DF0A009DF226 /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 917E5A5B1C21DF0A009DF226 /* tick.png */; };
 		917E5A5E1C21DF0A009DF226 /* tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 917E5A5C1C21DF0A009DF226 /* tick@2x.png */; };
 		E10C7A931E095DAB0051A630 /* finish2.png in Resources */ = {isa = PBXBuildFile; fileRef = E10C7A921E095DAB0051A630 /* finish2.png */; };
+		E10C7A951E096C1F0051A630 /* notfinish.png in Resources */ = {isa = PBXBuildFile; fileRef = E10C7A941E096C1F0051A630 /* notfinish.png */; };
 		E11F94841C625B8900712F9B /* high.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F947C1C625B8900712F9B /* high.png */; };
 		E11F94851C625B8900712F9B /* high@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F947D1C625B8900712F9B /* high@2x.png */; };
 		E11F94861C625B8900712F9B /* low.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F947E1C625B8900712F9B /* low.png */; };
@@ -294,6 +295,7 @@
 		917E5A5B1C21DF0A009DF226 /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
 		917E5A5C1C21DF0A009DF226 /* tick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick@2x.png"; sourceTree = "<group>"; };
 		E10C7A921E095DAB0051A630 /* finish2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finish2.png; sourceTree = "<group>"; };
+		E10C7A941E096C1F0051A630 /* notfinish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notfinish.png; sourceTree = "<group>"; };
 		E11F947C1C625B8900712F9B /* high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = high.png; sourceTree = "<group>"; };
 		E11F947D1C625B8900712F9B /* high@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "high@2x.png"; sourceTree = "<group>"; };
 		E11F947E1C625B8900712F9B /* low.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = low.png; sourceTree = "<group>"; };
@@ -641,6 +643,7 @@
 		475E5E5E195A5A610063FD68 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E10C7A941E096C1F0051A630 /* notfinish.png */,
 				E10C7A921E095DAB0051A630 /* finish2.png */,
 				E1E783721E02BAA700CD9399 /* mmulogo9.png */,
 				E1CBACE61C22D7DA001CC466 /* backx.png */,
@@ -976,6 +979,7 @@
 				E171F2A71C1EDBB300E3DB0D /* btn-medium.png in Resources */,
 				E14EC2621DFFFD2D0064C6B4 /* Default-568h@2x.png in Resources */,
 				E171F2FD1C1EF19F00E3DB0D /* seg-none.png in Resources */,
+				E10C7A951E096C1F0051A630 /* notfinish.png in Resources */,
 				E171F2EC1C1EF19F00E3DB0D /* seg-2.png in Resources */,
 				E171F27B1C1EDB5700E3DB0D /* bg-select-difficulty@2x.png in Resources */,
 				E171F2781C1EDB5700E3DB0D /* bg-select-car.png in Resources */,

@@ -19,5 +19,6 @@
 @property (nonatomic, copy)   NSDate      * startDate;
 
 @property (weak, nonatomic) IBOutlet UIImageView * startLampImageView;
+@property (weak, nonatomic) IBOutlet UIImageView * finishLampImageView;
 
 @end

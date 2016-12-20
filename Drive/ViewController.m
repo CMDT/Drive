@@ -31,6 +31,7 @@
     UIImageView *st2;
     UIImageView *st3;
     UIImageView *fin0;
+    UIImageView *fin1;
     BOOL didWin2;
 }
 
@@ -54,6 +55,7 @@
     st2  = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"st2.png"]];
     st3  = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"st3.png"]];
     fin0 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"finish2.png"]];
+    fin1 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"notfinish.png"]];
 }
 
 - (void)viewDidLoad {
@@ -184,16 +186,68 @@
     [NSTimer scheduledTimerWithTimeInterval:(0.1f) target:self selector:@selector(startGame) userInfo:nil repeats:NO];
 }
 -(void)finishLine0 {
-    //display flag finish line image
-    [startLampImageView setImage: fin0.image];
-    startLampImageView.alpha=0.5;
-    startLampImageView.hidden=NO;
-    [NSTimer scheduledTimerWithTimeInterval:(3.0f) target:self selector:@selector(p_gameOverWithWin2) userInfo:nil repeats:NO];
+    //display chequered flag finish line image
+    [self.view sendSubviewToBack:self.analogControl];
+    [_finishLampImageView setImage: fin0.image];
+    _finishLampImageView.alpha=0.0;
+    _finishLampImageView.hidden=YES;
+    [NSTimer scheduledTimerWithTimeInterval:(0.2f) target:self selector:@selector(animateMessageViewIN) userInfo:nil repeats:NO];
 }
+-(void)finishLine1 {
+    //display black flag finish line image
+    [self.view sendSubviewToBack:self.analogControl];
+    [_finishLampImageView setImage: fin1.image];
+    _finishLampImageView.alpha=0.0;
+    _finishLampImageView.hidden=YES;
+    //[NSTimer scheduledTimerWithTimeInterval:(3.0f) target:self selector:@selector(p_gameOverWithWin2) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:(0.2f) target:self selector:@selector(animateMessageViewIN) userInfo:nil repeats:NO];
+}
+-(void)animateMessageViewIN{
+    //ease in
+    _finishLampImageView.alpha = 0.0;
+    _finishLampImageView.hidden=NO;
+    [[_finishLampImageView superview] bringSubviewToFront:_finishLampImageView];
+    
+    //[UIView animateKeyframesWithDuration:1 delay:1 options:1 animations:^(){_finishLampImageView.alpha = 1.0;} completion:nil];
+    [UIView animateWithDuration:1.2
+                          delay:0  /* do not add a delay because we will use performSelector. */
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^ {
+                         _finishLampImageView.alpha = 1.0; //fade in
+                     }
+                     completion:^(BOOL finished) {[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(animateMessageViewOUT) userInfo:nil repeats:NO];
+                     }];
+}
+
+-(void)animateMessageViewOUT{
+    //ease out
+    _finishLampImageView.hidden=NO;
+    [[_finishLampImageView superview] bringSubviewToFront:_finishLampImageView];
+    
+    [UIView animateWithDuration:1.0
+                          delay:1.2
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^ {
+                         /*if (isCalculating) { //do not fade out, keep display on
+                          MessageView.alpha = 1.0;
+                          }else{
+                          MessageView.alpha = 0.0;
+                          }*/
+                         _finishLampImageView.alpha = 0.0; //fade out
+                     }
+                     completion:^(BOOL finished) {
+                     }];
+    //nothing else to do, the image was shown
+        [NSTimer scheduledTimerWithTimeInterval:(0.0f) target:self selector:@selector(carryon) userInfo:nil repeats:NO];
+}
+
+-(void)carryon{
+        [NSTimer scheduledTimerWithTimeInterval:(3.0f) target:self selector:@selector(p_gameOverWithWin2) userInfo:nil repeats:NO];
+}
+
 -(void)startGame {
     startLampImageView.hidden=YES;
 }
-
 
 - (void)setDateNow:(id)sender{
     // for date format
@@ -361,12 +415,21 @@
 #pragma mark - Game Over
 
 - (void)p_gameOverWithWin:(BOOL)didWin {
+    _finishLampImageView.hidden=NO;
     didWin2=didWin;
-    [NSTimer scheduledTimerWithTimeInterval:(0.0f) target:self selector:@selector(finishLine0) userInfo:nil repeats:NO];
+    if (didWin2) {
+        //stats and times, completed
+        [NSTimer scheduledTimerWithTimeInterval:(0.0f) target:self selector:@selector(finishLine0) userInfo:nil repeats:NO];
+    }else{
+        //you did not finish or cancelled, just start again... consider part stats, ie no email
+        [NSTimer scheduledTimerWithTimeInterval:(0.0f) target:self selector:@selector(finishLine1) userInfo:nil repeats:NO];
+    }
 }
 
 - (void)p_gameOverWithWin2 {
+    [self.view bringSubviewToFront:self.analogControl];
     startLampImageView.hidden=YES;
+    _finishLampImageView.hidden=YES;
     mySingleton *singleton = [mySingleton sharedSingleton];
     NSString *completedMessage = [NSString stringWithFormat:@"You Have Completed %@ Laps.\n\nThe Race Times Will Follow...",singleton.laps];
     NSString *notFinishMessage = @"You Did Not Finish !\n\nYou Will Have to Start Again.";
@@ -381,10 +444,10 @@
     [alert show]; // show the alert then...
     if (didWin2) {
         //stats and times, completed
-        [self performSelector:@selector(p_goBackStats:) withObject:alert afterDelay:2.5];
+        [self performSelector:@selector(p_goBackStats:) withObject:alert afterDelay:3.0];
             }else{
         //you did not finish or cancelled, just start again... consider part stats, ie no email
-        [self performSelector:@selector(p_goBack:) withObject:alert afterDelay:2.5];
+        [self performSelector:@selector(p_goBack:) withObject:alert afterDelay:3];
     }
 }
 
