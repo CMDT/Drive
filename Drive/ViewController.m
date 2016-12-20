@@ -185,6 +185,7 @@
     self.startDate = [NSDate date];
     [NSTimer scheduledTimerWithTimeInterval:(0.1f) target:self selector:@selector(startGame) userInfo:nil repeats:NO];
 }
+
 -(void)finishLine0 {
     //display chequered flag finish line image
     [self.view sendSubviewToBack:self.analogControl];
@@ -193,6 +194,7 @@
     _finishLampImageView.hidden=YES;
     [NSTimer scheduledTimerWithTimeInterval:(0.2f) target:self selector:@selector(animateMessageViewIN) userInfo:nil repeats:NO];
 }
+
 -(void)finishLine1 {
     //display black flag finish line image
     [self.view sendSubviewToBack:self.analogControl];
@@ -202,8 +204,9 @@
     //[NSTimer scheduledTimerWithTimeInterval:(3.0f) target:self selector:@selector(p_gameOverWithWin2) userInfo:nil repeats:NO];
     [NSTimer scheduledTimerWithTimeInterval:(0.2f) target:self selector:@selector(animateMessageViewIN) userInfo:nil repeats:NO];
 }
+
 -(void)animateMessageViewIN{
-    //ease in
+    //ease in finish flag
     _finishLampImageView.alpha = 0.0;
     _finishLampImageView.hidden=NO;
     [[_finishLampImageView superview] bringSubviewToFront:_finishLampImageView];
@@ -220,7 +223,7 @@
 }
 
 -(void)animateMessageViewOUT{
-    //ease out
+    //ease out finish flag
     _finishLampImageView.hidden=NO;
     [[_finishLampImageView superview] bringSubviewToFront:_finishLampImageView];
     
