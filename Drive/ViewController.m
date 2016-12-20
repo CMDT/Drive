@@ -30,6 +30,8 @@
     UIImageView *st1;
     UIImageView *st2;
     UIImageView *st3;
+    UIImageView *fin0;
+    BOOL didWin2;
 }
 
 @property (nonatomic, strong) SKView              * skView;
@@ -47,10 +49,11 @@
 -(void)awakeFromNib{
     [super awakeFromNib];
     //load the start lamp images for display
-    st0 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"st4.png"]];
-    st1 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"st1.png"]];
-    st2 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"st2.png"]];
-    st3 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"st3.png"]];
+    st0  = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"st4.png"]];
+    st1  = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"st1.png"]];
+    st2  = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"st2.png"]];
+    st3  = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"st3.png"]];
+    fin0 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"finish2.png"]];
 }
 
 - (void)viewDidLoad {
@@ -151,6 +154,7 @@
 }
 
 -(void)startLamp1 {
+    startLampImageView.alpha=0.6;
     [startLampImageView setImage: st1.image];
     //start the timer
     self.startDate = [NSDate date];
@@ -158,12 +162,14 @@
 }
 
 -(void)startLamp2 {
+    startLampImageView.alpha=0.8;
     [startLampImageView setImage: st2.image];
     //start the timer
     self.startDate = [NSDate date];
     [NSTimer scheduledTimerWithTimeInterval:(1.0f) target:self selector:@selector(startLamp3) userInfo:nil repeats:NO];
 }
 -(void)startLamp3 {
+    startLampImageView.alpha=0.9;
     [startLampImageView setImage: st3.image];
     //start the timer
     self.startDate = [NSDate date];
@@ -171,10 +177,18 @@
 }
 
 -(void)startLampGO {
+    startLampImageView.alpha=1.0;
     [startLampImageView setImage: st0.image];
     //start the timer
     self.startDate = [NSDate date];
     [NSTimer scheduledTimerWithTimeInterval:(0.1f) target:self selector:@selector(startGame) userInfo:nil repeats:NO];
+}
+-(void)finishLine0 {
+    //display flag finish line image
+    [startLampImageView setImage: fin0.image];
+    startLampImageView.alpha=0.5;
+    startLampImageView.hidden=NO;
+    [NSTimer scheduledTimerWithTimeInterval:(3.0f) target:self selector:@selector(p_gameOverWithWin2) userInfo:nil repeats:NO];
 }
 -(void)startGame {
     startLampImageView.hidden=YES;
@@ -347,24 +361,30 @@
 #pragma mark - Game Over
 
 - (void)p_gameOverWithWin:(BOOL)didWin {
-     mySingleton *singleton = [mySingleton sharedSingleton];
+    didWin2=didWin;
+    [NSTimer scheduledTimerWithTimeInterval:(0.0f) target:self selector:@selector(finishLine0) userInfo:nil repeats:NO];
+}
+
+- (void)p_gameOverWithWin2 {
+    startLampImageView.hidden=YES;
+    mySingleton *singleton = [mySingleton sharedSingleton];
     NSString *completedMessage = [NSString stringWithFormat:@"You Have Completed %@ Laps.\n\nThe Race Times Will Follow...",singleton.laps];
     NSString *notFinishMessage = @"You Did Not Finish !\n\nYou Will Have to Start Again.";
     NSString *bodyMessage      = @"... This Race is Now Over ...\n\n";
     
     UIAlertView *alert =
-    [[UIAlertView alloc] initWithTitle:didWin ? completedMessage : notFinishMessage //selects the choice didwin BOOL
+    [[UIAlertView alloc] initWithTitle:didWin2 ? completedMessage : notFinishMessage //selects the choice didwin BOOL
                                message:bodyMessage
                               delegate:nil
                      cancelButtonTitle:nil
                      otherButtonTitles:nil];
     [alert show]; // show the alert then...
-    if (didWin) {
+    if (didWin2) {
         //stats and times, completed
-        [self performSelector:@selector(p_goBackStats:) withObject:alert afterDelay:2.0];
-    }else{
+        [self performSelector:@selector(p_goBackStats:) withObject:alert afterDelay:2.5];
+            }else{
         //you did not finish or cancelled, just start again... consider part stats, ie no email
-        [self performSelector:@selector(p_goBack:) withObject:alert afterDelay:2.0];
+        [self performSelector:@selector(p_goBack:) withObject:alert afterDelay:2.5];
     }
 }
 

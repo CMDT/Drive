@@ -51,6 +51,7 @@
 		917B79131C1DB50E00A6D3DA /* TrackStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 917B79121C1DB50E00A6D3DA /* TrackStatsViewController.m */; };
 		917E5A5D1C21DF0A009DF226 /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 917E5A5B1C21DF0A009DF226 /* tick.png */; };
 		917E5A5E1C21DF0A009DF226 /* tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 917E5A5C1C21DF0A009DF226 /* tick@2x.png */; };
+		E10C7A931E095DAB0051A630 /* finish2.png in Resources */ = {isa = PBXBuildFile; fileRef = E10C7A921E095DAB0051A630 /* finish2.png */; };
 		E11F94841C625B8900712F9B /* high.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F947C1C625B8900712F9B /* high.png */; };
 		E11F94851C625B8900712F9B /* high@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F947D1C625B8900712F9B /* high@2x.png */; };
 		E11F94861C625B8900712F9B /* low.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F947E1C625B8900712F9B /* low.png */; };
@@ -292,6 +293,7 @@
 		917B79121C1DB50E00A6D3DA /* TrackStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackStatsViewController.m; sourceTree = "<group>"; };
 		917E5A5B1C21DF0A009DF226 /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
 		917E5A5C1C21DF0A009DF226 /* tick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick@2x.png"; sourceTree = "<group>"; };
+		E10C7A921E095DAB0051A630 /* finish2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finish2.png; sourceTree = "<group>"; };
 		E11F947C1C625B8900712F9B /* high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = high.png; sourceTree = "<group>"; };
 		E11F947D1C625B8900712F9B /* high@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "high@2x.png"; sourceTree = "<group>"; };
 		E11F947E1C625B8900712F9B /* low.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = low.png; sourceTree = "<group>"; };
@@ -639,6 +641,7 @@
 		475E5E5E195A5A610063FD68 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E10C7A921E095DAB0051A630 /* finish2.png */,
 				E1E783721E02BAA700CD9399 /* mmulogo9.png */,
 				E1CBACE61C22D7DA001CC466 /* backx.png */,
 				E1CBACF61C22D7DA001CC466 /* backx@2x.png */,
@@ -931,6 +934,7 @@
 				E147D35A1DF865CE00E02FA1 /* bale.png in Resources */,
 				E147D35B1DF865CE00E02FA1 /* car_1.png in Resources */,
 				E147D35C1DF865CE00E02FA1 /* car_2.png in Resources */,
+				E10C7A931E095DAB0051A630 /* finish2.png in Resources */,
 				E147D35D1DF865CE00E02FA1 /* car_3.png in Resources */,
 				E147D35E1DF865CE00E02FA1 /* crate.png in Resources */,
 				E147D35F1DF865CE00E02FA1 /* tyre.png in Resources */,
