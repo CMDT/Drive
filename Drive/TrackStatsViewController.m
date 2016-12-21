@@ -21,7 +21,7 @@
 @end
 
 @implementation TrackStatsViewController{
-    
+   //
 }
 
 @synthesize
@@ -80,8 +80,8 @@
     NSUserDefaults * defaults        = [NSUserDefaults standardUserDefaults];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [defaults synchronize];
-    singleton.email      = [defaults objectForKey:kEmail];
-    singleton.subjectName= [defaults objectForKey:kSubject];
+    singleton.email       = [defaults objectForKey:kEmail];
+    singleton.subjectName = [defaults objectForKey:kSubject];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -147,23 +147,23 @@
     hornsPlayed.text=[NSString stringWithFormat:@"%i",horns];;
     
     if ([hornsPlayed.text integerValue] <= 0) {
-        h1.hidden=YES;
-        h2.hidden=YES;
-        h3.hidden=YES;
-        h4.hidden=YES;
-        h5.hidden=YES;
-        h6.hidden=YES;
-        h7.hidden=YES;
-        h8.hidden=YES;
+        h1.hidden = YES;
+        h2.hidden = YES;
+        h3.hidden = YES;
+        h4.hidden = YES;
+        h5.hidden = YES;
+        h6.hidden = YES;
+        h7.hidden = YES;
+        h8.hidden = YES;
     }else{
-        h1.hidden=NO;
-        h2.hidden=NO;
-        h3.hidden=NO;
-        h4.hidden=NO;
-        h5.hidden=NO;
-        h6.hidden=NO;
-        h7.hidden=NO;
-        h8.hidden=NO;
+        h1.hidden = NO;
+        h2.hidden = NO;
+        h3.hidden = NO;
+        h4.hidden = NO;
+        h5.hidden = NO;
+        h6.hidden = NO;
+        h7.hidden = NO;
+        h8.hidden = NO;
     }
     
     fastestHorn.text   = singleton.fastestHorn;
@@ -252,20 +252,6 @@
     [singleton.cardReactionTimeResult addObject:@" <br/>" ];
     singleton.counter = singleton.counter+1;
     // +++++++++++++++++++++++++++
-    //loop if rows of results
-    //results, one per line upto number of cards
-    //for (int y=1; y<singleton.counter+1; y++) {
-    //uncomment when formatted
- 
-        //myNumbStr = [NSString stringWithFormat:@"%@,%@,%@" ,
-                     //singleton.subjectName,
-                     //testDate,
-                     //testTime
-                     //];
-    
-    //[singleton.cardReactionTimeResult addObject: myNumbStr];
-    //singleton.counter = singleton.counter+1;
-    //}
     
     [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"%@, %@, %@ <br/>", singleton.subjectName, singleton.testDate, singleton.testTime ]];
     singleton.counter = singleton.counter+1;
@@ -396,7 +382,7 @@
     NSString * docsDir;
     NSArray  * dirPaths;
     dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    docsDir = dirPaths[0];
+    docsDir  = dirPaths[0];
     return docsDir;
 }
 
@@ -481,19 +467,19 @@
 
 //set out mail controller warnings screen
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *) error {
-    statusMessageLab.text=@"Mail\nController";
+    statusMessageLab.text = @"Mail\nController";
     if (error) {
         UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"error" message:[NSString stringWithFormat:@"error %@",[error description]] delegate:nil cancelButtonTitle:@"dismiss" otherButtonTitles:nil,nil];
         [alertview show];
         //[alert release];
         [self dismissViewControllerAnimated:YES completion:^{/*error*/}];
-        statusMessageLab.text=@"An mail\nError\nOccurred.";
+        statusMessageLab.text = @"An mail\nError\nOccurred.";
     }
     else{
         [self dismissViewControllerAnimated:YES completion:^{/*ok*/}];
-        statusMessageLab.text=@"E-Mail Sent\nOK.";
+        statusMessageLab.text = @"E-Mail Sent\nOK.";
     }
-    statusMessageLab.text=@"Select\nNext\nTask";
+    statusMessageLab.text = @"Select\nNext\nTask";
 }
 
 - (void)saveText
@@ -522,31 +508,6 @@
 }
 
 //END - test email client and components from Tachist
-//*****************
-//mail from button press - not used client?????? use ShowEmail
--(IBAction)sendEmail:(id)sender {
-    statusMessageLab.hidden = NO;
-    statusMessageLab.text=@"E-Mail\nResults\nLoading...";
-    mySingleton *singleton = [mySingleton sharedSingleton];
-    
-    MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
-    [mailComposer setMailComposeDelegate:self];
-    
-    if ([MFMailComposeViewController canSendMail]){
-        [mailComposer setToRecipients:[NSArray arrayWithObjects:singleton.email ,Nil]];
-        [mailComposer setSubject:@"Results from DRIVE App"];
-        //[mailComposer setMessageBody:@"Dear Drive App User: " isHTML:YES];
-        
-        [mailComposer setMessageBody: singleton.resultStrings isHTML:NO];
-        [mailComposer setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-        
-        [self presentViewController:mailComposer animated:YES completion:^{/*email*/}];
-        
-    }else{
-        
-    } //end of if else to check if mail is able to be sent, send message if not
-    //statusMessageLab.text=@"Select\nNext\nTask";
-} // end of mail function
 
 //set out mail controller warnings screen
 -(void)mailComposeController2:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *) error {

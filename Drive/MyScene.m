@@ -177,9 +177,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         singleton.hornsPlayed  = [NSString stringWithFormat:@"0"];
         hornsPressed = NO;
         singleton.hornsShowing = NO;
-        horn_tt  = -1; //lap  zero
-        horn_tt2 = -1;
-        horn_tt3 = -1;
+        horn_tt  = 0; //lap  zero
+        horn_tt2 = 0;
+        horn_tt3 = 0;
         tempHaz  = 0;
         tempWall = 0;
         xcounter = 1;
@@ -449,6 +449,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                         //2 distractions, one in top half of track, one in the bottom
                             angAdd1 =  3+(((float)rand() /RAND_MAX)*6);
                             angAdd2 = -1 *(3+(((float)rand() /RAND_MAX)*6)); //reverse sign for second horn
+                        
+                        if(abs(angAdd1 - angAdd2) < 2){ // if too close to first beep, space out
+                            angAdd2 = angAdd1 - 2;
+                        }
+                            
                     break;
                         
                     case 3:
@@ -456,6 +461,13 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                             angAdd1 = (3+(((float)rand() /RAND_MAX)*3));
                             angAdd2 = (0+(((float)rand() /RAND_MAX)*2));
                             angAdd3 = -1*(3+(((float)rand() /RAND_MAX)*3));
+                        
+                        if(abs(angAdd1 - angAdd2)  < 2){ // if too close to first beep, space out
+                            angAdd2 = angAdd1 - 2;
+                        }
+                        if(abs(angAdd2 - angAdd3) < 2){ // if too close to first beep, space out
+                            angAdd3 = angAdd2 - 2;
+                        }
                     break;
                         
                     default:
@@ -510,7 +522,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                 
                 //trigger and time
                 //NSLog(@"horn, start horn time=%i, %.f", horns, millis2); //only triggered on horn play
+                
                 horns++;
+                
                 if (hornTriggered  == YES) {
                     horn_tt++;
                 }
@@ -544,18 +558,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             
             //reset the flag, so another horn can play
             singleton.hornsShowing = NO;
-            /*if ([singleton.distractionOn isEqualToString: @"2"]) {
-                horn_tt2 = 0;
-            }
-            
-            if ([singleton.distractionOn isEqualToString: @"3"]) {
-                horn_tt2 = 0;
-                horn_tt3 = 0;
-            }*/
         }
         //fix horn time at diff between start times if no recorded end
         if (millis2 > 1000) {
-            hornReactionTime[horns] = 1000;//prev2;
+            hornReactionTime[horns] = 1000;//prev2; // should this be horns-1 ???????????????????????????????????????
+            // ????????????????
         }
     }
     
@@ -646,7 +653,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     //NSNumber *laps = level[_levelType - 1][@"laps"];
     //_numOfLaps = [laps integerValue];
     _numOfLaps = [singleton.laps integerValue];
-    _hors=[singleton.hornsPlayed integerValue];
+    _hors      = [singleton.hornsPlayed integerValue];
 }
 
 - (void)p_addCarAtPosition:(CGPoint)startPosition {
@@ -1106,19 +1113,45 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         //you finished the race, give the stats
         
         horns = [singleton.hornsPlayed intValue];
+        int y=0;
+        int z=0;
         
         for (int x=0; x<horns; x+=1) {
-            //hornReactionTime[x]=(hornReactionTime[x]);//  /1000;
-            
             //correct the lag for horn time key presses
             hornReactionTime[x] = hornReactionTime[x]-0.3f;
             if (hornReactionTime[x] < 0) {
                 hornReactionTime[x] = 0.01;
             }
             
-            //cant be longer than the lap time
-            if (hornReactionTime[x] > reactionTime[x]) {
-                hornReactionTime[x] = raceTime; // long time, you mkissed pressing the button
+            
+            if ([singleton.distractionOn isEqual:@"1"]){
+                //cant be longer than the lap time, 1 distraction
+                if (hornReactionTime[x] > reactionTime[y]) {
+                    hornReactionTime[x] = raceTime; // long time, you missed pressing the button
+                }
+            }
+            
+            if ([singleton.distractionOn isEqual:@"2"]){
+                //cant be longer than the lap time, 2 distractions
+                z++;
+                if (z == 2) {
+                    y++;
+                    z = 0;
+                }
+                if (hornReactionTime[x] > reactionTime[y]) {
+                    hornReactionTime[x] = raceTime; // long time, you missed pressing the button
+                }
+            }
+            if ([singleton.distractionOn isEqual:@"3"]){
+                //cant be longer than the lap time, 2 distractions
+                z++;
+                if (z == 3) {
+                    y++;
+                    z = 0;
+                }
+                if (hornReactionTime[x] > reactionTime[y]) {
+                    hornReactionTime[x] = raceTime; // long time, you missed pressing the button
+                }
             }
                 //NSLog(@"horn time %d: %.3f S", x+1, hornReactionTime[x]);
         }
