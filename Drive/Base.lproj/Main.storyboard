@@ -35,12 +35,12 @@
                                     <action selector="pauseButtonDidTouchUpInside:" destination="LVB-YS-i5n" eventType="touchUpInside" id="jTW-Ku-sQo"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="pCC-vC-zhb">
-                                <rect key="frame" x="-15" y="0.0" width="495" height="320"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="9GS-nM-xcE">
+                                <rect key="frame" x="134" y="175" width="240" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="9GS-nM-xcE">
-                                <rect key="frame" x="108" y="134" width="240" height="125"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="pCC-vC-zhb">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -1557,7 +1557,7 @@ The email data is TEXT formatted but may be incorrectly displayed in some email 
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WNW-yg-wNe" userLabel="IconButton">
-                                <rect key="frame" x="20" y="157" width="67" height="71"/>
+                                <rect key="frame" x="14" y="157" width="67" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                 <state key="normal" title="Button" image="mmulogo9.png"/>
@@ -1737,10 +1737,10 @@ Cg
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Snq-Uf-qxR"/>
+        <segue reference="Ts0-Gu-wo8"/>
+        <segue reference="EFj-b3-7hl"/>
         <segue reference="eqn-Dg-M4T"/>
         <segue reference="UeP-lD-UCg"/>
         <segue reference="sgN-rE-1F9"/>
-        <segue reference="EFj-b3-7hl"/>
     </inferredMetricsTieBreakers>
 </document>
