@@ -27,8 +27,6 @@
 		475D2DA619625B310015C6B8 /* SelectLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 475D2DA519625B310015C6B8 /* SelectLevelViewController.m */; };
 		475E5EA1195A5A610063FD68 /* btn-gamecenter.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E6B195A5A610063FD68 /* btn-gamecenter.png */; };
 		475E5EA2195A5A610063FD68 /* btn-gamecenter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E6C195A5A610063FD68 /* btn-gamecenter@2x.png */; };
-		475E5EAF195A5A610063FD68 /* steering-wheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E79195A5A610063FD68 /* steering-wheel.png */; };
-		475E5EB0195A5A610063FD68 /* steering-wheel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E7A195A5A610063FD68 /* steering-wheel@2x.png */; };
 		475E5EB1195A5A610063FD68 /* LevelDetails.plist in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E7C195A5A610063FD68 /* LevelDetails.plist */; };
 		475E5EB2195A5A610063FD68 /* box.wav in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E7E195A5A610063FD68 /* box.wav */; };
 		475E5EB3195A5A610063FD68 /* button_press.wav in Resources */ = {isa = PBXBuildFile; fileRef = 475E5E7F195A5A610063FD68 /* button_press.wav */; };
@@ -51,8 +49,6 @@
 		917B79131C1DB50E00A6D3DA /* TrackStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 917B79121C1DB50E00A6D3DA /* TrackStatsViewController.m */; };
 		917E5A5D1C21DF0A009DF226 /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 917E5A5B1C21DF0A009DF226 /* tick.png */; };
 		917E5A5E1C21DF0A009DF226 /* tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 917E5A5C1C21DF0A009DF226 /* tick@2x.png */; };
-		E10C7A931E095DAB0051A630 /* finish2.png in Resources */ = {isa = PBXBuildFile; fileRef = E10C7A921E095DAB0051A630 /* finish2.png */; };
-		E10C7A951E096C1F0051A630 /* notfinish.png in Resources */ = {isa = PBXBuildFile; fileRef = E10C7A941E096C1F0051A630 /* notfinish.png */; };
 		E11F94841C625B8900712F9B /* high.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F947C1C625B8900712F9B /* high.png */; };
 		E11F94851C625B8900712F9B /* high@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F947D1C625B8900712F9B /* high@2x.png */; };
 		E11F94861C625B8900712F9B /* low.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F947E1C625B8900712F9B /* low.png */; };
@@ -61,6 +57,10 @@
 		E11F94891C625B8900712F9B /* med@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F94811C625B8900712F9B /* med@2x.png */; };
 		E11F948A1C625B8900712F9B /* off.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F94821C625B8900712F9B /* off.png */; };
 		E11F948B1C625B8900712F9B /* off@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = E11F94831C625B8900712F9B /* off@x2.png */; };
+		E13D1F961E0AD3560036C482 /* finish.png in Resources */ = {isa = PBXBuildFile; fileRef = E13D1F931E0AD3560036C482 /* finish.png */; };
+		E13D1F971E0AD3560036C482 /* finish@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E13D1F941E0AD3560036C482 /* finish@2x.png */; };
+		E13D1F981E0AD3560036C482 /* notfinish@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E13D1F951E0AD3560036C482 /* notfinish@2x.png */; };
+		E13D1F9A1E0AD4850036C482 /* notfinish.png in Resources */ = {isa = PBXBuildFile; fileRef = E13D1F991E0AD4850036C482 /* notfinish.png */; };
 		E147D35A1DF865CE00E02FA1 /* bale.png in Resources */ = {isa = PBXBuildFile; fileRef = E147D3541DF865CE00E02FA1 /* bale.png */; };
 		E147D35B1DF865CE00E02FA1 /* car_1.png in Resources */ = {isa = PBXBuildFile; fileRef = E147D3551DF865CE00E02FA1 /* car_1.png */; };
 		E147D35C1DF865CE00E02FA1 /* car_2.png in Resources */ = {isa = PBXBuildFile; fileRef = E147D3561DF865CE00E02FA1 /* car_2.png */; };
@@ -107,12 +107,9 @@
 		E171F2B31C1EDBB300E3DB0D /* knob1.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F2961C1EDBB300E3DB0D /* knob1.png */; };
 		E171F2B41C1EDBB300E3DB0D /* knob1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F2971C1EDBB300E3DB0D /* knob1@2x.png */; };
 		E171F2B51C1EDBB300E3DB0D /* mmulogoshape.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F2981C1EDBB300E3DB0D /* mmulogoshape.png */; };
-		E171F2B61C1EDBB300E3DB0D /* racing-flag.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E171F2991C1EDBB300E3DB0D /* racing-flag.jpg */; };
 		E171F2B71C1EDBB300E3DB0D /* speedo-fast.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F29A1C1EDBB300E3DB0D /* speedo-fast.png */; };
 		E171F2B81C1EDBB300E3DB0D /* speedo-med.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F29B1C1EDBB300E3DB0D /* speedo-med.png */; };
 		E171F2B91C1EDBB300E3DB0D /* speedo-slow.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F29C1C1EDBB300E3DB0D /* speedo-slow.png */; };
-		E171F2BA1C1EDBB300E3DB0D /* steering-wheel-horn.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F29D1C1EDBB300E3DB0D /* steering-wheel-horn.png */; };
-		E171F2BB1C1EDBB300E3DB0D /* steering-wheel-horn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F29E1C1EDBB300E3DB0D /* steering-wheel-horn@2x.png */; };
 		E171F2C01C1EDC1C00E3DB0D /* Funky_Good_Time.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E171F2BC1C1EDC1C00E3DB0D /* Funky_Good_Time.mp3 */; };
 		E171F2C11C1EDC1C00E3DB0D /* Johnson-jass-Blues.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E171F2BD1C1EDC1C00E3DB0D /* Johnson-jass-Blues.mp3 */; };
 		E171F2C21C1EDC1C00E3DB0D /* silence30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E171F2BE1C1EDC1C00E3DB0D /* silence30.mp3 */; };
@@ -167,7 +164,6 @@
 		E1CBAD001C22D7DA001CC466 /* infoOr.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACDC1C22D7DA001CC466 /* infoOr.png */; };
 		E1CBAD011C22D7DA001CC466 /* mediumx.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACDD1C22D7DA001CC466 /* mediumx.png */; };
 		E1CBAD021C22D7DA001CC466 /* nextxGr.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACDE1C22D7DA001CC466 /* nextxGr.png */; };
-		E1CBAD031C22D7DA001CC466 /* pause1Gr.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACDF1C22D7DA001CC466 /* pause1Gr.png */; };
 		E1CBAD041C22D7DA001CC466 /* emailGr.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACE01C22D7DA001CC466 /* emailGr.png */; };
 		E1CBAD051C22D7DA001CC466 /* emailOr.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACE11C22D7DA001CC466 /* emailOr.png */; };
 		E1CBAD061C22D7DA001CC466 /* emailxGr.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACE21C22D7DA001CC466 /* emailxGr.png */; };
@@ -179,7 +175,6 @@
 		E1CBAD0C1C22D7DA001CC466 /* driverx.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACE81C22D7DA001CC466 /* driverx.png */; };
 		E1CBAD0D1C22D7DA001CC466 /* easyx.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACE91C22D7DA001CC466 /* easyx.png */; };
 		E1CBAD0E1C22D7DA001CC466 /* pause2Gr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACEA1C22D7DA001CC466 /* pause2Gr@2x.png */; };
-		E1CBAD0F1C22D7DA001CC466 /* pause1Gr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACEB1C22D7DA001CC466 /* pause1Gr@2x.png */; };
 		E1CBAD101C22D7DA001CC466 /* emailxGr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACEC1C22D7DA001CC466 /* emailxGr@2x.png */; };
 		E1CBAD111C22D7DA001CC466 /* backxGr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACED1C22D7DA001CC466 /* backxGr@2x.png */; };
 		E1CBAD121C22D7DA001CC466 /* nextxGr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACEE1C22D7DA001CC466 /* nextxGr@2x.png */; };
@@ -259,8 +254,6 @@
 		475D2DA519625B310015C6B8 /* SelectLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLevelViewController.m; sourceTree = "<group>"; };
 		475E5E6B195A5A610063FD68 /* btn-gamecenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-gamecenter.png"; sourceTree = "<group>"; };
 		475E5E6C195A5A610063FD68 /* btn-gamecenter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-gamecenter@2x.png"; sourceTree = "<group>"; };
-		475E5E79195A5A610063FD68 /* steering-wheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "steering-wheel.png"; sourceTree = "<group>"; };
-		475E5E7A195A5A610063FD68 /* steering-wheel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "steering-wheel@2x.png"; sourceTree = "<group>"; };
 		475E5E7C195A5A610063FD68 /* LevelDetails.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LevelDetails.plist; sourceTree = "<group>"; };
 		475E5E7E195A5A610063FD68 /* box.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = box.wav; sourceTree = "<group>"; };
 		475E5E7F195A5A610063FD68 /* button_press.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_press.wav; sourceTree = "<group>"; };
@@ -294,8 +287,6 @@
 		917B79121C1DB50E00A6D3DA /* TrackStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackStatsViewController.m; sourceTree = "<group>"; };
 		917E5A5B1C21DF0A009DF226 /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
 		917E5A5C1C21DF0A009DF226 /* tick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick@2x.png"; sourceTree = "<group>"; };
-		E10C7A921E095DAB0051A630 /* finish2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finish2.png; sourceTree = "<group>"; };
-		E10C7A941E096C1F0051A630 /* notfinish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notfinish.png; sourceTree = "<group>"; };
 		E11F947C1C625B8900712F9B /* high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = high.png; sourceTree = "<group>"; };
 		E11F947D1C625B8900712F9B /* high@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "high@2x.png"; sourceTree = "<group>"; };
 		E11F947E1C625B8900712F9B /* low.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = low.png; sourceTree = "<group>"; };
@@ -304,6 +295,10 @@
 		E11F94811C625B8900712F9B /* med@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "med@2x.png"; sourceTree = "<group>"; };
 		E11F94821C625B8900712F9B /* off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = off.png; sourceTree = "<group>"; };
 		E11F94831C625B8900712F9B /* off@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "off@x2.png"; sourceTree = "<group>"; };
+		E13D1F931E0AD3560036C482 /* finish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finish.png; sourceTree = "<group>"; };
+		E13D1F941E0AD3560036C482 /* finish@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "finish@2x.png"; sourceTree = "<group>"; };
+		E13D1F951E0AD3560036C482 /* notfinish@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notfinish@2x.png"; sourceTree = "<group>"; };
+		E13D1F991E0AD4850036C482 /* notfinish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notfinish.png; sourceTree = "<group>"; };
 		E147D3541DF865CE00E02FA1 /* bale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bale.png; path = ../sprites.atlas/bale.png; sourceTree = "<group>"; };
 		E147D3551DF865CE00E02FA1 /* car_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car_1.png; path = ../sprites.atlas/car_1.png; sourceTree = "<group>"; };
 		E147D3561DF865CE00E02FA1 /* car_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car_2.png; path = ../sprites.atlas/car_2.png; sourceTree = "<group>"; };
@@ -350,12 +345,9 @@
 		E171F2961C1EDBB300E3DB0D /* knob1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = knob1.png; sourceTree = "<group>"; };
 		E171F2971C1EDBB300E3DB0D /* knob1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "knob1@2x.png"; sourceTree = "<group>"; };
 		E171F2981C1EDBB300E3DB0D /* mmulogoshape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mmulogoshape.png; sourceTree = "<group>"; };
-		E171F2991C1EDBB300E3DB0D /* racing-flag.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "racing-flag.jpg"; sourceTree = "<group>"; };
 		E171F29A1C1EDBB300E3DB0D /* speedo-fast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speedo-fast.png"; sourceTree = "<group>"; };
 		E171F29B1C1EDBB300E3DB0D /* speedo-med.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speedo-med.png"; sourceTree = "<group>"; };
 		E171F29C1C1EDBB300E3DB0D /* speedo-slow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speedo-slow.png"; sourceTree = "<group>"; };
-		E171F29D1C1EDBB300E3DB0D /* steering-wheel-horn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "steering-wheel-horn.png"; sourceTree = "<group>"; };
-		E171F29E1C1EDBB300E3DB0D /* steering-wheel-horn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "steering-wheel-horn@2x.png"; sourceTree = "<group>"; };
 		E171F2BC1C1EDC1C00E3DB0D /* Funky_Good_Time.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Funky_Good_Time.mp3; sourceTree = "<group>"; };
 		E171F2BD1C1EDC1C00E3DB0D /* Johnson-jass-Blues.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Johnson-jass-Blues.mp3"; sourceTree = "<group>"; };
 		E171F2BE1C1EDC1C00E3DB0D /* silence30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = silence30.mp3; sourceTree = "<group>"; };
@@ -412,7 +404,6 @@
 		E1CBACDC1C22D7DA001CC466 /* infoOr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = infoOr.png; sourceTree = "<group>"; };
 		E1CBACDD1C22D7DA001CC466 /* mediumx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mediumx.png; sourceTree = "<group>"; };
 		E1CBACDE1C22D7DA001CC466 /* nextxGr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nextxGr.png; sourceTree = "<group>"; };
-		E1CBACDF1C22D7DA001CC466 /* pause1Gr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause1Gr.png; sourceTree = "<group>"; };
 		E1CBACE01C22D7DA001CC466 /* emailGr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emailGr.png; sourceTree = "<group>"; };
 		E1CBACE11C22D7DA001CC466 /* emailOr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emailOr.png; sourceTree = "<group>"; };
 		E1CBACE21C22D7DA001CC466 /* emailxGr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emailxGr.png; sourceTree = "<group>"; };
@@ -424,7 +415,6 @@
 		E1CBACE81C22D7DA001CC466 /* driverx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = driverx.png; sourceTree = "<group>"; };
 		E1CBACE91C22D7DA001CC466 /* easyx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = easyx.png; sourceTree = "<group>"; };
 		E1CBACEA1C22D7DA001CC466 /* pause2Gr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause2Gr@2x.png"; sourceTree = "<group>"; };
-		E1CBACEB1C22D7DA001CC466 /* pause1Gr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause1Gr@2x.png"; sourceTree = "<group>"; };
 		E1CBACEC1C22D7DA001CC466 /* emailxGr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emailxGr@2x.png"; sourceTree = "<group>"; };
 		E1CBACED1C22D7DA001CC466 /* backxGr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backxGr@2x.png"; sourceTree = "<group>"; };
 		E1CBACEE1C22D7DA001CC466 /* nextxGr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nextxGr@2x.png"; sourceTree = "<group>"; };
@@ -643,8 +633,10 @@
 		475E5E5E195A5A610063FD68 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				E10C7A941E096C1F0051A630 /* notfinish.png */,
-				E10C7A921E095DAB0051A630 /* finish2.png */,
+				E13D1F991E0AD4850036C482 /* notfinish.png */,
+				E13D1F931E0AD3560036C482 /* finish.png */,
+				E13D1F941E0AD3560036C482 /* finish@2x.png */,
+				E13D1F951E0AD3560036C482 /* notfinish@2x.png */,
 				E1E783721E02BAA700CD9399 /* mmulogo9.png */,
 				E1CBACE61C22D7DA001CC466 /* backx.png */,
 				E1CBACF61C22D7DA001CC466 /* backx@2x.png */,
@@ -737,11 +729,8 @@
 				E1F177251DA3EC3D0016DB81 /* norm@2x.png */,
 				E11F94821C625B8900712F9B /* off.png */,
 				E11F94831C625B8900712F9B /* off@x2.png */,
-				E1CBACDF1C22D7DA001CC466 /* pause1Gr.png */,
-				E1CBACEB1C22D7DA001CC466 /* pause1Gr@2x.png */,
 				E1CBACD81C22D7DA001CC466 /* pause2Gr.png */,
 				E1CBACEA1C22D7DA001CC466 /* pause2Gr@2x.png */,
-				E171F2991C1EDBB300E3DB0D /* racing-flag.jpg */,
 				E171F2D51C1EF19F00E3DB0D /* seg-1.png */,
 				E171F2D61C1EF19F00E3DB0D /* seg-1@2x.png */,
 				E171F2D71C1EF19F00E3DB0D /* seg-2.png */,
@@ -774,10 +763,6 @@
 				E1E783611E01B26D00CD9399 /* st4.png */,
 				E1CBACD91C22D7DA001CC466 /* startx.png */,
 				E1CBACF51C22D7DA001CC466 /* startx@2x.png */,
-				E171F29D1C1EDBB300E3DB0D /* steering-wheel-horn.png */,
-				E171F29E1C1EDBB300E3DB0D /* steering-wheel-horn@2x.png */,
-				475E5E79195A5A610063FD68 /* steering-wheel.png */,
-				475E5E7A195A5A610063FD68 /* steering-wheel@2x.png */,
 				917E5A5B1C21DF0A009DF226 /* tick.png */,
 				917E5A5C1C21DF0A009DF226 /* tick@2x.png */,
 				E1CBACDA1C22D7DA001CC466 /* trackx.png */,
@@ -937,7 +922,6 @@
 				E147D35A1DF865CE00E02FA1 /* bale.png in Resources */,
 				E147D35B1DF865CE00E02FA1 /* car_1.png in Resources */,
 				E147D35C1DF865CE00E02FA1 /* car_2.png in Resources */,
-				E10C7A931E095DAB0051A630 /* finish2.png in Resources */,
 				E147D35D1DF865CE00E02FA1 /* car_3.png in Resources */,
 				E147D35E1DF865CE00E02FA1 /* crate.png in Resources */,
 				E147D35F1DF865CE00E02FA1 /* tyre.png in Resources */,
@@ -954,6 +938,7 @@
 				E171F2B31C1EDBB300E3DB0D /* knob1.png in Resources */,
 				E1E783661E01B26D00CD9399 /* d3.png in Resources */,
 				E171F2FC1C1EF19F00E3DB0D /* seg-light@2x.png in Resources */,
+				E13D1F981E0AD3560036C482 /* notfinish@2x.png in Resources */,
 				47117B471959CA1400B20209 /* InfoPlist.strings in Resources */,
 				E171F3121C1F124600E3DB0D /* Settings.bundle in Resources */,
 				475E5EA2195A5A610063FD68 /* btn-gamecenter@2x.png in Resources */,
@@ -979,7 +964,6 @@
 				E171F2A71C1EDBB300E3DB0D /* btn-medium.png in Resources */,
 				E14EC2621DFFFD2D0064C6B4 /* Default-568h@2x.png in Resources */,
 				E171F2FD1C1EF19F00E3DB0D /* seg-none.png in Resources */,
-				E10C7A951E096C1F0051A630 /* notfinish.png in Resources */,
 				E171F2EC1C1EF19F00E3DB0D /* seg-2.png in Resources */,
 				E171F27B1C1EDB5700E3DB0D /* bg-select-difficulty@2x.png in Resources */,
 				E171F2781C1EDB5700E3DB0D /* bg-select-car.png in Resources */,
@@ -1002,8 +986,8 @@
 				E171F2F71C1EF19F00E3DB0D /* seg-beat.png in Resources */,
 				E171F2EA1C1EF19F00E3DB0D /* seg-1.png in Resources */,
 				E1CBAD131C22D7DA001CC466 /* driverx@2x.png in Resources */,
-				475E5EAF195A5A610063FD68 /* steering-wheel.png in Resources */,
 				475E5EB7195A5A610063FD68 /* puncture.wav in Resources */,
+				E13D1F961E0AD3560036C482 /* finish.png in Resources */,
 				E171F2F61C1EF19F00E3DB0D /* seg-100@2x.png in Resources */,
 				E171F2AB1C1EDBB300E3DB0D /* btn-play.png in Resources */,
 				E171F2B71C1EDBB300E3DB0D /* speedo-fast.png in Resources */,
@@ -1011,6 +995,7 @@
 				E171F2B91C1EDBB300E3DB0D /* speedo-slow.png in Resources */,
 				E171F3071C1EF20100E3DB0D /* btn-back2.png in Resources */,
 				E171F2AF1C1EDBB300E3DB0D /* btn-select-track.png in Resources */,
+				E13D1F9A1E0AD4850036C482 /* notfinish.png in Resources */,
 				E171F2681C1EDB3600E3DB0D /* achievment-intermediate.png in Resources */,
 				E1CBAD191C22D7DA001CC466 /* startx@2x.png in Resources */,
 				E171F2AE1C1EDBB300E3DB0D /* btn-select-car@2x.png in Resources */,
@@ -1031,15 +1016,12 @@
 				E171F29F1C1EDBB300E3DB0D /* base.png in Resources */,
 				E171F2ED1C1EF19F00E3DB0D /* seg-2@2x.png in Resources */,
 				E1E7836A1E01B26D00CD9399 /* st3.png in Resources */,
-				E171F2BA1C1EDBB300E3DB0D /* steering-wheel-horn.png in Resources */,
-				475E5EB0195A5A610063FD68 /* steering-wheel@2x.png in Resources */,
 				911EF1C81C24C81F00EAF391 /* carhorn-btn@2x.png in Resources */,
 				E1E783651E01B26D00CD9399 /* d2.png in Resources */,
 				E171F2AA1C1EDBB300E3DB0D /* btn-pause@2x.png in Resources */,
 				E171F2AD1C1EDBB300E3DB0D /* btn-select-car.png in Resources */,
 				E171F2C01C1EDC1C00E3DB0D /* Funky_Good_Time.mp3 in Resources */,
 				E1CBACFC1C22D7DA001CC466 /* pause2Gr.png in Resources */,
-				E1CBAD031C22D7DA001CC466 /* pause1Gr.png in Resources */,
 				E1CBAD121C22D7DA001CC466 /* nextxGr@2x.png in Resources */,
 				E1CBAD181C22D7DA001CC466 /* mediumx@2x.png in Resources */,
 				E1CBAD1D1C22D7DA001CC466 /* emailGr@2x.png in Resources */,
@@ -1047,7 +1029,6 @@
 				E1CBAD1C1C22D7DA001CC466 /* infoGr@2x.png in Resources */,
 				E1CBAD061C22D7DA001CC466 /* emailxGr.png in Resources */,
 				E171F2A01C1EDBB300E3DB0D /* base@2x.png in Resources */,
-				E171F2BB1C1EDBB300E3DB0D /* steering-wheel-horn@2x.png in Resources */,
 				475E5EB8195A5A610063FD68 /* sprites.atlas in Resources */,
 				E1F177221DA3C4DA0016DB81 /* button_press75.wav in Resources */,
 				E1F177211DA3C4DA0016DB81 /* button_press50.wav in Resources */,
@@ -1095,7 +1076,7 @@
 				E171F2B11C1EDBB300E3DB0D /* btn-slow.png in Resources */,
 				E171F27C1C1EDB5700E3DB0D /* track_1.png in Resources */,
 				E171F2EF1C1EF19F00E3DB0D /* seg-5@2x.png in Resources */,
-				E1CBAD0F1C22D7DA001CC466 /* pause1Gr@2x.png in Resources */,
+				E13D1F971E0AD3560036C482 /* finish@2x.png in Resources */,
 				E11F94841C625B8900712F9B /* high.png in Resources */,
 				E1ACC8081DE740D000504C0C /* drive512.png in Resources */,
 				E171F2F91C1EF19F00E3DB0D /* seg-blues.png in Resources */,
@@ -1110,7 +1091,6 @@
 				E1CBAD0A1C22D7DA001CC466 /* backx.png in Resources */,
 				917E5A5E1C21DF0A009DF226 /* tick@2x.png in Resources */,
 				E171F2B51C1EDBB300E3DB0D /* mmulogoshape.png in Resources */,
-				E171F2B61C1EDBB300E3DB0D /* racing-flag.jpg in Resources */,
 				E171F2F31C1EF19F00E3DB0D /* seg-20@2x.png in Resources */,
 				E171F2F11C1EF19F00E3DB0D /* seg-10@2x.png in Resources */,
 			);

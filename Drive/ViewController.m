@@ -54,7 +54,7 @@
     st1  = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"st1.png"]];
     st2  = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"st2.png"]];
     st3  = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"st3.png"]];
-    fin0 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"finish2.png"]];
+    fin0 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"finish.png"]];
     fin1 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"notfinish.png"]];
 }
 
@@ -90,7 +90,7 @@
     //version, set anyway *****************************************
     //*************************************************************
     
-    version0 =  @"DRIVE Version 3.0.0 - 15.12.16";     // version   *** keep short
+    version0 =  @"DRIVE Version 3.1.1 - 21.12.16";     // version   *** keep short
     version1 =  @"MMU (C) 2016";                // copyright *** limited line space
     version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
     version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen
@@ -134,9 +134,9 @@
     
     //versionNumberLab.text   = version0;
     singleton.versionNumber = version0;
-    hornBtn.hidden=NO;
-    hornBtn.alpha=0.4;
-    pauseBtn.alpha=0.5;
+    hornBtn.hidden = NO;
+    hornBtn.alpha  = 0.4;
+    pauseBtn.alpha = 0.5;
     
     if ([singleton.distractionOn isEqual:@"0"]) {
         hornBtn.hidden=YES;
@@ -199,16 +199,16 @@
     //display black flag finish line image
     [self.view sendSubviewToBack:self.analogControl];
     [_finishLampImageView setImage: fin1.image];
-    _finishLampImageView.alpha=0.0;
-    _finishLampImageView.hidden=YES;
-    //[NSTimer scheduledTimerWithTimeInterval:(3.0f) target:self selector:@selector(p_gameOverWithWin2) userInfo:nil repeats:NO];
-    [NSTimer scheduledTimerWithTimeInterval:(0.2f) target:self selector:@selector(animateMessageViewIN) userInfo:nil repeats:NO];
+    _finishLampImageView.alpha  = 0.0;
+    _finishLampImageView.hidden = YES;
+    //[NSTimer scheduledTimerWithTimeInterval:(3.0f) target:self selector:@selector(p_gameOverWithWin2) userInfo:nil repeats:NO]; //straight to end no image
+    [NSTimer scheduledTimerWithTimeInterval:(0.2f) target:self selector:@selector(animateMessageViewIN) userInfo:nil repeats:NO]; // finish image appropriate to win or fail
 }
 
 -(void)animateMessageViewIN{
-    //ease in finish flag
-    _finishLampImageView.alpha = 0.0;
-    _finishLampImageView.hidden=NO;
+    //ease in image of finish flag
+    _finishLampImageView.alpha  = 0.0;
+    _finishLampImageView.hidden = NO;
     [[_finishLampImageView superview] bringSubviewToFront:_finishLampImageView];
     
     //[UIView animateKeyframesWithDuration:1 delay:1 options:1 animations:^(){_finishLampImageView.alpha = 1.0;} completion:nil];
@@ -223,8 +223,8 @@
 }
 
 -(void)animateMessageViewOUT{
-    //ease out finish flag
-    _finishLampImageView.hidden=NO;
+    //ease out image of finish flag
+    _finishLampImageView.hidden = NO;
     [[_finishLampImageView superview] bringSubviewToFront:_finishLampImageView];
     
     [UIView animateWithDuration:1.0

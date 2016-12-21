@@ -65,8 +65,8 @@ static mySingleton * sharedSingleton = nil;
 #pragma mark Singleton Methods
 
 + (mySingleton *) sharedSingleton {
-    if(sharedSingleton==nil) {
-        sharedSingleton = [[super allocWithZone:NULL]init];
+    if(sharedSingleton  == nil) {
+        sharedSingleton =  [[super allocWithZone:NULL]init];
     }
     return sharedSingleton;
 }
@@ -95,27 +95,27 @@ static mySingleton * sharedSingleton = nil;
         for (NSInteger i = 0; i < 102; ++i)
         {
             [lapTimes   addObject:@"0"];
-            [hornTimes  addObject:@"0"];
-            [hornTimes2 addObject:@"0"];
             [wallLaps   addObject:@"0"];
             [hazLaps    addObject:@"0"];
             [hornLaps   addObject:@"0"];
             [cardReactionTimeResult addObject:@"0"];
         }
-        for (NSInteger i = 0; i < 102; ++i)
+        for (NSInteger i = 0; i < 310; ++i) //more distractions than laps
             {
+            [hornTimes    addObject:@"0"];
+            [hornTimes2   addObject:@"0"];
             [hornTimesAll addObject:@"0"];
             }
         
         tempEntry           = @"";
         hornsShowing        = NO;
         email               = @"me@mmu.ac.uk";
-        testDate            = @"15/12/2016";
+        testDate            = @"21/12/2016";
         testTime            = @"10:00";
         resultStrings       = @"";
         subjectName         = @"Sub";
         resultStrings       = @"";
-        versionNumber       = @"3.0.0 - 15.12.16";
+        versionNumber       = @"3.1.1 - 21.12.16";
         
         counter             = 0;
         laps                = @"0";

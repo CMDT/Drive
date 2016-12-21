@@ -11,7 +11,7 @@
 
 @interface mySingleton : NSObject {
     BOOL hornsShowing;
-    int counter;
+    int  counter;
 
     NSMutableArray * cardReactionTimeResult;
     NSString       * resultsStrings;

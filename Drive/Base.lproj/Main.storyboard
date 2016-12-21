@@ -35,12 +35,12 @@
                                     <action selector="pauseButtonDidTouchUpInside:" destination="LVB-YS-i5n" eventType="touchUpInside" id="jTW-Ku-sQo"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="9GS-nM-xcE">
-                                <rect key="frame" x="89" y="149" width="302" height="163"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="pCC-vC-zhb">
+                                <rect key="frame" x="-15" y="0.0" width="495" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="pCC-vC-zhb">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="9GS-nM-xcE">
+                                <rect key="frame" x="108" y="134" width="240" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -243,14 +243,23 @@ With practice, you will become more proficient, train up to the faster cars.
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-med.png" id="pPk-oy-Lcm">
                                 <rect key="frame" x="189" y="161" width="51" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-fast.png" id="XlC-wa-KdN">
                                 <rect key="frame" x="306" y="71" width="51" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-slow.png" id="inD-T6-jTp">
                                 <rect key="frame" x="335" y="212" width="51" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Ki3-o3-BfY" userLabel="Button back">
                                 <rect key="frame" x="20" y="245" width="113" height="55"/>
@@ -1505,15 +1514,6 @@ The email data is TEXT formatted but may be incorrectly displayed in some email 
                                 <rect key="frame" x="1" y="0.0" width="568" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WNW-yg-wNe" userLabel="IconButton">
-                                <rect key="frame" x="89" y="114" width="87" height="92"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
-                                <state key="normal" title="Button" image="mmulogo9.png"/>
-                                <connections>
-                                    <segue destination="j6p-oN-Kld" kind="push" id="PMR-Bk-alp"/>
-                                </connections>
-                            </button>
                             <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Lqo-0N-YY0" userLabel="Button play centre">
                                 <rect key="frame" x="1" y="1" width="1" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1556,6 +1556,15 @@ The email data is TEXT formatted but may be incorrectly displayed in some email 
                                     <segue destination="1xA-yU-Nkt" kind="push" id="hQB-YZ-ONS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WNW-yg-wNe" userLabel="IconButton">
+                                <rect key="frame" x="20" y="157" width="67" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <state key="normal" title="Button" image="mmulogo9.png"/>
+                                <connections>
+                                    <segue destination="j6p-oN-Kld" kind="push" id="PMR-Bk-alp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1573,8 +1582,8 @@ The email data is TEXT formatted but may be incorrectly displayed in some email 
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" editable="NO" usesAttributedText="YES" id="nBm-oW-oCN">
-                                <rect key="frame" x="20" y="49" width="314" height="284"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" editable="NO" usesAttributedText="YES" id="nBm-oW-oCN">
+                                <rect key="frame" x="20" y="49" width="314" height="251"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <attributedString key="attributedText">
@@ -1625,7 +1634,7 @@ Cg
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="Mr Jonathan Howell (Technical Team Leader, Science Team, Cheshire. Email: j.a.howell@mmu.ac.uk ">
+                                    <fragment content="Jonathan Howell (Technical Team Leader, Science Team, Cheshire. Email: j.a.howell@mmu.ac.uk ">
                                         <attributes>
                                             <font key="NSFont" size="13" name=".AppleSystemUIFont"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -1728,10 +1737,10 @@ Cg
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Qad-gC-6d0"/>
-        <segue reference="sgN-rE-1F9"/>
-        <segue reference="Xnc-OW-jig"/>
+        <segue reference="Snq-Uf-qxR"/>
+        <segue reference="eqn-Dg-M4T"/>
         <segue reference="UeP-lD-UCg"/>
-        <segue reference="egQ-Cs-J5z"/>
+        <segue reference="sgN-rE-1F9"/>
+        <segue reference="EFj-b3-7hl"/>
     </inferredMetricsTieBreakers>
 </document>
