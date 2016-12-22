@@ -9,13 +9,66 @@
 //
 
 #import "AppDelegate.h"
+#import "mySingleton.h"
 
 @implementation AppDelegate
+- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    // the user clicked one of the OK/Cancel buttons
+    if (buttonIndex == 0)
+        {
+        //NSLog(@"ok");
+        //continue to App run
+        singleton.okGoNow=YES;
+        }
+    else
+        {
+        //NSLog(@"canceled the App");
+        singleton.okGoNow=NO;
+        //stop App if cancelled
+        
+        if (singleton.okGoNow == NO) {
+            NSLog(@"Cancelled");
+            //the app has been cancelled by the alert cancel in the accept message in AppDelegate
+            //STOP//
+            UIApplication *app = [UIApplication sharedApplication];
+            [app performSelector:@selector(suspend)];
+            
+            //wait 2 seconds while app is going background
+            [NSThread sleepForTimeInterval:2.0];
+            
+            //exit app when app is in background
+            exit(0);
+            //stop
+        } else {
+            NSLog(@"Running App.");
+        }
+    }
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Drive App Motor Control Test"
+                                                        message:@""
+                                                       delegate:self
+                                              cancelButtonTitle:@"I Agree"
+                                              otherButtonTitles:@"I Do Not Agree", nil];
+
+    UILabel *txtField = [[UILabel alloc] initWithFrame:CGRectMake(12.0, 25.0, 260.0, 95.0)];
+    [txtField setFont:[UIFont fontWithName:@"Courier" size:(12.0)]];
+    txtField.numberOfLines = 16;
+    txtField.textColor = [UIColor darkGrayColor];
+    txtField.text = @"To see details on how to \nuse this Application\n and adjust its settings, \nplease read the notes in \nthe 'Information' sections (i).\n\nSafety Note:\nTake regular breaks\nand avoid strain.\nIf you develop discomfort\n using this App,\nyou must stop using it\n and seek advice.\n\nThis Application is NOT\nfor clinical use. v3.1.5 22.12.16";
+    txtField.backgroundColor = [UIColor clearColor];
+    txtField.textAlignment = NSTextAlignmentCenter;
+    [alertView addSubview:txtField];
+    [alertView setValue:txtField forKeyPath:@"accessoryView"]; //for ios 7 and above
+    [alertView show];
+    
+    sleep(2);
+    
     return YES;
+
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

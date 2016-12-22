@@ -67,6 +67,7 @@
 		E147D35D1DF865CE00E02FA1 /* car_3.png in Resources */ = {isa = PBXBuildFile; fileRef = E147D3571DF865CE00E02FA1 /* car_3.png */; };
 		E147D35E1DF865CE00E02FA1 /* crate.png in Resources */ = {isa = PBXBuildFile; fileRef = E147D3581DF865CE00E02FA1 /* crate.png */; };
 		E147D35F1DF865CE00E02FA1 /* tyre.png in Resources */ = {isa = PBXBuildFile; fileRef = E147D3591DF865CE00E02FA1 /* tyre.png */; };
+		E14A6FE91E0C24AA006B7107 /* Serifa 55 Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E14A6FE81E0C24AA006B7107 /* Serifa 55 Roman.ttf */; };
 		E14EC2621DFFFD2D0064C6B4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E14EC2611DFFFD2D0064C6B4 /* Default-568h@2x.png */; };
 		E171F2661C1EDB3600E3DB0D /* achievment-amateur.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F2621C1EDB3600E3DB0D /* achievment-amateur.png */; };
 		E171F2671C1EDB3600E3DB0D /* achievment-destruction.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F2631C1EDB3600E3DB0D /* achievment-destruction.png */; };
@@ -306,6 +307,7 @@
 		E147D3581DF865CE00E02FA1 /* crate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = crate.png; path = ../sprites.atlas/crate.png; sourceTree = "<group>"; };
 		E147D3591DF865CE00E02FA1 /* tyre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tyre.png; path = ../sprites.atlas/tyre.png; sourceTree = "<group>"; };
 		E14A6FE71E0C2062006B7107 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		E14A6FE81E0C24AA006B7107 /* Serifa 55 Roman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Serifa 55 Roman.ttf"; sourceTree = "<group>"; };
 		E14EC2611DFFFD2D0064C6B4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E171F2621C1EDB3600E3DB0D /* achievment-amateur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievment-amateur.png"; sourceTree = "<group>"; };
 		E171F2631C1EDB3600E3DB0D /* achievment-destruction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievment-destruction.png"; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 		47117B431959CA1400B20209 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E14A6FE81E0C24AA006B7107 /* Serifa 55 Roman.ttf */,
 				E171F3111C1F124600E3DB0D /* Settings.bundle */,
 				47117B441959CA1400B20209 /* Drive-Info.plist */,
 				47117B451959CA1400B20209 /* InfoPlist.strings */,
@@ -951,6 +954,7 @@
 				E11F948B1C625B8900712F9B /* off@x2.png in Resources */,
 				E1CBAD1B1C22D7DA001CC466 /* finishx@2x.png in Resources */,
 				E171F30C1C1EF20100E3DB0D /* btn-finish@2x.png in Resources */,
+				E14A6FE91E0C24AA006B7107 /* Serifa 55 Roman.ttf in Resources */,
 				E171F30B1C1EF20100E3DB0D /* btn-finish.png in Resources */,
 				E11F94851C625B8900712F9B /* high@2x.png in Resources */,
 				47117B5A1959CA1400B20209 /* Images.xcassets in Resources */,

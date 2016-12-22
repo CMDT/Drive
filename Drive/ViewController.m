@@ -49,6 +49,7 @@
 
 -(void)awakeFromNib{
     [super awakeFromNib];
+
     //load the start lamp images for display
     st0  = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"st4.png"]];
     st1  = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"st1.png"]];
@@ -90,7 +91,7 @@
     //version, set anyway *****************************************
     //*************************************************************
     
-    version0 =  @"DRIVE Version 3.1.2 - 22.12.16";     // version   *** keep short
+    version0 =  @"DRIVE Version 3.1.5 - 22.12.16";     // version   *** keep short
     version1 =  @"MMU (C) 2016";                // copyright *** limited line space
     version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
     version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen
@@ -295,6 +296,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+
     [self.view sendSubviewToBack:self.skView];
 }
 
@@ -302,7 +304,7 @@
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
-    
+    //stop App if cancelled
     mySingleton *singleton = [mySingleton sharedSingleton];
     
     _carType = [singleton.carNo integerValue];       //carType;

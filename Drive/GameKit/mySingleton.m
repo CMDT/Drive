@@ -24,7 +24,6 @@ static mySingleton * sharedSingleton = nil;
             hazLaps,
             hornLaps,
             tempEntry,
-            hornsShowing,
             testDate,
             testTime,
             subjectName,
@@ -60,7 +59,10 @@ static mySingleton * sharedSingleton = nil;
 // float;
             ambientVolume,
 // int
-            hornTimerCounter;
+            hornTimerCounter,
+//bool
+    hornsShowing,
+    okGoNow;
 
 #pragma mark Singleton Methods
 
@@ -109,13 +111,14 @@ static mySingleton * sharedSingleton = nil;
         
         tempEntry           = @"";
         hornsShowing        = NO;
+        okGoNow             = NO; // App will not run unless set to YES
         email               = @"me@mmu.ac.uk";
         testDate            = @"22/12/2016";
         testTime            = @"10:00";
         resultStrings       = @"";
         subjectName         = @"Sub";
         resultStrings       = @"";
-        versionNumber       = @"3.1.2 - 22.12.16";
+        versionNumber       = @"3.1.5 - 22.12.16";
         
         counter             = 0;
         laps                = @"0";

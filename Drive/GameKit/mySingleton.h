@@ -11,6 +11,7 @@
 
 @interface mySingleton : NSObject {
     BOOL hornsShowing;
+    BOOL okGoNow; //flag that App can run
     int  counter;
 
     NSMutableArray * cardReactionTimeResult;
@@ -58,6 +59,7 @@
     int        hornTimerCounter;
 }
 @property (nonatomic) BOOL    hornsShowing;
+@property (nonatomic) BOOL    okGoNow;
 @property (nonatomic) int     counter;
 @property (nonatomic, retain) NSMutableArray * cardReactionTimeResult;
 
