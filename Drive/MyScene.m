@@ -185,9 +185,17 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         xcounter = 1;
         horns    = 0;
         singleton.hornTimerCounter = 0;
-        angAdd1  = 3.01; //flagg=3.01, any other not flag
-        angAdd2  = 0.0;
-        angAdd3  = -7.0;
+        
+        angAdd1  =  6; //first lap reasonable values for distraction triggers
+        angAdd2  = -2;
+        
+        if ([singleton.distractionOn isEqualToString:@"3"]) {
+            // if its 2 distractions, top and bottom 1st lap, if its 1 ignore, if its 3, distr 2 is 9 o clockish
+            angAdd2  = -8;
+        }
+        
+        angAdd3  = -2;
+        
         hornTriggered  = NO;
         horn2Triggered = NO;
         horn3Triggered = NO;
@@ -432,47 +440,62 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                 switch (dist1) {
                     case 1:
                         //1 distraction
-                        if (angAdd1 != 3.01) {
+                        if (lap>1) {
                             angAdd1  = 3+(((float)rand() /RAND_MAX)*6); //don't beep just past start line (start at 2), and avoid the very last part 9) so not to clash with lap sound
-                            sign     = (((float)rand() /RAND_MAX)*2);   //make negative/positive at random
+                            sign     =   (((float)rand() /RAND_MAX)*2);   //make negative/positive at random
                             
                             if(sign > 1.0){
                                 angAdd1 = -1 * angAdd1; //reverse sign
                             }
                             //NSLog(@"sign ang = %.3f %d", sign, angAdd);
-                        } else {
-                            angAdd1 = 6.0;
                         }
+                        
                     break;
                         
                     case 2:
+                        if (lap>1) {
                         //2 distractions, one in top half of track, one in the bottom
-                            angAdd1 =  3+(((float)rand() /RAND_MAX)*6);
-                            angAdd2 = -1 *(3+(((float)rand() /RAND_MAX)*6)); //reverse sign for second horn
+                            angAdd1 =       3+(((float)rand() /RAND_MAX)*6);
+                            angAdd2 = -1 * (3+(((float)rand() /RAND_MAX)*6)); //reverse sign for second horn
                         
-                        if(abs(angAdd1 - angAdd2) < 2){ // if too close to first beep, space out
-                            angAdd2 = angAdd1 - 2;
+                        if(angAdd1 > 8 && angAdd2 < -7) { // if too close to first beep, space out
+                            angAdd2 = angAdd2+4;
                         }
-                            
+                        }
+                        
                     break;
                         
                     case 3:
+                        if (lap>1) {
                         //3 distractions, first, middle and end =/- a bit of random wobble
-                            angAdd1 = (3+(((float)rand() /RAND_MAX)*3));
-                            angAdd2 = (0+(((float)rand() /RAND_MAX)*2));
-                            angAdd3 = -1*(3+(((float)rand() /RAND_MAX)*3));
-                        
-                        if(abs(angAdd1 - angAdd2)  < 2){ // if too close to first beep, space out
-                            angAdd2 = angAdd1 - 2;
-                        }
-                        if(abs(angAdd2 - angAdd3) < 2){ // if too close to first beep, space out
-                            angAdd3 = angAdd2 - 2;
+                            //1st segment, 2 o clock to 11 o clock
+                            angAdd1 =    (3+(((float)rand() /RAND_MAX)*4));
+                            
+                            angAdd2 =        ((float)rand() /RAND_MAX)*2;
+                            sign    =       (((float)rand() /RAND_MAX)*2);   //make negative/positive at random
+                            
+                            // both sides of 9 o clock
+                            if(sign > 1.0){
+                                angAdd2 = 9 - angAdd2;
+                            } else {
+                                angAdd2 = -8 + angAdd2;
+                            }
+                            if (angAdd2 == 0) {
+                                angAdd2 =  -7;
+                            }
+                            //3rd segment, 8 o clock to 4 o clock
+                            angAdd3 = -1*(3+(((float)rand() /RAND_MAX)*4));
                         }
                     break;
                         
                     default:
                         break;
                 }
+                //********* // 1st lap is set at start of code.  +12 = start line 3 o clock, +9 is 9 o clock, followed by -8, -7 etc till 0 at 4 o clock
+                //angAdd1= 6;//temp test value
+                //angAdd2= -8;
+                //angAdd3= -1;
+                //*********
             }
         }
         //NSLog(@"reset angles");
