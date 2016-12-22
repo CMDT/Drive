@@ -25,6 +25,7 @@
 
 - (IBAction)carButtonDidTouchUpInside:(id)sender;
 - (IBAction)gameCenterButtonDidTouchUpInside:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *gameSettingsBtn;
 
 - (IBAction)lap2set:(id)sender;
 - (IBAction)lap5set:(id)sender;

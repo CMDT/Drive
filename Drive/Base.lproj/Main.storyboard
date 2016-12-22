@@ -27,7 +27,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="H7F-rE-u7h" userLabel="Button pause">
                                 <rect key="frame" x="429" y="0.0" width="51" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="pause2Gr.png">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -35,13 +35,13 @@
                                     <action selector="pauseButtonDidTouchUpInside:" destination="LVB-YS-i5n" eventType="touchUpInside" id="jTW-Ku-sQo"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="9GS-nM-xcE">
-                                <rect key="frame" x="120" y="183" width="240" height="125"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="pCC-vC-zhb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" layoutMarginsFollowReadableWidth="YES" id="pCC-vC-zhb">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" layoutMarginsFollowReadableWidth="YES" id="9GS-nM-xcE">
+                                <rect key="frame" x="127" y="181" width="240" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -66,17 +66,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bg-select-difficulty.png" id="uo5-CJ-6uu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" layoutMarginsFollowReadableWidth="YES" image="bg-select-difficulty.png" id="uo5-CJ-6uu">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="car_3.png" id="bLa-aP-mof">
-                                <rect key="frame" x="196" y="168" width="80" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="car_1.png" id="n9x-uY-E6S">
-                                <rect key="frame" x="13" y="168" width="80" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="M5o-qu-hE1" userLabel="Button medium">
                                 <rect key="frame" x="339" y="182" width="120" height="55"/>
@@ -111,18 +103,6 @@
                                     <segue destination="ile-Uw-dvN" kind="push" id="sgN-rE-1F9"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-slow.png" id="bUE-wz-SLo">
-                                <rect key="frame" x="20" y="110" width="51" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-med.png" id="E7P-3x-jKV">
-                                <rect key="frame" x="117" y="110" width="51" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-fast.png" id="s1C-x2-bRA">
-                                <rect key="frame" x="211" y="110" width="51" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="FHR-24-jyO" userLabel="Button back">
                                 <rect key="frame" x="20" y="245" width="103" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -145,6 +125,26 @@
                                     <segue destination="iVf-iI-C6T" kind="push" id="EQS-Ot-RJf"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-slow.png" id="bUE-wz-SLo">
+                                <rect key="frame" x="20" y="110" width="51" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-med.png" id="E7P-3x-jKV">
+                                <rect key="frame" x="117" y="110" width="51" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-fast.png" id="s1C-x2-bRA">
+                                <rect key="frame" x="211" y="110" width="51" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="car_3.png" id="bLa-aP-mof">
+                                <rect key="frame" x="196" y="168" width="80" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="car_1.png" id="n9x-uY-E6S">
+                                <rect key="frame" x="13" y="168" width="80" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="car_2.png" id="zg4-b6-hCM">
                                 <rect key="frame" x="108" y="182" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -195,6 +195,10 @@ With practice, you will become more proficient, train up to the faster cars.
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-fast.png" id="Hmz-CB-xXI">
+                                <rect key="frame" x="358" y="58" width="102" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="car_1.png" id="wmn-eV-1HQ">
                                 <rect key="frame" x="20" y="266" width="51" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -202,10 +206,6 @@ With practice, you will become more proficient, train up to the faster cars.
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="car_2.png" id="Xxa-Iy-7J8">
                                 <rect key="frame" x="91" y="245" width="51" height="34"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-fast.png" id="Hmz-CB-xXI">
-                                <rect key="frame" x="358" y="58" width="102" height="102"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="car_3.png" id="S66-lN-9qC">
                                 <rect key="frame" x="157" y="255" width="51" height="34"/>
@@ -236,13 +236,13 @@ With practice, you will become more proficient, train up to the faster cars.
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bg-select-car.png" id="Yhd-nh-Ms1" userLabel="Background">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" layoutMarginsFollowReadableWidth="YES" image="bg-select-car.png" id="Yhd-nh-Ms1" userLabel="Background">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-med.png" id="pPk-oy-Lcm">
-                                <rect key="frame" x="189" y="161" width="51" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-slow.png" id="inD-T6-jTp">
+                                <rect key="frame" x="335" y="212" width="51" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                 </accessibility>
@@ -254,33 +254,22 @@ With practice, you will become more proficient, train up to the faster cars.
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                 </accessibility>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-slow.png" id="inD-T6-jTp">
-                                <rect key="frame" x="335" y="212" width="51" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedo-med.png" id="pPk-oy-Lcm">
+                                <rect key="frame" x="189" y="161" width="51" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                 </accessibility>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Ki3-o3-BfY" userLabel="Button back">
-                                <rect key="frame" x="20" y="245" width="113" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" image="backxGr.png">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8Av-RA-VLJ" userLabel="Button Car 3">
+                                <rect key="frame" x="347" y="32" width="99" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btn-car3.png">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonDidTouchUpInside:" destination="355-Sw-PNA" eventType="touchUpInside" id="9fP-q2-9yh"/>
-                                    <segue destination="j6p-oN-Kld" kind="push" id="egQ-Cs-J5z"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="X8I-yp-jGR" userLabel="Button Car 2">
-                                <rect key="frame" x="228" y="122" width="99" height="128"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <state key="normal" image="btn-car2.png">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="carButtonDidTouchUpInside:" destination="355-Sw-PNA" eventType="touchUpInside" id="fAd-ru-mFe"/>
-                                    <segue destination="6zJ-QL-n6c" kind="push" id="eqn-Dg-M4T"/>
+                                    <action selector="carButtonDidTouchUpInside:" destination="355-Sw-PNA" eventType="touchUpInside" id="BZ2-kL-2fE"/>
+                                    <segue destination="6zJ-QL-n6c" kind="push" id="Min-jJ-qBL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IIU-gY-BAc" userLabel="Button Car 1">
@@ -294,19 +283,30 @@ With practice, you will become more proficient, train up to the faster cars.
                                     <segue destination="6zJ-QL-n6c" kind="push" id="edx-Rx-n7W"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8Av-RA-VLJ" userLabel="Button Car 3">
-                                <rect key="frame" x="347" y="32" width="99" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="btn-car3.png">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="X8I-yp-jGR" userLabel="Button Car 2">
+                                <rect key="frame" x="228" y="122" width="99" height="128"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <state key="normal" image="btn-car2.png">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="carButtonDidTouchUpInside:" destination="355-Sw-PNA" eventType="touchUpInside" id="BZ2-kL-2fE"/>
-                                    <segue destination="6zJ-QL-n6c" kind="push" id="Min-jJ-qBL"/>
+                                    <action selector="carButtonDidTouchUpInside:" destination="355-Sw-PNA" eventType="touchUpInside" id="fAd-ru-mFe"/>
+                                    <segue destination="6zJ-QL-n6c" kind="push" id="eqn-Dg-M4T"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="zje-3U-f2d">
-                                <rect key="frame" x="167" y="245" width="66" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Ki3-o3-BfY" userLabel="Button back">
+                                <rect key="frame" x="20" y="245" width="106" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" image="backxGr.png">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonDidTouchUpInside:" destination="355-Sw-PNA" eventType="touchUpInside" id="9fP-q2-9yh"/>
+                                    <segue destination="j6p-oN-Kld" kind="push" id="egQ-Cs-J5z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="zje-3U-f2d" userLabel="infoButton">
+                                <rect key="frame" x="214" y="245" width="53" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <state key="normal" image="btn-info.png">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -334,87 +334,97 @@ With practice, you will become more proficient, train up to the faster cars.
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" layoutMarginsFollowReadableWidth="YES" image="bg-main-menu.png" id="vMP-CH-hGe">
-                                <rect key="frame" x="1" y="0.0" width="479" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ath-kp-ddz">
+                                <rect key="frame" x="356" y="209" width="63" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="seg-beat.png"/>
+                                <connections>
+                                    <action selector="musicBeatSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="dyg-j4-ydF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XFj-Va-Cul">
+                                <rect key="frame" x="281" y="209" width="63" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="seg-blues.png"/>
+                                <connections>
+                                    <action selector="musicBluesSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="2FH-Sw-ulb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0xX-pG-cEf">
+                                <rect key="frame" x="205" y="209" width="63" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="seg-light.png"/>
+                                <connections>
+                                    <action selector="musicLightSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="VGX-Lm-BPv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZOy-EG-wE7">
+                                <rect key="frame" x="129" y="209" width="63" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="seg-none.png"/>
+                                <connections>
+                                    <action selector="musicNoneSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="E19-f9-2Rb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1x3-cU-xGu">
+                                <rect key="frame" x="237" y="164" width="39" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="seg-10.png"/>
+                                <connections>
+                                    <action selector="lap10set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="c8P-mg-Q28"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WQ6-td-h7F">
+                                <rect key="frame" x="190" y="164" width="39" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="seg-5.png"/>
+                                <connections>
+                                    <action selector="lap5set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="1h7-8g-ZMB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pEE-2H-2vP">
+                                <rect key="frame" x="331" y="164" width="39" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="seg-50.png"/>
+                                <connections>
+                                    <action selector="lap50set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="FwN-vT-idq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="j7Z-rR-pc9">
+                                <rect key="frame" x="378" y="164" width="39" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="seg-100.png"/>
+                                <connections>
+                                    <action selector="lap100set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="MJu-oc-KFV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Qcq-8n-DPP">
+                                <rect key="frame" x="284" y="164" width="39" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="seg-20.png"/>
+                                <connections>
+                                    <action selector="lap20set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="aTO-QM-9p6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hFm-y0-OmS">
+                                <rect key="frame" x="141" y="164" width="39" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="seg-2.png"/>
+                                <connections>
+                                    <action selector="lap2set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="sf9-gd-PN7"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cNs-Ez-1CI" userLabel="Button play centre">
+                                <rect key="frame" x="260" y="46" width="110" height="41"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Distractions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ay1-xn-2z5">
-                                <rect key="frame" x="20" y="257" width="101" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LOd-8W-6iu">
-                                <rect key="frame" x="141" y="258" width="39" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="d0.png"/>
+                                <state key="normal" image="btn-gamecenter.png">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="distraction0:" destination="j6p-oN-Kld" eventType="touchUpInside" id="tE2-4m-E7r"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="X1A-wH-YuC">
-                                <rect key="frame" x="190" y="258" width="39" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="d1.png"/>
-                                <connections>
-                                    <action selector="distraction1:" destination="j6p-oN-Kld" eventType="touchUpInside" id="zbw-1A-Mc8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8Z6-Fe-qH5">
-                                <rect key="frame" x="237" y="258" width="39" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="d2.png"/>
-                                <connections>
-                                    <action selector="distraction2:" destination="j6p-oN-Kld" eventType="touchUpInside" id="9w9-KC-uVv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ul1-Hy-6Lt">
-                                <rect key="frame" x="284" y="258" width="39" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="d3.png"/>
-                                <connections>
-                                    <action selector="distraction3:" destination="j6p-oN-Kld" eventType="touchUpInside" id="xxl-1v-sSG"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="2fO-rW-Fbb">
-                                <rect key="frame" x="176" y="252" width="20" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="RVQ-K8-vfg">
-                                <rect key="frame" x="224" y="252" width="20" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="Q5y-cl-FP0">
-                                <rect key="frame" x="274" y="252" width="20" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="Alo-At-EMz">
-                                <rect key="frame" x="316" y="252" width="20" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VLA-lM-chr">
-                                <rect key="frame" x="190" y="117" width="47" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="low.png"/>
-                                <connections>
-                                    <action selector="fxLowSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="NJd-cV-pXA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fO4-V8-03A">
-                                <rect key="frame" x="248" y="117" width="49" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="med.png"/>
-                                <connections>
-                                    <action selector="fxMidSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="lr8-s9-KAc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ec8-BU-veX">
-                                <rect key="frame" x="372" y="117" width="47" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="high.png"/>
-                                <connections>
-                                    <action selector="fxHiSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="mVp-nZ-vrg"/>
+                                    <action selector="gameCenterButtonDidTouchUpInside:" destination="j6p-oN-Kld" eventType="touchUpInside" id="55c-dO-iFz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DTP-YS-Mr1">
@@ -425,32 +435,154 @@ With practice, you will become more proficient, train up to the faster cars.
                                     <action selector="fxNorSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="10O-Fj-aIa"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="Q7H-X6-PKh">
-                                <rect key="frame" x="227" y="109" width="20" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ec8-BU-veX">
+                                <rect key="frame" x="372" y="117" width="47" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="high.png"/>
+                                <connections>
+                                    <action selector="fxHiSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="mVp-nZ-vrg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fO4-V8-03A">
+                                <rect key="frame" x="248" y="117" width="49" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="med.png"/>
+                                <connections>
+                                    <action selector="fxMidSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="lr8-s9-KAc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VLA-lM-chr">
+                                <rect key="frame" x="190" y="117" width="47" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="low.png"/>
+                                <connections>
+                                    <action selector="fxLowSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="NJd-cV-pXA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aEr-30-jwR">
+                                <rect key="frame" x="129" y="117" width="47" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="off.png"/>
+                                <connections>
+                                    <action selector="fxNoneSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="p6w-6C-OsM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ul1-Hy-6Lt">
+                                <rect key="frame" x="284" y="258" width="39" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="d3.png"/>
+                                <connections>
+                                    <action selector="distraction3:" destination="j6p-oN-Kld" eventType="touchUpInside" id="xxl-1v-sSG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8Z6-Fe-qH5">
+                                <rect key="frame" x="237" y="258" width="39" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="d2.png"/>
+                                <connections>
+                                    <action selector="distraction2:" destination="j6p-oN-Kld" eventType="touchUpInside" id="9w9-KC-uVv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="X1A-wH-YuC">
+                                <rect key="frame" x="190" y="258" width="39" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="d1.png"/>
+                                <connections>
+                                    <action selector="distraction1:" destination="j6p-oN-Kld" eventType="touchUpInside" id="zbw-1A-Mc8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LOd-8W-6iu">
+                                <rect key="frame" x="141" y="258" width="39" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="d0.png"/>
+                                <connections>
+                                    <action selector="distraction0:" destination="j6p-oN-Kld" eventType="touchUpInside" id="tE2-4m-E7r"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="TQA-jZ-TjH">
+                                <rect key="frame" x="413" y="201" width="20" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="NwM-AW-88L">
-                                <rect key="frame" x="288" y="109" width="20" height="36"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="VBy-FT-GzO">
+                                <rect key="frame" x="336" y="201" width="20" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="D0O-hS-qFl">
-                                <rect key="frame" x="350" y="109" width="20" height="36"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="fKx-ZO-S2b">
+                                <rect key="frame" x="260" y="201" width="20" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="wlH-ep-x9E">
+                                <rect key="frame" x="185" y="200" width="20" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="ZZ4-0G-9QP">
+                                <rect key="frame" x="176" y="156" width="20" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="ivu-TU-rgb">
+                                <rect key="frame" x="224" y="156" width="20" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="lNU-P8-4hb">
+                                <rect key="frame" x="274" y="156" width="20" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="3Rc-Aj-rGB">
+                                <rect key="frame" x="316" y="156" width="20" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="VuE-NE-ILy">
+                                <rect key="frame" x="364" y="156" width="20" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="QBf-qO-nS9">
+                                <rect key="frame" x="413" y="156" width="20" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="NZa-s4-3NG">
+                                <rect key="frame" x="168" y="109" width="20" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="af7-nl-gOj">
                                 <rect key="frame" x="413" y="109" width="20" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cNs-Ez-1CI" userLabel="Button play centre">
-                                <rect key="frame" x="1" y="1" width="1" height="1"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="D0O-hS-qFl">
+                                <rect key="frame" x="350" y="109" width="20" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="btn-gamecenter.png">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="gameCenterButtonDidTouchUpInside:" destination="j6p-oN-Kld" eventType="touchUpInside" id="55c-dO-iFz"/>
-                                </connections>
-                            </button>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="NwM-AW-88L">
+                                <rect key="frame" x="288" y="109" width="20" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="Q7H-X6-PKh">
+                                <rect key="frame" x="227" y="109" width="20" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="Alo-At-EMz">
+                                <rect key="frame" x="316" y="252" width="20" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="Q5y-cl-FP0">
+                                <rect key="frame" x="274" y="252" width="20" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="RVQ-K8-vfg">
+                                <rect key="frame" x="224" y="252" width="20" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="2fO-rW-Fbb">
+                                <rect key="frame" x="176" y="252" width="20" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Distractions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ay1-xn-2z5">
+                                <rect key="frame" x="20" y="257" width="101" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drive Music" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KIi-Ef-7UX">
                                 <rect key="frame" x="20" y="209" width="101" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
@@ -467,126 +599,24 @@ With practice, you will become more proficient, train up to the faster cars.
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZOy-EG-wE7">
-                                <rect key="frame" x="129" y="209" width="63" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="seg-none.png"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="FX Volume" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1hn-5G-UZZ">
+                                <rect key="frame" x="20" y="114" width="101" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="BEX-Ep-wnn" userLabel="infoButton">
+                                <rect key="frame" x="401" y="46" width="59" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                <state key="normal" image="btn-info.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="musicNoneSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="E19-f9-2Rb"/>
+                                    <segue destination="jCb-yp-7T2" kind="push" id="D0M-8g-TGD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hFm-y0-OmS">
-                                <rect key="frame" x="141" y="164" width="39" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="seg-2.png"/>
-                                <connections>
-                                    <action selector="lap2set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="sf9-gd-PN7"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Qcq-8n-DPP">
-                                <rect key="frame" x="284" y="164" width="39" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="seg-20.png"/>
-                                <connections>
-                                    <action selector="lap20set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="aTO-QM-9p6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="j7Z-rR-pc9">
-                                <rect key="frame" x="378" y="164" width="39" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="seg-100.png"/>
-                                <connections>
-                                    <action selector="lap100set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="MJu-oc-KFV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0xX-pG-cEf">
-                                <rect key="frame" x="205" y="209" width="63" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="seg-light.png"/>
-                                <connections>
-                                    <action selector="musicLightSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="VGX-Lm-BPv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XFj-Va-Cul">
-                                <rect key="frame" x="281" y="209" width="63" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="seg-blues.png"/>
-                                <connections>
-                                    <action selector="musicBluesSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="2FH-Sw-ulb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ath-kp-ddz">
-                                <rect key="frame" x="356" y="209" width="63" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="seg-beat.png"/>
-                                <connections>
-                                    <action selector="musicBeatSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="dyg-j4-ydF"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pEE-2H-2vP">
-                                <rect key="frame" x="331" y="164" width="39" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="seg-50.png"/>
-                                <connections>
-                                    <action selector="lap50set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="FwN-vT-idq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WQ6-td-h7F">
-                                <rect key="frame" x="190" y="164" width="39" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="seg-5.png"/>
-                                <connections>
-                                    <action selector="lap5set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="1h7-8g-ZMB"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1x3-cU-xGu">
-                                <rect key="frame" x="237" y="164" width="39" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="seg-10.png"/>
-                                <connections>
-                                    <action selector="lap10set:" destination="j6p-oN-Kld" eventType="touchUpInside" id="c8P-mg-Q28"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="wlH-ep-x9E">
-                                <rect key="frame" x="185" y="200" width="20" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="fKx-ZO-S2b">
-                                <rect key="frame" x="260" y="201" width="20" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="VBy-FT-GzO">
-                                <rect key="frame" x="336" y="201" width="20" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="TQA-jZ-TjH">
-                                <rect key="frame" x="413" y="201" width="20" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="QBf-qO-nS9">
-                                <rect key="frame" x="413" y="156" width="20" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="VuE-NE-ILy">
-                                <rect key="frame" x="364" y="156" width="20" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="3Rc-Aj-rGB">
-                                <rect key="frame" x="316" y="156" width="20" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="lNU-P8-4hb">
-                                <rect key="frame" x="274" y="156" width="20" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="ivu-TU-rgb">
-                                <rect key="frame" x="224" y="156" width="20" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick.png" id="ZZ4-0G-9QP">
-                                <rect key="frame" x="176" y="156" width="20" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="eRa-O0-jhW" userLabel="Button start game play">
                                 <rect key="frame" x="356" y="245" width="104" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
@@ -596,36 +626,6 @@ With practice, you will become more proficient, train up to the faster cars.
                                 <connections>
                                     <action selector="carButtonDidTouchUpInside:" destination="j6p-oN-Kld" eventType="touchUpInside" id="eyv-18-fvY"/>
                                     <segue destination="355-Sw-PNA" kind="push" id="1Ng-tR-vKr"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="FX Volume" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1hn-5G-UZZ">
-                                <rect key="frame" x="20" y="114" width="101" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" id="NZa-s4-3NG">
-                                <rect key="frame" x="168" y="109" width="20" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aEr-30-jwR">
-                                <rect key="frame" x="129" y="117" width="47" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="off.png"/>
-                                <connections>
-                                    <action selector="fxNoneSet:" destination="j6p-oN-Kld" eventType="touchUpInside" id="p6w-6C-OsM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="BEX-Ep-wnn">
-                                <rect key="frame" x="405" y="46" width="75" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
-                                <state key="normal" image="btn-info.png">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="jCb-yp-7T2" kind="push" id="D0M-8g-TGD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -644,6 +644,7 @@ With practice, you will become more proficient, train up to the faster cars.
                         <outlet property="fxmedbtn" destination="fO4-V8-03A" id="bBc-ry-Gdx"/>
                         <outlet property="fxnonebtn" destination="aEr-30-jwR" id="V8V-7t-bYM"/>
                         <outlet property="fxnorbtn" destination="DTP-YS-Mr1" id="Rba-AU-jzg"/>
+                        <outlet property="gameSettingsBtn" destination="cNs-Ez-1CI" id="yNN-bp-Gn1"/>
                         <outlet property="lap100btn" destination="j7Z-rR-pc9" id="d9c-qi-GIW"/>
                         <outlet property="lap10btn" destination="1x3-cU-xGu" id="G6K-by-ZhW"/>
                         <outlet property="lap20btn" destination="Qcq-8n-DPP" id="d2k-56-jFj"/>
@@ -705,8 +706,14 @@ With practice, you will become more proficient, train up to the faster cars.
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="About The Tracks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b1H-y3-ucp">
+                                <rect key="frame" x="20" y="20" width="440" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" id="4h3-vu-hO8">
-                                <rect key="frame" x="20" y="49" width="314" height="251"/>
+                                <rect key="frame" x="20" y="49" width="303" height="251"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">To select a track, touch it.
@@ -726,20 +733,10 @@ The hardest track has multiple hazards to avoid. Hitting hazards slows you down 
                                 <rect key="frame" x="190" y="269" width="32" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="About The Tracks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b1H-y3-ucp">
-                                <rect key="frame" x="20" y="20" width="440" height="21"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="kAp-4E-LkV">
-                                <rect key="frame" x="357" y="245" width="103" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                <state key="normal" image="backxGr.png"/>
-                                <connections>
-                                    <segue destination="6zJ-QL-n6c" kind="push" id="Ypq-Rw-I7Y"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="track_1.png" id="9EK-OW-9EW">
+                                <rect key="frame" x="357" y="49" width="102" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bale.png" id="Jnb-vq-Dbp">
                                 <rect key="frame" x="418" y="141" width="36" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
@@ -748,10 +745,14 @@ The hardest track has multiple hazards to avoid. Hitting hazards slows you down 
                                 <rect key="frame" x="230" y="256" width="33" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="track_1.png" id="9EK-OW-9EW">
-                                <rect key="frame" x="357" y="49" width="102" height="102"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="kAp-4E-LkV">
+                                <rect key="frame" x="357" y="245" width="105" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <state key="normal" image="backxGr.png"/>
+                                <connections>
+                                    <segue destination="6zJ-QL-n6c" kind="push" id="Ypq-Rw-I7Y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -770,10 +771,10 @@ The hardest track has multiple hazards to avoid. Hitting hazards slows you down 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" textAlignment="natural" id="nsb-cP-CqZ">
-                                <rect key="frame" x="20" y="49" width="314" height="251"/>
+                                <rect key="frame" x="20" y="49" width="327" height="251"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <string key="text">The drive game is a test of motor control and ability to cope with driving during a distraction.
+                                <mutableString key="text">The drive game is a test of motor control and ability to cope with driving during a distraction.
 
 Initially, use the slow car on each of the tracks, and obtain some lap times and overall score.
 
@@ -787,7 +788,7 @@ FX:Volume:  This the volume of the sound effects played during the game.
 
 Race Lpas:  Select the number of laps to race.  Results are only given for completed full races.
 
-Drive Music:  Some background music whilst you drive.</string>
+Drive Music:  Some background music whilst you drive.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1354,10 +1355,60 @@ Drive Music:  Some background music whilst you drive.</string>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" layoutMarginsFollowReadableWidth="YES" image="bg-main-menu-driver.png" id="qpU-YN-oCe">
-                                <rect key="frame" x="0.0" y="1" width="480" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driver Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4rv-8p-bEN">
+                                <rect key="frame" x="20" y="169" width="119" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2sa-WK-0MM">
+                                <rect key="frame" x="20" y="207" width="119" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="TIK-v2-hNe">
+                                <rect key="frame" x="147" y="207" width="275" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tyre.png" id="lGW-lB-BLf">
+                                <rect key="frame" x="281" y="78" width="47" height="47"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="sfJ-sM-oaY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tyre.png" id="jhG-Yz-dAD">
+                                <rect key="frame" x="248" y="114" width="47" height="47"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bale.png" id="buY-7r-cDf">
+                                <rect key="frame" x="423" y="35" width="47" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="crate.png" id="Bba-5l-Opt">
+                                <rect key="frame" x="408" y="99" width="47" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="e3c-3u-WOf" userLabel="Button back">
+                                <rect key="frame" x="20" y="245" width="107" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" image="backxGr.png">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonDidTouchUpInside:" destination="ile-Uw-dvN" eventType="touchUpInside" id="qIq-pI-KXD"/>
+                                    <segue destination="6zJ-QL-n6c" kind="push" id="Qad-gC-6d0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="sfJ-sM-oaY" userLabel="infoButton">
                                 <rect key="frame" x="213" y="245" width="55" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                                 <state key="normal" image="btn-info.png">
@@ -1379,61 +1430,13 @@ Drive Music:  Some background music whilst you drive.</string>
                                     <segue destination="LVB-YS-i5n" kind="push" id="PfM-DR-Uqa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="e3c-3u-WOf" userLabel="Button back">
-                                <rect key="frame" x="20" y="245" width="107" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" image="backxGr.png">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="backButtonDidTouchUpInside:" destination="ile-Uw-dvN" eventType="touchUpInside" id="qIq-pI-KXD"/>
-                                    <segue destination="6zJ-QL-n6c" kind="push" id="Qad-gC-6d0"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2sa-WK-0MM">
-                                <rect key="frame" x="20" y="207" width="119" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="TIK-v2-hNe">
-                                <rect key="frame" x="154" y="207" width="301" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driver Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4rv-8p-bEN">
-                                <rect key="frame" x="20" y="169" width="119" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="ZoX-mV-eDf">
-                                <rect key="frame" x="154" y="169" width="301" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="ZoX-mV-eDf">
+                                <rect key="frame" x="147" y="169" width="275" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tyre.png" id="lGW-lB-BLf">
-                                <rect key="frame" x="281" y="78" width="47" height="47"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tyre.png" id="jhG-Yz-dAD">
-                                <rect key="frame" x="248" y="114" width="47" height="47"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bale.png" id="buY-7r-cDf">
-                                <rect key="frame" x="423" y="35" width="47" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="crate.png" id="Bba-5l-Opt">
-                                <rect key="frame" x="408" y="99" width="47" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <accessibility key="accessibilityConfiguration">
@@ -1469,10 +1472,6 @@ Drive Music:  Some background music whilst you drive.</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="drive512.png" id="IQF-Wt-TSS">
-                                <rect key="frame" x="355" y="62" width="105" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
-                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" id="0qq-N8-ACk">
                                 <rect key="frame" x="20" y="62" width="303" height="249"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1485,7 +1484,11 @@ The email data is TEXT formatted but may be incorrectly displayed in some email 
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="VcG-Lp-Ni6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="drive512.png" id="IQF-Wt-TSS">
+                                <rect key="frame" x="355" y="62" width="105" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="VcG-Lp-Ni6" userLabel="backButton">
                                 <rect key="frame" x="355" y="245" width="106" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <state key="normal" image="backxGr.png"/>
@@ -1511,19 +1514,12 @@ The email data is TEXT formatted but may be incorrectly displayed in some email 
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" layoutMarginsFollowReadableWidth="YES" image="bg-main-menu.png" id="xYK-e6-yam">
-                                <rect key="frame" x="1" y="0.0" width="479" height="320"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Lqo-0N-YY0" userLabel="Button play centre">
-                                <rect key="frame" x="1" y="1" width="1" height="1"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="btn-gamecenter.png">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nf9-ez-CEO">
-                                <rect key="frame" x="134" y="225" width="310" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="142" y="224" width="331" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content=" Press  To Start The Game">
                                         <attributes>
@@ -1537,7 +1533,7 @@ The email data is TEXT formatted but may be incorrectly displayed in some email 
                                 <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Emj-2n-cdZ">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Emj-2n-cdZ" userLabel="infoButton">
                                 <rect key="frame" x="20" y="245" width="61" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <state key="normal" image="btn-info.png">
@@ -1547,7 +1543,7 @@ The email data is TEXT formatted but may be incorrectly displayed in some email 
                                     <segue destination="1xA-yU-Nkt" kind="push" id="hQB-YZ-ONS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WNW-yg-wNe" userLabel="IconButton">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WNW-yg-wNe" userLabel="mmuIconButton">
                                 <rect key="frame" x="14" y="157" width="67" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
@@ -1556,9 +1552,9 @@ The email data is TEXT formatted but may be incorrectly displayed in some email 
                                     <segue destination="j6p-oN-Kld" kind="push" id="PMR-Bk-alp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="j2J-rN-knt" userLabel="IconButton">
-                                <rect key="frame" x="275" y="92" width="132" height="136"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="j2J-rN-knt" userLabel="driveIconButton">
+                                <rect key="frame" x="248" y="92" width="132" height="136"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                 <state key="normal" title="Button" image="drive512.png"/>
                                 <connections>
@@ -1738,9 +1734,9 @@ Cg
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="1Ng-tR-vKr"/>
-        <segue reference="egQ-Cs-J5z"/>
-        <segue reference="eqn-Dg-M4T"/>
-        <segue reference="EFj-b3-7hl"/>
+        <segue reference="Ts0-Gu-wo8"/>
+        <segue reference="Xnc-OW-jig"/>
+        <segue reference="Ypq-Rw-I7Y"/>
         <segue reference="kKz-ZN-Bct"/>
     </inferredMetricsTieBreakers>
 </document>

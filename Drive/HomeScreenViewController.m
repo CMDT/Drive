@@ -25,6 +25,8 @@
 
 @implementation HomeScreenViewController
 
+@synthesize gameSettingsBtn;
+
 #pragma mark - Run App once loaded in memory
 
 - (void)viewDidLoad {
@@ -93,9 +95,12 @@
         [[SKTAudio sharedInstance] playSoundEffect:@"button_press.wav"];
     }
     
-    //SelectCarViewController *selectCarVC = [self.storyboard
-    //instantiateViewControllerWithIdentifier:@"SelectCarViewController"];
-    //[self.navigationController pushViewController:selectCarVC animated:YES];
+    //***********************************
+    //game centre off at present
+    gameSettingsBtn.hidden=YES;
+    //***********************************
+
+    // next screen loads when this button is pressed
 }
 
 - (IBAction)gameCenterButtonDidTouchUpInside:(id)sender {
@@ -323,7 +328,6 @@
     self.distraction3.alpha = 1;
     self.tickdistraction3.hidden = NO;
 }
-
 
 - (void)btnPressSound{
     mySingleton *singleton = [mySingleton sharedSingleton];

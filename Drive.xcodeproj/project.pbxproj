@@ -305,6 +305,7 @@
 		E147D3571DF865CE00E02FA1 /* car_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car_3.png; path = ../sprites.atlas/car_3.png; sourceTree = "<group>"; };
 		E147D3581DF865CE00E02FA1 /* crate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = crate.png; path = ../sprites.atlas/crate.png; sourceTree = "<group>"; };
 		E147D3591DF865CE00E02FA1 /* tyre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tyre.png; path = ../sprites.atlas/tyre.png; sourceTree = "<group>"; };
+		E14A6FE71E0C2062006B7107 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		E14EC2611DFFFD2D0064C6B4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E171F2621C1EDB3600E3DB0D /* achievment-amateur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievment-amateur.png"; sourceTree = "<group>"; };
 		E171F2631C1EDB3600E3DB0D /* achievment-destruction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievment-destruction.png"; sourceTree = "<group>"; };
@@ -1181,6 +1182,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				47117B4F1959CA1400B20209 /* Base */,
+				E14A6FE71E0C2062006B7107 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

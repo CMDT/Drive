@@ -1,0 +1,252 @@
+
+/* Class = "UILabel"; text = "Wall Crashes"; ObjectID = "0o9-GH-nUA"; */
+"0o9-GH-nUA.text" = "Wall Crashes";
+
+/* Class = "UITextView"; text = "Give the Driver a Name.  If you are presenting data for a study, you should code your subjects to ensure privacy.\n\nThe Email address is the recipient of the data results when a race is completed, if needed.  Yiou can edit this address and add further recipients at the point of sending and review.\n\nThe email data is TEXT formatted but may be incorrectly displayed in some email clients due to auto removal of line breaks.  If this is the case, look for an option to restore line breaks."; ObjectID = "0qq-N8-ACk"; */
+"0qq-N8-ACk.text" = "Give the Driver a Name.  If you are presenting data for a study, you should code your subjects to ensure privacy.\n\nThe Email address is the recipient of the data results when a race is completed, if needed.  Yiou can edit this address and add further recipients at the point of sending and review.\n\nThe email data is TEXT formatted but may be incorrectly displayed in some email clients due to auto removal of line breaks.  If this is the case, look for an option to restore line breaks.";
+
+/* Class = "UILabel"; text = "HORNS"; ObjectID = "11b-cG-8YW"; */
+"11b-cG-8YW.text" = "HORNS";
+
+/* Class = "UILabel"; text = "Horn Time"; ObjectID = "1ZF-HH-Qoe"; */
+"1ZF-HH-Qoe.text" = "Horn Time";
+
+/* Class = "UILabel"; text = "FX Volume"; ObjectID = "1hn-5G-UZZ"; */
+"1hn-5G-UZZ.text" = "FX Volume";
+
+/* Class = "UIViewController"; title = "InfoSplashVC"; ObjectID = "1xA-yU-Nkt"; */
+"1xA-yU-Nkt.title" = "InfoSplashVC";
+
+/* Class = "UILabel"; text = "S"; ObjectID = "2JO-Rd-rdT"; */
+"2JO-Rd-rdT.text" = "S";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "2c9-b8-0Z4"; */
+"2c9-b8-0Z4.text" = "0";
+
+/* Class = "UILabel"; text = "Results Email"; ObjectID = "2sa-WK-0MM"; */
+"2sa-WK-0MM.text" = "Results Email";
+
+/* Class = "UITextView"; text = "To select a car, touch it.\n\nThe faster the car, the better the top speed, but be careful, they are harder to drive, so you may crash more times and be slower than a less powerful car.\n\nWith practice, you will become more proficient, train up to the faster cars.\n\n"; ObjectID = "3on-CM-4bh"; */
+"3on-CM-4bh.text" = "To select a car, touch it.\n\nThe faster the car, the better the top speed, but be careful, they are harder to drive, so you may crash more times and be slower than a less powerful car.\n\nWith practice, you will become more proficient, train up to the faster cars.\n\n";
+
+/* Class = "UITextView"; text = "To select a track, touch it.\n\nThe harder tracks contain more hazards.  \n\nThe easy track has no hazards, just steer round.\n\nYou still need to avoid hitting the track edges.\n\nThe hardest track has multiple hazards to avoid. Hitting hazards slows you down and ruins your scvore.\n"; ObjectID = "4h3-vu-hO8"; */
+"4h3-vu-hO8.text" = "To select a track, touch it.\n\nThe harder tracks contain more hazards.  \n\nThe easy track has no hazards, just steer round.\n\nYou still need to avoid hitting the track edges.\n\nThe hardest track has multiple hazards to avoid. Hitting hazards slows you down and ruins your scvore.\n";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "4li-0D-heF"; */
+"4li-0D-heF.text" = "0";
+
+/* Class = "UILabel"; text = "Driver Name"; ObjectID = "4rv-8p-bEN"; */
+"4rv-8p-bEN.text" = "Driver Name";
+
+/* Class = "UILabel"; text = "Average"; ObjectID = "6Ec-Ny-Nlg"; */
+"6Ec-Ny-Nlg.text" = "Average";
+
+/* Class = "UIViewController"; title = "InfoSelectCarVC"; ObjectID = "72Q-Fc-b8U"; */
+"72Q-Fc-b8U.title" = "InfoSelectCarVC";
+
+/* Class = "UILabel"; text = "Slowest"; ObjectID = "7OB-c6-R6i"; */
+"7OB-c6-R6i.text" = "Slowest";
+
+/* Class = "UILabel"; text = "Laps"; ObjectID = "8jF-0z-3eK"; */
+"8jF-0z-3eK.text" = "Laps";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "AX0-9F-iPD"; */
+"AX0-9F-iPD.text" = "0";
+
+/* Class = "UILabel"; text = "Distractions"; ObjectID = "Ay1-xn-2z5"; */
+"Ay1-xn-2z5.text" = "Distractions";
+
+/* Class = "UILabel"; text = "Track"; ObjectID = "BAw-cW-XQG"; */
+"BAw-cW-XQG.text" = "Track";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "BjF-L1-5UW"; */
+"BjF-L1-5UW.text" = "0";
+
+/* Class = "UILabel"; text = "Haz. Crashes"; ObjectID = "Iz3-Nb-VUk"; */
+"Iz3-Nb-VUk.text" = "Haz. Crashes";
+
+/* Class = "UILabel"; text = "None"; ObjectID = "JTT-oo-vuW"; */
+"JTT-oo-vuW.text" = "None";
+
+/* Class = "UILabel"; text = "Drive Music"; ObjectID = "KIi-Ef-7UX"; */
+"KIi-Ef-7UX.text" = "Drive Music";
+
+/* Class = "UILabel"; text = "Date:"; ObjectID = "KfN-v3-Sbl"; */
+"KfN-v3-Sbl.text" = "Date:";
+
+/* Class = "UIViewController"; title = "scene"; ObjectID = "LVB-YS-i5n"; */
+"LVB-YS-i5n.title" = "scene";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "Lih-qY-C46"; */
+"Lih-qY-C46.text" = "0";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "Lpb-mx-MTw"; */
+"Lpb-mx-MTw.text" = "0";
+
+/* Class = "UILabel"; text = "LAPS"; ObjectID = "M8A-JB-Wn9"; */
+"M8A-JB-Wn9.text" = "LAPS";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "MgM-H2-gCE"; */
+"MgM-H2-gCE.text" = "0";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "Ml4-nd-UYA"; */
+"Ml4-nd-UYA.text" = "0";
+
+/* Class = "UILabel"; text = "Race Laps"; ObjectID = "OnZ-Gl-8eK"; */
+"OnZ-Gl-8eK.text" = "Race Laps";
+
+/* Class = "UILabel"; text = "Music"; ObjectID = "Oya-FG-aRK"; */
+"Oya-FG-aRK.text" = "Music";
+
+/* Class = "UILabel"; text = "="; ObjectID = "PYe-r5-Sta"; */
+"PYe-r5-Sta.text" = "=";
+
+/* Class = "UILabel"; text = "About The Drive Game"; ObjectID = "Q2K-Dp-1wg"; */
+"Q2K-Dp-1wg.text" = "About The Drive Game";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "Re9-R1-4bk"; */
+"Re9-R1-4bk.text" = "0";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "Rie-1z-ClQ"; */
+"Rie-1z-ClQ.text" = "0";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "SBg-1c-fhV"; */
+"SBg-1c-fhV.text" = "0";
+
+/* Class = "UIViewController"; title = "InfoSelectDriverVC"; ObjectID = "SI2-qR-bsc"; */
+"SI2-qR-bsc.title" = "InfoSelectDriverVC";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "SJW-1P-dUq"; */
+"SJW-1P-dUq.text" = "0";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "Se0-60-Q9X"; */
+"Se0-60-Q9X.text" = "0";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "T0e-RB-ytV"; */
+"T0e-RB-ytV.text" = "0";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "UY2-f3-0Yb"; */
+"UY2-f3-0Yb.text" = "0";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "Uv7-TM-xu5"; */
+"Uv7-TM-xu5.text" = "0";
+
+/* Class = "UILabel"; text = "S"; ObjectID = "Vp0-aN-LKk"; */
+"Vp0-aN-LKk.text" = "S";
+
+/* Class = "UILabel"; text = "SCORE"; ObjectID = "W94-pW-SR9"; */
+"W94-pW-SR9.text" = "SCORE";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "WNW-yg-wNe"; */
+"WNW-yg-wNe.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "About The Cars"; ObjectID = "X5H-1e-eCJ"; */
+"X5H-1e-eCJ.text" = "About The Cars";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "X74-mK-2lW"; */
+"X74-mK-2lW.text" = "0";
+
+/* Class = "UILabel"; text = "About The Driver"; ObjectID = "ZNA-Kg-l9g"; */
+"ZNA-Kg-l9g.text" = "About The Driver";
+
+/* Class = "UILabel"; text = "Distraction"; ObjectID = "Zdu-R0-IaD"; */
+"Zdu-R0-IaD.text" = "Distraction";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "aOO-oR-fuE"; */
+"aOO-oR-fuE.text" = "0";
+
+/* Class = "UILabel"; text = "About The Tracks"; ObjectID = "b1H-y3-ucp"; */
+"b1H-y3-ucp.text" = "About The Tracks";
+
+/* Class = "UILabel"; text = "Time:"; ObjectID = "dEg-vB-h8M"; */
+"dEg-vB-h8M.text" = "Time:";
+
+/* Class = "UIViewController"; title = "splash"; ObjectID = "dKd-nB-fG3"; */
+"dKd-nB-fG3.title" = "splash";
+
+/* Class = "UILabel"; text = "S"; ObjectID = "dxl-yX-Vxi"; */
+"dxl-yX-Vxi.text" = "S";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "eBX-84-h36"; */
+"eBX-84-h36.text" = "Label";
+
+/* Class = "UILabel"; text = "About The Drive Game"; ObjectID = "erA-vN-Miv"; */
+"erA-vN-Miv.text" = "About The Drive Game";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "fk4-pD-kZh"; */
+"fk4-pD-kZh.text" = "0";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "gTr-5S-E2n"; */
+"gTr-5S-E2n.text" = "Name";
+
+/* Class = "UINavigationController"; title = "root"; ObjectID = "hCv-SF-f3b"; */
+"hCv-SF-f3b.title" = "root";
+
+/* Class = "UILabel"; text = "Total Crashes"; ObjectID = "hOt-k9-jrO"; */
+"hOt-k9-jrO.text" = "Total Crashes";
+
+/* Class = "UIViewController"; title = "InfoSelectTrackVC"; ObjectID = "iVf-iI-C6T"; */
+"iVf-iI-C6T.title" = "InfoSelectTrackVC";
+
+/* Class = "UILabel"; text = "S"; ObjectID = "iZc-fN-gjd"; */
+"iZc-fN-gjd.text" = "S";
+
+/* Class = "UILabel"; text = "="; ObjectID = "j1O-S1-h9t"; */
+"j1O-S1-h9t.text" = "=";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "j2J-rN-knt"; */
+"j2J-rN-knt.normalTitle" = "Button";
+
+/* Class = "UIViewController"; title = "settings"; ObjectID = "j6p-oN-Kld"; */
+"j6p-oN-Kld.title" = "settings";
+
+/* Class = "UIViewController"; title = "InfoStartVC"; ObjectID = "jCb-yp-7T2"; */
+"jCb-yp-7T2.title" = "InfoStartVC";
+
+/* Class = "UIViewController"; title = "TrackStatsVC"; ObjectID = "khi-MC-6dL"; */
+"khi-MC-6dL.title" = "TrackStatsVC";
+
+/* Class = "UILabel"; text = "OFF"; ObjectID = "lLi-HV-7iR"; */
+"lLi-HV-7iR.text" = "OFF";
+
+/* Class = "UILabel"; text = "HORNS"; ObjectID = "mpp-Jx-5uB"; */
+"mpp-Jx-5uB.text" = "HORNS";
+
+/* Class = "UITextView"; text = "The drive game is a test of motor control and ability to cope with driving during a distraction.\n\nInitially, use the slow car on each of the tracks, and obtain some lap times and overall score.\n\nBuild up skill and move to faster cars, if you dare!\n\nSelect the distraction switch, and at random, you will hear a horn, and you need to touch the horn button as soon as you can, whist continuing to drive. Missing the horn is not good for your times.\n\nDistraction: This sets a new task of pressing the horn button evrey time you hear the horn and see the button appear.  You are timed for your reaction to do this.\n\nFX:Volume:  This the volume of the sound effects played during the game.\n\nRace Lpas:  Select the number of laps to race.  Results are only given for completed full races.\n\nDrive Music:  Some background music whilst you drive."; ObjectID = "nsb-cP-CqZ"; */
+"nsb-cP-CqZ.text" = "The drive game is a test of motor control and ability to cope with driving during a distraction.\n\nInitially, use the slow car on each of the tracks, and obtain some lap times and overall score.\n\nBuild up skill and move to faster cars, if you dare!\n\nSelect the distraction switch, and at random, you will hear a horn, and you need to touch the horn button as soon as you can, whist continuing to drive. Missing the horn is not good for your times.\n\nDistraction: This sets a new task of pressing the horn button evrey time you hear the horn and see the button appear.  You are timed for your reaction to do this.\n\nFX:Volume:  This the volume of the sound effects played during the game.\n\nRace Lpas:  Select the number of laps to race.  Results are only given for completed full races.\n\nDrive Music:  Some background music whilst you drive.";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "oE1-KD-JWv"; */
+"oE1-KD-JWv.text" = "0";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "pRy-jO-wyb"; */
+"pRy-jO-wyb.text" = "0";
+
+/* Class = "UILabel"; text = "S"; ObjectID = "pSn-ib-rHd"; */
+"pSn-ib-rHd.text" = "S";
+
+/* Class = "UILabel"; text = "EMail"; ObjectID = "q49-9e-kWw"; */
+"q49-9e-kWw.text" = "EMail";
+
+/* Class = "UILabel"; text = "Car"; ObjectID = "s0r-tJ-hil"; */
+"s0r-tJ-hil.text" = "Car";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "sHO-fS-Azu"; */
+"sHO-fS-Azu.text" = "0";
+
+/* Class = "UILabel"; text = "Your Track Statistics"; ObjectID = "tmX-Tn-ucq"; */
+"tmX-Tn-ucq.text" = "Your Track Statistics";
+
+/* Class = "UILabel"; text = "Version No:"; ObjectID = "vTP-EL-5xR"; */
+"vTP-EL-5xR.text" = "Version No:";
+
+/* Class = "UILabel"; text = "S"; ObjectID = "vbF-qQ-0PD"; */
+"vbF-qQ-0PD.text" = "S";
+
+/* Class = "UILabel"; text = "Fastest"; ObjectID = "wgh-rZ-X3m"; */
+"wgh-rZ-X3m.text" = "Fastest";
+
+/* Class = "UILabel"; text = "Race Time"; ObjectID = "xrE-mj-LtJ"; */
+"xrE-mj-LtJ.text" = "Race Time";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "zCS-2c-Fui"; */
+"zCS-2c-Fui.text" = "0";

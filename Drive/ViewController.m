@@ -434,7 +434,7 @@
     startLampImageView.hidden=YES;
     _finishLampImageView.hidden=YES;
     mySingleton *singleton = [mySingleton sharedSingleton];
-    NSString *completedMessage = [NSString stringWithFormat:@"You Have Completed %@ Laps.\n\nThe Race Times Will Follow...",singleton.laps];
+    NSString *completedMessage = [NSString stringWithFormat:@"You Have Completed %@ Laps.\n\nRace Times Will Follow...",singleton.laps];
     NSString *notFinishMessage = @"You Did Not Finish !\n\nYou Will Have to Start Again.";
     NSString *bodyMessage      = @"... This Race is Now Over ...\n\n";
     
@@ -443,14 +443,14 @@
                                message:bodyMessage
                               delegate:nil
                      cancelButtonTitle:nil
-                     otherButtonTitles:nil];
+                     otherButtonTitles:nil]; //nil];
     [alert show]; // show the alert then...
     if (didWin2) {
         //stats and times, completed
         [self performSelector:@selector(p_goBackStats:) withObject:alert afterDelay:3.0];
             }else{
         //you did not finish or cancelled, just start again... consider part stats, ie no email
-        [self performSelector:@selector(p_goBack:) withObject:alert afterDelay:3];
+        [self performSelector:@selector(p_goBack:)      withObject:alert afterDelay:3.0];
     }
 }
 
