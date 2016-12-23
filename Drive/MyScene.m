@@ -1029,7 +1029,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 
 - (void)p_analogControlUpdated:(AnalogControl *)analogControl {
     //if race is at start lamp phase, return
-    if (started ==YES) {
+    if (started == YES) {
  
         // Negate the y-axis to bridge a gap between SpriteKit and UIKit
         self.car.physicsBody.velocity = CGVectorMake(
@@ -1096,7 +1096,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             //NSLog(@"a- lap time %d: %f", x, reactionTime[x-1]);
         }
 
-        for (int x=0; x<xcounter-1; x+=1) {
+        for (int x=0; x<xcounter; x+=1) {
             reactionTime[x] = (reactionTime[x] / 1000);
             //NSLog(@"b- lap time %d: %f", x+1, reactionTime[x]);
         }
@@ -1104,7 +1104,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         //correct 1st lap time for lamps 4 seconds start
         reactionTime[0] = reactionTime[0]-4.0f;
         
-        for (int x=0; x<xcounter-1; x+=1) {
+        for (int x=0; x<xcounter; x+=1) {
             
             temp = reactionTime[x];
             singleton.lapTimes[x] = [NSString stringWithFormat:@"%0.3f", temp];
@@ -1131,7 +1131,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         singleton.totalCrashes = [NSString stringWithFormat:@"%li",totalCrashes];
         
         averageLap = raceTime / (xcounter-1);
-        NSLog(@"average lap time %.3f",  raceTime / (xcounter-1));
+        //NSLog(@"average lap time %.3f",  raceTime / (xcounter-1));
 
         
         //you finished the race, give the stats
@@ -1142,7 +1142,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         
         for (int x=0; x<horns; x+=1) {
             //correct the lag for horn time key presses
-            hornReactionTime[x] = hornReactionTime[x] - 0.2f;
+            hornReactionTime[x] = hornReactionTime[x] - 0.1f;
             if (hornReactionTime[x] < 0) {
                 // make sure not less than zero
                 hornReactionTime[x] = 0.001;
@@ -1151,8 +1151,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             
             if ([singleton.distractionOn isEqual:@"1"]){
                 //cant be longer than the lap time, 1 distraction
-                if (hornReactionTime[x] > reactionTime[y]) {
-                    hornReactionTime[x] = reactionTime[y]; //raceTime; // long time, you missed pressing the button
+                if (hornReactionTime[x] > reactionTime[x]) {
+                    hornReactionTime[x] = reactionTime[x]; //raceTime; // long time, you missed pressing the button
                     //missed the horn
                     missedHorn[x] = 1;
                 }else{
@@ -1168,7 +1168,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                     z = 0;
                 }
                 if (hornReactionTime[x] > reactionTime[y]) {
-                    hornReactionTime[x] = reactionTime[y]/2; // long time, you missed pressing the button
+                    hornReactionTime[x] = reactionTime[y] / 2; // long time, you missed pressing the button
                     //missed the horn
                     missedHorn[x] = 1;
                 }else{
