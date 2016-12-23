@@ -571,7 +571,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         gettimeofday(&time, NULL);
         millis3 = (time.tv_sec * 1000) + (time.tv_usec / 1000);
 
-        temp3 = (millis3-millis2)/1000;
+        temp3 = (millis3-millis2) / 1000;
         
         //look for the horn button being pressed
         if (singleton.hornsShowing == YES) {
@@ -1104,7 +1104,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         //correct 1st lap time for lamps 4 seconds start
         reactionTime[0] = reactionTime[0]-4.0f;
         
-        for (int x=0; x<xcounter; x+=1) {
+        for (int x=0; x<xcounter-1; x+=1) {
             
             temp = reactionTime[x];
             singleton.lapTimes[x] = [NSString stringWithFormat:@"%0.3f", temp];
@@ -1200,8 +1200,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         Float32 _missedTimes    = 0.0f; // just the time total of the missed ones
         Float32 _pressedTimes   = 0.0f; // just the reactions
         Float32 _averageReacted = 0.0f;
-        Float32 _slowestReacted = -999999.0f;
-        Float32 _fastestReacted = 999999.0f;
+        Float32 _slowestReacted = 0.0f;
+        Float32 _fastestReacted = 999.9f;
         
         for (int x=0; x<horns; x+=1) {
             //get time for reaction recorded
@@ -1217,6 +1217,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                 //reacted horn
                 _pressedHorns++;
                 _pressedTimes =_pressedTimes + temp1;//update time sum
+                
                 if (_slowestReacted < temp1) {
                     _slowestReacted = temp1;
                 }
@@ -1264,9 +1265,21 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         singleton.slowestHorn  = [NSString stringWithFormat:@"%.3f",  slowestHorn];
         singleton.averageHorn  = [NSString stringWithFormat:@"%.3f",  averageHorn];
         
-        singleton.fastestReaction  = [NSString stringWithFormat:@"%.3f",  _fastestReacted];
-        singleton.slowestReaction  = [NSString stringWithFormat:@"%.3f",  _slowestReacted];
-        singleton.averageReaction  = [NSString stringWithFormat:@"%.3f",  _averageReacted];
+        if (_fastestReacted==999.9) {
+            singleton.fastestReaction  = @"All Horns Missed";
+        }else{
+            singleton.fastestReaction  = [NSString stringWithFormat:@"%.3f",  _fastestReacted];
+        }
+        if (_slowestReacted==0.0) {
+            singleton.slowestReaction  = @"All Horns Missed";
+        }else{
+            singleton.slowestReaction  = [NSString stringWithFormat:@"%.3f",  _slowestReacted];
+        }
+        if (_slowestReacted==0.0) {
+            singleton.averageReaction  = @"All Horns Missed";
+        }else{
+            singleton.averageReaction  = [NSString stringWithFormat:@"%.3f",  _averageReacted];
+        }
         
         singleton.slowestLap   = [NSString stringWithFormat:@"%0.3f", slowestLap];
         singleton.fastestLap   = [NSString stringWithFormat:@"%0.3f", fastestLap];
