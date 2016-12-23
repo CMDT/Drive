@@ -26,7 +26,7 @@
 
 @implementation SelectDriverViewController
 
-@synthesize driverName, email;
+@synthesize carView, driverName, email;
 
 - (void)viewDidLoad {
     
@@ -77,6 +77,22 @@
     _tyre2.hidden=YES;
     _bale.hidden=YES;
     _crate.hidden=YES;
+    carView.alpha=1;
+    
+    carView.layer.anchorPoint = CGPointMake(.5,.5);
+    [UIView animateWithDuration:1.0
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+     
+                     animations:^{
+                         
+                         CGAffineTransform scaleTrans = CGAffineTransformMakeScale(1, 1);
+                         
+                         CGAffineTransform rotateTrans1 = CGAffineTransformMakeRotation(270* M_PI / 180);
+                         carView.transform = CGAffineTransformConcat(scaleTrans, rotateTrans1);
+                     }completion:nil];
+    carView.alpha=0.5;
+
     
     //check the level and bring the graphics back according to level selected
     //NSLog(@"level  %@", singleton.trackNo);

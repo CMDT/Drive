@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *bale;
 @property (weak, nonatomic) IBOutlet UIImageView *crate;
 
+@property (strong, nonatomic) IBOutlet UIImageView * carView;
+
 // definitions for functions follow
 - (void)viewDidLoad;
 - (void)viewDidAppear:(BOOL)animated;

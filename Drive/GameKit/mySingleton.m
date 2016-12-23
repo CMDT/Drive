@@ -52,6 +52,15 @@ static mySingleton * sharedSingleton = nil;
             totalHorn,
             distractionOn,
             masterScore,
+
+            missedTime,
+            pressedTime,
+            fastestReaction,
+            slowestReaction,
+            averageReaction,
+            missed,
+            reacted,
+
 // float64
             wallCrashMult,
             hazCrashMult,
@@ -118,7 +127,7 @@ static mySingleton * sharedSingleton = nil;
         resultStrings       = @"";
         subjectName         = @"Sub";
         resultStrings       = @"";
-        versionNumber       = @"3.1.6 - 23.12.16";
+        versionNumber       = @"3.2.0 - 23.12.16";
         
         counter             = 0;
         laps                = @"0";
@@ -141,6 +150,15 @@ static mySingleton * sharedSingleton = nil;
         totalHorn           = @"999999";
         distractionOn       = @"0";
         masterScore         = @"0";
+        
+        missedTime          = @"999999";
+        pressedTime         = @"999999";
+        fastestReaction     = @"999999";
+        slowestReaction     = @"999999";
+        averageReaction     = @"999999";
+        missed              = @"0";
+        reacted             = @"0";
+        
         wallCrashMult       = 0.05;
         hazCrashMult        = 0.1;
         hornsMulti          = 1.0;

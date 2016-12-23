@@ -54,12 +54,13 @@
                                               cancelButtonTitle:@"I Agree"
                                               otherButtonTitles:@"I Do Not Agree", nil];
 
-    UILabel *txtField = [[UILabel alloc] initWithFrame:CGRectMake(12.0, 25.0, 260.0, 95.0)];
-    [txtField setFont:[UIFont fontWithName:@"Courier" size:(12.0)]];
-    txtField.numberOfLines = 16;
+    UILabel *txtField = [[UILabel alloc] initWithFrame:CGRectMake(12.0, 25.0, 400.0, 300.0)]; //x,y,width,height
+    [txtField setFont:[UIFont fontWithName:@"Courier" size:(10.0)]];
+    txtField.numberOfLines = 17;
     txtField.textColor = [UIColor darkGrayColor];
-    txtField.text = @"To see details on how to \nuse this Application\n and adjust its settings, \nplease read the notes in \nthe 'Information' sections (i).\n\nSafety Note:\nTake regular breaks\nand avoid strain.\nIf you develop discomfort\n using this App,\nyou must stop using it\n and seek advice.\n\nThis Application is NOT\nfor clinical use. v3.1.5 22.12.16";
+    txtField.text = @"To see details on how to use this\nApplication and adjust its settings,\nplease read the notes in the\n'Information' sections (i).\n\n* Safety Note *\nTake regular breaks and avoid strain.\nIf you develop discomfort using this App,\nyou must stop using it and seek advice.\n\nThis Application is NOT\nfor clinical use. v3.2.0 23.12.16\n";
     txtField.backgroundColor = [UIColor clearColor];
+    txtField.tintColor = [UIColor redColor];
     txtField.textAlignment = NSTextAlignmentCenter;
     [alertView addSubview:txtField];
     [alertView setValue:txtField forKeyPath:@"accessoryView"]; //for ios 7 and above

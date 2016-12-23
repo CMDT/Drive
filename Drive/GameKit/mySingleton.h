@@ -49,6 +49,15 @@
     NSString * fastestHorn;
     NSString * slowestHorn;
     NSString * averageHorn;
+    
+    NSString * fastestReacted;
+    NSString * slowestReacted;
+    NSString * averageReacted;
+    NSString * missedTime;
+    NSString * PressedTime;
+    NSString * missed;
+    NSString * reacted;
+    
     NSString * totalHorn;
     NSString * distractionOn;
     NSString * masterScore;
@@ -96,6 +105,15 @@
 @property (nonatomic, retain) NSString * fastestHorn;
 @property (nonatomic, retain) NSString * slowestHorn;
 @property (nonatomic, retain) NSString * averageHorn;
+
+@property (nonatomic, retain) NSString * missedTime;
+@property (nonatomic, retain) NSString * pressedTime;
+@property (nonatomic, retain) NSString * missed;
+@property (nonatomic, retain) NSString * reacted;
+@property (nonatomic, retain) NSString * fastestReaction;
+@property (nonatomic, retain) NSString * slowestReaction;
+@property (nonatomic, retain) NSString * averageReaction;
+
 @property (nonatomic, retain) NSString * totalHorn;
 @property (nonatomic, retain) NSString * distractionOn;
 @property (nonatomic, retain) NSString * masterScore;
