@@ -299,7 +299,28 @@
         [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Fastest Horn: %@, Slowest Horn: %@, Average Horn: %@ <br/>",singleton.fastestHorn,singleton.slowestHorn, singleton.averageHorn]];
         singleton.counter = singleton.counter+1;
         
-        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Total Horn Time: %@ <br/>",singleton.totalHorn]];
+        //new section on missed horns and reactions of horns
+        /*fastestReacted;
+        slowestReacted;
+        averageReacted;
+        missedTime;
+        PressedTime;
+        missed;
+        reacted;*/
+        
+        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Horns Missed,     %@ <br/>",singleton.missed]];
+        singleton.counter = singleton.counter+1;
+        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Horns Reacted To, %@ <br/>",singleton.reacted]];
+        singleton.counter = singleton.counter+1;
+        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Missed Horn Time Total,  %@ <br/>",singleton.missedTime]];
+        singleton.counter = singleton.counter+1;
+        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Reacted Horn Time Total, %@ <br/>",singleton.pressedTime]];
+        singleton.counter = singleton.counter+1;
+        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Fastest Reacted Horn Time Total, %@ <br/>",singleton.fastestReaction]];
+        singleton.counter = singleton.counter+1;
+        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Slowest Reacted Horn Time Total, %@ <br/>",singleton.slowestReaction]];
+        singleton.counter = singleton.counter+1;
+        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Average Reacted Only Horn Time,  %@ <br/>",singleton.averageReaction]];
         singleton.counter = singleton.counter+1;
     }
 
@@ -327,7 +348,7 @@
     [singleton.cardReactionTimeResult addObject:@" <br/>" ];
     singleton.counter = singleton.counter+1;
         
-        [singleton.cardReactionTimeResult addObject:@"Horn No, Horn Reaction Time<br/>"];
+        [singleton.cardReactionTimeResult addObject:@"Horn No, Horn Reaction Time, Missed horn<br/>"];
         singleton.counter = singleton.counter+1;
         // list the horns and the timings
         for (int x=0; x<horns; x+=1) {

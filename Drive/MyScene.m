@@ -1097,7 +1097,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         }
 
         for (int x=0; x<xcounter-1; x+=1) {
-            reactionTime[x] = (reactionTime[x]/1000);
+            reactionTime[x] = (reactionTime[x] / 1000);
             //NSLog(@"b- lap time %d: %f", x+1, reactionTime[x]);
         }
         
@@ -1131,7 +1131,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         singleton.totalCrashes = [NSString stringWithFormat:@"%li",totalCrashes];
         
         averageLap = raceTime / (xcounter-1);
-        NSLog(@"average lap time %.3f",  raceTime/(xcounter-1));
+        NSLog(@"average lap time %.3f",  raceTime / (xcounter-1));
 
         
         //you finished the race, give the stats
@@ -1142,7 +1142,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         
         for (int x=0; x<horns; x+=1) {
             //correct the lag for horn time key presses
-            hornReactionTime[x] = hornReactionTime[x]-0.3f;
+            hornReactionTime[x] = hornReactionTime[x] - 0.2f;
             if (hornReactionTime[x] < 0) {
                 // make sure not less than zero
                 hornReactionTime[x] = 0.001;
@@ -1154,9 +1154,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                 if (hornReactionTime[x] > reactionTime[y]) {
                     hornReactionTime[x] = reactionTime[y]; //raceTime; // long time, you missed pressing the button
                     //missed the horn
-                    missedHorn[x]=1;
+                    missedHorn[x] = 1;
                 }else{
-                    missedHorn[x]=0;
+                    missedHorn[x] = 0;
                 }
             }
             
@@ -1170,9 +1170,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                 if (hornReactionTime[x] > reactionTime[y]) {
                     hornReactionTime[x] = reactionTime[y]/2; // long time, you missed pressing the button
                     //missed the horn
-                    missedHorn[x]=1;
+                    missedHorn[x] = 1;
                 }else{
-                    missedHorn[x]=0;
+                    missedHorn[x] = 0;
                 }
             }
             if ([singleton.distractionOn isEqual:@"3"]){
@@ -1183,11 +1183,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                     z = 0;
                 }
                 if (hornReactionTime[x] > reactionTime[y]) {
-                    hornReactionTime[x] = reactionTime[y]/3; // long time, you missed pressing the button
+                    hornReactionTime[x] = reactionTime[y] / 3; // long time, you missed pressing the button
                     //missed the horn
-                    missedHorn[x]=1;
+                    missedHorn[x] = 1;
                 }else{
-                    missedHorn[x]=0;
+                    missedHorn[x] = 0;
                 }
             }
                 //NSLog(@"horn time %d: %.3f S", x+1, hornReactionTime[x]);
@@ -1195,31 +1195,32 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         
         //averages
         Float32 _hornTime       = 0.0f;
-        int missedHorns         = 0; //counter
+        int     _missedHorns    = 0; //counter
+        int     _pressedHorns   = 0; //counter
         Float32 _missedTimes    = 0.0f; // just the time total of the missed ones
         Float32 _pressedTimes   = 0.0f; // just the reactions
         Float32 _averageReacted = 0.0f;
-        Float32 _slowestReacted = 999.0f;
-        Float32 _fastestReacted = -999.0f;
+        Float32 _slowestReacted = -999999.0f;
+        Float32 _fastestReacted = 999999.0f;
         
         for (int x=0; x<horns; x+=1) {
+            //get time for reaction recorded
             temp1 = hornReactionTime[x];
+            
             //NSLog(@"horn time %d: %.f mS",x+1, temp1);
             
-            missedHorns = missedHorns+missedHorn[x];
-            
             if (missedHorn[x] == 1) {
-                //missed
-                _missedTimes++;
-                
+                //missed horn
+                _missedHorns++;
+                _missedTimes = _missedTimes + temp1;//update time sum
             }else{
                 //reacted horn
-                _pressedTimes++;
-                _averageReacted =_averageReacted+hornReactionTime[x];
+                _pressedHorns++;
+                _pressedTimes =_pressedTimes + temp1;//update time sum
                 if (_slowestReacted < temp1) {
                     _slowestReacted = temp1;
                 }
-                if (_fastestReacted> temp1) {
+                if (_fastestReacted > temp1) {
                     _fastestReacted = temp1;
                 }
                 if (_numOfLaps == 1) {
@@ -1240,14 +1241,24 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             }
             _hornTime = _hornTime + temp1; //sum of time all horns, missed and reacted
         }
-        averageHorn = _hornTime / (horns);
-        
-        _averageReacted = _averageReacted / _averageReacted;
+        if (horns > 0) {
+            averageHorn = _hornTime / horns;
+            if (_pressedHorns > 0) {
+                _averageReacted = _pressedTimes / _pressedHorns;
+            } else {
+                _averageReacted = 0;
+            }
+        } else {
+            averageHorn = 0;
+        }
+
         //NSLog(@"ave horn time %.3f S", averageHorn);
         
         singleton.totalHorn    = [NSString stringWithFormat:@"%.3f",  _hornTime];
         singleton.missedTime   = [NSString stringWithFormat:@"%.3f",  _missedTimes];
         singleton.pressedTime  = [NSString stringWithFormat:@"%.3f",  _pressedTimes];
+        singleton.missed       = [NSString stringWithFormat:@"%d",    _missedHorns];
+        singleton.reacted      = [NSString stringWithFormat:@"%d",    _pressedHorns];
         
         singleton.fastestHorn  = [NSString stringWithFormat:@"%.3f",  fastestHorn];
         singleton.slowestHorn  = [NSString stringWithFormat:@"%.3f",  slowestHorn];
@@ -1283,9 +1294,10 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             NSLog(@"react lap: %@", singleton.lapTimes[x]);
         }
         for (int x=0; x<horns; x+=1) {
-            singleton.hornTimes[x] = [NSString stringWithFormat:@"%i, %.3f",
+            singleton.hornTimes[x] = [NSString stringWithFormat:@"%i, %.3f, %i",
                                      x+1,
-                                     hornReactionTime[x]
+                                     hornReactionTime[x],
+                                     missedHorn[x]
                                      ];
             
             //NSLog(@"horn  lap: %@", singleton.hornTimes[x]);
@@ -1294,6 +1306,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     
     //not on game centre yet
     //[[GameKitHelper sharedGameKitHelper] reportAchievements:achievements];
+    
+    //not sure why, but if the distraction was on, it has not reser, so do it now:
+    singleton.distractionOn=@"0";
 }
 
 #pragma mark - Key-Value Observer

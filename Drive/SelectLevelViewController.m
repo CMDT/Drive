@@ -29,12 +29,13 @@
     _speedo1.hidden=YES;
     _speedo2.hidden=YES;
     _speedo3.hidden=YES;
-    
 }
+
 - (void)viewDidAppear:(BOOL)animated{
     mySingleton *singleton = [mySingleton sharedSingleton];
     //check the car power/speed and bring the graphics back according to level selected
     //NSLog(@"car  %@", singleton.carNo);
+    
     if([singleton.carNo isEqual:@"1"]){
         /*_car1.hidden=NO;
         _car2.hidden=YES;
