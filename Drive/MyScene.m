@@ -1088,13 +1088,14 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         if (xcounter < 0) {
             xcounter = 0;
         }
-        
-        for (int x=1; x<xcounter; x+=1) {
+        int x;
+        for (x=1; x<xcounter; x+=1) {
             temp1 = reactionTime[x];
             temp2 = reactionTime[x-1];
             reactionTime[x-1] = (temp1-temp2);
             //NSLog(@"a- lap time %d: %f", x, reactionTime[x-1]);
         }
+        reactionTime[x]=reactionTime[x-1];
 
         for (int x=0; x<xcounter; x+=1) {
             reactionTime[x] = (reactionTime[x] / 1000);
@@ -1137,8 +1138,10 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         //you finished the race, give the stats
         
         horns = [singleton.hornsPlayed intValue];
-        int y=0;
+        int y=1;
         int z=0;
+        
+        hornReactionTime[0]=hornReactionTime[1];
         
         for (int x=0; x<horns; x+=1) {
             //correct the lag for horn time key presses
@@ -1201,7 +1204,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         Float32 _pressedTimes   = 0.0f; // just the reactions
         Float32 _averageReacted = 0.0f;
         Float32 _slowestReacted = 0.0f;
-        Float32 _fastestReacted = 999.9f;
+        Float32 _fastestReacted = 999.900;
         
         for (int x=0; x<horns; x+=1) {
             //get time for reaction recorded
@@ -1224,9 +1227,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                 if (_fastestReacted > temp1) {
                     _fastestReacted = temp1;
                 }
-                if (_numOfLaps == 1) {
-                    _fastestReacted = _slowestReacted;
-                }
+                //if (_numOfLaps == 1) {
+                   // _fastestReacted = _slowestReacted;
+                //}
             }
             
             if (slowestHorn < temp1) {
@@ -1247,7 +1250,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             if (_pressedHorns > 0) {
                 _averageReacted = _pressedTimes / _pressedHorns;
             } else {
-                _averageReacted = 0;
+                _averageReacted = 0.000f;
             }
         } else {
             averageHorn = 0;
@@ -1265,17 +1268,17 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         singleton.slowestHorn  = [NSString stringWithFormat:@"%.3f",  slowestHorn];
         singleton.averageHorn  = [NSString stringWithFormat:@"%.3f",  averageHorn];
         
-        if (_fastestReacted==999.9) {
+        if (_slowestReacted == 0.0) {
             singleton.fastestReaction  = @"All Horns Missed";
         }else{
             singleton.fastestReaction  = [NSString stringWithFormat:@"%.3f",  _fastestReacted];
         }
-        if (_slowestReacted==0.0) {
+        if (_slowestReacted == 0.0) {
             singleton.slowestReaction  = @"All Horns Missed";
         }else{
             singleton.slowestReaction  = [NSString stringWithFormat:@"%.3f",  _slowestReacted];
         }
-        if (_slowestReacted==0.0) {
+        if (_averageReacted == 0.0) {
             singleton.averageReaction  = @"All Horns Missed";
         }else{
             singleton.averageReaction  = [NSString stringWithFormat:@"%.3f",  _averageReacted];
