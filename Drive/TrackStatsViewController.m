@@ -469,11 +469,13 @@
     MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
     [mailComposer setMailComposeDelegate:self];
     if ([MFMailComposeViewController canSendMail]){
-        [mailComposer setToRecipients:[NSArray arrayWithObjects:singleton.email ,Nil]];
+        [mailComposer setToRecipients:[NSArray arrayWithObjects:singleton.email, Nil]];
         
         //[mailComposer setSubject:@"iPad Restults from DRIVE App"];
         [mailComposer setSubject:
-         [NSString stringWithFormat:@"%@ - DRIVE, %@, %@.", [NSString stringWithFormat:@"%@", singleton.subjectName], singleton.testDate, singleton.testTime]];
+         //[NSString stringWithFormat:@"%@ - DRIVE, %@, %@.", [NSString stringWithFormat:@"%@", singleton.subjectName], singleton.testDate, singleton.testTime]];
+         [NSString stringWithFormat:@"%@", [NSString stringWithFormat:@"%@", singleton.subjectName]]
+         ];
         
         //[mailComposer setMessageBody:@"Dear Drive User: " isHTML:YES];
         

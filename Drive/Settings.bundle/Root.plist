@@ -60,26 +60,42 @@
 			<key>IsSecure</key>
 			<false/>
 			<key>KeyboardType</key>
-			<string>NumberPad</string>
+			<string>NumbersAndPunctuation</string>
 			<key>AutocapitalizationType</key>
 			<string>None</string>
 		</dict>
-        <dict>
-            <key>Type</key>
-            <string>PSTextFieldSpecifier</string>
-            <key>Title</key>
-            <string>Horn Position Y</string>
-            <key>Key</key>
-            <string>hornPosY</string>
-            <key>DefaultValue</key>
-            <string>85</string>
-            <key>IsSecure</key>
-            <false/>
-            <key>KeyboardType</key>
-            <string>NumberPad</string>
-            <key>AutocapitalizationType</key>
-            <string>None</string>
-        </dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Horn Position Y</string>
+			<key>Key</key>
+			<string>hornPosY</string>
+			<key>DefaultValue</key>
+			<string>85</string>
+			<key>IsSecure</key>
+			<false/>
+			<key>KeyboardType</key>
+			<string>NumbersAndPunctuation</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Car Size (0.25 - 1.00)</string>
+			<key>Key</key>
+			<string>carSize</string>
+			<key>DefaultValue</key>
+			<string>0.80</string>
+			<key>AutocorrectionType</key>
+			<string>Default</string>
+			<key>KeyboardType</key>
+			<string>NumbersAndPunctuation</string>
+			<key>IsSecure</key>
+			<false/>
+		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>

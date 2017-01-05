@@ -69,6 +69,7 @@
     //moves the horn button base location from centre part to whereever set, passed to iPad settings and saved. loaded on start
     float hornPosX;
     float hornPosY;
+    float carSize;
     
 }
 @property (nonatomic) BOOL    hornsShowing;
@@ -129,6 +130,7 @@
 
 @property (nonatomic)          float     hornPosX;
 @property (nonatomic)          float     hornPosY;
+@property (nonatomic)          float     carSize;
 
 //set up singleton shared
 

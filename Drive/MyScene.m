@@ -56,9 +56,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     //Float32 hornTime;
     Float32 masterScore;
     double  temp;
-    int     angAdd1;
-    int     angAdd2;
-    int     angAdd3;
+    float     angAdd1;
+    float     angAdd2;
+    float     angAdd3;
     Float32 sign;
     Float32 tempt;
     long    totalCrashes;
@@ -185,6 +185,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         tempWall = 0;
         xcounter = 1;
         horns    = 0;
+        lap      = 1;
+        
         singleton.hornTimerCounter = 0;
         
         angAdd1  =  6; //first lap reasonable values for distraction triggers
@@ -433,6 +435,10 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             [self runAction:sequence];
 */
             
+            lap=lap+1;
+            srand48(arc4random()); // seed the random numbers
+
+            
             //make a randon angle for horn trigger position as new lap started
             if (horn_tt < 2) {
                 
@@ -442,13 +448,13 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                     case 1:
                         //1 distraction
                         if (lap>1) {
-                            angAdd1  = 3+(((float)rand() /RAND_MAX)*6); //don't beep just past start line (start at 2), and avoid the very last part 9) so not to clash with lap sound
-                            sign     =   (((float)rand() /RAND_MAX)*2);   //make negative/positive at random
+                            angAdd1  = 1+((float)arc4random() / ARC4RANDOM_MAX)*7.0f; //don't beep just past start line (start at 2), and avoid the very last part 9) so not to clash with lap sound
+                            sign     = ((float)arc4random() / ARC4RANDOM_MAX)*2.0f;   //make negative/positive at random
                             
                             if(sign > 1.0){
                                 angAdd1 = -1 * angAdd1; //reverse sign
                             }
-                            //NSLog(@"sign ang = %.3f %d", sign, angAdd);
+                            //NSLog(@"sign ang = %.2f %f", sign, angAdd1);
                         }
                         
                     break;
@@ -456,11 +462,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                     case 2:
                         if (lap>1) {
                         //2 distractions, one in top half of track, one in the bottom
-                            angAdd1 =       3+(((float)rand() /RAND_MAX)*6);
-                            angAdd2 = -1 * (3+(((float)rand() /RAND_MAX)*6)); //reverse sign for second horn
+                            angAdd1 =          1+((float)arc4random() / ARC4RANDOM_MAX)*7.0f;
+                            angAdd2 = -1.0f *    ((float)arc4random() / ARC4RANDOM_MAX)*8.0f; //reverse sign for second horn
                         
                         if(angAdd1 > 8 && angAdd2 < -7) { // if too close to first beep, space out
-                            angAdd2 = angAdd2+4;
+                            angAdd2 = angAdd2 + 4.0;
                         }
                         }
                         
@@ -470,22 +476,22 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                         if (lap>1) {
                         //3 distractions, first, middle and end =/- a bit of random wobble
                             //1st segment, 2 o clock to 11 o clock
-                            angAdd1 =    (3+(((float)rand() /RAND_MAX)*4));
+                            angAdd1 =       1+ ((float)arc4random() / ARC4RANDOM_MAX)*3.0f;
                             
-                            angAdd2 =        ((float)rand() /RAND_MAX)*2;
-                            sign    =       (((float)rand() /RAND_MAX)*2);   //make negative/positive at random
+                            angAdd2 =        ((float)arc4random() / ARC4RANDOM_MAX)*2.0f;
+                            sign    =        ((float)arc4random() / ARC4RANDOM_MAX)*2.0f;   //make negative/positive at random
                             
                             // both sides of 9 o clock
                             if(sign > 1.0){
-                                angAdd2 = 9 - angAdd2;
+                                angAdd2 = 9.0 - angAdd2;
                             } else {
-                                angAdd2 = -8 + angAdd2;
+                                angAdd2 = -8.0 + angAdd2;
                             }
                             if (angAdd2 == 0) {
-                                angAdd2 =  -7;
+                                angAdd2 =  -7.0;
                             }
                             //3rd segment, 8 o clock to 4 o clock
-                            angAdd3 = -1*(3+(((float)rand() /RAND_MAX)*4));
+                            angAdd3 = -1.0f*(1+(((float)arc4random() / ARC4RANDOM_MAX)*3.0f));
                         }
                     break;
                         
@@ -681,6 +687,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 }
 
 - (void)p_addCarAtPosition:(CGPoint)startPosition {
+    mySingleton *singleton = [mySingleton sharedSingleton];
     _car = ({
         NSString *imageName = [NSString stringWithFormat:@"car_%li", _carType];
         //NSLog(@"Car=%li, Track=%li",_carType,_levelType);
@@ -689,8 +696,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         sprite.position = startPosition;
         
         // make changes to scale car size
-        sprite.xScale = 0.80;
-        sprite.yScale = 0.80;
+        
+        //use car size from singleton
+
+        sprite.xScale = singleton.carSize; //0.8 = default
+        sprite.yScale = singleton.carSize;
         
         sprite.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:sprite.frame.size];
         sprite.physicsBody.categoryBitMask    = CRBodyCar;

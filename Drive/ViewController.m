@@ -20,6 +20,7 @@
 #define kSubject    @"subjectName"
 #define khpx        @"hornPosX"
 #define khpy        @"hornPosY"
+#define kCarSize    @"carSize"
 #define kVersion0   @"version0"
 #define kVersion1   @"version1"
 #define kVersion2   @"version2"
@@ -35,6 +36,7 @@
     UIImageView *fin0;
     UIImageView *fin1;
     BOOL didWin2;
+    float ss; //scale factor start lamps
 }
 
 @property (nonatomic, strong) SKView              * skView;
@@ -74,6 +76,7 @@
     NSString * email; //web site info
     NSString * hpx; // horn graphic location on screen
     NSString * hpy;
+    NSString * carSize;
     
     // for web page link
     //NSURL *url = [NSURL URLWithString:@"http://www.ess.mmu.ac.uk/"];
@@ -144,25 +147,45 @@
         hpy =  @"85";
         [defaults setObject:[NSString stringWithFormat:@"%f", singleton.hornPosY] forKey:khpy];
     }
+    
+    //car size
+    carSize     = [defaults objectForKey:kCarSize];
+    if([carSize isEqualToString: @ "" ] || kCarSize == nil){
+        carSize =  @"0.80";
+        [defaults setObject:[NSString stringWithFormat:@"%f", singleton.carSize] forKey:kCarSize];
+    }
+    
     //bounds check x,y of horn button is in range
     if ([hpx integerValue] <0) {
         hpx=@"0";
+        [defaults setObject:[NSString stringWithFormat:@"%d", 0] forKey:khpx];
     }
-    if ([hpx integerValue] >438) {
-        //438
-        hpx=@"438";
+    if ([hpx integerValue] >437) {
+        hpx=@"437";
+        [defaults setObject:[NSString stringWithFormat:@"%d", 437] forKey:khpx];
     }
     if ([hpy integerValue] <0) {
         hpy=@"0";
+        [defaults setObject:[NSString stringWithFormat:@"%d", 0] forKey:khpy];
     }
-    if ([hpy integerValue] >278) {
+    if ([hpy integerValue] >277) {
         hpy=@"278";
+        [defaults setObject:[NSString stringWithFormat:@"%d", 277] forKey:khpy];
+    }
+    if ([carSize floatValue] <0.25) {
+        carSize=@"0.25";
+        [defaults setObject:[NSString stringWithFormat:@"0.25"] forKey:kCarSize];
+    }
+    if ([carSize floatValue] >1.00) {
+        carSize=@"1.00";
+        [defaults setObject:[NSString stringWithFormat:@"1.00"] forKey:kCarSize];
     }
     
     singleton.subjectName = subjectName;
     singleton.email       = email;
     singleton.hornPosX    = [hpx integerValue];
     singleton.hornPosY    = [hpy integerValue];
+    singleton.carSize     = [carSize floatValue]; //default 0.80
     
     [defaults synchronize];//make sure all are updated
     
@@ -178,13 +201,20 @@
     }else{
         hornBtn.hidden = NO;
     }
+    ss = 1.00;
+    startLampImageView.alpha=0.6;
+    [startLampImageView setImage: st0.image];
     startLampImageView.hidden = NO;
+    startLampImageView.frame = CGRectMake(127, 181, 240*ss, 125*ss);
+    
     self.startDate = [NSDate date];
-    [NSTimer scheduledTimerWithTimeInterval:(0.0f) target:self selector:@selector(startLamp0) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:(0.2f) target:self selector:@selector(startLamp0) userInfo:nil repeats:NO];
 }
 
 -(void)startLamp0 {
+    startLampImageView.alpha=0.6;
     [startLampImageView setImage: st0.image];
+    startLampImageView.frame = CGRectMake(127, 181, 240*ss, 125*ss);
     //start the timer
     self.startDate = [NSDate date];
     [NSTimer scheduledTimerWithTimeInterval:(1.0f) target:self selector:@selector(startLamp1) userInfo:nil repeats:NO];
@@ -193,6 +223,7 @@
 -(void)startLamp1 {
     startLampImageView.alpha=0.6;
     [startLampImageView setImage: st1.image];
+    startLampImageView.frame = CGRectMake(127, 181, 240*ss, 125*ss);
     //start the timer
     self.startDate = [NSDate date];
     [NSTimer scheduledTimerWithTimeInterval:(1.0f) target:self selector:@selector(startLamp2) userInfo:nil repeats:NO];
@@ -201,6 +232,7 @@
 -(void)startLamp2 {
     startLampImageView.alpha=0.8;
     [startLampImageView setImage: st2.image];
+    startLampImageView.frame = CGRectMake(127, 181, 240*ss, 125*ss);
     //start the timer
     self.startDate = [NSDate date];
     [NSTimer scheduledTimerWithTimeInterval:(1.0f) target:self selector:@selector(startLamp3) userInfo:nil repeats:NO];
@@ -208,6 +240,7 @@
 -(void)startLamp3 {
     startLampImageView.alpha=0.9;
     [startLampImageView setImage: st3.image];
+    startLampImageView.frame = CGRectMake(127, 181, 240*ss, 125*ss);
     //start the timer
     self.startDate = [NSDate date];
     [NSTimer scheduledTimerWithTimeInterval:(1.0f) target:self selector:@selector(startLampGO) userInfo:nil repeats:NO];
@@ -216,9 +249,10 @@
 -(void)startLampGO {
     startLampImageView.alpha=1.0;
     [startLampImageView setImage: st0.image];
+    startLampImageView.frame = CGRectMake(127, 181, 240*ss, 125*ss);
     //start the timer
     self.startDate = [NSDate date];
-    [NSTimer scheduledTimerWithTimeInterval:(0.1f) target:self selector:@selector(startGame) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:(1.0f) target:self selector:@selector(startGame) userInfo:nil repeats:NO];
 }
 
 -(void)finishLine0 {
