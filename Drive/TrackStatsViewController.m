@@ -312,8 +312,8 @@
         singleton.counter = singleton.counter+1;
         [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Horns Reacted To, %@ <br/>",singleton.reacted]];
         singleton.counter = singleton.counter+1;
-        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Missed Horn Time Total,  %@ <br/>",singleton.missedTime]];
-        singleton.counter = singleton.counter+1;
+        //[singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Missed Horn Time Total,  %@ <br/>",singleton.missedTime]];
+        //singleton.counter = singleton.counter+1;
         [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Reacted Horn Time Total, %@ <br/>",singleton.pressedTime]];
         singleton.counter = singleton.counter+1;
         [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Fastest Reacted Horn Time Total, %@ <br/>",singleton.fastestReaction]];
