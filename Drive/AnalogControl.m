@@ -32,12 +32,12 @@
 
         UIImageView *baseImageView = [[UIImageView alloc] initWithFrame:self.bounds];
         baseImageView.contentMode  = UIViewContentModeScaleAspectFit;
-        baseImageView.image        = [UIImage imageNamed:@"base"];
+        baseImageView.image        = [UIImage imageNamed:@"base"]; //graphic of knob background
         [self addSubview:baseImageView];
 
         _baseCenter = CGPointMake(CGRectGetWidth(frame) / 2, CGRectGetHeight(frame) / 2);
 
-        _knobImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"knob"]];
+        _knobImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"knob"]]; //graphic of knob top
         _knobImageView.center = _baseCenter;
         
         [self addSubview:_knobImageView];

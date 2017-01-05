@@ -122,12 +122,12 @@ static mySingleton * sharedSingleton = nil;
         hornsShowing        = NO;
         okGoNow             = NO; // App will not run unless set to YES
         email               = @"me@mmu.ac.uk";
-        testDate            = @"24/12/2016";
+        testDate            = @"5/1/2017";
         testTime            = @"10:00";
         resultStrings       = @"";
         subjectName         = @"Sub";
         resultStrings       = @"";
-        versionNumber       = @"3.2.3 - 24.12.16";
+        versionNumber       = @"4.0.0 - 05.01.17";
         
         counter             = 0;
         laps                = @"0";
