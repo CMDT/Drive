@@ -67,6 +67,8 @@ static mySingleton * sharedSingleton = nil;
             hornsMulti,
 // float;
             ambientVolume,
+            hornPosX,
+            hornPosY,
 // int
             hornTimerCounter,
 //bool
@@ -164,6 +166,8 @@ static mySingleton * sharedSingleton = nil;
         hornsMulti          = 1.0;
         ambientVolume       = 0.50;
         hornTimerCounter    = 0;
+        hornPosY            = 305; // set to default pos
+        hornPosY            = 83;
     }
     return self;
 }

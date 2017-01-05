@@ -50,6 +50,38 @@
 		</dict>
 		<dict>
 			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Horn Position X</string>
+			<key>Key</key>
+			<string>hornPosX</string>
+			<key>DefaultValue</key>
+			<string>305</string>
+			<key>IsSecure</key>
+			<false/>
+			<key>KeyboardType</key>
+			<string>NumberPad</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+		</dict>
+        <dict>
+            <key>Type</key>
+            <string>PSTextFieldSpecifier</string>
+            <key>Title</key>
+            <string>Horn Position Y</string>
+            <key>Key</key>
+            <string>hornPosY</string>
+            <key>DefaultValue</key>
+            <string>85</string>
+            <key>IsSecure</key>
+            <false/>
+            <key>KeyboardType</key>
+            <string>NumberPad</string>
+            <key>AutocapitalizationType</key>
+            <string>None</string>
+        </dict>
+		<dict>
+			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
 			<string>DRIVE Version Information</string>
@@ -62,7 +94,7 @@
 			<key>Key</key>
 			<string>version0</string>
 			<key>DefaultValue</key>
-			<string>1.1.3.13.12.15</string>
+			<string>4.0.0.5.1.17</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -78,7 +110,7 @@
 			<key>Key</key>
 			<string>version1</string>
 			<key>DefaultValue</key>
-			<string>MMU (c) 2015</string>
+			<string>MMU (c) 2017</string>
 		</dict>
 		<dict>
 			<key>Type</key>

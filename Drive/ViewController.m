@@ -8,16 +8,18 @@
 //  Updating for ios 10.0.2 and new sound features implementation.
 //
 
-#import "ViewController.h" 
-#import "mySingleton.h"
-#import "TrackStatsViewController.h"
-#import "MyScene.h"
-#import "AnalogControl.h"
-#import "SKTUtils.h"
+#import  "ViewController.h"
+#import  "mySingleton.h"
+#import  "TrackStatsViewController.h"
+#import  "MyScene.h"
+#import  "AnalogControl.h"
+#import  "SKTUtils.h"
 #include "sys/time.h"
 
 #define kEmail      @"emailAddress"
 #define kSubject    @"subjectName"
+#define khpx        @"hornPosX"
+#define khpy        @"hornPosY"
 #define kVersion0   @"version0"
 #define kVersion1   @"version1"
 #define kVersion2   @"version2"
@@ -70,6 +72,8 @@
     NSString * version3; //web site info
     NSString * subjectName; //web site info
     NSString * email; //web site info
+    NSString * hpx; // horn graphic location on screen
+    NSString * hpy;
     
     // for web page link
     //NSURL *url = [NSURL URLWithString:@"http://www.ess.mmu.ac.uk/"];
@@ -118,33 +122,63 @@
 
     //tester name
     subjectName     = [defaults objectForKey:kSubject];
-    if([subjectName isEqualToString: @ "" ]|| email == nil){
+    if([subjectName isEqualToString: @ "" ] || email == nil){
         subjectName =  @"Me";
         [defaults setObject:[NSString stringWithFormat:@"%@", singleton.subjectName] forKey:kSubject];
     }
     //email name
     email     = [defaults objectForKey:kEmail];
-    if([email isEqualToString: @ "" ]|| email == nil){
+    if([email isEqualToString: @ "" ] || email == nil){
         email =  @"Me@mmu.ac.uk";
         [defaults setObject:[NSString stringWithFormat:@"%@", singleton.email] forKey:kEmail];
     }
+    
+    //position of horn
+    hpx     = [defaults objectForKey:khpx];
+    if([hpx isEqualToString: @ "" ] || khpx == nil){
+        hpx =  @"305";
+        [defaults setObject:[NSString stringWithFormat:@"%f", singleton.hornPosX] forKey:khpx];
+    }
+    hpy     = [defaults objectForKey:khpy];
+    if([hpy isEqualToString: @ "" ] || khpy == nil){
+        hpy =  @"85";
+        [defaults setObject:[NSString stringWithFormat:@"%f", singleton.hornPosY] forKey:khpy];
+    }
+    //bounds check x,y of horn button is in range
+    if ([hpx integerValue] <0) {
+        hpx=@"0";
+    }
+    if ([hpx integerValue] >438) {
+        //438
+        hpx=@"438";
+    }
+    if ([hpy integerValue] <0) {
+        hpy=@"0";
+    }
+    if ([hpy integerValue] >278) {
+        hpy=@"278";
+    }
+    
     singleton.subjectName = subjectName;
     singleton.email       = email;
+    singleton.hornPosX    = [hpx integerValue];
+    singleton.hornPosY    = [hpy integerValue];
     
     [defaults synchronize];//make sure all are updated
     
     //versionNumberLab.text   = version0;
     singleton.versionNumber = version0;
-    hornBtn.hidden = NO;
+    hornBtn.hidden = YES;
     hornBtn.alpha  = 0.4;
     pauseBtn.alpha = 0.5;
+    hornBtn.frame = CGRectMake([hpx integerValue], [hpy integerValue], 44, 44);
     
     if ([singleton.distractionOn isEqual:@"0"]) {
-        hornBtn.hidden=YES;
+        hornBtn.hidden = YES;
     }else{
-        hornBtn.hidden=NO;
+        hornBtn.hidden = NO;
     }
-    startLampImageView.hidden=NO;
+    startLampImageView.hidden = NO;
     self.startDate = [NSDate date];
     [NSTimer scheduledTimerWithTimeInterval:(0.0f) target:self selector:@selector(startLamp0) userInfo:nil repeats:NO];
 }

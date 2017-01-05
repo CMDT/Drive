@@ -57,7 +57,6 @@
     NSString * PressedTime;
     NSString * missed;
     NSString * reacted;
-    
     NSString * totalHorn;
     NSString * distractionOn;
     NSString * masterScore;
@@ -66,6 +65,11 @@
     Float64    hornsMulti;
     float      ambientVolume;
     int        hornTimerCounter;
+    
+    //moves the horn button base location from centre part to whereever set, passed to iPad settings and saved. loaded on start
+    float hornPosX;
+    float hornPosY;
+    
 }
 @property (nonatomic) BOOL    hornsShowing;
 @property (nonatomic) BOOL    okGoNow;
@@ -122,6 +126,9 @@
 @property (nonatomic)          Float64   hornsMulti;
 @property (nonatomic)          float     ambientVolume;
 @property (nonatomic)          int       hornTimerCounter;
+
+@property (nonatomic)          float     hornPosX;
+@property (nonatomic)          float     hornPosY;
 
 //set up singleton shared
 
