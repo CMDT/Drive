@@ -74,7 +74,8 @@ static mySingleton * sharedSingleton = nil;
             hornTimerCounter,
 //bool
     hornsShowing,
-    okGoNow;
+    okGoNow,
+    displayMinimum;
 
 #pragma mark Singleton Methods
 
@@ -124,6 +125,7 @@ static mySingleton * sharedSingleton = nil;
         tempEntry           = @"";
         hornsShowing        = NO;
         okGoNow             = NO; // App will not run unless set to YES
+        displayMinimum      = 0; //set to '2' if want horns pressed displayed, 1 just times, 0 nothing except laps
         email               = @"me@mmu.ac.uk";
         testDate            = @"5/1/2017";
         testTime            = @"10:00";

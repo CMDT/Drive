@@ -52,7 +52,7 @@
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>Horn Position X</string>
+			<string>Horn Position X :</string>
 			<key>Key</key>
 			<string>hornPosX</string>
 			<key>DefaultValue</key>
@@ -68,7 +68,7 @@
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>Horn Position Y</string>
+			<string>Horn Position Y :</string>
 			<key>Key</key>
 			<string>hornPosY</string>
 			<key>DefaultValue</key>
@@ -84,7 +84,7 @@
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>Car Size (0.25 - 1.00)</string>
+			<string>Car Size (0.25 - 1.00) :</string>
 			<key>Key</key>
 			<string>carSize</string>
 			<key>DefaultValue</key>
@@ -93,6 +93,22 @@
 			<string>Default</string>
 			<key>KeyboardType</key>
 			<string>NumbersAndPunctuation</string>
+			<key>IsSecure</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Display Infomation, (0=minimal, 1=some or 2=all) :</string>
+			<key>Key</key>
+			<string>displayMinimum</string>
+			<key>DefaultValue</key>
+			<string>1</string>
+			<key>KeyboardType</key>
+			<string>NumberPad</string>
+			<key>AutocorrectionType</key>
+			<string>Default</string>
 			<key>IsSecure</key>
 			<false/>
 		</dict>
@@ -110,7 +126,7 @@
 			<key>Key</key>
 			<string>version0</string>
 			<key>DefaultValue</key>
-			<string>4.0.0.5.1.17</string>
+			<string>4.0.1   6.1.17</string>
 		</dict>
 		<dict>
 			<key>Type</key>

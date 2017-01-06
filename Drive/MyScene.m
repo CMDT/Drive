@@ -56,9 +56,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     //Float32 hornTime;
     Float32 masterScore;
     double  temp;
-    float     angAdd1;
-    float     angAdd2;
-    float     angAdd3;
+    float   angAdd1;
+    float   angAdd2;
+    float   angAdd3;
     Float32 sign;
     Float32 tempt;
     long    totalCrashes;
@@ -77,7 +77,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     long    horn_tt3;
     long    pre; //pressed horns
     
-    BOOL    displayMinimum;//if yes, then cut the horns counter on screen
+    double  displayMinimum;//0=none, 1=some, 2=all
     BOOL    hornShowing;
     BOOL    hornsPressed;//for horns pressed
     BOOL    hornTriggered; // when yes, the car is in the right position
@@ -152,9 +152,10 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         slowestHorn = -999999;
         averageHorn = -999999;
         
-        displayMinimum=YES;//show the horns display
+        //read from singleton for level of display
+        displayMinimum = singleton.displayMinimum; //show the horns display if set to 2
         
-        // set singletn arrays to zero to start, as will be NULL if not.
+        // set singleton arrays to zero to start, as will be NULL if not.
 
         for (NSInteger i = 0; i < 102; ++i)
             {
@@ -257,7 +258,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         minutes3 = (left3 % 3600) / 60;
         hours3   = (left3 % 86400) / 3600;
         
-        NSString *tem3 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld",hours3,minutes3,seconds3];
+        NSString *tem3 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld", hours3, minutes3, seconds3];
         
         self.time.text = [NSString stringWithFormat:@"Time: %@", tem3];
     }
@@ -336,39 +337,39 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                 if (horn_tt3 == 0){
                 //3 distractions per lap
                 if(angAdd1 > 0){
-                    if (progressAngle < angAdd1+1 && progressAngle >= angAdd1) {//(progressAngle < 2 && progressAngle > 1) range 0 to 10, -1 to -10
+                    if (progressAngle < angAdd1+0.5 && progressAngle >= angAdd1) {//(progressAngle < 2 && progressAngle > 1) range 0 to 10, -1 to -10
                         hornTriggered = YES;
                     } else {
                         hornTriggered = NO;
                     }
                 } else {
-                    if (progressAngle <= angAdd1 && progressAngle > angAdd1-1) {//(progressAngle < 2 && progressAngle > 1) range 0 to 10, -1 to -10
+                    if (progressAngle <= angAdd1 && progressAngle > angAdd1-0.5) {//(progressAngle < 2 && progressAngle > 1) range 0 to 10, -1 to -10
                         hornTriggered = YES;
                     } else {
                         hornTriggered = NO;
                     }
                 }
                 if(angAdd2 > 0){
-                    if (progressAngle < angAdd2+1 && progressAngle >= angAdd2) {
+                    if (progressAngle < angAdd2+0.5 && progressAngle >= angAdd2) {
                         horn2Triggered = YES;
                     } else {
                         horn2Triggered = NO;
                     }
                 } else {
-                    if (progressAngle <= angAdd2 && progressAngle > angAdd2-1) {
+                    if (progressAngle <= angAdd2 && progressAngle > angAdd2-0.5) {
                         horn2Triggered = YES;
                     } else {
                         horn2Triggered = NO;
                     }
                 }
                 if(angAdd3 > 0){
-                    if (progressAngle < angAdd3+1 && progressAngle >= angAdd3) {
+                    if (progressAngle < angAdd3+0.5 && progressAngle >= angAdd3) {
                         horn3Triggered = YES;
                     } else {
                         horn3Triggered = NO;
                     }
                 } else {
-                    if (progressAngle <= angAdd3 && progressAngle > angAdd3-1) {
+                    if (progressAngle <= angAdd3 && progressAngle > angAdd3-0.5) {
                         horn3Triggered = YES;
                     } else {
                         horn3Triggered = NO;
@@ -542,7 +543,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                 hornReactionTime[horns] = millis2;
                 
                 //update horn counter on screen if flag on
-                if(!displayMinimum){
+                if(displayMinimum==2){
                     self.hor.text = [NSString stringWithFormat:@"H: %li", (long)self.hors+1];
                 }
                 //beep the horn
@@ -984,49 +985,63 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     _laps.text = [NSString stringWithFormat:@"Laps to go: %li", (long)_numOfLaps];
     _laps.fontSize = 19.0f; //was 20.0f
     _laps.fontColor = [UIColor whiteColor];
-    _laps.position = CGPointMake(track.position.x, track.position.y + 19.0f); // was 20.0f
+    if(displayMinimum == 0){
+        _laps.position = CGPointMake(track.position.x, track.position.y);
+        // when only thing on screnn, print lower down
+    }else{
+        _laps.position = CGPointMake(track.position.x, track.position.y + 19.0f);
+        // was 20.0f
+    }
     [self addChild:_laps];
     
     // Shows the time left to finish the laps remaining
     
     // do some conversion for race
     long hours,  minutes, seconds, left;
+    NSString * tem4 =@"00:00:00";
     
     left    = (long)_timeInSeconds;
     seconds = (left % 60);
     minutes = (left % 3600) / 60;
     hours   = (left % 86400) / 3600;
     
-    NSString *tem4 = [NSString stringWithFormat:@"%li:%li:%li",hours,minutes,seconds];
+    if (left==0) { //race not started to fix display of 00:00:00 instead of 0:0:0
+        tem4 = @"00:00:00";
+    }
+    else
+        {
+        tem4 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld", hours, minutes, seconds];//ok when >1 second
+    }
+    if(displayMinimum>0){
+        _time           = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        _time.text      = [NSString stringWithFormat:@"Time: %@", tem4];
+        _time.fontSize  = 20.0f;
+        _time.fontColor = [UIColor whiteColor];
+        _time.position  = CGPointMake(track.position.x, track.position.y - 10.0f);
+        [self addChild:_time];
+        
+        // box collisions
+        _colls = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        _colls.text      = [NSString stringWithFormat:@"Hazard Crashes: %li", (long)_numOfCollisionsWithBoxes];
+        _colls.fontSize  = 15.0f;
+        // _colls.fontColor = [UIColor whiteColor];
+        _colls.fontColor = [UIColor yellowColor];
+        _colls.position  = CGPointMake(track.position.x, track.position.y - 30.0f);
+        [self addChild:_colls];
     
-    _time           = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    _time.text      = [NSString stringWithFormat:@"Time: %@", tem4];
-    _time.fontSize  = 20.0f;
-    _time.fontColor = [UIColor whiteColor];
-    _time.position  = CGPointMake(track.position.x, track.position.y - 10.0f);
-    [self addChild:_time];
-    
-    // box collisions
-    _colls = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    _colls.text      = [NSString stringWithFormat:@"Hazard Crashes: %li", (long)_numOfCollisionsWithBoxes];
-    _colls.fontSize  = 15.0f;
-    // _colls.fontColor = [UIColor whiteColor];
-    _colls.fontColor = [UIColor yellowColor];
-    _colls.position  = CGPointMake(track.position.x, track.position.y - 30.0f);
-    [self addChild:_colls];
-    
-    // box collisions
-    _walls           = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    _walls.text      = [NSString stringWithFormat:@"Wall Crashes: %li", (long)_numOfCollisionsWithBoxes];
-    _walls.fontSize  = 15.0f;
-    // _walls.fontColor = [UIColor whiteColor];
-    _walls.fontColor = [UIColor yellowColor];
-    _walls.position  = CGPointMake(track.position.x, track.position.y - 45.0f);
-    [self addChild:_walls];
+        // wall collisions
+        _walls           = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        _walls.text      = [NSString stringWithFormat:@"Wall Crashes: %li", (long)_numOfCollisionsWithBoxes];
+        _walls.fontSize  = 15.0f;
+        // _walls.fontColor = [UIColor whiteColor];
+        _walls.fontColor = [UIColor yellowColor];
+        _walls.position  = CGPointMake(track.position.x, track.position.y - 45.0f);
+        [self addChild:_walls];
+    }
     
    //horns counter for display
    //if display flag OFF, dont show horns counter
-    if(!displayMinimum){
+    if(displayMinimum==2){
         //horns that are beeped counter
         _hor           = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         _hor.text      = [NSString stringWithFormat:@"H: %li", (long)_hors];
@@ -1043,14 +1058,14 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
  
         // Negate the y-axis to bridge a gap between SpriteKit and UIKit
         self.car.physicsBody.velocity = CGVectorMake(
-                                                 analogControl.relativePosition.x * self.maxSpeed,
+                                                  analogControl.relativePosition.x * self.maxSpeed,
                                                  -analogControl.relativePosition.y * self.maxSpeed
                                                  );
     
         if (!CGPointEqualToPoint(analogControl.relativePosition, CGPointZero)) {
             self.car.zRotation = ({
             CGPoint point = CGPointMake(
-                                        analogControl.relativePosition.x,
+                                         analogControl.relativePosition.x,
                                         -analogControl.relativePosition.y
                                         );
             

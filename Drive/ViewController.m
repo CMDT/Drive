@@ -16,15 +16,17 @@
 #import  "SKTUtils.h"
 #include "sys/time.h"
 
-#define kEmail      @"emailAddress"
-#define kSubject    @"subjectName"
-#define khpx        @"hornPosX"
-#define khpy        @"hornPosY"
-#define kCarSize    @"carSize"
-#define kVersion0   @"version0"
-#define kVersion1   @"version1"
-#define kVersion2   @"version2"
-#define kVersion3   @"version3"
+#define kEmail          @"emailAddress"
+#define kSubject        @"subjectName"
+#define khpx            @"hornPosX"
+#define khpy            @"hornPosY"
+#define kCarSize        @"carSize"
+#define kVersion0       @"version0"
+#define kVersion1       @"version1"
+#define kVersion2       @"version2"
+#define kVersion3       @"version3"
+#define kDisplayMinimum @"displayMinimum"
+
 
 @interface ViewController () <UIAlertViewDelegate, UITextFieldDelegate>
 {
@@ -77,6 +79,7 @@
     NSString * hpx; // horn graphic location on screen
     NSString * hpy;
     NSString * carSize;
+    NSString * displayMinimum;
     
     // for web page link
     //NSURL *url = [NSURL URLWithString:@"http://www.ess.mmu.ac.uk/"];
@@ -98,7 +101,7 @@
     //version, set anyway *****************************************
     //*************************************************************
     
-    version0 =  @"DRIVE Version 4.0.0 - 5.1.17";     // version   *** keep short
+    version0 =  @"DRIVE Version 4.0.1 - 6.1.17";     // version   *** keep short
     version1 =  @"MMU (C) 2017";                // copyright *** limited line space
     version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
     version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen
@@ -148,6 +151,23 @@
         [defaults setObject:[NSString stringWithFormat:@"%f", singleton.hornPosY] forKey:khpy];
     }
     
+    //display info level 0=none, 1=some, 2=all
+    displayMinimum     = [defaults objectForKey:kDisplayMinimum];
+    if([displayMinimum isEqualToString: @ "" ] || kDisplayMinimum == nil){
+        displayMinimum =  @"1";
+        [defaults setObject:[NSString stringWithFormat:@"%d", singleton.displayMinimum] forKey:kDisplayMinimum];
+    }
+    
+    //bounds check of display is in range 0 - 2
+    if ([displayMinimum integerValue] <0) {
+        displayMinimum=@"0";
+        [defaults setObject:[NSString stringWithFormat:@"%d", 0] forKey:kDisplayMinimum];
+    }
+    if ([displayMinimum integerValue] >2) {
+        displayMinimum=@"2";
+        [defaults setObject:[NSString stringWithFormat:@"%d", 2] forKey:kDisplayMinimum];
+    }
+    
     //car size
     carSize     = [defaults objectForKey:kCarSize];
     if([carSize isEqualToString: @ "" ] || kCarSize == nil){
@@ -160,17 +180,17 @@
         hpx=@"0";
         [defaults setObject:[NSString stringWithFormat:@"%d", 0] forKey:khpx];
     }
-    if ([hpx integerValue] >437) {
-        hpx=@"437";
-        [defaults setObject:[NSString stringWithFormat:@"%d", 437] forKey:khpx];
+    if ([hpx integerValue] >500) {
+        hpx=@"500";
+        [defaults setObject:[NSString stringWithFormat:@"%d", 500] forKey:khpx];
     }
     if ([hpy integerValue] <0) {
         hpy=@"0";
         [defaults setObject:[NSString stringWithFormat:@"%d", 0] forKey:khpy];
     }
-    if ([hpy integerValue] >277) {
-        hpy=@"278";
-        [defaults setObject:[NSString stringWithFormat:@"%d", 277] forKey:khpy];
+    if ([hpy integerValue] >300) {
+        hpy=@"300";
+        [defaults setObject:[NSString stringWithFormat:@"%d", 300] forKey:khpy];
     }
     if ([carSize floatValue] <0.25) {
         carSize=@"0.25";
@@ -181,11 +201,12 @@
         [defaults setObject:[NSString stringWithFormat:@"1.00"] forKey:kCarSize];
     }
     
-    singleton.subjectName = subjectName;
-    singleton.email       = email;
-    singleton.hornPosX    = [hpx integerValue];
-    singleton.hornPosY    = [hpy integerValue];
-    singleton.carSize     = [carSize floatValue]; //default 0.80
+    singleton.subjectName       = subjectName;
+    singleton.email             = email;
+    singleton.hornPosX          = [hpx integerValue];
+    singleton.hornPosY          = [hpy integerValue];
+    singleton.carSize           = [carSize floatValue];         //default 0.80
+    singleton.displayMinimum    = [displayMinimum doubleValue]; //default 1
     
     [defaults synchronize];//make sure all are updated
     
@@ -194,7 +215,7 @@
     hornBtn.hidden = YES;
     hornBtn.alpha  = 0.4;
     pauseBtn.alpha = 0.5;
-    hornBtn.frame = CGRectMake([hpx integerValue], [hpy integerValue], 44, 44);
+    hornBtn.frame  = CGRectMake([hpx integerValue], [hpy integerValue], 44, 44);
     
     if ([singleton.distractionOn isEqual:@"0"]) {
         hornBtn.hidden = YES;

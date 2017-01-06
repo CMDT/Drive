@@ -13,6 +13,7 @@
     BOOL hornsShowing;
     BOOL okGoNow; //flag that App can run
     int  counter;
+    int  displayMinimum;// 0,1 or 2
 
     NSMutableArray * cardReactionTimeResult;
     NSString       * resultsStrings;
@@ -74,6 +75,7 @@
 }
 @property (nonatomic) BOOL    hornsShowing;
 @property (nonatomic) BOOL    okGoNow;
+@property (nonatomic) int     displayMinimum;
 @property (nonatomic) int     counter;
 @property (nonatomic, retain) NSMutableArray * cardReactionTimeResult;
 
