@@ -743,6 +743,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 }
 
 - (void)p_addBoxAt:(CGPoint)point {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+
     SKSpriteNode *box = [SKSpriteNode spriteNodeWithImageNamed:@"box"];
     box.position = point;
     
@@ -752,18 +754,28 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     
     box.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:box.size];
     box.physicsBody.categoryBitMask = CRBodyBox;
-    
-    // Simulate friction and prevent the boxes from continuously sliding around
-    box.physicsBody.linearDamping  = 1.0f;//1
-    box.physicsBody.angularDamping = 1.0f;//1
-    //box.physicsBody.mass=1000; //added but not needed
-    //box.physicsBody.friction = 1000; //added but not needed
-    box.physicsBody.dynamic=NO;
+    if (singleton.gamePhysics>1) {
+        // Simulate friction and prevent the boxes from continuously sliding around
+        box.physicsBody.linearDamping  = 0.5f;//1
+        box.physicsBody.angularDamping = 0.1f;//1
+        box.physicsBody.mass=1; //added but not needed
+        box.physicsBody.friction = 200; //added but not needed
+        box.physicsBody.dynamic=YES;
+    }else{
+        // Simulate friction and prevent the boxes from continuously sliding around
+        box.physicsBody.linearDamping  = 1.0f;//1
+        box.physicsBody.angularDamping = 1.0f;//1
+        //box.physicsBody.mass=1000; //added but not needed
+        //box.physicsBody.friction = 1000; //added but not needed
+        box.physicsBody.dynamic=NO;
+    }
     
     [self addChild:box];
 }
 
 - (void)p_addCrateAt:(CGPoint)point {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+
     SKSpriteNode *crate = [SKSpriteNode spriteNodeWithImageNamed:@"crate"];
     
     // scale the crate here
@@ -773,14 +785,21 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     crate.position = point;
     crate.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:crate.size];
     crate.physicsBody.categoryBitMask = CRBodyCrate;
-    
-    // Simulate friction and prevent the boxes from continuously sliding around
-    crate.physicsBody.linearDamping  = 1.0f;//1
-    crate.physicsBody.angularDamping = 1.0f;//1
-    //crate.physicsBody.mass = 1000; //added but not needed
-    //crate.physicsBody.friction = 1000; //added but not needed
-    crate.physicsBody.dynamic=NO;
-    
+    if (singleton.gamePhysics>2) {
+        // Simulate friction and prevent the boxes from continuously sliding around
+        crate.physicsBody.linearDamping  = 0.5f;//1
+        crate.physicsBody.angularDamping = 0.1f;//1
+        crate.physicsBody.mass = 1; //added but not needed
+        crate.physicsBody.friction = 200; //added but not needed
+        crate.physicsBody.dynamic=YES;
+    }else{
+        // Simulate friction and prevent the boxes from continuously sliding around
+        crate.physicsBody.linearDamping  = 1.0f;//1
+        crate.physicsBody.angularDamping = 1.0f;//1
+        //crate.physicsBody.mass = 1000; //added but not needed
+        //crate.physicsBody.friction = 1000; //added but not needed
+        crate.physicsBody.dynamic=NO;
+    }
     [self addChild:crate];
 }
 - (void)p_addPauseAt:(CGPoint)point {
@@ -808,6 +827,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 }
 
 - (void)p_addBaleAt:(CGPoint)point {
+    mySingleton *singleton = [mySingleton sharedSingleton];
+
     SKSpriteNode *bale = [SKSpriteNode spriteNodeWithImageNamed:@"bale"];
     bale.position = point;
     
@@ -817,18 +838,29 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     
     bale.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bale.size];
     bale.physicsBody.categoryBitMask = CRBodyBale;
-    
-    // Simulate friction and prevent the boxes from continuously sliding around
-    bale.physicsBody.linearDamping  = 1.0f;//1
-    bale.physicsBody.angularDamping = 1.0f;//1
-    //bale.physicsBody.mass=1000; //added but not needed
-    //bale.physicsBody.friction = 1000; //added but not needed
-    bale.physicsBody.dynamic=NO;
+    if (singleton.gamePhysics>0) {
+        // Simulate friction and prevent the boxes from continuously sliding around
+        bale.physicsBody.linearDamping  = 0.5f;//1
+        bale.physicsBody.angularDamping = 0.1f;//1
+        bale.physicsBody.mass=1; //added b1t not needed
+        bale.physicsBody.friction = 150; //added but not needed
+        bale.physicsBody.dynamic=YES;
+    }else{
+        // Simulate friction and prevent the boxes from continuously sliding around
+        bale.physicsBody.linearDamping  = 1.0f;//1
+        bale.physicsBody.angularDamping = 1.0f;//1
+        //bale.physicsBody.mass=1000; //added but not needed
+        //bale.physicsBody.friction = 1000; //added but not needed
+        bale.physicsBody.dynamic=NO;
+    }
     
     [self addChild:bale];
 }
 
 - (void)p_addTyreAt:(CGPoint)point {
+
+    mySingleton *singleton = [mySingleton sharedSingleton];
+
     SKSpriteNode *tyre = [SKSpriteNode spriteNodeWithImageNamed:@"tyre"];
     tyre.position = point;
     
@@ -838,14 +870,22 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     
     tyre.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:tyre.size];
     tyre.physicsBody.categoryBitMask = CRBodyBox;
-    
-    // Simulate friction and prevent the boxes from continuously sliding around
-    tyre.physicsBody.linearDamping = 1.0f;//1
-    tyre.physicsBody.angularDamping = 1.0f;//1
-    //tyre.physicsBody.mass=1000; //added but not needed
-    //tyre.physicsBody.friction = 1000; //added but not needed
-    tyre.physicsBody.dynamic=NO;
-    
+    if (singleton.gamePhysics==4) {
+        // moves the tyre
+        // Simulate friction and prevent the boxes from continuously sliding around
+        tyre.physicsBody.linearDamping = 0.5f;//1
+        tyre.physicsBody.angularDamping = 0.1f;//1
+        tyre.physicsBody.mass=1; //added but not needed
+        tyre.physicsBody.friction = 100; //added but not needed
+        tyre.physicsBody.dynamic=YES;
+    }else{
+        // Simulate friction and prevent the boxes from continuously sliding around
+        tyre.physicsBody.linearDamping = 1.0f;//1
+        tyre.physicsBody.angularDamping = 1.0f;//1
+        //tyre.physicsBody.mass=1000; //added but not needed
+        //tyre.physicsBody.friction = 1000; //added but not needed
+        tyre.physicsBody.dynamic=NO;
+    }
     [self addChild:tyre];
 }
 

@@ -60,6 +60,7 @@ static mySingleton * sharedSingleton = nil;
             averageReaction,
             missed,
             reacted,
+            gamePhysics,
 
 // float64
             wallCrashMult,
@@ -155,6 +156,7 @@ static mySingleton * sharedSingleton = nil;
         totalHorn           = @"999999";
         distractionOn       = @"0";
         masterScore         = @"0";
+        gamePhysics         = 0;
         
         missedTime          = @"999999";
         pressedTime         = @"999999";

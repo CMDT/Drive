@@ -101,8 +101,7 @@ Results Email Address</string>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>Display Infomation,
-(0=lap, 1=some or 2=all) :</string>
+			<string>Display Info (0 - 4) :</string>
 			<key>Key</key>
 			<string>displayMinimum</string>
 			<key>DefaultValue</key>
@@ -124,9 +123,9 @@ Results Email Address</string>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>Hazard Physics (0-3)</string>
+			<string>Game Physics (0-4)</string>
 			<key>Key</key>
-			<string>carPhysics</string>
+			<string>gamePhysics</string>
 			<key>DefaultValue</key>
 			<string>0</string>
 			<key>KeyboardType</key>

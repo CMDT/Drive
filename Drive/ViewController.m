@@ -25,6 +25,7 @@
 #define kVersion1       @"version1"
 #define kVersion2       @"version2"
 #define kVersion3       @"version3"
+#define kGamePhysics    @"gamePhysics"
 #define kDisplayMinimum @"displayMinimum"
 
 
@@ -80,6 +81,7 @@
     NSString * hpy;
     NSString * carSize;
     NSString * displayMinimum;
+    NSString * gamePhysics;
     
     // for web page link
     //NSURL *url = [NSURL URLWithString:@"http://www.ess.mmu.ac.uk/"];
@@ -168,6 +170,23 @@
         [defaults setObject:[NSString stringWithFormat:@"%d", 2] forKey:kDisplayMinimum];
     }
     
+    //game physics level 0=none, 1=weak all, 2=med all, 3=high all, 4=mixed
+    gamePhysics     = [defaults objectForKey:kGamePhysics];
+    if([gamePhysics isEqualToString: @ "" ] || kGamePhysics == nil){
+        gamePhysics =  @"0";
+        [defaults setObject:[NSString stringWithFormat:@"%d", singleton.gamePhysics] forKey:kGamePhysics];
+    }
+    
+    //bounds check of display is in range 0 - 4
+    if ([gamePhysics integerValue] <0) {
+        gamePhysics=@"0";
+        [defaults setObject:[NSString stringWithFormat:@"%d", 0] forKey:kGamePhysics];
+    }
+    if ([gamePhysics integerValue] >4) {
+        gamePhysics=@"4";
+        [defaults setObject:[NSString stringWithFormat:@"%d", 4] forKey:kGamePhysics];
+    }
+    
     //car size
     carSize     = [defaults objectForKey:kCarSize];
     if([carSize isEqualToString: @ "" ] || kCarSize == nil){
@@ -207,6 +226,7 @@
     singleton.hornPosY          = [hpy integerValue];
     singleton.carSize           = [carSize floatValue];         //default 0.80
     singleton.displayMinimum    = [displayMinimum doubleValue]; //default 1
+    singleton.gamePhysics       = [gamePhysics doubleValue];   //default 0
     
     [defaults synchronize];//make sure all are updated
     
