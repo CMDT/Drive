@@ -280,6 +280,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         long dist = [singleton.distractionOn integerValue];
     
         switch (dist) {
+            case 0:
+                //no distractions set
             case 1:
                 if (horn_tt == 0) {
                     
@@ -379,6 +381,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             break;
                 
             default:
+                // nothing
             break;
         }
     //NSLog(@"horn trig = %f, a1=%d, a2=%d, a3=%d",reactionTime[xcounter],angAdd1,angAdd2,angAdd3);
@@ -446,6 +449,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                 long dist1 = [singleton.distractionOn integerValue];
                 
                 switch (dist1) {
+                    case 0:
+                        // no distraction set
                     case 1:
                         //1 distraction
                         if (lap>1) {
@@ -497,6 +502,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                     break;
                         
                     default:
+                        // nothing
+                        
                         break;
                 }
                 //********* // 1st lap is set at start of code.  +12 = start line 3 o clock, +9 is 9 o clock, followed by -8, -7 etc till 0 at 4 o clock
@@ -1022,7 +1029,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         
         // box collisions
         _colls = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        _colls.text      = [NSString stringWithFormat:@"Hazard Crashes: %li", (long)_numOfCollisionsWithBoxes];
+        
+        //_colls.text      = [NSString stringWithFormat:@"Hazard Crashes: %li", (long)_numOfCollisionsWithBoxes];
+        _colls.text      = [NSString stringWithFormat:@"Hazards Hit : %li", (long)_numOfCollisionsWithBoxes];
         _colls.fontSize  = 15.0f;
         // _colls.fontColor = [UIColor whiteColor];
         _colls.fontColor = [UIColor yellowColor];
@@ -1031,7 +1040,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     
         // wall collisions
         _walls           = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        _walls.text      = [NSString stringWithFormat:@"Wall Crashes: %li", (long)_numOfCollisionsWithBoxes];
+        //_walls.text      = [NSString stringWithFormat:@"Wall Crashes: %li", (long)_numOfCollisionsWithBoxes];
+        _walls.text      = [NSString stringWithFormat:@"Wall Crashes : %li", (long)_numOfCollisionsWithBoxes];
         _walls.fontSize  = 15.0f;
         // _walls.fontColor = [UIColor whiteColor];
         _walls.fontColor = [UIColor yellowColor];
@@ -1041,7 +1051,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     
    //horns counter for display
    //if display flag OFF, dont show horns counter
-    if(displayMinimum==2){
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    //only if the horns are on and display is 'all'
+    if(displayMinimum==2&&![singleton.distractionOn isEqualToString:@"0"]){
         //horns that are beeped counter
         _hor           = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         _hor.text      = [NSString stringWithFormat:@"H: %li", (long)_hors];
@@ -1377,7 +1389,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         tempHaz++;
         singleton.hazLaps[xcounter-1]=[NSString stringWithFormat:@"%i",tempHaz];//was xcounter
         // set for colls
-        self.colls.text = [NSString stringWithFormat:@"Hazard Crashes: %li", (long)self.numOfCollisionsWithBoxes];
+        //self.colls.text = [NSString stringWithFormat:@"Hazard Crashes: %li", (long)self.numOfCollisionsWithBoxes];
+        self.colls.text = [NSString stringWithFormat:@"Hazards Hit : %li", (long)self.numOfCollisionsWithBoxes];
         
         // OLD WAY FOR SOUND, BUT 'preset' LOUD VOLUME // [self runAction:self.boxSoundAction];
         //
@@ -1401,7 +1414,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         tempWall++;
         singleton.wallLaps[xcounter-1]=[NSString stringWithFormat:@"%i",tempWall];//was xcounter
         // set for walls
-        self.walls.text = [NSString stringWithFormat:@"Wall Crashes: %li", (long)self.numOfCollisionsWithWalls];
+        //self.walls.text = [NSString stringWithFormat:@"Wall Crashes: %li", (long)self.numOfCollisionsWithWalls];
+        self.walls.text = [NSString stringWithFormat:@"Wall Crashes : %li", (long)self.numOfCollisionsWithWalls];
         
         // OLD WAY FOR SOUND, BUT FIXED LOUD VOLUME // [self runAction:self.wallSoundAction];
         //

@@ -101,7 +101,7 @@
     //version, set anyway *****************************************
     //*************************************************************
     
-    version0 =  @"DRIVE Version 4.0.1 - 6.1.17";     // version   *** keep short
+    version0 =  @"DRIVE Version 4.0.2 - 7.1.17";     // version   *** keep short
     version1 =  @"MMU (C) 2017";                // copyright *** limited line space
     version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
     version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen
@@ -385,7 +385,20 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    if ([singleton.distractionOn isEqual:@"0"]) {
+        hornBtn.hidden = YES;
+    }else{
+        hornBtn.hidden = NO;
+    }
+    ss = 1.00;
+    startLampImageView.alpha=0.6;
+    [startLampImageView setImage: st0.image];
+    startLampImageView.hidden = NO;
+    startLampImageView.frame = CGRectMake(127, 181, 240*ss, 125*ss);
+    
+    self.startDate = [NSDate date];
+    [NSTimer scheduledTimerWithTimeInterval:(0.2f) target:self selector:@selector(startLamp0) userInfo:nil repeats:NO];
     [self.view sendSubviewToBack:self.skView];
 }
 

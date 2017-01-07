@@ -10,7 +10,8 @@
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
-			<string>Driver Name &amp; Results Email Address</string>
+			<string>Driver Name &amp;
+Results Email Address</string>
 		</dict>
 		<dict>
 			<key>DefaultValue</key>
@@ -100,7 +101,8 @@
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>Display Infomation, (0=minimal, 1=some or 2=all) :</string>
+			<string>Display Infomation,
+(0=lap, 1=some or 2=all) :</string>
 			<key>Key</key>
 			<string>displayMinimum</string>
 			<key>DefaultValue</key>
@@ -120,13 +122,31 @@
 		</dict>
 		<dict>
 			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Hazard Physics (0-3)</string>
+			<key>Key</key>
+			<string>carPhysics</string>
+			<key>DefaultValue</key>
+			<string>0</string>
+			<key>KeyboardType</key>
+			<string>NumberPad</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+			<key>IsSecure</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
 			<string>Version Number:</string>
 			<key>Key</key>
 			<string>version0</string>
 			<key>DefaultValue</key>
-			<string>4.0.1   6.1.17</string>
+			<string>4.0.2   7.1.17</string>
 		</dict>
 		<dict>
 			<key>Type</key>

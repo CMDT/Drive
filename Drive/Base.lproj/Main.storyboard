@@ -15,7 +15,7 @@
                 <viewController storyboardIdentifier="ViewController" title="scene" id="LVB-YS-i5n" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bdc-N1-crn">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ajn-d1-kbx" userLabel="Button Horn">
                                 <rect key="frame" x="305" y="83" width="43" height="43"/>
@@ -37,7 +37,7 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" layoutMarginsFollowReadableWidth="YES" id="9GS-nM-xcE">
                                 <rect key="frame" x="174" y="181" width="240" height="125"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" layoutMarginsFollowReadableWidth="YES" id="pCC-vC-zhb">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
@@ -732,6 +732,10 @@ The hardest track has multiple hazards to avoid. Hitting hazards slows you down 
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="track_1.png" id="9EK-OW-9EW">
+                                <rect key="frame" x="445" y="49" width="102" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="crate.png" id="RKc-6g-Ghv">
                                 <rect key="frame" x="230" y="245" width="33" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -744,9 +748,9 @@ The hardest track has multiple hazards to avoid. Hitting hazards slows you down 
                                 <rect key="frame" x="183" y="263" width="32" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="track_1.png" id="9EK-OW-9EW">
-                                <rect key="frame" x="445" y="49" width="102" height="102"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="box.png" id="nQ5-ue-sOV">
+                                <rect key="frame" x="423" y="130" width="33" height="33"/>
+                                <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -876,9 +880,9 @@ Build up skill and move to faster cars, if you dare!
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">  Using the Settings App (Grey Cog) on your device, you can set some additional features.  This includes the position of the Horn Button and the car size.  The default horn position is 305x, 85y for the centre right, and 437x, 277y for lower right corner.  The car size default is 0.80, but can be set from 0.25 (small) to 1.00 (large).
+                                        <mutableString key="content">  Using the Settings App (Grey Cog) on your device, you can set some additional features.  This includes the position of the Horn Button and the car size.  The default horn position is 305x, 85y for the centre right, and 437x, 277y for lower right corner.  The car size default is 0.80, but can be set from 0.25 (small) to 1.00 (large). iPhone coordinates depend on model, but could be up to 500x, 300y.  If you set out of range, enter the default values to restore functionality.
 
-The Display level is the amount of information you get on screen during a race. 0=Just Laps to go, 1=Lpas, time and crash info and 2= all above plus horns displayed.</string>
+The Display level is the amount of information you get on screen during a race. 0=Just Laps to go, 1=Laps, time and crash info and 2=all above plus horns displayed.</mutableString>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
@@ -1573,7 +1577,7 @@ The Display level is the amount of information you get on screen during a race. 
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" usesAttributedText="YES" selectable="NO" id="0qq-N8-ACk">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" id="0qq-N8-ACk">
                                 <rect key="frame" x="20" y="62" width="327" height="249"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1750,13 +1754,13 @@ Cg
                                     <fragment>
                                         <string key="content">This game is part of a Psychological Motor Control Test to explore how distractions affect motor function during a task.
 
-(c) </string>
+ </string>
                                         <attributes>
                                             <font key="NSFont" size="12" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="Copyright">
+                                    <fragment content="Copyright (c) 2017">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="12" name="HelveticaNeue-Bold"/>
@@ -1765,7 +1769,7 @@ Cg
                                     </fragment>
                                     <fragment>
                                         <string key="content">
-Manchester Metropolitan University (2017).
+Manchester Metropolitan University
 
 All comments and suggestions to:
 </string>
@@ -1834,6 +1838,7 @@ Cg
         <image name="bg-main-menu.png" width="568" height="320"/>
         <image name="bg-select-car.png" width="568" height="320"/>
         <image name="bg-select-difficulty.png" width="568" height="320"/>
+        <image name="box.png" width="44" height="44"/>
         <image name="btn-car1.png" width="121" height="169"/>
         <image name="btn-car2.png" width="121" height="169"/>
         <image name="btn-car3.png" width="121" height="169"/>
@@ -1886,10 +1891,10 @@ Cg
         <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Ypq-Rw-I7Y"/>
-        <segue reference="Snq-Uf-qxR"/>
         <segue reference="kKz-ZN-Bct"/>
         <segue reference="UeP-lD-UCg"/>
-        <segue reference="Xnc-OW-jig"/>
+        <segue reference="Snq-Uf-qxR"/>
+        <segue reference="EFj-b3-7hl"/>
+        <segue reference="Ypq-Rw-I7Y"/>
     </inferredMetricsTieBreakers>
 </document>
