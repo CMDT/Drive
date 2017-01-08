@@ -26,6 +26,7 @@
 #define kVersion2       @"version2"
 #define kVersion3       @"version3"
 #define kGamePhysics    @"gamePhysics"
+#define kHazScale       @"hazScale"
 #define kDisplayMinimum @"displayMinimum"
 
 
@@ -80,6 +81,7 @@
     NSString * hpx; // horn graphic location on screen
     NSString * hpy;
     NSString * carSize;
+    NSString * hazScale;
     NSString * displayMinimum;
     NSString * gamePhysics;
     
@@ -103,7 +105,7 @@
     //version, set anyway *****************************************
     //*************************************************************
     
-    version0 =  @"DRIVE Version 4.0.2 - 7.1.17";     // version   *** keep short
+    version0 =  @"DRIVE Version 4.0.3 - 8.1.17";     // version   *** keep short
     version1 =  @"MMU (C) 2017";                // copyright *** limited line space
     version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
     version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen
@@ -173,24 +175,42 @@
     //game physics level 0=none, 1=weak all, 2=med all, 3=high all, 4=mixed
     gamePhysics     = [defaults objectForKey:kGamePhysics];
     if([gamePhysics isEqualToString: @ "" ] || kGamePhysics == nil){
-        gamePhysics =  @"0";
+        gamePhysics = @"0";
         [defaults setObject:[NSString stringWithFormat:@"%d", singleton.gamePhysics] forKey:kGamePhysics];
     }
     
-    //bounds check of display is in range 0 - 4
+    //bounds check physics is in range 0 - 5
     if ([gamePhysics integerValue] <0) {
-        gamePhysics=@"0";
+        gamePhysics = @"0";
         [defaults setObject:[NSString stringWithFormat:@"%d", 0] forKey:kGamePhysics];
     }
-    if ([gamePhysics integerValue] >4) {
-        gamePhysics=@"4";
-        [defaults setObject:[NSString stringWithFormat:@"%d", 4] forKey:kGamePhysics];
+    if ([gamePhysics integerValue] >5) {
+        gamePhysics = @"5";
+        [defaults setObject:[NSString stringWithFormat:@"%d", 5] forKey:kGamePhysics];
+    }
+    
+    // hazards scale size
+    //
+    hazScale    = [defaults objectForKey:kHazScale];
+    if([hazScale isEqualToString: @ "" ] || kHazScale == nil){
+        hazScale = @"0.00";
+        [defaults setObject:[NSString stringWithFormat:@"%f", singleton.hazScale] forKey:kHazScale];
+    }
+    
+    //bounds check physics is in range 0 - 5
+    if ([hazScale floatValue] <0.25) {
+        hazScale = @"0.25";
+        [defaults setObject:[NSString stringWithFormat:@"%.2f", 0.25] forKey:kHazScale];
+    }
+    if ([hazScale floatValue] >1.0) {
+        hazScale = @"1.00";
+        [defaults setObject:[NSString stringWithFormat:@"%.2f", 1.0] forKey:kHazScale];
     }
     
     //car size
     carSize     = [defaults objectForKey:kCarSize];
     if([carSize isEqualToString: @ "" ] || kCarSize == nil){
-        carSize =  @"0.80";
+        carSize = @"0.50";
         [defaults setObject:[NSString stringWithFormat:@"%f", singleton.carSize] forKey:kCarSize];
     }
     
@@ -224,9 +244,10 @@
     singleton.email             = email;
     singleton.hornPosX          = [hpx integerValue];
     singleton.hornPosY          = [hpy integerValue];
-    singleton.carSize           = [carSize floatValue];         //default 0.80
+    singleton.carSize           = [carSize floatValue];         //default 0.50
+    singleton.hazScale          = [hazScale floatValue];        //default 0.60
     singleton.displayMinimum    = [displayMinimum doubleValue]; //default 1
-    singleton.gamePhysics       = [gamePhysics doubleValue];   //default 0
+    singleton.gamePhysics       = [gamePhysics doubleValue];    //default 0
     
     [defaults synchronize];//make sure all are updated
     

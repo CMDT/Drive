@@ -51,6 +51,12 @@ Results Email Address</string>
 		</dict>
 		<dict>
 			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>DRIVE Advanced Settings</string>
+		</dict>
+		<dict>
+			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
 			<string>Horn Position X :</string>
@@ -85,7 +91,7 @@ Results Email Address</string>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>Car Size (0.25 - 1.00) :</string>
+			<string>Car Size (0.25-1.00) :</string>
 			<key>Key</key>
 			<string>carSize</string>
 			<key>DefaultValue</key>
@@ -101,7 +107,7 @@ Results Email Address</string>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>Display Info (0 - 4) :</string>
+			<string>Display Info (0-2) :</string>
 			<key>Key</key>
 			<string>displayMinimum</string>
 			<key>DefaultValue</key>
@@ -115,15 +121,9 @@ Results Email Address</string>
 		</dict>
 		<dict>
 			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-			<key>Title</key>
-			<string>DRIVE Version Information</string>
-		</dict>
-		<dict>
-			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>Game Physics (0-4)</string>
+			<string>Game Physics (0-5) :</string>
 			<key>Key</key>
 			<string>gamePhysics</string>
 			<key>DefaultValue</key>
@@ -139,13 +139,37 @@ Results Email Address</string>
 		</dict>
 		<dict>
 			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Haz Scale (0.25-1.0) :</string>
+			<key>Key</key>
+			<string>hazScale</string>
+			<key>DefaultValue</key>
+			<string>0.60</string>
+			<key>IsSecure</key>
+			<false/>
+			<key>KeyboardType</key>
+			<string>NumberPad</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>DRIVE Version Information</string>
+		</dict>
+		<dict>
+			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
-			<string>Version Number:</string>
+			<string>Version Number :</string>
 			<key>Key</key>
 			<string>version0</string>
 			<key>DefaultValue</key>
-			<string>4.0.2   7.1.17</string>
+			<string>4.0.3  8.1.17</string>
 		</dict>
 		<dict>
 			<key>Type</key>

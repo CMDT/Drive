@@ -66,6 +66,7 @@
     Float64    hazCrashMult;
     Float64    hornsMulti;
     float      ambientVolume;
+    float      hazScale;
     int        hornTimerCounter;
     
     //moves the horn button base location from centre part to whereever set, passed to iPad settings and saved. loaded on start
@@ -135,6 +136,7 @@
 @property (nonatomic)          float     hornPosX;
 @property (nonatomic)          float     hornPosY;
 @property (nonatomic)          float     carSize;
+@property (nonatomic)          float     hazScale;
 
 //set up singleton shared
 

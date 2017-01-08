@@ -187,7 +187,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">To select a car, touch it.
 
-The more powerful the car, the better the top speed, but be careful, they are harder to drive, so you may crash more times and be a slower driver overall.
+The more powerful the car, the better the top speed, but be careful, they are harder to drive, so you may crash more times and achieve a lower score after time penalties.
 
 With practice, you will become more proficient, train up to the faster cars.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -728,7 +728,7 @@ The easy track has no hazards, just steer round.
 
 You still need to avoid hitting the track edges.
 
-The hardest track has multiple hazards to avoid. Hitting hazards slows you down and ruins your score.</string>
+The hardest track has multiple hazards to avoid. Hitting hazards slows you down and will lower your score with time penalties.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -870,7 +870,7 @@ Build up skill and move to faster cars, if you dare!
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="Settings App Additional Configuration:">
+                                    <fragment content="Settings App for Advanced Settings:">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
@@ -880,9 +880,34 @@ Build up skill and move to faster cars, if you dare!
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">  Using the Settings App (Grey Cog) on your device, you can set some additional features.  This includes the position of the Horn Button and the car size.  The default horn position is 305x, 85y for the centre right, and 437x, 277y for lower right corner.  The car size default is 0.80, but can be set from 0.25 (small) to 1.00 (large). iPhone coordinates depend on model, but could be up to 500x, 300y.  If you set out of range, enter the default values to restore functionality.
+                                        <string key="content">
+Using the Settings App (Grey Cog) on your iPad/iPhone, you can set some additional features.
 
-The Display level is the amount of information you get on screen during a race. 0=Just Laps to go, 1=Laps, time and crash info and 2=all above plus horns displayed.</mutableString>
+This includes the position of the Horn Button and the car size.
+
+The default horn position is 305x, 85y for the centre right, but if set to 437x, 277y it will appear in lower right corner for an iPad. </string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            <color key="NSUnderlineColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="iPhone coordinates depend on model, but could be up to 500x, 300y.">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <mutableString key="content">
+
+The car size default is 0.50, but can be set from 0.25 (small) to 1.00 (large). .  If you set out of range, enter the default values to restore functionality.
+
+The 'Display Level' is the amount of information you get on screen during a race. 0=Just Laps to go, 1=Laps, time and crash info and 2=all above plus horns triggered so far.
+
+'Hazard Scale' sets the size of the hazards, from 0.25 (small) to 1.0 (large).  On the Hard Track, this may be too difficult or impossible to drive, unless the physics is set to 4 or 5.
+
+'Game Physics' sets ability of the hazards to react to a car crash.  If set to 0, all the hazards are fixed in place on the track, and do not move when hit.  If set to 1, 2, 3 and 4, additional hazards become movable when hit.  Level 5 is 'insane' and will really confuse the driving experience with all hazards 'live' and almost never still!</mutableString>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
@@ -1577,12 +1602,12 @@ The Display level is the amount of information you get on screen during a race. 
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" id="0qq-N8-ACk">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" id="0qq-N8-ACk">
                                 <rect key="frame" x="20" y="62" width="327" height="249"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Driver Name:">
+                                    <fragment content="Driver Name :">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
@@ -1601,7 +1626,7 @@ The Display level is the amount of information you get on screen during a race. 
                                             <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="Results Email:">
+                                    <fragment content="Results Email :">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
@@ -1659,10 +1684,10 @@ Received email data can be ‘cut’ and ‘pasted’ into MS-Excel (r) for furt
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nf9-ez-CEO">
-                                <rect key="frame" x="168" y="224" width="393" height="58"/>
+                                <rect key="frame" x="195" y="224" width="366" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES"/>
                                 <attributedString key="attributedText">
-                                    <fragment content=" Press  To Start The Game">
+                                    <fragment content=" Touch  To Start The Game">
                                         <attributes>
                                             <color key="NSColor" red="0.98878632484094675" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="24" name="Arial-BoldMT"/>
@@ -1752,7 +1777,7 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">This game is part of a Psychological Motor Control Test to explore how distractions affect motor function during a task.
+                                        <string key="content">This game is a Psychological Motor Control Test to explore how distractions can affect motor function during a task.
 
  </string>
                                         <attributes>
@@ -1891,10 +1916,10 @@ Cg
         <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="kKz-ZN-Bct"/>
         <segue reference="UeP-lD-UCg"/>
-        <segue reference="Snq-Uf-qxR"/>
-        <segue reference="EFj-b3-7hl"/>
+        <segue reference="kKz-ZN-Bct"/>
         <segue reference="Ypq-Rw-I7Y"/>
+        <segue reference="EFj-b3-7hl"/>
+        <segue reference="Snq-Uf-qxR"/>
     </inferredMetricsTieBreakers>
 </document>

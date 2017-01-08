@@ -59,6 +59,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     float   angAdd1;
     float   angAdd2;
     float   angAdd3;
+    float   hazScale; // hazard scale 0.25-1.00
     Float32 sign;
     Float32 tempt;
     long    totalCrashes;
@@ -189,6 +190,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         lap      = 1;
         
         singleton.hornTimerCounter = 0;
+        
+        hazScale = singleton.hazScale; // set the size of the hazards
         
         angAdd1  =  6; //first lap reasonable values for distraction triggers
         angAdd2  = -2;
@@ -667,6 +670,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     //set the horn display 'off' at start
     singleton.hornsShowing = NO;
     
+    hazScale=singleton.hazScale;
+    
     xx = track.position.x;
     yy = track.position.y;
     
@@ -749,25 +754,33 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     box.position = point;
     
     // scale the box here
-    box.xScale = 0.65;
-    box.yScale = 0.65;
+    //box.xScale = 0.65;
+    box.xScale = singleton.hazScale;
+    box.yScale = singleton.hazScale;
     
     box.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:box.size];
     box.physicsBody.categoryBitMask = CRBodyBox;
-    if (singleton.gamePhysics>1) {
+    if (singleton.gamePhysics > 1 && singleton.gamePhysics < 5) {
         // Simulate friction and prevent the boxes from continuously sliding around
-        box.physicsBody.linearDamping  = 0.5f;//1
-        box.physicsBody.angularDamping = 0.1f;//1
-        box.physicsBody.mass=1; //added but not needed
-        box.physicsBody.friction = 200; //added but not needed
-        box.physicsBody.dynamic=YES;
-    }else{
-        // Simulate friction and prevent the boxes from continuously sliding around
-        box.physicsBody.linearDamping  = 1.0f;//1
-        box.physicsBody.angularDamping = 1.0f;//1
-        //box.physicsBody.mass=1000; //added but not needed
-        //box.physicsBody.friction = 1000; //added but not needed
-        box.physicsBody.dynamic=NO;
+        box.physicsBody.linearDamping  = 0.5f;
+        box.physicsBody.angularDamping = 0.1f;
+        box.physicsBody.mass           = 1;
+        box.physicsBody.friction       = 200;
+        box.physicsBody.dynamic        =YES;
+    } else {
+        if (singleton.gamePhysics == 0) {
+            //Simulate friction and prevent the boxes from continuously sliding around
+            box.physicsBody.linearDamping  = 1.0f;//1
+            box.physicsBody.angularDamping = 1.0f;//1
+            box.physicsBody.dynamic        = NO;
+        } else {
+            //insane level
+            box.physicsBody.linearDamping  = 0.1f;
+            box.physicsBody.angularDamping = 0.01f;
+            box.physicsBody.mass           = 1;
+            box.physicsBody.friction       = 1;
+            box.physicsBody.dynamic        = YES;
+        }
     }
     
     [self addChild:box];
@@ -779,26 +792,35 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     SKSpriteNode *crate = [SKSpriteNode spriteNodeWithImageNamed:@"crate"];
     
     // scale the crate here
-    crate.xScale = 0.6;
-    crate.yScale = 0.6;
+    crate.xScale = singleton.hazScale;
+    crate.yScale = singleton.hazScale;
     
     crate.position = point;
     crate.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:crate.size];
     crate.physicsBody.categoryBitMask = CRBodyCrate;
-    if (singleton.gamePhysics>2) {
+    if (singleton.gamePhysics>2 && singleton.gamePhysics<5) {
         // Simulate friction and prevent the boxes from continuously sliding around
-        crate.physicsBody.linearDamping  = 0.5f;//1
-        crate.physicsBody.angularDamping = 0.1f;//1
-        crate.physicsBody.mass = 1; //added but not needed
-        crate.physicsBody.friction = 200; //added but not needed
+        crate.physicsBody.linearDamping  = 0.5f;
+        crate.physicsBody.angularDamping = 0.1f;
+        crate.physicsBody.mass = 1;
+        crate.physicsBody.friction = 200;
         crate.physicsBody.dynamic=YES;
-    }else{
+    } else {
         // Simulate friction and prevent the boxes from continuously sliding around
         crate.physicsBody.linearDamping  = 1.0f;//1
         crate.physicsBody.angularDamping = 1.0f;//1
         //crate.physicsBody.mass = 1000; //added but not needed
         //crate.physicsBody.friction = 1000; //added but not needed
         crate.physicsBody.dynamic=NO;
+        
+        if (singleton.gamePhysics==5) {
+            //insane level
+            crate.physicsBody.linearDamping = 0.1f;//1
+            crate.physicsBody.angularDamping = 0.0f;//1
+            crate.physicsBody.mass=0.1;
+            crate.physicsBody.friction = 1;
+            crate.physicsBody.dynamic=YES;
+        }
     }
     [self addChild:crate];
 }
@@ -833,25 +855,34 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     bale.position = point;
     
     // scale the bale here
-    bale.xScale = 0.6;
-    bale.yScale = 0.6;
+    bale.xScale = singleton.hazScale;
+    bale.yScale = singleton.hazScale;
     
     bale.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bale.size];
     bale.physicsBody.categoryBitMask = CRBodyBale;
-    if (singleton.gamePhysics>0) {
+    if (singleton.gamePhysics>0 && singleton.gamePhysics<5) {
         // Simulate friction and prevent the boxes from continuously sliding around
-        bale.physicsBody.linearDamping  = 0.5f;//1
-        bale.physicsBody.angularDamping = 0.1f;//1
-        bale.physicsBody.mass=1; //added b1t not needed
-        bale.physicsBody.friction = 150; //added but not needed
+        bale.physicsBody.linearDamping  = 0.5f;
+        bale.physicsBody.angularDamping = 0.1f;
+        bale.physicsBody.mass=1;
+        bale.physicsBody.friction = 150;
         bale.physicsBody.dynamic=YES;
-    }else{
+    } else {
         // Simulate friction and prevent the boxes from continuously sliding around
         bale.physicsBody.linearDamping  = 1.0f;//1
         bale.physicsBody.angularDamping = 1.0f;//1
         //bale.physicsBody.mass=1000; //added but not needed
         //bale.physicsBody.friction = 1000; //added but not needed
         bale.physicsBody.dynamic=NO;
+        
+        if (singleton.gamePhysics==5) {
+            //insane level
+            bale.physicsBody.linearDamping = 0.1f;//1
+            bale.physicsBody.angularDamping = 0.0f;//1
+            bale.physicsBody.mass=0.1;
+            bale.physicsBody.friction = 1;
+            bale.physicsBody.dynamic=YES;
+        }
     }
     
     [self addChild:bale];
@@ -865,26 +896,35 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     tyre.position = point;
     
     // scale the tyre here
-    tyre.xScale = 0.6;
-    tyre.yScale = 0.6;
+    tyre.xScale = singleton.hazScale;
+    tyre.yScale = singleton.hazScale;
     
     tyre.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:tyre.size];
     tyre.physicsBody.categoryBitMask = CRBodyBox;
     if (singleton.gamePhysics==4) {
         // moves the tyre
         // Simulate friction and prevent the boxes from continuously sliding around
-        tyre.physicsBody.linearDamping = 0.5f;//1
-        tyre.physicsBody.angularDamping = 0.1f;//1
-        tyre.physicsBody.mass=1; //added but not needed
-        tyre.physicsBody.friction = 100; //added but not needed
+        tyre.physicsBody.linearDamping = 0.5f;
+        tyre.physicsBody.angularDamping = 0.1f;
+        tyre.physicsBody.mass=1;
+        tyre.physicsBody.friction = 100;
         tyre.physicsBody.dynamic=YES;
-    }else{
+    } else {
         // Simulate friction and prevent the boxes from continuously sliding around
         tyre.physicsBody.linearDamping = 1.0f;//1
         tyre.physicsBody.angularDamping = 1.0f;//1
         //tyre.physicsBody.mass=1000; //added but not needed
         //tyre.physicsBody.friction = 1000; //added but not needed
         tyre.physicsBody.dynamic=NO;
+        
+        if (singleton.gamePhysics==5) {
+            //insane level
+            tyre.physicsBody.linearDamping = 0.1f;//1
+            tyre.physicsBody.angularDamping = 0.0f;//1
+            tyre.physicsBody.mass=0.1;
+            tyre.physicsBody.friction = 1;
+            tyre.physicsBody.dynamic=YES;
+        }
     }
     [self addChild:tyre];
 }
