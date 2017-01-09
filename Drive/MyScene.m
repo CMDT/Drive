@@ -194,23 +194,61 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         
         hazScale = singleton.hazScale; // set the size of the hazards
         
-        angAdd1  =  6; //first lap reasonable values for distraction triggers
-        angAdd2  = -2;
+        srand48(arc4random()); // seed the random numbers, only once
         
-        if ([singleton.distractionOn isEqualToString:@"3"]) {
-            // if its 2 distractions, top and bottom 1st lap, if its 1 ignore, if its 3, distr 2 is 9 o clockish
-            angAdd2  = -8;
+        long dist1 = [singleton.distractionOn integerValue];
+        
+        switch (dist1) {
+            case 0:
+                // no distraction set
+            case 1:
+                //1 distraction
+                    angAdd1  = 4+((float)arc4random() / ARC4RANDOM_MAX)*4.0f; //don't beep just past start line (start at 2), and avoid the very last part 9) so not to clash with lap sound
+                    sign     = ((float)arc4random() / ARC4RANDOM_MAX)*2.0f;   //make negative/positive at random
+                    if(sign > 1.0){
+                        angAdd1 = -1 * angAdd1; //reverse sign
+                    }
+                break;
+                
+            case 2:
+                    //2 distractions, one in top half of track, one in the bottom
+                    angAdd1 =          4+((float)arc4random() / ARC4RANDOM_MAX)*3.0f;
+                    angAdd2 = -1.0f *    ((float)arc4random() / ARC4RANDOM_MAX)*5.0f; //reverse sign for second horn
+                    if(angAdd1 > 8 && angAdd2 < -7) { // if too close to first beep, space out
+                        angAdd2 = angAdd2 + 4.0;
+                    }
+                break;
+                
+            case 3:
+                    //3 distractions, first, middle and end =/- a bit of random wobble
+                    //1st segment, 2 o clock to 11 o clock
+                    angAdd1 =       3+ ((float)arc4random() / ARC4RANDOM_MAX)*2.0f;
+                    angAdd2 =        ((float)arc4random() / ARC4RANDOM_MAX)*2.0f;
+                    sign    =        ((float)arc4random() / ARC4RANDOM_MAX)*2.0f;   //make negative/positive at random
+                    // both sides of 9 o clock
+                    if(sign > 1.0){
+                        angAdd2 = 9.0 - angAdd2;
+                    } else {
+                        angAdd2 = -8.0 + angAdd2;
+                    }
+                    if (angAdd2 == 0) {
+                        angAdd2 =  -7.0;
+                    }
+                    //3rd segment, 8 o clock to 4 o clock
+                    angAdd3 = -1.0f*(1+(((float)arc4random() / ARC4RANDOM_MAX)*3.0f));
+                break;
+            default:
+                // nothing
+                break;
         }
-        
-        angAdd3  = -2;
-        
+
         hornTriggered  = NO;
         horn2Triggered = NO;
         horn3Triggered = NO;
         
         //4 second delay whilst start lamps display
-        started=NO;
-        go=NO;
+        started = NO;
+        go      = NO;
     }
     return self;
 }
@@ -464,8 +502,6 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 */
             //counter
             lap = lap + 1;
-            
-            srand48(arc4random()); // seed the random numbers
             
             //make a randon angle for horn trigger position as new lap started
             if (horn_tt < 2) {
@@ -1366,7 +1402,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                     missedHorn[x] = 0;
                 }
             }
-                NSLog(@"horn time %d: %.3f S", x+1, hornReactionTime[x]);
+                //NSLog(@"horn time %d: %.3f S", x+1, hornReactionTime[x]);
         }
         
         //averages
@@ -1481,7 +1517,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                                      singleton.hazLaps[x]
                                      ];
             
-            NSLog(@"react lap: %@", singleton.lapTimes[x]);
+            //NSLog(@"react lap: %@", singleton.lapTimes[x]);
         }
         for (int x=0; x<horns; x+=1) {
             singleton.hornTimes[x] = [NSString stringWithFormat:@"%i, %.3f, %i",
@@ -1519,6 +1555,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         xcounter = 0;
     }
     //NSLog(@"tempLap=%i",xcounter);
+    
     mySingleton *singleton = [mySingleton sharedSingleton];
     //test for all the hazard objetcs collisions
     if ((contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyBox)||(contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyCrate)||(contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyTyre)||(contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask == CRBodyCar + CRBodyBale)) {

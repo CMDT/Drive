@@ -62,7 +62,7 @@
     scorehms,
     h1,h2,h3,
     h4,h5,h6,
-    h7,h8,h9,
+    h7,h8,h9,h10,h11,h12,
 // last one... ;
     emailbtn;
 
@@ -149,26 +149,33 @@
     hornsPlayed.text=[NSString stringWithFormat:@"%i",horns];;
     
     if ([hornsPlayed.text integerValue] <= 0) {
-        h1.hidden = YES;
-        h2.hidden = YES;
-        h3.hidden = YES;
-        h4.hidden = YES;
-        h5.hidden = YES;
-        h6.hidden = YES;
-        h7.hidden = YES;
-        h8.hidden = YES;
-        h9.hidden = YES;
-        hornsMissed.hidden=YES;
-    }else{
-        h1.hidden = NO;
-        h2.hidden = NO;
-        h3.hidden = NO;
-        h4.hidden = NO;
-        h5.hidden = NO;
-        h6.hidden = NO;
-        h7.hidden = NO;
-        h8.hidden = NO;
-        hornsMissed.hidden=NO;
+        h1.hidden  = YES;
+        h2.hidden  = YES;
+        h3.hidden  = YES;
+        h4.hidden  = YES;
+        h5.hidden  = YES;
+        h6.hidden  = YES;
+        h7.hidden  = YES;
+        h8.hidden  = YES;
+        h9.hidden  = YES;
+        h10.hidden = YES;
+        h11.hidden = YES;
+        h12.hidden = YES;
+        hornsMissed.hidden = YES;
+    } else {
+        h1.hidden  = NO;
+        h2.hidden  = NO;
+        h3.hidden  = NO;
+        h4.hidden  = NO;
+        h5.hidden  = NO;
+        h6.hidden  = NO;
+        h7.hidden  = NO;
+        h8.hidden  = NO;
+        h9.hidden  = NO;
+        h10.hidden = NO;
+        h11.hidden = NO;
+        h12.hidden = NO;
+        hornsMissed.hidden = NO;
     }
     
     fastestHorn.text   = singleton.fastestHorn;
@@ -177,6 +184,31 @@
     totalHorn.text     = singleton.totalHorn;
     distractionOn.text = singleton.distractionOn;
     masterScore.text   = singleton.masterScore;
+    
+    if ([fastestHorn.text floatValue] > 999) {
+        //no horns wer pressed, hide the data fields
+        fastestHorn.text = @"Missed";
+        h3.hidden=YES;
+        h4.hidden=YES;
+        h5.hidden=YES;
+        h6.hidden=YES;
+        h7.hidden=YES;
+        h8.hidden=YES;
+        h10.hidden=YES;
+        h11.hidden=YES;
+        h12.hidden=YES;
+    } else {
+        //show the horns data
+        h3.hidden=NO;
+        h4.hidden=NO;
+        h5.hidden=NO;
+        h6.hidden=NO;
+        h7.hidden=NO;
+        h8.hidden=NO;
+        h10.hidden=NO;
+        h11.hidden=NO;
+        h12.hidden=NO;
+    }
     
     masterScore.text = [NSString stringWithFormat:@"%0.2f",
                         ([singleton.totalTime floatValue])
@@ -300,8 +332,6 @@
     if (horns > 0) {
         //blank line
         [singleton.cardReactionTimeResult addObject:@" <br/>" ];
-        singleton.counter = singleton.counter+1;
-        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Fastest Horn: %@, Slowest Horn: %@, Average Horn: %@ <br/>",singleton.fastestHorn,singleton.slowestHorn, singleton.averageHorn]];
         singleton.counter = singleton.counter+1;
         
         //new section on missed horns and reactions of horns

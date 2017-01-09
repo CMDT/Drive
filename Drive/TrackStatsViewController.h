@@ -77,6 +77,9 @@
 @property (weak, nonatomic)   IBOutlet UILabel * h7;
 @property (weak, nonatomic)   IBOutlet UILabel * h8;
 @property (weak, nonatomic)   IBOutlet UILabel * h9;
+@property (weak, nonatomic)   IBOutlet UILabel * h10;
+@property (weak, nonatomic)   IBOutlet UILabel * h11;
+@property (weak, nonatomic)   IBOutlet UILabel * h12;
 
 @property (nonatomic, strong) IBOutlet UIButton * emailbtn;
 
