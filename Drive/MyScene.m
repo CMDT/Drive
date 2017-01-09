@@ -602,8 +602,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         if (singleton.hornsShowing == YES) {
 
             //stop the horn timer and record it
-            hornReactionTime[horns-1] = temp3;
-            //NSLog(@"Horn Reaction = , %.2f", temp3); //
+            hornReactionTime[horns-1] = temp3; //was horns-1
+            NSLog(@"Horn Reaction = , %.2f", temp3); //
             
             //reset the flag, so another horn can play
             singleton.hornsShowing = NO;
@@ -1290,7 +1290,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         int y=0;
         int z=0;
         
-        hornReactionTime[0]=hornReactionTime[1];
+        //***********
+        //hornReactionTime[0]=hornReactionTime[1]; // could be error, removed line for now //**************************************
+        //***********
         
         for (int x=0; x<horns; x+=1) {
             //correct the lag for horn time key presses
@@ -1341,7 +1343,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                     missedHorn[x] = 0;
                 }
             }
-                //NSLog(@"horn time %d: %.3f S", x+1, hornReactionTime[x]);
+                NSLog(@"horn time %d: %.3f S", x+1, hornReactionTime[x]);
         }
         
         //averages
@@ -1358,7 +1360,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             //get time for reaction recorded
             temp1 = hornReactionTime[x];
             
-            //NSLog(@"horn time %d: %.f mS",x+1, temp1);
+            NSLog(@"horn time %d: %.3f mS",x+1, temp1);
             
             if (missedHorn[x] == 1) {
                 //missed horn
