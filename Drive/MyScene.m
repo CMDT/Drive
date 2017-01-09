@@ -85,6 +85,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     BOOL    horn2Triggered;
     BOOL    horn3Triggered;
     BOOL    started; // has the start lamp sequence finished?
+    BOOL    go;
     Float32 hornReactionTime[310];
     double  temp1;
     double  temp2;
@@ -209,6 +210,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         
         //4 second delay whilst start lamps display
         started=NO;
+        go=NO;
     }
     return self;
 }
@@ -226,9 +228,28 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         self.previousTimeInterval =  currentTime+4;
     }
     //NSLog(@"started=%i,prev=%.2f, curr=%.2f, time=%.3f", started, self.previousTimeInterval, currentTime, self.previousTimeInterval-currentTime);
+    
     //only let the car move when the start lamps are out
     if (self.previousTimeInterval - currentTime < 0) {
         started=YES;
+    
+        if (go==NO) {
+            go=YES;
+            //rev start sound
+            NSError * error1;
+            NSURL   * soundURL7 = [[NSBundle mainBundle] URLForResource:@"lap" withExtension:@"wav"];
+            AVAudioPlayer * player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL7 error:&error1];
+            [player setVolume:singleton.ambientVolume];
+            [player prepareToPlay];
+    
+            SKAction * playAction = [SKAction runBlock:^{
+                [player play];
+            }];
+            SKAction * waitAction = [SKAction waitForDuration:player.duration+1];
+            SKAction * sequence   = [SKAction sequence:@[playAction, waitAction]];
+    
+            [self runAction:sequence];
+        }
     }
     
     //****************************************************************
