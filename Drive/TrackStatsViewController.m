@@ -50,6 +50,7 @@
     wallCrashes,
     totalCrashes,
     hornsPlayed,
+    hornsMissed,
     fastestHorn,
     slowestHorn,
     averageHorn,
@@ -61,7 +62,7 @@
     scorehms,
     h1,h2,h3,
     h4,h5,h6,
-    h7,h8,
+    h7,h8,h9,
 // last one... ;
     emailbtn;
 
@@ -137,6 +138,7 @@
     hazCrashes.text    = singleton.hazCrashes;
     wallCrashes.text   = singleton.wallCrashes;
     totalCrashes.text  = singleton.totalCrashes;
+    hornsMissed.text   = singleton.missed;
     
     int horns;
     horns = [singleton.hornsPlayed intValue];
@@ -155,6 +157,8 @@
         h6.hidden = YES;
         h7.hidden = YES;
         h8.hidden = YES;
+        h9.hidden = YES;
+        hornsMissed.hidden=YES;
     }else{
         h1.hidden = NO;
         h2.hidden = NO;
@@ -164,6 +168,7 @@
         h6.hidden = NO;
         h7.hidden = NO;
         h8.hidden = NO;
+        hornsMissed.hidden=NO;
     }
     
     fastestHorn.text   = singleton.fastestHorn;

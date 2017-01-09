@@ -57,6 +57,7 @@
 @property (nonatomic, strong) IBOutlet UILabel * wallCrashes;
 @property (nonatomic, strong) IBOutlet UILabel * totalCrashes;
 @property (nonatomic, strong) IBOutlet UILabel * hornsPlayed;
+@property (nonatomic, strong) IBOutlet UILabel * hornsMissed;
 @property (nonatomic, strong) IBOutlet UILabel * fastestHorn;
 @property (nonatomic, strong) IBOutlet UILabel * slowestHorn;
 @property (nonatomic, strong) IBOutlet UILabel * averageHorn;
@@ -75,6 +76,7 @@
 @property (weak, nonatomic)   IBOutlet UILabel * h6;
 @property (weak, nonatomic)   IBOutlet UILabel * h7;
 @property (weak, nonatomic)   IBOutlet UILabel * h8;
+@property (weak, nonatomic)   IBOutlet UILabel * h9;
 
 @property (nonatomic, strong) IBOutlet UIButton * emailbtn;
 

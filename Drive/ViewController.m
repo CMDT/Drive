@@ -105,7 +105,7 @@
     //version, set anyway *****************************************
     //*************************************************************
     
-    version0 =  @"DRIVE Version 4.0.3 - 8.1.17";     // version   *** keep short
+    version0 =  @"DRIVE Version 4.0.4 - 9.1.17";     // version   *** keep short
     version1 =  @"MMU (C) 2017";                // copyright *** limited line space
     version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
     version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen
@@ -132,7 +132,7 @@
 
     //tester name
     subjectName     = [defaults objectForKey:kSubject];
-    if([subjectName isEqualToString: @ "" ] || email == nil){
+    if([subjectName isEqualToString: @ "" ] || subjectName == nil){
         subjectName =  @"Me";
         [defaults setObject:[NSString stringWithFormat:@"%@", singleton.subjectName] forKey:kSubject];
     }
@@ -576,12 +576,13 @@
 
 - (void)p_gameOverWithWin2 {
     [self.view bringSubviewToFront:self.analogControl];
-    startLampImageView.hidden=YES;
-    _finishLampImageView.hidden=YES;
+    startLampImageView.hidden   = YES;
+    _finishLampImageView.hidden = YES;
+    
     mySingleton *singleton = [mySingleton sharedSingleton];
-    NSString *completedMessage = [NSString stringWithFormat:@"You Have Completed %@ Laps.\n\nRace Times Will Follow...",singleton.laps];
-    NSString *notFinishMessage = @"You Did Not Finish !\n\nYou Will Have to Start Again.";
-    NSString *bodyMessage      = @"... This Race is Now Over ...\n\n";
+    NSString *completedMessage  = [NSString stringWithFormat:@"You Have Completed %@ Laps.\n\nRace Results Will Follow...", singleton.laps];
+    NSString *notFinishMessage  = @"You Did Not Finish !\n\nYou Will Have to Start Again.";
+    NSString *bodyMessage       = @"... This Race is Now Over ...\n\n";
     
     UIAlertView *alert =
     [[UIAlertView alloc] initWithTitle:didWin2 ? completedMessage : notFinishMessage //selects the choice didwin BOOL

@@ -342,39 +342,39 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                 if (horn_tt3 == 0){
                 //3 distractions per lap
                 if(angAdd1 > 0){
-                    if (progressAngle < angAdd1+0.5 && progressAngle >= angAdd1) {//(progressAngle < 2 && progressAngle > 1) range 0 to 10, -1 to -10
+                    if (progressAngle < angAdd1+1 && progressAngle >= angAdd1) {//(progressAngle < 2 && progressAngle > 1) range 0 to 10, -1 to -10
                         hornTriggered = YES;
                     } else {
                         hornTriggered = NO;
                     }
                 } else {
-                    if (progressAngle <= angAdd1 && progressAngle > angAdd1-0.5) {//(progressAngle < 2 && progressAngle > 1) range 0 to 10, -1 to -10
+                    if (progressAngle <= angAdd1 && progressAngle > angAdd1-1) {//(progressAngle < 2 && progressAngle > 1) range 0 to 10, -1 to -10
                         hornTriggered = YES;
                     } else {
                         hornTriggered = NO;
                     }
                 }
                 if(angAdd2 > 0){
-                    if (progressAngle < angAdd2+0.5 && progressAngle >= angAdd2) {
+                    if (progressAngle < angAdd2+1 && progressAngle >= angAdd2) {
                         horn2Triggered = YES;
                     } else {
                         horn2Triggered = NO;
                     }
                 } else {
-                    if (progressAngle <= angAdd2 && progressAngle > angAdd2-0.5) {
+                    if (progressAngle <= angAdd2 && progressAngle > angAdd2-1) {
                         horn2Triggered = YES;
                     } else {
                         horn2Triggered = NO;
                     }
                 }
                 if(angAdd3 > 0){
-                    if (progressAngle < angAdd3+0.5 && progressAngle >= angAdd3) {
+                    if (progressAngle < angAdd3+1 && progressAngle >= angAdd3) {
                         horn3Triggered = YES;
                     } else {
                         horn3Triggered = NO;
                     }
                 } else {
-                    if (progressAngle <= angAdd3 && progressAngle > angAdd3-0.5) {
+                    if (progressAngle <= angAdd3 && progressAngle > angAdd3-1) {
                         horn3Triggered = YES;
                     } else {
                         horn3Triggered = NO;
@@ -400,10 +400,10 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         if (fabs(nextProgressAngle - M_PI) < FLT_EPSILON) { //the difference between 1.0 and the smallest float bigger than 1.0.
             //start of new lap here
             self.numOfLaps -= 1;
-            self.hors = horns;
-            horn_tt  = 0; //passed the finish line, reset all
-            horn_tt2 = 0;
-            horn_tt3 = 0;
+            self.hors       = horns;
+            horn_tt         = 0; //passed the finish line, reset all
+            horn_tt2        = 0;
+            horn_tt3        = 0;
             
             //read the timer
             reactionTime[xcounter] = (Float32)[self.startDate timeIntervalSinceNow]* -1000.0f;
@@ -441,10 +441,10 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             
             [self runAction:sequence];
 */
+            //counter
+            lap = lap + 1;
             
-            lap=lap+1;
             srand48(arc4random()); // seed the random numbers
-
             
             //make a randon angle for horn trigger position as new lap started
             if (horn_tt < 2) {
@@ -509,11 +509,15 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                         
                         break;
                 }
-                //********* // 1st lap is set at start of code.  +12 = start line 3 o clock, +9 is 9 o clock, followed by -8, -7 etc till 0 at 4 o clock
-                //angAdd1= 6;//temp test value
-                //angAdd2= -8;
-                //angAdd3= -1;
-                //*********
+            }
+            // check for last lap and adjust so cant be too near end of race line
+            if ((long)self.numOfLaps <= 1) {
+                angAdd1  =  6; //first lap reasonable values for distraction triggers
+                angAdd2  = -2;
+                if ([singleton.distractionOn isEqualToString:@"3"]) {
+                    angAdd2  = -8;
+                }
+                angAdd3  = -3;
             }
         }
         //NSLog(@"reset angles");
@@ -521,9 +525,9 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     
     //only do this if the distraction flag is ON
     
-    if ([singleton.distractionOn isEqual:@"1"]||[singleton.distractionOn isEqual:@"2"]||[singleton.distractionOn isEqual:@"3"]) {
+    if ([singleton.distractionOn isEqual:@"1"] || [singleton.distractionOn isEqual:@"2"] || [singleton.distractionOn isEqual:@"3"]) {
 
-        if (hornTriggered||horn2Triggered||horn3Triggered){
+        if (hornTriggered || horn2Triggered || horn3Triggered){
             //reset the triggers if set
             if (hornTriggered) {
                 hornTriggered  = NO;
@@ -537,6 +541,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                 horn3Triggered = NO;
                  horn_tt3++;
             }
+            
 
             //start the horn timer
             //set the flag, the horn sound was played
@@ -553,9 +558,10 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                 hornReactionTime[horns] = millis2;
                 
                 //update horn counter on screen if flag on
-                if(displayMinimum==2){
-                    self.hor.text = [NSString stringWithFormat:@"H: %li", (long)self.hors+1];
-                }
+                //self.hor.text = [NSString stringWithFormat:@"H: %li", (long)self.hors+1];
+                
+                self.hor.text = [NSString stringWithFormat:@"H: %ld", [singleton.hornsPlayed integerValue]+1];
+
                 //beep the horn
                 [self runAction:self.hornSoundAction];
                 
@@ -564,7 +570,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                 //trigger and time
                 //NSLog(@"horn, start horn time=%i, %.f", horns, millis2); //only triggered on horn play
                 
-                horns++;
+                    horns++;
                 
                 if (hornTriggered  == YES) {
                     horn_tt++;
@@ -576,12 +582,14 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                     horn_tt3++;
                 }
                 singleton.hornsPlayed = [NSString stringWithFormat:@"%i", horns];
+                
+                //update horn counter on screen if flag on
+                //self.hor.text = [NSString stringWithFormat:@"H: %i", horns];
             }
         } else {
             // do nothing, everywhere else n, s, e
                 //NSLog(@"nothing to do");
             }
-        
         // collect the current gap time
 
         struct timeval time;
@@ -600,10 +608,10 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             //reset the flag, so another horn can play
             singleton.hornsShowing = NO;
         }
+        
         //fix horn time at diff between start times if no recorded end
         if (millis2 > 1000) {
-            hornReactionTime[horns] = 1000;//prev2; // should this be horns-1 ???????????????????????????????????????
-            // ????????????????
+            hornReactionTime[horns] = 1000;
         }
     }
     
@@ -679,6 +687,20 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     //GO NOW !
 //***************
     //try countdown timers here...
+    //rev sound
+    NSError * error1;
+    NSURL   * soundURL9 = [[NSBundle mainBundle] URLForResource:@"lap" withExtension:@"wav"];
+    AVAudioPlayer * player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL9 error:&error1];
+    [player setVolume:singleton.ambientVolume];
+    [player prepareToPlay];
+    
+    SKAction * playAction = [SKAction runBlock:^{
+        [player play];
+    }];
+    SKAction * waitAction = [SKAction waitForDuration:player.duration+1];
+    SKAction * sequence   = [SKAction sequence:@[playAction, waitAction]];
+    
+    [self runAction:sequence];
 }
 
 //now using singleton for laps
@@ -766,7 +788,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         box.physicsBody.angularDamping = 0.1f;
         box.physicsBody.mass           = 1;
         box.physicsBody.friction       = 200;
-        box.physicsBody.dynamic        =YES;
+        box.physicsBody.dynamic        = YES;
     } else {
         if (singleton.gamePhysics == 0) {
             //Simulate friction and prevent the boxes from continuously sliding around
@@ -782,7 +804,6 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             box.physicsBody.dynamic        = YES;
         }
     }
-    
     [self addChild:box];
 }
 
@@ -802,24 +823,22 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         // Simulate friction and prevent the boxes from continuously sliding around
         crate.physicsBody.linearDamping  = 0.5f;
         crate.physicsBody.angularDamping = 0.1f;
-        crate.physicsBody.mass = 1;
-        crate.physicsBody.friction = 200;
-        crate.physicsBody.dynamic=YES;
+        crate.physicsBody.mass           = 1;
+        crate.physicsBody.friction       = 200;
+        crate.physicsBody.dynamic        = YES;
     } else {
         // Simulate friction and prevent the boxes from continuously sliding around
         crate.physicsBody.linearDamping  = 1.0f;//1
         crate.physicsBody.angularDamping = 1.0f;//1
-        //crate.physicsBody.mass = 1000; //added but not needed
-        //crate.physicsBody.friction = 1000; //added but not needed
-        crate.physicsBody.dynamic=NO;
+        crate.physicsBody.dynamic        = NO;
         
         if (singleton.gamePhysics==5) {
             //insane level
-            crate.physicsBody.linearDamping = 0.1f;//1
+            crate.physicsBody.linearDamping  = 0.1f;//1
             crate.physicsBody.angularDamping = 0.0f;//1
-            crate.physicsBody.mass=0.1;
-            crate.physicsBody.friction = 1;
-            crate.physicsBody.dynamic=YES;
+            crate.physicsBody.mass           = 0.1;
+            crate.physicsBody.friction       = 1;
+            crate.physicsBody.dynamic        = YES;
         }
     }
     [self addChild:crate];
@@ -864,27 +883,24 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         // Simulate friction and prevent the boxes from continuously sliding around
         bale.physicsBody.linearDamping  = 0.5f;
         bale.physicsBody.angularDamping = 0.1f;
-        bale.physicsBody.mass=1;
-        bale.physicsBody.friction = 150;
-        bale.physicsBody.dynamic=YES;
+        bale.physicsBody.mass           = 1;
+        bale.physicsBody.friction       = 150;
+        bale.physicsBody.dynamic        = YES;
     } else {
         // Simulate friction and prevent the boxes from continuously sliding around
         bale.physicsBody.linearDamping  = 1.0f;//1
         bale.physicsBody.angularDamping = 1.0f;//1
-        //bale.physicsBody.mass=1000; //added but not needed
-        //bale.physicsBody.friction = 1000; //added but not needed
-        bale.physicsBody.dynamic=NO;
+        bale.physicsBody.dynamic        = NO;
         
         if (singleton.gamePhysics==5) {
             //insane level
-            bale.physicsBody.linearDamping = 0.1f;//1
+            bale.physicsBody.linearDamping  = 0.1f;//1
             bale.physicsBody.angularDamping = 0.0f;//1
-            bale.physicsBody.mass=0.1;
-            bale.physicsBody.friction = 1;
-            bale.physicsBody.dynamic=YES;
+            bale.physicsBody.mass           = 0.1;
+            bale.physicsBody.friction       = 1;
+            bale.physicsBody.dynamic        = YES;
         }
     }
-    
     [self addChild:bale];
 }
 
@@ -904,26 +920,24 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
     if (singleton.gamePhysics==4) {
         // moves the tyre
         // Simulate friction and prevent the boxes from continuously sliding around
-        tyre.physicsBody.linearDamping = 0.5f;
+        tyre.physicsBody.linearDamping  = 0.5f;
         tyre.physicsBody.angularDamping = 0.1f;
-        tyre.physicsBody.mass=1;
-        tyre.physicsBody.friction = 100;
-        tyre.physicsBody.dynamic=YES;
+        tyre.physicsBody.mass           = 1;
+        tyre.physicsBody.friction       = 100;
+        tyre.physicsBody.dynamic        = YES;
     } else {
         // Simulate friction and prevent the boxes from continuously sliding around
-        tyre.physicsBody.linearDamping = 1.0f;//1
+        tyre.physicsBody.linearDamping  = 1.0f;//1
         tyre.physicsBody.angularDamping = 1.0f;//1
-        //tyre.physicsBody.mass=1000; //added but not needed
-        //tyre.physicsBody.friction = 1000; //added but not needed
-        tyre.physicsBody.dynamic=NO;
+        tyre.physicsBody.dynamic        = NO;
         
         if (singleton.gamePhysics==5) {
             //insane level
-            tyre.physicsBody.linearDamping = 0.1f;//1
+            tyre.physicsBody.linearDamping  = 0.1f;//1
             tyre.physicsBody.angularDamping = 0.0f;//1
-            tyre.physicsBody.mass=0.1;
-            tyre.physicsBody.friction = 1;
-            tyre.physicsBody.dynamic=YES;
+            tyre.physicsBody.mass           = 0.1;
+            tyre.physicsBody.friction       = 1;
+            tyre.physicsBody.dynamic        = YES;
         }
     }
     [self addChild:tyre];
@@ -1193,6 +1207,24 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         //stop the clock in mS
         reactionTime[xcounter] = (Float32)[self.startDate timeIntervalSinceNow]* -1000;
         
+        //final message on screen
+        self.laps.text = @"Race Over !";
+        
+        //end sound
+        NSError * error1;
+        NSURL   * soundURL8 = [[NSBundle mainBundle] URLForResource:@"lap" withExtension:@"wav"];
+        AVAudioPlayer * player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL8 error:&error1];
+        [player setVolume:singleton.ambientVolume];
+        [player prepareToPlay];
+        
+        SKAction * playAction = [SKAction runBlock:^{
+            [player play];
+        }];
+        SKAction * waitAction = [SKAction waitForDuration:player.duration+1];
+        SKAction * sequence   = [SKAction sequence:@[playAction, waitAction]];
+        
+        [self runAction:sequence];
+        
         //update data as now finished
         
         //crashes
@@ -1262,12 +1294,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         
         for (int x=0; x<horns; x+=1) {
             //correct the lag for horn time key presses
-            hornReactionTime[x] = hornReactionTime[x] - 0.1f;
+            hornReactionTime[x] = hornReactionTime[x]; // - 0.1f; //dont bother, is not that bad after all!
             if (hornReactionTime[x] < 0) {
                 // make sure not less than zero
                 hornReactionTime[x] = 0.001;
             }
-            
             
             if ([singleton.distractionOn isEqual:@"1"]){
                 //cant be longer than the lap time, 1 distraction
@@ -1321,7 +1352,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         Float32 _pressedTimes   = 0.0f; // just the reactions
         Float32 _averageReacted = 0.0f;
         Float32 _slowestReacted = 0.0f;
-        Float32 _fastestReacted = 999.900;
+        Float32 _fastestReacted = 999.9;
         
         for (int x=0; x<horns; x+=1) {
             //get time for reaction recorded
@@ -1336,24 +1367,25 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
             }else{
                 //reacted horn
                 _pressedHorns++;
-                _pressedTimes =_pressedTimes + temp1;//update time sum
+                _pressedTimes = _pressedTimes + temp1;//update time sum
                 
-                if (_slowestReacted < temp1) {
+                //check for maxima and minima
+                if (_slowestReacted < temp1 && temp1 > 0.0) {
                     _slowestReacted = temp1;
                 }
-                if (_fastestReacted > temp1) {
+                if (_fastestReacted > temp1 && temp1 > 0.0) {
                     _fastestReacted = temp1;
                 }
-                //if (_numOfLaps == 1) {
-                   // _fastestReacted = _slowestReacted;
-                //}
+                if (_numOfLaps == 1) {
+                    _fastestReacted = _slowestReacted;
+                }
             }
             
-            if (slowestHorn < temp1) {
+            if (slowestHorn < temp1 && temp1 > 0.0) {
                 slowestHorn = temp1;
                 //NSLog(@"slow horn time %d: %.f mS", x+1, temp1);
             }
-            if (fastestHorn > temp1) {
+            if (fastestHorn > temp1 && temp1 > 0.0) {
                 fastestHorn = temp1;
                 //NSLog(@"fast horn time %d: %.f mS", x+1, temp1);
             }
@@ -1381,11 +1413,11 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
         singleton.missed       = [NSString stringWithFormat:@"%d",    _missedHorns];
         singleton.reacted      = [NSString stringWithFormat:@"%d",    _pressedHorns];
         
-        singleton.fastestHorn  = [NSString stringWithFormat:@"%.3f",  fastestHorn];
-        singleton.slowestHorn  = [NSString stringWithFormat:@"%.3f",  slowestHorn];
-        singleton.averageHorn  = [NSString stringWithFormat:@"%.3f",  averageHorn];
+        singleton.fastestHorn  = [NSString stringWithFormat:@"%.3f",  _fastestReacted];
+        singleton.slowestHorn  = [NSString stringWithFormat:@"%.3f",  _slowestReacted];
+        singleton.averageHorn  = [NSString stringWithFormat:@"%.3f",  _averageReacted];
         
-        if (_slowestReacted == 0.0) {
+        if (_fastestReacted == 0.0) {
             singleton.fastestReaction  = @"All Horns Missed";
         }else{
             singleton.fastestReaction  = [NSString stringWithFormat:@"%.3f",  _fastestReacted];
