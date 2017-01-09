@@ -560,7 +560,7 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
                 //update horn counter on screen if flag on
                 //self.hor.text = [NSString stringWithFormat:@"H: %li", (long)self.hors+1];
                 
-                self.hor.text = [NSString stringWithFormat:@"H: %ld", [singleton.hornsPlayed integerValue]+1];
+                self.hor.text = [NSString stringWithFormat:@"H: %ld", ([singleton.hornsPlayed integerValue] +1)];
 
                 //beep the horn
                 [self runAction:self.hornSoundAction];
