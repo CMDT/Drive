@@ -127,7 +127,7 @@ static mySingleton * sharedSingleton = nil;
         tempEntry           = @"";
         hornsShowing        = NO;
         okGoNow             = NO; // App will not run unless set to YES
-        displayMinimum      = 0; //set to '2' if want horns pressed displayed, 1 just times, 0 nothing except laps
+        displayMinimum      = 1; //set to '2' if want horns pressed displayed, 1=just times & laps, 0 nothing except laps
         email               = @"me@mmu.ac.uk";
         testDate            = @"9/1/2017";
         testTime            = @"10:00";
@@ -174,7 +174,7 @@ static mySingleton * sharedSingleton = nil;
         hornTimerCounter    = 0;
         hornPosY            = 305; // set to default pos
         hornPosY            = 85;
-        carSize             = 0.80;
+        carSize             = 0.50;
         hazScale            = 0.60;
     }
     return self;

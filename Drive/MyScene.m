@@ -603,6 +603,8 @@ typedef NS_OPTIONS(NSUInteger, CRPhysicsCategory) {
 
             //stop the horn timer and record it
             hornReactionTime[horns-1] = temp3; //was horns-1
+            
+            
             NSLog(@"Horn Reaction = , %.2f", temp3); //
             
             //reset the flag, so another horn can play
