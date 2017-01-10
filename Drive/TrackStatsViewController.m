@@ -296,7 +296,7 @@
     singleton.counter = singleton.counter+1;
     // +++++++++++++++++++++++++++
     
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"%@, %@, %@ ", singleton.subjectName, singleton.testDate, singleton.testTime ]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"%@, %@, %@", singleton.subjectName, singleton.testDate, singleton.testTime ]];
     singleton.counter = singleton.counter+1;
     
     // +++++++++++++++++++++++++++
@@ -354,13 +354,13 @@
         [singleton.cardReactionTimeResult addObject:@" " ];
         singleton.counter = singleton.counter+1;
         
-        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Horns Missed,     %@ ", singleton.missed]];
+        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Horns Missed,     %@", singleton.missed]];
         singleton.counter = singleton.counter+1;
-        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Horns Reacted To, %@ ", singleton.reacted]];
+        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Horns Reacted To, %@", singleton.reacted]];
         singleton.counter = singleton.counter+1;
         //[singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Missed Horn Time Total,  %@ <br/>",singleton.missedTime]];
         //singleton.counter = singleton.counter+1;
-        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Reacted Horn Time Total,, %@ ", singleton.pressedTime]];
+        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Reacted Horn Time Total,, %@", singleton.pressedTime]];
         singleton.counter = singleton.counter+1;
         
         if ([singleton.reacted isEqualToString:@"0"]){
@@ -374,15 +374,15 @@
             h3.text=[NSString stringWithFormat:@"TP %0.3f ", singleton.penalty];
         }
         
-            [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@" Missed Horn Time Penalty,, %0.3f ", singleton.penalty]];
+            [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@" Missed Horn Time Penalty,, %0.3f", singleton.penalty]];
             singleton.counter = singleton.counter+1;
 
         
-        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Fastest Reacted Horn Time Total,, %@ ", singleton.fastestReaction]];
+        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Fastest Reacted Horn Time Total,, %@", singleton.fastestReaction]];
         singleton.counter = singleton.counter+1;
-        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Slowest Reacted Horn Time Total,, %@ ", singleton.slowestReaction]];
+        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Slowest Reacted Horn Time Total,, %@", singleton.slowestReaction]];
         singleton.counter = singleton.counter+1;
-        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Average Reacted Only Horn Time,,  %@ ", singleton.averageReaction]];
+        [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Average Reacted Only Horn Time,,  %@", singleton.averageReaction]];
         singleton.counter = singleton.counter+1;
     }
     

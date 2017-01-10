@@ -50,6 +50,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:1];
     mySingleton *singleton = [mySingleton sharedSingleton];
     
     keyboardAnimDelay=0.5;
@@ -168,7 +169,7 @@ if ( IDIOM == IPAD ) {
     yy=100;
 }
     
-if((textField==self->driverName)||(textField==self->email)){
+if((textField == self->driverName)||(textField == self->email)){
     driverName.backgroundColor = [UIColor greenColor];
     textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
     int oft=textField.frame.origin.y-yy;

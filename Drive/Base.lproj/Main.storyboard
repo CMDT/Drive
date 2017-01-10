@@ -224,7 +224,7 @@ With practice, you will become more proficient, train up to the faster cars.</st
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEO-sW-f4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-666" y="-396"/>
+            <point key="canvasLocation" x="-666" y="-387"/>
         </scene>
         <!--Select Car View Controller-->
         <scene sceneID="aev-YJ-bJw">
@@ -796,7 +796,7 @@ Build up skill and move to faster cars, if you dare!
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content"> Select the distraction level above 0, and you will hear a horn, you need to touch the horn button as soon as you can, whist continuing to drive. Missing the horn is not good for your score.
+                                        <string key="content"> Select the distraction level above 0, and you will hear a horn, you need to touch the horn button as soon as you can, whist continuing to drive. Missing the horn is not good for your score. Time penalties are added to the Race Score for missed horns. Don't try and cheat, pressing the horn more than once will record the slower time.
 
 </string>
                                         <attributes>
@@ -820,7 +820,7 @@ Build up skill and move to faster cars, if you dare!
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content"> This the volume of the 'crash' and 'button press' sound effects played during the game.
+                                        <string key="content"> This the volume of the 'crash' and 'button press' sound effects played during the game. You can also use the iPad/iPhone volume button for 'master' sound volume.
 
 </string>
                                         <attributes>
@@ -899,15 +899,15 @@ The default horn position is 305x, 85y for the centre right, but if set to 437x,
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">
+                                        <mutableString key="content">
 
-The car size default is 0.50, but can be set from 0.25 (small) to 1.00 (large). .  If you set out of range, enter the default values to restore functionality.
+The 'car size' default is 0.50, but can be set from 0.25 (small) to 1.00 (large). .  If you set out of range, enter the default values to restore functionality.
 
 The 'Display Level' is the amount of information you get on screen during a race. 0=Just Laps to go, 1=Laps, time and crash info and 2=all above plus horns triggered so far.
 
 'Hazard Scale' sets the size of the hazards, from 0.25 (small) to 1.0 (large).  On the Hard Track, this may be too difficult or impossible to drive, unless the physics is set to 4 or 5.
 
-'Game Physics' sets ability of the hazards to react to a car crash.  If set to 0, all the hazards are fixed in place on the track, and do not move when hit.  If set to 1, 2, 3 and 4, additional hazards become movable when hit.  Level 5 is 'insane' and will really confuse the driving experience with all hazards 'live' and almost never still!</string>
+'Game Physics' sets ability of the hazards to react to a car crash.  If set to 0, all the hazards are fixed in place on the track, and do not move when hit.  If set to 1, 2, 3 and 4, additional hazards become movable when hit.  Level 5 is 'insane' and will really confuse the driving experience with all hazards 'live' and almost never still!</mutableString>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
@@ -1472,6 +1472,17 @@ The 'Display Level' is the amount of information you get on screen during a race
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="CyS-W1-Gno" userLabel="infoButton">
+                                <rect key="frame" x="525" y="44" width="23" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                <state key="normal" image="btn-info.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="infoButtonDidTouchUpInside:" destination="355-Sw-PNA" eventType="touchUpInside" id="FFf-ed-rfV"/>
+                                    <segue destination="zZg-kM-XqE" kind="push" id="JDS-pB-ZaQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1695,7 +1706,7 @@ The 'Display Level' is the amount of information you get on screen during a race
 
 The email data is formatted in plain TEXT, but may be incorrectly displayed in some email clients due to auto removal of line breaks.  If this is the case, look for an option to ‘restore line breaks’.
 
-Received email data can be ‘cut’ and ‘pasted’ into MS-Excel (r) for further analysis and comparison.</string>
+Received email contains an attached CSV data file named 'DriveAppData.csv' and can be viewed in Excel(r).  You will need to rename these files if you are going to use them.</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
@@ -1909,6 +1920,62 @@ Cg
             </objects>
             <point key="canvasLocation" x="-1260" y="747"/>
         </scene>
+        <!--InfoTrackStatsVC-->
+        <scene sceneID="clw-tC-Isg">
+            <objects>
+                <viewController storyboardIdentifier="InfoStatsViewController" title="InfoTrackStatsVC" id="zZg-kM-XqE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="duQ-uz-moS">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About The Track Stats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sEA-B4-aTx">
+                                <rect key="frame" x="20" y="20" width="528" height="34"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" selectable="NO" id="tm5-r2-CIh">
+                                <rect key="frame" x="20" y="58" width="312" height="242"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">The race results are pretty general on the screen here.  You can see more by pressing the '@' button.
+
+If you miss all the horns, when they are presented, you will get a time penalty 'TP' added to the score.  The score has an element of how many times you hit the track edges and the hazards as well as the horn reaction times.
+
+Race results that are emailed contain a csv (comma Separated Variable) file which spreadsheets such as MS Excel(r) can read and format.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carhorn-btn.png" id="ME8-Ud-uGF">
+                                <rect key="frame" x="446" y="58" width="102" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="box.png" id="pV5-6U-gJj">
+                                <rect key="frame" x="497" y="168" width="51" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="fVI-AZ-U4w">
+                                <rect key="frame" x="443" y="245" width="105" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <state key="normal" image="backxGr.png"/>
+                                <connections>
+                                    <segue destination="khi-MC-6dL" kind="push" id="NMT-G0-eNH"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="car_1.png" id="sTX-gq-2KU">
+                                <rect key="frame" x="443" y="203" width="51" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oHA-qu-luX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a4H-2E-0e4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1260" y="-774"/>
+        </scene>
     </scenes>
     <resources>
         <image name="backxGr.png" width="105" height="55"/>
@@ -1972,9 +2039,9 @@ Cg
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="UeP-lD-UCg"/>
+        <segue reference="eqn-Dg-M4T"/>
+        <segue reference="egQ-Cs-J5z"/>
         <segue reference="kKz-ZN-Bct"/>
-        <segue reference="Ypq-Rw-I7Y"/>
         <segue reference="EFj-b3-7hl"/>
-        <segue reference="Snq-Uf-qxR"/>
     </inferredMetricsTieBreakers>
 </document>
