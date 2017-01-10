@@ -18,6 +18,7 @@
 
     NSMutableArray * cardReactionTimeResult;
     NSString       * resultsStrings;
+    
     // arrays for detailed timings for each lap in data
     NSMutableArray * lapTimes;
     NSMutableArray * hornTimes;
@@ -67,6 +68,7 @@
     Float64    hornsMulti;
     float      ambientVolume;
     float      hazScale;
+    float      penalty;
     int        hornTimerCounter;
     
     //moves the horn button base location from centre part to whereever set, passed to iPad settings and saved. loaded on start
@@ -137,6 +139,7 @@
 @property (nonatomic)          float     hornPosY;
 @property (nonatomic)          float     carSize;
 @property (nonatomic)          float     hazScale;
+@property (nonatomic)          float     penalty;
 
 //set up singleton shared
 

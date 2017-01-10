@@ -52,6 +52,7 @@
     singleton.musicTrack    = @"None";
     singleton.laps=@"10";
     singleton.ambientVolume = 0.66;
+    singleton.distractionOn = @"0";
     
     [[SKTAudio sharedInstance] playBackgroundMusic:@"silence30.mp3"];
 }

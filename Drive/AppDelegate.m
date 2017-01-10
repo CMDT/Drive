@@ -28,7 +28,7 @@
         //stop App if cancelled
         
         if (singleton.okGoNow == NO) {
-            NSLog(@"Cancelled");
+            //NSLog(@"Cancelled");
             //the app has been cancelled by the alert cancel in the accept message in AppDelegate
             //STOP//
             UIApplication *app = [UIApplication sharedApplication];
@@ -41,7 +41,7 @@
             exit(0);
             //stop
         } else {
-            NSLog(@"Running App.");
+            //NSLog(@"Running App.");
         }
     }
 }
@@ -58,7 +58,7 @@
     [txtField setFont:[UIFont fontWithName:@"Courier" size:(10.0)]];
     txtField.numberOfLines = 17;
     txtField.textColor = [UIColor darkGrayColor];
-    txtField.text = @"To see details on how to use this\nApplication and adjust its settings,\nplease read the notes in the\n'Information' sections (i).\n\n* Safety Note *\nTake regular breaks and avoid strain.\nIf you develop discomfort using this App,\nyou must stop using it and seek advice.\n\nThis Application is NOT\nfor clinical use. v4.0.4,  9.Jan.2017\n";
+    txtField.text = @"To see details on how to use this\nApplication and adjust its settings,\nplease read the notes in the\n'Information' sections (i).\n\n* Safety Note *\nTake regular breaks and avoid strain.\nIf you develop discomfort using this App,\nyou must stop using it and seek advice.\n\nThis Application is NOT\nfor clinical use. v4.0.5,  10.Jan.2017\n";
     txtField.backgroundColor = [UIColor clearColor];
     txtField.tintColor = [UIColor redColor];
     txtField.textAlignment = NSTextAlignmentCenter;
@@ -66,10 +66,7 @@
     [alertView setValue:txtField forKeyPath:@"accessoryView"]; //for ios 7 and above
     [alertView show];
     
-    //sleep(2);
-    
     return YES;
-
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
