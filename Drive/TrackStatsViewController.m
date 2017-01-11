@@ -475,7 +475,7 @@
     [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Display Info Level, %d", singleton.displayMinimum]];
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Game Physics %d", singleton.gamePhysics]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Game Physics, %d", singleton.gamePhysics]];
     singleton.counter = singleton.counter+1;
     
     [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Hazards Scale, %0.2f", singleton.hazScale]];
@@ -483,7 +483,7 @@
     
     [singleton.cardReactionTimeResult addObject:@"..." ];
     //end of data message
-    [singleton.cardReactionTimeResult addObject:@"End of Drive Results Table." ];
+    [singleton.cardReactionTimeResult addObject:@"End of Drive App Results Table." ];
     singleton.counter = singleton.counter+1;
     
     //make a text file from the array of results
