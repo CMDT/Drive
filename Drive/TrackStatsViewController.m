@@ -272,10 +272,10 @@
     [singleton.cardReactionTimeResult addObject:@"MMU Cheshire, Exercise and Sport Science DRIVE App Results"];
     singleton.counter = singleton.counter+1;
     //mmu copyright message 2014 JAH
-    [singleton.cardReactionTimeResult addObject:@"(c) 2016 MMU written by Jonathan A. Howell for ESS DRIVE App"];
+    [singleton.cardReactionTimeResult addObject:@"(c) 2017 MMU written by Jonathan A. Howell for Exercise and Sport Science"];
     singleton.counter = singleton.counter+1;
     //mmu version no
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"%@",singleton.versionNumber]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"%@", singleton.versionNumber]];
     //[singleton.cardReactionTimeResult addObject:singleton.versionNumber];
     singleton.counter = singleton.counter+1;
     //blank line
@@ -307,7 +307,14 @@
     // put all the data for the results here:
     // summary as per screen
     // lapTimes,
-
+    //advanced settings printout
+    [singleton.cardReactionTimeResult addObject:@"Settings Used in this Race" ];
+    singleton.counter = singleton.counter+1;
+    
+    //blank line
+    [singleton.cardReactionTimeResult addObject:@" " ];
+    singleton.counter = singleton.counter+1;
+    
     [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Email Sent To, %@", singleton.email]];
     singleton.counter = singleton.counter+1;
     
@@ -320,10 +327,23 @@
     [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Drive Music, %@", singleton.musicTrack]];
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Distraction Set, %@", singleton.distractionOn]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Distraction 0-3 Horns, %@", singleton.distractionOn]];
     singleton.counter = singleton.counter+1;
     
     [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Laps Raced, %@", singleton.laps]];
+    
+    //blank line
+    [singleton.cardReactionTimeResult addObject:@" " ];
+    singleton.counter = singleton.counter+1;
+    
+    //advanced settings printout
+    [singleton.cardReactionTimeResult addObject:@"Race Statistics and Results in this Race" ];
+    singleton.counter = singleton.counter+1;
+    
+    //blank line
+    [singleton.cardReactionTimeResult addObject:@" " ];
+    singleton.counter = singleton.counter+1;
+    
     singleton.counter = singleton.counter+1;
     
     [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Horns Played, %@", singleton.hornsPlayed]];
@@ -340,8 +360,10 @@
     
     [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Fastest Lap, %@, %@", singleton.fastestLapNo, singleton.fastestLap]];
     singleton.counter = singleton.counter+1;
+    
     [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Slowest Lap, %@, %@", singleton.slowestLapNo, singleton.slowestLap]];
     singleton.counter = singleton.counter+1;
+    
     [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Average Lap,, %@", singleton.averageLap]];
     singleton.counter = singleton.counter+1;
     
@@ -374,7 +396,7 @@
             h3.text=[NSString stringWithFormat:@"TP %0.3f ", singleton.penalty];
         }
         
-            [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@" Missed Horn Time Penalty,, %0.3f", singleton.penalty]];
+            [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Missed Horn Time Penalty,, %0.3f", singleton.penalty]];
             singleton.counter = singleton.counter+1;
 
         
@@ -390,7 +412,7 @@
     [singleton.cardReactionTimeResult addObject:@" " ];
     singleton.counter = singleton.counter+1;
     
-    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Race Score,, %@", singleton.masterScore]];
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Final Race Score,, %@", singleton.masterScore]];
     singleton.counter = singleton.counter+1;
 
     //blank line
@@ -417,7 +439,7 @@
     [singleton.cardReactionTimeResult addObject:@" " ];
     singleton.counter = singleton.counter+1;
         
-        [singleton.cardReactionTimeResult addObject:@"Horn No, Horn Reaction Time(S), Missed horn(T/F)"];
+        [singleton.cardReactionTimeResult addObject:@"Horn No, Horn Reaction Time(S), Missed horn=1)"];
         singleton.counter = singleton.counter+1;
         // list the horns and the timings
         for (int x=0; x<horns; x+=1) {
@@ -432,9 +454,36 @@
     //blank line
     [singleton.cardReactionTimeResult addObject:@" " ];
     singleton.counter = singleton.counter+1;
-    [singleton.cardReactionTimeResult addObject:@"... " ];
+    
+    //advanced settings printout
+    [singleton.cardReactionTimeResult addObject:@"ADVANCED Settings Used in this Race" ];
+    singleton.counter = singleton.counter+1;
+    
+    //blank line
+    [singleton.cardReactionTimeResult addObject:@" " ];
+    singleton.counter = singleton.counter+1;
+    
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Horn Position X, %0.0f", singleton.hornPosX]];
+    singleton.counter = singleton.counter+1;
+    
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Horn Position Y, %0.0f", singleton.hornPosY]];
+    singleton.counter = singleton.counter+1;
+    
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Car Size, %0.2f", singleton.carSize]];
+    singleton.counter = singleton.counter+1;
+    
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Display Info Level, %d", singleton.displayMinimum]];
+    singleton.counter = singleton.counter+1;
+    
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Game Physics %d", singleton.gamePhysics]];
+    singleton.counter = singleton.counter+1;
+    
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"Hazards Scale, %0.2f", singleton.hazScale]];
+    singleton.counter = singleton.counter+1;
+    
+    [singleton.cardReactionTimeResult addObject:@"..." ];
     //end of data message
-    [singleton.cardReactionTimeResult addObject:@"End of Drive Results table." ];
+    [singleton.cardReactionTimeResult addObject:@"End of Drive Results Table." ];
     singleton.counter = singleton.counter+1;
     
     //make a text file from the array of results

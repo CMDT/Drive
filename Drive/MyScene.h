@@ -3,7 +3,7 @@
 //  Drive
 //
 //  Created by Jonathan Howell 9/12/15.
-//  Copyright (c) 2016. Jonathan Howell, MMU. All rights reserved.
+//  Copyright (c) 2017. Jonathan Howell, MMU. All rights reserved.
 //
 //  Updating for ios 10.0.2 and new sound features implementation.
 //
