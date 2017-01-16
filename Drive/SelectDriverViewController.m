@@ -53,8 +53,8 @@
     [super viewDidAppear:1];
     mySingleton *singleton = [mySingleton sharedSingleton];
     
-    keyboardAnimDelay=0.5;
-    keyboardAnimSpeed=0.3;
+    keyboardAnimDelay = 0.5;
+    keyboardAnimSpeed = 0.3;
     
     NSString        * pathStr               = [[NSBundle mainBundle] bundlePath];
     NSString        * settingsBundlePath    = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
@@ -74,11 +74,11 @@
     driverName.delegate  = self;
     
     //clear the graphics for track level selected to start with
-    _tyre1.hidden=YES;
-    _tyre2.hidden=YES;
-    _bale.hidden=YES;
-    _crate.hidden=YES;
-    carView.alpha=1;
+    _tyre1.hidden  = YES;
+    _tyre2.hidden  = YES;
+    _bale.hidden   = YES;
+    _crate.hidden  = YES;
+    carView.alpha  = 1;
     
     carView.layer.anchorPoint = CGPointMake(.5,.5);
     [UIView animateWithDuration:1.0
@@ -92,23 +92,22 @@
                          CGAffineTransform rotateTrans1 = CGAffineTransformMakeRotation(270* M_PI / 180);
                          carView.transform = CGAffineTransformConcat(scaleTrans, rotateTrans1);
                      }completion:nil];
-    carView.alpha=0.5;
+    carView.alpha    = 0.5;
 
-    
     //check the level and bring the graphics back according to level selected
     //NSLog(@"level  %@", singleton.trackNo);
     if([singleton.trackNo isEqual:@"1"]){
         //nothing
     }
     if([singleton.trackNo isEqual:@"2"]){
-        _tyre1.hidden=NO;
-        _bale.hidden=NO;
+        _tyre1.hidden = NO;
+        _bale.hidden  = NO;
     }
     if([singleton.trackNo isEqual:@"3"]){
-        _tyre1.hidden=NO;
-        _bale.hidden=NO;
-        _tyre2.hidden=NO;
-        _crate.hidden=NO;
+        _tyre1.hidden = NO;
+        _bale.hidden  = NO;
+        _tyre2.hidden = NO;
+        _crate.hidden = NO;
     }
 }
 
