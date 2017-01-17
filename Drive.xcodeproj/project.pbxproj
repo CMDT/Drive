@@ -69,6 +69,7 @@
 		E147D35F1DF865CE00E02FA1 /* tyre.png in Resources */ = {isa = PBXBuildFile; fileRef = E147D3591DF865CE00E02FA1 /* tyre.png */; };
 		E14A6FE91E0C24AA006B7107 /* Serifa 55 Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E14A6FE81E0C24AA006B7107 /* Serifa 55 Roman.ttf */; };
 		E14EC2621DFFFD2D0064C6B4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E14EC2611DFFFD2D0064C6B4 /* Default-568h@2x.png */; };
+		E16E39591E2E8650007310BB /* drive512.png in Resources */ = {isa = PBXBuildFile; fileRef = E16E39581E2E8650007310BB /* drive512.png */; };
 		E171F2661C1EDB3600E3DB0D /* achievment-amateur.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F2621C1EDB3600E3DB0D /* achievment-amateur.png */; };
 		E171F2671C1EDB3600E3DB0D /* achievment-destruction.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F2631C1EDB3600E3DB0D /* achievment-destruction.png */; };
 		E171F2681C1EDB3600E3DB0D /* achievment-intermediate.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F2641C1EDB3600E3DB0D /* achievment-intermediate.png */; };
@@ -156,7 +157,6 @@
 		E171F3121C1F124600E3DB0D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E171F3111C1F124600E3DB0D /* Settings.bundle */; };
 		E171F3151C1F137700E3DB0D /* mySingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = E171F3141C1F137700E3DB0D /* mySingleton.m */; };
 		E171F3171C1F1F5700E3DB0D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E171F3161C1F1F5700E3DB0D /* MessageUI.framework */; };
-		E1ACC8081DE740D000504C0C /* drive512.png in Resources */ = {isa = PBXBuildFile; fileRef = E1ACC8071DE740D000504C0C /* drive512.png */; };
 		E1CBACD71C22BE9E001CC466 /* SelectDriverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CBACD61C22BE9E001CC466 /* SelectDriverViewController.m */; };
 		E1CBACFC1C22D7DA001CC466 /* pause2Gr.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACD81C22D7DA001CC466 /* pause2Gr.png */; };
 		E1CBACFD1C22D7DA001CC466 /* startx.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBACD91C22D7DA001CC466 /* startx.png */; };
@@ -309,6 +309,7 @@
 		E14A6FE71E0C2062006B7107 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		E14A6FE81E0C24AA006B7107 /* Serifa 55 Roman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Serifa 55 Roman.ttf"; sourceTree = "<group>"; };
 		E14EC2611DFFFD2D0064C6B4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E16E39581E2E8650007310BB /* drive512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drive512.png; sourceTree = "<group>"; };
 		E171F2621C1EDB3600E3DB0D /* achievment-amateur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievment-amateur.png"; sourceTree = "<group>"; };
 		E171F2631C1EDB3600E3DB0D /* achievment-destruction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievment-destruction.png"; sourceTree = "<group>"; };
 		E171F2641C1EDB3600E3DB0D /* achievment-intermediate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievment-intermediate.png"; sourceTree = "<group>"; };
@@ -397,7 +398,6 @@
 		E171F3131C1F137700E3DB0D /* mySingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mySingleton.h; path = GameKit/mySingleton.h; sourceTree = "<group>"; };
 		E171F3141C1F137700E3DB0D /* mySingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mySingleton.m; path = GameKit/mySingleton.m; sourceTree = "<group>"; };
 		E171F3161C1F1F5700E3DB0D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		E1ACC8071DE740D000504C0C /* drive512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drive512.png; sourceTree = "<group>"; };
 		E1CBACD51C22BE9E001CC466 /* SelectDriverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectDriverViewController.h; sourceTree = "<group>"; };
 		E1CBACD61C22BE9E001CC466 /* SelectDriverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectDriverViewController.m; sourceTree = "<group>"; };
 		E1CBACD81C22D7DA001CC466 /* pause2Gr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause2Gr.png; sourceTree = "<group>"; };
@@ -637,6 +637,7 @@
 		475E5E5E195A5A610063FD68 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E16E39581E2E8650007310BB /* drive512.png */,
 				E13D1F991E0AD4850036C482 /* notfinish.png */,
 				E13D1F931E0AD3560036C482 /* finish.png */,
 				E13D1F941E0AD3560036C482 /* finish@2x.png */,
@@ -695,7 +696,6 @@
 				E1E7835A1E01B26D00CD9399 /* d1.png */,
 				E1E7835B1E01B26D00CD9399 /* d2.png */,
 				E1E7835C1E01B26D00CD9399 /* d3.png */,
-				E1ACC8071DE740D000504C0C /* drive512.png */,
 				E1CBACE81C22D7DA001CC466 /* driverx.png */,
 				E1CBACEF1C22D7DA001CC466 /* driverx@2x.png */,
 				E1CBACE91C22D7DA001CC466 /* easyx.png */,
@@ -1053,6 +1053,7 @@
 				E171F2D31C1EE0C300E3DB0D /* btn-car3.png in Resources */,
 				E171F2B21C1EDBB300E3DB0D /* btn-slow@2x.png in Resources */,
 				E1CBAD0B1C22D7DA001CC466 /* carx.png in Resources */,
+				E16E39591E2E8650007310BB /* drive512.png in Resources */,
 				E1E783631E01B26D00CD9399 /* d0.png in Resources */,
 				E1E783671E01B26D00CD9399 /* st0.png in Resources */,
 				475E5EB1195A5A610063FD68 /* LevelDetails.plist in Resources */,
@@ -1083,7 +1084,6 @@
 				E171F2EF1C1EF19F00E3DB0D /* seg-5@2x.png in Resources */,
 				E13D1F971E0AD3560036C482 /* finish@2x.png in Resources */,
 				E11F94841C625B8900712F9B /* high.png in Resources */,
-				E1ACC8081DE740D000504C0C /* drive512.png in Resources */,
 				E171F2F91C1EF19F00E3DB0D /* seg-blues.png in Resources */,
 				E1F177201DA3C4DA0016DB81 /* button_press25.wav in Resources */,
 				E11F94861C625B8900712F9B /* low.png in Resources */,
