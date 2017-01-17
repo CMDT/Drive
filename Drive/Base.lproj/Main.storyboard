@@ -899,7 +899,7 @@ The default horn position is 305x, 85y for the centre right, but if set to 437x,
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 
 The 'car size' default is 0.50, but can be set from 0.25 (small) to 1.00 (large). .  If you set out of range, enter the default values to restore functionality.
 
@@ -907,7 +907,7 @@ The 'Display Level' is the amount of information you get on screen during a race
 
 'Hazard Scale' sets the size of the hazards, from 0.25 (small) to 1.0 (large).  On the Hard Track, this may be too difficult or impossible to drive, unless the physics is set to 4 or 5.
 
-'Game Physics' sets ability of the hazards to react to a car crash.  If set to 0, all the hazards are fixed in place on the track, and do not move when hit.  If set to 1, 2, 3 and 4, additional hazards become movable when hit.  Level 5 is 'insane' and will really confuse the driving experience with all hazards 'live' and almost never still!</mutableString>
+'Game Physics' sets ability of the hazards to react to a car crash.  If set to 0, all the hazards are fixed in place on the track, and do not move when hit.  If set to 1, 2, 3 and 4, additional hazards become movable when hit.  Level 5 is 'insane' and will really confuse the driving experience with all hazards 'live' and almost never still!</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
@@ -2038,10 +2038,10 @@ Race results that are emailed contain a csv (comma Separated Variable) file whic
         <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="UeP-lD-UCg"/>
         <segue reference="eqn-Dg-M4T"/>
-        <segue reference="egQ-Cs-J5z"/>
+        <segue reference="UeP-lD-UCg"/>
         <segue reference="kKz-ZN-Bct"/>
+        <segue reference="Ts0-Gu-wo8"/>
         <segue reference="EFj-b3-7hl"/>
     </inferredMetricsTieBreakers>
 </document>
