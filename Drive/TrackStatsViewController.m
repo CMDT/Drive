@@ -83,7 +83,7 @@ h7,h8,
 
 - (void)viewDidAppear:(BOOL)animated{
     mySingleton *singleton = [mySingleton sharedSingleton];
-    
+    [super viewDidAppear:YES];
     //set up the plist params
     NSString *pathStr               = [[NSBundle mainBundle] bundlePath];
     NSString *settingsBundlePath    = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
@@ -399,6 +399,7 @@ h7,h8,
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:YES];
     statusMessageLab.hidden = YES;
 }
 

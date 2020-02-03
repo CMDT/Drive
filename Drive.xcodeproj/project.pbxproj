@@ -52,8 +52,6 @@
 		917B79131C1DB50E00A6D3DA /* TrackStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 917B79121C1DB50E00A6D3DA /* TrackStatsViewController.m */; };
 		917E5A5D1C21DF0A009DF226 /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 917E5A5B1C21DF0A009DF226 /* tick.png */; };
 		917E5A5E1C21DF0A009DF226 /* tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 917E5A5C1C21DF0A009DF226 /* tick@2x.png */; };
-		91C7E4421C1CDC0D00A38B32 /* btn-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E43E1C1CDC0D00A38B32 /* btn-back.png */; };
-		91C7E4431C1CDC0D00A38B32 /* btn-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C7E43F1C1CDC0D00A38B32 /* btn-back@2x.png */; };
 		E171F2661C1EDB3600E3DB0D /* achievment-amateur.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F2621C1EDB3600E3DB0D /* achievment-amateur.png */; };
 		E171F2671C1EDB3600E3DB0D /* achievment-destruction.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F2631C1EDB3600E3DB0D /* achievment-destruction.png */; };
 		E171F2681C1EDB3600E3DB0D /* achievment-intermediate.png in Resources */ = {isa = PBXBuildFile; fileRef = E171F2641C1EDB3600E3DB0D /* achievment-intermediate.png */; };
@@ -260,8 +258,6 @@
 		917B79121C1DB50E00A6D3DA /* TrackStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackStatsViewController.m; sourceTree = "<group>"; };
 		917E5A5B1C21DF0A009DF226 /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
 		917E5A5C1C21DF0A009DF226 /* tick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick@2x.png"; sourceTree = "<group>"; };
-		91C7E43E1C1CDC0D00A38B32 /* btn-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-back.png"; path = "../../../../../Pictures/btn-back.png"; sourceTree = "<group>"; };
-		91C7E43F1C1CDC0D00A38B32 /* btn-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-back@2x.png"; path = "../../../../../Pictures/btn-back@2x.png"; sourceTree = "<group>"; };
 		E171F2621C1EDB3600E3DB0D /* achievment-amateur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievment-amateur.png"; sourceTree = "<group>"; };
 		E171F2631C1EDB3600E3DB0D /* achievment-destruction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievment-destruction.png"; sourceTree = "<group>"; };
 		E171F2641C1EDB3600E3DB0D /* achievment-intermediate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "achievment-intermediate.png"; sourceTree = "<group>"; };
@@ -575,8 +571,6 @@
 				E1CBACE61C22D7DA001CC466 /* backx.png */,
 				E171F2821C1EDBB300E3DB0D /* base.png */,
 				E171F2831C1EDBB300E3DB0D /* base@2x.png */,
-				91C7E43E1C1CDC0D00A38B32 /* btn-back.png */,
-				91C7E43F1C1CDC0D00A38B32 /* btn-back@2x.png */,
 				E171F2FF1C1EF20100E3DB0D /* btn-back2.png */,
 				E171F3001C1EF20100E3DB0D /* btn-back2@2x.png */,
 				E171F2C91C1EE0C300E3DB0D /* btn-car1.png */,
@@ -782,11 +776,12 @@
 		47117B2F1959CA1400B20209 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "MMU ESS JAH";
 				TargetAttributes = {
 					47117B361959CA1400B20209 = {
-						DevelopmentTeam = G8Q878PY9S;
+						DevelopmentTeam = 4SPW49WK35;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 0;
@@ -800,7 +795,7 @@
 			};
 			buildConfigurationList = 47117B321959CA1400B20209 /* Build configuration list for PBXProject "Drive" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -891,7 +886,6 @@
 				E171F2761C1EDB5700E3DB0D /* bg-main-menu-base@2x.png in Resources */,
 				E171F30A1C1EF20100E3DB0D /* btn-email@2x.png in Resources */,
 				E171F2F81C1EF19F00E3DB0D /* seg-beat@2x.png in Resources */,
-				91C7E4421C1CDC0D00A38B32 /* btn-back.png in Resources */,
 				E1CBACFE1C22D7DA001CC466 /* trackx.png in Resources */,
 				E1CBAD081C22D7DA001CC466 /* hardx.png in Resources */,
 				E171F3091C1EF20100E3DB0D /* btn-email.png in Resources */,
@@ -908,7 +902,6 @@
 				E171F2AD1C1EDBB300E3DB0D /* btn-select-car.png in Resources */,
 				E171F2C01C1EDC1C00E3DB0D /* Funky_Good_Time.mp3 in Resources */,
 				E1CBACFC1C22D7DA001CC466 /* pause2Gr.png in Resources */,
-				91C7E4431C1CDC0D00A38B32 /* btn-back@2x.png in Resources */,
 				E1CBAD031C22D7DA001CC466 /* pause1Gr.png in Resources */,
 				E1CBAD121C22D7DA001CC466 /* nextxGr@2x.png in Resources */,
 				E1CBAD181C22D7DA001CC466 /* mediumx@2x.png in Resources */,
@@ -994,7 +987,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# python /Users/jonhowell/Documents/Drive2015a/Drive/Settings.bundle/Licence.py #work\npython /Users/jonathanhowell/Documents/Drive2015b/Drive/Settings.bundle/Licence.py #home";
+			shellScript = "# python /Users/jonhowell/Documents/Drive2015a/Drive/Settings.bundle/Licence.py #work\n# python /Users/jonathanhowell/Documents/Drive2015b/Drive/Settings.bundle/Licence.py #home\n// new JAH NWFA iMac Pro\n//python /Users/jonathanhowell/Desktop/xcode_projects/manchestertimemachine/NWFA_McrTimeMachine/TimeMachine/Settings.bundle/Licence.py //old desktop mac\npython /Volumes/catalina500gbssd/xcode_projects/drive/Drive/Drive/Settings.bundle/Licence.py //new iMacProJH\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1075,24 +1068,38 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1105,7 +1112,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -1115,30 +1122,44 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: manchester metropolitan University";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: manchester metropolitan University";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1151,12 +1172,15 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4SPW49WK35;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Drive/Drive-Prefix.pch";
 				INFOPLIST_FILE = "Drive/Drive-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.mmu.ess.www.jah.Drive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1169,12 +1193,15 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: manchester metropolitan University";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4SPW49WK35;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Drive/Drive-Prefix.pch";
 				INFOPLIST_FILE = "Drive/Drive-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.mmu.ess.www.jah.Drive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};

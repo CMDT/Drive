@@ -47,7 +47,7 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    
+    [super viewDidAppear:YES];
     keyboardAnimDelay=0.5;
     keyboardAnimSpeed=0.3;
     
