@@ -67,9 +67,9 @@
     //version, set anyway *****************************************
     //*************************************************************
     
-    version0 =  @"DRIVE Version 2.4.3 - 18.12.15";     // version   *** keep short
-    version1 =  @"MMU (C) 2015";                // copyright *** limited line space
-    version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
+    version0 =  @"DRIVE Version 2.4.0 - 11.02.2020";     // version   *** keep short
+    version1 =  @"MMU (C) 2020";                // copyright *** limited line space
+    version2 =  @"s.maudsley-barton@mmu.ac.uk";        // author    *** to display on device
     version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen
     //*************************************************************
     [defaults setObject:version0 forKey:kVersion0];   //***

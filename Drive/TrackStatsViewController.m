@@ -226,7 +226,7 @@ h7,h8,
     [singleton.cardReactionTimeResult addObject:@"MMU Cheshire, Exercise and Sport Science, DRIVE App Results"];
     singleton.counter = singleton.counter+1;
     //mmu copyright message 2014 JAH
-    [singleton.cardReactionTimeResult addObject:@"(c) 2015 MMU written by Jonathan A. Howell for ESS DRIVE App"];
+    [singleton.cardReactionTimeResult addObject:@"(c) 2020 MMU written by Jonathan A. Howell for ESS DRIVE App"];
     singleton.counter = singleton.counter+1;
     //mmu version no
     [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"%@",singleton.versionNumber]];
@@ -274,7 +274,7 @@ h7,h8,
     [singleton.cardReactionTimeResult addObject:@" " ];
     singleton.counter = singleton.counter+1;
     //mmu copyright message
-    [singleton.cardReactionTimeResult addObject:@"MMU (c) 2015 DRIVE App Jonathan A. Howell SAS Technical Services. " ];
+    [singleton.cardReactionTimeResult addObject:@"MMU (c) 2020 DRIVE App Jonathan A. Howell SAS Technical Services. " ];
     singleton.counter = singleton.counter+1;
     //version number
     [singleton.cardReactionTimeResult addObject: singleton.versionNumber ];
@@ -454,7 +454,7 @@ h7,h8,
     
     NSString *emailTitle = [NSString stringWithFormat:@"DRIVE App Data for: %@",singleton.subjectName];
     NSString *messageBody = [NSString stringWithFormat:@"The test data for the subject:%@ taken at the date: %@ and time: %@, is attached as a text/csv file.  \n\nThe file is comma separated variable, .csv extension.  \n\nThe data can be read by MS-Excel, then analysed by your own functions. \n\nSent by DRIVE App.",singleton.subjectName,singleton.testDate,singleton.testTime];
-    //old for testing// NSArray  *toRecipents = [NSArray arrayWithObject:@"j.a.howell@mmu.ac.uk"];
+    //old for testing// NSArray  *toRecipents = [NSArray arrayWithObject:@"s.maudsley-barton@mmu.ac.uk"];
     
     NSArray  *toRecipents = [NSArray arrayWithObject:[NSString stringWithFormat:@"%@", singleton.email,Nil]];
     
